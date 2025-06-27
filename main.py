@@ -37,9 +37,9 @@ countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "A
 
 
 rp_passwords = {
-    "main_admin": os.environ["MAIN_ADMIN_PASS"],
-    "bio_admin": os.environ["BIO_ADMIN_PASS"],
-    "shop_admin": os.environ["SHOP_ADMIN_PASS"]
+    "main_admin": os.environ["FULL_ACCESS_1"],
+    "bio_admin": os.environ["BIO_ADMIN_PASSWORD"],
+    "shop_admin": os.environ["SHOP_BANK_ADMIN_PASSWORD"]
 }
 
 # دکمه‌های مشترک
