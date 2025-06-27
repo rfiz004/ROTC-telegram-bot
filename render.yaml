@@ -1,7 +1,7 @@
 services:
-- type: web
-  name: my-telegram-bot
-  env: python
-  plan: free
-  buildCommand: ""
-  startCommand: "python3 main.py"
+  - type: web
+    name: my-telegram-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 main.py"
