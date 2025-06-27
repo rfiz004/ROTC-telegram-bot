@@ -5,6 +5,9 @@ from telegram.ext import (
 )
 import json
 import os
+from keep_alive import keep_alive
+
+
 
 DATA_FILE = "data.json"
 
@@ -24,19 +27,19 @@ jobs_by_country = data["jobs_by_country"]
 skills_list = data["skills_list"]
 
 
-BOT_TOKEN = "8135083594:AAHBKFTx69YfwvlSB2VtHxAL4wjIjyGqq3c"
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 BIO_ADMIN_ID = 5890943003
 BIO_CHANNEL = "@R_O_T_C_Bio"
 
 user_state = {}
 
-countries = ["X", "Y", "Z"]
+countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
 
 
 rp_passwords = {
-    "main_admin": "root_admin_pass",
-    "bio_admin": "mary_cute",
-    "shop_admin": "shop_entry_pass"
+    "main_admin": os.environ["MAIN_ADMIN_PASS"],
+    "bio_admin": os.environ["BIO_ADMIN_PASS"],
+    "shop_admin": os.environ["SHOP_ADMIN_PASS"]
 }
 
 # دکمه‌های مشترک
@@ -380,4 +383,5 @@ app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_all_mes
 app.add_handler(MessageHandler(filters.PHOTO, collect_bio))
 
 print("🤖 ربات در حال اجراست...")
+keep_alive()
 app.run_polling()
