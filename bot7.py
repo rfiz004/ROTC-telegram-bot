@@ -7,11 +7,6 @@ import json
 import os
 from uuid import uuid4
 from telegram.constants import ChatType
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from keep_alive import keep_alive
-import re
-
-SKILLS_PER_PAGE = 12
 
 pv_filter = filters.ChatType.PRIVATE
 
@@ -33,7 +28,7 @@ jobs_by_country = data["jobs_by_country"]
 skills_list = data["skills_list"]
 
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
+BOT_TOKEN = "8006645404:AAE-JEjkxdc6LD5OCLX4ITSX0Mgu0KB9P9s"
 BIO_ADMIN_ID = 5890943003
 BIO_CHANNEL = "@R_O_T_C_Bio"
 
@@ -43,7 +38,7 @@ countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "A
 
 
 rp_passwords = {
-    "main_admin": "amirbitch",
+    "main_admin": "mainmain",
     "bio_admin": "biobio",
     "shop_admin": "shopshop"
 }
@@ -52,7 +47,6 @@ rp_passwords = {
 
 def back_button():
     return InlineKeyboardMarkup([[InlineKeyboardButton("🔙 برگشت", callback_data="back_to_main")]])
-
 
 def restart_button():
     return InlineKeyboardMarkup([[InlineKeyboardButton("🔁 شروع مجدد", callback_data="back_to_main")]])
@@ -89,13 +83,13 @@ async def handle_password_message(update: Update, context: ContextTypes.DEFAULT_
 
     if state.get("step") == "awaiting_rp_password":
         if text == rp_passwords["main_admin"]:
-            await update.message.reply_text("ها چیه چی میخواستی باشه؟؟")
+            await update.message.reply_text("🎛 خوش اومدی ادمین اصلی!")
         elif text == rp_passwords["bio_admin"]:
-            await update.message.reply_text("خوش اومدی سیسی کیوت (امیر و علی اگه اومدن گمشن)", reply_markup=bio_admin_menu())
+            await update.message.reply_text("🧾 به پنل ادمین بیو خوش اومدی!", reply_markup=bio_admin_menu())
         elif text == rp_passwords["shop_admin"]:
-            await update.message.reply_text("اینجا فعلا صاحاب نداره")
+            await update.message.reply_text("🛍 به پنل ادمین شاپ خوش اومدی!")
         else:
-            await update.message.reply_text("ادمین اصلیا عین ادم بزنین، سیسیا قشنگام اگه یادتون نیست بیاین بگم بهتون، غیر ادمینام (و ادمین اصلیا) گمشن ممنون")
+            await update.message.reply_text("❌ رمز اشتباهه.")
         user_state.pop(user_id)
 
 # منو اصلی
@@ -112,16 +106,7 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.edit_text("🔐 لطفاً رمز ورود به تنظیمات رو بفرست:")
         user_state[query.from_user.id] = {"step": "awaiting_rp_password"}
     elif data == "rp_channels":
-        await query.message.edit_text(
-            "📢 چنل‌ها:\n\n" 
-            "🔷 <a href='https://t.me/R_O_T_C'>کانال اصلی</a>\n\n"
-            "🧬 <a href='https://t.me/R_O_T_C_Bio'>کانال بیوگرافی شخصیت‌ها</a>\n\n"
-            "📰 <a href='https://t.me/R_O_T_C_News'>اخبار و اطلاعیه‌های رول</a>\n\n"
-            "🎭 <a href='https://t.me/R_O_T_C_Memes'>میم‌ها و لحظات فان</a>\n\n"
-            "🛒 <a href='https://t.me/R_O_T_C_Shop'>شاپ و فروشگاه رول</a>\n\n",
-            reply_markup=back_button(),
-            parse_mode="HTML"
-        )
+        await query.message.edit_text("📢 چنل‌ها: \n@R_O_T_C_Bio", reply_markup=back_button())
     elif data == "back_to_main":
         await query.message.edit_text("سلام! 👋\nمیخوای چیکار بکنی؟", reply_markup=main_menu)
     elif data == "back_to_admin_menu":
@@ -176,7 +161,7 @@ async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
     job = query.data[4:]
     user_state[user_id]["job"] = job
     user_state[user_id]["step"] = "asking_name"
-    await query.message.edit_text("بچه خوشگل اسم کارکترتو کخ کن بیاد🥰‌")
+    await query.message.edit_text("✍️ اسم شخصیت رو وارد کن:")
 
 async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
@@ -186,20 +171,13 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
     if state.get("step") == "awaiting_rp_password":
         await handle_password_message(update, context)
     elif state.get("step") == "adding_skill":
-        skill = update.message.text.strip()
-
-        if skill in skills_list:
-            await update.message.reply_text("⚠️ این مهارت قبلاً وجود داره.", reply_markup=bio_admin_menu())
-        else:
-            skills_list.append(skill)
-            save_data({
-                "jobs_by_country": jobs_by_country,
-                "skills_list": skills_list
-            })
-            await update.message.reply_text("✅ مهارت اضافه شد.", reply_markup=bio_admin_menu())
-
+        skills_list.append(update.message.text)
+        save_data({
+             "jobs_by_country": jobs_by_country,
+             "skills_list": skills_list
+        })
+        await update.message.reply_text("✅ مهارت اضافه شد.", reply_markup=bio_admin_menu())
         user_state.pop(user_id)
-
     elif state.get("step") == "removing_skill":
         skill_to_remove = update.message.text
         if skill_to_remove in skills_list:
@@ -213,10 +191,6 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
             await update.message.reply_text("⚠️ مهارت پیدا نشد.", reply_markup=bio_admin_menu())
         user_state.pop(user_id)
     elif step == "add_job":
-        parts = update.message.text.split("-")
-        if len(parts) != 3:
-            await update.message.reply_text("❌ فرمت اشتباهه.")
-            return
         try:
             name, level, count = [x.strip() for x in update.message.text.split("-")]
             level = int(level)
@@ -271,15 +245,6 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
         except:
             await update.message.reply_text("❌ خطا در کاهش ظرفیت.")
         user_state.pop(user_id)
-        
-    elif state.get("reject_step") == "awaiting_text":
-        for uid, d in context.chat_data.items():
-            if d.get("user_id") == user_id and d.get("reject_step") == "awaiting_text":
-                d["rejection_reason"] = update.message.text
-                d["reject_step"] = "ready"
-                await update.message.reply_text("✏️ متن ذخیره شد. حالا از دکمه‌ها استفاده کن.")
-                return
-
     else:
         await collect_bio(update, context)
 
@@ -295,69 +260,29 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     current = user_state[user_id]
 
     next_steps = [
-
-            ("asking_name", "name", "📛 لقب رو بفرست:"),
-            ("asking_nickname", "nickname", "🎂 سن رو بفرست:"),
-            ("asking_age", "age", None), 
-            ("asking_appearance", "appearance", "📖 سرگذشت شخصیت رو بنویس:"),
-            ("asking_history", "history", "🆔 آیدیت رو وارد کن:"),
-            ("asking_id_number", "id_number", "🔖 هشتگ اختصاصی رو وارد کن:"),
-            ("asking_id_tag", "user_id_tag", "🖼 حالا یه عکس از شخصیتت بفرست:"),
-        ]
-
+        ("asking_name", "name", "📛 لقب رو بفرست:"),
+        ("asking_nickname", "nickname", "🎂 سن رو بفرست:"),
+        ("asking_age", "age", "🔧 مهارت‌هات رو یکی‌یکی وارد کن (سه‌تا):\n📝 لیست مهارت‌ها: " + ", ".join(skills_list)),
+        ("asking_skill1", "skill1", "مهارت دوم:"),
+        ("asking_skill2", "skill2", "مهارت سوم:"),
+        ("asking_skill3", "skill3", "💠 مشخصات ظاهری رو بنویس:"),
+        ("asking_appearance", "appearance", "📖 سرگذشت شخصیت رو بنویس:"),
+        ("asking_history", "history", "🆔 آیدیت رو وارد کن:"),
+        ("asking_id_number", "id_number", "🔖 هشتگ اختصاصی رو وارد کن:"),
+        ("asking_id_tag", "user_id_tag", "🖼 حالا یک عکس از شخصیت بفرست:")
+    ]
 
     for i, (s, key, msg) in enumerate(next_steps):
         if step == s:
-            if key:
-                # بررسی سن
-                if key == "age":
-                    if not text.isdigit() or not (10 <= int(text) <= 100):
-                        await update.message.reply_text("⚠️ یک عدد صحیح بین 10 تا 100 برای سن بزن.")
-                        return
-
-                # بررسی هشتگ اختصاصی
-                if key == "user_id_tag":
-                    if not text.startswith("#") or not text[1:].isalnum():
-                        await update.message.reply_text("⚠️ هشتگ رو با # شروع کن و فقط حروف یا عدد بعدش بیار (بدون فاصله).")
-                        return
-
-                # بررسی آیدی @user
-                if key == "id_number":
-                    if not re.match(r"^@[\w\d_]{5,}$", text):
-                        await update.message.reply_text("⚠️ ایدیتو درست بزن (مثال: @yourusername).")
-                        return
-
-                    username = update.message.from_user.username
-                    if not username:
-                        await update.message.reply_text("❌ اکانتت ایدی نداره اول برای اکانتت ایدی بزار بعد بیا.")
-                        return
-
-                    if text[1:].lower() != username.lower():
-                        await update.message.reply_text(f"❌ آیدی که زدی با ایدی اصلیت فرق داره زرنگ!\nآیدی شما: @{username}")
-                        return
-
-                current[key] = text
-
-
-            next_step = next_steps[i + 1][0] if i + 1 < len(next_steps) else "asking_photo"
-
-            if next_step == "asking_appearance":  # قبلش مرحله مهارت هست
-                # بعد از age برو به مرحله انتخاب مهارت
-                current["skills"] = []
-                user_state[user_id]["step"] = "selecting_skills"
-                await show_skill_selection(update, context, page=0)
-                return
-
-            user_state[user_id]["step"] = next_step
+            current[key] = text
+            user_state[user_id]["step"] = next_steps[i + 1][0] if i + 1 < len(next_steps) else "asking_photo"
             await update.message.reply_text(msg)
             return
-
     if step == next_steps[-1][0]:  # یعنی مرحله آخر بود (asking_id_tag)
         current["user_id_tag"] = text
         user_state[user_id]["step"] = "asking_photo"
         await update.message.reply_text("🖼 حالا یه عکس از شخصیتت بفرست:")
         return
-    
 
     if step == "asking_photo":
         if not update.message.photo:
@@ -377,6 +302,12 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         level = job_data["level"]
         current["level"] = level
+        job_data["count"] -= 1
+        save_data({
+            "jobs_by_country": jobs_by_country,
+            "skills_list": skills_list
+        })
+
 
         bio_text = (
             f"── ⃟ ⃟─⊳𝗕𝗶𝗼𝗴𝗿𝗮𝗽𝗵𝘆 ──╰𝗟𝗲𝘃𝗲𝗹 /\n"
@@ -385,7 +316,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"─ 𝗔𝗴𝗲 ─⊳ {current['age']}\n"
             f"─ 𝗝𝗼𝗯 ─⊳ {job}\n"
             f"─ Countries ─⊳ کشور {country}\n"
-            f"─ Skills ─⊳ {', '.join(current.get('skills', []))}\n"
+            f"─ Skills ─⊳ {current['skill1']}, {current['skill2']}, {current['skill3']}\n"
             f"─ Level ─⊳ {level}\n"
             f"─ 𝗔𝗽𝗽𝗲𝗮𝗿𝗮𝗻𝗰𝗲 ─⊳ {current['appearance']}\n"
             f"─ 𝗛𝗶𝘀𝘁𝗼𝗿𝘆 ─⊳ {current['history']}\n"
@@ -482,7 +413,7 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
         f"─ 𝗔𝗴𝗲 ─⊳ {bio_data['age']}\n"
         f"─ 𝗝𝗼𝗯 ─⊳ {bio_data['job']}\n"
         f"─ Countries ─⊳ کشور {bio_data['country']}\n"
-        f"─ Skills ─⊳ {', '.join(bio_data.get('skills', []))}\n"
+        f"─ Skills ─⊳ {bio_data['skill1']}, {bio_data['skill2']}, {bio_data['skill3']}\n"
         f"─ Level ─⊳ {bio_data['level']}\n"
         f"─ 𝗔𝗽𝗽𝗲𝗮𝗿𝗮𝗻𝗰𝗲 ─⊳ {bio_data['appearance']}\n"
         f"─ 𝗛𝗶𝘀𝘁𝗼𝗿𝘆 ─⊳ {bio_data['history']}\n"
@@ -490,16 +421,6 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
     )
 
     if action == "approve":
-        country = bio_data["country"]
-        job_name = bio_data["job"]
-        job_data = next((j for j in jobs_by_country[country] if j["name"] == job_name), None)
-        if job_data:
-            job_data["count"] = max(0, job_data["count"] - 1)
-
-        save_data({
-            "jobs_by_country": jobs_by_country,
-            "skills_list": skills_list
-        })
         # ارسال به چنل بیو
         await context.bot.send_photo(chat_id=BIO_CHANNEL, photo=photo, caption=caption)
 
@@ -518,253 +439,23 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
         await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
 
     elif action == "reject":
-        context.chat_data[unique_id]["rejection_reason"] = ""
-        context.chat_data[unique_id]["rejection_parts"] = []
-        context.chat_data[unique_id]["reject_step"] = "awaiting_text"
+        await context.bot.send_message(chat_id=user_id, text="❌ متاسفیم، فرم بیو شما تایید نشد.")
+        await query.message.edit_caption(caption="❌ فرم رد شد.")
 
-        await query.message.edit_caption(
-            caption="🟥 لطفاً دلیل رد شدن بیو رو تایپ کن:",
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("✏️ افزودن بخش مشکل‌دار", callback_data=f"add_reject_part_{unique_id}")],
-                [InlineKeyboardButton("📤 ارسال به کاربر", callback_data=f"send_reject_{unique_id}")],
-                [InlineKeyboardButton("❌ لغو", callback_data=f"cancel_reject_{unique_id}")]
-            ])
-        )
-
-    elif query.data.startswith("send_reject_"):
-        uid = query.data.split("_")[-1]
-        data = context.chat_data.get(uid)
-        if not data:
-             await query.message.reply_text("❌ اطلاعات پیدا نشد.")
-             return
-
-        if not data.get("rejection_reason") or not data.get("rejection_parts"):
-            await query.answer("✏️ هم متن بنویس هم حداقل یه بخش انتخاب کن!", show_alert=True)
-            return
-
-        reason = data["rejection_reason"]
-        parts = "، ".join(data["rejection_parts"])
-        user_id = data["user_id"]
-
-        msg = (
-            "❌ متاسفانه بیوی شما رد شد.\n\n"
-            f"📌 بخش‌های مشکل‌دار: {parts}\n"
-            f"📝 توضیح: {reason}"
-        )
-
-        await context.bot.send_message(chat_id=user_id, text=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔁 ارسال مجدد بیو", callback_data="bio")]
-        ]))
-
-        await query.message.edit_caption("📨 دلیل رد برای کاربر ارسال شد.")
-        context.chat_data.pop(uid, None)
+    context.chat_data.pop(unique_id, None)
 
 
-    elif query.data.startswith("cancel_reject_"):
-        uid = query.data.split("_")[-1]
-        context.chat_data.pop(uid, None)
-        await query.message.edit_caption("❌ عملیات رد بیو لغو شد.")
-
-
-
-def chunk_list(lst, size):
-    """تقسیم لیست به بخش‌های کوچکتر"""
-    for i in range(0, len(lst), size):
-        yield lst[i:i + size]
-
-async def show_skill_selection(update, context, page=0):
-    if update.callback_query:
-        query = update.callback_query
-        await query.answer()
-        user_id = query.from_user.id
-    else:
-        message = update.message
-        user_id = message.from_user.id
-
-    current = user_state[user_id]
-    selected = current.get("skills", [])
-    total_pages = (len(skills_list) + SKILLS_PER_PAGE - 1) // SKILLS_PER_PAGE
-
-    user_state[user_id]["skill_page"] = page
-    
-    # مهارت‌های این صفحه
-    start = page * SKILLS_PER_PAGE
-    end = start + SKILLS_PER_PAGE
-    page_skills = skills_list[start:end]
-
-    context.user_data['skills_by_page'] = context.user_data.get('skills_by_page', {})
-    context.user_data['skills_by_page'][page] = page_skills
-
-    keyboard = []
-    row = []
-    for i, skill in enumerate(page_skills, 1):
-        selected_mark = " ✅" if skill in selected else ""
-        row.append(InlineKeyboardButton(skill + selected_mark, callback_data=f"select_skill_{page}_{i-1}"))
-        if i % 3 == 0:
-            keyboard.append(row)
-            row = []
-    if row:
-        keyboard.append(row)
-
-    # دکمه‌های ناوبری پایین صفحه
-    nav_buttons = []
-    if page > 0:
-        nav_buttons.append(InlineKeyboardButton("⬅️ قبلی", callback_data=f"skill_page_{page - 1}"))
-    if page + 1 < total_pages:
-        nav_buttons.append(InlineKeyboardButton("➡️ بعدی", callback_data=f"skill_page_{page + 1}"))
-        
-    
-    if nav_buttons:
-        keyboard.append(nav_buttons)
-
-    # دکمه ریست انتخاب
-    if selected:
-        keyboard.append([InlineKeyboardButton("🗑 حذف انتخاب‌ها", callback_data="reset_skills")])
-
-    # اگر به ۳ تا رسیدن دکمه ادامه بده
-    keyboard.append([InlineKeyboardButton("✅ ادامه", callback_data="skills_done")])
-
-    # متن
-    skill_text = "🔧 مهارت‌هات رو انتخاب کن (حداکثر ۳):\n"
-    if selected:
-        skill_text += "\n✅ انتخاب‌شده‌ها:\n" + "\n".join(f"🔹 {s}" for s in selected)
-    else:
-        skill_text += "\n⚠️ فعلاً مهارتی انتخاب نشده."
-
-    markup = InlineKeyboardMarkup(keyboard)
-
-    # ارسال یا ویرایش پیام
-    if update.callback_query:
-        await query.message.edit_text(skill_text, reply_markup=markup)
-    else:
-        await update.message.reply_text(skill_text, reply_markup=markup)
-
-
-
-async def handle_skill_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    user_id = query.from_user.id
-    # skill = query.data.replace("select_skill_", "")
-    match = re.match(r"select_skill_(\d+)_(\d+)", query.data)
-    if not match:
-        return  # یا لاگ کن: print(f"❌ Invalid skill select data: {query.data}")
-    page_str, index_str = match.groups()
-    page = int(page_str)
-    index = int(index_str)
-    skills_by_page = context.user_data.get("skills_by_page", {})
-    page_skills = skills_by_page.get(page, [])
-
-    if index >= len(page_skills):
-        await query.answer("❌ خطا در انتخاب مهارت.")
-        return
-
-    skill = page_skills[index]
-    state = user_state.get(user_id, {})
-    selected = state.get("skills", [])
-
-    if skill in selected:
-        await query.answer("⚠️ این مهارت رو قبلاً انتخاب کردی!", show_alert=True)
-        return
-
-    if len(selected) >= 3:
-        await query.answer("⚠️ فقط ۳ مهارت می‌تونی انتخاب کنی!", show_alert=True)
-        return
-
-    # ذخیره کن اما نرو مرحله بعد
-    selected.append(skill)
-    state["skills"] = selected
-    if len(selected) == 3:
-        state["skill1"], state["skill2"], state["skill3"] = selected
-    await show_skill_selection(update, context, page=state.get("skill_page", 0))
-
-
-
-async def handle_skill_navigation(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    try:
-        await query.answer()
-    except telegram.error.BadRequest as e:
-        if "Query is too old" not in str(e):
-            raise
-    user_id = query.from_user.id
-    page = int(query.data.split("_")[-1])
-    user_state[user_id]["skill_page"] = page
-    await show_skill_selection(update, context, page)
-    print(f"[Skill Nav] User {user_id} → Page {page}")
-
-
-async def handle_skill_reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    user_id = query.from_user.id
-    user_state[user_id]["skill_page"] = 0
-    user_state[user_id]["skills"] = []
-    await show_skill_selection(update, context, page=0)
-
-async def handle_skill_continue(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    user_id = query.from_user.id
-    state = user_state.get(user_id, {})
-
-    if len(state.get("skills", [])) < 3:
-        await query.answer("⚠️ هنوز ۳ مهارت انتخاب نکردی.", show_alert=True)
-        return
-
-    state["step"] = "asking_appearance"
-    await query.message.edit_text("💠 مشخصات ظاهری رو بنویس:")
-
-
-REJECTABLE_PARTS = [
-    "اسم", "لقب", "سن", "شغل", "کشور", "مهارت‌ها",
-    "ظاهر", "تاریخچه", "آیدی", "هشتگ", "عکس"
-]
-
-async def handle_add_reject_part(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    _, _, uid = query.data.partition("add_reject_part_")
-    data = context.chat_data.get(uid)
-    if not data:
-        await query.message.reply_text("❌ فرم یافت نشد.")
-        return
-
-    keyboard = [[InlineKeyboardButton(p, callback_data=f"part_{uid}_{p}")] for p in REJECTABLE_PARTS]
-    await query.message.reply_text("📌 بخش‌هایی که مشکل دارن رو انتخاب کن:", reply_markup=InlineKeyboardMarkup(keyboard))
-
-
-async def handle_reject_part_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    _, uid, part = query.data.split("_", 2)
-    data = context.chat_data.get(uid)
-    if not data:
-        return
-
-    if part not in data["rejection_parts"]:
-        data["rejection_parts"].append(part)
-        await query.answer(f"✅ بخش «{part}» اضافه شد.")
-    else:
-        await query.answer("⚠️ این بخش قبلاً اضافه شده.", show_alert=True)
 
 
 
 # راه‌اندازی ربات
 app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
-app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))  # اول بیاد
-app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
-app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
-app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))  # بعد از بقیه بیاد
 app.add_handler(CallbackQueryHandler(select_job, pattern="^select_country_"))
 app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^job_"))
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
 app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
 app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
-app.add_handler(CallbackQueryHandler(handle_add_reject_part, pattern="^add_reject_part_"))
-app.add_handler(CallbackQueryHandler(handle_reject_part_selection, pattern="^part_"))
-app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(send_reject|cancel_reject)_"))
 app.add_handler(CallbackQueryHandler(handle_main_menu))
 # app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_all_messages))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
