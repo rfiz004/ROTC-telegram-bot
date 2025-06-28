@@ -10,6 +10,7 @@ from telegram.constants import ChatType
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from keep_alive import keep_alive
 import re
+import asyncio
 
 SKILLS_PER_PAGE = 12
 
@@ -748,6 +749,7 @@ async def handle_reject_part_selection(update: Update, context: ContextTypes.DEF
     else:
         await query.answer("⚠️ این بخش قبلاً اضافه شده.", show_alert=True)
 
+print("PORT is:", os.environ.get("PORT"))
 
 
 # راه‌اندازی ربات
@@ -770,5 +772,20 @@ app.add_handler(CallbackQueryHandler(handle_main_menu))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
 
-print("🤖 ربات در حال اجراست...")
-app.run_polling()
+PORT = int(os.environ.get("PORT", 8443))
+
+async def main():
+    await app.bot.set_webhook(url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}")
+    await app.start()
+    await app.updater.start_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=BOT_TOKEN,
+    )
+    await app.updater.idle()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+
+
