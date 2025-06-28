@@ -775,15 +775,13 @@ app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), ha
 PORT = int(os.environ.get("PORT", 8443))
 
 async def main():
-    await app.initialize()  # ⬅️ این خطو اضافه کن
-    await app.start()
-    await app.updater.start_webhook(
-        listen="0.0.0.0",
-        port=PORT,
-        url_path=BOT_TOKEN,
-        webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
-    )
-    await app.updater.idle()
+    await app.initialize()  
+    await app.run_webhook(
+    listen="0.0.0.0",
+    port=PORT,
+    webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
+    secret_token=BOT_TOKEN  # اختیاری ولی خوبه
+)
 
 if __name__ == "__main__":
     asyncio.run(main())
