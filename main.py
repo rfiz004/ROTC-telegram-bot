@@ -8,7 +8,7 @@ import os
 from uuid import uuid4
 from telegram.constants import ChatType
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from keep_alive import keep_alive
+# from keep_alive import keep_alive
 import re
 import asyncio
 
