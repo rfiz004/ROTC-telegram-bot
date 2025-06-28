@@ -519,49 +519,47 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
         await context.bot.send_message(chat_id=user_id, text="✅ فرم بیو شما تایید شد و در چنل منتشر شد.")
 
         # ساخت لینک دعوت یک‌بار مصرف
-        rol_link = None
-        realchat_link = None
+       # ساخت لینک دعوت یک‌بار مصرف
+rol_link = None
+realchat_link = None
 
-        try:
-            invite_rol = await context.bot.create_chat_invite_link(
-                chat_id=-1002616064737,  # 👈 آیدی گپ رول
-                member_limit=1,
-                creates_join_request=False
-            )
-            rol_link = invite_rol.invite_link
-        except Exception as e:
-            print(f"❌ خطا در ساخت لینک گپ رول: {e}")
+try:
+    invite_rol = await context.bot.create_chat_invite_link(
+        chat_id=-1002616064737,  # 👈 آیدی گپ رول
+        member_limit=1,
+        creates_join_request=False
+    )
+    rol_link = invite_rol.invite_link
+except Exception as e:
+    print(f"❌ خطا در ساخت لینک گپ رول: {e}")
 
-        try:
-            invite_realchat = await context.bot.create_chat_invite_link(
-                chat_id=-1002893489105,  # 👈 آیدی گپ ریل‌چت
-                member_limit=1,
-                creates_join_request=False
-            )
-            realchat_link = invite_realchat.invite_link
-        except Exception as e:
-            print(f"❌ خطا در ساخت لینک گپ ریل‌چت: {e}")
+try:
+    invite_realchat = await context.bot.create_chat_invite_link(
+        chat_id=-1002893489105,  # 👈 آیدی گپ ریل‌چت
+        member_limit=1,
+        creates_join_request=False
+    )
+    realchat_link = invite_realchat.invite_link
+except Exception as e:
+    print(f"❌ خطا در ساخت لینک گپ ریل‌چت: {e}")
 
-        # پیام نهایی به کاربر
-        msg = "📩 لینک‌های ورود به گروه‌ها:\n"
-        if rol_link:
-            msg += f"🔷 گپ رول: {rol_link}\n"
-        else:
-            msg += "⚠️ لینک گپ رول در دسترس نیست.\n"
+# پیام نهایی به کاربر
+msg = "📩 لینک‌های ورود به گروه‌ها:\n"
+if rol_link:
+    msg += f"🔷 گپ رول: {rol_link}\n"
+else:
+    msg += "⚠️ لینک گپ رول در دسترس نیست.\n"
 
-        if realchat_link:
-            msg += f"🔸 گپ ریل‌چت: {realchat_link}"
-        else:
-            msg += "⚠️ لینک گپ ریل‌چت در دسترس نیست."
+if realchat_link:
+    msg += f"🔸 گپ ریل‌چت: {realchat_link}"
+else:
+    msg += "⚠️ لینک گپ ریل‌چت در دسترس نیست."
 
-        await context.bot.send_message(chat_id=user_id, text=msg)
+# ارسال پیام به کاربر
+await context.bot.send_message(chat_id=user_id, text=msg)
 
-        await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
-
-
-        await context.bot.send_message(chat_id=user_id, text=f"📩 این لینک ورود به گروه رول شماست:\n{invite_link.invite_link}")
-
-        await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
+# ویرایش کپشن پیام قبلی (فقط یک بار)
+await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
 
     elif action == "reject":
         context.chat_data[unique_id]["rejection_reason"] = ""
