@@ -373,7 +373,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if step == "asking_photo":
         if not update.message.photo:
-            await update.message.reply_text("لطفاً یک عکس بفرست.")
+            await update.message.reply_text("گفتم یه عکس بفرس.")
             return
 
         photo = update.message.photo[-1].file_id
@@ -384,7 +384,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
         job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
 
         if not job_data:
-            await update.message.reply_text("❌ شغل نامعتبر است.")
+            await update.message.reply_text("❌ شغل نامعتبره.")
             return
 
         level = job_data["level"]
@@ -519,9 +519,15 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
         await context.bot.send_message(chat_id=user_id, text="✅ فرم بیو شما تایید شد و در چنل منتشر شد.")
 
         # ساخت لینک دعوت یک‌بار مصرف
+<<<<<<< HEAD
        # ساخت لینک دعوت یک‌بار مصرف
 rol_link = None
 realchat_link = None
+=======
+        # ساخت لینک دعوت یک‌بار مصرف
+        rol_link = None
+        realchat_link = None
+>>>>>>> 441097b (new update(0.5))
 
 try:
     invite_rol = await context.bot.create_chat_invite_link(
@@ -555,12 +561,21 @@ if realchat_link:
 else:
     msg += "⚠️ لینک گپ ریل‌چت در دسترس نیست."
 
+<<<<<<< HEAD
 # ارسال پیام به کاربر
 await context.bot.send_message(chat_id=user_id, text=msg)
 
 # ویرایش کپشن پیام قبلی (فقط یک بار)
 await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
 
+=======
+        # ارسال پیام به کاربر
+        await context.bot.send_message(chat_id=user_id, text=msg)
+
+        # ویرایش کپشن پیام قبلی (فقط یک بار)
+        await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
+        await context.bot.send_message(chat_id=user_id, text=f"📩 این لینک ورود به گروه رول شماست:\n{rol_link.rol_link}")
+>>>>>>> 441097b (new update(0.5))
     elif action == "reject":
         context.chat_data[unique_id]["rejection_reason"] = ""
         context.chat_data[unique_id]["rejection_parts"] = []
@@ -792,9 +807,6 @@ async def handle_reject_part_selection(update: Update, context: ContextTypes.DEF
     else:
         await query.answer("⚠️ این بخش قبلاً اضافه شده.", show_alert=True)
 
-print("PORT is:", os.environ.get("PORT"))
-
-
 # راه‌اندازی ربات
 app: Application = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
@@ -814,8 +826,6 @@ app.add_handler(CallbackQueryHandler(handle_main_menu))
 # app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_all_messages))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
-
-
 
 
 if __name__ == "__main__":
