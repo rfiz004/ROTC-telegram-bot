@@ -827,5 +827,5 @@ if __name__ == "__main__":
         port=PORT,
         url_path=BOT_TOKEN,
         webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
-        secret_token=BOT_TOKEN,
+        # secret_token=BOT_TOKEN,
     )
