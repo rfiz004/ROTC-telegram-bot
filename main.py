@@ -4,13 +4,25 @@ from telegram.ext import (
     MessageHandler, filters, ContextTypes
 )
 import json
-import os
 from uuid import uuid4
 from telegram.constants import ChatType
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 # from keep_alive import keep_alive
 import re
 import asyncio
+import os
+from telegram.ext import ApplicationBuilder
+from telegram.ext import Application
+import logging
+
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
+)
+
+
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+PORT = int(os.environ.get("PORT", 8443))
 
 SKILLS_PER_PAGE = 12
 
@@ -34,7 +46,6 @@ jobs_by_country = data["jobs_by_country"]
 skills_list = data["skills_list"]
 
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
 BIO_ADMIN_ID = 5890943003
 BIO_CHANNEL = "@R_O_T_C_Bio"
 
@@ -508,11 +519,45 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
         await context.bot.send_message(chat_id=user_id, text="✅ فرم بیو شما تایید شد و در چنل منتشر شد.")
 
         # ساخت لینک دعوت یک‌بار مصرف
-        invite_link = await context.bot.create_chat_invite_link(
-            chat_id= -1001562309192 ,  # در .env ست کن یا مستقیم ID عددی بزن
-            member_limit=1,
-            creates_join_request=False
-        )
+        rol_link = None
+        realchat_link = None
+
+        try:
+            invite_rol = await context.bot.create_chat_invite_link(
+                chat_id=-1002616064737,  # 👈 آیدی گپ رول
+                member_limit=1,
+                creates_join_request=False
+            )
+            rol_link = invite_rol.invite_link
+        except Exception as e:
+            print(f"❌ خطا در ساخت لینک گپ رول: {e}")
+
+        try:
+            invite_realchat = await context.bot.create_chat_invite_link(
+                chat_id=-1002893489105,  # 👈 آیدی گپ ریل‌چت
+                member_limit=1,
+                creates_join_request=False
+            )
+            realchat_link = invite_realchat.invite_link
+        except Exception as e:
+            print(f"❌ خطا در ساخت لینک گپ ریل‌چت: {e}")
+
+        # پیام نهایی به کاربر
+        msg = "📩 لینک‌های ورود به گروه‌ها:\n"
+        if rol_link:
+            msg += f"🔷 گپ رول: {rol_link}\n"
+        else:
+            msg += "⚠️ لینک گپ رول در دسترس نیست.\n"
+
+        if realchat_link:
+            msg += f"🔸 گپ ریل‌چت: {realchat_link}"
+        else:
+            msg += "⚠️ لینک گپ ریل‌چت در دسترس نیست."
+
+        await context.bot.send_message(chat_id=user_id, text=msg)
+
+        await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
+
 
         await context.bot.send_message(chat_id=user_id, text=f"📩 این لینک ورود به گروه رول شماست:\n{invite_link.invite_link}")
 
@@ -753,7 +798,7 @@ print("PORT is:", os.environ.get("PORT"))
 
 
 # راه‌اندازی ربات
-app = ApplicationBuilder().token(BOT_TOKEN).build()
+app: Application = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))  # اول بیاد
 app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
@@ -772,19 +817,15 @@ app.add_handler(CallbackQueryHandler(handle_main_menu))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
 
-PORT = int(os.environ.get("PORT", 8443))
 
-async def main():
-    await app.initialize()  
-    await app.run_webhook(
-    listen="0.0.0.0",
-    port=PORT,
-    webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
-    secret_token=BOT_TOKEN  # اختیاری ولی خوبه
-)
+
 
 if __name__ == "__main__":
-    asyncio.run(main())
-
-
-
+    print(f"✅ Bot is running on port {PORT} via webhook")
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=BOT_TOKEN,
+        webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
+        secret_token=BOT_TOKEN,
+    )
