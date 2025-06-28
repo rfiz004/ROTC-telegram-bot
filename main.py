@@ -14,9 +14,15 @@ import os
 from telegram.ext import ApplicationBuilder
 from telegram.ext import Application
 import logging
-import time
+import datetime
+import base64
+import requests
 # from flask import Flask
 # import threading
+
+GITHUB_REPO = "rfiz004/ROTC-telegram-bot"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKENN")  
+GITHUB_BRANCH = "main"
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -53,17 +59,30 @@ def load_bios():
 def save_bios(bios):
     with open(BIOS_FILE, "w", encoding="utf-8") as f:
         json.dump(bios, f, ensure_ascii=False, indent=2)
+        upload_to_github(BIOS_FILE, json.dumps(bios, ensure_ascii=False, indent=2))
 
 def add_bio_to_storage(user_id, bio_data):
     bios = load_bios()
-    bios[str(user_id)] = bio_data
+    uid = str(user_id)
 
-    # اگر تعداد بیشتر از 10 شد، قدیمی‌ترین رو حذف کن
-    if len(bios) > 10:
-        oldest_key = list(bios.keys())[0]
-        del bios[oldest_key]
+    bio_data["timestamp"] = datetime.datetime.now().isoformat()  # ذخیره زمان ISO
+
+    bios[uid] = bio_data
+
+    cutoff = datetime.datetime.now() - datetime.timedelta(days=7)
+    bios = {
+        k: v for k, v in bios.items()
+        if "timestamp" in v and datetime.datetime.fromisoformat(v["timestamp"]) > cutoff
+    }
 
     save_bios(bios)
+
+    # # حذف قدیمی ترین 
+    # if len(bios) > 10:
+    #     oldest_key = list(bios.keys())[0]
+    #     del bios[oldest_key]
+
+    # save_bios(bios)
 
 def remove_bio_from_storage(user_id):
     bios = load_bios()
@@ -82,6 +101,36 @@ def load_data():
 def save_data(data):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+        upload_to_github(DATA_FILE, json.dumps(data, ensure_ascii=False, indent=2))
+
+
+def upload_to_github(filename, content):
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}"
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json"
+    }
+
+    
+    content_encoded = base64.b64encode(content.encode("utf-8")).decode("utf-8")
+
+    
+    r = requests.get(url, headers=headers)
+    sha = r.json().get("sha") if r.status_code == 200 else None
+
+    data = {
+        "message": f"update {filename}",
+        "content": content_encoded,
+        "branch": GITHUB_BRANCH,
+    }
+    if sha:
+        data["sha"] = sha
+
+    response = requests.put(url, headers=headers, json=data)
+    if response.status_code in [200, 201]:
+        print(f"✅ {filename} در گیت‌هاب ذخیره شد.")
+    else:
+        print(f"❌ خطا در ذخیره {filename}: {response.text}")
 
 
 # استفاده از داده‌ها
@@ -397,8 +446,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             next_step = next_steps[i + 1][0] if i + 1 < len(next_steps) else "asking_photo"
 
-            if next_step == "asking_appearance":  # قبلش مرحله مهارت هست
-                # بعد از age برو به مرحله انتخاب مهارت
+            if next_step == "asking_appearance":
                 current["skills"] = []
                 user_state[user_id]["step"] = "selecting_skills"
                 await show_skill_selection(update, context, page=0)
@@ -408,7 +456,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(msg)
             return
 
-    if step == next_steps[-1][0]:  # یعنی مرحله آخر بود (asking_id_tag)
+    if step == next_steps[-1][0]: 
         current["user_id_tag"] = text
         user_state[user_id]["step"] = "asking_photo"
         await update.message.reply_text("🖼 حالا یه عکس از شخصیتت بفرست:")
@@ -571,7 +619,7 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
 
         try:
             invite_rol = await context.bot.create_chat_invite_link(
-                chat_id=-1002616064737,  # 👈 آیدی گپ رول
+                chat_id=-1002616064737,  # آیدی گپ رول
                 member_limit=1,
                 creates_join_request=False
             )
@@ -581,7 +629,7 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
 
         try:
             invite_realchat = await context.bot.create_chat_invite_link(
-                chat_id=-1002893489105,  # 👈 آیدی گپ ریل‌چت
+                chat_id=-1002893489105,  # آیدی گپ ریل‌چت
                 member_limit=1,
                 creates_join_request=False
             )
@@ -610,7 +658,7 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
             chat_id=query.from_user.id,
             text="✅ فرم تایید و ارسال شد."
         )
-        await context.bot.send_message(chat_id=user_id, text=f"📩 این لینک ورود به گروه رول شماست:\n{rol_link.rol_link}")
+        await context.bot.send_message(chat_id=user_id, text=f"📩 این لینک ورود به گروه رول شماست:\n{rol_link}")
 
     elif action == "reject":
         user_id = int(unique_id)
@@ -711,7 +759,7 @@ async def handle_skill_selection(update: Update, context: ContextTypes.DEFAULT_T
     # skill = query.data.replace("select_skill_", "")
     match = re.match(r"select_skill_(\d+)_(\d+)", query.data)
     if not match:
-        return  # یا لاگ کن: print(f"❌ Invalid skill select data: {query.data}")
+        return  
     page_str, index_str = match.groups()
     page = int(page_str)
     index = int(index_str)
@@ -798,10 +846,10 @@ async def handle_reject_part_selection(update: Update, context: ContextTypes.DEF
 # راه‌اندازی ربات
 app: Application = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
-app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))  # اول بیاد
+app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_")) 
 app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
 app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
-app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))  # بعد از بقیه بیاد
+app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))  
 app.add_handler(CallbackQueryHandler(select_job, pattern="^select_country_"))
 app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^job_"))
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
