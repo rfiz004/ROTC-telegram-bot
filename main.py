@@ -14,6 +14,9 @@ import os
 from telegram.ext import ApplicationBuilder
 from telegram.ext import Application
 import logging
+import time
+# from flask import Flask
+# import threading
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -28,17 +31,58 @@ SKILLS_PER_PAGE = 12
 
 pv_filter = filters.ChatType.PRIVATE
 
+BIOS_FILE = "bios.json"
 DATA_FILE = "data.json"
 
+def read_bios():
+    if not os.path.exists("bios.json"):
+        return {}
+    with open("bios.json", "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def write_bios(data):
+    with open("bios.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def load_bios():
+    if not os.path.exists(BIOS_FILE):
+        return {}
+    with open(BIOS_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_bios(bios):
+    with open(BIOS_FILE, "w", encoding="utf-8") as f:
+        json.dump(bios, f, ensure_ascii=False, indent=2)
+
+def add_bio_to_storage(user_id, bio_data):
+    bios = load_bios()
+    bios[str(user_id)] = bio_data
+
+    # اگر تعداد بیشتر از 10 شد، قدیمی‌ترین رو حذف کن
+    if len(bios) > 10:
+        oldest_key = list(bios.keys())[0]
+        del bios[oldest_key]
+
+    save_bios(bios)
+
+def remove_bio_from_storage(user_id):
+    bios = load_bios()
+    uid = str(user_id)
+    if uid in bios:
+        del bios[uid]
+        save_bios(bios)
+
 def load_data():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {"jobs_by_country": {}, "skills_list": []}
+    if not os.path.exists(DATA_FILE):
+        return {"jobs_by_country": {}, "skills_list": []}
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
 
 def save_data(data):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
 
 # استفاده از داده‌ها
 data = load_data()
@@ -55,9 +99,9 @@ countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "A
 
 
 rp_passwords = {
-    "main_admin": "amirbitch",
-    "bio_admin": "biobio",
-    "shop_admin": "shopshop"
+    "main_admin": os.environ["FULL_ACCESS_1"],
+    "bio_admin": os.environ["BIO_ADMIN_PASSWORD"],
+    "shop_admin": os.environ["SHOP_BANK_ADMIN_PASSWORD"]
 }
 
 # دکمه‌های مشترک
@@ -283,7 +327,7 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
         except:
             await update.message.reply_text("❌ خطا در کاهش ظرفیت.")
         user_state.pop(user_id)
-        
+
     elif state.get("reject_step") == "awaiting_text":
         for uid, d in context.chat_data.items():
             if d.get("user_id") == user_id and d.get("reject_step") == "awaiting_text":
@@ -369,7 +413,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_state[user_id]["step"] = "asking_photo"
         await update.message.reply_text("🖼 حالا یه عکس از شخصیتت بفرست:")
         return
-    
+
 
     if step == "asking_photo":
         if not update.message.photo:
@@ -404,12 +448,12 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"─ 𝗜𝗗 ─⊳ {current['id_number']} | {current['user_id_tag']}\n───────────  ⃟ ⃟─⊳ \n#Bio_form • https://t.me/R_O_T_C\nhttps://t.me/R_O_T_C_Bio"
         )
         caption = bio_text
-        unique_id = str(uuid4())
+        unique_id = str(update.message.from_user.id)
         user_state[user_id]["unique_id"] = unique_id
-        context.chat_data[unique_id] = {
-            "user_id": user_id,
-            "bio_data": current
-        }
+        # context.chat_data[unique_id] = {
+        #     "user_id": user_id,
+        #     "bio_data": current
+        # }
 
         buttons = InlineKeyboardMarkup([
             [
@@ -417,6 +461,8 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 InlineKeyboardButton("❌ رد", callback_data=f"reject_bio_{unique_id}")
             ]
         ])
+
+        add_bio_to_storage(user_id, current)
 
         await context.bot.send_photo(
             chat_id=BIO_ADMIN_ID,
@@ -478,13 +524,14 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
     await query.answer()
     action, _, unique_id = query.data.partition("_bio_")
 
-    data = context.chat_data.get(unique_id)
-    if not data:
+    bios = load_bios()
+    bio_data = bios.get(unique_id)
+
+    if not bio_data:
         await query.message.edit_caption(caption="❌ اطلاعات فرم پیدا نشد یا قبلاً بررسی شده.")
         return
 
-    user_id = data["user_id"]
-    bio_data = data["bio_data"]
+    user_id = int(unique_id)
     photo = bio_data["photo"]
 
     caption = (
@@ -518,7 +565,6 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
         # ارسال پیام تایید به کاربر
         await context.bot.send_message(chat_id=user_id, text="✅ فرم بیو شما تایید شد و در چنل منتشر شد.")
 
-        # ساخت لینک دعوت یک‌بار مصرف
         # ساخت لینک دعوت یک‌بار مصرف
         rol_link = None
         realchat_link = None
@@ -557,57 +603,30 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
 
         # ارسال پیام به کاربر
         await context.bot.send_message(chat_id=user_id, text=msg)
-
+        remove_bio_from_storage(user_id)
         # ویرایش کپشن پیام قبلی (فقط یک بار)
-        await query.message.edit_caption(caption="✅ فرم تایید و ارسال شد.")
+        
+        await context.bot.send_message(
+            chat_id=query.from_user.id,
+            text="✅ فرم تایید و ارسال شد."
+        )
         await context.bot.send_message(chat_id=user_id, text=f"📩 این لینک ورود به گروه رول شماست:\n{rol_link.rol_link}")
+
     elif action == "reject":
-        context.chat_data[unique_id]["rejection_reason"] = ""
-        context.chat_data[unique_id]["rejection_parts"] = []
-        context.chat_data[unique_id]["reject_step"] = "awaiting_text"
-
-        await query.message.edit_caption(
-            caption="🟥 لطفاً دلیل رد شدن بیو رو تایپ کن:",
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("✏️ افزودن بخش مشکل‌دار", callback_data=f"add_reject_part_{unique_id}")],
-                [InlineKeyboardButton("📤 ارسال به کاربر", callback_data=f"send_reject_{unique_id}")],
-                [InlineKeyboardButton("❌ لغو", callback_data=f"cancel_reject_{unique_id}")]
-            ])
+        user_id = int(unique_id)
+        admin_username = query.from_user.username or "admin"
+        
+        await context.bot.send_message(
+            chat_id=user_id,
+            text=f"❌ بیوی شما توسط ادمین رد شد.\nبرای پیگیری به پیوی ادمین برو: @{admin_username}",
+        )
+        remove_bio_from_storage(user_id)
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text="📨 پیام رد شدن برای کاربر ارسال شد.",
+            reply_to_message_id=query.message.message_id
         )
 
-    elif query.data.startswith("send_reject_"):
-        uid = query.data.split("_")[-1]
-        data = context.chat_data.get(uid)
-        if not data:
-             await query.message.reply_text("❌ اطلاعات پیدا نشد.")
-             return
-
-        if not data.get("rejection_reason") or not data.get("rejection_parts"):
-            await query.answer("✏️ هم متن بنویس هم حداقل یه بخش انتخاب کن!", show_alert=True)
-            return
-
-        reason = data["rejection_reason"]
-        parts = "، ".join(data["rejection_parts"])
-        user_id = data["user_id"]
-
-        msg = (
-            "❌ متاسفانه بیوی شما رد شد.\n\n"
-            f"📌 بخش‌های مشکل‌دار: {parts}\n"
-            f"📝 توضیح: {reason}"
-        )
-
-        await context.bot.send_message(chat_id=user_id, text=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔁 ارسال مجدد بیو", callback_data="bio")]
-        ]))
-
-        await query.message.edit_caption("📨 دلیل رد برای کاربر ارسال شد.")
-        context.chat_data.pop(uid, None)
-
-
-    elif query.data.startswith("cancel_reject_"):
-        uid = query.data.split("_")[-1]
-        context.chat_data.pop(uid, None)
-        await query.message.edit_caption("❌ عملیات رد بیو لغو شد.")
 
 
 
@@ -630,7 +649,7 @@ async def show_skill_selection(update, context, page=0):
     total_pages = (len(skills_list) + SKILLS_PER_PAGE - 1) // SKILLS_PER_PAGE
 
     user_state[user_id]["skill_page"] = page
-    
+
     # مهارت‌های این صفحه
     start = page * SKILLS_PER_PAGE
     end = start + SKILLS_PER_PAGE
@@ -656,8 +675,8 @@ async def show_skill_selection(update, context, page=0):
         nav_buttons.append(InlineKeyboardButton("⬅️ قبلی", callback_data=f"skill_page_{page - 1}"))
     if page + 1 < total_pages:
         nav_buttons.append(InlineKeyboardButton("➡️ بعدی", callback_data=f"skill_page_{page + 1}"))
-        
-    
+
+
     if nav_buttons:
         keyboard.append(nav_buttons)
 
@@ -760,23 +779,6 @@ async def handle_skill_continue(update: Update, context: ContextTypes.DEFAULT_TY
     await query.message.edit_text("💠 مشخصات ظاهری رو بنویس:")
 
 
-REJECTABLE_PARTS = [
-    "اسم", "لقب", "سن", "شغل", "کشور", "مهارت‌ها",
-    "ظاهر", "تاریخچه", "آیدی", "هشتگ", "عکس"
-]
-
-async def handle_add_reject_part(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    _, _, uid = query.data.partition("add_reject_part_")
-    data = context.chat_data.get(uid)
-    if not data:
-        await query.message.reply_text("❌ فرم یافت نشد.")
-        return
-
-    keyboard = [[InlineKeyboardButton(p, callback_data=f"part_{uid}_{p}")] for p in REJECTABLE_PARTS]
-    await query.message.reply_text("📌 بخش‌هایی که مشکل دارن رو انتخاب کن:", reply_markup=InlineKeyboardMarkup(keyboard))
-
 
 async def handle_reject_part_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -792,6 +794,7 @@ async def handle_reject_part_selection(update: Update, context: ContextTypes.DEF
     else:
         await query.answer("⚠️ این بخش قبلاً اضافه شده.", show_alert=True)
 
+
 # راه‌اندازی ربات
 app: Application = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
@@ -804,13 +807,24 @@ app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^job_"))
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
 app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
 app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
-app.add_handler(CallbackQueryHandler(handle_add_reject_part, pattern="^add_reject_part_"))
+# app.add_handler(CallbackQueryHandler(handle_add_reject_part, pattern="^add_reject_part_"))
 app.add_handler(CallbackQueryHandler(handle_reject_part_selection, pattern="^part_"))
 app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(send_reject|cancel_reject)_"))
 app.add_handler(CallbackQueryHandler(handle_main_menu))
 # app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_all_messages))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
+
+# flask_app = Flask(__name__)
+
+# @flask_app.route('/')
+# def index():
+#     return '🤖 Bot is running!'
+
+# def run_flask():
+#     flask_app.run(host='0.0.0.0', port=8080)
+
+# threading.Thread(target=run_flask).start()
 
 
 if __name__ == "__main__":
