@@ -61,15 +61,16 @@ app.add_handler(MessageHandler(filters.ChatType.PRIVATE & filters.TEXT & (~filte
 
 # Webhook route
 @flask_app.route(f'/{BOT_TOKEN}', methods=['POST'])
-async def webhook():
+def webhook():
     try:
-        update = Update.de_json(request.get_json(force=True), app.bot)
-        await app.process_update(update)
-        return 'OK', 200
+        json_data = request.get_json()
+        update = Update.de_json(json_data, app.bot)
+        asyncio.run(app.process_update(update))
+        return 'OK'
     except Exception as e:
-        logging.error(f"Webhook error: {e}")
+        logging.error(f"Error processing webhook: {e}")
         return 'Error', 500
-
+    
 # Setup and run
 async def setup():
     await app.initialize()
