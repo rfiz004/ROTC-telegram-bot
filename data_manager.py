@@ -28,9 +28,6 @@ def save_bios(bios):
         json.dump(bios, f, ensure_ascii=False, indent=2)
     upload_to_github(BIOS_FILE, bios)
 
-from datetime import datetime, timedelta
-from storage import load_bios, save_bios
-
 def add_bio_to_storage(user_id, bio_data):
     data = load_bios()
     uid = str(user_id)
