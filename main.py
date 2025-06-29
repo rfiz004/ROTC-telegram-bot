@@ -43,7 +43,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("درود! 👋\n به راهنمای آرپی R.O.T.C خوش اومدی چه کمکی میتونم بهت بکنم؟", reply_markup=main_menu())
 
 # Bot setup
-app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
+app = ApplicationBuilder().token(BOT_TOKEN).concurrent_updates(False).build()
 
 # Add handlers
 app.add_handler(CommandHandler("start", start))
