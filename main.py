@@ -90,14 +90,13 @@ async def setup_webhook():
     print(f"✅ Webhook set to: {webhook_url}")
 
 if __name__ == "__main__":
-    # Initialize the bot application
-    asyncio.run(app.initialize())
-    
-    # Set up webhook
-    asyncio.run(setup_webhook())
-    
+    async def main():
+        await app.initialize()
+        await setup_webhook()
+
+    asyncio.run(main())
+
     print("✅ Bot is running via webhook with Flask")
-    
-    # Run Flask app
+
     port = int(os.environ.get('PORT', 5000))
     flask_app.run(host='0.0.0.0', port=port, debug=False)
