@@ -28,60 +28,60 @@ def save_bios(bios):
         json.dump(bios, f, ensure_ascii=False, indent=2)
     upload_to_github(BIOS_FILE, bios)
 
-def add_bio_to_storage(user_id, bio_data):
-    data = load_bios()
-    uid = str(user_id)
-
-    # 1. افزودن timestamp به بیو
-    bio_data["timestamp"] = datetime.now().isoformat()
-
-    # 2. ذخیره در بخش bios
-    if "bios" not in data:
-        data["bios"] = {}
-
-    data["bios"][uid] = bio_data
-
-    # 3. ذخیره هشتگ در بخش used_hashtags
-    hashtag = bio_data.get("user_id_tag")
-    if hashtag:
-        if "used_hashtags" not in data:
-            data["used_hashtags"] = {}
-
-        data["used_hashtags"][hashtag] = {
-            "timestamp": datetime.now().isoformat()
-        }
-
-    # 4. پاک‌سازی بیوهای قدیمی‌تر از 7 روز
-    cutoff = datetime.now() - timedelta(days=7)
-    data["bios"] = {
-        k: v for k, v in data["bios"].items()
-        if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
-    }
-
-    # 5. ذخیره نهایی
-    save_bios(data)
-
-    try:
-        upload_to_github("bios.json", data, "Update bios & hashtags")
-    except Exception as e:
-        print("❌ خطا در آپلود فایل bios.json به گیت‌هاب:", e)
-
-
 # def add_bio_to_storage(user_id, bio_data):
-#     bios = load_bios()
+#     data = load_bios()
 #     uid = str(user_id)
 
+#     # 1. افزودن timestamp به بیو
 #     bio_data["timestamp"] = datetime.now().isoformat()
 
-#     bios[uid] = bio_data
+#     # 2. ذخیره در بخش bios
+#     if "bios" not in data:
+#         data["bios"] = {}
 
+#     data["bios"][uid] = bio_data
+
+#     # 3. ذخیره هشتگ در بخش used_hashtags
+#     hashtag = bio_data.get("user_id_tag")
+#     if hashtag:
+#         if "used_hashtags" not in data:
+#             data["used_hashtags"] = {}
+
+#         data["used_hashtags"][hashtag] = {
+#             "timestamp": datetime.now().isoformat()
+#         }
+
+#     # 4. پاک‌سازی بیوهای قدیمی‌تر از 7 روز
 #     cutoff = datetime.now() - timedelta(days=7)
-#     bios = {
-#         k: v for k, v in bios.items()
+#     data["bios"] = {
+#         k: v for k, v in data["bios"].items()
 #         if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
 #     }
 
-#     save_bios(bios)
+#     # 5. ذخیره نهایی
+#     save_bios(data)
+
+#     try:
+#         upload_to_github("bios.json", data, "Update bios & hashtags")
+#     except Exception as e:
+#         print("❌ خطا در آپلود فایل bios.json به گیت‌هاب:", e)
+
+
+def add_bio_to_storage(user_id, bio_data):
+    bios = load_bios()
+    uid = str(user_id)
+
+    bio_data["timestamp"] = datetime.now().isoformat()
+
+    bios[uid] = bio_data
+
+    cutoff = datetime.now() - timedelta(days=7)
+    bios = {
+        k: v for k, v in bios.items()
+        if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
+    }
+
+    save_bios(bios)
 
 def remove_bio_from_storage(user_id):
     bios = load_bios()

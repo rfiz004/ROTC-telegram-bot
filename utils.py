@@ -45,10 +45,29 @@ def validate_username(text):
     import re
     return re.match(r"^@[\w\d_]{5,}$", text)
 
+# def save_used_hashtag(hashtag: str):
+#     hashtag = hashtag.lower()  # همه‌چیز به صورت lowercase ذخیره می‌شه
+#     try:
+#         with open("bios.json", "r", encoding="utf-8") as f:
+#             data = json.load(f)
+#     except:
+#         data = {}
+
+#     if "used_hashtags" not in data:
+#         data["used_hashtags"] = {}
+
+#     data["used_hashtags"][hashtag] = {
+#         "timestamp": datetime.utcnow().isoformat()
+#     }
+
+#     with open("bios.json", "w", encoding="utf-8") as f:
+#         json.dump(data, f, indent=2, ensure_ascii=False)
+
+
 def save_used_hashtag(hashtag: str):
-    hashtag = hashtag.lower()
+    hashtag = hashtag.lower()  # تبدیل به حروف کوچک برای جلوگیری از تکراری شدن
     try:
-        with open("bios.json", "r") as f:
+        with open("bios.json", "r", encoding="utf-8") as f:
             data = json.load(f)
     except:
         data = {}
@@ -56,16 +75,39 @@ def save_used_hashtag(hashtag: str):
     if "used_hashtags" not in data:
         data["used_hashtags"] = {}
 
-    data["used_hashtags"][hashtag] = True
+    data["used_hashtags"][hashtag] = True  # فقط True ذخیره کن، بدون زمان
 
-    with open("bios.json", "w") as f:
+    with open("bios.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
+
+        
 def is_hashtag_unique_permanent(hashtag: str) -> bool:
     hashtag = hashtag.lower()
     try:
-        with open("bios.json", "r") as f:
+        with open("bios.json", "r", encoding="utf-8") as f:
             data = json.load(f)
-        return hashtag not in data.get("used_hashtags", {})
-    except:
+        used_hashtags = data.get("used_hashtags", {})
+        return hashtag not in used_hashtags
+    except Exception as e:
+        print("Error reading bios.json:", e)
         return True
+
+
+# def save_used_hashtag(hashtag: str):
+#     hashtag = hashtag.lower()
+#     try:
+#         with open("bios.json", "r", encoding="utf-8") as f:
+#             data = json.load(f)
+#     except:
+#         data = {}
+
+#     if "used_hashtags" not in data:
+#         data["used_hashtags"] = {}
+
+#     data["used_hashtags"][hashtag] = {
+#         "timestamp": datetime.utcnow().isoformat()
+#     }
+
+#     with open("bios.json", "w", encoding="utf-8") as f:
+#         json.dump(data, f, ensure_ascii=False, indent=2)

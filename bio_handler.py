@@ -282,7 +282,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
         current["level"] = level
         
         current["step"] = "completed"
-        #no no nooooooooooooo
+      
         caption = format_bio_text(current)
         unique_id = str(update.message.from_user.id)
         context.user_data[user_id]["unique_id"] = unique_id
