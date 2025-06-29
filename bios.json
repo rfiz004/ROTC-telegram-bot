@@ -1,1 +1,28 @@
-{}
+{
+  "6213073537": {
+    "step": "completed",
+    "country": "Alestria",
+    "job": "فرمانده",
+    "expires_at": "2025-06-29T14:10:28.092795",
+    "name": "ینسحسن",
+    "nickname": "خیحسح",
+    "age": "۳۲",
+    "skills": [
+      "مدیریت امور اقتصادی",
+      "ستاره شناسی",
+      "مهارت شمشیرزنی و تبرزنی"
+    ],
+    "skill_page": 0,
+    "skill1": "مدیریت امور اقتصادی",
+    "skill2": "ستاره شناسی",
+    "skill3": "مهارت شمشیرزنی و تبرزنی",
+    "appearance": "یوینسنس",
+    "history": "تیسنسنسن",
+    "id_number": "@Valeria_cas",
+    "user_id_tag": "#valval",
+    "photo": "AgACAgQAAxkBAAIE72hhQnz39N9tgo3WOj0y9EU-UfN6AAJyyDEbjOIJU0SDkWG6RPOEAQADAgADeQADNgQ",
+    "level": 1,
+    "unique_id": "6213073537",
+    "timestamp": "2025-06-29T13:41:16.903555"
+  }
+}
