@@ -4,7 +4,10 @@ from telegram.ext import (
     MessageHandler, filters, ContextTypes
 )
 import logging
+from flask import Flask, request
 import os
+import asyncio
+
 from config import BOT_TOKEN
 from keyboards import main_menu
 from callback_handlers import handle_main_menu, handle_back_navigation
@@ -23,23 +26,25 @@ logging.basicConfig(
     level=logging.INFO
 )
 
+# Flask setup
+flask_app = Flask(__name__)
+app = ApplicationBuilder().token(BOT_TOKEN).concurrent_updates(False).build()
+
+# --- Start Command ---
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "درود! 👋\n به راهنمای آرپی R.O.T.C خوش اومدی چه کمکی میتونم بهت بکنم؟",
         reply_markup=main_menu()
     )
 
-async def set_bot_commands(application):
-    await application.bot.set_my_commands([
+# --- Command Buttons ---
+async def set_bot_commands():
+    await app.bot.set_my_commands([
         BotCommand("start", "شروع دوباره"),
     ])
 
-if __name__ == "__main__":
-    from telegram.ext import Application
-
-    app = ApplicationBuilder().token(BOT_TOKEN).concurrent_updates(False).build()
-
-    # Add handlers
+# --- Add Handlers ---
+def register_handlers():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
     app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
@@ -55,19 +60,28 @@ if __name__ == "__main__":
     app.add_handler(MessageHandler(filters.ChatType.PRIVATE & filters.PHOTO, collect_bio))
     app.add_handler(MessageHandler(filters.ChatType.PRIVATE & filters.TEXT & (~filters.COMMAND), handle_all_messages))
 
-    async def main():
-        await app.initialize()
-        await set_bot_commands(app)
-        webhook_url = f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}/{BOT_TOKEN}"
-        await app.bot.set_webhook(webhook_url)
-        print(f"✅ Webhook set to: {webhook_url}")
+# --- Webhook Endpoint ---
+@flask_app.route(f'/{BOT_TOKEN}', methods=['POST'])
+def webhook():
+    update = Update.de_json(request.get_json(force=True), app.bot)
+    asyncio.create_task(app.process_update(update))
+    return 'OK'
 
-        # Start built-in webhook server
-        await app.run_webhook(
-            listen="0.0.0.0",
-            port=int(os.environ.get("PORT", 5000)),
-            webhook_url=webhook_url,
-        )
+# --- Initial Setup ---
+async def setup():
+    register_handlers()
+    await app.initialize()
+    await set_bot_commands()
+    await app.bot.set_webhook(f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}/{BOT_TOKEN}")
+    print("✅ Webhook set!")
 
-    import asyncio
-    asyncio.run(main())
+# --- Run setup without asyncio.run ---
+async def run_setup():
+    await setup()
+
+asyncio.get_event_loop().create_task(run_setup())
+
+# --- Run Flask ---
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    flask_app.run(host="0.0.0.0", port=port)
