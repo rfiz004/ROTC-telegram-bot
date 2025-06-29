@@ -8,6 +8,7 @@ import logging
 from flask import Flask, request
 import asyncio
 import os
+import threading
 
 from config import BOT_TOKEN
 from keyboards import main_menu
@@ -62,26 +63,23 @@ app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), ha
 
 @flask_app.route(f'/{BOT_TOKEN}', methods=['POST'])
 def webhook():
-    """Handle incoming webhook updates from Telegram"""
     try:
         json_data = request.get_json()
         update = Update.de_json(json_data, app.bot)
-        
-        # Process the update asynchronously
-        asyncio.create_task(app.process_update(update))
-        
+
+        # Run the coroutine in a new event loop inside a thread
+        def run_update():
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(app.process_update(update))
+            loop.close()
+
+        threading.Thread(target=run_update).start()
+
         return 'OK'
     except Exception as e:
         logging.error(f"Error processing webhook: {e}")
         return 'Error', 500
-
-@flask_app.route('/')
-def index():
-    return 'Telegram Bot is running!'
-
-@flask_app.route('/health')
-def health():
-    return 'OK'
 
 async def setup_webhook():
     """Set up the webhook URL"""
