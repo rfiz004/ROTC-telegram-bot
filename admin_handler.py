@@ -138,7 +138,7 @@ async def handle_bio_approval(update: Update,
     bios = load_bios()
     bio_data = bios.get(unique_id)
 
-    if not bio_data:
+    if not bio_data or bio_data.get("step") != "completed":
         await query.message.edit_caption(
             caption=
             "❌ یا اطلاعات بیشتر از 7 روز ول بوده حذف شده یا قبلا بررسی کردی بازم حذف شده لپ کلام پیداش نکردم تو دیتابیس"

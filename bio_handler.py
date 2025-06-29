@@ -280,12 +280,16 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         level = job_data["level"]
         current["level"] = level
-
+        
+        current["step"] = "completed"
+        
         caption = format_bio_text(current)
         unique_id = str(update.message.from_user.id)
         context.user_data[user_id]["unique_id"] = unique_id
 
         buttons = bio_approval_keyboard(unique_id)
+
+        
 
         add_bio_to_storage(user_id, current)
 
