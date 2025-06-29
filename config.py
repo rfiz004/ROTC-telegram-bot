@@ -14,7 +14,7 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKENN")
 GITHUB_BRANCH = "main"
 
 # Admin Configuration
-BIO_ADMIN_ID = 5890943003
+BIO_ADMIN_ID = 5564554013
 BIO_CHANNEL = "@R_O_T_C_Bio"
 
 # File Paths
