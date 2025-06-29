@@ -1,1 +1,28 @@
-{}
+{
+  "1771323853": {
+    "step": "completed",
+    "country": "Azure",
+    "job": "نخست وزیر",
+    "expires_at": "2025-06-29T14:15:43.303120",
+    "name": "یوهاهاها",
+    "nickname": "ادمین دلقک بی رحم",
+    "age": "۲۳",
+    "skills": [
+      "مدیریت امور اقتصادی",
+      "مهارت شمشیرزنی و تبرزنی",
+      "ستاره شناسی"
+    ],
+    "skill_page": 1,
+    "skill1": "مدیریت امور اقتصادی",
+    "skill2": "مهارت شمشیرزنی و تبرزنی",
+    "skill3": "ستاره شناسی",
+    "appearance": "یه لات کیوت",
+    "history": "باع",
+    "id_number": "@nanadi83",
+    "user_id_tag": "#lora",
+    "photo": "AgACAgQAAxkBAAIFSmhhQ9QJg2Sao9oL7GlqzuNALz2wAAKJzDEb8UcIUzokF3z2QqevAQADAgADeAADNgQ",
+    "level": 1,
+    "unique_id": "1771323853",
+    "timestamp": "2025-06-29T13:47:00.998384"
+  }
+}
