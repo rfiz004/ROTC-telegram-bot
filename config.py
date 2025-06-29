@@ -3,6 +3,9 @@ import os
 
 # Bot Configuration
 BOT_TOKEN = os.environ["BOT_TOKEN"]
+if not BOT_TOKEN:
+    raise RuntimeError("❌ BOT_TOKEN is not set in environment variables!")
+
 PORT = int(os.environ.get("PORT", 8443))
 
 # GitHub Configuration
