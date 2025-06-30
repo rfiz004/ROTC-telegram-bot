@@ -1,7 +1,8 @@
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from datetime import datetime, timedelta
+# from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 import re
 from data_manager import jobs_by_country, skills_list, save_data, add_bio_to_storage
 from keyboards import country_jobs_keyboard, create_skill_selection_keyboard, bio_approval_keyboard, restart_button
@@ -172,12 +173,15 @@ async def handle_skill_continue(update: Update, context: ContextTypes.DEFAULT_TY
 
 async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
+
+
+    
     text = update.message.text
 
     user_data = context.user_data.get(user_id, {})
     expires_at = user_data.get("expires_at")
     
-    if expires_at and datetime.utcnow() > datetime.fromisoformat(expires_at):
+    if expires_at and datetime.now(timezone.utc) > datetime.fromisoformat(expires_at):
         country = user_data["country"]
         job = user_data["job"]
         job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
