@@ -257,7 +257,8 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 return
 
             context.user_data[user_id]["step"] = next_step
-            await update.message.reply_text(msg)
+            if msg:
+                await update.message.reply_text(msg)
             return
 
     if step == next_steps[-1][0]: 
