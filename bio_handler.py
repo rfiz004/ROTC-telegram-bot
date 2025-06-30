@@ -8,7 +8,7 @@ from data_manager import jobs_by_country, skills_list, save_data, add_bio_to_sto
 from keyboards import country_jobs_keyboard, create_skill_selection_keyboard, bio_approval_keyboard, restart_button
 from utils import calculate_skill_pages, get_page_skills, validate_age, validate_hashtag, validate_username, format_bio_text, is_hashtag_unique_permanent, save_used_hashtag
 from config import BIO_ADMIN_ID, SKILLS_PER_PAGE, COUNTRIES
-
+#try
 async def select_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
