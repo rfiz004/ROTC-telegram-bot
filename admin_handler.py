@@ -1,10 +1,10 @@
-
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from data_manager import jobs_by_country, skills_list, save_data, load_bios, remove_bio_from_storage
-from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard,admin_back_buttons
+from data_manager import jobs_by_country, skills_config, save_data, load_bios, remove_bio_from_storage, remove_used_hashtag
+from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard, admin_back_buttons, skill_management_keyboard
 from utils import format_bio_text
 from config import BIO_CHANNEL, ROLE_CHAT_ID, REALCHAT_ID
+
 
 async def show_admin_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -26,10 +26,14 @@ async def show_admin_skill_list(update: Update,
                                 context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    skills_text = "📚 لیست مهارتا:\n" + "\n".join(f"🔹 {s}" for s in skills_list)
-    await query.message.edit_text(skills_text,
-                                  reply_markup=skill_management_keyboard())
+    normal_skills = skills_config["normal"]
+    special_skills = skills_config["special"]
 
+    skills_text = "📘 مهارت‌های عادی:\n" + "\n".join(f"🔹 {s}" for s in normal_skills)
+    skills_text += "\n\n💠 مهارت‌های خاص:\n" + "\n".join(f"🔸 {s}" for s in special_skills)
+    await query.message.edit_text(skills_text,
+                                  reply_markup=skill_management_keyboard()
+                                 )
 
 async def show_country_jobs(update: Update,
                             context: ContextTypes.DEFAULT_TYPE):
@@ -118,9 +122,13 @@ async def handle_skill_actions(update: Update,
     if query.data == "add_skill":
         await context.bot.send_message(
             chat_id=query.message.chat_id,
-            text="📝 مهارت جدید رو بنویس:",
-            reply_markup=admin_back_buttons())
-        context.user_data[user_id] = {"step": "adding_skill", "previous_step": "admin_skill_list"}
+            text="🧪 نوع مهارتی که می‌خوای اضافه کنی رو انتخاب کن:",
+            reply_markup=skill_type_selection_keyboard()
+        )
+        context.user_data[user_id] = {
+            "step": "choosing_skill_type",
+            "previous_step": "admin_skill_list"
+        }
     elif query.data == "remove_skill":
         await context.bot.send_message(
             chat_id=query.message.chat_id,
@@ -128,6 +136,56 @@ async def handle_skill_actions(update: Update,
             reply_markup=admin_back_buttons())
         context.user_data[user_id] = {"step": "removing_skill", "previous_step": "admin_skill_list"}
 
+async def handle_admin_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.message.from_user.id
+    text = update.message.text.strip()
+    state = context.user_data.get(user_id, {})
+
+    step = state.get("step")
+
+    # افزودن مهارت
+    if step == "awaiting_skill_name":
+        skill_type = state.get("skill_type")
+        skill_list = skills_config.get(skill_type, [])
+
+        if text in skill_list:
+            await update.message.reply_text("⚠️ این مهارت قبلاً ثبت شده. لطفاً اسم دیگه‌ای بزن.")
+            return
+
+        skills_config[skill_type].append(text)
+
+        save_data({
+            "jobs_by_country": jobs_by_country,
+            "skills_config": skills_config
+        })
+
+        await update.message.reply_text(
+            f"✅ مهارت جدید به لیست {'عادی' if skill_type == 'normal' else 'خاص'} اضافه شد.",
+            reply_markup=skill_management_keyboard()
+        )
+        context.user_data.pop(user_id, None)
+
+    # حذف مهارت
+    elif step == "removing_skill":
+        # بررسی در هر دو لیست
+        for skill_type in ["normal", "special"]:
+            if text in skills_config.get(skill_type, []):
+                skills_config[skill_type].remove(text)
+
+                save_data({
+                    "jobs_by_country": jobs_by_country,
+                    "skills_config": skills_config
+                })
+
+                await update.message.reply_text(
+                    f"🗑 مهارت «{text}» از لیست {'عادی' if skill_type == 'normal' else 'خاص'} حذف شد.",
+                    reply_markup=skill_management_keyboard()
+                )
+                context.user_data.pop(user_id, None)
+                return
+
+        # اگر در هیچ لیستی نبود
+        await update.message.reply_text("❌ مهارت مورد نظر در لیست پیدا نشد. لطفاً مجدد بررسی کن.")
 
 async def handle_bio_approval(update: Update,
                               context: ContextTypes.DEFAULT_TYPE):
@@ -136,9 +194,9 @@ async def handle_bio_approval(update: Update,
     action, _, unique_id = query.data.partition("_bio_")
 
     bios = load_bios()
-    bio_data = bios.get(unique_id)
+    bio_data = bios.get("bios", {}).get(unique_id)
 
-    if not bio_data or bio_data.get("step") != "completed":
+    if not bio_data:
         await query.message.edit_caption(
             caption=
             "❌ یا اطلاعات بیشتر از 7 روز ول بوده حذف شده یا قبلا بررسی کردی بازم حذف شده لپ کلام پیداش نکردم تو دیتابیس"
@@ -161,7 +219,7 @@ async def handle_bio_approval(update: Update,
 
         save_data({
             "jobs_by_country": jobs_by_country,
-            "skills_list": skills_list
+            "skills_config": skills_config
         })
 
         # Send to bio channel
@@ -229,15 +287,19 @@ async def handle_bio_approval(update: Update,
                 job_data["count"] += 1
                 save_data({
                     "jobs_by_country": jobs_by_country,
-                    "skills_list": skills_list
+                    "skills_config": skills_config
                 })
 
         # Send rejection message to user
         await context.bot.send_message(
             chat_id=user_id,
             text=
-            f"❌ بیوتو ادمین بی‌رحم رد کرده.\nبرو بگو چرا رد کردی، خودم پشتتم(الکی) ایدیش:  @{admin_username}",
+            f"❌ بیوتو ادمین بی‌رحم رد کرده.\nبرو بگو چرا رد کردی، خودم پشتتم (الکی) @{admin_username}",
         )
+
+        tag = bio_data.get("user_id_tag")
+        if tag:
+            remove_used_hashtag(tag)
 
         # Remove bio from storage
         remove_bio_from_storage(user_id)
@@ -250,8 +312,4 @@ async def handle_bio_approval(update: Update,
             reply_to_message_id=query.message.message_id)
 
 
-# Placeholder for missing callback handler reference
-async def handle_reject_part_selection(update: Update,
-                                       context: ContextTypes.DEFAULT_TYPE):
-    # This function was referenced but not implemented in the original code
-    pass
+

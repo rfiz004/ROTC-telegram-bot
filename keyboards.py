@@ -65,6 +65,14 @@ def skill_management_keyboard():
         [InlineKeyboardButton("🏠 صفحه اصلی", callback_data="back_to_main")]
     ])
 
+def skill_type_selection_keyboard():
+    return InlineKeyboardMarkup([
+        [InlineKeyboardButton("📘 مهارت عادی", callback_data="skill_type_normal")],
+        [InlineKeyboardButton("💠 مهارت خاص", callback_data="skill_type_special")],
+        [InlineKeyboardButton("🔙 برگشت", callback_data="back_to_admin_menu")]
+    ])
+
+
 def bio_approval_keyboard(unique_id):
     return InlineKeyboardMarkup([
         [

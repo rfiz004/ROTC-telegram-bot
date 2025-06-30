@@ -46,6 +46,16 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await handle_skill_actions(update, context)
     elif data == "remove_skill":
         await handle_skill_actions(update, context)
+    elif data.startswith("skill_type_"):
+        skill_type = data.split("_")[-1]  
+        context.user_data[user_id] = {
+            "step": "awaiting_skill_name",
+            "skill_type": skill_type,
+            "previous_step": "admin_skill_list"
+        }
+        await query.message.edit_text(f"📝 اسم مهارت { 'عادی' if skill_type == 'normal' else 'خاص' } رو بفرست:",
+                                      reply_markup=admin_back_buttons())
+
 
 async def handle_back_navigation(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

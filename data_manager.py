@@ -2,7 +2,7 @@
 import json
 import os
 import datetime
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import base64
 import requests
 from config import BIOS_FILE, DATA_FILE, GITHUB_REPO, GITHUB_TOKEN, GITHUB_BRANCH
@@ -28,66 +28,17 @@ def save_bios(bios):
         json.dump(bios, f, ensure_ascii=False, indent=2)
     upload_to_github(BIOS_FILE, bios)
 
-# def add_bio_to_storage(user_id, bio_data):
-#     data = load_bios()
-#     uid = str(user_id)
-
-#     # 1. افزودن timestamp به بیو
-#     bio_data["timestamp"] = datetime.now().isoformat()
-
-#     # 2. ذخیره در بخش bios
-#     if "bios" not in data:
-#         data["bios"] = {}
-
-#     data["bios"][uid] = bio_data
-
-#     # 3. ذخیره هشتگ در بخش used_hashtags
-#     hashtag = bio_data.get("user_id_tag")
-#     if hashtag:
-#         if "used_hashtags" not in data:
-#             data["used_hashtags"] = {}
-
-#         data["used_hashtags"][hashtag] = {
-#             "timestamp": datetime.now().isoformat()
-#         }
-
-#     # 4. پاک‌سازی بیوهای قدیمی‌تر از 7 روز
-#     cutoff = datetime.now() - timedelta(days=7)
-#     data["bios"] = {
-#         k: v for k, v in data["bios"].items()
-#         if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
-#     }
-
-#     # 5. ذخیره نهایی
-#     save_bios(data)
-
-#     try:
-#         upload_to_github("bios.json", data, "Update bios & hashtags")
-#     except Exception as e:
-#         print("❌ خطا در آپلود فایل bios.json به گیت‌هاب:", e)
-
-
-def add_bio_to_storage(user_id, bio_data):
-    bios = load_bios()
-    uid = str(user_id)
-
-    bio_data["timestamp"] = datetime.now().isoformat()
-
-    bios[uid] = bio_data
-
-    cutoff = datetime.now() - timedelta(days=7)
-    bios = {
-        k: v for k, v in bios.items()
-        if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
-    }
-
-    save_bios(bios)
 
 def remove_bio_from_storage(user_id):
     bios = load_bios()
     uid = str(user_id)
-    if uid in bios:
-        del bios[uid]
+    if "bios" in bios and uid in bios["bios"]:
+        tag = bios["bios"][uid].get("user_id_tag")
+        used = bios.get("used_hashtags", [])
+        if tag and tag in used:
+            used.remove(tag)
+            bios["used_hashtags"] = used
+        del bios["bios"][uid]
         save_bios(bios)
 
 def load_data():
@@ -130,7 +81,48 @@ def upload_to_github(filename, data_dict, commit_message=None):
         print(f"❌ خطا در ذخیره {filename}: {response.text}")
 
 
+RESERVATION_FILE = "job_reservations.json"
+
+def load_job_reservations():
+    if not os.path.exists(RESERVATION_FILE):
+        return {}
+    with open(RESERVATION_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_job_reservations(data):
+    with open(RESERVATION_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    upload_to_github(RESERVATION_FILE, data)
+
+
+    def clear_expired_reservations(jobs_by_country):
+        reservations = load_job_reservations()
+        now = datetime.now(timezone.utc)
+        expired_users = []
+
+        for user_id, info in reservations.items():
+            reserved_at = datetime.fromisoformat(info["reserved_at"])
+            if now - reserved_at > timedelta(minutes=30):
+                country = info["country"]
+                job_name = info["job"]
+                job_list = jobs_by_country.get(country, [])
+
+                for job in job_list:
+                    if job["name"] == job_name:
+                        job["count"] += 1
+                        break
+
+                expired_users.append(user_id)
+
+        for user_id in expired_users:
+            del reservations[user_id]
+
+        if expired_users:
+            save_job_reservations(reservations)
+            save_data({"jobs_by_country": jobs_by_country})
+
 # Initialize data
 data = load_data()
 jobs_by_country = data["jobs_by_country"]
-skills_list = data["skills_list"]
+skills_config = data["skills_config"]
+

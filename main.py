@@ -17,12 +17,12 @@ from callback_handlers import handle_main_menu, handle_back_navigation
 from message_handlers import handle_all_messages
 from bio_handler import (
     select_job, ask_bio_fields, handle_skill_navigation, 
-    handle_skill_reset, handle_skill_continue, handle_skill_selection, collect_bio
+    handle_skill_reset, handle_skill_continue, handle_skill_selection, collect_bio, handle_job_locks
 )
 from admin_handler import (
     show_country_jobs, handle_job_actions, handle_bio_approval
 )
-
+from data_manager import clear_expired_reservations, jobs_by_country
 
 
 
@@ -50,6 +50,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Bot setup
 app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
 
+async def scheduled_cleanup(context: ContextTypes.DEFAULT_TYPE):
+    cleared = clear_expired_reservations(jobs_by_country)
+    if cleared:
+        print(f"🧹 {cleared} رزرو منقضی شده آزاد شد.")
+
+# برنامه‌ریزی هر ۵ دقیقه
+app.job_queue.run_repeating(
+    scheduled_cleanup,
+    interval=300,   # هر 5 دقیقه = 300 ثانیه
+    first=10        # شروع ۱۰ ثانیه بعد از راه‌اندازی
+)
+
 # Add handlers
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_")) 
@@ -57,6 +69,7 @@ app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$
 app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
 app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))  
 app.add_handler(CallbackQueryHandler(select_job, pattern="^select_country_"))
+app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$"))
 app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^job_"))
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
 app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
@@ -65,6 +78,8 @@ app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_p
 app.add_handler(CallbackQueryHandler(handle_main_menu))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
+
+
 
 # @flask_app.route(f'/{BOT_TOKEN}', methods=['POST'])
 # def webhook():
