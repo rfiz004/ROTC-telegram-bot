@@ -7,7 +7,7 @@ import base64
 import requests
 from config import BIOS_FILE, DATA_FILE, GITHUB_REPO, GITHUB_TOKEN, GITHUB_BRANCH
 
-#ye
+
 def get_used_hashtags():
     bios = load_bios()
     return bios.get("used_hashtags", [])

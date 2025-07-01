@@ -16,8 +16,7 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
         return
     if state.get("step") == "awaiting_rp_password":
         await handle_password_message(update, context)
-        return
-
+        
     elif step == "add_job":
         parts = update.message.text.split("-")
         if len(parts) != 3:
