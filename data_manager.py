@@ -28,6 +28,30 @@ def save_bios(bios):
         json.dump(bios, f, ensure_ascii=False, indent=2)
     upload_to_github(BIOS_FILE, bios)
 
+def add_bio_to_storage(user_id, bio_data):
+    bios = load_bios()
+    uid = str(user_id)
+
+    bio_data["timestamp"] = datetime.now().isoformat()
+
+    # حفظ لیست هشتگ‌ها
+    existing_hashtags = bios.get("used_hashtags", [])
+    if "bios" not in bios:
+        bios["bios"] = {}
+    if "used_hashtags" not in bios:
+        bios["used_hashtags"] = []
+    bios["bios"][uid] = bio_data
+    bios["used_hashtags"] = existing_hashtags
+
+    # حذف بیوهای قدیمی
+    cutoff = datetime.now() - timedelta(days=7)
+    bios["bios"] = {
+        k: v for k, v in bios["bios"].items()
+        if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
+    }
+
+
+    save_bios(bios)
 
 def remove_bio_from_storage(user_id):
     bios = load_bios()
