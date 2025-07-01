@@ -147,6 +147,8 @@ def clear_expired_reservations(jobs_by_country):
 
     for user_id, info in reservations.items():
         reserved_at = datetime.fromisoformat(info["reserved_at"])
+        if reserved_at.tzinfo is None:
+            reserved_at = reserved_at.replace(tzinfo=timezone.utc)
         if now - reserved_at > timedelta(minutes=30):
             country = info["country"]
             job_name = info["job"]
