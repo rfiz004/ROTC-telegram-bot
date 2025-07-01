@@ -2,37 +2,34 @@
   "bios": {
     "6213073537": {
       "step": "asking_photo",
-      "country": "Imperial",
-      "job": "فرمانده",
-      "expires_at": "2025-07-01T10:30:09.748086",
-      "name": "Djdsjsj",
-      "nickname": "Ejwjw",
+      "country": "Santos",
+      "job": "مشاور سطلنتی",
+      "expires_at": "2025-07-01T12:37:31.076923",
+      "name": "lk",
+      "nickname": "sfg",
       "age": "23",
       "skills": [
-        "مدیریت امور داخلی",
-        "سم شناسی",
-        "داروشناسی",
-        "ساخت دارو و سم",
-        "حواس پنجگانه قوی"
+        "ستاره شناسی",
+        "مهارت کار با نیزه",
+        "مقاومت بالا"
       ],
       "skills_description_sent": true,
       "skill_page": 2,
-      "skill1": "مدیریت امور داخلی",
-      "skill2": "سم شناسی",
-      "skill3": "داروشناسی",
-      "skill4": "ساخت دارو و سم",
-      "skill5": "حواس پنجگانه قوی",
-      "appearance": "Djskskw",
-      "history": "Jssjwjw",
+      "skill1": "ستاره شناسی",
+      "skill2": "مهارت کار با نیزه",
+      "skill3": "مقاومت بالا",
+      "appearance": "dfghjk",
+      "history": "ghjkl",
       "id_number": "@Valeria_cas",
-      "user_id_tag": "#hello",
-      "photo": "AgACAgQAAxkBAAIFyGhjshyvTwUQvKquSuFRe3e4wM8uAAKKxTEbjqsgUwG2JrBNDOADAQADAgADeAADNgQ",
+      "user_id_tag": "#bea",
+      "photo": "AgACAgQAAxkBAAIGB2hjz8fhRkeehgxTt4zbFczuKBUsAAKyxTEbjqsgU87ZxlfmsTetAQADAgADeAADNgQ",
       "level": 1,
       "unique_id": "6213073537",
-      "timestamp": "2025-07-01T10:02:04.793515"
+      "timestamp": "2025-07-01T12:08:39.565721"
     }
   },
   "used_hashtags": [
-    "#hello"
+    "#hello",
+    "#bea"
   ]
 }
