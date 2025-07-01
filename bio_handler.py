@@ -78,7 +78,7 @@ async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await query.message.reply_text("⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!")
     await query.message.reply_text("📛بچه خوشگل اسم کارکترتو کخ کن بیاد")
-
+#w
 async def show_skill_selection(update, context, page=0):
     if update.callback_query:
         query = update.callback_query
