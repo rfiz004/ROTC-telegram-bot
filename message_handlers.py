@@ -5,6 +5,7 @@ from data_manager import jobs_by_country, skills_config, save_data
 from keyboards import bio_admin_menu
 from bio_handler import collect_bio
 from callback_handlers import handle_password_message
+from admin_handler import handle_admin_text_message
 
 async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
