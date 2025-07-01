@@ -1,7 +1,7 @@
 
 from telegram import Update
 from telegram.ext import ContextTypes
-from data_manager import jobs_by_country, skills_list, save_data
+from data_manager import jobs_by_country, skills_config, save_data
 from keyboards import bio_admin_menu
 from bio_handler import collect_bio
 from callback_handlers import handle_password_message
@@ -10,38 +10,13 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = update.message.from_user.id
     state = context.user_data.get(user_id, {})
     step = state.get("step")
-
+    if state.get("step") in ["awaiting_skill_name", "removing_skill"]:
+        await handle_admin_text_message(update, context)
+        return
     if state.get("step") == "awaiting_rp_password":
         await handle_password_message(update, context)
-    elif state.get("step") == "adding_skill":
-        skill = update.message.text.strip()
+        return
 
-        if skill in skills_list:
-            await update.message.reply_text("⚠️ خدایی دوتا مهارت یکسان و میخوای تو کجات کنی؟؟ یکی دیگه انتخاب کن")
-            # Don't clear user_data, keep them in the same step
-        else:
-            skills_list.append(skill)
-            save_data({
-                "jobs_by_country": jobs_by_country,
-                "skills_list": skills_list
-            })
-            await update.message.reply_text("✅ مهارت اضافه شد.", reply_markup=bio_admin_menu())
-            context.user_data.pop(user_id, None)
-
-    elif state.get("step") == "removing_skill":
-        skill_to_remove = update.message.text.strip()
-        if skill_to_remove in skills_list:
-            skills_list.remove(skill_to_remove)
-            save_data({
-              "jobs_by_country": jobs_by_country,
-              "skills_list": skills_list
-            })
-            await update.message.reply_text("❌ مهارت حذف شد.", reply_markup=bio_admin_menu())
-            context.user_data.pop(user_id, None)
-        else:
-            await update.message.reply_text("⚠️ مهارت پیدا نشد. دوباره تلاش کن:")
-            # Don't clear user_data, keep them in the same step
-        
     elif step == "add_job":
         parts = update.message.text.split("-")
         if len(parts) != 3:
@@ -62,7 +37,7 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
             jobs_by_country[country].append({"name": name, "level": level, "count": count})
             save_data({
                 "jobs_by_country": jobs_by_country,
-                "skills_list": skills_list
+                "skills_config": skills_config
             })
             await update.message.reply_text("✅ شغل اضافه شد.", reply_markup=bio_admin_menu())
             context.user_data.pop(user_id, None)
@@ -87,7 +62,7 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
         jobs_by_country[country] = [j for j in jobs if j["name"] != name]
         save_data({
             "jobs_by_country": jobs_by_country,
-            "skills_list": skills_list
+            "skills_config": skills_config
         })
         await update.message.reply_text("❌ شغل حذف شد.", reply_markup=bio_admin_menu())
         context.user_data.pop(user_id, None)
@@ -115,8 +90,8 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
                 
             job["count"] += amount
             save_data({
-              "jobs_by_country": jobs_by_country,
-              "skills_list": skills_list
+                "jobs_by_country": jobs_by_country,
+                "skills_config": skills_config
             })
             await update.message.reply_text("✅ ظرفیت بیشتر شد.", reply_markup=bio_admin_menu())
             context.user_data.pop(user_id, None)
@@ -151,7 +126,7 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
             job["count"] = max(0, job["count"] - amount)
             save_data({
                 "jobs_by_country": jobs_by_country,
-                "skills_list": skills_list
+                "skills_config": skills_config
             })
             await update.message.reply_text("✅ ظرفیت کم شد.", reply_markup=bio_admin_menu())
             context.user_data.pop(user_id, None)
