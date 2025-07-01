@@ -1,5 +1,6 @@
 
 from config import SKILLS_PER_PAGE
+import re
 
 def chunk_list(lst, size):
     """تقسیم لیست به بخش‌های کوچکتر"""
@@ -34,13 +35,37 @@ def get_page_skills(skills_list, page):
 
 def validate_age(text):
     """Validate age input"""
-    return text.isdigit() and 10 <= int(text) <= 100
+    try:
+        age = int(text)
+        return 13 <= age <= 100
+    except ValueError:
+        return False
 
-def validate_hashtag(text):
-    """Validate hashtag format"""
-    return text.startswith("#") and text[1:].isalnum()
+def validate_hashtag(hashtag, used_hashtags):
+    """Validate hashtag format and uniqueness"""
+    # Remove # if user included it
+    if hashtag.startswith('#'):
+        hashtag = hashtag[1:]
+    
+    # Check format (alphanumeric and underscores only, reasonable length)
+    if not re.match(r'^[a-zA-Z0-9_]{3,20}$', hashtag):
+        return False, "❌ هشتگ باید بین 3 تا 20 کاراکتر باشه و فقط شامل حروف انگلیسی، اعداد و _ باشه."
+    
+    # Check if already used
+    full_hashtag = f"#{hashtag}"
+    if full_hashtag in used_hashtags:
+        return False, "❌ این هشتگ قبلاً استفاده شده. یکی دیگه انتخاب کن:"
+    
+    return True, full_hashtag
 
-def validate_username(text):
-    """Validate username format"""
-    import re
-    return re.match(r"^@[\w\d_]{5,}$", text)
+def validate_username(username):
+    """Validate Telegram username format"""
+    # Remove @ if user included it
+    if username.startswith('@'):
+        username = username[1:]
+    
+    # Check format
+    if not re.match(r'^[a-zA-Z][a-zA-Z0-9_]{4,31}$', username):
+        return False, "❌ آیدی معتبر نیست. باید با حرف شروع بشه و بین 5 تا 32 کاراکتر باشه."
+    
+    return True, f"@{username}"

@@ -3,9 +3,7 @@ import os
 
 # Bot Configuration
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-if not BOT_TOKEN:
-    raise RuntimeError("❌ BOT_TOKEN is not set in environment variables!")
-
+# PORT = int(os.environ.get("PORT", 5000))
 PORT = int(os.environ.get("PORT", 8443))
 
 # GitHub Configuration
@@ -14,12 +12,13 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKENN")
 GITHUB_BRANCH = "main"
 
 # Admin Configuration
-BIO_ADMIN_ID = 5564554013
+BIO_ADMIN_ID = 5890943003
 BIO_CHANNEL = "@R_O_T_C_Bio"
 
 # File Paths
 BIOS_FILE = "bios.json"
 DATA_FILE = "data.json"
+RESERVATION_FILE = "job_reservations.json"
 
 # Pagination
 SKILLS_PER_PAGE = 12
@@ -29,9 +28,9 @@ COUNTRIES = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "A
 
 # Admin Passwords
 RP_PASSWORDS = {
-    "main_admin": os.environ["FULL_ACCESS_1"],
-    "bio_admin": os.environ["BIO_ADMIN_PASSWORD"],
-    "shop_admin": os.environ["SHOP_BANK_ADMIN_PASSWORD"]
+    "main_admin": "main",
+    "bio_admin": "bio",
+    "shop_admin": "shop"
 }
 
 # Chat IDs for invite links

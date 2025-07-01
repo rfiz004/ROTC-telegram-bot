@@ -1,17 +1,16 @@
+
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from data_manager import jobs_by_country, skills_config, save_data, load_bios, remove_bio_from_storage, remove_used_hashtag
-from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard, admin_back_buttons, skill_management_keyboard, skill_type_selection_keyboard
+from data_manager import jobs_by_country, skills_config, save_data, load_bios, remove_bio_from_storage, remove_used_hashtag, remove_used_hashtag
+from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard, admin_back_buttons, skill_type_selection_keyboard
 from utils import format_bio_text
 from config import BIO_CHANNEL, ROLE_CHAT_ID, REALCHAT_ID
-
 
 async def show_admin_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     await query.message.edit_text("با حضورتون منورمون کردین😔✨",
                                   reply_markup=bio_admin_menu())
-
 
 async def show_admin_job_list(update: Update,
                               context: ContextTypes.DEFAULT_TYPE):
@@ -21,13 +20,12 @@ async def show_admin_job_list(update: Update,
         "🌍 مشاغل کدوم کشور و میخوای انگشت کنی؟",
         reply_markup=country_selection_keyboard("manage_jobs"))
 
-
 async def show_admin_skill_list(update: Update,
                                 context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    normal_skills = skills_config["normal"]
-    special_skills = skills_config["special"]
+    normal_skills = skills_config.get("normal", [])
+    special_skills = skills_config.get("special", [])
 
     skills_text = "📘 مهارت‌های عادی:\n" + "\n".join(f"🔹 {s}" for s in normal_skills)
     skills_text += "\n\n💠 مهارت‌های خاص:\n" + "\n".join(f"🔸 {s}" for s in special_skills)
@@ -79,7 +77,6 @@ async def show_country_jobs(update: Update,
     await query.message.edit_text(
         text, reply_markup=InlineKeyboardMarkup(job_buttons))
 
-
 async def handle_job_actions(update: Update,
                              context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -111,7 +108,6 @@ async def handle_job_actions(update: Update,
             chat_id=query.message.chat_id,
             text="🔽 بنویس: نام شغل - تعداد کاهش\nمثال: دکتر - 1",
             reply_markup=admin_back_buttons())
-
 
 async def handle_skill_actions(update: Update,
                                context: ContextTypes.DEFAULT_TYPE):
@@ -211,12 +207,10 @@ async def handle_bio_approval(update: Update,
         await query.message.edit_reply_markup(reply_markup=None)
         country = bio_data["country"]
         job_name = bio_data["job"]
-        job_data = next(
-            (j for j in jobs_by_country[country] if j["name"] == job_name),
-            None)
-        if job_data:
-            job_data["count"] = max(0, job_data["count"] - 1)
-
+        
+        # For approval, we don't change job count since it's permanently taken
+        # The job was already reserved and removed from available count
+        
         save_data({
             "jobs_by_country": jobs_by_country,
             "skills_config": skills_config
@@ -276,7 +270,7 @@ async def handle_bio_approval(update: Update,
         user_id = int(unique_id)
         admin_username = query.from_user.username or "admin"
 
-        # Return job capacity
+        # Return job capacity since bio was rejected
         country = bio_data.get("country")
         job_name = bio_data.get("job")
 
@@ -301,7 +295,7 @@ async def handle_bio_approval(update: Update,
         if tag:
             remove_used_hashtag(tag)
 
-        # Remove bio from storage
+        # Remove bio from storage (this also removes the hashtag from used list)
         remove_bio_from_storage(user_id)
 
         # Send confirmation to admin
@@ -310,6 +304,3 @@ async def handle_bio_approval(update: Update,
             text=
             "🤧 خبر رد شدنش بهش رسید 📨 راحت شدی؟ نه الان خوشحالی ردش کردی؟ بی‌رحم!",
             reply_to_message_id=query.message.message_id)
-
-
-

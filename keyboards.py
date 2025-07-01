@@ -72,7 +72,6 @@ def skill_type_selection_keyboard():
         [InlineKeyboardButton("🔙 برگشت", callback_data="back_to_admin_menu")]
     ])
 
-
 def bio_approval_keyboard(unique_id):
     return InlineKeyboardMarkup([
         [

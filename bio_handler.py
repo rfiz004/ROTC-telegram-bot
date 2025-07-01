@@ -1,9 +1,9 @@
-
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
+from telegram.error import BadRequest
 from datetime import datetime, timedelta
 import re
-from data_manager import jobs_by_country, skills_config,reserve_job, save_data, add_bio_to_storage, get_used_hashtags, add_used_hashtag, load_job_reservations, save_job_reservations
+from data_manager import jobs_by_country, skills_config, save_data, add_bio_to_storage, get_used_hashtags, add_used_hashtag, load_job_reservations, save_job_reservations, load_bios
 from keyboards import country_jobs_keyboard, create_skill_selection_keyboard, bio_approval_keyboard, restart_button
 from utils import calculate_skill_pages, get_page_skills, validate_age, validate_hashtag, validate_username, format_bio_text
 from config import BIO_ADMIN_ID, SKILLS_PER_PAGE, COUNTRIES
@@ -13,8 +13,29 @@ async def select_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
+    
+    # Check if user already has a pending bio
+    bios = load_bios()
+    if str(user_id) in bios.get("bios", {}):
+        try:
+            await query.message.edit_text("⏳ شما قبلاً یک بیو ثبت کرده‌اید. لطفاً منتظر بمانید تا ادمین آن را بررسی کند.")
+        except BadRequest as e:
+            if "Message is not modified" in str(e):
+                pass
+            else:
+                raise e
+        return
+    
     context.user_data[user_id] = {"step": "selecting_country"}
-    await query.message.edit_text("برای کدوم کشور می‌خوای بیو بدی؟", reply_markup=country_jobs_keyboard())
+
+    try:
+        await query.message.edit_text("برای کدوم کشور می‌خوای بیو بدی؟", reply_markup=country_jobs_keyboard())
+    except BadRequest as e:
+        if "Message is not modified" in str(e):
+            # Message content is the same, ignore the error
+            pass
+        else:
+            raise e
 
 async def select_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -47,7 +68,15 @@ async def select_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
             job_text += f"❌ {name} - لول: {level} - ظرفیت پر شده\n"
 
     job_buttons.append([InlineKeyboardButton("🔙 برگشتن", callback_data="back_to_main")])
-    await query.message.edit_text(job_text, reply_markup=InlineKeyboardMarkup(job_buttons))
+
+    try:
+        await query.message.edit_text(job_text, reply_markup=InlineKeyboardMarkup(job_buttons))
+    except BadRequest as e:
+        if "Message is not modified" in str(e):
+            # Message content is the same, ignore the error
+            pass
+        else:
+            raise e
 
 async def handle_job_locks(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -56,7 +85,6 @@ async def handle_job_locks(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "job_taken":
         await query.answer("❌ این مقام ظرفیتش پر شده.", show_alert=True)
 
-
 async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -64,21 +92,65 @@ async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
     job = query.data[4:]  # Remove "job_" prefix
     country = context.user_data[user_id]["country"]
 
-    context.user_data[user_id]["job"] = job
-
-    reservations = load_job_reservations()
-    success = reserve_job(user_id, country, job, jobs_by_country, reservations)
-    if not success:
-        await query.message.edit_text("❌ این شغل دیگه وجود نداره یا ظرفیتش پر شده. یکی دیگه انتخاب کن.")
+    # Check if user already has a pending bio
+    bios = load_bios()
+    if str(user_id) in bios.get("bios", {}):
+        await query.message.edit_text("⏳ شما قبلاً یک بیو ثبت کرده‌اید. لطفاً منتظر بمانید تا ادمین آن را بررسی کند.")
         return
 
-    # ادامه مراحل بیو
-    context.user_data[user_id]["expires_at"] = (datetime.utcnow() + timedelta(minutes=30)).isoformat()
-    context.user_data[user_id]["step"] = "asking_name"
+    # Release any existing reservation for this user
+    reservations = load_job_reservations()
+    if str(user_id) in reservations:
+        old_reservation = reservations[str(user_id)]
+        old_country = old_reservation["country"]
+        old_job = old_reservation["job"]
+        
+        # Return the old job to available pool
+        old_job_data = next((j for j in jobs_by_country.get(old_country, []) if j["name"] == old_job), None)
+        if old_job_data:
+            old_job_data["count"] += 1
 
-    await query.message.reply_text("⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!")
-    await query.message.reply_text("📛بچه خوشگل اسم کارکترتو کخ کن بیاد")
-#w
+    context.user_data[user_id]["job"] = job
+
+    job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
+    if job_data:
+        job_data["count"] = max(0, job_data["count"] - 1)
+
+        save_data({
+            "jobs_by_country": jobs_by_country,
+            "skills_config": skills_config
+        })
+        
+        reservations[str(user_id)] = {
+            "country": country,
+            "job": job,
+            "reserved_at": datetime.utcnow().isoformat()
+        }
+        save_job_reservations(reservations)
+
+        # Set expiration time and step
+        context.user_data[user_id]["expires_at"] = (datetime.utcnow() + timedelta(minutes=30)).isoformat()
+        context.user_data[user_id]["step"] = "asking_name"
+
+        # Delete the job selection message to avoid confusion
+        try:
+            await query.message.delete()
+        except BadRequest as e:
+            if "Message to delete not found" not in str(e):
+                print(f"Failed to delete job selection message: {e}")
+
+        # Send separate messages
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text="⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!"
+        )
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text="📛بچه خوشگل اسم کارکترتو کخ کن بیاد"
+        )
+    else:
+        await query.message.edit_text("❌ مشکلی پیش اومده. شغلی که انتخاب کردی وجود نداره.")
+
 async def show_skill_selection(update, context, page=0):
     if update.callback_query:
         query = update.callback_query
@@ -117,7 +189,6 @@ async def show_skill_selection(update, context, page=0):
     keyboard = create_skill_selection_keyboard(page_skills, selected, page, total_pages)
 
     # Text
-    
     selected = context.user_data.get(user_id, {}).get("skills", [])
     base_limit = 3
 
@@ -129,7 +200,7 @@ async def show_skill_selection(update, context, page=0):
             break
 
     skill_text = f"🔧 مهارت‌هات رو انتخاب کن (حداکثر {base_limit}):"
-    
+
     if selected:
         skill_text += "\n✅ انتخاب‌شده‌ها:\n" + "\n".join(f"🔹 {s}" for s in selected)
     else:
@@ -137,7 +208,14 @@ async def show_skill_selection(update, context, page=0):
 
     # Send or edit message
     if update.callback_query:
-        await query.message.edit_text(skill_text, reply_markup=keyboard)
+        try:
+            await query.message.edit_text(skill_text, reply_markup=keyboard)
+        except BadRequest as e:
+            if "Message is not modified" in str(e):
+                # Message content is the same, ignore the error
+                pass
+            else:
+                raise e
     else:
         await update.message.reply_text(skill_text, reply_markup=keyboard)
 
@@ -166,8 +244,6 @@ async def handle_skill_selection(update: Update, context: ContextTypes.DEFAULT_T
     selected = state.get("skills", [])
 
     # ⚠️ تکراری نباشه
-    # if skill in selected:
-    #     selected.remove(skill) 
     if skill in selected:
         selected.remove(skill)  # لغو انتخاب
 
@@ -210,7 +286,7 @@ async def handle_skill_selection(update: Update, context: ContextTypes.DEFAULT_T
                 show_alert=True
             )
             return
-    
+
     # ✅ بررسی سقف مجاز مهارت (با در نظر گرفتن مهارت‌های افزایش‌دهنده سقف)
     base_limit = 3
     extended_skills = skills_config.get("extended_limit_if_has", {})
@@ -227,19 +303,15 @@ async def handle_skill_selection(update: Update, context: ContextTypes.DEFAULT_T
     selected.append(skill)
     state["skills"] = selected
 
-
-        # ذخیره مهارت‌ها با کلیدهای مجزا برای استفاده‌های بعدی (مثل نمایش در بیو)
+    # ذخیره مهارت‌ها با کلیدهای مجزا برای استفاده‌های بعدی (مثل نمایش در بیو)
     for i in range(1, 6):
         state.pop(f"skill{i}", None)  # پاک‌سازی کلیدهای قبلی
 
     for i, s in enumerate(selected[:base_limit], start=1):
         state[f"skill{i}"] = s
 
-
     context.user_data[user_id] = state
     await show_skill_selection(update, context, page=page)
-
-
 
 async def handle_skill_navigation(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -264,22 +336,45 @@ async def handle_skill_reset(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def handle_skill_continue(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
+    # await query.answer()
     user_id = query.from_user.id
     state = context.user_data.get(user_id, {})
+    selected = state.get("skills", [])
 
-    if len(state.get("skills", [])) < 3:
-        try:
-            await context.bot.answer_callback_query(
-                callback_query_id=query.id,
-                text="⚠️ هنوز ۳ مهارت انتخاب نکردی.",
-                show_alert=True
-            )
-        except Exception as e:
-            print(f"[Skill Alert Error] {e}")
+    if not selected:
+        await query.answer("⚠️ حداقل یک مهارت انتخاب کن!", show_alert=True)
         return
 
+    # Calculate the required skill limit based on selected skills
+    base_limit = 3
+    extended_skills = skills_config.get("extended_limit_if_has", {})
+    for extended_skill, new_limit in extended_skills.items():
+        if extended_skill in selected:
+            base_limit = new_limit
+            break
+
+    # Check if user has selected the required number of skills
+    if len(selected) < base_limit:
+        await query.answer(f"⚠️ باید دقیقاً {base_limit} مهارت انتخاب کنی! فعلاً {len(selected)} تا انتخاب کردی.", show_alert=True)
+        return
+
+    # ذخیره مهارت‌ها با کلیدهای مجزا
+    for i in range(1, 6):
+        state.pop(f"skill{i}", None)
+
+    for i, skill in enumerate(selected, start=1):
+        state[f"skill{i}"] = skill
+
+    context.user_data[user_id] = state
     state["step"] = "asking_appearance"
-    await query.message.edit_text("💠 مشخصات ظاهری رو بنویس:")
+    try:
+        await query.message.edit_text("💠 مشخصات ظاهری رو بنویس:")
+    except BadRequest as e:
+        if "Message is not modified" in str(e):
+            # Message content is the same, ignore the error
+            pass
+        else:
+            raise e
 
 async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
@@ -287,7 +382,7 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user_data = context.user_data.get(user_id, {})
     expires_at = user_data.get("expires_at")
-    
+
     if expires_at and datetime.utcnow() > datetime.fromisoformat(expires_at):
         country = user_data["country"]
         job = user_data["job"]
@@ -330,16 +425,15 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
                 # Validate hashtag
                 if key == "user_id_tag":
-                    if not validate_hashtag(text):
-                        await update.message.reply_text("⚠️ هشتگ رو با # شروع کن و فقط حروف یا عدد بعدش بیار.")
-                        return
-
                     used_tags = get_used_hashtags()
-                    if text in used_tags:
-                        await update.message.reply_text("⚠️ این هشتگ قبلاً استفاده شده. لطفاً یک هشتگ جدید وارد کن.")
+                    is_valid, message_or_hashtag = validate_hashtag(text, used_tags)
+
+                    if not is_valid:
+                        await update.message.reply_text(message_or_hashtag)
                         return
 
-                    add_used_hashtag(text)
+                    # Use the formatted hashtag returned by the validation function
+                    text = message_or_hashtag
 
                 # Validate username
                 if key == "id_number":
@@ -402,6 +496,14 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
         buttons = bio_approval_keyboard(unique_id)
 
         add_bio_to_storage(user_id, current)
+        # Add hashtag to used list
+        add_used_hashtag(current["user_id_tag"])
+
+        # Remove from job reservations since bio is now submitted
+        reservations = load_job_reservations()
+        if str(user_id) in reservations:
+            del reservations[str(user_id)]
+            save_job_reservations(reservations)
 
         await context.bot.send_photo(
             chat_id=BIO_ADMIN_ID,

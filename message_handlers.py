@@ -1,4 +1,3 @@
-
 from telegram import Update
 from telegram.ext import ContextTypes
 from data_manager import jobs_by_country, skills_config, save_data
@@ -11,12 +10,14 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = update.message.from_user.id
     state = context.user_data.get(user_id, {})
     step = state.get("step")
+
     if state.get("step") in ["awaiting_skill_name", "removing_skill"]:
         await handle_admin_text_message(update, context)
         return
     if state.get("step") == "awaiting_rp_password":
         await handle_password_message(update, context)
-        
+        return
+
     elif step == "add_job":
         parts = update.message.text.split("-")
         if len(parts) != 3:
@@ -27,13 +28,16 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
             level = int(level)
             count = int(count)
             country = state["country"]
-            
+
             # Check if job already exists
-            existing_job = next((j for j in jobs_by_country[country] if j["name"] == name), None)
+            existing_job = next((j for j in jobs_by_country.get(country, []) if j["name"] == name), None)
             if existing_job:
                 await update.message.reply_text("⚠️ این شغل قبلاً وجود داره. نام دیگری انتخاب کن:")
                 return  # Don't clear user_data
-                
+
+            if country not in jobs_by_country:
+                jobs_by_country[country] = []
+
             jobs_by_country[country].append({"name": name, "level": level, "count": count})
             save_data({
                 "jobs_by_country": jobs_by_country,
@@ -51,14 +55,14 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
     elif step == "remove_job":
         name = update.message.text.strip()
         country = state["country"]
-        jobs = jobs_by_country[country]
-        
+        jobs = jobs_by_country.get(country, [])
+
         # Check if job exists
         job_exists = any(j["name"] == name for j in jobs)
         if not job_exists:
             await update.message.reply_text("⚠️ شغل پیدا نشد. دوباره تلاش کن:")
             return  # Don't clear user_data
-            
+
         jobs_by_country[country] = [j for j in jobs if j["name"] != name]
         save_data({
             "jobs_by_country": jobs_by_country,
@@ -73,21 +77,21 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
             if len(parts) != 2:
                 await update.message.reply_text("❌ فرمت اشتباهه. بنویس: نام شغل - تعداد افزایش")
                 return  # Don't clear user_data
-                
+
             name, amount = [x.strip() for x in parts]
             amount = int(amount)
-            
+
             if amount <= 0:
                 await update.message.reply_text("❌ تعداد افزایش باید بیشتر از صفر باشه:")
                 return  # Don't clear user_data
-                
+
             country = state["country"]
-            job = next((j for j in jobs_by_country[country] if j["name"] == name), None)
-            
+            job = next((j for j in jobs_by_country.get(country, []) if j["name"] == name), None)
+
             if not job:
                 await update.message.reply_text("⚠️ شغل پیدا نشد. دوباره تلاش کن:")
                 return  # Don't clear user_data
-                
+
             job["count"] += amount
             save_data({
                 "jobs_by_country": jobs_by_country,
@@ -108,21 +112,21 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
             if len(parts) != 2:
                 await update.message.reply_text("❌ فرمت اشتباهه. بنویس: نام شغل - تعداد کاهش")
                 return  # Don't clear user_data
-                
+
             name, amount = [x.strip() for x in parts]
             amount = int(amount)
-            
+
             if amount <= 0:
                 await update.message.reply_text("❌ تعداد کاهش باید بیشتر از صفر باشه:")
                 return  # Don't clear user_data
-                
+
             country = state["country"]
-            job = next((j for j in jobs_by_country[country] if j["name"] == name), None)
-            
+            job = next((j for j in jobs_by_country.get(country, []) if j["name"] == name), None)
+
             if not job:
                 await update.message.reply_text("⚠️ شغل پیدا نشد. دوباره تلاش کن:")
                 return  # Don't clear user_data
-                
+
             job["count"] = max(0, job["count"] - amount)
             save_data({
                 "jobs_by_country": jobs_by_country,

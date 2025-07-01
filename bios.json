@@ -1,35 +1,4 @@
 {
-  "bios": {
-    "6213073537": {
-      "step": "asking_photo",
-      "country": "Santos",
-      "job": "مشاور سطلنتی",
-      "expires_at": "2025-07-01T12:37:31.076923",
-      "name": "lk",
-      "nickname": "sfg",
-      "age": "23",
-      "skills": [
-        "ستاره شناسی",
-        "مهارت کار با نیزه",
-        "مقاومت بالا"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "ستاره شناسی",
-      "skill2": "مهارت کار با نیزه",
-      "skill3": "مقاومت بالا",
-      "appearance": "dfghjk",
-      "history": "ghjkl",
-      "id_number": "@Valeria_cas",
-      "user_id_tag": "#bea",
-      "photo": "AgACAgQAAxkBAAIGB2hjz8fhRkeehgxTt4zbFczuKBUsAAKyxTEbjqsgU87ZxlfmsTetAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "6213073537",
-      "timestamp": "2025-07-01T12:08:39.565721"
-    }
-  },
-  "used_hashtags": [
-    "#hello",
-    "#bea"
-  ]
+  "bios": {},
+  "used_hashtags": []
 }
