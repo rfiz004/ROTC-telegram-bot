@@ -140,31 +140,31 @@ def save_job_reservations(data):
     upload_to_github(RESERVATION_FILE, data)
 
 
-    def clear_expired_reservations(jobs_by_country):
-        reservations = load_job_reservations()
-        now = datetime.now(timezone.utc)
-        expired_users = []
+def clear_expired_reservations(jobs_by_country):
+    reservations = load_job_reservations()
+    now = datetime.now(timezone.utc)
+    expired_users = []
 
-        for user_id, info in reservations.items():
-            reserved_at = datetime.fromisoformat(info["reserved_at"])
-            if now - reserved_at > timedelta(minutes=30):
-                country = info["country"]
-                job_name = info["job"]
-                job_list = jobs_by_country.get(country, [])
+    for user_id, info in reservations.items():
+        reserved_at = datetime.fromisoformat(info["reserved_at"])
+        if now - reserved_at > timedelta(minutes=30):
+            country = info["country"]
+            job_name = info["job"]
+            job_list = jobs_by_country.get(country, [])
 
-                for job in job_list:
-                    if job["name"] == job_name:
-                        job["count"] += 1
-                        break
+            for job in job_list:
+                if job["name"] == job_name:
+                    job["count"] += 1
+                    break
 
-                expired_users.append(user_id)
+            expired_users.append(user_id)
 
-        for user_id in expired_users:
-            del reservations[user_id]
+    for user_id in expired_users:
+        del reservations[user_id]
 
-        if expired_users:
-            save_job_reservations(reservations)
-            save_data({"jobs_by_country": jobs_by_country})
+    if expired_users:
+        save_job_reservations(reservations)
+        save_data({"jobs_by_country": jobs_by_country})
 
 # Initialize data
 data = load_data()
