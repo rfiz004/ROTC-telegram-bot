@@ -55,12 +55,26 @@ async def main():
         first=10
     )
 
-    # افزودن هندلرها
+if __name__ == "__main__":
+    import asyncio
+    os.environ['PYTHONUNBUFFERED'] = "1"
+    async def on_startup(app):
+        await set_bot_commands(app)
+
+    app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(on_startup).build()
+
+    app.job_queue.run_repeating(
+        scheduled_cleanup,
+        interval=300,
+        first=10
+    )
+
+    # Add handlers...
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_")) 
+    app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
     app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
     app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
-    app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))  
+    app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
     app.add_handler(CallbackQueryHandler(select_job, pattern="^select_country_"))
     app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$"))
     app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^job_"))
@@ -73,20 +87,9 @@ async def main():
     app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
 
     print(f"✅ Bot is running on port {PORT} via webhook")
-    await app.run_webhook(
+    app.run_webhook(
         listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
         webhook_url=f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}/{BOT_TOKEN}",
     )
-
-# هندلر start
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "درود! 👋\n به راهنمای آرپی R.O.T.C خوش اومدی چه کمکی میتونم بهت بکنم؟",
-        reply_markup=main_menu()
-    )
-
-# اجرای اصلی
-if __name__ == "__main__":
-    asyncio.run(main())
