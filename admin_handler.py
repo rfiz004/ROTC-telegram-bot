@@ -1,7 +1,7 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from data_manager import jobs_by_country, skills_config, save_data, load_bios, remove_bio_from_storage, remove_used_hashtag
-from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard, admin_back_buttons, skill_management_keyboard
+from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard, admin_back_buttons, skill_management_keyboard, skill_type_selection_keyboard
 from utils import format_bio_text
 from config import BIO_CHANNEL, ROLE_CHAT_ID, REALCHAT_ID
 
