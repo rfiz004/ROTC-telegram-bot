@@ -139,6 +139,34 @@ def save_job_reservations(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
     upload_to_github(RESERVATION_FILE, data)
 
+def reserve_job(user_id, country, job, jobs_by_country, reservations):
+    # آزاد کردن رزرو قبلی
+    if str(user_id) in reservations:
+        prev_country = reservations[str(user_id)]["country"]
+        prev_job = reservations[str(user_id)]["job"]
+        for j in jobs_by_country[prev_country]:
+            if j["name"] == prev_job:
+                j["count"] += 1
+                break
+
+    # رزرو جدید
+    for j in jobs_by_country[country]:
+        if j["name"] == job:
+            if j["count"] <= 0:
+                return False
+            j["count"] -= 1
+            break
+
+    reservations[str(user_id)] = {
+        "country": country,
+        "job": job,
+        "reserved_at": datetime.utcnow().isoformat()
+    }
+
+    save_data({"jobs_by_country": jobs_by_country})
+    save_job_reservations(reservations)
+
+    return True
 
 def clear_expired_reservations(jobs_by_country):
     reservations = load_job_reservations()

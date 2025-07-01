@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from datetime import datetime, timedelta
 import re
-from data_manager import jobs_by_country, skills_config, save_data, add_bio_to_storage, get_used_hashtags, add_used_hashtag, load_job_reservations, save_job_reservations
+from data_manager import jobs_by_country, skills_config,reserve_job, save_data, add_bio_to_storage, get_used_hashtags, add_used_hashtag, load_job_reservations, save_job_reservations
 from keyboards import country_jobs_keyboard, create_skill_selection_keyboard, bio_approval_keyboard, restart_button
 from utils import calculate_skill_pages, get_page_skills, validate_age, validate_hashtag, validate_username, format_bio_text
 from config import BIO_ADMIN_ID, SKILLS_PER_PAGE, COUNTRIES
@@ -66,31 +66,18 @@ async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data[user_id]["job"] = job
 
-    job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
-    if job_data:
-        job_data["count"] = max(0, job_data["count"] - 1)
+    reservations = load_job_reservations()
+    success = reserve_job(user_id, country, job, jobs_by_country, reservations)
+    if not success:
+        await query.message.edit_text("❌ این شغل دیگه وجود نداره یا ظرفیتش پر شده. یکی دیگه انتخاب کن.")
+        return
 
-        save_data({
-            "jobs_by_country": jobs_by_country,
-            "skills_config": skills_config
-        })
-        reservations = load_job_reservations()
-        reservations[str(user_id)] = {
-            "country": country,
-            "job": job,
-            "reserved_at": datetime.utcnow().isoformat()
-        }
-        save_job_reservations(reservations)
+    # ادامه مراحل بیو
+    context.user_data[user_id]["expires_at"] = (datetime.utcnow() + timedelta(minutes=30)).isoformat()
+    context.user_data[user_id]["step"] = "asking_name"
 
-        # Set expiration time and step
-        context.user_data[user_id]["expires_at"] = (datetime.utcnow() + timedelta(minutes=30)).isoformat()
-        context.user_data[user_id]["step"] = "asking_name"
-
-        # Send separate messages
-        await query.message.reply_text("⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!")
-        await query.message.reply_text("📛بچه خوشگل اسم کارکترتو کخ کن بیاد")
-    else:
-        await query.message.edit_text("❌ مشکلی پیش اومده. شغلی که انتخاب کردی وجود نداره.")
+    await query.message.reply_text("⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!")
+    await query.message.reply_text("📛بچه خوشگل اسم کارکترتو کخ کن بیاد")
 
 async def show_skill_selection(update, context, page=0):
     if update.callback_query:
