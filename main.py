@@ -83,7 +83,7 @@ if __name__ == "__main__":
     
     # WEBHOOK DEPLOYMENT (for Render.com):
     RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-    WEBHOOK_URL = f"https://{RENDER_EXTERNAL_HOSTNAME}/"
+    WEBHOOK_URL = f"https://{RENDER_EXTERNAL_HOSTNAME}/{BOT_TOKEN}"
     
     async def webhook_main():
         # Set webhook
@@ -100,7 +100,7 @@ if __name__ == "__main__":
         
         # Setup web server
         webapp = web.Application()
-        webapp.router.add_post("/", handle_webhook)
+        webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
         
         runner = web_runner.AppRunner(webapp)
         await runner.setup()
