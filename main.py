@@ -33,6 +33,12 @@ flask_app = Flask(__name__)
 
 pv_filter = filters.ChatType.PRIVATE
 
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "درود! 👋\nبه راهنمای آرپی R.O.T.C خوش اومدی، چه کمکی می‌تونم بهت بکنم؟",
+        reply_markup=main_menu()
+    )
+
 async def set_bot_commands(app):
     commands = [
         BotCommand("start", "شروع دوباره"),
@@ -43,17 +49,6 @@ async def scheduled_cleanup(context: ContextTypes.DEFAULT_TYPE):
     cleared = clear_expired_reservations(jobs_by_country)
     if cleared:
         print(f"🧹 {cleared} رزرو منقضی شده آزاد شد.")
-
-async def main():
-    app: Application = ApplicationBuilder().token(BOT_TOKEN).build()
-    await set_bot_commands(app)
-
-    # برنامه‌ریزی کار دوره‌ای
-    app.job_queue.run_repeating(
-        scheduled_cleanup,
-        interval=300,  # هر ۵ دقیقه
-        first=10
-    )
 
 if __name__ == "__main__":
     import asyncio
