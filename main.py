@@ -84,6 +84,7 @@ if __name__ == "__main__":
     # WEBHOOK DEPLOYMENT (for Render.com):
     RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
     WEBHOOK_URL = f"https://{RENDER_EXTERNAL_HOSTNAME}/{BOT_TOKEN}"
+
     
     async def webhook_main():
         # Set webhook
@@ -94,10 +95,10 @@ if __name__ == "__main__":
         
         async def handle_webhook(request):
             data = await request.json()
-            update = Update.de_json(data, app.bot)
+            update = Update.to_object(data)  # روش توصیه‌شده در نسخه‌های جدید
             await app.process_update(update)
             return web.Response(text="OK")
-        
+
         # Setup web server
         webapp = web.Application()
         webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
