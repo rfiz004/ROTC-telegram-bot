@@ -7,6 +7,27 @@ import base64
 import requests
 from config import BIOS_FILE, DATA_FILE, GITHUB_REPO, GITHUB_TOKEN, GITHUB_BRANCH
 
+
+def get_used_hashtags():
+    bios = load_bios()
+    return bios.get("used_hashtags", [])
+
+def add_used_hashtag(tag):
+    bios = load_bios()
+    used = bios.get("used_hashtags", [])
+    if tag not in used:
+        used.append(tag)
+    bios["used_hashtags"] = used
+    save_bios(bios)
+
+def remove_used_hashtag(tag):
+    bios = load_bios()
+    used = bios.get("used_hashtags", [])
+    if tag in used:
+        used.remove(tag)
+    bios["used_hashtags"] = used
+    save_bios(bios)
+
 def read_bios():
     if not os.path.exists("bios.json"):
         return {}
