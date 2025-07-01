@@ -5,6 +5,3 @@ services:
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 main.py"
     plan: free
-    build:
-      environment:
-        python_version: 3.10.13
