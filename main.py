@@ -48,7 +48,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("درود! 👋\n به راهنمای آرپی R.O.T.C خوش اومدی چه کمکی میتونم بهت بکنم؟", reply_markup=main_menu())
 
 # Bot setup
-app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
+# app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
+app: Application = ApplicationBuilder().token(BOT_TOKEN).build()
+
+# بعد از build، دستی set_bot_commands رو اجرا کن
+async def on_startup():
+    await set_bot_commands(app)
 
 async def scheduled_cleanup(context: ContextTypes.DEFAULT_TYPE):
     cleared = clear_expired_reservations(jobs_by_country)
@@ -79,52 +84,23 @@ app.add_handler(CallbackQueryHandler(handle_main_menu))
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
 
-
-
-# @flask_app.route(f'/{BOT_TOKEN}', methods=['POST'])
-# def webhook():
-#     try:
-#         json_data = request.get_json()
-#         update = Update.de_json(json_data, app.bot)
-
-#         # Run the coroutine in a new event loop inside a thread
-#         def run_update():
-#             loop = asyncio.new_event_loop()
-#             asyncio.set_event_loop(loop)
-#             loop.run_until_complete(app.process_update(update))
-#             loop.close()
-
-#         threading.Thread(target=run_update).start()
-
-#         return 'OK'
-#     except Exception as e:
-#         logging.error(f"Error processing webhook: {e}")
-#         return 'Error', 500
-
-# async def setup_webhook():
-#     """Set up the webhook URL"""
-#     webhook_url = f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}/{BOT_TOKEN}"
-#     await app.bot.set_webhook(url=webhook_url)
-#     print(f"✅ Webhook set to: {webhook_url}")
-
 # if __name__ == "__main__":
-#     async def main():
-#         await app.initialize()
-#         await setup_webhook()
-
-#     asyncio.run(main())
-
-#     print("✅ Bot is running via webhook with Flask")
-
-#     port = int(os.environ.get('PORT', 5000))
-#     flask_app.run(host='0.0.0.0', port=port, debug=False)
+#     print(f"✅ Bot is running on port {PORT} via webhook")
+#     app.run_webhook(
+#         listen="0.0.0.0",
+#         port=PORT,
+#         url_path=BOT_TOKEN,
+#         webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
+#         # secret_token=BOT_TOKEN,
+#     )
 
 if __name__ == "__main__":
+    asyncio.run(on_startup())  # این خط رو اضافه کن
     print(f"✅ Bot is running on port {PORT} via webhook")
     app.run_webhook(
         listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
         webhook_url=f"https://rotc-telegram-bot.onrender.com/{BOT_TOKEN}",
-        # secret_token=BOT_TOKEN,
+        # secret_token=BOT_TOKEN
     )

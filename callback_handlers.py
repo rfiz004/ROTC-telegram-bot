@@ -48,6 +48,7 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await handle_skill_actions(update, context)
     elif data.startswith("skill_type_"):
         skill_type = data.split("_")[-1]  
+        user_id = query.from_user.id
         context.user_data[user_id] = {
             "step": "awaiting_skill_name",
             "skill_type": skill_type,

@@ -1,11 +1,10 @@
-
 services:
   - type: web
     name: rotc-telegram-bot
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 main.py"
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.13
     plan: free
+    build:
+      environment:
+        python_version: 3.10.13
