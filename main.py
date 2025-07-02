@@ -160,10 +160,9 @@ if __name__ == "__main__":
     app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
     app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
     app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_previous$"))
-    app.add_handler(CallbackQueryHandler(handle_main_menu))
     app.add_handler(MessageHandler(pv_filter & filters.PHOTO, collect_bio))
     app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_all_messages))
-
+    app.add_handler(CallbackQueryHandler(handle_main_menu))
     # POLLING DEPLOYMENT (default):
     # print("✅ Bot is running with polling...")
     # try:
