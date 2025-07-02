@@ -28,9 +28,9 @@ COUNTRIES = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "A
 
 # Admin Passwords
 RP_PASSWORDS = {
-    "main_admin": "main",
-    "bio_admin": "bio",
-    "shop_admin": "shop"
+    "main_admin": os.environ["FULL_ACCESS_1"],
+    "bio_admin": os.environ["BIO_ADMIN_PASSWORD"],
+    "shop_admin": os.environ["SHOP_BANK_ADMIN_PASSWORD"]
 }
 
 # Chat IDs for invite links
