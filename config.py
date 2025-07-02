@@ -3,7 +3,7 @@ import os
 
 # Bot Configuration
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-# PORT = int(os.environ.get("PORT", 5000))
+PORT = int(os.environ.get("PORT", 5000))
 PORT = int(os.environ.get("PORT", 8443))
 
 # GitHub Configuration
@@ -28,9 +28,9 @@ COUNTRIES = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "A
 
 # Admin Passwords
 RP_PASSWORDS = {
-    "main_admin": os.environ["FULL_ACCESS_1"],
-    "bio_admin": os.environ["BIO_ADMIN_PASSWORD"],
-    "shop_admin": os.environ["SHOP_BANK_ADMIN_PASSWORD"]
+    "main_admin": "main",
+    "bio_admin": "bio",
+    "shop_admin": "shop"
 }
 
 # Chat IDs for invite links
