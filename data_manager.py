@@ -56,15 +56,18 @@ def load_bios():
 def save_bios(bios):
     with open(BIOS_FILE, "w", encoding="utf-8") as f:
         json.dump(bios, f, ensure_ascii=False, indent=2)
-
-def add_bio_to_storage(user_id, bio_data):
-    bios = load_bios()
-    if "bios" not in bios:
-        bios["bios"] = {}
-    bios["bios"][str(user_id)] = bio_data
-    save_bios(bios)
     if GITHUB_TOKEN and GITHUB_REPO:
         upload_to_github(BIOS_FILE, json.dumps(bios, ensure_ascii=False, indent=2))
+
+
+# def add_bio_to_storage(user_id, bio_data):
+#     bios = load_bios()
+#     if "bios" not in bios:
+#         bios["bios"] = {}
+#     bios["bios"][str(user_id)] = bio_data
+#     save_bios(bios)
+#     if GITHUB_TOKEN and GITHUB_REPO:
+#         upload_to_github(BIOS_FILE, json.dumps(bios, ensure_ascii=False, indent=2))
 
 def add_bio_to_storage(user_id, bio_data):
     bios = load_bios()
@@ -87,6 +90,10 @@ def add_bio_to_storage(user_id, bio_data):
         k: v for k, v in bios["bios"].items()
         if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
     }
+
+    tag = bio_data.get("user_id_tag")
+    if tag and tag not in bios["used_hashtags"]:
+        bios["used_hashtags"].append(tag)
 
     save_bios(bios)
 
@@ -166,6 +173,9 @@ def load_job_reservations():
 def save_job_reservations(data):
     with open(RESERVATION_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    if GITHUB_TOKEN and GITHUB_REPO:
+        upload_to_github(RESERVATION_FILE, json.dumps(data, ensure_ascii=False, indent=2))
+
 
 def clear_expired_reservations(jobs_by_country):
     reservations = load_job_reservations()
