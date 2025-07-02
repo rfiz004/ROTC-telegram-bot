@@ -66,29 +66,29 @@ def add_bio_to_storage(user_id, bio_data):
     if GITHUB_TOKEN and GITHUB_REPO:
         upload_to_github(BIOS_FILE, json.dumps(bios, ensure_ascii=False, indent=2))
 
-def add_bio_to_storage(user_id, bio_data):
-    bios = load_bios()
-    uid = str(user_id)
+# def add_bio_to_storage(user_id, bio_data):
+#     bios = load_bios()
+#     uid = str(user_id)
 
-    bio_data["timestamp"] = datetime.now().isoformat()
+#     bio_data["timestamp"] = datetime.now().isoformat()
 
-    # حفظ لیست هشتگ‌ها
-    existing_hashtags = bios.get("used_hashtags", [])
-    if "bios" not in bios:
-        bios["bios"] = {}
-    if "used_hashtags" not in bios:
-        bios["used_hashtags"] = []
-    bios["bios"][uid] = bio_data
-    bios["used_hashtags"] = existing_hashtags
+#     # حفظ لیست هشتگ‌ها
+#     existing_hashtags = bios.get("used_hashtags", [])
+#     if "bios" not in bios:
+#         bios["bios"] = {}
+#     if "used_hashtags" not in bios:
+#         bios["used_hashtags"] = []
+#     bios["bios"][uid] = bio_data
+#     bios["used_hashtags"] = existing_hashtags
 
-    # حذف بیوهای قدیمی
-    cutoff = datetime.now() - timedelta(days=7)
-    bios["bios"] = {
-        k: v for k, v in bios["bios"].items()
-        if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
-    }
+#     # حذف بیوهای قدیمی
+#     cutoff = datetime.now() - timedelta(days=7)
+#     bios["bios"] = {
+#         k: v for k, v in bios["bios"].items()
+#         if "timestamp" in v and datetime.fromisoformat(v["timestamp"]) > cutoff
+#     }
 
-    save_bios(bios)
+#     save_bios(bios)
 
 def remove_bio_from_storage(user_id):
     bios = load_bios()
