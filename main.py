@@ -670,6 +670,7 @@ async def root(request):
     return web.Response(text="Bot is alive!")
 
 async def main():
+    app = create_application()
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
