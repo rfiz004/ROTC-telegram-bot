@@ -1,531 +1,536 @@
 {
   "jobs_by_country": {
-    "Aldemar": [
-      {
-        "name": "شاه",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ملکه",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
-      },
-      {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 5
-      },
-      {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "وزیر",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 1
-      }
-    ],
     "Alpyr": [
       {
         "name": "شاه",
-        "level": 1,
-        "count": 0
+        "count": 1,
+        "level": 1
       },
       {
         "name": "ملکه",
-        "level": 1,
-        "count": 0
+        "count": 1,
+        "level": 1
       },
       {
         "name": "ولیعهد",
-        "level": 1,
-        "count": 0
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 0
+        "name": "خانواده ی سلطنتی",
+        "count": 4,
+        "level": 1
       },
       {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
+        "name": "نخست‌وزیر",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 4
+        "name": "کابینه وزرا",
+        "count": 5,
+        "level": 1
       },
       {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 1
+        "name": "سپهبد ارتش",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 1
+        "name": "مشاور وزارت",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "وزیر",
-        "level": 1,
-        "count": 1
+        "name": "ژنرال‌های ارتش",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 2
+        "name": "مدیران اجرایی",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 1
+        "name": "اسقف اعظم",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 19,
+        "level": 1
       }
     ],
-    "Walden": [
+    "Aldemar": [
       {
-        "name": "شاه",
-        "level": 1,
-        "count": 0
+        "name": "رئیس شورا",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "ملکه",
-        "level": 1,
-        "count": 1
+        "name": "شورای بازرگانان",
+        "count": 6,
+        "level": 1
       },
       {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 1
+        "name": "نمایندگان اصناف",
+        "count": 5,
+        "level": 1
       },
       {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 0
+        "name": "خزانه‌دار اعظم",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
+        "name": "فرمانده ناوگان تجاری",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 3
+        "name": "مشاور شورا",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 0
+        "name": "معاون خزانه‌دار",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 1
+        "name": "ناخداهای کشتی‌های تجاری",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "وزیر",
-        "level": 1,
-        "count": 2
+        "name": "پادشاه ثروت",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "شکارچی",
-        "level": 2,
-        "count": 3
-      }
-    ],
-    "Northwood": [
-      {
-        "name": "شاه",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "ملکه",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
-      },
-      {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 6
-      },
-      {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "وزیر",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 1
-      }
-    ],
-    "Santos": [
-      {
-        "name": "شاه",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ملکه",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
-      },
-      {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 4
-      },
-      {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "وزیر",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 0
+        "name": "مشاغل آزاد",
+        "count": 20,
+        "level": 1
       }
     ],
     "Imperial": [
       {
-        "name": "شاه",
-        "level": 1,
-        "count": 1
+        "name": "رئیس سنا",
+        "count": 0,
+        "level": 1
       },
       {
-        "name": "ملکه",
-        "level": 1,
-        "count": 0
+        "name": "اعضای سنا",
+        "count": 6,
+        "level": 1
       },
       {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
-      },
-      {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 5
+        "name": "اشراف بنیان گذار",
+        "count": 5,
+        "level": 1
       },
       {
         "name": "نخست وزیر",
-        "level": 1,
-        "count": 1
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 0
+        "name": "ژنرال اعظم جمهوری",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "وزیر",
-        "level": 1,
-        "count": 2
+        "name": "مشاور عالی جمهوری",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 0
+        "name": "معاونین نخست وزیر",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 0
+        "name": "معاونین ژنرال",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "شکارچی",
-        "level": 2,
-        "count": 1
+        "name": "آیین بان جمهوری",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "قاتل",
-        "level": 1,
-        "count": 3
-      }
-    ],
-    "Azure": [
-      {
-        "name": "شاه",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ملکه",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "وزیر",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 0
-      },
-      {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 0
+        "name": "مشاغل آزاد",
+        "count": 20,
+        "level": 1
       }
     ],
     "Hikada": [
       {
-        "name": "شاه",
-        "level": 1,
-        "count": 1
+        "name": "دای شوگون",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "ملکه",
-        "level": 1,
-        "count": 1
+        "name": "امپراطور",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "امپراطریس",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "شوگون",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "دایمیوها",
+        "count": 5,
+        "level": 1
       },
       {
         "name": "ولیعهد",
-        "level": 1,
-        "count": 1
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 1
+        "name": "اعضای خاندان امپراطوری",
+        "count": 4,
+        "level": 1
       },
       {
-        "name": "خاندان سلطتنی",
-        "level": 1,
-        "count": 4
+        "name": "وزیر اعظم امپراطوری",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 5
+        "name": "مشاور امپراتور",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 1
+        "name": "وزرای امپراطوری",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 1
+        "name": "مقام اژدهای آسمانی",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 18,
+        "level": 1
+      }
+    ],
+    "Walden": [
+      {
+        "name": "رئیس شورا عالی",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "شورای عالی",
+        "count": 6,
+        "level": 1
+      },
+      {
+        "name": "شورای نمایندگان",
+        "count": 5,
+        "level": 1
+      },
+      {
+        "name": "فرمانده ارتش",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "رئیس دبیرخانه",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "مشاور شورا",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "معاونین دبیرخانه",
+        "count": 2,
+        "level": 1
+      },
+      {
+        "name": "معاونین فرمانده",
+        "count": 2,
+        "level": 1
+      },
+      {
+        "name": "نگهبان پیمان",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 19,
+        "level": 1
+      }
+    ],
+    "Northwood": [
+      {
+        "name": "پادشاه",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "ملکه",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "ولیعهد",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "خاندان سلطنتی",
+        "count": 4,
+        "level": 1
+      },
+      {
+        "name": "اِرِل‌ها",
+        "count": 4,
+        "level": 1
+      },
+      {
+        "name": "روح گرگ",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "جنگاور بزرگ",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "مشاور روح",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "معاونین جنگاور",
+        "count": 2,
+        "level": 1
+      },
+      {
+        "name": "معاونین روح گرگ",
+        "count": 2,
+        "level": 1
+      },
+      {
+        "name": "شاه بی تاج",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 19,
+        "level": 1
+      }
+    ],
+    "Santos": [
+      {
+        "name": "امپراتور",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "امپراتریس",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "ولیعهد",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "خاندان امپراطوری",
+        "count": 2,
+        "level": 1
+      },
+      {
+        "name": "حاکمان استان",
+        "count": 5,
+        "level": 1
+      },
+      {
+        "name": "ارتشبد",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "وزیر اعظم",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "کاهن اعظم",
+        "count": 1,
+        "level": 1
       },
       {
         "name": "وزیر",
-        "level": 1,
-        "count": 0
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 1
+        "name": "فرمانده ارتش",
+        "count": 2,
+        "level": 1
       },
       {
         "name": "دوک اعظم",
-        "level": 1,
-        "count": 2
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 19,
+        "level": 1
       }
     ],
     "Alestria": [
       {
-        "name": "شاه",
-        "level": 1,
-        "count": 1
+        "name": "رهبر اعظم",
+        "count": 0,
+        "level": 1
       },
       {
-        "name": "ملکه",
-        "level": 1,
-        "count": 1
+        "name": "قدیسه",
+        "count": 0,
+        "level": 1
       },
       {
-        "name": "ولیعهد",
-        "level": 1,
-        "count": 1
+        "name": "جانشین مقدس",
+        "count": 3,
+        "level": 1
       },
       {
-        "name": "مشاور سطلنتی",
-        "level": 1,
-        "count": 1
+        "name": "شورای آسمان",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "خاندان سلطتنی",
+        "name": "مقامات محلی",
+        "count": 5,
+        "level": 1
+      },
+      {
+        "name": "سپهسالار ارتش",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "صدراعظم",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "مشاور اعظم",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "معاون صدراعظم",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "دستیار اجرایی",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "فرمانده سپاه مجازات الهی",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "فرمانده سپاه محافظ الهی",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "نگهبان شریعت",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 19,
+        "level": 1
+      }
+    ],
+    "Azure": [
+      {
+        "name": "گرند دوک",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "گرند دوشس",
+        "count": 1,
+        "level": 1
+      },
+      {
+        "name": "دوک",
+        "count": 5,
+        "level": 1
+      },
+      {
+        "name": "خاندان دوک",
         "level": 1,
         "count": 4
       },
       {
-        "name": "خاندان های اشرافی",
-        "level": 1,
-        "count": 5
+        "name": "ژنرال دریا",
+        "count": 0,
+        "level": 1
       },
       {
-        "name": "نخست وزیر",
-        "level": 1,
-        "count": 1
+        "name": "ارشد جزیره",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "ژنرال ارشد",
-        "level": 1,
-        "count": 1
+        "name": "مشاور اعظم",
+        "count": 1,
+        "level": 1
       },
       {
-        "name": "وزیر",
-        "level": 1,
-        "count": 3
+        "name": "کاپیتان‌های دزدان دریایی",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "فرمانده",
-        "level": 1,
-        "count": 2
+        "name": "مسئولین جزیره",
+        "count": 2,
+        "level": 1
       },
       {
-        "name": "دوک اعظم",
-        "level": 1,
-        "count": 1
+        "name": "مقام اژدهای دریا",
+        "count": 0,
+        "level": 1
+      },
+      {
+        "name": "مشاغل آزاد",
+        "count": 19,
+        "level": 1
       }
     ]
   },

@@ -1,0 +1,63 @@
+{
+  "country": "Santos",
+  "province": "Marashen",
+  "mines": {
+    "Stone mine": 0,
+    "Tin mine": 0,
+    "Iron mine": 0,
+    "Coal mine": 0,
+    "Copper mine": 0,
+    "Silver mine": 0,
+    "Golden mine": 0,
+    "Diamond mine": 0
+  },
+  "wealth": 0,
+  "population": 30000,
+  "tax": 0,
+  "popularity": -23,
+  "total_army": 5000,
+  "army": {
+    "کماندار": 2000,
+    "شمشیرزن": 1500,
+    "نیزه دار": 1000,
+    "سواره نظام": 500
+  },
+  "castle": [
+    "یک دیوار یک لایه دور شهر",
+    "4 برج در چهار گوشه",
+    "یک دروازه لولایی"
+  ],
+  "structures": [],
+  "weapons": [],
+  "misc": [],
+  "economic_items": {
+    "گندم": 0,
+    "گوشت": 0,
+    "ماهی": 0,
+    "مرغ": 0,
+    "میوه": 0,
+    "فولاد": 0,
+    "شیشه": 0,
+    "سنگ": 0,
+    "چوب": 0,
+    "جواهر": 0,
+    "پنبه": 0,
+    "پارچه": 0,
+    "چرم": 0,
+    "شراب": 0,
+    "Fish": 60,
+    "Jewelry": 15
+  },
+  "economic_structures": {
+    "Fishing": {
+      "count": 2,
+      "product": "Fish",
+      "weekly_output": 10
+    },
+    "Jewelry Workshop": {
+      "count": 1,
+      "product": "Jewelry",
+      "weekly_output": 5
+    }
+  }
+}

@@ -1,19 +1,53 @@
+"""
+Bio handler module - handles character biography functionality
+"""
+import logging
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ContextTypes
+import asyncio
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.error import BadRequest
 from datetime import datetime, timedelta
 import re
-from data_manager import jobs_by_country, skills_config, save_data, add_bio_to_storage, get_used_hashtags, add_used_hashtag, load_job_reservations, save_job_reservations, load_bios
+from data_manager import jobs_by_country, skills_config, save_data, add_bio_to_storage, get_used_hashtags, add_used_hashtag, load_job_reservations, save_job_reservations, load_bios, save_bios, load_data_file
 from keyboards import country_jobs_keyboard, create_skill_selection_keyboard, bio_approval_keyboard, restart_button
 from utils import calculate_skill_pages, get_page_skills, validate_age, validate_hashtag, validate_username, format_bio_text
 from config import BIO_ADMIN_ID, SKILLS_PER_PAGE, COUNTRIES
 from skills_text import SKILLS_DESCRIPTION_TEXT
 
-async def select_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
+logger = logging.getLogger(__name__)
+
+async def handle_bio_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle bio menu operations"""
+    query = update.callback_query
+    await query.answer()
+
+    # Placeholder implementation
+    await query.edit_message_text("🎭 سیستم بیوگرافی در حال توسعه است...")
+
+async def create_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Create new character biography"""
+    # Placeholder implementation
+    await update.message.reply_text("ایجاد بیوگرافی در حال حاضر در دسترس نیست.")
+
+async def edit_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Edit existing biography"""
+    # Placeholder implementation
+    await update.message.reply_text("ویرایش بیوگرافی در حال حاضر در دسترس نیست.")
+
+async def view_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """View biography"""
+    # Placeholder implementation
+    await update.message.reply_text("مشاهده بیوگرافی در حال حاضر در دسترس نیست.")
+
+
+async def start_bio_submission(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Start the bio submission process"""
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
-    
+
     # Check if user already has a pending bio
     bios = load_bios()
     if str(user_id) in bios.get("bios", {}):
@@ -25,8 +59,39 @@ async def select_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
             else:
                 raise e
         return
-    
-    context.user_data[user_id] = {"step": "selecting_country"}
+
+    # Set bio flow
+    context.user_data[user_id] = {"step": "selecting_country", "flow_type": "bio"}
+
+    try:
+        await query.message.edit_text("برای کدوم کشور می‌خوای بیو بدی؟", reply_markup=country_jobs_keyboard())
+    except BadRequest as e:
+        if "Message is not modified" in str(e):
+            # Message content is the same, ignore the error
+            pass
+        else:
+            raise e
+
+async def select_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show country selection for bio"""
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+
+    # Check if user already has a pending bio
+    bios = load_bios()
+    if str(user_id) in bios.get("bios", {}):
+        try:
+            await query.message.edit_text("⏳ شما قبلاً یک بیو ثبت کرده‌اید. لطفاً منتظر بمانید تا ادمین آن را بررسی کند.")
+        except BadRequest as e:
+            if "Message is not modified" in str(e):
+                pass
+            else:
+                raise e
+        return
+
+    # Set bio flow
+    context.user_data[user_id] = {"step": "selecting_country", "flow_type": "bio"}
 
     try:
         await query.message.edit_text("برای کدوم کشور می‌خوای بیو بدی؟", reply_markup=country_jobs_keyboard())
@@ -41,12 +106,23 @@ async def select_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
-    country = query.data.split("_")[2]
-    context.user_data[user_id] = {"step": "selecting_job", "country": country}
+
+    # Extract country from bio-specific callback data
+    if query.data.startswith("select_bio_country_"):
+        country = query.data.replace("select_bio_country_", "")
+    else:
+        await query.message.edit_text("❌ خطا در انتخاب کشور برای بیو.")
+        return
+
+    context.user_data[user_id] = {"step": "selecting_job", "country": country, "flow_type": "bio"}
 
     job_buttons = []
     job_text = "👥 مشاغلی که داریم:\n"
-    jobs = jobs_by_country[country]
+    #jobs = jobs_by_country[country]
+    data = load_data_file("data.json")
+    jobs_by_country = data.get("jobs_by_country", {})
+    jobs = jobs_by_country.get(country, [])
+
 
     # بررسی اینکه آیا "شاه" پر شده
     king_taken = any(job["name"] == "شاه" and job["count"] == 0 for job in jobs)
@@ -56,21 +132,31 @@ async def select_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
         level = job["level"]
         count = job["count"]
 
+        if country == "Santos" and name == "امپراتور":
+            job_buttons.append([InlineKeyboardButton(f"{name} 🔒 (قفل شده)", callback_data="job_azure_locked")])
+            job_text += f"🔒 {name} - لول: {level} - قابل انتخاب نیست\n"
+            continue 
+
         # ⚠️ قفل کردن دوک اعظم در صورت پر بودن شاه
         if name == "دوک اعظم" and king_taken:
             job_buttons.append([InlineKeyboardButton(f"{name} ❌ (غیرقابل انتخاب)", callback_data="job_locked")])
             job_text += f"🔒 {name} - لول: {level} - در حال حاضر قابل انتخاب نیست\n"
         elif count > 0:
-            job_buttons.append([InlineKeyboardButton(f"{name} (لول {level})", callback_data=f"job_{name}")])
+            # Use safe job name for callback (replace spaces and special chars)
+            safe_job_name = name.replace(" ", "_").replace("(", "").replace(")", "").replace("ک", "k").replace("گ", "g")
+            job_buttons.append([InlineKeyboardButton(f"{name} (لول {level})", callback_data=f"bio_job_{safe_job_name}")])
             job_text += f"🔹 {name} - لول: {level} - ظرفیت: {count} نفر\n"
         else:
             job_buttons.append([InlineKeyboardButton(f"{name} ❌ (پر شده)", callback_data="job_taken")])
             job_text += f"❌ {name} - لول: {level} - ظرفیت پر شده\n"
 
+    job_text += '\n\n 🔖با انتخاب شغل آزاد میتونین بعدا از ادمین بخواین شغلی که مرتبط با کارهای حکومتی نیست رو براتون توی بیو ادیت بزنه (بعد تایید البته)'
+    job_text += '\n\n📌توضیحات مشاغل هر کشور رو توی <a href="https://t.me/R_O_T_C_Dignitaries">چنل اطلاعات کشورها</a> ببین.'
+
     job_buttons.append([InlineKeyboardButton("🔙 برگشتن", callback_data="back_to_main")])
 
     try:
-        await query.message.edit_text(job_text, reply_markup=InlineKeyboardMarkup(job_buttons))
+        await query.message.edit_text(job_text, reply_markup=InlineKeyboardMarkup(job_buttons), parse_mode='HTML')
     except BadRequest as e:
         if "Message is not modified" in str(e):
             # Message content is the same, ignore the error
@@ -82,45 +168,158 @@ async def handle_job_locks(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     if query.data == "job_locked":
         await query.answer("❌ این مقام به دلیل انتخاب شدن پادشاه قابل دسترسی نیست.", show_alert=True)
+    elif query.data == "job_azure_locked":
+        await query.answer("❌ این مقام در حال حاضر قابل دسترسی نیست.", show_alert=True)
     elif query.data == "job_taken":
         await query.answer("❌ این مقام ظرفیتش پر شده.", show_alert=True)
 
+# async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     if query.data in ["job_locked", "job_azure_locked", "job_taken"]:
+#         await query.answer("❌ این مقام در حال حاضر قابل دسترسی نیست.", show_alert=True)
+#         return
+#     await query.answer()
+#     user_id = query.from_user.id
+#     job_safe = query.data[8:]  # Remove "bio_job_" prefix (safe name)
+#     country = context.user_data["country"]
+
+#     # Convert safe job name back to actual job name
+#     job = job_safe.replace("_", " ").replace("k", "ک").replace("g", "گ")
+
+#     # Handle special cases where the conversion might not be perfect
+#     job_mapping = {
+#         "گرند_دوک": "گرند دوک",
+#         "دوک_اعظم": "دوک اعظم",
+#         "grand_duk": "گرند دوک",
+#         "duk_azam": "دوک اعظم"
+#     }
+#     job = job_mapping.get(job_safe, job)
+
+#     # Check if user already has a pending bio
+#     bios = load_bios()
+#     if str(user_id) in bios.get("bios", {}):
+#         await query.message.edit_text("⏳ شما قبلاً یک بیو ثبت کرده‌اید. لطفاً منتظر بمانید تا ادمین آن را بررسی کند.")
+#         return
+
+#     # Release any existing reservation for this user
+#     reservations = load_job_reservations()
+#     if str(user_id) in reservations:
+#         old_reservation = reservations[str(user_id)]
+#         old_country = old_reservation["country"]
+#         old_job = old_reservation["job"]
+
+#         # Return the old job to available pool
+#         old_job_data = next((j for j in jobs_by_country.get(old_country, []) if j["name"] == old_job), None)
+#         if old_job_data:
+#             old_job_data["count"] += 1
+
+#     context.user_data[user_id]["job"] = job
+
+#     job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
+#     if job_data:
+#         job_data["count"] = max(0, job_data["count"] - 1)
+
+#         save_data("data.json", {
+#             "jobs_by_country": jobs_by_country,
+#             "skills_config": skills_config
+#         })
+
+#         reservations[str(user_id)] = {
+#             "country": country,
+#             "job": job,
+#             "reserved_at": datetime.utcnow().isoformat()
+#         }
+#         save_job_reservations(reservations)
+
+#         # Set expiration time and step
+#         context.user_data[user_id]["expires_at"] = (datetime.utcnow() + timedelta(minutes=30)).isoformat()
+#         context.user_data[user_id]["step"] = "asking_name"
+
+#         # Delete the job selection message to avoid confusion
+#         try:
+#             await query.message.delete()
+#         except BadRequest as e:
+#             if "Message to delete not found" not in str(e):
+#                 print(f"Failed to delete job selection message: {e}")
+
+#         # Send separate messages
+#         await context.bot.send_message(
+#             chat_id=query.message.chat_id,
+#             text="⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!"
+#         )
+#         await context.bot.send_message(
+#             chat_id=query.message.chat_id,
+#             text="📛بچه خوشگل اسم کارکترتو کخ کن بیاد"
+#         )
+#     else:
+#         await query.message.edit_text("❌ مشکلی پیش اومده. شغلی که انتخاب کردی وجود نداره.")
+
+
 async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
+    if query.data in ["job_locked", "job_azure_locked", "job_taken"]:
+        await query.answer("❌ این مقام در حال حاضر قابل دسترسی نیست.", show_alert=True)
+        return
     await query.answer()
-    user_id = query.from_user.id
-    job = query.data[4:]  # Remove "job_" prefix
-    country = context.user_data[user_id]["country"]
 
-    # Check if user already has a pending bio
-    bios = load_bios()
-    if str(user_id) in bios.get("bios", {}):
-        await query.message.edit_text("⏳ شما قبلاً یک بیو ثبت کرده‌اید. لطفاً منتظر بمانید تا ادمین آن را بررسی کند.")
+    user_id = query.from_user.id
+    job_safe = query.data[8:]  # حذف "bio_job_" از اول
+
+    user_data = context.user_data.get(user_id)
+    if user_data is None:
+        await query.message.edit_text("لطفاً ابتدا کشور خود را انتخاب کنید.")
         return
 
-    # Release any existing reservation for this user
+    country = user_data.get("country")
+    if not country:
+        await query.message.edit_text("لطفاً ابتدا کشور خود را انتخاب کنید.")
+        return
+
+    # تبدیل نام شغل امن به شغل اصلی
+    job = job_safe.replace("_", " ").replace("k", "ک").replace("g", "گ")
+
+    job_mapping = {
+        "گرند_دوک": "گرند دوک",
+        "دوک_اعظم": "دوک اعظم",
+        "grand_duk": "گرند دوک",
+        "duk_azam": "دوک اعظم"
+    }
+    job = job_mapping.get(job_safe, job)
+
+    # بارگذاری بیوها و چک کردن بیوی نیمه‌کاره
+    bios = load_bios()
+    if str(user_id) in bios.get("bios", {}):
+        bio = bios["bios"][str(user_id)]
+        # فقط وقتی که مرحله بیو pending هست اجازه نده ادامه بده
+        if bio.get("step") == "pending":
+            await query.message.edit_text("⏳ شما قبلاً یک بیو ثبت کرده‌اید. لطفاً منتظر بمانید تا ادمین آن را بررسی کند.")
+            return
+
+    # آزاد کردن رزرو قبلی
     reservations = load_job_reservations()
     if str(user_id) in reservations:
         old_reservation = reservations[str(user_id)]
-        old_country = old_reservation["country"]
-        old_job = old_reservation["job"]
-        
-        # Return the old job to available pool
+        old_country = old_reservation.get("country")
+        old_job = old_reservation.get("job")
+
         old_job_data = next((j for j in jobs_by_country.get(old_country, []) if j["name"] == old_job), None)
         if old_job_data:
             old_job_data["count"] += 1
 
+    # ذخیره شغل انتخاب شده
+    if user_id not in context.user_data:
+        context.user_data[user_id] = {}
     context.user_data[user_id]["job"] = job
 
-    job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
+    job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job), None)
     if job_data:
         job_data["count"] = max(0, job_data["count"] - 1)
 
-        save_data({
+        save_data("data.json", {
             "jobs_by_country": jobs_by_country,
             "skills_config": skills_config
         })
-        
+
         reservations[str(user_id)] = {
             "country": country,
             "job": job,
@@ -128,28 +327,38 @@ async def ask_bio_fields(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
         save_job_reservations(reservations)
 
-        # Set expiration time and step
+
+        # ذخیره اولیه‌ی بیو ناقص با کشور و شغل و مرحله
+        bios.setdefault("bios", {})
+        bios["bios"][str(user_id)] = {
+            "country": country,
+            "job": job,
+            "step": "asking_name",
+            "flow_type": "bio",
+            "saved_at": datetime.utcnow().isoformat(),
+        }
+        save_bios(bios)
+
         context.user_data[user_id]["expires_at"] = (datetime.utcnow() + timedelta(minutes=30)).isoformat()
         context.user_data[user_id]["step"] = "asking_name"
 
-        # Delete the job selection message to avoid confusion
         try:
             await query.message.delete()
         except BadRequest as e:
             if "Message to delete not found" not in str(e):
                 print(f"Failed to delete job selection message: {e}")
 
-        # Send separate messages
         await context.bot.send_message(
             chat_id=query.message.chat_id,
             text="⏳ از این لحظه 30 دقیقه فرصت داری فرم بیوت رو کامل کنی. اگر دیر بجنبی شغل رزرو شده آزاد میشه!"
         )
         await context.bot.send_message(
             chat_id=query.message.chat_id,
-            text="📛بچه خوشگل اسم کارکترتو کخ کن بیاد"
+            text="📛 بچه خوشگل اسم کارکترتو کخ کن بیاد"
         )
     else:
         await query.message.edit_text("❌ مشکلی پیش اومده. شغلی که انتخاب کردی وجود نداره.")
+
 
 async def show_skill_selection(update, context, page=0):
     if update.callback_query:
@@ -243,75 +452,82 @@ async def handle_skill_selection(update: Update, context: ContextTypes.DEFAULT_T
     state = context.user_data.get(user_id, {})
     selected = state.get("skills", [])
 
-    # ⚠️ تکراری نباشه
+    special_skills = skills_config["special"]
+    allowed_extra_skills = [
+        "آهنگری",
+        "ساختمان‌سازی",
+        "کشتی سازی",
+        "ساخت دارو و سم",
+        "جواهر سازی"
+    ]
+
+    extended_skills = skills_config.get("extended_limit_if_has", {})
+    has_extended = any(ext in selected for ext in extended_skills)
+    total_limit = 5 if has_extended else 3
+
+    # حذف انتخاب اگر قبلا انتخاب شده
     if skill in selected:
-        selected.remove(skill)  # لغو انتخاب
-
-        # ✅ محاسبه base_limit حتی در حالت لغو
-        base_limit = 3
-        extended_skills = skills_config.get("extended_limit_if_has", {})
-        for extended_skill, new_limit in extended_skills.items():
-            if extended_skill in selected:
-                base_limit = new_limit
-                break
-
-        # ذخیره جدید
+        selected.remove(skill)
         state["skills"] = selected
         for i in range(1, 6):
             state.pop(f"skill{i}", None)
-        for i, s in enumerate(selected[:base_limit], start=1):
+        for i, s in enumerate(selected, start=1):
             state[f"skill{i}"] = s
-
         context.user_data[user_id] = state
         await show_skill_selection(update, context, page=page)
-        return  
+        return
 
-    # ⚠️ بررسی محدودیت مهارت خاص
-    special_skills = skills_config["special"]
-    special_selected = [s for s in selected if s in special_skills]
+    special_count = sum(1 for s in selected if s in special_skills)
+    extra_count = sum(1 for s in selected if s in allowed_extra_skills)
 
-    if skill in special_skills and len(special_selected) >= 1:
+    # سقف کلی
+    if len(selected) >= total_limit:
+        await query.answer(f"⚠️ نمی‌تونی بیشتر از {total_limit} مهارت انتخاب کنی!", show_alert=True)
+        return
+
+    # مهارت خاص فقط 1 تا
+    if skill in special_skills and special_count >= 1:
         await query.answer("⚠️ فقط می‌تونی یک مهارت خاص انتخاب کنی!", show_alert=True)
         return
 
-    # ⚠️ بررسی وابستگی‌ها
+    # شرط جدید: وقتی مدیریت داری و تعداد انتخاب‌ها به سقف نزدیکه، فقط مهارت فنی می‌تونی انتخاب کنی تا ۲ مهارت فنی داشته باشی
+    if has_extended:
+        selected_count = len(selected)
+        if selected_count >= total_limit - 2:
+            if skill not in allowed_extra_skills:
+                if extra_count < 2:
+                    await query.answer(
+                        "⚠️ چون مهارت مدیریت امور داخلی برداشتی باید دو مهارت اضافه ت رو از بین مهارت های سازنده انتخاب کنی.",
+                        show_alert=True
+                    )
+                    return
+    
+
+    # پیش‌نیازها
     required_skills_for = skills_config.get("required_skills_for", {})
     if skill in required_skills_for:
         required = required_skills_for[skill]
         missing = [r for r in required if r not in selected]
         if missing:
             await query.answer(
-                f"⚠️ برای انتخاب «{skill}» باید اول این مهارت‌ها رو انتخاب کنی:\n" +
+                f"⚠️ برای انتخاب «{skill}» باید اول این مهارت‌ها رو داشته باشی:\n" +
                 "\n".join(f"🔸 {m}" for m in missing),
                 show_alert=True
             )
             return
 
-    # ✅ بررسی سقف مجاز مهارت (با در نظر گرفتن مهارت‌های افزایش‌دهنده سقف)
-    base_limit = 3
-    extended_skills = skills_config.get("extended_limit_if_has", {})
-    for extended_skill, new_limit in extended_skills.items():
-        if extended_skill in selected or skill == extended_skill:
-            base_limit = new_limit
-            break
-
-    if len(selected) >= base_limit:
-        await query.answer(f"⚠️ فقط {base_limit} مهارت می‌تونی انتخاب کنی!", show_alert=True)
-        return
-
-    # ✅ ذخیره و ادامه
+    # اضافه کردن مهارت
     selected.append(skill)
     state["skills"] = selected
-
-    # ذخیره مهارت‌ها با کلیدهای مجزا برای استفاده‌های بعدی (مثل نمایش در بیو)
     for i in range(1, 6):
-        state.pop(f"skill{i}", None)  # پاک‌سازی کلیدهای قبلی
-
-    for i, s in enumerate(selected[:base_limit], start=1):
+        state.pop(f"skill{i}", None)
+    for i, s in enumerate(selected, start=1):
         state[f"skill{i}"] = s
 
     context.user_data[user_id] = state
     await show_skill_selection(update, context, page=page)
+
+
 
 async def handle_skill_navigation(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -376,25 +592,195 @@ async def handle_skill_continue(update: Update, context: ContextTypes.DEFAULT_TY
         else:
             raise e
 
+# async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     flow_type = user_data.get("flow_type")
+
+#     import logging
+#     logging.info(f"Bio handler - User {user_id}: flow_type={flow_type}")
+
+#     # Don't handle if user is in country management flow
+#     if flow_type == "country_management":
+#         await update.message.reply_text("لطفاً ابتدا از فلوی کشور خارج شوید.")
+#         return
+
+#     # Only handle if explicitly in bio flow or has bio-related step
+#     if flow_type != "bio" and user_data.get("step") not in ["asking_name", "asking_nickname", "asking_age", "asking_appearance", "asking_history", "asking_id_number", "asking_id_tag", "asking_photo", "selecting_skills"]:
+#         await update.message.reply_text("دستور /start رو بزن دوباره.")
+#         return
+
+#     text = update.message.text
+#     expires_at = user_data.get("expires_at")
+
+#     if expires_at and datetime.utcnow() > datetime.fromisoformat(expires_at):
+#         country = user_data["country"]
+#         job = user_data["job"]
+#         job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
+#         if job_data:
+#             job_data["count"] += 1
+#             save_data({
+#                 "jobs_by_country": jobs_by_country,
+#                 "skills_config": skills_config
+#             })
+#             bios = load_bios()
+#             bios["bios"][str(user_id)] = {
+#                 "step": "asking_name",   # یا هر مرحله‌ای که در ادامه هست
+#                 "country": country_name,
+#                 "job": job_name,
+#                 "flow_type": "bio"
+#             }
+#             save_bios(bios)
+
+#         context.user_data.pop(user_id, None)
+#         await update.message.reply_text("⏳ مهلت 30 دقیقه‌ات برای تکمیل فرم بیو تموم شد. دوباره /start بزن.")
+#         return
+
+#     if user_id not in context.user_data:
+#         await update.message.reply_text("دستور /start رو بزن دوباره.")
+#         return
+
+#     step = context.user_data[user_id]["step"]
+#     current = context.user_data[user_id]
+
+#     next_steps = [
+#         ("asking_name", "name", "📛 لقب رو بفرست:"),
+#         ("asking_nickname", "nickname", "🎂 سن رو بفرست:"),
+#         ("asking_age", "age", None), 
+#         ("asking_appearance", "appearance", "📖 سرگذشت کرکترت رو بنویس:"),
+#         ("asking_history", "history", "🆔 آیدیت رو وارد کن:"),
+#         ("asking_id_number", "id_number", "🔖 هشتگ اختصاصیت رو وارد کن:"),
+#         ("asking_id_tag", "user_id_tag", "🖼 حالا یه عکس داف از کرکترت بفرست:"),
+#     ]
+
+#     for i, (s, key, msg) in enumerate(next_steps):
+#         if step == s:
+#             if key:
+#                 # Validate age
+#                 if key == "age":
+#                     if not validate_age(text):
+#                         await update.message.reply_text("⚠️ یک عدد صحیح بین 10 تا 100 برای سن بزن.")
+#                         return
+
+#                 # Validate hashtag
+#                 if key == "user_id_tag":
+#                     used_tags = get_used_hashtags()
+#                     is_valid, message_or_hashtag = validate_hashtag(text, used_tags)
+
+#                     if not is_valid:
+#                         await update.message.reply_text(message_or_hashtag)
+#                         return
+
+#                     # Use the formatted hashtag returned by the validation function
+#                     text = message_or_hashtag
+
+#                 # Validate username
+#                 if key == "id_number":
+#                     if not validate_username(text):
+#                         await update.message.reply_text("⚠️ ایدیتو درست بزن (مثال: @yourusername).")
+#                         return
+
+#                     username = update.message.from_user.username
+#                     if not username:
+#                         await update.message.reply_text("❌ اکانتت ایدی نداره اول برای اکانتت ایدی بزار بعد بیا.")
+#                         return
+
+#                     if text[1:].lower() != username.lower():
+#                         await update.message.reply_text(f"❌ آیدی که زدی با ایدی اصلیت فرق داره زرنگ!\n ایدیت : @{username}")
+#                         return
+
+#                 current[key] = text
+
+#             next_step = next_steps[i + 1][0] if i + 1 < len(next_steps) else "asking_photo"
+
+#             if next_step == "asking_appearance":
+#                 current["skills"] = []
+#                 context.user_data[user_id]["step"] = "selecting_skills"
+#                 await show_skill_selection(update, context, page=0)
+#                 return
+
+#             context.user_data[user_id]["step"] = next_step
+#             await update.message.reply_text(msg)
+#             return
+
+#     if step == next_steps[-1][0]: 
+#         current["user_id_tag"] = text
+#         context.user_data[user_id]["step"] = "asking_photo"
+#         await update.message.reply_text("🖼 حالا یه عکس داف از کرکترت بفرست:")
+#         return
+
+#     if step == "asking_photo":
+#         if not update.message.photo:
+#             await update.message.reply_text("گفتم یه عکس بفرس.")
+#             return
+
+#         photo = update.message.photo[-1].file_id
+#         current["photo"] = photo
+#         context.user_data[user_id]["step"] = "pending"
+
+#         country = current["country"]
+#         job = current["job"]
+#         job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
+
+#         if not job_data:
+#             await update.message.reply_text("❌این شغله نیست تو لیست.")
+#             return
+
+#         level = job_data["level"]
+#         current["level"] = level
+
+#         caption = format_bio_text(current)
+#         unique_id = str(update.message.from_user.id)
+#         context.user_data[user_id]["unique_id"] = unique_id
+
+#         buttons = bio_approval_keyboard(unique_id)
+
+#         add_bio_to_storage(user_id, current)
+#         # Add hashtag to used list
+#         add_used_hashtag(current["user_id_tag"])
+
+#         # Remove from job reservations since bio is now submitted
+#         reservations = load_job_reservations()
+#         if str(user_id) in reservations:
+#             del reservations[str(user_id)]
+#             save_job_reservations(reservations)
+
+#         await asyncio.gather(*[
+#     context.bot.send_photo(
+#         chat_id=admin_id,
+#         photo=photo,
+#         caption=caption,
+#         reply_markup=buttons
+#     )
+#     for admin_id in BIO_ADMIN_ID
+# ])
+
+#     await update.message.reply_text("✅ فرم بیوت کامل شد خوشگلشم کردم فرستادم برا ادمین صبر کن زنده شه چکش کنه", reply_markup=restart_button())
+#     current.pop("skills_description_sent", None)
+#     context.user_data.pop(user_id)
+
 async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
-    text = update.message.text
-
     user_data = context.user_data.get(user_id, {})
-    expires_at = user_data.get("expires_at")
+    flow_type = user_data.get("flow_type")
 
+    if flow_type == "country_management":
+        await update.message.reply_text("لطفاً ابتدا از فلوی کشور خارج شوید.")
+        return
+
+    allowed_steps = ["asking_name", "asking_nickname", "asking_age", "asking_appearance",
+                     "asking_history", "asking_id_number", "asking_id_tag", "asking_photo", "selecting_skills"]
+    if flow_type != "bio" and user_data.get("step") not in allowed_steps:
+        await update.message.reply_text("دستور /start رو بزن دوباره.")
+        return
+
+    text = update.message.text.strip() if update.message.text else ""
+
+    expires_at = user_data.get("expires_at")
     if expires_at and datetime.utcnow() > datetime.fromisoformat(expires_at):
-        country = user_data["country"]
-        job = user_data["job"]
-        job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
-        if job_data:
-            job_data["count"] += 1
-            save_data({
-                "jobs_by_country": jobs_by_country,
-                "skills_config": skills_config
-            })
+        # اینجا همونجا پاک نکن، فقط اجازه بده تابع استارت پاکش کنه
+        await update.message.reply_text("⏳ مهلت ۳۰ دقیقه‌ای شما به پایان رسید. لطفا دوباره /start بزنید.")
         context.user_data.pop(user_id, None)
-        await update.message.reply_text("⏳ مهلت 30 دقیقه‌ات برای تکمیل فرم بیو تموم شد. دوباره /start بزن.")
         return
 
     if user_id not in context.user_data:
@@ -405,49 +791,57 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     current = context.user_data[user_id]
 
     next_steps = [
-        ("asking_name", "name", "📛 لقب رو بفرست:"),
-        ("asking_nickname", "nickname", "🎂 سن رو بفرست:"),
-        ("asking_age", "age", None), 
-        ("asking_appearance", "appearance", "📖 سرگذشت کرکترت رو بنویس:"),
-        ("asking_history", "history", "🆔 آیدیت رو وارد کن:"),
-        ("asking_id_number", "id_number", "🔖 هشتگ اختصاصیت رو وارد کن:"),
-        ("asking_id_tag", "user_id_tag", "🖼 حالا یه عکس داف از کرکترت بفرست:"),
+        ("asking_name", "name", "📛 لطفا لقب شخصیتت رو بفرست:"),
+        ("asking_nickname", "nickname", "🎂 لطفا سن شخصیتت رو وارد کن:"),
+        ("asking_age", "age", None),
+        ("asking_appearance", "appearance", "📖 لطفا سرگذشت شخصیتت رو بنویس:"),
+        ("asking_history", "history", "🆔 آیدی شخصیت رو وارد کن:"),
+        ("asking_id_number", "id_number", "🔖 هشتگ اختصاصی شخصیت رو وارد کن:"),
+        ("asking_id_tag", "user_id_tag", "🖼 لطفا یک عکس از شخصیتت بفرست:")
     ]
 
     for i, (s, key, msg) in enumerate(next_steps):
         if step == s:
             if key:
-                # Validate age
                 if key == "age":
                     if not validate_age(text):
-                        await update.message.reply_text("⚠️ یک عدد صحیح بین 10 تا 100 برای سن بزن.")
+                        await update.message.reply_text("⚠️ سن باید عددی بین ۱۰ تا ۱۰۰ باشد.")
                         return
 
-                # Validate hashtag
                 if key == "user_id_tag":
+                    # در مرحله هشتگ: اعتبارسنجی و سپس ذخیره + تغییر مرحله به asking_photo
                     used_tags = get_used_hashtags()
                     is_valid, message_or_hashtag = validate_hashtag(text, used_tags)
-
                     if not is_valid:
                         await update.message.reply_text(message_or_hashtag)
                         return
-
-                    # Use the formatted hashtag returned by the validation function
                     text = message_or_hashtag
+                    current["user_id_tag"] = text
 
-                # Validate username
+                    # بارگذاری bios و آپدیت فقط بخش هشتگ و مرحله
+                    bios = load_bios()
+                    bios.setdefault("bios", {})
+                    saved = bios["bios"].get(str(user_id), {})
+                    saved.update(current)
+                    saved["step"] = "asking_photo"  # تغییر مرحله به عکس
+                    saved["saved_at"] = datetime.utcnow().isoformat()
+                    bios["bios"][str(user_id)] = saved
+                    save_bios(bios)
+
+                    context.user_data[user_id]["step"] = "asking_photo"
+                    await update.message.reply_text("🖼 حالا یه عکس داف از کرکترت بفرست:")
+                    return
+
                 if key == "id_number":
                     if not validate_username(text):
-                        await update.message.reply_text("⚠️ ایدیتو درست بزن (مثال: @yourusername).")
+                        await update.message.reply_text("⚠️ آیدی را درست وارد کن (مثال: @yourusername).")
                         return
-
                     username = update.message.from_user.username
                     if not username:
-                        await update.message.reply_text("❌ اکانتت ایدی نداره اول برای اکانتت ایدی بزار بعد بیا.")
+                        await update.message.reply_text("❌ اکانت شما آیدی ندارد. لطفا آیدی بسازید سپس ادامه دهید.")
                         return
-
                     if text[1:].lower() != username.lower():
-                        await update.message.reply_text(f"❌ آیدی که زدی با ایدی اصلیت فرق داره زرنگ!\n ایدیت : @{username}")
+                        await update.message.reply_text(f"❌ آیدی وارد شده با آیدی اصلی شما متفاوت است!\nآیدی شما: @{username}")
                         return
 
                 current[key] = text
@@ -460,57 +854,72 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await show_skill_selection(update, context, page=0)
                 return
 
-            context.user_data[user_id]["step"] = next_step
-            await update.message.reply_text(msg)
-            return
+            # آپدیت بیو ناقص در اینجا: 
+            # ذخیره اطلاعات جدید به bios بدون حذف یا تغییر مرحله به pending
+            bios = load_bios()
+            bios.setdefault("bios", {})
+            saved = bios["bios"].get(str(user_id), {})
+            saved.update(current)
+            saved["step"] = next_step
+            saved["saved_at"] = datetime.utcnow().isoformat()
+            bios["bios"][str(user_id)] = saved
+            save_bios(bios)
 
-    if step == next_steps[-1][0]: 
-        current["user_id_tag"] = text
-        context.user_data[user_id]["step"] = "asking_photo"
-        await update.message.reply_text("🖼 حالا یه عکس داف از کرکترت بفرست:")
-        return
+            context.user_data[user_id]["step"] = next_step
+            if msg:
+                await update.message.reply_text(msg)
+            return
 
     if step == "asking_photo":
         if not update.message.photo:
-            await update.message.reply_text("گفتم یه عکس بفرس.")
+            await update.message.reply_text("⚠️ لطفا فقط عکس ارسال کنید.")
             return
 
-        photo = update.message.photo[-1].file_id
-        current["photo"] = photo
+        photo_file_id = update.message.photo[-1].file_id
+        current["photo"] = photo_file_id
+        context.user_data[user_id]["step"] = "pending"
 
-        country = current["country"]
-        job = current["job"]
-        job_data = next((j for j in jobs_by_country[country] if j["name"] == job), None)
-
+        country = current.get("country")
+        job = current.get("job")
+        job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job), None)
         if not job_data:
-            await update.message.reply_text("❌این شغله نیست تو لیست.")
+            await update.message.reply_text("❌ شغل انتخابی شما معتبر نیست.")
             return
 
-        level = job_data["level"]
-        current["level"] = level
+        current["level"] = job_data.get("level")
 
         caption = format_bio_text(current)
-        unique_id = str(update.message.from_user.id)
+        unique_id = str(user_id)
         context.user_data[user_id]["unique_id"] = unique_id
 
         buttons = bio_approval_keyboard(unique_id)
 
         add_bio_to_storage(user_id, current)
-        # Add hashtag to used list
         add_used_hashtag(current["user_id_tag"])
 
-        # Remove from job reservations since bio is now submitted
-        reservations = load_job_reservations()
-        if str(user_id) in reservations:
-            del reservations[str(user_id)]
-            save_job_reservations(reservations)
+        # ذخیره نهایی بیو در حالت pending
+        bios = load_bios()
+        bios.setdefault("bios", {})
+        saved = bios["bios"].get(str(user_id), {})
+        saved.update(current)
+        saved["step"] = "pending"
+        saved["saved_at"] = datetime.utcnow().isoformat()
+        bios["bios"][str(user_id)] = saved
+        save_bios(bios)
 
-        await context.bot.send_photo(
-            chat_id=BIO_ADMIN_ID,
-            photo=photo,
-            caption=caption,
-            reply_markup=buttons
-        )
-        await update.message.reply_text("✅ فرم بیوت کامل شد خوشگلشم کردم فرستادم برا ادمین صبر کن زنده شه چکش کنه", reply_markup=restart_button())
-        current.pop("skills_description_sent", None)
-        context.user_data.pop(user_id)
+        await asyncio.gather(*[
+            context.bot.send_photo(
+                chat_id=admin_id,
+                photo=photo_file_id,
+                caption=caption,
+                reply_markup=buttons
+            )
+            for admin_id in BIO_ADMIN_ID
+        ])
+
+        await update.message.reply_text("✅ فرم بیو شما کامل شد و ارسال شد برای بررسی ادمین.", reply_markup=restart_button())
+        context.user_data.pop(user_id, None)
+        return
+
+    # اگر به اینجا رسیدیم یعنی مرحله نامشخص یا خطا
+    await update.message.reply_text("خطا در فرایند. لطفا /start بزنید و دوباره شروع کنید.")

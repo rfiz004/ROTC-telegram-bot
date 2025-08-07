@@ -1,0 +1,77 @@
+{
+  "country": "Alestria",
+  "province": "Meraven",
+  "mines": {
+    "Stone mine": 0,
+    "Tin mine": 0,
+    "Iron mine": 0,
+    "Coal mine": 0,
+    "Copper mine": 1,
+    "Silver mine": 0,
+    "Golden mine": 0,
+    "Diamond mine": 0
+  },
+  "wealth": 30000,
+  "population": 30000,
+  "tax": 0,
+  "popularity": -23,
+  "total_army": 5000,
+  "army": {
+    "کماندار": 2000,
+    "شمشیرزن": 1500,
+    "نیزه دار": 1000,
+    "سواره نظام": 500
+  },
+  "castle": [
+    "یک دیوار یک لایه دور شهر",
+    "4 برج در چهار گوشه",
+    "یک دروازه لولایی"
+  ],
+  "structures": [],
+  "weapons": [],
+  "misc": [],
+  "economic_items": {
+    "گندم": 0,
+    "گوشت": 0,
+    "ماهی": 0,
+    "مرغ": 0,
+    "میوه": 0,
+    "فولاد": 0,
+    "شیشه": 0,
+    "سنگ": 0,
+    "چوب": 0,
+    "جواهر": 0,
+    "پنبه": 0,
+    "پارچه": 0,
+    "چرم": 0,
+    "شراب": 0
+  },
+  "economic_structures": {},
+  "structure_productions": {},
+  "mine_productions": {
+    "Stone mine": {
+      "weekly_per_unit": 2000
+    },
+    "Tin mine": {
+      "weekly_per_unit": 3000
+    },
+    "Iron mine": {
+      "weekly_per_unit": 5000
+    },
+    "Coal mine": {
+      "weekly_per_unit": 7000
+    },
+    "Copper mine": {
+      "weekly_per_unit": 10000
+    },
+    "Silver mine": {
+      "weekly_per_unit": 25000
+    },
+    "Golden mine": {
+      "weekly_per_unit": 50000
+    },
+    "Diamond mine": {
+      "weekly_per_unit": 100000
+    }
+  }
+}

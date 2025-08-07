@@ -1,0 +1,62 @@
+{
+  "country": "Alpyr",
+  "province": "Eldhalm",
+  "mines": {
+    "Stone mine": 0,
+    "Tin mine": 0,
+    "Iron mine": 0,
+    "Coal mine": 0,
+    "Copper mine": 2,
+    "Silver mine": 0,
+    "Golden mine": 0,
+    "Diamond mine": 0
+  },
+  "wealth": 64000,
+  "population": 30000,
+  "tax": 20,
+  "popularity": 7,
+  "total_army": 5000,
+  "army": {
+    "کماندار": 2200,
+    "شمشیرزن": 1500,
+    "نیزه دار": 1000,
+    "سواره نظام": 500
+  },
+  "castle": [
+    "یک دیوار یک لایه دور شهر",
+    "4 برج در چهار گوشه",
+    "یک دروازه لولایی"
+  ],
+  "structures": [],
+  "weapons": [],
+  "misc": [],
+  "economic_items": {
+    "جواهر": 10,
+    "سنگ": 0,
+    "شراب": 0,
+    "شیشه": 0,
+    "فولاد": 0,
+    "ماهی": 20,
+    "مرغ": 0,
+    "میوه": 0,
+    "پارچه": 0,
+    "پنبه": 0,
+    "چرم": 0,
+    "چوب": 0,
+    "گندم": 0,
+    "گوشت": 0
+  },
+  "economic_structures": {
+    "ماهیگیری": {
+      "count": 2,
+      "product": "ماهی",
+      "weekly_output": 10
+    }
+  },
+  "structure_productions": {
+    "ماهیگیری": {
+      "produces": "ماهی",
+      "weekly_per_unit": 10
+    }
+  }
+}
