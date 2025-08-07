@@ -602,99 +602,99 @@ def create_application():
 
 logging.basicConfig(level=logging.INFO)
 
-def main():
-    """Main function to start the bot using polling mode"""
-    try:
-        logger.info("🔄 Starting bot in polling mode...")
-        logger.info(f"🤖 Bot token configured: {'✅' if BOT_TOKEN else '❌'}")
+# def main():
+#     """Main function to start the bot using polling mode"""
+#     try:
+#         logger.info("🔄 Starting bot in polling mode...")
+#         logger.info(f"🤖 Bot token configured: {'✅' if BOT_TOKEN else '❌'}")
 
-        if not BOT_TOKEN:
-            raise ValueError("BOT_TOKEN is not set")
+#         if not BOT_TOKEN:
+#             raise ValueError("BOT_TOKEN is not set")
 
-        # Create application
-        app = create_application()
+#         # Create application
+#         app = create_application()
         
 
-        # Start polling with optimized settings
-        app.run_polling(
-            allowed_updates=Update.ALL_TYPES,
-            drop_pending_updates=True,
-            close_loop=False
-        )
+#         # Start polling with optimized settings
+#         app.run_polling(
+#             allowed_updates=Update.ALL_TYPES,
+#             drop_pending_updates=True,
+#             close_loop=False
+#         )
 
-    except Exception as e:
-        logger.error(f"Error starting bot: {e}")
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
+#     except Exception as e:
+#         logger.error(f"Error starting bot: {e}")
+#         import traceback
+#         traceback.print_exc()
+#         sys.exit(1)
 
-# Signal handler for graceful shutdown
-def signal_handler(sig, frame):
-    logger.info(f"\n🛑 Received signal {sig}, shutting down gracefully...")
-    sys.exit(0)
-
-if __name__ == "__main__":
-    # Set up signal handlers for graceful shutdown
-    signal.signal(signal.SIGINT, signal_handler)
-    signal.signal(signal.SIGTERM, signal_handler)
-
-    try:
-        logger.info("🚀 Starting Telegram bot...")
-        main()
-        asyncio.create_task(periodic_git_push())
-        # asyncio.run(start_bot_and_scheduler())
-    except KeyboardInterrupt:
-        logger.info("🛑 Bot stopped by user")
-    except SystemExit:
-        logger.info("🛑 Bot stopped gracefully") 
-    except Exception as e:
-        logger.error(f"❌ Failed to start bot: {e}")
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
-
-# async def handle_webhook(request):
-#     try:
-#         data = await request.json()
-#         update = Update.de_json(data, app.bot)
-
-#         # اجرای پردازش آپدیت در پس‌زمینه
-#         asyncio.create_task(app.process_update(update))
-
-#         return web.Response(text="OK")
-#     except Exception:
-#         logging.exception("❌ Webhook handler error")
-#         return web.Response(status=503, text="Error")
-
-# async def root(request):
-#     return web.Response(text="Bot is alive!")
-
-# async def main():
-#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-#     if not render_url:
-#         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
-#         return
-
-#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-#     print(f"✅ Setting webhook to: {webhook_url}")
-#     await app.bot.set_webhook(url=webhook_url, max_connections=15)
-
-#     await app.initialize()
-#     await app.start()
-
-#     webapp = web.Application()
-#     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
-#     webapp.router.add_get("/", root)
-#     webapp.router.add_get("/setwebhook", set_webhook_handler)
-
-#     runner = web.AppRunner(webapp)
-#     await runner.setup()
-#     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-#     await site.start()
-
-#     print(f"🚀 Bot is running with webhook on port {PORT}")
-#     asyncio.create_task(periodic_git_push())
-#     await asyncio.Event().wait()
+# # Signal handler for graceful shutdown
+# def signal_handler(sig, frame):
+#     logger.info(f"\n🛑 Received signal {sig}, shutting down gracefully...")
+#     sys.exit(0)
 
 # if __name__ == "__main__":
-#     asyncio.run(main())
+#     # Set up signal handlers for graceful shutdown
+#     signal.signal(signal.SIGINT, signal_handler)
+#     signal.signal(signal.SIGTERM, signal_handler)
+
+#     try:
+#         logger.info("🚀 Starting Telegram bot...")
+#         main()
+#         asyncio.create_task(periodic_git_push())
+#         # asyncio.run(start_bot_and_scheduler())
+#     except KeyboardInterrupt:
+#         logger.info("🛑 Bot stopped by user")
+#     except SystemExit:
+#         logger.info("🛑 Bot stopped gracefully") 
+#     except Exception as e:
+#         logger.error(f"❌ Failed to start bot: {e}")
+#         import traceback
+#         traceback.print_exc()
+#         sys.exit(1)
+
+async def handle_webhook(request):
+    try:
+        data = await request.json()
+        update = Update.de_json(data, app.bot)
+
+        # اجرای پردازش آپدیت در پس‌زمینه
+        asyncio.create_task(app.process_update(update))
+
+        return web.Response(text="OK")
+    except Exception:
+        logging.exception("❌ Webhook handler error")
+        return web.Response(status=503, text="Error")
+
+async def root(request):
+    return web.Response(text="Bot is alive!")
+
+async def main():
+    render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+    if not render_url:
+        print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
+        return
+
+    webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+    print(f"✅ Setting webhook to: {webhook_url}")
+    await app.bot.set_webhook(url=webhook_url, max_connections=15)
+
+    await app.initialize()
+    await app.start()
+
+    webapp = web.Application()
+    webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
+    webapp.router.add_get("/", root)
+    webapp.router.add_get("/setwebhook", set_webhook_handler)
+
+    runner = web.AppRunner(webapp)
+    await runner.setup()
+    site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+    await site.start()
+
+    print(f"🚀 Bot is running with webhook on port {PORT}")
+    asyncio.create_task(periodic_git_push())
+    await asyncio.Event().wait()
+
+if __name__ == "__main__":
+    asyncio.run(main())
