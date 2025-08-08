@@ -28,7 +28,7 @@ from callback_handlers import (
     handle_back_to_country_menu, food_handle_callback,
     handle_skill_type_selection, show_channels_with_keyboard
 )
-from message_handlers import handle_all_messages, handle_text_router, handle_photo_router
+from message_handlers import handle_all_messages
 from run_git_push import run_git_push
 from auto_commit_push import schedule_auto_push, auto_push_every_15_minutes
 
@@ -81,6 +81,114 @@ from transfer_handler import (
 from province_handler import (
     show_grain_preview, edit_tax_callback, handle_tax_input
 )
+
+async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        user_id = update.message.from_user.id
+        user_data = context.user_data.get(user_id, {})
+        state = user_data.get("state")
+        step = user_data.get("step")
+        flow_type = user_data.get("flow_type")
+
+        logger.info(f"Text router - User {user_id}: flow_type={flow_type}, state={state}, step={step}")
+
+        # Handle transfer items input
+        if step == "awaiting_transfer_items_input":
+            from transfer_handler import handle_transfer_items_input
+            if await handle_transfer_items_input(update, context):
+                return
+
+        # Handle country management flow first
+        if flow_type == "country_management":
+            if state in ["awaiting_password", "awaiting_character_name", "awaiting_news_text"]:
+                await handle_user_text(update, context)
+                return
+
+            # Handle tax input
+            elif step == "editing_province_tax":
+                if await handle_tax_input(update, context):
+                    return
+            else:
+                await update.message.reply_text("لطفاً از منوی کشور استفاده کنید.")
+                return
+
+        # Handle shop quantity input
+        elif step == "awaiting_quantity" and flow_type == "shop_purchase":
+            if await handle_quantity_input(update, context):
+                return
+
+        # Handle admin functions
+        elif step in ["awaiting_rp_password", "awaiting_skill_name", "removing_skill", "add_job", "remove_job", "increase_job", "decrease_job"]:
+            await handle_all_messages(update, context)
+            return
+
+        # Handle shop item text inputs
+        elif step in ["awaiting_shop_item_name", "awaiting_shop_item_type", "awaiting_shop_item_country", "awaiting_shop_item_description", "awaiting_shop_item_price", "awaiting_shop_item_owner"]:
+            await handle_shop_item_text_input(update, context)
+            return
+
+        # Handle shop item editing
+        elif step == "awaiting_new_shop_caption":
+            from admin_province_handler import handle_new_shop_caption
+            if await handle_new_shop_caption(update, context):
+                return
+
+        # Handle province editing inputs
+        elif step and step.startswith("awaiting_province_") and step.endswith("_edit"):
+            from admin_province_handler import handle_province_edit_input
+            if await handle_province_edit_input(update, context):
+                return
+
+        
+        # Handle bio flow
+        elif flow_type == "bio":
+            await collect_bio(update, context)
+            return
+
+        # Handle grain management input
+        elif flow_type == "grain_management":
+            if step == "awaiting_grain_priority":
+                from data_manager import handle_grain_priority
+                if await handle_grain_priority(update, context):
+                    return
+
+            elif step == "awaiting_grain_percentage":
+                from data_manager import handle_grain_percentage
+                if await handle_grain_percentage(update, context):
+                    return
+
+
+        
+        # Default case
+        else:
+            await update.message.reply_text("برای شروع دستور /start را بزنید.")
+
+    except Exception as e:
+        import traceback
+        logger.error("Error in text router:\n" + traceback.format_exc())
+        try:
+            await update.message.reply_text("خطایی رخ داد. لطفاً مجدداً تلاش کنید.")
+        except:
+            pass
+
+async def handle_photo_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle photo uploads"""
+    try:
+        user_id = update.message.from_user.id
+        user_data = context.user_data.get(user_id, {})
+        step = user_data.get("step")
+
+        # Handle shop item image upload
+        if step == "awaiting_shop_item_image":
+            await handle_shop_item_image(update, context)
+        elif step == "awaiting_new_shop_image":
+            from admin_province_handler import handle_new_shop_image
+            await handle_new_shop_image(update, context)
+        # Handle bio photo
+        else:
+            await collect_bio(update, context)
+    except Exception as e:
+        logger.error(f"Error in photo router: {e}")
 
 # ────────────── Logging
 logging.basicConfig(
