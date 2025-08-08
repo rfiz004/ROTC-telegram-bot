@@ -808,24 +808,54 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         await update.message.reply_text("⚠️ سن باید عددی بین ۱۰ تا ۱۰۰ باشد.")
                         return
 
-                if key == "user_id_tag":
+                # if key == "user_id_tag":
                     # در مرحله هشتگ: اعتبارسنجی و سپس ذخیره + تغییر مرحله به asking_photo
+                    # used_tags = get_used_hashtags()
+                    # is_valid, message_or_hashtag = validate_hashtag(text, used_tags)
+                    # if not is_valid:
+                    #     await update.message.reply_text(message_or_hashtag)
+                    #     return
+                    # text = message_or_hashtag
+                    # current["user_id_tag"] = text
+
+                    # # بارگذاری bios و آپدیت فقط بخش هشتگ و مرحله
+                    # bios = load_bios()
+                    # bios.setdefault("bios", {})
+                    # saved = bios["bios"].get(str(user_id), {})
+                    # saved.update(current)
+                    # saved["step"] = "asking_photo"  # تغییر مرحله به عکس
+                    # saved["saved_at"] = datetime.utcnow().isoformat()
+                    # bios["bios"][str(user_id)] = saved
+                    # save_bios(bios)
+
                     used_tags = get_used_hashtags()
+
+# اعتبارسنجی هشتگ با چک حساس به حروف کوچک/بزرگ در تابع validate_hashtag (که قبلاً اصلاح کردیم)
+                if key == "user_id_tag":
                     is_valid, message_or_hashtag = validate_hashtag(text, used_tags)
                     if not is_valid:
                         await update.message.reply_text(message_or_hashtag)
                         return
+                    
                     text = message_or_hashtag
                     current["user_id_tag"] = text
-
-                    # بارگذاری bios و آپدیت فقط بخش هشتگ و مرحله
+                    
+                    # بارگذاری bios برای آپدیت
                     bios = load_bios()
                     bios.setdefault("bios", {})
+                    
+                    # اضافه کردن هشتگ جدید به لیست used_hashtags با استاندارد lower case و همراه #
+                    used_tags = bios.get("used_hashtags", [])
+                    if text.lower() not in [tag.lower() for tag in used_tags]:
+                        used_tags.append(text)
+                        bios["used_hashtags"] = used_tags
+                    
                     saved = bios["bios"].get(str(user_id), {})
                     saved.update(current)
-                    saved["step"] = "asking_photo"  # تغییر مرحله به عکس
                     saved["saved_at"] = datetime.utcnow().isoformat()
                     bios["bios"][str(user_id)] = saved
+                    
+                    # ذخیره کل bios با updated used_hashtags
                     save_bios(bios)
 
                     context.user_data[user_id]["step"] = "asking_photo"
