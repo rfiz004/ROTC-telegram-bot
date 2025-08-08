@@ -1,33 +1,5 @@
 {
   "bios": {
-    "6213073537": {
-      "step": "pending",
-      "country": "Santos",
-      "flow_type": "bio",
-      "job": "امپراتریس",
-      "expires_at": "2025-08-08T21:30:54.305428",
-      "name": "Valeria Casandra Drakov",
-      "nickname": "Bloody Magnolia",
-      "age": "38",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "مدیریت امور نظامی",
-        "حواس پنجگانه قوی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "مدیریت امور نظامی",
-      "skill3": "حواس پنجگانه قوی",
-      "appearance": "As shown in the picture",
-      "history": "Beneath the veil of twilight’s shroud, she rose,\nA daughter forged by gods in secret prose.\nTwin flames of fate, in shadow’s silent dance,\nDid cleave the throne with ruthless, grim expanse.\n\nHer eyes—red embers, burning deep with fire,\nClad in raiment wrought from fate’s desire.\nA crown acquired by blood and whispered doom,\nWhere whispered treasons brewed within the gloom.\n\nHer hand, once gentle, steeled by cruel fate,\nDid spill the blood of love—and sealed her state.\nFor in the womb, a kingdom’s future bled,\nWhile loyal hearts to darkness swiftly fled.\n\nThe masses spoke in fear and veiled regret,\nOf secrets that the crimson queen beget.\nA sovereign born of gods, yet stained with strife,\nThe bloody rose that pruned the root of life.",
-      "id_number": "@Valeria_cas",
-      "user_id_tag": "#Valerie",
-      "photo": "AgACAgQAAxkBAAIWOmiWajwgYsYchKrc70-Aqjr2Wu4mAAJqzDEbRaO5UGNWWkLnyUsSAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "6213073537",
-      "saved_at": "2025-08-08T21:21:01.001904"
-    }
   },
   "used_hashtags": [
     "#Artemis"
