@@ -1,19 +1,26 @@
-import os
 import subprocess
 import glob
 from datetime import datetime
-from config import GITHUB_BRANCH, GITHUB_REPO, GITHUB_TOKEN, GITHUB_REPO_URL
+from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN, GITHUB_BRANCH
+
+def set_git_remote_url(url):
+    # بررسی وجود ریموت origin و اضافه کردن یا ست کردن URL آن
+    remotes = subprocess.check_output(["git", "remote"]).decode().split()
+    if "origin" in remotes:
+        subprocess.run(["git", "remote", "set-url", "origin", url], check=True)
+    else:
+        subprocess.run(["git", "remote", "add", "origin", url], check=True)
 
 def run_git_push():
     if not GITHUB_TOKEN:
         print("❌ GitHub token not found in environment variables!")
         exit(1)
 
-    # GITHUB_REPO_URL = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git"
     commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     try:
-        subprocess.run(["git", "remote", "set-url", "origin", GITHUB_REPO_URL], check=True)
+        # تنظیم ریموت origin با توکن و URL
+        set_git_remote_url(GITHUB_REPO_URL)
 
         files_to_add = [
             "provinces/*.json",
