@@ -9,7 +9,7 @@ from telegram.ext import (
     MessageHandler, filters, ContextTypes, Application
 )
 from telegram.error import Conflict, NetworkError, TelegramError
-
+from data_manager import clear_expired_reservations, jobs_by_country, load_data_file, save_data_file
 from config import BOT_TOKEN, PORT, GITHUB_REPO, GITHUB_TOKEN, GITHUB_BRANCH
 from keyboards import main_menu
 from callback_handlers import handle_main_menu, handle_back_navigation, handle_back_to_country_menu, food_handle_callback
