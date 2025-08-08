@@ -1,7 +1,7 @@
 import os
 
 # ────────────── Token Configs
-BOT_TOKEN = os.environ.get("BOT_TOKEN","8135083594:AAHb7wdYeUsVnNaCjPoP9ZYSTlDSJGcJhEs")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 if not BOT_TOKEN:
     raise ValueError("❌ BOT_TOKEN is missing!")
 
