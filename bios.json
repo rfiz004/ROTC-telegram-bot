@@ -1,33 +1,4 @@
 {
-  "bios": {
-    "6213073537": {
-      "step": "pending",
-      "country": "Santos",
-      "flow_type": "bio",
-      "job": "امپراتریس",
-      "expires_at": "2025-08-08T22:20:07.173068",
-      "name": "Valeria Casandra Drakov",
-      "nickname": "Bloody Magnolia, Crimson Empress",
-      "age": "38",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "مدیریت امور نظامی",
-        "حواس پنجگانه قوی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "مدیریت امور نظامی",
-      "skill3": "حواس پنجگانه قوی",
-      "appearance": "As shown in the picture",
-      "history": "-",
-      "id_number": "@Valeria_cas",
-      "user_id_tag": "#Valerie",
-      "photo": "AgACAgQAAxkBAAIW32iWcUY7Ub08Vkw5FPCCTzhEfVNzAAI7yTEbXiiwUCWNkspHxn-4AQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "6213073537",
-      "saved_at": "2025-08-08T21:51:03.203298"
-    }
-  },
+  "bios": {},
   "used_hashtags": []
 }
