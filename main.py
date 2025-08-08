@@ -562,7 +562,6 @@ app.add_error_handler(error_handler)
 # Add job queue if available
 if hasattr(app, 'job_queue') and app.job_queue:
     app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
-    return app
 
 
     #     app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
