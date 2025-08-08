@@ -872,6 +872,7 @@ async def set_webhook_handler(request):
 async def main():
     global telegram_app
     telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
+    PORT = int(os.environ.get("PORT", 10000))
 
     await telegram_app.initialize()
     await telegram_app.start()
