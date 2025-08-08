@@ -30,7 +30,7 @@ from callback_handlers import (
 )
 from message_handlers import handle_all_messages
 from run_git_push import run_git_push
-from auto_commit_push import schedule_auto_push, auto_push_every_15_minutes
+from auto_commit_push import schedule_auto_push
 
 # Handlers
 from bio_handler import (
@@ -392,8 +392,9 @@ async def main():
     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
     await site.start()
 
-    asyncio.create_task(auto_push_every_15_minutes())  # گیت پوش خودکار
-
+    # asyncio.create_task(auto_push_every_15_minutes())  # گیت پوش خودکار
+    asyncio.create_task(periodic_git_push())
+    
     logger.info(f"🚀 Bot is running with webhook on port {PORT}")
     await asyncio.Event().wait()
 
