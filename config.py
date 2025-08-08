@@ -11,6 +11,7 @@ PORT = int(os.environ.get("PORT", 10000))
 GITHUB_REPO = "rfiz004/ROTC-telegram-bot"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKENN")  # یا GITHUB_TOKEN
 GITHUB_BRANCH = "main"
+GITHUB_REPO_URL = GITHUB_REPO_URL = f"https://{GITHUB_TOKEN}@github.com/rfiz004/ROTC-telegram-bot.git"
 # ────────────── Admin
 BIO_ADMIN_ID = [5890943003, 898145344] #me-ali-mary
 COUNTRY_ADMIN_ID = {
