@@ -5,22 +5,12 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 if not BOT_TOKEN:
     raise ValueError("❌ BOT_TOKEN is missing!")
 
-# Use port 5000 for Replit compatibility
 PORT = int(os.environ.get("PORT", 10000))
-
-# ────────────── Platform Detection
-# Check if running on Replit
-IS_REPLIT = os.environ.get("REPL_SLUG") is not None
-REPLIT_URL = f"https://{os.environ.get('REPL_SLUG', 'unknown')}.{os.environ.get('REPL_OWNER', 'unknown')}.repl.co" if IS_REPLIT else None
-
-# Force polling mode for Replit compatibility
-USE_POLLING = True
 
 # ────────────── GitHub
 GITHUB_REPO = "rfiz004/ROTC-telegram-bot"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKENN")  # یا GITHUB_TOKEN
 GITHUB_BRANCH = "main"
-
 # ────────────── Admin
 BIO_ADMIN_ID = [5890943003, 898145344] #me-ali-mary
 COUNTRY_ADMIN_ID = {
