@@ -6,7 +6,7 @@ if not BOT_TOKEN:
     raise ValueError("❌ BOT_TOKEN is missing!")
 
 # Use port 5000 for Replit compatibility
-PORT = int(os.environ.get("PORT", 5000))
+PORT = int(os.environ.get("PORT", 10000))
 
 # ────────────── Platform Detection
 # Check if running on Replit
