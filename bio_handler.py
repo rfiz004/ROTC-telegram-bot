@@ -832,35 +832,35 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # اعتبارسنجی هشتگ با چک حساس به حروف کوچک/بزرگ در تابع validate_hashtag (که قبلاً اصلاح کردیم)
                 if key == "user_id_tag":
+                    bios = load_bios()
+                    bios.setdefault("bios", {})
+                    used_tags = bios.get("used_hashtags", [])
+                
                     is_valid, message_or_hashtag = validate_hashtag(text, used_tags)
                     if not is_valid:
                         await update.message.reply_text(message_or_hashtag)
                         return
-                    
+                
                     text = message_or_hashtag
                     current["user_id_tag"] = text
-                    
-                    # بارگذاری bios برای آپدیت
-                    bios = load_bios()
-                    bios.setdefault("bios", {})
-                    
-                    # اضافه کردن هشتگ جدید به لیست used_hashtags با استاندارد lower case و همراه #
-                    used_tags = bios.get("used_hashtags", [])
+                
+                    # اگر هشتگ جدید توی لیست نبود، اضافه‌ش کن
                     if text.lower() not in [tag.lower() for tag in used_tags]:
                         used_tags.append(text)
                         bios["used_hashtags"] = used_tags
-                    
+                
                     saved = bios["bios"].get(str(user_id), {})
                     saved.update(current)
+                    saved["step"] = "asking_photo"
                     saved["saved_at"] = datetime.utcnow().isoformat()
                     bios["bios"][str(user_id)] = saved
-                    
-                    # ذخیره کل bios با updated used_hashtags
+                
                     save_bios(bios)
-
+                
                     context.user_data[user_id]["step"] = "asking_photo"
                     await update.message.reply_text("🖼 حالا یه عکس داف از کرکترت بفرست:")
                     return
+
 
                 if key == "id_number":
                     if not validate_username(text):
