@@ -304,17 +304,23 @@ async def get_chat_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         logger.error(f"Error in get_chat_id: {e}")
 
-async def set_bot_commands(app):
-    try:
-        commands = [
-            BotCommand("start", "شروع دوباره"),
-            BotCommand("id", "نمایش آیدی چت"),
-        ]
-        await app.bot.set_my_commands(commands)
-        logger.info("Bot commands set successfully")
-    except Exception as e:
-        logger.error(f"Error setting bot commands: {e}")
+# async def set_bot_commands(app):
+#     try:
+#         commands = [
+#             BotCommand("start", "شروع دوباره"),
+#             BotCommand("id", "نمایش آیدی چت"),
+#         ]
+#         await app.bot.set_my_commands(commands)
+#         logger.info("Bot commands set successfully")
+#     except Exception as e:
+#         logger.error(f"Error setting bot commands: {e}")
 
+async def set_bot_commands(app):
+    commands = [
+        BotCommand("start", "شروع دوباره"),
+        otCommand("id", "نمایش آیدی چت"),
+    ]
+    await app.bot.set_my_commands(commands)
 
 async def start_bot_and_scheduler():
     await asyncio.gather(
@@ -458,8 +464,8 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         logger.error(f"Exception while handling an update: {context.error}", exc_info=True)
 
 # ────────────── Build Application
-
 app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
+
 print("App created:", app)
 # Add handlers with proper priority
 app.add_handler(CommandHandler("start", start))
@@ -564,346 +570,6 @@ app.add_error_handler(error_handler)
 if hasattr(app, 'job_queue') and app.job_queue:
     app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
 
-
-    #     app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
-
-    #     # Add handlers with proper priority
-    #     app.add_handler(CommandHandler("start", start))
-    #     app.add_handler(CommandHandler("id", get_chat_id))
-
-    #     # ────────────── Handler Priority Order (Most Specific First)
-
-    #     # 1️⃣ Bio and Skill Handlers (Most specific patterns first)
-    #     app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
-    #     app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
-    #     app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
-    #     app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
-    #     app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
-    #     app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
-    #     app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
-
-    #     # 2️⃣ Admin Handlers
-    #     app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
-    #     app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
-    #     app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
-    #     app.add_handler(CallbackQueryHandler(handle_skill_actions, pattern="^(add|remove)_skill$"))
-    #     app.add_handler(CallbackQueryHandler(back_to_admin_menu, pattern="^back_to_admin_menu$"))
-    #     app.add_handler(CallbackQueryHandler(run_food_processing, pattern="^run_food_processing$"))
-    #     app.add_handler(CallbackQueryHandler(food_handle_callback, pattern="^(set_grain_priority|set_grain_consumption|preview_grain_effect|manage_food_menu)$"))
-
-    #     # 3️⃣ Skill Type Selection
-    #     from callback_handlers import handle_skill_type_selection
-    #     app.add_handler(CallbackQueryHandler(handle_skill_type_selection, pattern="^skill_type_"))
-
-    #     # 4️⃣ Multi-Country Admin Handlers
-    #     app.add_handler(CallbackQueryHandler(show_country_admin_menu, pattern="^admin_country_menu_"))
-    #     app.add_handler(CallbackQueryHandler(show_country_provinces, pattern="^admin_country_provinces_"))
-    #     app.add_handler(CallbackQueryHandler(show_country_transfers, pattern="^admin_country_transfers_"))
-
-    #     # 5️⃣ Admin Province Management
-    #     app.add_handler(CallbackQueryHandler(edit_tax_callback, pattern="^edit_tax$"))
-    #     app.add_handler(CallbackQueryHandler(show_admin_province_menu, pattern="^admin_province_menu$"))
-    #     app.add_handler(CallbackQueryHandler(admin_view_shop_items, pattern="^admin_view_shop_items$"))
-    #     app.add_handler(CallbackQueryHandler(show_grain_preview, pattern="^preview_grain_effect$"))
-    #     app.add_handler(CallbackQueryHandler(show_all_provinces, pattern="^admin_view_all_provinces$"))
-    #     app.add_handler(CallbackQueryHandler(view_province_admin, pattern="^admin_view_province_"))
-    #     app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
-    #     app.add_handler(CallbackQueryHandler(handle_province_edit, pattern="^edit_province_"))
-    #     app.add_handler(CallbackQueryHandler(approve_transfer, pattern="^approve_transfer_"))
-    #     app.add_handler(CallbackQueryHandler(reject_transfer, pattern="^reject_transfer_"))
-    #     app.add_handler(CallbackQueryHandler(admin_manage_shop, pattern="^admin_manage_shop$"))
-    #     app.add_handler(CallbackQueryHandler(admin_add_shop_item_prompt, pattern="^admin_add_shop_item$"))
-    #     app.add_handler(CallbackQueryHandler(show_weekly_processing_menu, pattern="^show_weekly_menu$"))
-    #     app.add_handler(CallbackQueryHandler(preview_weekly_processing, pattern="^preview_weekly_processing$"))
-    #     app.add_handler(CallbackQueryHandler(run_weekly_processing, pattern="^run_weekly_processing$"))
-    #     app.add_handler(CallbackQueryHandler(admin_show_economy_overview, pattern="^admin_economy_overview"))
-    #     app.add_handler(CallbackQueryHandler(admin_edit_shop_item, pattern="^admin_edit_shop_item_"))
-    #     app.add_handler(CallbackQueryHandler(admin_delete_shop_item, pattern="^admin_delete_shop_item_"))
-    #     app.add_handler(CallbackQueryHandler(confirm_delete_shop_item, pattern="^confirm_delete_shop_item_"))
-    #     app.add_handler(CallbackQueryHandler(handle_shop_edit_choice, pattern="^edit_shop_(image|caption)$"))
-
-    #     # 6️⃣ Shop Handlers
-    #     app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
-    #     app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
-    #     # app.add_handler(CallbackQueryHandler(handle_shop_buy, pattern="^shop_buy_"))
-    #     app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
-    #     app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
-
-    #     # 7️⃣ Transfer Handlers
-    #     app.add_handler(CallbackQueryHandler(show_transfer_menu, pattern="^transfer_menu$"))
-    #     app.add_handler(CallbackQueryHandler(show_domestic_transfer, pattern="^transfer_domestic$"))
-    #     app.add_handler(CallbackQueryHandler(show_international_transfer, pattern="^transfer_international$"))
-    #     app.add_handler(CallbackQueryHandler(show_transfer_items, pattern="^(domestic|international)_target_"))
-    #     app.add_handler(CallbackQueryHandler(show_transfer_category_items, pattern="^transfer_category_"))
-    #     app.add_handler(CallbackQueryHandler(handle_transfer_quantity, pattern="^transfer_item_"))
-    #     app.add_handler(CallbackQueryHandler(process_transfer_request, pattern="^confirm_transfer_request$"))
-
-    #     # Add view pending transfers handler
-    #     try:
-    #         from transfer_handler import view_pending_transfers
-    #         app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
-    #     except ImportError:
-    #         pass
-
-    #     # 8️⃣ Country Management
-    #     app.add_handler(CallbackQueryHandler(manage_select_country, pattern="^manage_select_country_"))
-    #     app.add_handler(CallbackQueryHandler(select_country_province, pattern="^province\\|"))
-
-    #     # 9️⃣ Country Menu Operations
-    #     app.add_handler(CallbackQueryHandler(handle_country_menu, pattern="^country_|^news_|^economy_|^open_shop$"))
-
-    #     # 1️⃣0️⃣ Navigation Handlers
-    #     app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_previous$"))
-    #     app.add_handler(CallbackQueryHandler(handle_back_to_country_menu, pattern="^back_to_country_menu$"))
-
-
-
-    #     # Add specific handler for rp_channels
-    #     from callback_handlers import show_channels_with_keyboard
-    #     app.add_handler(CallbackQueryHandler(
-    #         lambda update, context: show_channels_with_keyboard(update.callback_query),
-    #         pattern="^rp_channels$"
-    #     ))
-
-    #     # Shop pagination handlers
-    #     app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
-    #     app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
-    #     app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
-    #     app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
-    #     app.add_handler(CallbackQueryHandler(admin_lock_shop, pattern="^admin_lock_shop$"))
-    #     app.add_handler(CallbackQueryHandler(toggle_block_country, pattern=r"^toggle_block_country:"))
-
-    #     app.add_handler(CallbackQueryHandler(show_admin_shop_page, pattern="^admin_shop_page_"))
-
-
-    #     # 1️⃣1️⃣ General Main Menu Handler (LAST)
-    #     app.add_handler(CallbackQueryHandler(handle_main_menu))
-
-    #     # Message handlers
-    #     app.add_handler(MessageHandler(pv_filter & filters.PHOTO, handle_photo_router))
-    #     app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_text_router))
-
-    #     # Admin shop image handlers
-    #     app.add_handler(MessageHandler(filters.PHOTO, handle_shop_item_image))
-    #     app.add_handler(MessageHandler(filters.PHOTO, handle_new_shop_image))
-
-    #     app.add_error_handler(error_handler)
-
-    #     # Add job queue if available
-    #     if hasattr(app, 'job_queue') and app.job_queue:
-    #         app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
-
-    #     return app
-    # except Exception as e:
-    #     logger.error(f"Error creating application: {e}")
-    #     raise
-
-
-logging.basicConfig(level=logging.INFO)
-
-# def main():
-#     """Main function to start the bot using polling mode"""
-#     try:
-#         logger.info("🔄 Starting bot in polling mode...")
-#         logger.info(f"🤖 Bot token configured: {'✅' if BOT_TOKEN else '❌'}")
-
-#         if not BOT_TOKEN:
-#             raise ValueError("BOT_TOKEN is not set")
-
-#         # Create application
-#         app = create_application()
-        
-
-#         # Start polling with optimized settings
-#         app.run_polling(
-#             allowed_updates=Update.ALL_TYPES,
-#             drop_pending_updates=True,
-#             close_loop=False
-#         )
-
-#     except Exception as e:
-#         logger.error(f"Error starting bot: {e}")
-#         import traceback
-#         traceback.print_exc()
-#         sys.exit(1)
-
-# # Signal handler for graceful shutdown
-# def signal_handler(sig, frame):
-#     logger.info(f"\n🛑 Received signal {sig}, shutting down gracefully...")
-#     sys.exit(0)
-
-# if __name__ == "__main__":
-#     # Set up signal handlers for graceful shutdown
-#     signal.signal(signal.SIGINT, signal_handler)
-#     signal.signal(signal.SIGTERM, signal_handler)
-
-#     try:
-#         logger.info("🚀 Starting Telegram bot...")
-#         main()
-#         asyncio.create_task(periodic_git_push())
-#         # asyncio.run(start_bot_and_scheduler())
-#     except KeyboardInterrupt:
-#         logger.info("🛑 Bot stopped by user")
-#     except SystemExit:
-#         logger.info("🛑 Bot stopped gracefully") 
-#     except Exception as e:
-#         logger.error(f"❌ Failed to start bot: {e}")
-#         import traceback
-#         traceback.print_exc()
-#         sys.exit(1)
-
-# async def handle_webhook(request):
-#     try:
-#         data = await request.json()
-#         update = Update.de_json(data, app.bot)
-
-#         # اجرای پردازش آپدیت در پس‌زمینه
-#         asyncio.create_task(app.process_update(update))
-
-#         return web.Response(text="OK")
-#     except Exception:
-#         logging.exception("❌ Webhook handler error")
-#         return web.Response(status=503, text="Error")
-
-# async def root(request):
-#     return web.Response(text="Bot is alive!")
-
-# async def main():
-#     print("Port:", PORT)
-#     app = web.Application()
-#     # app = create_application()
-#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-#     if not render_url:
-#         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
-#         return
-
-#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-#     print(f"✅ Setting webhook to: {webhook_url}")
-#     await app.bot.set_webhook(url=webhook_url, max_connections=15)
-
-#     await app.initialize()
-#     await app.start()
-
-#     webapp = web.Application()
-#     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
-#     webapp.router.add_get("/", root)
-#     webapp.router.add_get("/setwebhook", set_webhook_handler)
-
-#     runner = web.AppRunner(webapp)
-#     # await runner.setup()
-#     # site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-#     # await site.start()
-#     # print(f"Web server started on port {PORT}")
-
-#     try:
-#         await runner.setup()
-#         site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-#         await site.start()
-#         print(f"Web server started on port {PORT}")
-#     except Exception as e:
-#         print(f"Error starting web server: {e}")
-
-
-#     print(f"🚀 Bot is running with webhook on port {PORT}")
-#     asyncio.create_task(periodic_git_push())
-#     await asyncio.Event().wait()
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
-
-
-# telegram_app = None  # متغیر سراسری نگهداری ربات
-
-# async def handle_webhook(request):
-#     try:
-#         data = await request.json()
-#         update = Update.de_json(data, telegram_app.bot)
-#         asyncio.create_task(telegram_app.process_update(update))
-#         return web.Response(text="OK")
-#     except Exception:
-#         logging.exception("❌ Webhook handler error")
-#         return web.Response(status=503, text="Error")
-
-# async def root(request):
-#     return web.Response(text="Bot is alive!")
-
-# async def set_webhook_handler(request):
-#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-#     if not render_url:
-#         return web.Response(text="Missing RENDER_EXTERNAL_HOSTNAME", status=500)
-
-#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-#     await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
-#     return web.Response(text=f"Webhook set to {webhook_url}")
-
-# # async def main():
-# #     global telegram_app
-# #     telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
-
-# #     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-# #     if not render_url:
-# #         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
-# #         return
-
-# #     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-# #     print(f"✅ Setting webhook to: {webhook_url}")
-# #     await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
-
-# #     await telegram_app.initialize()
-# #     await telegram_app.start()
-
-# #     webapp = web.Application()
-# #     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
-# #     webapp.router.add_get("/", root)
-# #     webapp.router.add_get("/setwebhook", set_webhook_handler)
-
-# #     runner = web.AppRunner(webapp)
-# #     await runner.setup()
-# #     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-# #     await site.start()
-
-# #     print(f"🚀 Bot is running with webhook on port {PORT}")
-
-# #     # اگر تابع async برای git push داری، اجراش کن
-# #     asyncio.create_task(periodic_git_push())
-
-# #     await asyncio.Event().wait()
-
-# async def main():
-#     global telegram_app
-#     telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
-#     PORT = int(os.environ.get("PORT", 10000))
-
-#     await telegram_app.initialize()
-#     await telegram_app.start()
-
-#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-#     if not render_url:
-#         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
-#         return
-
-#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-#     await telegram_app.bot.set_webhook(url=webhook_url)
-
-#     webapp = web.Application()
-#     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
-#     webapp.router.add_get("/", root)
-#     webapp.router.add_get("/setwebhook", set_webhook_handler)
-
-#     runner = web.AppRunner(webapp)
-#     await runner.setup()
-#     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-#     await site.start()
-
-#     print(f"🚀 Bot is running on port {PORT}")
-    
-#     asyncio.create_task(periodic_git_push())
-#     await asyncio.Event().wait()
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
-
-
 async def set_webhook_handler(request):
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
@@ -960,5 +626,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
 
 
