@@ -558,7 +558,7 @@ async def handle_skill_continue(update: Update, context: ContextTypes.DEFAULT_TY
     selected = state.get("skills", [])
 
     if not selected:
-        await query.answer("⚠️ حداقل یک مهارت انتخاب کن!", show_alert=True)
+        await query.answer("⚠️ حداقل سه مهارت انتخاب کن!", show_alert=True)
         return
 
     # Calculate the required skill limit based on selected skills
