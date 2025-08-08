@@ -17,7 +17,7 @@ def run_git_push():
 
         files_to_add = [
             "provinces/*.json",
-            "EconomicItems/*.json"
+            "EconomicItems/*.json",
             "data/transfers.json",
             "timers.json",
             "shop_items.json",
