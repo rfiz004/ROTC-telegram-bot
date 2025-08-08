@@ -795,7 +795,7 @@ async def main():
     # print(f"Web server started on port {PORT}")
 
     try:
-    await runner.setup()
+        await runner.setup()
         site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
         await site.start()
         print(f"Web server started on port {PORT}")
