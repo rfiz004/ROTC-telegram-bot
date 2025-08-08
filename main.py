@@ -81,6 +81,14 @@ from transfer_handler import (
 from province_handler import (
     show_grain_preview, edit_tax_callback, handle_tax_input
 )
+from run_git_push import run_git_push
+
+async def periodic_git_push():
+    while True:
+        logger.info("🔄 Running scheduled git push...")
+        await asyncio.get_running_loop().run_in_executor(None, run_git_push())
+        await asyncio.sleep(15 * 60)
+
 
 async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
