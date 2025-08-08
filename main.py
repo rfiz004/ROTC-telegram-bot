@@ -836,9 +836,45 @@ async def set_webhook_handler(request):
     await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
     return web.Response(text=f"Webhook set to {webhook_url}")
 
+# async def main():
+#     global telegram_app
+#     telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
+
+#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+#     if not render_url:
+#         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
+#         return
+
+#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+#     print(f"✅ Setting webhook to: {webhook_url}")
+#     await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
+
+#     await telegram_app.initialize()
+#     await telegram_app.start()
+
+#     webapp = web.Application()
+#     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
+#     webapp.router.add_get("/", root)
+#     webapp.router.add_get("/setwebhook", set_webhook_handler)
+
+#     runner = web.AppRunner(webapp)
+#     await runner.setup()
+#     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+#     await site.start()
+
+#     print(f"🚀 Bot is running with webhook on port {PORT}")
+
+#     # اگر تابع async برای git push داری، اجراش کن
+#     asyncio.create_task(periodic_git_push())
+
+#     await asyncio.Event().wait()
+
 async def main():
     global telegram_app
     telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
+
+    await telegram_app.initialize()
+    await telegram_app.start()
 
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
@@ -846,11 +882,7 @@ async def main():
         return
 
     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-    print(f"✅ Setting webhook to: {webhook_url}")
-    await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
-
-    await telegram_app.initialize()
-    await telegram_app.start()
+    await telegram_app.bot.set_webhook(url=webhook_url)
 
     webapp = web.Application()
     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
@@ -862,11 +894,9 @@ async def main():
     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
     await site.start()
 
-    print(f"🚀 Bot is running with webhook on port {PORT}")
-
-    # اگر تابع async برای git push داری، اجراش کن
+    print(f"🚀 Bot is running on port {PORT}")
+    
     asyncio.create_task(periodic_git_push())
-
     await asyncio.Event().wait()
 
 if __name__ == "__main__":
