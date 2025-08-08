@@ -86,7 +86,9 @@ from run_git_push import run_git_push
 async def periodic_git_push():
     while True:
         logger.info("🔄 Running scheduled git push...")
-        await asyncio.get_running_loop().run_in_executor(None, run_git_push())
+        # await asyncio.get_running_loop().run_in_executor(None, run_git_push())
+        loop = asyncio.get_running_loop()
+        await loop.run_in_executor(None, run_git_push)
         await asyncio.sleep(15 * 60)
 
 
