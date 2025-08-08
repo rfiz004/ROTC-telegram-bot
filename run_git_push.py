@@ -2,14 +2,14 @@ import os
 import subprocess
 import glob
 from datetime import datetime
-from config import GITHUB_BRANCH, GITHUB_REPO, GITHUB_TOKEN
+from config import GITHUB_BRANCH, GITHUB_REPO, GITHUB_TOKEN, GITHUB_REPO_URL
 
 def run_git_push():
     if not GITHUB_TOKEN:
         print("❌ GitHub token not found in environment variables!")
         exit(1)
 
-    GITHUB_REPO_URL = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git"
+    # GITHUB_REPO_URL = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git"
     commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     try:
