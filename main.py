@@ -234,43 +234,20 @@ except ImportError as e:
     async def process_transfer_request(*args, **kwargs):
         await args[0].callback_query.edit_message_text("سیستم انتقالات در حال حاضر در دسترس نیست.")
 
-
-
-from data_manager import clear_expired_reservations, jobs_by_country, load_data_file, save_data_file
-
-# ────────────── Logging Setup
+# ────────────── Logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO,
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('bot.log', encoding='utf-8')
-    ]
+    level=logging.INFO
 )
-logger = logging.getLogger(__name__)
 
 pv_filter = filters.ChatType.PRIVATE
 
 # ────────────── Bot Commands
-# async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     try:
-#         # Clear any existing user state
-#         user_id = update.message.from_user.id
-#         if user_id in context.user_data:
-#             context.user_data[user_id].clear()
-
-#         await update.message.reply_text(
-#             "درود! 👋\nبه راهنمای آرپی R.O.T.C خوش اومدی، چه کمکی می‌تونم بهت بکنم؟",
-#             reply_markup=main_menu()
-#         )
-#     except Exception as e:
-#         logger.error(f"Error in start command: {e}")
-#         try:
-#             await update.message.reply_text("خطایی رخ داد. لطفاً مجدداً تلاش کنید.")
-#         except:
-#             pass
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # await update.message.reply_text(
+    #     "درود! 👋\nبه راهنمای آرپی R.O.T.C خوش اومدی، چه کمکی می‌تونم بهت بکنم؟",
+    #     reply_markup=main_menu()
+    # )
     try:
         user_id = update.message.from_user.id
 
@@ -298,37 +275,31 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             pass
 
-async def get_chat_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    try:
-        await update.message.reply_text(f"🆔 آیدی این چت: `{update.effective_chat.id}`", parse_mode="Markdown")
-    except Exception as e:
-        logger.error(f"Error in get_chat_id: {e}")
-
-# async def set_bot_commands(app):
-#     try:
-#         commands = [
-#             BotCommand("start", "شروع دوباره"),
-#             BotCommand("id", "نمایش آیدی چت"),
-#         ]
-#         await app.bot.set_my_commands(commands)
-#         logger.info("Bot commands set successfully")
-#     except Exception as e:
-#         logger.error(f"Error setting bot commands: {e}")
-
 async def set_bot_commands(app):
     commands = [
         BotCommand("start", "شروع دوباره"),
-        otCommand("id", "نمایش آیدی چت"),
     ]
     await app.bot.set_my_commands(commands)
 
-async def start_bot_and_scheduler():
-    await asyncio.gather(
-        main(),
-        auto_push_every_15_minutes()
-    )
+# ────────────── Scheduled Jobs
+async def scheduled_cleanup(context: ContextTypes.DEFAULT_TYPE):
+    cleared = clear_expired_reservations(jobs_by_country)
+    if cleared:
+        print(f"🧹 {cleared} رزرو منقضی شده آزاد شد.")
 
-# ────────────── Message Routing
+# ────────────── Error Handler
+async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+    logger = logging.getLogger(__name__)
+    if isinstance(context.error, Conflict):
+        logger.warning("Bot conflict detected - another instance may be running")
+    elif isinstance(context.error, NetworkError):
+        logger.warning(f"Network error: {context.error}")
+    else:
+        logger.error(f"Exception while handling an update: {context.error}", exc_info=context.error)
+
+async def get_chat_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(f"🆔 آیدی این چت: `{update.effective_chat.id}`", parse_mode="Markdown")
+
 async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         user_id = update.message.from_user.id
@@ -437,41 +408,16 @@ async def handle_photo_router(update: Update, context: ContextTypes.DEFAULT_TYPE
     except Exception as e:
         logger.error(f"Error in photo router: {e}")
 
-# ────────────── Scheduled Jobs
-async def scheduled_cleanup(context: ContextTypes.DEFAULT_TYPE):
-    try:
-        from timer_manager import should_run_task, update_task_time
-
-        # Only run cleanup if enough time has passed (e.g., every hour)
-        if should_run_task("last_cleanup", interval_hours=1):
-            cleared = clear_expired_reservations(jobs_by_country)
-            if cleared:
-                logger.info(f"🧹 {cleared} رزرو منقضی شده آزاد شد.")
-            update_task_time("last_cleanup")
-
-    except Exception as e:
-        logger.error(f"Error in scheduled cleanup: {e}")
-
-# ────────────── Error Handler
-async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
-    if isinstance(context.error, Conflict):
-        logger.warning("Bot conflict detected - another instance may be running")
-    elif isinstance(context.error, NetworkError):
-        logger.warning(f"Network error: {context.error}")
-    elif isinstance(context.error, TelegramError):
-        logger.error(f"Telegram API error: {context.error}")
-    else:
-        logger.error(f"Exception while handling an update: {context.error}", exc_info=True)
 
 # ────────────── Build Application
 app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
 
-print("App created:", app)
-# Add handlers with proper priority
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("id", get_chat_id))
-# ────────────── Handler Priority Order (Most Specific First)
-# 1️⃣ Bio and Skill Handlers (Most specific patterns first)
+
+# ────────────── ترتیب دقیق هندلرها
+
+ # 1️⃣ Bio and Skill Handlers (Most specific patterns first)
 app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
 app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
 app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
@@ -479,6 +425,7 @@ app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_sk
 app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
 app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
 app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
+
 # 2️⃣ Admin Handlers
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
 app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
@@ -487,13 +434,16 @@ app.add_handler(CallbackQueryHandler(handle_skill_actions, pattern="^(add|remove
 app.add_handler(CallbackQueryHandler(back_to_admin_menu, pattern="^back_to_admin_menu$"))
 app.add_handler(CallbackQueryHandler(run_food_processing, pattern="^run_food_processing$"))
 app.add_handler(CallbackQueryHandler(food_handle_callback, pattern="^(set_grain_priority|set_grain_consumption|preview_grain_effect|manage_food_menu)$"))
+
 # 3️⃣ Skill Type Selection
 from callback_handlers import handle_skill_type_selection
 app.add_handler(CallbackQueryHandler(handle_skill_type_selection, pattern="^skill_type_"))
+
 # 4️⃣ Multi-Country Admin Handlers
 app.add_handler(CallbackQueryHandler(show_country_admin_menu, pattern="^admin_country_menu_"))
 app.add_handler(CallbackQueryHandler(show_country_provinces, pattern="^admin_country_provinces_"))
 app.add_handler(CallbackQueryHandler(show_country_transfers, pattern="^admin_country_transfers_"))
+
 # 5️⃣ Admin Province Management
 app.add_handler(CallbackQueryHandler(edit_tax_callback, pattern="^edit_tax$"))
 app.add_handler(CallbackQueryHandler(show_admin_province_menu, pattern="^admin_province_menu$"))
@@ -515,12 +465,14 @@ app.add_handler(CallbackQueryHandler(admin_edit_shop_item, pattern="^admin_edit_
 app.add_handler(CallbackQueryHandler(admin_delete_shop_item, pattern="^admin_delete_shop_item_"))
 app.add_handler(CallbackQueryHandler(confirm_delete_shop_item, pattern="^confirm_delete_shop_item_"))
 app.add_handler(CallbackQueryHandler(handle_shop_edit_choice, pattern="^edit_shop_(image|caption)$"))
+
 # 6️⃣ Shop Handlers
 app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
 app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
 # app.add_handler(CallbackQueryHandler(handle_shop_buy, pattern="^shop_buy_"))
 app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
 app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
+
 # 7️⃣ Transfer Handlers
 app.add_handler(CallbackQueryHandler(show_transfer_menu, pattern="^transfer_menu$"))
 app.add_handler(CallbackQueryHandler(show_domestic_transfer, pattern="^transfer_domestic$"))
@@ -529,26 +481,32 @@ app.add_handler(CallbackQueryHandler(show_transfer_items, pattern="^(domestic|in
 app.add_handler(CallbackQueryHandler(show_transfer_category_items, pattern="^transfer_category_"))
 app.add_handler(CallbackQueryHandler(handle_transfer_quantity, pattern="^transfer_item_"))
 app.add_handler(CallbackQueryHandler(process_transfer_request, pattern="^confirm_transfer_request$"))
+
 # Add view pending transfers handler
 try:
     from transfer_handler import view_pending_transfers
     app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
 except ImportError:
     pass
+
 # 8️⃣ Country Management
 app.add_handler(CallbackQueryHandler(manage_select_country, pattern="^manage_select_country_"))
 app.add_handler(CallbackQueryHandler(select_country_province, pattern="^province\\|"))
+
 # 9️⃣ Country Menu Operations
 app.add_handler(CallbackQueryHandler(handle_country_menu, pattern="^country_|^news_|^economy_|^open_shop$"))
+
 # 1️⃣0️⃣ Navigation Handlers
 app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_previous$"))
 app.add_handler(CallbackQueryHandler(handle_back_to_country_menu, pattern="^back_to_country_menu$"))
+
 # Add specific handler for rp_channels
 from callback_handlers import show_channels_with_keyboard
 app.add_handler(CallbackQueryHandler(
     lambda update, context: show_channels_with_keyboard(update.callback_query),
     pattern="^rp_channels$"
 ))
+
 # Shop pagination handlers
 app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
 app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
@@ -556,19 +514,26 @@ app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_")
 app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
 app.add_handler(CallbackQueryHandler(admin_lock_shop, pattern="^admin_lock_shop$"))
 app.add_handler(CallbackQueryHandler(toggle_block_country, pattern=r"^toggle_block_country:"))
+
 app.add_handler(CallbackQueryHandler(show_admin_shop_page, pattern="^admin_shop_page_"))
+
 # 1️⃣1️⃣ General Main Menu Handler (LAST)
 app.add_handler(CallbackQueryHandler(handle_main_menu))
+
 # Message handlers
 app.add_handler(MessageHandler(pv_filter & filters.PHOTO, handle_photo_router))
 app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_text_router))
+
 # Admin shop image handlers
 app.add_handler(MessageHandler(filters.PHOTO, handle_shop_item_image))
 app.add_handler(MessageHandler(filters.PHOTO, handle_new_shop_image))
+
 app.add_error_handler(error_handler)
+
 # Add job queue if available
 if hasattr(app, 'job_queue') and app.job_queue:
     app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
+
 
 async def set_webhook_handler(request):
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
@@ -578,8 +543,6 @@ async def set_webhook_handler(request):
     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
     await app.bot.set_webhook(url=webhook_url, max_connections=15)
     return web.Response(text=f"Webhook set to {webhook_url}")
-
-
 
 # ────────────── Webhook Server using aiohttp
 async def handle_webhook(request):
@@ -626,7 +589,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
-
-
