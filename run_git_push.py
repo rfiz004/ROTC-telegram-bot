@@ -1,7 +1,7 @@
 import subprocess
 import glob
 from datetime import datetime
-from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN, GITHUB_BRANCH
+from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 
 def set_git_remote_url(url):
     # بررسی وجود ریموت origin و اضافه کردن یا ست کردن URL آن
@@ -19,6 +19,10 @@ def run_git_push():
     commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     try:
+        # ست کردن نام و ایمیل گیت (برای جلوگیری از خطای unable to auto-detect email)
+        subprocess.run(["git", "config", "--global", "user.name", "Render Bot"], check=True)
+        subprocess.run(["git", "config", "--global", "user.email", "render@example.com"], check=True)
+
         # تنظیم ریموت origin با توکن و URL
         set_git_remote_url(GITHUB_REPO_URL)
 
@@ -34,13 +38,15 @@ def run_git_push():
             "job_reservations.json",
         ]
 
+        # اضافه کردن فایل‌های تغییر کرده
         for pattern in files_to_add:
             for filepath in glob.glob(pattern):
                 subprocess.run(["git", "add", filepath], check=True)
 
+        # بررسی اینکه آیا تغییری وجود دارد یا نه
         status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
         if not status_output:
-            print("ℹ️  هیچ تغییری برای commit وجود ندارد.")
+            print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
         else:
             subprocess.run(["git", "commit", "-m", commit_message], check=True)
             subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
