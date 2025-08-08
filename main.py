@@ -789,9 +789,19 @@ async def main():
     webapp.router.add_get("/setwebhook", set_webhook_handler)
 
     runner = web.AppRunner(webapp)
+    # await runner.setup()
+    # site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+    # await site.start()
+    # print(f"Web server started on port {PORT}")
+
+    try:
     await runner.setup()
-    site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-    await site.start()
+        site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+        await site.start()
+        print(f"Web server started on port {PORT}")
+    except Exception as e:
+        print(f"Error starting web server: {e}")
+
 
     print(f"🚀 Bot is running with webhook on port {PORT}")
     asyncio.create_task(periodic_git_push())
