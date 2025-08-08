@@ -460,6 +460,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
 # ────────────── Build Application
 
 app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
+print("App created:", app)
 # Add handlers with proper priority
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("id", get_chat_id))
@@ -768,6 +769,7 @@ async def root(request):
     return web.Response(text="Bot is alive!")
 
 async def main():
+    print("Port:", PORT)
     # app = create_application()
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
