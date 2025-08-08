@@ -113,6 +113,23 @@ def validate_age(text):
     except ValueError:
         return False
 
+# def validate_hashtag(hashtag, used_hashtags):
+#     """Validate hashtag format and uniqueness"""
+#     # Remove # if user included it
+#     if hashtag.startswith('#'):
+#         hashtag = hashtag[1:]
+
+#     # Check format (alphanumeric and underscores only, reasonable length)
+#     if not re.match(r'^[a-zA-Z0-9_]{3,20}$', hashtag):
+#         return False, "❌ هشتگ باید بین 3 تا 20 کاراکتر باشه و فقط شامل حروف انگلیسی، اعداد و _ باشه."
+
+#     # Check if already used
+#     full_hashtag = f"#{hashtag}"
+#     if full_hashtag in used_hashtags:
+#         return False, "❌ این هشتگ قبلاً استفاده شده. یکی دیگه انتخاب کن:"
+
+#     return True, full_hashtag
+
 def validate_hashtag(hashtag, used_hashtags):
     """Validate hashtag format and uniqueness"""
     # Remove # if user included it
@@ -123,12 +140,15 @@ def validate_hashtag(hashtag, used_hashtags):
     if not re.match(r'^[a-zA-Z0-9_]{3,20}$', hashtag):
         return False, "❌ هشتگ باید بین 3 تا 20 کاراکتر باشه و فقط شامل حروف انگلیسی، اعداد و _ باشه."
 
-    # Check if already used
     full_hashtag = f"#{hashtag}"
-    if full_hashtag in used_hashtags:
+
+    # Check if already used (case-insensitive)
+    used_hashtags_lower = [tag.lower() for tag in used_hashtags]
+    if full_hashtag.lower() in used_hashtags_lower:
         return False, "❌ این هشتگ قبلاً استفاده شده. یکی دیگه انتخاب کن:"
 
     return True, full_hashtag
+
 
 def validate_username(username):
     """Validate Telegram username format"""
