@@ -752,14 +752,73 @@ logging.basicConfig(level=logging.INFO)
 #         traceback.print_exc()
 #         sys.exit(1)
 
+# async def handle_webhook(request):
+#     try:
+#         data = await request.json()
+#         update = Update.de_json(data, app.bot)
+
+#         # اجرای پردازش آپدیت در پس‌زمینه
+#         asyncio.create_task(app.process_update(update))
+
+#         return web.Response(text="OK")
+#     except Exception:
+#         logging.exception("❌ Webhook handler error")
+#         return web.Response(status=503, text="Error")
+
+# async def root(request):
+#     return web.Response(text="Bot is alive!")
+
+# async def main():
+#     print("Port:", PORT)
+#     app = web.Application()
+#     # app = create_application()
+#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+#     if not render_url:
+#         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
+#         return
+
+#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+#     print(f"✅ Setting webhook to: {webhook_url}")
+#     await app.bot.set_webhook(url=webhook_url, max_connections=15)
+
+#     await app.initialize()
+#     await app.start()
+
+#     webapp = web.Application()
+#     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
+#     webapp.router.add_get("/", root)
+#     webapp.router.add_get("/setwebhook", set_webhook_handler)
+
+#     runner = web.AppRunner(webapp)
+#     # await runner.setup()
+#     # site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+#     # await site.start()
+#     # print(f"Web server started on port {PORT}")
+
+#     try:
+#         await runner.setup()
+#         site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+#         await site.start()
+#         print(f"Web server started on port {PORT}")
+#     except Exception as e:
+#         print(f"Error starting web server: {e}")
+
+
+#     print(f"🚀 Bot is running with webhook on port {PORT}")
+#     asyncio.create_task(periodic_git_push())
+#     await asyncio.Event().wait()
+
+# if __name__ == "__main__":
+#     asyncio.run(main())
+
+
+telegram_app = None  # متغیر سراسری نگهداری ربات
+
 async def handle_webhook(request):
     try:
         data = await request.json()
-        update = Update.de_json(data, app.bot)
-
-        # اجرای پردازش آپدیت در پس‌زمینه
-        asyncio.create_task(app.process_update(update))
-
+        update = Update.de_json(data, telegram_app.bot)
+        asyncio.create_task(telegram_app.process_update(update))
         return web.Response(text="OK")
     except Exception:
         logging.exception("❌ Webhook handler error")
@@ -768,9 +827,19 @@ async def handle_webhook(request):
 async def root(request):
     return web.Response(text="Bot is alive!")
 
+async def set_webhook_handler(request):
+    render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+    if not render_url:
+        return web.Response(text="Missing RENDER_EXTERNAL_HOSTNAME", status=500)
+
+    webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+    await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
+    return web.Response(text=f"Webhook set to {webhook_url}")
+
 async def main():
-    print("Port:", PORT)
-    # app = create_application()
+    global telegram_app
+    telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
+
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
@@ -778,10 +847,10 @@ async def main():
 
     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
     print(f"✅ Setting webhook to: {webhook_url}")
-    await app.bot.set_webhook(url=webhook_url, max_connections=15)
+    await telegram_app.bot.set_webhook(url=webhook_url, max_connections=15)
 
-    await app.initialize()
-    await app.start()
+    await telegram_app.initialize()
+    await telegram_app.start()
 
     webapp = web.Application()
     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
@@ -789,22 +858,15 @@ async def main():
     webapp.router.add_get("/setwebhook", set_webhook_handler)
 
     runner = web.AppRunner(webapp)
-    # await runner.setup()
-    # site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-    # await site.start()
-    # print(f"Web server started on port {PORT}")
-
-    try:
-        await runner.setup()
-        site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
-        await site.start()
-        print(f"Web server started on port {PORT}")
-    except Exception as e:
-        print(f"Error starting web server: {e}")
-
+    await runner.setup()
+    site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+    await site.start()
 
     print(f"🚀 Bot is running with webhook on port {PORT}")
+
+    # اگر تابع async برای git push داری، اجراش کن
     asyncio.create_task(periodic_git_push())
+
     await asyncio.Event().wait()
 
 if __name__ == "__main__":
