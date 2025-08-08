@@ -1,5 +1,16 @@
 {
-  "bios": {},
+  "bios": {
+    "6213073537": {
+      "country": "Santos",
+      "job": "امپراتریس",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-08T21:01:20.735437",
+      "expires_at": "2025-08-08T21:30:54.305428",
+      "name": "Valeria Casandra Drakov",
+      "nickname": "Bloody Magnolia"
+    }
+  },
   "used_hashtags": [
     "#Artemis"
   ]
