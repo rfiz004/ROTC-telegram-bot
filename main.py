@@ -458,146 +458,245 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         logger.error(f"Exception while handling an update: {context.error}", exc_info=True)
 
 # ────────────── Build Application
-def create_application():
-    try:
-        app = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
 
-        # Add handlers with proper priority
-        app.add_handler(CommandHandler("start", start))
-        app.add_handler(CommandHandler("id", get_chat_id))
-
-        # ────────────── Handler Priority Order (Most Specific First)
-
-        # 1️⃣ Bio and Skill Handlers (Most specific patterns first)
-        app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
-        app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
-        app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
-        app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
-        app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
-        app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
-        app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
-
-        # 2️⃣ Admin Handlers
-        app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
-        app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
-        app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
-        app.add_handler(CallbackQueryHandler(handle_skill_actions, pattern="^(add|remove)_skill$"))
-        app.add_handler(CallbackQueryHandler(back_to_admin_menu, pattern="^back_to_admin_menu$"))
-        app.add_handler(CallbackQueryHandler(run_food_processing, pattern="^run_food_processing$"))
-        app.add_handler(CallbackQueryHandler(food_handle_callback, pattern="^(set_grain_priority|set_grain_consumption|preview_grain_effect|manage_food_menu)$"))
-
-
-
-
-
-
-
-        # 3️⃣ Skill Type Selection
-        from callback_handlers import handle_skill_type_selection
-        app.add_handler(CallbackQueryHandler(handle_skill_type_selection, pattern="^skill_type_"))
-
-        # 4️⃣ Multi-Country Admin Handlers
-        app.add_handler(CallbackQueryHandler(show_country_admin_menu, pattern="^admin_country_menu_"))
-        app.add_handler(CallbackQueryHandler(show_country_provinces, pattern="^admin_country_provinces_"))
-        app.add_handler(CallbackQueryHandler(show_country_transfers, pattern="^admin_country_transfers_"))
-
-        # 5️⃣ Admin Province Management
-        app.add_handler(CallbackQueryHandler(edit_tax_callback, pattern="^edit_tax$"))
-        app.add_handler(CallbackQueryHandler(show_admin_province_menu, pattern="^admin_province_menu$"))
-        app.add_handler(CallbackQueryHandler(admin_view_shop_items, pattern="^admin_view_shop_items$"))
-        app.add_handler(CallbackQueryHandler(show_grain_preview, pattern="^preview_grain_effect$"))
-        app.add_handler(CallbackQueryHandler(show_all_provinces, pattern="^admin_view_all_provinces$"))
-        app.add_handler(CallbackQueryHandler(view_province_admin, pattern="^admin_view_province_"))
-        app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
-        app.add_handler(CallbackQueryHandler(handle_province_edit, pattern="^edit_province_"))
-        app.add_handler(CallbackQueryHandler(approve_transfer, pattern="^approve_transfer_"))
-        app.add_handler(CallbackQueryHandler(reject_transfer, pattern="^reject_transfer_"))
-        app.add_handler(CallbackQueryHandler(admin_manage_shop, pattern="^admin_manage_shop$"))
-        app.add_handler(CallbackQueryHandler(admin_add_shop_item_prompt, pattern="^admin_add_shop_item$"))
-        app.add_handler(CallbackQueryHandler(show_weekly_processing_menu, pattern="^show_weekly_menu$"))
-        app.add_handler(CallbackQueryHandler(preview_weekly_processing, pattern="^preview_weekly_processing$"))
-        app.add_handler(CallbackQueryHandler(run_weekly_processing, pattern="^run_weekly_processing$"))
-        app.add_handler(CallbackQueryHandler(admin_show_economy_overview, pattern="^admin_economy_overview"))
-        app.add_handler(CallbackQueryHandler(admin_edit_shop_item, pattern="^admin_edit_shop_item_"))
-        app.add_handler(CallbackQueryHandler(admin_delete_shop_item, pattern="^admin_delete_shop_item_"))
-        app.add_handler(CallbackQueryHandler(confirm_delete_shop_item, pattern="^confirm_delete_shop_item_"))
-        app.add_handler(CallbackQueryHandler(handle_shop_edit_choice, pattern="^edit_shop_(image|caption)$"))
-
-        # 6️⃣ Shop Handlers
-        app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
-        app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
-        # app.add_handler(CallbackQueryHandler(handle_shop_buy, pattern="^shop_buy_"))
-        app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
-        app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
-
-        # 7️⃣ Transfer Handlers
-        app.add_handler(CallbackQueryHandler(show_transfer_menu, pattern="^transfer_menu$"))
-        app.add_handler(CallbackQueryHandler(show_domestic_transfer, pattern="^transfer_domestic$"))
-        app.add_handler(CallbackQueryHandler(show_international_transfer, pattern="^transfer_international$"))
-        app.add_handler(CallbackQueryHandler(show_transfer_items, pattern="^(domestic|international)_target_"))
-        app.add_handler(CallbackQueryHandler(show_transfer_category_items, pattern="^transfer_category_"))
-        app.add_handler(CallbackQueryHandler(handle_transfer_quantity, pattern="^transfer_item_"))
-        app.add_handler(CallbackQueryHandler(process_transfer_request, pattern="^confirm_transfer_request$"))
-
-        # Add view pending transfers handler
-        try:
-            from transfer_handler import view_pending_transfers
-            app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
-        except ImportError:
-            pass
-
-        # 8️⃣ Country Management
-        app.add_handler(CallbackQueryHandler(manage_select_country, pattern="^manage_select_country_"))
-        app.add_handler(CallbackQueryHandler(select_country_province, pattern="^province\\|"))
-
-        # 9️⃣ Country Menu Operations
-        app.add_handler(CallbackQueryHandler(handle_country_menu, pattern="^country_|^news_|^economy_|^open_shop$"))
-
-        # 1️⃣0️⃣ Navigation Handlers
-        app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_previous$"))
-        app.add_handler(CallbackQueryHandler(handle_back_to_country_menu, pattern="^back_to_country_menu$"))
-
-
-
-        # Add specific handler for rp_channels
-        from callback_handlers import show_channels_with_keyboard
-        app.add_handler(CallbackQueryHandler(
-            lambda update, context: show_channels_with_keyboard(update.callback_query),
-            pattern="^rp_channels$"
-        ))
-
-        # Shop pagination handlers
-        app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
-        app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
-        app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
-        app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
-        app.add_handler(CallbackQueryHandler(admin_lock_shop, pattern="^admin_lock_shop$"))
-        app.add_handler(CallbackQueryHandler(toggle_block_country, pattern=r"^toggle_block_country:"))
-
-        app.add_handler(CallbackQueryHandler(show_admin_shop_page, pattern="^admin_shop_page_"))
+app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
+# Add handlers with proper priority
+app.add_handler(CommandHandler("start", start))
+app.add_handler(CommandHandler("id", get_chat_id))
+# ────────────── Handler Priority Order (Most Specific First)
+# 1️⃣ Bio and Skill Handlers (Most specific patterns first)
+app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
+app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
+app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
+app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
+app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
+app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
+app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
+# 2️⃣ Admin Handlers
+app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
+app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
+app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
+app.add_handler(CallbackQueryHandler(handle_skill_actions, pattern="^(add|remove)_skill$"))
+app.add_handler(CallbackQueryHandler(back_to_admin_menu, pattern="^back_to_admin_menu$"))
+app.add_handler(CallbackQueryHandler(run_food_processing, pattern="^run_food_processing$"))
+app.add_handler(CallbackQueryHandler(food_handle_callback, pattern="^(set_grain_priority|set_grain_consumption|preview_grain_effect|manage_food_menu)$"))
+# 3️⃣ Skill Type Selection
+from callback_handlers import handle_skill_type_selection
+app.add_handler(CallbackQueryHandler(handle_skill_type_selection, pattern="^skill_type_"))
+# 4️⃣ Multi-Country Admin Handlers
+app.add_handler(CallbackQueryHandler(show_country_admin_menu, pattern="^admin_country_menu_"))
+app.add_handler(CallbackQueryHandler(show_country_provinces, pattern="^admin_country_provinces_"))
+app.add_handler(CallbackQueryHandler(show_country_transfers, pattern="^admin_country_transfers_"))
+# 5️⃣ Admin Province Management
+app.add_handler(CallbackQueryHandler(edit_tax_callback, pattern="^edit_tax$"))
+app.add_handler(CallbackQueryHandler(show_admin_province_menu, pattern="^admin_province_menu$"))
+app.add_handler(CallbackQueryHandler(admin_view_shop_items, pattern="^admin_view_shop_items$"))
+app.add_handler(CallbackQueryHandler(show_grain_preview, pattern="^preview_grain_effect$"))
+app.add_handler(CallbackQueryHandler(show_all_provinces, pattern="^admin_view_all_provinces$"))
+app.add_handler(CallbackQueryHandler(view_province_admin, pattern="^admin_view_province_"))
+app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
+app.add_handler(CallbackQueryHandler(handle_province_edit, pattern="^edit_province_"))
+app.add_handler(CallbackQueryHandler(approve_transfer, pattern="^approve_transfer_"))
+app.add_handler(CallbackQueryHandler(reject_transfer, pattern="^reject_transfer_"))
+app.add_handler(CallbackQueryHandler(admin_manage_shop, pattern="^admin_manage_shop$"))
+app.add_handler(CallbackQueryHandler(admin_add_shop_item_prompt, pattern="^admin_add_shop_item$"))
+app.add_handler(CallbackQueryHandler(show_weekly_processing_menu, pattern="^show_weekly_menu$"))
+app.add_handler(CallbackQueryHandler(preview_weekly_processing, pattern="^preview_weekly_processing$"))
+app.add_handler(CallbackQueryHandler(run_weekly_processing, pattern="^run_weekly_processing$"))
+app.add_handler(CallbackQueryHandler(admin_show_economy_overview, pattern="^admin_economy_overview"))
+app.add_handler(CallbackQueryHandler(admin_edit_shop_item, pattern="^admin_edit_shop_item_"))
+app.add_handler(CallbackQueryHandler(admin_delete_shop_item, pattern="^admin_delete_shop_item_"))
+app.add_handler(CallbackQueryHandler(confirm_delete_shop_item, pattern="^confirm_delete_shop_item_"))
+app.add_handler(CallbackQueryHandler(handle_shop_edit_choice, pattern="^edit_shop_(image|caption)$"))
+# 6️⃣ Shop Handlers
+app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
+app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
+# app.add_handler(CallbackQueryHandler(handle_shop_buy, pattern="^shop_buy_"))
+app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
+app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
+# 7️⃣ Transfer Handlers
+app.add_handler(CallbackQueryHandler(show_transfer_menu, pattern="^transfer_menu$"))
+app.add_handler(CallbackQueryHandler(show_domestic_transfer, pattern="^transfer_domestic$"))
+app.add_handler(CallbackQueryHandler(show_international_transfer, pattern="^transfer_international$"))
+app.add_handler(CallbackQueryHandler(show_transfer_items, pattern="^(domestic|international)_target_"))
+app.add_handler(CallbackQueryHandler(show_transfer_category_items, pattern="^transfer_category_"))
+app.add_handler(CallbackQueryHandler(handle_transfer_quantity, pattern="^transfer_item_"))
+app.add_handler(CallbackQueryHandler(process_transfer_request, pattern="^confirm_transfer_request$"))
+# Add view pending transfers handler
+try:
+    from transfer_handler import view_pending_transfers
+    app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
+except ImportError:
+    pass
+# 8️⃣ Country Management
+app.add_handler(CallbackQueryHandler(manage_select_country, pattern="^manage_select_country_"))
+app.add_handler(CallbackQueryHandler(select_country_province, pattern="^province\\|"))
+# 9️⃣ Country Menu Operations
+app.add_handler(CallbackQueryHandler(handle_country_menu, pattern="^country_|^news_|^economy_|^open_shop$"))
+# 1️⃣0️⃣ Navigation Handlers
+app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_previous$"))
+app.add_handler(CallbackQueryHandler(handle_back_to_country_menu, pattern="^back_to_country_menu$"))
+# Add specific handler for rp_channels
+from callback_handlers import show_channels_with_keyboard
+app.add_handler(CallbackQueryHandler(
+    lambda update, context: show_channels_with_keyboard(update.callback_query),
+    pattern="^rp_channels$"
+))
+# Shop pagination handlers
+app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
+app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
+app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
+app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
+app.add_handler(CallbackQueryHandler(admin_lock_shop, pattern="^admin_lock_shop$"))
+app.add_handler(CallbackQueryHandler(toggle_block_country, pattern=r"^toggle_block_country:"))
+app.add_handler(CallbackQueryHandler(show_admin_shop_page, pattern="^admin_shop_page_"))
+# 1️⃣1️⃣ General Main Menu Handler (LAST)
+app.add_handler(CallbackQueryHandler(handle_main_menu))
+# Message handlers
+app.add_handler(MessageHandler(pv_filter & filters.PHOTO, handle_photo_router))
+app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_text_router))
+# Admin shop image handlers
+app.add_handler(MessageHandler(filters.PHOTO, handle_shop_item_image))
+app.add_handler(MessageHandler(filters.PHOTO, handle_new_shop_image))
+app.add_error_handler(error_handler)
+# Add job queue if available
+if hasattr(app, 'job_queue') and app.job_queue:
+    app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
+return app
 
 
-        # 1️⃣1️⃣ General Main Menu Handler (LAST)
-        app.add_handler(CallbackQueryHandler(handle_main_menu))
+    #     app: Application = ApplicationBuilder().token(BOT_TOKEN).post_init(set_bot_commands).build()
 
-        # Message handlers
-        app.add_handler(MessageHandler(pv_filter & filters.PHOTO, handle_photo_router))
-        app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_text_router))
+    #     # Add handlers with proper priority
+    #     app.add_handler(CommandHandler("start", start))
+    #     app.add_handler(CommandHandler("id", get_chat_id))
 
-        # Admin shop image handlers
-        app.add_handler(MessageHandler(filters.PHOTO, handle_shop_item_image))
-        app.add_handler(MessageHandler(filters.PHOTO, handle_new_shop_image))
+    #     # ────────────── Handler Priority Order (Most Specific First)
 
-        app.add_error_handler(error_handler)
+    #     # 1️⃣ Bio and Skill Handlers (Most specific patterns first)
+    #     app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
+    #     app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
+    #     app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
+    #     app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
+    #     app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
+    #     app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
+    #     app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
 
-        # Add job queue if available
-        if hasattr(app, 'job_queue') and app.job_queue:
-            app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
+    #     # 2️⃣ Admin Handlers
+    #     app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
+    #     app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
+    #     app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
+    #     app.add_handler(CallbackQueryHandler(handle_skill_actions, pattern="^(add|remove)_skill$"))
+    #     app.add_handler(CallbackQueryHandler(back_to_admin_menu, pattern="^back_to_admin_menu$"))
+    #     app.add_handler(CallbackQueryHandler(run_food_processing, pattern="^run_food_processing$"))
+    #     app.add_handler(CallbackQueryHandler(food_handle_callback, pattern="^(set_grain_priority|set_grain_consumption|preview_grain_effect|manage_food_menu)$"))
 
-        return app
-    except Exception as e:
-        logger.error(f"Error creating application: {e}")
-        raise
+    #     # 3️⃣ Skill Type Selection
+    #     from callback_handlers import handle_skill_type_selection
+    #     app.add_handler(CallbackQueryHandler(handle_skill_type_selection, pattern="^skill_type_"))
+
+    #     # 4️⃣ Multi-Country Admin Handlers
+    #     app.add_handler(CallbackQueryHandler(show_country_admin_menu, pattern="^admin_country_menu_"))
+    #     app.add_handler(CallbackQueryHandler(show_country_provinces, pattern="^admin_country_provinces_"))
+    #     app.add_handler(CallbackQueryHandler(show_country_transfers, pattern="^admin_country_transfers_"))
+
+    #     # 5️⃣ Admin Province Management
+    #     app.add_handler(CallbackQueryHandler(edit_tax_callback, pattern="^edit_tax$"))
+    #     app.add_handler(CallbackQueryHandler(show_admin_province_menu, pattern="^admin_province_menu$"))
+    #     app.add_handler(CallbackQueryHandler(admin_view_shop_items, pattern="^admin_view_shop_items$"))
+    #     app.add_handler(CallbackQueryHandler(show_grain_preview, pattern="^preview_grain_effect$"))
+    #     app.add_handler(CallbackQueryHandler(show_all_provinces, pattern="^admin_view_all_provinces$"))
+    #     app.add_handler(CallbackQueryHandler(view_province_admin, pattern="^admin_view_province_"))
+    #     app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
+    #     app.add_handler(CallbackQueryHandler(handle_province_edit, pattern="^edit_province_"))
+    #     app.add_handler(CallbackQueryHandler(approve_transfer, pattern="^approve_transfer_"))
+    #     app.add_handler(CallbackQueryHandler(reject_transfer, pattern="^reject_transfer_"))
+    #     app.add_handler(CallbackQueryHandler(admin_manage_shop, pattern="^admin_manage_shop$"))
+    #     app.add_handler(CallbackQueryHandler(admin_add_shop_item_prompt, pattern="^admin_add_shop_item$"))
+    #     app.add_handler(CallbackQueryHandler(show_weekly_processing_menu, pattern="^show_weekly_menu$"))
+    #     app.add_handler(CallbackQueryHandler(preview_weekly_processing, pattern="^preview_weekly_processing$"))
+    #     app.add_handler(CallbackQueryHandler(run_weekly_processing, pattern="^run_weekly_processing$"))
+    #     app.add_handler(CallbackQueryHandler(admin_show_economy_overview, pattern="^admin_economy_overview"))
+    #     app.add_handler(CallbackQueryHandler(admin_edit_shop_item, pattern="^admin_edit_shop_item_"))
+    #     app.add_handler(CallbackQueryHandler(admin_delete_shop_item, pattern="^admin_delete_shop_item_"))
+    #     app.add_handler(CallbackQueryHandler(confirm_delete_shop_item, pattern="^confirm_delete_shop_item_"))
+    #     app.add_handler(CallbackQueryHandler(handle_shop_edit_choice, pattern="^edit_shop_(image|caption)$"))
+
+    #     # 6️⃣ Shop Handlers
+    #     app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
+    #     app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
+    #     # app.add_handler(CallbackQueryHandler(handle_shop_buy, pattern="^shop_buy_"))
+    #     app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
+    #     app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
+
+    #     # 7️⃣ Transfer Handlers
+    #     app.add_handler(CallbackQueryHandler(show_transfer_menu, pattern="^transfer_menu$"))
+    #     app.add_handler(CallbackQueryHandler(show_domestic_transfer, pattern="^transfer_domestic$"))
+    #     app.add_handler(CallbackQueryHandler(show_international_transfer, pattern="^transfer_international$"))
+    #     app.add_handler(CallbackQueryHandler(show_transfer_items, pattern="^(domestic|international)_target_"))
+    #     app.add_handler(CallbackQueryHandler(show_transfer_category_items, pattern="^transfer_category_"))
+    #     app.add_handler(CallbackQueryHandler(handle_transfer_quantity, pattern="^transfer_item_"))
+    #     app.add_handler(CallbackQueryHandler(process_transfer_request, pattern="^confirm_transfer_request$"))
+
+    #     # Add view pending transfers handler
+    #     try:
+    #         from transfer_handler import view_pending_transfers
+    #         app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
+    #     except ImportError:
+    #         pass
+
+    #     # 8️⃣ Country Management
+    #     app.add_handler(CallbackQueryHandler(manage_select_country, pattern="^manage_select_country_"))
+    #     app.add_handler(CallbackQueryHandler(select_country_province, pattern="^province\\|"))
+
+    #     # 9️⃣ Country Menu Operations
+    #     app.add_handler(CallbackQueryHandler(handle_country_menu, pattern="^country_|^news_|^economy_|^open_shop$"))
+
+    #     # 1️⃣0️⃣ Navigation Handlers
+    #     app.add_handler(CallbackQueryHandler(handle_back_navigation, pattern="^back_to_previous$"))
+    #     app.add_handler(CallbackQueryHandler(handle_back_to_country_menu, pattern="^back_to_country_menu$"))
+
+
+
+    #     # Add specific handler for rp_channels
+    #     from callback_handlers import show_channels_with_keyboard
+    #     app.add_handler(CallbackQueryHandler(
+    #         lambda update, context: show_channels_with_keyboard(update.callback_query),
+    #         pattern="^rp_channels$"
+    #     ))
+
+    #     # Shop pagination handlers
+    #     app.add_handler(CallbackQueryHandler(show_shop_category, pattern="^shop_category_"))
+    #     app.add_handler(CallbackQueryHandler(show_shop_items_page, pattern="^shop_page_"))
+    #     app.add_handler(CallbackQueryHandler(handle_item_purchase, pattern="^buy_item_"))
+    #     app.add_handler(CallbackQueryHandler(confirm_purchase, pattern="^confirm_purchase$"))
+    #     app.add_handler(CallbackQueryHandler(admin_lock_shop, pattern="^admin_lock_shop$"))
+    #     app.add_handler(CallbackQueryHandler(toggle_block_country, pattern=r"^toggle_block_country:"))
+
+    #     app.add_handler(CallbackQueryHandler(show_admin_shop_page, pattern="^admin_shop_page_"))
+
+
+    #     # 1️⃣1️⃣ General Main Menu Handler (LAST)
+    #     app.add_handler(CallbackQueryHandler(handle_main_menu))
+
+    #     # Message handlers
+    #     app.add_handler(MessageHandler(pv_filter & filters.PHOTO, handle_photo_router))
+    #     app.add_handler(MessageHandler(pv_filter & filters.TEXT & (~filters.COMMAND), handle_text_router))
+
+    #     # Admin shop image handlers
+    #     app.add_handler(MessageHandler(filters.PHOTO, handle_shop_item_image))
+    #     app.add_handler(MessageHandler(filters.PHOTO, handle_new_shop_image))
+
+    #     app.add_error_handler(error_handler)
+
+    #     # Add job queue if available
+    #     if hasattr(app, 'job_queue') and app.job_queue:
+    #         app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
+
+    #     return app
+    # except Exception as e:
+    #     logger.error(f"Error creating application: {e}")
+    #     raise
 
 
 logging.basicConfig(level=logging.INFO)
@@ -670,7 +769,7 @@ async def root(request):
     return web.Response(text="Bot is alive!")
 
 async def main():
-    app = create_application()
+    # app = create_application()
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
         print("❌ RENDER_EXTERNAL_HOSTNAME is not set")
