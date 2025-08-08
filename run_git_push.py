@@ -47,10 +47,11 @@ def run_git_push():
         status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
         if not status_output:
             print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
-        else:
-            subprocess.run(["git", "commit", "-m", commit_message], check=True)
-            subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
-            print("✅ فایل‌ها با موفقیت push شدند.")
+            return
+
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
+        print("✅ فایل‌ها با موفقیت push شدند.")
 
     except subprocess.CalledProcessError as e:
         print(f"❌ خطا در اجرای git: {e}")
