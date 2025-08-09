@@ -1,34 +1,5 @@
 {
-  "bios": {
-    "809172681": {
-      "step": "pending",
-      "country": "Alestria",
-      "flow_type": "bio",
-      "job": "رهبر اعظم",
-      "expires_at": "2025-08-08T23:40:06.066396",
-      "name": "Izod",
-      "nickname": "The Idealist",
-      "age": "27",
-      "skills": [
-        "تیراندازی با کمان",
-        "حواس پنجگانه قوی",
-        "مدیریت امور اقتصادی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "تیراندازی با کمان",
-      "skill2": "حواس پنجگانه قوی",
-      "skill3": "مدیریت امور اقتصادی",
-      "appearance": "میتونم این قسمت رو بعدا پر کنم؟ تو نیم ساعت چیزی به ذهنم نمیاد",
-      "history": "همچنان چیزی به ذهنم نمیاد بعدا پرش میکنم",
-      "id_number": "@Political_Death",
-      "user_id_tag": "#Izod",
-      "photo": "AgACAgQAAxkBAAIXr2iWhSu2X6_3MM97dibIOVkKOsB8AAJQyTEbXCuwUKFnxodMoPYnAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "809172681",
-      "saved_at": "2025-08-08T23:15:55.309434"
-    }
-  },
+  "bios": {},
   "used_hashtags": [
     "#Izod"
   ]
