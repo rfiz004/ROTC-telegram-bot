@@ -1,5 +1,16 @@
 {
-  "bios": {},
+  "bios": {
+    "6821394491": {
+      "country": "Alpyr",
+      "job": "سپهبد ارتش",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-09T11:18:44.349466",
+      "expires_at": "2025-08-09T11:47:12.630034",
+      "name": "Dazai Yamazaki",
+      "nickname": "War killer"
+    }
+  },
   "used_hashtags": [
     "#Izod",
     "#Valerie",
