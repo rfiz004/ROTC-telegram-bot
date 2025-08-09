@@ -43,11 +43,10 @@
       "saved_at": "2025-08-09T15:12:10.162285"
     },
     "7484790395": {
+      "step": "pending",
       "country": "Aldemar",
-      "job": "شورای بازرگانان",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-09T16:42:22.590395",
+      "job": "شورای بازرگانان",
       "expires_at": "2025-08-09T17:00:46.028089",
       "name": "Atalanta Wind maiden",
       "nickname": "Windrunner",
@@ -69,7 +68,11 @@
       "appearance": "طبق تصویر",
       "history": "آتالانتا ویندمیدن، دختر کاپیتان سابق نیروی دریایی جمهوری بود، به لطف ارتباطات خانوادگی، تعالیم گسترده‌ای را فرا گرفت و در نهایت در سن ۲۰ سالگی با یکی از اعضای شورای بازرگانان ازدواج کرد. ازدواج آن‌ها متاسفانه چندان طول نکشید و شوهرش در مدت کوتاهی که از ازدواجشان گذشته بود، قربانی امواج سهمگین اقیانوس شد. بدین ترتیب در سن ۲۳ سالگی بیوه شد. با به ارث رسیدن اموال و دارایی شوهرش به او و نبودن وارثی دیگر، چندان طول نکشید تا او نیز جایگزین شوهرش در شورا شود.",
       "id_number": "@DrivenBySongOfOrpheus",
-      "user_id_tag": "#Atalanta"
+      "user_id_tag": "#Atalanta",
+      "photo": "AgACAgQAAxkBAAIZh2iXe5f2FXUNLrdbR8eD6My6EWKEAAIlzTEbcL65UJys2uM1JeeiAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "7484790395",
+      "saved_at": "2025-08-09T16:47:19.814451"
     }
   },
   "used_hashtags": [
