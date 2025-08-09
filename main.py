@@ -352,7 +352,7 @@ app.add_handler(MessageHandler(filters.PHOTO, handle_new_shop_image))
 app.add_error_handler(error_handler)
 
 if hasattr(app, 'job_queue') and app.job_queue:
-    app.job_queue.run_repeating(scheduled_cleanup, interval=300, first=10)
+    app.job_queue.run_repeating(scheduled_cleanup, interval=1800, first=1800)
 
 # ────────────── Webhook Functions
 async def set_webhook_handler(request):
