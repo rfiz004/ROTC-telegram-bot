@@ -11,14 +11,64 @@
       "nickname": "War killer"
     },
     "7706298662": {
+      "step": "pending",
       "country": "Alpyr",
-      "job": "خانواده ی سلطنتی",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-09T15:00:53.872433",
+      "job": "خانواده ی سلطنتی",
       "expires_at": "2025-08-09T15:28:25.746988",
       "name": "Efancy Alek",
-      "nickname": "red kiss"
+      "nickname": "red kiss",
+      "age": "23",
+      "skills": [
+        "جعل مدارک",
+        "رقاصی",
+        "نوازندگی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "جعل مدارک",
+      "skill2": "رقاصی",
+      "skill3": "نوازندگی",
+      "appearance": "موهای بلند تیره \nپوست سفید \nچشمای بنفش کم رنگ \nانگشتانی کشیده \nبلند اندام",
+      "history": "از بچگی با ناز و نعمت بزرگ شده و هرچی می‌خواسته براش فراهم می‌شده برای همین سختی کار رو نکشیده \nعلاقه ای به امور کشور ندارع و بیشتر دنبال برپایی جشن و خوشگذرانی با خانوم های جوان هست",
+      "id_number": "@Valhalla_com",
+      "user_id_tag": "#Alek",
+      "photo": "AgACAgQAAxkBAAIZUmiXZBE1KAyHlogU1kRd2wuNLKA0AAJGyTEbbOKwUCIhcx0oA74bAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "7706298662",
+      "saved_at": "2025-08-09T15:06:57.379885"
+    },
+    "1079429121": {
+      "step": "pending",
+      "country": "Aldemar",
+      "flow_type": "bio",
+      "job": "شورای بازرگانان",
+      "expires_at": "2025-08-09T15:38:57.431203",
+      "name": "Florentine Adrianus",
+      "nickname": "Black Fish",
+      "age": "31",
+      "skills": [
+        "داروشناسی",
+        "سم شناسی",
+        "مدیریت امور داخلی",
+        "ساخت دارو و سم",
+        "کشتی سازی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "داروشناسی",
+      "skill2": "سم شناسی",
+      "skill3": "مدیریت امور داخلی",
+      "skill4": "ساخت دارو و سم",
+      "skill5": "کشتی سازی",
+      "appearance": "پوششی اشرافی و نجیب‌زاده، قد بلند و پوستی روشن، با هیکلی معمولی",
+      "history": "فلورنتاین، فرزند دوم دوکی از سرزمین‌های همسایه ( آزور) بود که پس از فارغ‌التحصیلی از دانشکده افسری، راهش رو از مسیر سایر خانواده جدا، و مسیر یک بازرگان موفق رو به پیش گرفت تا در نهایت در جمهوری آلدمر، با موفقیت‌های تجاری و سیاسی که بدست اورد، اکنون به عنوان یکی از پنج عضو شورای بازرگانی شروع به فعالیت می‌کند.",
+      "id_number": "@Jmobasher99",
+      "user_id_tag": "#Florentin",
+      "photo": "AgACAgQAAxkBAAIZM2iXYhQiTEovh5qN1Sye6WY14zmsAAJ3yDEbdXvBUJJgP8i-yZPIAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "1079429121",
+      "saved_at": "2025-08-09T15:12:10.162285"
     }
   },
   "used_hashtags": [
@@ -67,6 +117,8 @@
     "#Valentina",
     "#TheSilver",
     "#haha",
-    "#Florentine"
+    "#Florentine",
+    "#Alek",
+    "#Florentin"
   ]
 }
