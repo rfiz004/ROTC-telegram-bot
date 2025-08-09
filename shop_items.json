@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "name": "ماهیگیری",
+    "type": "EconStructure",
+    "country": "Alpyr",
+    "description": "ماهی - 10",
+    "price": 1000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Alpyr"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIYLWiXRzFYO0vjCbcheuKxnM-1B1eOAAKKyjEbXii4UJJC1Lmk-VXdAQADAgADeQADNgQ",
+    "id": "1",
+    "created_at": "2025-08-09T13:04:26.824273"
+  }
+]
