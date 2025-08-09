@@ -410,15 +410,91 @@ async def collect_character_name(update: Update, context: ContextTypes.DEFAULT_T
 #         logger.error(f"Error in collect_news_text: {e}")
 #         await update.message.reply_text("❌ خطا در ارسال اعلامیه")
 
+# async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     news_text = update.message.text.strip()
+
+#     try:
+#         sender_name = user_data.get("character_name", "نامشخص")
+#         recipient_name = user_data.get("recipient_name", "نامشخص")  # فرض بر این که ذخیره شده
+#         news_type = user_data.get("news_type", "normal")
+
+#         # تعیین هشتگ بر اساس نوع اعلامیه
+#         if news_type == "war":
+#             hashtag = "#اعلام_جنگ"
+#         elif news_type == "sanction":
+#             hashtag = "#اعلام_تحریم"
+#         else:
+#             hashtag = "#News"
+
+#         formatted_message = (
+#             "──────⊱◈News◈⊰──────\n\n"
+#             f"✦ Sender Name : {sender_name}\n"
+#             f"✧ Recipient Name : {recipient_name}\n"
+#             f"✦ News text : {news_text}\n\n"
+#             f"{hashtag} \n\n"
+#             "──────⊹⊱✫⊰⊹──────\n"
+#             "https://t.me/R_O_T_C\n"
+#             "https://t.me/R_O_T_C_News"
+#         )
+
+#         try:
+#             await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
+#             success_msg = "✅ اعلامیه شما ارسال شد!"
+#         except Exception:
+#             success_msg = f"✅ اعلامیه آماده شد:\n\n{formatted_message}"
+
+#         await update.message.reply_text(success_msg, reply_markup=manage_country_menu())
+
+#         context.user_data[user_id]["state"] = None
+#         context.user_data[user_id]["step"] = None
+
+#     except Exception as e:
+#         logger.error(f"Error in collect_news_text: {e}")
+#         await update.message.reply_text("❌ خطا در ارسال اعلامیه")
+
+from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
+from telegram.ext import ContextTypes
+
+# لیست کشورها که گفتی
+COUNTRIES = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
+
+def _get_user_store(context, user_id):
+    """
+    بعضی پروژه‌ها context.user_data رو به صورت {user_id: {...}} نگه می‌دارن.
+    این تابع این دو حالت رو پشتیبانی می‌کنه و مرجع دیکشنری مربوط به کاربر را برمی‌گردونه.
+    """
+    ud = context.user_data
+    if isinstance(ud, dict) and user_id in ud and isinstance(ud[user_id], dict):
+        return ud[user_id]
+    return ud
+
+# === اصلاح شده: دریافت متن اعلامیه ===
 async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
-    user_data = context.user_data.get(user_id, {})
+    user_store = _get_user_store(context, user_id)
     news_text = update.message.text.strip()
 
     try:
-        sender_name = user_data.get("character_name", "نامشخص")
-        recipient_name = user_data.get("recipient_name", "نامشخص")  # فرض بر این که ذخیره شده
-        news_type = user_data.get("news_type", "normal")
+        sender_name = user_store.get("character_name", "نامشخص")
+        recipient_name = user_store.get("recipient_name")  # ممکنه None باشه
+        news_type = user_store.get("news_type", "normal")
+
+        # اگر گیرنده انتخاب نشده، متن را نگه‌دار و لیست کشورها را نشان بده
+        if not recipient_name:
+            user_store["pending_news_text"] = news_text
+            user_store["state"] = "waiting_for_recipient_from_news"
+
+            buttons = [
+                [InlineKeyboardButton(country, callback_data=f"news_recipient:{country}")]
+                for country in COUNTRIES
+            ]
+            await update.message.reply_text(
+                "گیرنده مشخص نشده — یکی از کشورها را انتخاب کنید:",
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return  # صبر می‌کنیم تا callback بیاد
 
         # تعیین هشتگ بر اساس نوع اعلامیه
         if news_type == "war":
@@ -443,16 +519,76 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
             success_msg = "✅ اعلامیه شما ارسال شد!"
         except Exception:
+            # اگر ارسال به کانال ناموفق بود، حداقل پیش‌نمایش به کاربر نمایش داده شود
             success_msg = f"✅ اعلامیه آماده شد:\n\n{formatted_message}"
 
         await update.message.reply_text(success_msg, reply_markup=manage_country_menu())
 
-        context.user_data[user_id]["state"] = None
-        context.user_data[user_id]["step"] = None
+        # پاک‌سازی حالت‌ها
+        user_store.pop("pending_news_text", None)
+        user_store["state"] = None
+        user_store["step"] = None
 
     except Exception as e:
         logger.error(f"Error in collect_news_text: {e}")
         await update.message.reply_text("❌ خطا در ارسال اعلامیه")
+
+# === handlerِ callback برای وقتی کاربر کشور را انتخاب می‌کند ===
+async def news_recipient_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    user_store = _get_user_store(context, user_id)
+
+    # انتظار داریم callback_data مثل "news_recipient:Aldemar" باشه
+    parts = query.data.split(":", 1)
+    if len(parts) != 2:
+        await query.message.reply_text("انتخاب نامعتبر. دوباره تلاش کنید.")
+        return
+
+    recipient_name = parts[1]
+    user_store["recipient_name"] = recipient_name
+
+    # اگر متن قبلاً ذخیره شده بود، اعلامیه رو کامل کن و ارسال کن
+    pending = user_store.pop("pending_news_text", None)
+
+    if pending:
+        sender_name = user_store.get("character_name", "نامشخص")
+        news_type = user_store.get("news_type", "normal")
+
+        if news_type == "war":
+            hashtag = "#اعلام_جنگ"
+        elif news_type == "sanction":
+            hashtag = "#اعلام_تحریم"
+        else:
+            hashtag = "#News"
+
+        formatted_message = (
+            "──────⊱◈News◈⊰──────\n\n"
+            f"✦ Sender Name : {sender_name}\n"
+            f"✧ Recipient Name : {recipient_name}\n"
+            f"✦ News text : {pending}\n\n"
+            f"{hashtag} \n\n"
+            "──────⊹⊱✫⊰⊹──────\n"
+            "https://t.me/R_O_T_C\n"
+            "https://t.me/R_O_T_C_News"
+        )
+
+        try:
+            await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
+            # حذف کیبورد قبلی (اگر می‌خوای)
+            try:
+                await query.message.edit_reply_markup(reply_markup=None)
+            except Exception:
+                pass
+            await query.message.reply_text("✅ اعلامیه شما ارسال شد!", reply_markup=manage_country_menu())
+        except Exception:
+            await query.message.reply_text(f"✅ اعلامیه آماده شد:\n\n{formatted_message}")
+    else:
+        # اگر متن ذخیره نشده بود، از کاربر می‌خوای متن رو بفرسته
+        user_store["state"] = "waiting_for_news_text"
+        await query.message.reply_text(f"گیرنده '{recipient_name}' انتخاب شد. حالا متن اعلامیه را ارسال کنید.")
+
 
 
 async def show_change_tax_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
