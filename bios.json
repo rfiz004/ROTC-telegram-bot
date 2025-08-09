@@ -41,6 +41,16 @@
       "level": 1,
       "unique_id": "1079429121",
       "saved_at": "2025-08-09T15:12:10.162285"
+    },
+    "7484790395": {
+      "country": "Aldemar",
+      "job": "شورای بازرگانان",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-09T16:31:56.102068",
+      "expires_at": "2025-08-09T17:00:46.028089",
+      "name": "Atalanta Wind maiden",
+      "nickname": "Windrunner"
     }
   },
   "used_hashtags": [
