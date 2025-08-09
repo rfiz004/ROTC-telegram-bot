@@ -9,16 +9,6 @@
       "expires_at": "2025-08-09T11:47:12.630034",
       "name": "Dazai Yamazaki",
       "nickname": "War killer"
-    },
-    "7894070653": {
-      "country": "Hikada",
-      "job": "امپراطور",
-      "step": "asking_age",
-      "flow_type": "bio",
-      "saved_at": "2025-08-09T13:06:30.631253",
-      "expires_at": "2025-08-09T13:35:17.227886",
-      "name": "Sia",
-      "nickname": "_"
     }
   },
   "used_hashtags": [
@@ -59,6 +49,7 @@
     "#W_Z",
     "#Ogami",
     "#Artyom",
-    "#Artemis"
+    "#Artemis",
+    "#sia"
   ]
 }
