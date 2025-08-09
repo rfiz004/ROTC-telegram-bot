@@ -48,14 +48,32 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 8,
+      "count": 2,
       "product": "ماهی",
+      "weekly_output": 5
+    },
+    "جواهرسازی": {
+      "count": 1,
+      "product": "جواهر",
+      "weekly_output": 3
+    },
+    "مزرعه": {
+      "count": 4,
+      "product": "گندم",
       "weekly_output": 10
     }
   },
   "structure_productions": {
     "ماهیگیری": {
       "produces": "ماهی",
+      "weekly_per_unit": 5
+    },
+    "جواهرسازی": {
+      "produces": "جواهر",
+      "weekly_per_unit": 3
+    },
+    "مزرعه": {
+      "produces": "گندم",
       "weekly_per_unit": 10
     }
   }
