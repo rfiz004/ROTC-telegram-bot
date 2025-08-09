@@ -239,74 +239,115 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
             await context.bot.send_message(chat_id=query.message.chat.id, text="❌ بیوگرافی پیدا نشد.")
             return
 
+
         # if action == "approve":
-        #     # Send bio to channel
-        #     bio_text = format_bio_text(user_bio)
+        #     await query.message.edit_reply_markup(reply_markup=None)
+
+        #     user_id = int(user_bio.get("unique_id"))
+        #     photo = user_bio.get("photo")
+        #     caption = format_bio_text(user_bio)
+
+        #     country = user_bio.get("country")
+        #     job_name = user_bio.get("job")
+
+        #     # برای تایید، نیاز نیست ظرفیت شغل کم بشه (قبلا رزرو شده)
+        #     save_data_file({
+        #         "jobs_by_country": jobs_by_country,
+        #         "skills_config": skills_config
+        #     })
+
+        #     # ارسال عکس + کپشن به کانال بیو
+        #     await context.bot.send_photo(chat_id=BIO_CHANNEL, photo=photo, caption=caption)
+
+        #     # پیام تایید به کاربر
+        #     await context.bot.send_message(chat_id=user_id, text="✅ فرم بیوت تایید شد گذاشتمش تو چنل بیو.")
+
+        #     # ساخت لینک‌های دعوت
+        #     rol_link, realchat_link, country_link = None, None, None
 
         #     try:
-        #         await context.bot.send_message(
-        #             chat_id=BIO_CHANNEL,
-        #             text=bio_text,
-        #             parse_mode='HTML'
-        #         )
-
-        #         # Send role assignment message
-        #         role_text = f"🎭 نقش جدید!\n\n👤 {user_bio.get('name', 'نامشخص')}\n🏛️ {user_bio.get('country', 'نامشخص')}\n💼 {user_bio.get('job', 'نامشخص')}\n🔗 {user_bio.get('hashtag', 'نامشخص')}"
-
-        #         await context.bot.send_message(
-        #             chat_id=ROLE_CHAT_ID,
-        #             text=role_text
-        #         )
-
-        #         # Remove from pending bios
-        #         remove_bio_from_storage(bio_user_id)
-
-        #         await context.bot.send_message(chat_id=query.message.chat.id, text="✅ بیوگرافی تأیید و ارسال شد.")
-
+        #         invite_rol = await context.bot.create_chat_invite_link(
+        #             chat_id=ROLE_CHAT_ID, member_limit=1, creates_join_request=False)
+        #         rol_link = invite_rol.invite_link
         #     except Exception as e:
-        #         logger.error(f"Error sending bio: {e}")
-        #         await context.bot.send_message(chat_id=query.message.chat.id, text=f"❌ خطا در ارسال: {str(e)}")
+        #         logger.error(f"❌خطا در ساخت لینک گپ رول: {e}")
 
+        #     try:
+        #         invite_realchat = await context.bot.create_chat_invite_link(
+        #             chat_id=REALCHAT_ID, member_limit=1, creates_join_request=False)
+        #         realchat_link = invite_realchat.invite_link
+        #     except Exception as e:
+        #         logger.error(f"❌ خطا در ساخت لینک گپ ریل‌چت: {e}")
+
+        #     try:
+        #         group_id = country_group_ids.get(country)
+        #         if group_id:
+        #             invite_country = await context.bot.create_chat_invite_link(
+        #                 chat_id=group_id, member_limit=1, creates_join_request=False)
+        #             country_link = invite_country.invite_link
+        #     except Exception as e:
+        #         logger.error(f"❌ خطا در ساخت لینک گروه کشور {country}: {e}")
+
+        #     # ارسال پیام نهایی به کاربر با لینک‌ها
+        #     msg = "📩 لینک اختصاصی ساختم برات برو عشق کن:\n"
+        #     msg += f"🔷 گپ رول: {rol_link}\n" if rol_link else "⚠️ لینک گپ رول در دسترس نیست.\n"
+        #     msg += f"🔸 گپ ریل‌چت: {realchat_link}\n" if realchat_link else "⚠️ لینک گپ ریل‌چت در دسترس نیست.\n"
+        #     msg += f"🌍 گروه کشور {country}: {country_link}" if country_link else f"⚠️ لینک گروه کشور {country} پیدا نشد یا قابل ساخت نبود."
+
+        #     await context.bot.send_message(chat_id=user_id, text=msg)
+
+        #     # حذف بیو از ذخیره‌سازی
+        #     remove_bio_from_storage(user_id)
+
+        #     # اطلاع ادمین از تایید
+        #     await context.bot.send_message(chat_id=query.from_user.id, text="✅ فرم تایید و ارسال شد.")
 
         if action == "approve":
             await query.message.edit_reply_markup(reply_markup=None)
-
+        
             user_id = int(user_bio.get("unique_id"))
             photo = user_bio.get("photo")
             caption = format_bio_text(user_bio)
-
+        
             country = user_bio.get("country")
             job_name = user_bio.get("job")
-
+        
+            # حذف رزرو از فایل job_reservations
+            reservations = load_job_reservations()
+            if str(user_id) in reservations:
+                del reservations[str(user_id)]
+                save_job_reservations(reservations)
+                logger.info(f"🗑 رزرو شغل برای کاربر {user_id} حذف شد (تایید توسط ادمین).")
+        
             # برای تایید، نیاز نیست ظرفیت شغل کم بشه (قبلا رزرو شده)
             save_data_file({
                 "jobs_by_country": jobs_by_country,
                 "skills_config": skills_config
             })
-
+        
             # ارسال عکس + کپشن به کانال بیو
             await context.bot.send_photo(chat_id=BIO_CHANNEL, photo=photo, caption=caption)
-
+        
             # پیام تایید به کاربر
             await context.bot.send_message(chat_id=user_id, text="✅ فرم بیوت تایید شد گذاشتمش تو چنل بیو.")
-
+        
             # ساخت لینک‌های دعوت
             rol_link, realchat_link, country_link = None, None, None
-
+        
             try:
                 invite_rol = await context.bot.create_chat_invite_link(
                     chat_id=ROLE_CHAT_ID, member_limit=1, creates_join_request=False)
                 rol_link = invite_rol.invite_link
             except Exception as e:
-                logger.error(f"❌خطا در ساخت لینک گپ رول: {e}")
-
+                logger.error(f"❌ خطا در ساخت لینک گپ رول: {e}")
+        
             try:
                 invite_realchat = await context.bot.create_chat_invite_link(
                     chat_id=REALCHAT_ID, member_limit=1, creates_join_request=False)
                 realchat_link = invite_realchat.invite_link
             except Exception as e:
                 logger.error(f"❌ خطا در ساخت لینک گپ ریل‌چت: {e}")
-
+        
             try:
                 group_id = country_group_ids.get(country)
                 if group_id:
@@ -315,33 +356,84 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
                     country_link = invite_country.invite_link
             except Exception as e:
                 logger.error(f"❌ خطا در ساخت لینک گروه کشور {country}: {e}")
-
+        
             # ارسال پیام نهایی به کاربر با لینک‌ها
             msg = "📩 لینک اختصاصی ساختم برات برو عشق کن:\n"
             msg += f"🔷 گپ رول: {rol_link}\n" if rol_link else "⚠️ لینک گپ رول در دسترس نیست.\n"
             msg += f"🔸 گپ ریل‌چت: {realchat_link}\n" if realchat_link else "⚠️ لینک گپ ریل‌چت در دسترس نیست.\n"
             msg += f"🌍 گروه کشور {country}: {country_link}" if country_link else f"⚠️ لینک گروه کشور {country} پیدا نشد یا قابل ساخت نبود."
-
+        
             await context.bot.send_message(chat_id=user_id, text=msg)
-
+        
             # حذف بیو از ذخیره‌سازی
             remove_bio_from_storage(user_id)
-
+        
             # اطلاع ادمین از تایید
             await context.bot.send_message(chat_id=query.from_user.id, text="✅ فرم تایید و ارسال شد.")
 
 
+
         
+        # elif action == "reject":
+        #     await query.message.edit_reply_markup(reply_markup=None)
+    
+        #     user_id = int(user_bio.get("unique_id"))
+        #     admin_username = query.from_user.username or "admin"
+    
+        #     # بازگرداندن ظرفیت شغل به دلیل رد شدن بیو
+        #     country = user_bio.get("country")
+        #     job_name = user_bio.get("job")
+    
+        #     if country and job_name:
+        #         job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job_name), None)
+        #         if job_data:
+        #             job_data["count"] += 1
+        #             save_data_file({
+        #                 "jobs_by_country": jobs_by_country,
+        #                 "skills_config": skills_config
+        #             })
+    
+        #     # ارسال پیام رد به کاربر
+        #     await context.bot.send_message(
+        #         chat_id=user_id,
+        #         text=(
+        #             f"❌ بیوتو ادمین بی‌رحم رد کرده.\n"
+        #             f"برو بگو چرا رد کردی، خودم پشتتم (الکی) @{admin_username}"
+        #         ),
+        #     )
+    
+        #     tag = user_bio.get("user_id_tag")
+        #     if tag:
+        #         remove_used_hashtag(tag)
+    
+        #     # حذف بیو از ذخیره‌سازی
+        #     remove_bio_from_storage(user_id)
+    
+        #     # ارسال پیام تایید به ادمین
+        #     await context.bot.send_message(
+        #         chat_id=query.message.chat.id,
+        #         text="🤧 خبر رد شدنش بهش رسید 📨 راحت شدی؟ نه الان خوشحالی ردش کردی؟ بی‌رحم!",
+        #         reply_to_message_id=query.message.message_id
+        #     )
+
+
         elif action == "reject":
             await query.message.edit_reply_markup(reply_markup=None)
-    
+        
             user_id = int(user_bio.get("unique_id"))
             admin_username = query.from_user.username or "admin"
-    
-            # بازگرداندن ظرفیت شغل به دلیل رد شدن بیو
+        
             country = user_bio.get("country")
             job_name = user_bio.get("job")
-    
+        
+            # 🗑 حذف رزرو از فایل job_reservations
+            reservations = load_job_reservations()
+            if str(user_id) in reservations:
+                del reservations[str(user_id)]
+                save_job_reservations(reservations)
+                logger.info(f"🗑 رزرو شغل برای کاربر {user_id} ({job_name}) حذف شد (رد توسط ادمین).")
+        
+            # بازگرداندن ظرفیت شغل
             if country and job_name:
                 job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job_name), None)
                 if job_data:
@@ -350,7 +442,7 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
                         "jobs_by_country": jobs_by_country,
                         "skills_config": skills_config
                     })
-    
+        
             # ارسال پیام رد به کاربر
             await context.bot.send_message(
                 chat_id=user_id,
@@ -359,20 +451,21 @@ async def handle_bio_approval(update: Update, context: ContextTypes.DEFAULT_TYPE
                     f"برو بگو چرا رد کردی، خودم پشتتم (الکی) @{admin_username}"
                 ),
             )
-    
+        
             tag = user_bio.get("user_id_tag")
             if tag:
                 remove_used_hashtag(tag)
-    
+        
             # حذف بیو از ذخیره‌سازی
             remove_bio_from_storage(user_id)
-    
+        
             # ارسال پیام تایید به ادمین
             await context.bot.send_message(
                 chat_id=query.message.chat.id,
                 text="🤧 خبر رد شدنش بهش رسید 📨 راحت شدی؟ نه الان خوشحالی ردش کردی؟ بی‌رحم!",
                 reply_to_message_id=query.message.message_id
             )
+
     
     except Exception as e:
         logger.error(f"Error in handle_bio_approval: {e}")
