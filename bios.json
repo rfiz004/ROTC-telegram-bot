@@ -75,14 +75,32 @@
       "saved_at": "2025-08-09T13:53:16.418674"
     },
     "7410614316": {
+      "step": "pending",
       "country": "Santos",
-      "job": "دوک اعظم",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-09T13:47:00.888729",
+      "job": "دوک اعظم",
       "expires_at": "2025-08-09T14:16:42.249460",
       "name": "Valentina Isolda Drakov\nوالنتیا ایزولدا دراکوو",
-      "nickname": "Garnet"
+      "nickname": "Garnet",
+      "age": "۳۷",
+      "skills": [
+        "تعلیم",
+        "تیراندازی با کمان",
+        "ساختمان‌سازی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "تعلیم",
+      "skill2": "تیراندازی با کمان",
+      "skill3": "ساختمان‌سازی",
+      "appearance": "...",
+      "history": "او، نه تنها هم‌خون و هم‌ریشه ملکه، که هم‌پیمان جان و هم‌قسم او در دفاع از تار و پود سانتوس بود؛ زنی که در رگ‌هایش نه فقط خون سلطنتی، که آتش وفاداری و صلابت جاری بود. با صلابت و اقتدار، نه تنها جایگاه خود، که جایگاه خواهرش را نیز تثبیت کرد و به جهانیان نشان داد که در پهنه سانتوس، زنان حاکمان بی‌چون و چرای سرنوشت خویش‌اند.",
+      "id_number": "@Zoe_CherryBlossom",
+      "user_id_tag": "#Valentina",
+      "photo": "AgACAgQAAxkBAAIYz2iXVHQYAXRPxCxBYsT6zHdvNHfzAAIoxzEbLhDAUIfPmlsZQZo1AQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "7410614316",
+      "saved_at": "2025-08-09T14:00:21.106714"
     }
   },
   "used_hashtags": [
@@ -127,6 +145,7 @@
     "#sia",
     "#bea",
     "#Beast",
-    "#Diana"
+    "#Diana",
+    "#Valentina"
   ]
 }
