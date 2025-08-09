@@ -950,6 +950,4 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("✅ فرم بیو شما کامل شد و ارسال شد برای بررسی ادمین.", reply_markup=restart_button())
         context.user_data.pop(user_id, None)
         return
-
-    # اگر به اینجا رسیدیم یعنی مرحله نامشخص یا خطا
     await update.message.reply_text("خطا در فرایند. لطفا /start بزنید و دوباره شروع کنید.")
