@@ -42,34 +42,6 @@
       "unique_id": "7137281852",
       "saved_at": "2025-08-09T13:53:16.418674"
     },
-    "7410614316": {
-      "step": "pending",
-      "country": "Santos",
-      "flow_type": "bio",
-      "job": "دوک اعظم",
-      "expires_at": "2025-08-09T14:16:42.249460",
-      "name": "Valentina Isolda Drakov\nوالنتیا ایزولدا دراکوو",
-      "nickname": "Garnet",
-      "age": "۳۷",
-      "skills": [
-        "تعلیم",
-        "تیراندازی با کمان",
-        "ساختمان‌سازی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 1,
-      "skill1": "تعلیم",
-      "skill2": "تیراندازی با کمان",
-      "skill3": "ساختمان‌سازی",
-      "appearance": "...",
-      "history": "او، نه تنها هم‌خون و هم‌ریشه ملکه، که هم‌پیمان جان و هم‌قسم او در دفاع از تار و پود سانتوس بود؛ زنی که در رگ‌هایش نه فقط خون سلطنتی، که آتش وفاداری و صلابت جاری بود. با صلابت و اقتدار، نه تنها جایگاه خود، که جایگاه خواهرش را نیز تثبیت کرد و به جهانیان نشان داد که در پهنه سانتوس، زنان حاکمان بی‌چون و چرای سرنوشت خویش‌اند.",
-      "id_number": "@Zoe_CherryBlossom",
-      "user_id_tag": "#Valentina",
-      "photo": "AgACAgQAAxkBAAIYz2iXVHQYAXRPxCxBYsT6zHdvNHfzAAIoxzEbLhDAUIfPmlsZQZo1AQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "7410614316",
-      "saved_at": "2025-08-09T14:00:21.106714"
-    },
     "2076547132": {
       "step": "pending",
       "country": "Aldemar",
@@ -101,38 +73,6 @@
       "level": 1,
       "unique_id": "2076547132",
       "saved_at": "2025-08-09T14:21:43.886691"
-    },
-    "6213073537": {
-      "step": "pending",
-      "country": "Santos",
-      "flow_type": "bio",
-      "job": "وزیر اعظم",
-      "expires_at": "2025-08-09T14:51:53.685420",
-      "name": "Valreia Cas",
-      "nickname": "White Magnolia",
-      "age": "24",
-      "skills": [
-        "مدیریت امور داخلی",
-        "جعل مدارک",
-        "پرورش گیاه",
-        "ساختمان‌سازی",
-        "کشتی سازی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 1,
-      "skill1": "مدیریت امور داخلی",
-      "skill2": "جعل مدارک",
-      "skill3": "پرورش گیاه",
-      "skill4": "ساختمان‌سازی",
-      "skill5": "کشتی سازی",
-      "appearance": "ljdkasldjalds",
-      "history": "dkas;dkas;dk",
-      "id_number": "@Valeria_cas",
-      "user_id_tag": "#haha",
-      "photo": "AgACAgQAAxkBAAIZEWiXWseHJCHb7DYAAbQVykXZn6FuNQACscoxG14ouFAKaMYAAcnY6gIBAAMCAAN4AAM2BA",
-      "level": 1,
-      "unique_id": "6213073537",
-      "saved_at": "2025-08-09T14:27:19.845769"
     }
   },
   "used_hashtags": [
