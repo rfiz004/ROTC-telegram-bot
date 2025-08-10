@@ -367,7 +367,6 @@ async def view_province_admin(update: Update, context: ContextTypes.DEFAULT_TYPE
         safe_prov = province.replace(" ", "_")
         # هر دکمه برگشت به منبع مشخص برمی‌گردد:
         keyboard = [
-            [InlineKeyboardButton("📊 نمای کلی اقتصاد", callback_data=f"admin_economy_overview_{safe_prov}")],
             [InlineKeyboardButton("🪙 معدن‌ها", callback_data=f"edit_province_mines_{country}_{safe_prov}")],
             [InlineKeyboardButton("💰 ثروت", callback_data=f"edit_province_wealth_{country}_{safe_prov}")],
             [InlineKeyboardButton("👥 جمعیت", callback_data=f"edit_province_population_{country}_{safe_prov}")],
