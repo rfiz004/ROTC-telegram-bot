@@ -20,45 +20,68 @@
     "4 برج در چهار گوشه",
     "یک دروازه لولایی"
   ],
-  "structures": [],
+  "structures": [
+    "کشتی کوچک - 3",
+    "کشتی متوسط - 2",
+    "کشتی بزرگ - 1",
+    "منجنیق - 2"
+  ],
   "weapons": [],
   "misc": [],
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0,
-    "ماهی": 30,
+    "گوشت": 100,
+    "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,
     "فولاد": 0,
     "شیشه": 0,
     "سنگ": 0,
     "چوب": 0,
-    "جواهر": 90,
+    "جواهر": 0,
     "پنبه": 0,
     "پارچه": 0,
     "چرم": 0,
     "شراب": 0
   },
   "economic_structures": {
-    "ماهیگیری": {
-      "count": 2,
-      "product": "ماهی",
-      "weekly_output": 5
+    "دامداری": {
+      "count": 0,
+      "product": "گوشت",
+      "weekly_output": 100
     },
-    "جواهرسازی": {
-      "count": 3,
-      "product": "جواهر",
-      "weekly_output": 10
+    "باغ": {
+      "count": 0,
+      "product": "میوه",
+      "weekly_output": 100
+    },
+    "کارخونه پنبه": {
+      "count": 0,
+      "product": "پنبه",
+      "weekly_output": 50
+    },
+    "کارخونه سنگ": {
+      "count": 0,
+      "product": "سنگ",
+      "weekly_output": 50
     }
   },
   "structure_productions": {
-    "ماهیگیری": {
-      "produces": "ماهی",
-      "weekly_per_unit": 5
+    "دامداری": {
+      "produces": "گوشت",
+      "weekly_per_unit": 100
     },
-    "جواهرسازی": {
-      "produces": "جواهر",
-      "weekly_per_unit": 10
+    "باغ": {
+      "produces": "میوه",
+      "weekly_per_unit": 100
+    },
+    "کارخونه پنبه": {
+      "produces": "پنبه",
+      "weekly_per_unit": 50
+    },
+    "کارخونه سنگ": {
+      "produces": "سنگ",
+      "weekly_per_unit": 50
     }
   },
   "mine_productions": {
