@@ -179,7 +179,8 @@ def format_province_info(province_info):
 
     # ارتش
     army = province_info.get("army", {})
-    total_army = get(province_info, "total_army", sum(army.values()))
+    # total_army = get(province_info, "total_army", sum(army.values()))
+    total_army = sum(army.values())
     text += f"⬤ تعداد کل سرباز : {format_number(total_army)}\n"
     for unit in ["کماندار", "شمشیرزن", "نیزه دار", "سواره نظام"]:
         text += f"✧ {unit} : {format_number(army.get(unit, 0))}\n"
