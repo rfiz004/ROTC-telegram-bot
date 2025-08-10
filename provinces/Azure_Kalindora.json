@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Kalindora",
   "mines": {
-    "Goal mine": 1
+    "Coal mine": 1
   },
   "wealth": 8000,
   "population": 30000,
@@ -68,6 +68,9 @@
   },
   "mine_productions": {
     "Goal mine": {
+      "weekly_per_unit": 8000
+    },
+    "Coal mine": {
       "weekly_per_unit": 8000
     }
   },
