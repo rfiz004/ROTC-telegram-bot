@@ -2,19 +2,12 @@
   "country": "Alestria",
   "province": "Alkyanos",
   "mines": {
-    "Stone mine": 0,
-    "Tin mine": 0,
-    "Iron mine": 0,
-    "Coal mine": 0,
-    "Copper mine": 1,
-    "Silver mine": 0,
-    "Golden mine": 0,
-    "Diamond mine": 0
+    "Coal mine": 1
   },
-  "wealth": 56000,
+  "wealth": 8000,
   "population": 30000,
-  "tax": 20,
-  "popularity": -29,
+  "tax": 10,
+  "popularity": 70,
   "total_army": 5000,
   "army": {
     "کماندار": 2000,
@@ -66,6 +59,11 @@
     "جواهرسازی": {
       "produces": "جواهر",
       "weekly_per_unit": 10
+    }
+  },
+  "mine_productions": {
+    "Coal mine": {
+      "weekly_per_unit": 8000
     }
   }
 }
