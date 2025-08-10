@@ -421,6 +421,9 @@ async def show_province_info(update: Update, context: ContextTypes.DEFAULT_TYPE)
         return out
 
     # Display all fields dynamically
+     # محاسبه مجموع سربازها از بخش army
+    if "army" in province_data and isinstance(province_data["army"], dict):
+        province_data["total_army"] = sum(province_data["army"].values())
     for key, value in province_data.items():
         if key == "country" or key == "province":
             continue  # already displayed at top
