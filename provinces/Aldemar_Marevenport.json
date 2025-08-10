@@ -4,10 +4,10 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 40000,
+  "wealth": 10000,
   "population": 30000,
   "tax": 0,
-  "popularity": -23,
+  "popularity": 70,
   "total_army": 5000,
   "army": {
     "کماندار": 2000,
