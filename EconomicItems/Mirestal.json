@@ -1,5 +1,12 @@
 {
-  "grain_priority": [],
-  "grains": {},
+  "grain_priority": [
+    "مرغ",
+    "گندم",
+    "گوشت"
+  ],
+  "grains": {
+    "مرغ": 0,
+    "گوشت": 0
+  },
   "unfed_population": 0
 }
