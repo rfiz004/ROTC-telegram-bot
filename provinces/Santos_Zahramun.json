@@ -20,7 +20,12 @@
     "4 برج در چهار گوشه",
     "یک دروازه لولایی"
   ],
-  "structures": [],
+  "structures": [
+    "",
+    "",
+    "",
+    ""
+  ],
   "weapons": [],
   "misc": [],
   "economic_items": {
