@@ -50,34 +50,6 @@
       "expires_at": "2025-08-10T20:44:16.168836",
       "name": "Kāvus",
       "nickname": "Kav"
-    },
-    "6512583046": {
-      "step": "pending",
-      "country": "Alpyr",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-08-10T22:48:00.042601",
-      "name": "natrix goodfellow",
-      "nickname": "Silent Hammer of Alpyr",
-      "age": "22",
-      "skills": [
-        "آهنگری",
-        "مهارت مبارزه با دست خالی",
-        "مخفی‌کاری"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "آهنگری",
-      "skill2": "مهارت مبارزه با دست خالی",
-      "skill3": "مخفی‌کاری",
-      "appearance": "As shown in the picture",
-      "history": "Born and raised in the snowy slopes of the Dragspine Mountains, Natrix grew up to the ringing sound of hammer on anvil and the scent of molten metal. His father was a master blacksmith, and his mother was a metal engraver. By a young age, he had already learned the delicate balance between heat, timing, and precision strikes.\n\nAlpyr’s mines are legendary, producing rare metals such as Frassteel and Mithranite. These rare resources became the foundation for many of Natrix’s most remarkable works.",
-      "id_number": "@james_goodfellow",
-      "user_id_tag": "#natrix",
-      "photo": "AgACAgQAAxkBAAIhAAFomRwocOAq8yvl-FH6OJ6q8gABFUYAAgjMMRtFlslQePef99q0fPMBAAMCAAN5AAM2BA",
-      "level": 1,
-      "unique_id": "6512583046",
-      "saved_at": "2025-08-10T22:24:40.514387"
     }
   },
   "used_hashtags": [
