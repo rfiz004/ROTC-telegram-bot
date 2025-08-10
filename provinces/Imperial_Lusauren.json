@@ -29,7 +29,7 @@
   "weapons": [],
   "misc": [],
   "economic_items": {
-    "گندم": 0,
+    "گندم": 134,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,
@@ -42,25 +42,51 @@
     "پنبه": 0,
     "پارچه": 0,
     "چرم": 0,
-    "شراب": 0,
-    "Fish": 60,
-    "Jewelry": 15
+    "شراب": 0
   },
   "economic_structures": {
-    "Fishing": {
-      "count": 2,
-      "product": "Fish",
-      "weekly_output": 10
+    "مزرعه": {
+      "count": 0,
+      "product": "گندم",
+      "weekly_output": 100
     },
-    "Jewelry Workshop": {
-      "count": 1,
-      "product": "Jewelry",
-      "weekly_output": 5
+    "مرغداری": {
+      "count": 0,
+      "product": "مرغ",
+      "weekly_output": 100
+    },
+    "کارخونه شراب": {
+      "count": 0,
+      "product": "شراب",
+      "weekly_output": 50
+    },
+    "کارخونه شیشه": {
+      "count": 0,
+      "product": "شیشه",
+      "weekly_output": 50
     }
   },
   "mine_productions": {
     "Copper": {
       "weekly_per_unit": 10000
+    }
+  },
+  "structure_productions": {
+    "مزرعه": {
+      "produces": "گندم",
+      "weekly_per_unit": 100
+    },
+    "مرغداری": {
+      "produces": "مرغ",
+      "weekly_per_unit": 100
+    },
+    "کارخونه شراب": {
+      "produces": "شراب",
+      "weekly_per_unit": 50
+    },
+    "کارخونه شیشه": {
+      "produces": "شیشه",
+      "weekly_per_unit": 50
     }
   }
 }
