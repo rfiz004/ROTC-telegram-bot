@@ -2,31 +2,21 @@
   "country": "Azure",
   "province": "Sea-Dragon",
   "mines": {
-    "Stone mine": 0,
-    "Tin mine": 0,
-    "Iron mine": 0,
-    "Coal mine": 0,
-    "Copper mine": 0,
-    "Silver mine": 0,
-    "Golden mine": 0,
-    "Diamond mine": 0
+    "Stone mine": 1
   },
-  "wealth": 0,
-  "population": 30000,
+  "wealth": 2000,
+  "population": 0,
   "tax": 0,
-  "popularity": 70,
+  "popularity": 100,
   "total_army": 5100,
   "army": {
     "کماندار": 1000,
-    "شمشیرزن": 1500,
-    "نیزه دار": 1000,
-    "سواره نظام": 500,
-    "نیزه‌دار زره پوش": 100
+    "شمشیرزن": 700,
+    "نیزه دار": 500,
+    "سواره نظام": 200
   },
   "castle": [
-    "یک دیوار یک لایه دور شهر",
-    "4 برج در چهار گوشه",
-    "یک دروازه لولایی"
+    "-"
   ],
   "structures": [],
   "weapons": [],
@@ -45,20 +35,51 @@
     "پنبه": 0,
     "پارچه": 0,
     "چرم": 0,
-    "شراب": 0,
-    "Fish": 60,
-    "Jewelry": 15
+    "شراب": 0
   },
   "economic_structures": {
-    "Fishing": {
-      "count": 2,
-      "product": "Fish",
-      "weekly_output": 10
+    "ماهیگری": {
+      "count": 0,
+      "product": "ماهی",
+      "weekly_output": 100
     },
-    "Jewelry Workshop": {
-      "count": 1,
-      "product": "Jewelry",
-      "weekly_output": 5
+    "کارخونه شراب": {
+      "count": 0,
+      "product": "شراب",
+      "weekly_output": 50
+    },
+    "کارخونه سنگ": {
+      "count": 0,
+      "product": "سنگ",
+      "weekly_output": 50
+    },
+    "چوب بری": {
+      "count": 0,
+      "product": "چوب",
+      "weekly_output": 50
+    }
+  },
+  "mine_productions": {
+    "Stone mine": {
+      "weekly_per_unit": 2000
+    }
+  },
+  "structure_productions": {
+    "ماهیگری": {
+      "produces": "ماهی",
+      "weekly_per_unit": 100
+    },
+    "کارخونه شراب": {
+      "produces": "شراب",
+      "weekly_per_unit": 50
+    },
+    "کارخونه سنگ": {
+      "produces": "سنگ",
+      "weekly_per_unit": 50
+    },
+    "چوب بری": {
+      "produces": "چوب",
+      "weekly_per_unit": 50
     }
   }
 }
