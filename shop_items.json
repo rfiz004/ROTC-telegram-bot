@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "name": "کماندار خبره",
+    "type": "Army",
+    "country": "All",
+    "description": "سرباز کمانداری که در کار با شمشیر و سپر کوچک هم آموزش دیده",
+    "price": 0,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIcb2iYy_sdc6E7Vfogn0s5f8F9g_lnAAJryjEbcG8wUDMqWwABCUOuwgEAAwIAA3gAAzYE",
+    "id": "1",
+    "created_at": "2025-08-10T16:47:59.730539"
+  },
+  {
+    "name": "نیزه‌دار زره پوش",
+    "type": "Army",
+    "country": "All",
+    "description": "سرباز نیزه دار که تمریناک سخت کار با نیزه پشت سر گذاشته",
+    "price": 0,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIcq2iYzfCE_FGDwc3tmXM_XFkk0PmPAAJvyjEbcG8wUMieCXR6hrr3AQADAgADeAADNgQ",
+    "id": "2",
+    "created_at": "2025-08-10T16:52:02.691558"
+  }
+]
