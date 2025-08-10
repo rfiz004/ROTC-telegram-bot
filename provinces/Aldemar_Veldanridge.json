@@ -1,19 +1,10 @@
 {
   "country": "Aldemar",
   "province": "Veldanridge",
-  "mines": {
-    "Stone mine": 0,
-    "Tin mine": 0,
-    "Iron mine": 0,
-    "Coal mine": 0,
-    "Copper mine": 0,
-    "Silver mine": 0,
-    "Golden mine": 0,
-    "Diamond mine": 0
-  },
-  "wealth": 0,
-  "population": 30000,
-  "tax": 0,
+  "mines": {},
+  "wealth": 1000,
+  "population": 14000,
+  "tax": 10,
   "popularity": -23,
   "total_army": 5000,
   "army": {
@@ -59,5 +50,6 @@
       "product": "Jewelry",
       "weekly_output": 5
     }
-  }
+  },
+  "mine_productions": {}
 }
