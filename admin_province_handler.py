@@ -3106,17 +3106,30 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         hashtags = [f"#{item_type}", f"#{country}"]
 
         # Create item data structure
+        # new_item = {
+        #     "name": name,
+        #     "type": item_type,
+        #     "country": country,
+        #     "description": description,
+        #     "price": price,
+        #     "materials": materials,
+        #     "owner": owner_id,
+        #     "hashtags": hashtags,
+        #     "photo_file_id": photo
+        # }
         new_item = {
-            "name": name,
-            "type": item_type,
-            "country": country,
-            "description": description,
-            "price": price,
-            "materials": materials,
-            "owner": owner_id,
-            "hashtags": hashtags,
-            "photo_file_id": photo
-        }
+    "name": name,
+    "type": item_type,
+    "country": country,
+    "description": description,
+    "price": price,
+    "materials": materials,
+    "owner": owner_id,
+    "hashtags": hashtags,
+    "photo_file_id": photo,
+    "count": item_data.get("count", 1)  # اضافه کردن تعداد سرباز
+}
+
 
         # Save to JSON file
         from shop_handler import add_shop_item
