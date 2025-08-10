@@ -2,25 +2,18 @@
   "country": "Santos",
   "province": "Zahramun",
   "mines": {
-    "Stone mine": 0,
-    "Tin mine": 0,
-    "Iron mine": 0,
-    "Coal mine": 0,
-    "Copper mine": 1,
-    "Silver mine": 0,
-    "Golden mine": 0,
-    "Diamond mine": 0
+    "Coal mine": 1
   },
-  "wealth": 55000,
-  "population": 30000,
+  "wealth": 8000,
+  "population": 60000,
   "tax": 0,
-  "popularity": -23,
-  "total_army": 5000,
+  "popularity": 70,
+  "total_army": 7200,
   "army": {
-    "کماندار": 3000,
-    "نیزه دار": 1500,
-    "شمشیرزن": 2000,
-    "سواره نظام": 250
+    "کماندار": 3200,
+    "نیزه دار": 2000,
+    "شمشیرزن": 1000,
+    "سواره نظام": 1000
   },
   "castle": [
     "یک دیوار یک لایه دور شهر",
@@ -32,7 +25,7 @@
   "misc": [],
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0,
+    "گوشت": 200,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,
@@ -49,34 +42,43 @@
     "Jewelry": 15
   },
   "economic_structures": {
-    "ماهیگیری": {
-      "count": 2,
-      "product": "ماهی",
-      "weekly_output": 5
+    "دامداری": {
+      "count": 0,
+      "product": "گوشت",
+      "weekly_output": 100
+    },
+    "کارخونه‌چرم": {
+      "count": 0,
+      "product": "چرم",
+      "weekly_output": 50
     },
     "جواهرسازی": {
-      "count": 1,
+      "count": 0,
       "product": "جواهر",
-      "weekly_output": 3
+      "weekly_output": 50
     },
-    "مزرعه": {
-      "count": 4,
-      "product": "گندم",
-      "weekly_output": 10
+     "کارخونه‌شیشه": {
+      "count": 0,
+      "product": "شیشه",
+      "weekly_output": 50
     }
   },
   "structure_productions": {
-    "ماهیگیری": {
-      "produces": "ماهی",
-      "weekly_per_unit": 5
+    "دامداری": {
+      "produces": "گوشت",
+      "weekly_per_unit": 100
+    },
+    "کارخونه‌چرم": {
+      "produces": "چرم",
+      "weekly_per_unit": 50
     },
     "جواهرسازی": {
       "produces": "جواهر",
-      "weekly_per_unit": 3
+      "weekly_per_unit": 50
     },
-    "مزرعه": {
-      "produces": "گندم",
-      "weekly_per_unit": 10
+     "کارخونه‌شیشه": {
+      "product": "شیشه",
+      "weekly_per_unit": 50
     }
   }
 }
