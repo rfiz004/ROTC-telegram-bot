@@ -2,32 +2,29 @@
   "country": "Walden",
   "province": "Verindel",
   "mines": {
-    "Stone mine": 0,
-    "Tin mine": 0,
-    "Iron mine": 0,
-    "Coal mine": 0,
-    "Copper mine": 1,
-    "Silver mine": 0,
-    "Golden mine": 0,
-    "Diamond mine": 0
+    "Copper mine": 1
   },
-  "wealth": 50000,
-  "population": 30000,
+  "wealth": 10000,
+  "population": 40000,
   "tax": 0,
-  "popularity": -23,
+  "popularity": 70,
   "total_army": 5000,
   "army": {
-    "کماندار": 2000,
-    "شمشیرزن": 1500,
-    "نیزه دار": 1000,
-    "سواره نظام": 500
+    "کماندار": 3000,
+    "شمشیرزن": 2500,
+    "نیزه دار": 1500,
+    "سواره نظام": 1000
   },
   "castle": [
     "یک دیوار یک لایه دور شهر",
     "4 برج در چهار گوشه",
     "یک دروازه لولایی"
   ],
-  "structures": [],
+  "structures": [
+    "منجنیق - 5",
+    "بالیستا - 5",
+    "دژکوب - 1"
+  ],
   "weapons": [],
   "misc": [],
   "economic_items": {
@@ -58,6 +55,11 @@
       "count": 1,
       "product": "Jewelry",
       "weekly_output": 5
+    }
+  },
+  "mine_productions": {
+    "Copper mine": {
+      "weekly_per_unit": 10000
     }
   }
 }
