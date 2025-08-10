@@ -758,13 +758,12 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #     province_data["army"][item_name] = province_data["army"].get(item_name, 0) + quantity
     #     province_data["total_army"] = province_data.get("total_army", 0) + quantity
     if item_type == "army":
-    base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
-    total_units = base_count * quantity  # مجموع سربازها
-
-    if "army" not in province_data:
-        province_data["army"] = {}
-    province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
-    province_data["total_army"] = province_data.get("total_army", 0) + total_units
+        base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
+        total_units = base_count * quantity  # مجموع سربازها
+        if "army" not in province_data:
+            province_data["army"] = {}
+        province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
+        province_data["total_army"] = province_data.get("total_army", 0) + total_units
 
 
     elif item_type == "weapon":
