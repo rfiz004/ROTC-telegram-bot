@@ -44,15 +44,43 @@
     "Jewelry": 15
   },
   "economic_structures": {
-    "Fishing": {
-      "count": 2,
-      "product": "Fish",
-      "weekly_output": 10
+    "دامداری": {
+      "count": 0,
+      "product": "گوشت",
+      "weekly_output": 100
     },
-    "Jewelry Workshop": {
-      "count": 1,
-      "product": "Jewelry",
-      "weekly_output": 5
+    "کارخونه‌چرم": {
+      "count": 0,
+      "product": "چرم",
+      "weekly_output": 50
+    },
+    "جواهرسازی": {
+      "count": 0,
+      "product": "جواهر",
+      "weekly_output": 50
+    },
+     "کارخونه‌شیشه": {
+      "count": 0,
+      "product": "شیشه",
+      "weekly_output": 50
+    }
+  },
+  "structure_productions": {
+    "دامداری": {
+      "produces": "گوشت",
+      "weekly_per_unit": 100
+    },
+    "کارخونه‌چرم": {
+      "produces": "چرم",
+      "weekly_per_unit": 50
+    },
+    "جواهرسازی": {
+      "produces": "جواهر",
+      "weekly_per_unit": 50
+    },
+     "کارخونه‌شیشه": {
+      "product": "شیشه",
+      "weekly_per_unit": 50
     }
   }
 }
