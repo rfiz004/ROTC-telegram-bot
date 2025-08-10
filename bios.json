@@ -41,6 +41,15 @@
       "level": 1,
       "unique_id": "1079429121",
       "saved_at": "2025-08-09T15:12:10.162285"
+    },
+    "7992768693": {
+      "country": "Alestria",
+      "job": "مشاور اعظم",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-10T08:12:13.309046",
+      "expires_at": "2025-08-10T08:42:04.345390",
+      "name": "Anna"
     }
   },
   "used_hashtags": [
