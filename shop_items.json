@@ -65,5 +65,21 @@
     "photo_file_id": "AgACAgQAAxkBAAIcx2iYz9bRiLVSK4y9W-K3T-3u4gptAAIvzTEbg2fIUGSwxJFk-DtgAQADAgADeQADNgQ",
     "id": "4",
     "created_at": "2025-08-10T17:03:00.705995"
+  },
+  {
+    "name": "کماندار",
+    "type": "Army",
+    "country": "All",
+    "description": "یه تست دیگه, تعداد : 100",
+    "price": 150,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIdFGiY2BNla8BIiXUStKptBKKLyWMKAAI4zTEbg2fIUDAVdwPOJ7aBAQADAgADeQADNgQ",
+    "id": "5",
+    "created_at": "2025-08-10T18:11:26.456460"
   }
 ]
