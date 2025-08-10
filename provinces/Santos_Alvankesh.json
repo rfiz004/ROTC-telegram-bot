@@ -1,38 +1,25 @@
 {
   "country": "Santos",
   "province": "Alvankesh",
-  "mines": {
-    "Stone mine": 0,
-    "Tin mine": 0,
-    "Iron mine": 0,
-    "Coal mine": 0,
-    "Copper mine": 0,
-    "Silver mine": 0,
-    "Golden mine": 0,
-    "Diamond mine": 0
-  },
-  "wealth": 0,
-  "population": 30000,
-  "tax": 0,
-  "popularity": -23,
-  "total_army": 5000,
+  "mines": {},
+  "wealth": 1000,
+  "population": 24000,
+  "tax": 10,
+  "popularity": 70,
+  "total_army": 1440,
   "army": {
-    "کماندار": 2000,
-    "شمشیرزن": 1500,
-    "نیزه دار": 1000,
-    "سواره نظام": 500
+    "کماندار": 540,
+    "شمشیرزن": 400,
+    "نیزه دار": 300,
+    "سواره نظام": 200
   },
-  "castle": [
-    "یک دیوار یک لایه دور شهر",
-    "4 برج در چهار گوشه",
-    "یک دروازه لولایی"
-  ],
+  "castle": [],
   "structures": [],
   "weapons": [],
   "misc": [],
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0,
+    "گوشت": 80,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,
@@ -48,16 +35,44 @@
     "Fish": 60,
     "Jewelry": 15
   },
-  "economic_structures": {
-    "Fishing": {
-      "count": 2,
-      "product": "Fish",
-      "weekly_output": 10
+    "economic_structures": {
+    "دامداری": {
+      "count": 0,
+      "product": "گوشت",
+      "weekly_output": 100
     },
-    "Jewelry Workshop": {
-      "count": 1,
-      "product": "Jewelry",
-      "weekly_output": 5
+    "کارخونه‌چرم": {
+      "count": 0,
+      "product": "چرم",
+      "weekly_output": 50
+    },
+    "جواهرسازی": {
+      "count": 0,
+      "product": "جواهر",
+      "weekly_output": 50
+    },
+     "کارخونه‌شیشه": {
+      "count": 0,
+      "product": "شیشه",
+      "weekly_output": 50
+    }
+  },
+  "structure_productions": {
+    "دامداری": {
+      "produces": "گوشت",
+      "weekly_per_unit": 100
+    },
+    "کارخونه‌چرم": {
+      "produces": "چرم",
+      "weekly_per_unit": 50
+    },
+    "جواهرسازی": {
+      "produces": "جواهر",
+      "weekly_per_unit": 50
+    },
+     "کارخونه‌شیشه": {
+      "product": "شیشه",
+      "weekly_per_unit": 50
     }
   }
 }
