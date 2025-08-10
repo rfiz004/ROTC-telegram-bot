@@ -21,7 +21,7 @@
   "misc": [],
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0,
+    "گوشت": 47,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,
@@ -33,21 +33,47 @@
     "پنبه": 0,
     "پارچه": 0,
     "چرم": 0,
-    "شراب": 0,
-    "Fish": 60,
-    "Jewelry": 15
+    "شراب": 0
   },
   "economic_structures": {
-    "Fishing": {
-      "count": 2,
-      "product": "Fish",
-      "weekly_output": 10
+    "دامداری": {
+      "count": 0,
+      "product": "گوشت",
+      "weekly_output": 100
     },
-    "Jewelry Workshop": {
-      "count": 1,
-      "product": "Jewelry",
-      "weekly_output": 5
+    "باغ": {
+      "count": 0,
+      "product": "میوه",
+      "weekly_output": 100
+    },
+    "کارخونه پنبه": {
+      "count": 0,
+      "product": "پنبه",
+      "weekly_output": 50
+    },
+    "کارخونه سنگ": {
+      "count": 0,
+      "product": "سنگ",
+      "weekly_output": 50
     }
   },
-  "mine_productions": {}
+  "mine_productions": {},
+  "structure_productions": {
+    "دامداری": {
+      "produces": "گوشت",
+      "weekly_per_unit": 100
+    },
+    "باغ": {
+      "produces": "میوه",
+      "weekly_per_unit": 100
+    },
+    "کارخونه پنبه": {
+      "produces": "پنبه",
+      "weekly_per_unit": 50
+    },
+    "کارخونه سنگ": {
+      "produces": "سنگ",
+      "weekly_per_unit": 50
+    }
+  }
 }
