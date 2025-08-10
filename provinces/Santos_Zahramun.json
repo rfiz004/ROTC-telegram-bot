@@ -62,7 +62,7 @@
       "product": "جواهر",
       "weekly_output": 50
     },
-     "کارخونه‌شیشه": {
+    "کارخونه‌شیشه": {
       "count": 0,
       "product": "شیشه",
       "weekly_output": 50
@@ -81,8 +81,8 @@
       "produces": "جواهر",
       "weekly_per_unit": 50
     },
-     "کارخونه‌شیشه": {
-      "product": "شیشه",
+    "کارخونه‌شیشه": {
+      "produces": "شیشه",
       "weekly_per_unit": 50
     }
   }
