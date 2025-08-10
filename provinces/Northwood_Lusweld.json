@@ -36,16 +36,44 @@
     "شراب": 0
   },
   "economic_structures": {
-    "Fishing": {
-      "count": 2,
-      "product": "Fish",
-      "weekly_output": 10
+    "دامداری": {
+      "count": 0,
+      "product": "گوشت",
+      "weekly_output": 100
     },
-    "Jewelry Workshop": {
-      "count": 1,
-      "product": "Jewelry",
-      "weekly_output": 5
+    "کارخونه چرم": {
+      "count": 0,
+      "product": "چرم",
+      "weekly_output": 50
+    },
+    "کارخونه شراب": {
+      "count": 0,
+      "product": "شراب",
+      "weekly_output": 50
+    },
+    "چوب بری": {
+      "count": 0,
+      "product": "چوب",
+      "weekly_output": 50
     }
   },
-  "mine_productions": {}
+  "mine_productions": {},
+  "structure_productions": {
+    "دامداری": {
+      "produces": "گوشت",
+      "weekly_per_unit": 100
+    },
+    "کارخونه چرم": {
+      "produces": "چرم",
+      "weekly_per_unit": 50
+    },
+    "کارخونه شراب": {
+      "produces": "شراب",
+      "weekly_per_unit": 50
+    },
+    "چوب بری": {
+      "produces": "چوب",
+      "weekly_per_unit": 50
+    }
+  }
 }
