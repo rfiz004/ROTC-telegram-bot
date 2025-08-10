@@ -57,7 +57,7 @@
       "product": "جواهر",
       "weekly_output": 50
     },
-     "کارخونه‌شیشه": {
+    "کارخونه‌شیشه": {
       "count": 0,
       "product": "شیشه",
       "weekly_output": 50
@@ -76,9 +76,14 @@
       "produces": "جواهر",
       "weekly_per_unit": 50
     },
-     "کارخونه‌شیشه": {
+    "کارخونه‌شیشه": {
       "product": "شیشه",
       "weekly_per_unit": 50
+    }
+  },
+  "mine_productions": {
+    "Stone mine": {
+      "weekly_per_unit": 2000
     }
   }
 }
