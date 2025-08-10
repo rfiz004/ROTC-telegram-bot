@@ -30,5 +30,40 @@
     "photo_file_id": "AgACAgQAAxkBAAIcq2iYzfCE_FGDwc3tmXM_XFkk0PmPAAJvyjEbcG8wUMieCXR6hrr3AQADAgADeAADNgQ",
     "id": "2",
     "created_at": "2025-08-10T16:52:02.691558"
+  },
+  {
+    "name": "تست",
+    "type": "Army",
+    "country": "All",
+    "description": "تسته تست",
+    "price": 2500,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIcx2iYz9bRiLVSK4y9W-K3T-3u4gptAAIvzTEbg2fIUGSwxJFk-DtgAQADAgADeQADNgQ",
+    "id": "3",
+    "created_at": "2025-08-10T16:59:45.245941"
+  },
+  {
+    "name": "تست بعدی",
+    "type": "Army",
+    "country": "All",
+    "description": "تست شماره دو",
+    "price": 2500,
+    "materials": {
+      "ایتم1": 1,
+      "ایتم2": 2
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIcx2iYz9bRiLVSK4y9W-K3T-3u4gptAAIvzTEbg2fIUGSwxJFk-DtgAQADAgADeQADNgQ",
+    "id": "4",
+    "created_at": "2025-08-10T17:03:00.705995"
   }
 ]
