@@ -3368,7 +3368,10 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         description = item_data["description"]
         price_materials = item_data["price"]
         owner_id = item_data["owner_id"]
-
+        count = item_data.get("count")
+        if count and item_type.lower() == "army":
+            description += f", تعداد: {count}"
+            
         # Parse price and materials
         price = 0
         materials = {}
@@ -3389,7 +3392,7 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
                         continue
 
         # ساخت هشتگ‌ها
-        hashtags = [f"#{item_type}"] + [f"#{c}" for c in countries] + [f"{h}" for h in item_data.get("hashtags", [])]
+        hashtags = [f"#{item_type}"] + [h for h in item_data.get("hashtags", [])]
 
         # ایجاد ساختار آیتم
         new_item = {
