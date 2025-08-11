@@ -126,7 +126,8 @@ def manage_food_menu():
         [InlineKeyboardButton("📋 تعیین اولویت غلات", callback_data="set_grain_priority")],
         [InlineKeyboardButton("⚙️ تعیین درصد مصرف", callback_data="set_grain_consumption")],
         [InlineKeyboardButton("🔍 پیش‌نمایش مصرف", callback_data="preview_grain_effect")],
-        [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_country_menu")]
+        [InlineKeyboardButton("🔙 برگشت", callback_data="back_to_country_menu")]
+
     ]
     return InlineKeyboardMarkup(keyboard)
 
