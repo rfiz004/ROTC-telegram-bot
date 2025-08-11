@@ -2092,21 +2092,37 @@ async def handle_shop_edit_choice(update: Update, context: ContextTypes.DEFAULT_
         #     await query.edit_message_text("❌ هیچ آیتمی برای ویرایش انتخاب نشده.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 انصراف", callback_data="admin_view_shop_items")]]))
         #     return
 
+        # example = (
+        #     "📝 لطفاً اطلاعات جدید آیتم را طبق یکی از قالب‌های زیر وارد کنید:\n\n"
+        #     "📌 **مثال ساده — فقط توضیحات**\n"
+        #     "این یک توضیح جدید برای آیتم است.\n\n"
+        #     "📌 **مثال چند‌خطی (کلید: مقدار)**\n"
+        #     "نام: شمشیر جادویی\n"
+        #     "نوع: Weapon\n"
+        #     "کشور: Santos\n"
+        #     "قیمت: 32000\n"
+        #     "مواد: آهن:50, چوب:20\n"
+        #     "توضیحات: این شمشیر قدرت حمله را دو برابر می‌کند.\n"
+        #     "هشتگ‌ها: #Santos #Weapon\n"
+        #     "ایدی سازنده: @creator_id\n\n"
+        #     "🧠 فقط فیلدهایی که می‌خواهی تغییر کنند را وارد کن. فرمت انعطاف‌پذیر است."
+        # )
+
         example = (
-            "📝 لطفاً اطلاعات جدید آیتم را طبق یکی از قالب‌های زیر وارد کنید:\n\n"
-            "📌 **مثال ساده — فقط توضیحات**\n"
-            "این یک توضیح جدید برای آیتم است.\n\n"
-            "📌 **مثال چند‌خطی (کلید: مقدار)**\n"
-            "نام: شمشیر جادویی\n"
-            "نوع: Weapon\n"
-            "کشور: Santos\n"
-            "قیمت: 32000\n"
-            "مواد: آهن:50, چوب:20\n"
-            "توضیحات: این شمشیر قدرت حمله را دو برابر می‌کند.\n"
-            "هشتگ‌ها: #Santos #Weapon\n"
-            "ایدی سازنده: @creator_id\n\n"
-            "🧠 فقط فیلدهایی که می‌خواهی تغییر کنند را وارد کن. فرمت انعطاف‌پذیر است."
-        )
+        "📝 لطفاً اطلاعات جدید آیتم را طبق یکی از قالب‌های زیر وارد کنید:\n\n"
+        "📌 **مثال چند‌خطی (کلید: مقدار)**\n"
+        "نام: شمشیر جادویی\n"
+        "نوع: Weapon\n"
+        "کشور: Santos, Alpyr\n"
+        "قیمت: 32000\n"
+        "مواد: آهن:50, چوب:20\n"
+        "تعداد: 5\n"
+        "توضیحات: این شمشیر قدرت حمله را دو برابر می‌کند.\n"
+        "هشتگ‌ها: #Santos #Weapon\n"
+        "ایدی سازنده: @creator_id\n\n"
+        "🧠 فقط فیلدهایی که میخوای تغییر کنن رو وارد کن."
+    )
+
 
         # ارسال بدون parse_mode تا از خطاهای entity جلوگیری شود
         await query.edit_message_text(
@@ -2126,6 +2142,114 @@ async def handle_shop_edit_choice(update: Update, context: ContextTypes.DEFAULT_
 
 
 
+# def parse_shop_item_text(text: str) -> dict:
+#     """
+#     پارس متن ورودی برای آپدیت آیتم فروشگاه.
+#     پشتیبانی از فرم‌های:
+#       - فقط یک خط متن -> توضیحات
+#       - چند خط "کلید: مقدار"
+#       - مواد: آهن:50, چوب=20 یا آهن 50
+#       - هشتگ‌ها: #Tag1 #Tag2 یا Tag1, Tag2
+#     برمی‌گرداند: دیکشنری از فیلدهایی که باید آپدیت شوند.
+#     """
+#     if not text:
+#         return {}
+
+#     text = text.strip()
+#     # اگر یک خط و بدون ":" -> treat as description
+#     if '\n' not in text and ':' not in text:
+#         return {"description": text}
+
+#     updates = {}
+#     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+
+#     for line in lines:
+#         # اگر خط ":" ندارد آن را به توضیحات اضافه کن
+#         if ':' not in line:
+#             updates.setdefault("description", "")
+#             if updates["description"]:
+#                 updates["description"] += "\n"
+#             updates["description"] += line
+#             continue
+
+#         key, val = map(str.strip, line.split(':', 1))
+#         kl = key.lower()
+
+#         # نام
+#         if kl in ("نام", "name"):
+#             updates["name"] = val
+
+#         # نوع
+#         elif kl in ("نوع", "type"):
+#             updates["type"] = val
+
+#         # کشور
+#         elif kl in ("کشور", "country"):
+#             updates["country"] = val
+
+#         # قیمت
+#         elif kl in ("قیمت", "price"):
+#             num = re.sub(r"[^\d]", "", val)
+#             if num:
+#                 try:
+#                     updates["price"] = int(num)
+#                 except:
+#                     pass
+
+#         # توضیحات
+#         elif kl in ("توضیحات", "description", "شرح"):
+#             updates["description"] = val
+
+#         # مواد
+#         elif kl in ("مواد", "materials"):
+#             mats = {}
+#             # جداکننده , or ;
+#             parts = re.split(r'[,\;]', val)
+#             for part in parts:
+#                 part = part.strip()
+#                 if not part:
+#                     continue
+#                 if '=' in part:
+#                     mkey, mval = map(str.strip, part.split('=', 1))
+#                 elif ':' in part:
+#                     mkey, mval = map(str.strip, part.split(':', 1))
+#                 else:
+#                     m = re.match(r'(.+?)\s+(\d+)', part)
+#                     if m:
+#                         mkey, mval = m.group(1).strip(), m.group(2).strip()
+#                     else:
+#                         continue
+#                 num = re.sub(r"[^\d]", "", mval)
+#                 try:
+#                     mats[mkey] = int(num) if num else 0
+#                 except:
+#                     mats[mkey] = 0
+#             updates["materials"] = mats
+
+#         # هشتگ‌ها
+#         elif kl in ("هشتگ", "هشتگ‌ها", "hashtags", "برچسب", "برچسب‌ها"):
+#             tags = re.findall(r'#\w+', val)
+#             if not tags:
+#                 parts = re.split(r'[,\s]+', val)
+#                 tags = [('#' + p.strip()) if p and not p.strip().startswith('#') else p.strip() for p in parts if p.strip()]
+#             updates["hashtags"] = tags
+
+#         # سازنده / مالک
+#         elif kl in ("ایدی سازنده", "سازنده", "owner", "فروشنده", "مالک"):
+#             updates["owner"] = val
+
+#         else:
+#             # نامشخص -> اضافه کن به description تا اطلاعات از بین نره
+#             updates.setdefault("description", "")
+#             if updates["description"]:
+#                 updates["description"] += "\n"
+#             updates["description"] += f"{key}: {val}"
+
+#     return updates
+
+
+import re
+
 def parse_shop_item_text(text: str) -> dict:
     """
     پارس متن ورودی برای آپدیت آیتم فروشگاه.
@@ -2134,13 +2258,14 @@ def parse_shop_item_text(text: str) -> dict:
       - چند خط "کلید: مقدار"
       - مواد: آهن:50, چوب=20 یا آهن 50
       - هشتگ‌ها: #Tag1 #Tag2 یا Tag1, Tag2
+      - کشورها: می‌تونه لیست با کاما یا فاصله باشه
     برمی‌گرداند: دیکشنری از فیلدهایی که باید آپدیت شوند.
     """
     if not text:
         return {}
 
     text = text.strip()
-    # اگر یک خط و بدون ":" -> treat as description
+    # اگر فقط یک خط و بدون ":" -> treat as description
     if '\n' not in text and ':' not in text:
         return {"description": text}
 
@@ -2167,9 +2292,12 @@ def parse_shop_item_text(text: str) -> dict:
         elif kl in ("نوع", "type"):
             updates["type"] = val
 
-        # کشور
-        elif kl in ("کشور", "country"):
-            updates["country"] = val
+        # کشورها (لیست)
+        elif kl in ("کشور", "country", "countries", "کشورها"):
+            # حذف فاصله‌ها و تفکیک با , یا space
+            countries = re.split(r'[,\s]+', val)
+            countries = [c.strip() for c in countries if c.strip()]
+            updates["countries"] = countries
 
         # قیمت
         elif kl in ("قیمت", "price"):
@@ -2180,11 +2308,20 @@ def parse_shop_item_text(text: str) -> dict:
                 except:
                     pass
 
+        # تعداد
+        elif kl in ("تعداد", "count", "موجودی"):
+            num = re.sub(r"[^\d]", "", val)
+            if num:
+                try:
+                    updates["count"] = int(num)
+                except:
+                    pass
+
         # توضیحات
         elif kl in ("توضیحات", "description", "شرح"):
             updates["description"] = val
 
-        # مواد
+        # مواد اولیه
         elif kl in ("مواد", "materials"):
             mats = {}
             # جداکننده , or ;
@@ -2220,7 +2357,7 @@ def parse_shop_item_text(text: str) -> dict:
 
         # سازنده / مالک
         elif kl in ("ایدی سازنده", "سازنده", "owner", "فروشنده", "مالک"):
-            updates["owner"] = val
+            updates["owner_id"] = val
 
         else:
             # نامشخص -> اضافه کن به description تا اطلاعات از بین نره
