@@ -652,7 +652,9 @@ def clear_expired_reservations(jobs_by_country):
 
     if expired_users:
         save_job_reservations(reservations)
-        save_data({"jobs_by_country": jobs_by_country, "skills_config": skills_config})
+        # save_data({"jobs_by_country": jobs_by_country, "skills_config": skills_config})
+        save_data("data.json", {"jobs_by_country": jobs_by_country, "skills_config": skills_config})
+
 
     return expired_count
 
