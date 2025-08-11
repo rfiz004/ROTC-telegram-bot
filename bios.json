@@ -41,15 +41,12 @@
       "expires_at": "2025-08-10T08:42:04.345390",
       "name": "Anna"
     },
-    "106647374": {
-      "country": "Alpyr",
-      "job": "مشاور وزارت",
-      "step": "asking_age",
+    "7270352750": {
+      "country": "Azure",
+      "job": "مشاغل آزاد",
+      "step": "asking_name",
       "flow_type": "bio",
-      "saved_at": "2025-08-10T20:14:49.689303",
-      "expires_at": "2025-08-10T20:44:16.168836",
-      "name": "Kāvus",
-      "nickname": "Kav"
+      "saved_at": "2025-08-11T10:38:19.992756"
     }
   },
   "used_hashtags": [
