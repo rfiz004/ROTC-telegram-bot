@@ -53,9 +53,12 @@
     "106647374": {
       "country": "Alpyr",
       "job": "مشاور وزارت",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-11T10:45:58.507586"
+      "saved_at": "2025-08-11T11:01:30.754858",
+      "expires_at": "2025-08-11T11:15:58.508179",
+      "name": "Kavus",
+      "nickname": "Kav"
     }
   },
   "used_hashtags": [
