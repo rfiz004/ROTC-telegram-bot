@@ -216,5 +216,49 @@
     "count": 1,
     "id": "12",
     "created_at": "2025-08-11T18:43:22.544645"
+  },
+  {
+    "name": "مزرعه",
+    "type": "EconStructure",
+    "countries": [
+      "Hikada",
+      "Imperial",
+      "Walden"
+    ],
+    "description": "زمین های زراعی به وسعت بسیار زیاد در زمین های باز که منابع غذای اصلی برخی از کشورهاست و هفتگی 100 گندم بازدهی دارن\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2500,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Hikada",
+      "#Imperial",
+      "#Walden"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIpGWiaOf2xI_xlINX_mRIqovvhss2oAAK-yTEbHFjQULb-yNTofbdMAQADAgADeQADNgQ",
+    "count": 1,
+    "id": "13",
+    "created_at": "2025-08-11T18:57:19.642678"
+  },
+  {
+    "name": "مرغداری",
+    "type": "EconStructure",
+    "countries": [
+      "Imperial",
+      "Alpyr"
+    ],
+    "description": "قفس های نگهداری چوبی مرغ و خروس که باعث تامین هفتگی 100 مرغ برای کشور میشن\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Imperial",
+      "#Alpyr"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIphGiaPibgAll3Xkr9YvSGfx8hVg1aAALfyTEbHFjQUKb_nT44JHQgAQADAgADeQADNgQ",
+    "count": 1,
+    "id": "14",
+    "created_at": "2025-08-11T19:04:24.040255"
   }
 ]
