@@ -41,7 +41,9 @@ async def handle_grain_priority(update: Update, context: ContextTypes.DEFAULT_TY
         await update.message.reply_text("⛔ ابتدا استان را انتخاب کن.")
         return
 
+    province = province.strip().replace(" ", "_")
     file_path = os.path.join(ECONOMIC_PATH, f"{province}.json")
+
 
     if not os.path.exists(file_path):
         await update.message.reply_text("⛔ فایل اقتصادی استان پیدا نشد.")
