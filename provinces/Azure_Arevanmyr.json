@@ -36,7 +36,7 @@
     "شراب": 0
   },
   "economic_structures": {
-    "ماهیگری": {
+    "ماهیگیری": {
       "count": 0,
       "product": "ماهی",
       "weekly_output": 100
@@ -46,14 +46,14 @@
       "product": "شراب",
       "weekly_output": 50
     },
+    "کارخونه چوب": {
+      "count": 0,
+      "product": "چوب",
+      "weekly_output": 50
+    },
     "کارخونه سنگ": {
       "count": 0,
       "product": "سنگ",
-      "weekly_output": 50
-    },
-    "چوب بری": {
-      "count": 0,
-      "product": "چوب",
       "weekly_output": 50
     }
   },
