@@ -962,7 +962,8 @@ async def show_shop_page(query, context, user_id, page):
     text = f"🛒 فروشگاه - آیتم {page + 1} از {total_pages}\n\n"
     text += f"📦 {current_item['name']}\n\n"
     text += f"🏷 نوع: {current_item['type']}\n"
-    text += f"🌍 کشور: {current_item['country']}\n"
+    # text += f"🌍 کشور: {current_item['country']}\n"
+    text += f"🌍 کشورها: {', '.join(current_item.get('countries', []))}\n"
     text += f"💰 قیمت: {current_item['price']:,} طلا\n"
 
     if current_item.get('materials'):
