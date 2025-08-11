@@ -2,6 +2,8 @@
   "grain_priority": [
     "گندم"
   ],
-  "grains": {},
+  "grains": {
+    "گندم": 0
+  },
   "unfed_population": 0
 }

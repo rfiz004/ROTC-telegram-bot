@@ -50,6 +50,16 @@
       "expires_at": "2025-08-10T20:44:16.168836",
       "name": "Kāvus",
       "nickname": "Kav"
+    },
+    "6720663682": {
+      "country": "Walden",
+      "job": "معاونین فرمانده",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-11T06:04:20.735908",
+      "expires_at": "2025-08-11T06:33:52.463857",
+      "name": "Kino",
+      "nickname": "Kin"
     }
   },
   "used_hashtags": [
