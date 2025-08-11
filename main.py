@@ -63,7 +63,7 @@ from admin_province_handler import (
 from country_handler import (
     check_password, handle_country_menu, collect_character_name,
     collect_news_text, select_country_province, handle_user_text,
-    manage_select_country, open_manage_country
+    manage_select_country, open_manage_country, news_callback_handler
 )
 
 from shop_handler import (
@@ -305,6 +305,7 @@ app.add_handler(CallbackQueryHandler(show_country_admin_menu, pattern="^admin_co
 app.add_handler(CallbackQueryHandler(show_country_provinces, pattern="^admin_country_provinces_"))
 app.add_handler(CallbackQueryHandler(show_country_transfers, pattern="^admin_country_transfers_"))
 app.add_handler(CallbackQueryHandler(edit_tax_callback, pattern="^edit_tax$"))
+app.add_handler(CallbackQueryHandler(news_callback_handler, pattern="^(news_recipient:|news_province:)"))
 app.add_handler(CallbackQueryHandler(show_admin_province_menu, pattern="^admin_province_menu$"))
 app.add_handler(CallbackQueryHandler(admin_view_shop_items, pattern="^admin_view_shop_items$"))
 app.add_handler(CallbackQueryHandler(show_grain_preview, pattern="^preview_grain_effect$"))
