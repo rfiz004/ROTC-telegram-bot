@@ -541,6 +541,23 @@
       "requested_at": "2025-08-11T20:24:30.575230",
       "delay_until": "2025-08-12T20:24:30.575235",
       "approved_at": "2025-08-11T20:25:31.924248"
+    },
+    {
+      "id": "transfer_7484790395_1754945497",
+      "requester_id": 7484790395,
+      "source_country": "Aldemar",
+      "source_province": "Karnholm",
+      "target_country": "Aldemar",
+      "target_province": "Port Zephalia",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-08-11T20:51:37.798886",
+      "delay_until": "2025-08-12T20:51:37.798892",
+      "approved_at": "2025-08-11T20:53:07.428314"
     }
   ]
 }
