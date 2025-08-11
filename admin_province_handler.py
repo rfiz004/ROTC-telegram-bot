@@ -3354,6 +3354,108 @@ async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TY
 #         )
 
 
+# async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Generate and save shop item to JSON file"""
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     item_data = user_data.get("shop_item_data", {})
+
+#     try:
+#         photo = item_data["photo"]
+#         name = item_data["name"]
+#         item_type = item_data["type"]
+#         countries = item_data.get("countries", [])  # تغییر به لیست
+#         description = item_data["description"]
+#         price_materials = item_data["price"]
+#         owner_id = item_data["owner_id"]
+#         count = item_data.get("count")
+#         if count and item_type.lower() == "army":
+#             description += f", تعداد: {count}"
+            
+#         # Parse price and materials
+#         price = 0
+#         materials = {}
+
+#         parts = price_materials.split(",")
+#         if parts:
+#             try:
+#                 price = int(parts[0].strip())
+#             except ValueError:
+#                 price = 0
+
+#             for part in parts[1:]:
+#                 if ":" in part:
+#                     mat_name, mat_amount = part.split(":", 1)
+#                     try:
+#                         materials[mat_name.strip()] = int(mat_amount.strip())
+#                     except ValueError:
+#                         continue
+
+#         # ساخت هشتگ‌ها
+#         hashtags = [f"#{item_type}"] + [h for h in item_data.get("hashtags", [])]
+
+#         # ایجاد ساختار آیتم
+#         new_item = {
+#             "name": name,
+#             "type": item_type,
+#             "countries": countries,  # ذخیره لیست کشورها
+#             "description": description,
+#             "price": price,
+#             "materials": materials,
+#             "owner": owner_id,
+#             "hashtags": hashtags,
+#             "photo_file_id": photo,
+#             "count": item_data.get("count", 1)
+#         }
+
+#         # ذخیره در فایل
+#         from shop_handler import add_shop_item
+#         item_id = add_shop_item(new_item)
+
+#         # ارسال در کانال
+#         try:
+#             caption = f"""──────⊱◈Shop◈⊰──────
+# ✦ Item Name : {name}
+# ✧ Item Type : {item_type}
+# ✦ Countries : {', '.join(countries)}
+# {' '.join(hashtags)}
+# ✧ Description :
+# • {description}
+# ✦ Price & Materials :
+# • {price_materials}
+# ✧ Owner ID : {owner_id}
+# ──────⊹⊱✫⊰⊹──────
+# https://t.me/R_O_T_C
+# https://t.me/R_O_T_C_Shop"""
+
+#             await context.bot.send_photo(
+#                 chat_id=SHOP_CHANNEL,
+#                 photo=photo,
+#                 caption=caption
+#             )
+#         except Exception as channel_error:
+#             logger.warning(f"Could not send to channel: {channel_error}")
+
+#         await update.message.reply_text(
+#             f"✅ آیتم با موفقیت به فروشگاه اضافه شد!\n🆔 شناسه آیتم: {item_id}",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
+#             ]])
+#         )
+
+#         # پاک کردن داده‌های کاربر
+#         context.user_data[user_id] = {}
+
+#     except Exception as e:
+#         logger.error(f"Error generating shop item: {e}")
+#         await update.message.reply_text(
+#             f"❌ خطا در ایجاد آیتم: {str(e)}",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
+#             ]])
+#         )
+
+
 async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Generate and save shop item to JSON file"""
     user_id = update.message.from_user.id
@@ -3364,15 +3466,13 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         photo = item_data["photo"]
         name = item_data["name"]
         item_type = item_data["type"]
-        countries = item_data.get("countries", [])  # تغییر به لیست
+        countries = item_data.get("countries", [])  # لیست کشورها
         description = item_data["description"]
         price_materials = item_data["price"]
-        owner_id = item_data["owner_id"]
-        count = item_data.get("count")
-        if count and item_type.lower() == "army":
-            description += f", تعداد: {count}"
-            
-        # Parse price and materials
+        owner_id = item_data.get("owner_id", "-")
+        count = item_data.get("count", None)
+
+        # تجزیه قیمت و مواد
         price = 0
         materials = {}
 
@@ -3391,28 +3491,33 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
                     except ValueError:
                         continue
 
-        # ساخت هشتگ‌ها
-        hashtags = [f"#{item_type}"] + [h for h in item_data.get("hashtags", [])]
+        # حذف تکرار هشتگ‌ها و ایجاد لیست کامل هشتگ‌ها
+        all_hashtags = [f"#{item_type}"] + [f"#{c}" for c in countries] + [h for h in item_data.get("hashtags", [])]
+        hashtags = list(dict.fromkeys(all_hashtags))  # حذف تکرار و حفظ ترتیب
 
-        # ایجاد ساختار آیتم
+        # افزودن تعداد به توضیحات در صورت وجود و نوع ارتش
+        if count is not None and item_type.lower() == "army":
+            description += f", تعداد: {count}"
+
+        # ساخت آیتم جدید
         new_item = {
             "name": name,
             "type": item_type,
-            "countries": countries,  # ذخیره لیست کشورها
+            "countries": countries,
             "description": description,
             "price": price,
             "materials": materials,
             "owner": owner_id,
             "hashtags": hashtags,
             "photo_file_id": photo,
-            "count": item_data.get("count", 1)
+            "count": count if count is not None else 1
         }
 
         # ذخیره در فایل
         from shop_handler import add_shop_item
         item_id = add_shop_item(new_item)
 
-        # ارسال در کانال
+        # ارسال به کانال
         try:
             caption = f"""──────⊱◈Shop◈⊰──────
 ✦ Item Name : {name}
