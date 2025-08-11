@@ -1418,10 +1418,24 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if current_source_amount < amount:
                 raise ValueError(f"آیتم {item_name} در مبدا به اندازه کافی موجود نیست.")
 
-            source_data[category][item_name] = current_source_amount - amount
+            # source_data[category][item_name] = current_source_amount - amount
+            if isinstance(source_data.get(category), dict):
+                # اگر دیکشنری بود، به item_name مقدار بده
+                source_data[category][item_name] = current_source_amount - amount
+            else:
+                # اگر عدد بود، خود category یک مقدار عددی است (مثل ثروت)
+                source_data[category] = current_source_amount - amount
+
 
             # اضافه‌کردن به مقصد
-            target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
+            # target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
+        
+            if isinstance(target_data.get(category), dict):
+                target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
+            else:
+                # category خودش عدد هست، پس مستقیم جمع بزن
+                target_data[category] = target_data.get(category, 0) + amount
+
 
         # ذخیره‌سازی داده‌ها
         save_province_data(source_country, source_province, source_data)
