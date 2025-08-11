@@ -1621,7 +1621,7 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
         countries = [c.strip() for c in text.split(",") if c.strip()]
         context.user_data[user_id]["shop_item_data"]["countries"] = countries  # تغییر به لیست
         await update.message.reply_text(
-            "🏷 هشتگ‌ها را وارد کنید (با # و با کاما جدا کنید):\nمثال: #Army, #All, #Event",
+            "🏷 هشتگ‌ها را وارد کنید (با # و با کاما جدا کنید):\nمثال: #All, #Alpyr, #Santos,
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
