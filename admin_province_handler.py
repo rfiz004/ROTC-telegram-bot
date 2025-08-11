@@ -2265,21 +2265,12 @@ async def handle_shop_edit_choice(update: Update, context: ContextTypes.DEFAULT_
 import re
 
 def parse_shop_item_text(text: str) -> dict:
-    """
-    پارس متن ورودی برای آپدیت آیتم فروشگاه.
-    پشتیبانی از فرم‌های:
-      - فقط یک خط متن -> توضیحات
-      - چند خط "کلید: مقدار"
-      - مواد: آهن:50, چوب=20 یا آهن 50
-      - هشتگ‌ها: #Tag1 #Tag2 یا Tag1, Tag2
-      - کشورها: می‌تونه لیست با کاما یا فاصله باشه
-    برمی‌گرداند: دیکشنری از فیلدهایی که باید آپدیت شوند.
-    """
+    import re
+
     if not text:
         return {}
 
     text = text.strip()
-    # اگر فقط یک خط و بدون ":" -> treat as description
     if '\n' not in text and ':' not in text:
         return {"description": text}
 
@@ -2287,7 +2278,6 @@ def parse_shop_item_text(text: str) -> dict:
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
 
     for line in lines:
-        # اگر خط ":" ندارد آن را به توضیحات اضافه کن
         if ':' not in line:
             updates.setdefault("description", "")
             if updates["description"]:
@@ -2298,22 +2288,22 @@ def parse_shop_item_text(text: str) -> dict:
         key, val = map(str.strip, line.split(':', 1))
         kl = key.lower()
 
-        # نام
         if kl in ("نام", "name"):
             updates["name"] = val
 
-        # نوع
         elif kl in ("نوع", "type"):
             updates["type"] = val
 
-        # کشورها (لیست)
-        elif kl in ("کشور", "country", "countries", "کشورها"):
-            # حذف فاصله‌ها و تفکیک با , یا space
-            countries = re.split(r'[,\s]+', val)
-            countries = [c.strip() for c in countries if c.strip()]
-            updates["countries"] = countries
+        elif kl in ("کشور", "country", "کشورها", "countries"):
+            # اگر val رشته است، تفکیک به لیست
+            countries = []
+            if isinstance(val, str):
+                countries = re.split(r'[,\s]+', val)
+                countries = [c.strip() for c in countries if c.strip()]
+            elif isinstance(val, list):
+                countries = val
+            updates["country"] = countries  # بهتره کلید اصلی country باشه، چون دیتابیس همین رو داره
 
-        # قیمت
         elif kl in ("قیمت", "price"):
             num = re.sub(r"[^\d]", "", val)
             if num:
@@ -2322,7 +2312,6 @@ def parse_shop_item_text(text: str) -> dict:
                 except:
                     pass
 
-        # تعداد
         elif kl in ("تعداد", "count", "موجودی"):
             num = re.sub(r"[^\d]", "", val)
             if num:
@@ -2331,14 +2320,11 @@ def parse_shop_item_text(text: str) -> dict:
                 except:
                     pass
 
-        # توضیحات
         elif kl in ("توضیحات", "description", "شرح"):
             updates["description"] = val
 
-        # مواد اولیه
         elif kl in ("مواد", "materials"):
             mats = {}
-            # جداکننده , or ;
             parts = re.split(r'[,\;]', val)
             for part in parts:
                 part = part.strip()
@@ -2361,26 +2347,36 @@ def parse_shop_item_text(text: str) -> dict:
                     mats[mkey] = 0
             updates["materials"] = mats
 
-        # هشتگ‌ها
         elif kl in ("هشتگ", "هشتگ‌ها", "hashtags", "برچسب", "برچسب‌ها"):
-            tags = re.findall(r'#\w+', val)
-            if not tags:
-                parts = re.split(r'[,\s]+', val)
-                tags = [('#' + p.strip()) if p and not p.strip().startswith('#') else p.strip() for p in parts if p.strip()]
+            tags = []
+            if isinstance(val, str):
+                tags = re.findall(r'#\w+', val)
+                if not tags:
+                    parts = re.split(r'[,\s]+', val)
+                    tags = [('#' + p.strip()) if p and not p.strip().startswith('#') else p.strip() for p in parts if p.strip()]
+            elif isinstance(val, list):
+                tags = val
             updates["hashtags"] = tags
 
-        # سازنده / مالک
         elif kl in ("ایدی سازنده", "سازنده", "owner", "فروشنده", "مالک"):
-            updates["owner_id"] = val
+            updates["owner"] = val
 
         else:
-            # نامشخص -> اضافه کن به description تا اطلاعات از بین نره
             updates.setdefault("description", "")
             if updates["description"]:
                 updates["description"] += "\n"
             updates["description"] += f"{key}: {val}"
 
+    # اگر داده‌های قبلی رشته بودن ولی الان باید لیست باشن، مثلا country
+    if "country" in updates and isinstance(updates["country"], str):
+        updates["country"] = [c.strip() for c in re.split(r'[,\s]+', updates["country"]) if c.strip()]
+
+    # همین‌طور برای hashtags اگر رشته بود
+    if "hashtags" in updates and isinstance(updates["hashtags"], str):
+        updates["hashtags"] = [t.strip() for t in updates["hashtags"].split() if t.strip()]
+
     return updates
+
 
 
 async def handle_new_shop_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
