@@ -289,7 +289,7 @@ async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await query.edit_message_text(
             f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {country} یافت نشد.",
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop")
+                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
             ]])
         )
         return
@@ -839,7 +839,7 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
         [InlineKeyboardButton("🏠 نمایش استان", callback_data="country_overview")],
-        [InlineKeyboardButton("🛒 ادامه خرید", callback_data="open_shop")]
+        [InlineKeyboardButton("🛒 ادامه خرید", callback_data="open_shop_menu")]
     ]
 
     await context.bot.send_message(
@@ -876,14 +876,14 @@ async def handle_shop_buy(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await context.bot.send_message(
                 f"✅ خرید موفقیت‌آمیز!\n\n📦 آیتم: {item.get('name', 'نامشخص')}\n💰 قیمت: {item.get('price', 0):,} طلا",
                 reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton("🔙 بازگشت به فروشگاه", callback_data="open_shop")
+                    InlineKeyboardButton("🔙 بازگشت به فروشگاه", callback_data="open_shop_menu")
                 ]])
             )
         else:
             await context.bot.send_message(
                 "❌ آیتم یافت نشد.",
                 reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop")
+                    InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
                 ]])
             )
     except Exception as e:
