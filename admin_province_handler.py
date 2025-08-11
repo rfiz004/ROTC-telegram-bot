@@ -1594,78 +1594,75 @@ async def handle_shop_item_image(update: Update, context: ContextTypes.DEFAULT_T
 #         await generate_shop_item_post(update, context)
 
 async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle shop item text inputs"""
+    """Handle shop item text inputs with improved checks and logging"""
     user_id = update.message.from_user.id
-    user_data = context.user_data.get(user_id, {})
     text = update.message.text.strip()
+    
+    # اطمینان از وجود دیکشنری shop_item_data
+    if user_id not in context.user_data:
+        context.user_data[user_id] = {}
+    if "shop_item_data" not in context.user_data[user_id]:
+        context.user_data[user_id]["shop_item_data"] = {}
+
+    user_data = context.user_data[user_id]
     step = user_data.get("step")
 
+    print(f"[handle_shop_item_text_input] user_id={user_id} step={step} text='{text}'")
+
     if step == "awaiting_shop_item_name":
-        context.user_data[user_id]["shop_item_data"]["name"] = text
+        user_data["shop_item_data"]["name"] = text
         await update.message.reply_text(
             "📝 نوع آیتم را وارد کنید:\n(مثال: Army, Castle, Structure, Weapon, Misc, EconStructure)",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
         )
-        context.user_data[user_id]["step"] = "awaiting_shop_item_type"
-
-    # elif step == "awaiting_shop_item_type":
-    #     context.user_data[user_id]["shop_item_data"]["type"] = text
-    #     await update.message.reply_text(
-    #         "🌍 کشور مربوطه را وارد کنید:\n(مثال: Alpyr, Aldemar, Walden, All)",
-    #         reply_markup=InlineKeyboardMarkup([[
-    #             InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-    #         ]])
-    #     )
-    #     context.user_data[user_id]["step"] = "awaiting_shop_item_country"
-
-    # elif step == "awaiting_shop_item_country":
-    #     context.user_data[user_id]["shop_item_data"]["country"] = text
-    #     await update.message.reply_text(
-    #         "📄 توضیحات آیتم را وارد کنید:",
-    #         reply_markup=InlineKeyboardMarkup([[
-    #             InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-    #         ]])
-    #     )
-    #     context.user_data[user_id]["step"] = "awaiting_shop_item_description"
+        user_data["step"] = "awaiting_shop_item_type"
 
     elif step == "awaiting_shop_item_type":
-        # تبدیل ورودی به لیست کشورها (با حذف فاصله‌ها)
+        user_data["shop_item_data"]["type"] = text
+        await update.message.reply_text(
+            "🌍 کشور مربوطه را وارد کنید:\n(مثال: Alpyr, Aldemar, Walden, All)",
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
+            ]])
+        )
+        user_data["step"] = "awaiting_shop_item_country"
+
+    elif step == "awaiting_shop_item_country":
         countries = [c.strip() for c in text.split(",") if c.strip()]
-        context.user_data[user_id]["shop_item_data"]["countries"] = countries  # تغییر به لیست
+        user_data["shop_item_data"]["countries"] = countries
         await update.message.reply_text(
             "🏷 هشتگ‌ها را وارد کنید (با # و با کاما جدا کنید):\nمثال: #All, #Alpyr, #Santos",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
         )
-        context.user_data[user_id]["step"] = "awaiting_shop_item_country"
+        user_data["step"] = "awaiting_shop_item_hashtags"
 
-    elif step == "awaiting_shop_item_country":
-        # تبدیل هشتگ‌ها به لیست
+    elif step == "awaiting_shop_item_hashtags":
         hashtags = [tag.strip() for tag in text.split(",") if tag.strip()]
-        context.user_data[user_id]["shop_item_data"]["hashtags"] = hashtags
+        user_data["shop_item_data"]["hashtags"] = hashtags
         await update.message.reply_text(
             "📄 توضیحات آیتم را وارد کنید:",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
         )
-        context.user_data[user_id]["step"] = "awaiting_shop_item_description"
+        user_data["step"] = "awaiting_shop_item_description"
 
     elif step == "awaiting_shop_item_description":
-        item_type = context.user_data[user_id]["shop_item_data"].get("type", "")
-        context.user_data[user_id]["shop_item_data"]["description"] = text
-
-        if item_type.lower() == "army":
+        user_data["shop_item_data"]["description"] = text
+        item_type = user_data["shop_item_data"].get("type", "").lower()
+        print(f"[handle_shop_item_text_input] item_type={item_type}")
+        if item_type == "army":
             await update.message.reply_text(
                 "🔢 تعداد سرباز را وارد کنید:",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
                 ]])
             )
-            context.user_data[user_id]["step"] = "awaiting_shop_item_count"
+            user_data["step"] = "awaiting_shop_item_count"
         else:
             await update.message.reply_text(
                 "💰 قیمت و مواد مورد نیاز را وارد کنید:",
@@ -1673,39 +1670,44 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
                     InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
                 ]])
             )
-            context.user_data[user_id]["step"] = "awaiting_shop_item_price"
+            user_data["step"] = "awaiting_shop_item_price"
 
     elif step == "awaiting_shop_item_count":
         if not text.isdigit():
             await update.message.reply_text("❌ لطفاً یک عدد معتبر وارد کنید.")
             return
-
-        context.user_data[user_id]["shop_item_data"]["count"] = int(text)
-        # اضافه کردن تعداد به توضیحات برای نمایش
-        desc = context.user_data[user_id]["shop_item_data"]["description"]
-        context.user_data[user_id]["shop_item_data"]["description"] = f"{desc}, تعداد : {text}"
-
+        user_data["shop_item_data"]["count"] = int(text)
+        print(f"[handle_shop_item_text_input] count={text}")
         await update.message.reply_text(
             "💰 قیمت و مواد مورد نیاز را وارد کنید:",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
         )
-        context.user_data[user_id]["step"] = "awaiting_shop_item_price"
+        user_data["step"] = "awaiting_shop_item_price"
 
     elif step == "awaiting_shop_item_price":
-        context.user_data[user_id]["shop_item_data"]["price"] = text
+        user_data["shop_item_data"]["price"] = text
         await update.message.reply_text(
             "👤 آیدی مالک را وارد کنید:",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
         )
-        context.user_data[user_id]["step"] = "awaiting_shop_item_owner"
+        user_data["step"] = "awaiting_shop_item_owner"
 
     elif step == "awaiting_shop_item_owner":
-        context.user_data[user_id]["shop_item_data"]["owner_id"] = text
+        user_data["shop_item_data"]["owner_id"] = text
+        # چک قبل از ارسال
+        if "type" not in user_data["shop_item_data"]:
+            await update.message.reply_text("❌ خطا: نوع آیتم مشخص نیست.")
+            print("[handle_shop_item_text_input] ERROR: 'type' not found in shop_item_data")
+            return
         await generate_shop_item_post(update, context)
+
+    else:
+        await update.message.reply_text("❌ مرحله نامشخص یا نامعتبر است.")
+        print(f"[handle_shop_item_text_input] ERROR: unknown step '{step}'")
 
 
 async def admin_edit_shop_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
