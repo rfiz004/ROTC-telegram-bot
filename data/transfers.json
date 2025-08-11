@@ -350,9 +350,44 @@
       "items": {
         "طلا": 1500
       },
-      "status": "pending",
+      "status": "rejected",
       "requested_at": "2025-08-11T12:57:25.213162",
-      "delay_until": "2025-08-12T12:57:25.213189"
+      "delay_until": "2025-08-12T12:57:25.213189",
+      "rejected_at": "2025-08-11T17:50:15.404173"
+    },
+    {
+      "id": "transfer_898145344_1754934474",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Sky-Dragon",
+      "target_country": "Hikada",
+      "target_province": "Ryukansai",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1500
+      },
+      "status": "approved",
+      "requested_at": "2025-08-11T17:47:54.095937",
+      "delay_until": "2025-08-12T17:47:54.095942",
+      "approved_at": "2025-08-11T17:48:07.850313"
+    },
+    {
+      "id": "transfer_898145344_1754934594",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Sky-Dragon",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-08-11T17:49:54.692021",
+      "delay_until": "2025-08-12T17:49:54.692024",
+      "approved_at": "2025-08-11T17:50:33.816857"
     }
   ]
 }
