@@ -151,5 +151,22 @@
     "count": 100,
     "id": "9",
     "created_at": "2025-08-11T08:13:05.448210"
+  },
+  {
+    "name": "ماهی گیری",
+    "type": "Economic_Structure",
+    "country": "Azure Aldemar",
+    "description": "استخرهای طبیعی پرورش ماهی که در سواحل و یا در رودخانه ها ساخته میشن و هر هفته 100 ماهی بازدهی دارن",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Economic_Structure",
+      "#Azure Aldemar"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIjvGiZqN733hbSnXkxanqAuqp1OPaeAAIzyjEbQRHBUDhSbs4MEjKbAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "10",
+    "created_at": "2025-08-11T08:33:49.456377"
   }
 ]
