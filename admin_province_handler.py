@@ -225,7 +225,6 @@ def format_province_info(province_info):
 
     # Economic structures with production info
     eco_structs = province_info.get("economic_structures", {})
-    structure_productions = province_info.get("structure_productions", {})
     text += "⬤ سازه‌های اقتصادی:\n\n"
 
     # Calculate weekly production for display
@@ -1002,7 +1001,6 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
         # (همان منطق پردازش که شما دارید — فقط در انتها BACK دقیقی ارسال می‌کنیم)
         if field_type == "economic_structures":
             economic_structures = {}
-            structure_productions = {}
             lines = text_input.splitlines()
             for i, line in enumerate(lines, start=1):
                 parts = [p.strip() for p in re.split(r"\s*-\s*", line)]
@@ -1013,7 +1011,6 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
                         product = parts[2]
                         weekly_per_unit = to_int_safe(parts[3])
                         economic_structures[name] = {"count": count, "product": product, "weekly_output": weekly_per_unit}
-                        structure_productions[name] = {"produces": product, "weekly_per_unit": weekly_per_unit}
                     except Exception as e:
                         logger.warning(f"خطا در خط {i} سازه اقتصادی: {e}")
                         continue
@@ -1021,7 +1018,6 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
                     logger.warning(f"فرمت نادرست در خط {i} سازه اقتصادی: {line}")
                     continue
             province_data["economic_structures"] = economic_structures
-            province_data["structure_productions"] = structure_productions
             success = True
 
         elif field_type == "mines":
