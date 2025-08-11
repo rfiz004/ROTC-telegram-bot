@@ -151,5 +151,26 @@
     "count": 100,
     "id": "9",
     "created_at": "2025-08-11T08:13:05.448210"
+  },
+  {
+    "name": "ماهیگیری",
+    "type": "EconStructure",
+    "countries": [
+      "Azure",
+      "Aldemar"
+    ],
+    "description": "استخرهای پرورش ماهی که در سواحل و رودخانه ها ساخته میشن و هفتگی 100 ماهی بازدهی دارن\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Azure",
+      "#Aldemar"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIjvGiZqN733hbSnXkxanqAuqp1OPaeAAIzyjEbQRHBUDhSbs4MEjKbAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "10",
+    "created_at": "2025-08-11T14:51:24.075866"
   }
 ]
