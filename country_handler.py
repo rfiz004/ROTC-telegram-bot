@@ -6,6 +6,9 @@ from keyboards import manage_country_menu, back_and_home_buttons, news_type_menu
 from config import CHANNEL_ID, RP_PASSWORDS, COUNTRY_ADMINS
 from utils import validate_user_input
 
+with open("countries.json", encoding="utf-8") as f:
+    COUNTRIES_AREAS = json.load(f).get("countries_areas", {})
+
 logger = logging.getLogger(__name__)
 
 # Global data variables
@@ -457,8 +460,25 @@ async def collect_character_name(update: Update, context: ContextTypes.DEFAULT_T
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.ext import ContextTypes
 
+def news_country_menu():
+    buttons = [
+        [InlineKeyboardButton(country, callback_data=f"news_recipient:{country}")]
+        for country in COUNTRIES
+    ]
+    return InlineKeyboardMarkup(buttons)
+
+def news_province_menu(country):
+    provinces = COUNTRIES_AREAS.get(country, [])
+    buttons = [
+        [InlineKeyboardButton(province, callback_data=f"news_province:{country}:{province}")]
+        for province in provinces
+    ]
+    return InlineKeyboardMarkup(buttons)
+
+
+
 # لیست کشورها که گفتی
-COUNTRIES = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
+COUNTRIES = list(COUNTRIES_AREAS.keys())
 
 def _get_user_store(context, user_id):
     """
@@ -482,19 +502,30 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         news_type = user_store.get("news_type", "normal")
 
         # اگر گیرنده انتخاب نشده، متن را نگه‌دار و لیست کشورها را نشان بده
+        # if not recipient_name:
+        #     user_store["pending_news_text"] = news_text
+        #     user_store["state"] = "waiting_for_recipient_from_news"
+
+        #     buttons = [
+        #         [InlineKeyboardButton(country, callback_data=f"news_recipient:{country}")]
+        #         for country in COUNTRIES
+        #     ]
+        #     await update.message.reply_text(
+        #         "گیرنده مشخص نشده — یکی از کشورها را انتخاب کنید:",
+        #         reply_markup=InlineKeyboardMarkup(buttons)
+        #     )
+        #     return  # صبر می‌کنیم تا callback بیاد
+
         if not recipient_name:
             user_store["pending_news_text"] = news_text
             user_store["state"] = "waiting_for_recipient_from_news"
-
-            buttons = [
-                [InlineKeyboardButton(country, callback_data=f"news_recipient:{country}")]
-                for country in COUNTRIES
-            ]
+        
             await update.message.reply_text(
                 "گیرنده مشخص نشده — یکی از کشورها را انتخاب کنید:",
-                reply_markup=InlineKeyboardMarkup(buttons)
+                reply_markup=news_country_menu()
             )
-            return  # صبر می‌کنیم تا callback بیاد
+            return
+
 
         # تعیین هشتگ بر اساس نوع اعلامیه
         if news_type == "war":
@@ -534,60 +565,134 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ خطا در ارسال اعلامیه")
 
 # === handlerِ callback برای وقتی کاربر کشور را انتخاب می‌کند ===
-async def news_recipient_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+# async def news_recipient_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+#     user_id = query.from_user.id
+#     user_store = _get_user_store(context, user_id)
+
+#     # انتظار داریم callback_data مثل "news_recipient:Aldemar" باشه
+#     parts = query.data.split(":", 1)
+#     if len(parts) != 2:
+#         await query.message.reply_text("انتخاب نامعتبر. دوباره تلاش کنید.")
+#         return
+
+#     recipient_name = parts[1]
+#     user_store["recipient_name"] = recipient_name
+
+#     # اگر متن قبلاً ذخیره شده بود، اعلامیه رو کامل کن و ارسال کن
+#     pending = user_store.pop("pending_news_text", None)
+
+#     if pending:
+#         sender_name = user_store.get("character_name", "نامشخص")
+#         news_type = user_store.get("news_type", "normal")
+
+#         if news_type == "war":
+#             hashtag = "#اعلام_جنگ"
+#         elif news_type == "sanction":
+#             hashtag = "#اعلام_تحریم"
+#         else:
+#             hashtag = "#News"
+
+#         formatted_message = (
+#             "──────⊱◈News◈⊰──────\n\n"
+#             f"✦ Sender Name : {sender_name}\n"
+#             f"✧ Recipient Name : {recipient_name}\n"
+#             f"✦ News text : {pending}\n\n"
+#             f"{hashtag} \n\n"
+#             "──────⊹⊱✫⊰⊹──────\n"
+#             "https://t.me/R_O_T_C\n"
+#             "https://t.me/R_O_T_C_News"
+#         )
+
+#         try:
+#             await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
+#             # حذف کیبورد قبلی (اگر می‌خوای)
+#             try:
+#                 await query.message.edit_reply_markup(reply_markup=None)
+#             except Exception:
+#                 pass
+#             await query.message.reply_text("✅ اعلامیه شما ارسال شد!", reply_markup=manage_country_menu())
+#         except Exception:
+#             await query.message.reply_text(f"✅ اعلامیه آماده شد:\n\n{formatted_message}")
+#     else:
+#         # اگر متن ذخیره نشده بود، از کاربر می‌خوای متن رو بفرسته
+#         user_store["state"] = "waiting_for_news_text"
+#         await query.message.reply_text(f"گیرنده '{recipient_name}' انتخاب شد. حالا متن اعلامیه را ارسال کنید.")
+
+async def news_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
     user_store = _get_user_store(context, user_id)
 
-    # انتظار داریم callback_data مثل "news_recipient:Aldemar" باشه
-    parts = query.data.split(":", 1)
-    if len(parts) != 2:
-        await query.message.reply_text("انتخاب نامعتبر. دوباره تلاش کنید.")
+    data = query.data
+
+    if data.startswith("news_recipient:"):
+        country = data.split(":", 1)[1]
+        user_store["recipient_country"] = country
+
+        # اگر گیرنده همون کشور خود کاربر بود، استان‌ها رو بفرست
+        user_country = user_store.get("my_country")
+        if country == user_country:
+            user_store["state"] = "waiting_for_news_province"
+            await query.message.edit_text(
+                "📍 چون کشور گیرنده کشور خودتان است، لطفا استان را انتخاب کنید:",
+                reply_markup=news_province_menu(country)
+            )
+        else:
+            # اگر کشور متفاوت بود، اعلامیه رو ارسال کن (یا ادامه بده)
+            user_store["recipient_name"] = country
+            await send_news_announcement(update, context)
+
+    elif data.startswith("news_province:"):
+        _, country, province = data.split(":", 2)
+        user_store["recipient_country"] = country
+        user_store["recipient_province"] = province
+        user_store["recipient_name"] = f"{province}, {country}"
+
+        await send_news_announcement(update, context)
+
+async def send_news_announcement(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.callback_query.from_user.id
+    user_store = _get_user_store(context, user_id)
+
+    sender_name = user_store.get("character_name", "نامشخص")
+    recipient_name = user_store.get("recipient_name", "نامشخص")
+    news_text = user_store.pop("pending_news_text", None)
+    news_type = user_store.get("news_type", "normal")
+
+    if news_text is None:
+        user_store["state"] = "waiting_for_news_text"
+        await update.callback_query.message.reply_text("لطفا ابتدا متن اعلامیه را ارسال کنید.")
         return
 
-    recipient_name = parts[1]
-    user_store["recipient_name"] = recipient_name
-
-    # اگر متن قبلاً ذخیره شده بود، اعلامیه رو کامل کن و ارسال کن
-    pending = user_store.pop("pending_news_text", None)
-
-    if pending:
-        sender_name = user_store.get("character_name", "نامشخص")
-        news_type = user_store.get("news_type", "normal")
-
-        if news_type == "war":
-            hashtag = "#اعلام_جنگ"
-        elif news_type == "sanction":
-            hashtag = "#اعلام_تحریم"
-        else:
-            hashtag = "#News"
-
-        formatted_message = (
-            "──────⊱◈News◈⊰──────\n\n"
-            f"✦ Sender Name : {sender_name}\n"
-            f"✧ Recipient Name : {recipient_name}\n"
-            f"✦ News text : {pending}\n\n"
-            f"{hashtag} \n\n"
-            "──────⊹⊱✫⊰⊹──────\n"
-            "https://t.me/R_O_T_C\n"
-            "https://t.me/R_O_T_C_News"
-        )
-
-        try:
-            await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
-            # حذف کیبورد قبلی (اگر می‌خوای)
-            try:
-                await query.message.edit_reply_markup(reply_markup=None)
-            except Exception:
-                pass
-            await query.message.reply_text("✅ اعلامیه شما ارسال شد!", reply_markup=manage_country_menu())
-        except Exception:
-            await query.message.reply_text(f"✅ اعلامیه آماده شد:\n\n{formatted_message}")
+    if news_type == "war":
+        hashtag = "#اعلام_جنگ"
+    elif news_type == "sanction":
+        hashtag = "#اعلام_تحریم"
     else:
-        # اگر متن ذخیره نشده بود، از کاربر می‌خوای متن رو بفرسته
-        user_store["state"] = "waiting_for_news_text"
-        await query.message.reply_text(f"گیرنده '{recipient_name}' انتخاب شد. حالا متن اعلامیه را ارسال کنید.")
+        hashtag = "#News"
+
+    formatted_message = (
+        "──────⊱◈News◈⊰──────\n\n"
+        f"✦ Sender Name : {sender_name}\n"
+        f"✧ Recipient Name : {recipient_name}\n"
+        f"✦ News text : {news_text}\n\n"
+        f"{hashtag} \n\n"
+        "──────⊹⊱✫⊰⊹──────\n"
+        "https://t.me/R_O_T_C\n"
+        "https://t.me/R_O_T_C_News"
+    )
+
+    try:
+        await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
+        await update.callback_query.message.edit_reply_markup(reply_markup=None)
+        await update.callback_query.message.reply_text("✅ اعلامیه شما ارسال شد!", reply_markup=manage_country_menu())
+    except Exception:
+        await update.callback_query.message.reply_text(f"✅ اعلامیه آماده شد:\n\n{formatted_message}")
+
+
 
 
 
