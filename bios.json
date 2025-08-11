@@ -50,34 +50,6 @@
       "expires_at": "2025-08-11T11:15:58.508179",
       "name": "Kavus",
       "nickname": "Kav"
-    },
-    "7806240427": {
-      "step": "pending",
-      "country": "Northwood",
-      "flow_type": "bio",
-      "job": "اِرِل‌ها",
-      "expires_at": "2025-08-11T16:51:36.396517",
-      "name": "آلبرت",
-      "nickname": "سایه",
-      "age": "۲۰",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "مدیریت امور نظامی",
-        "مهارت شمشیرزنی و تبرزنی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 3,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "مدیریت امور نظامی",
-      "skill3": "مهارت شمشیرزنی و تبرزنی",
-      "appearance": "مو های سیاه رنگ و چشمانی به رنگ سیاه با قامت و هیکلی متناسب",
-      "history": "یک مبارز از تباری که وفادار به سلطنت بودند، اما یک شب بر خلاف چیزی که انتظار میرفت این تبار تا حدودی از صفحه روزگار محو شد و تنها بازماندگان آن جوانان اندکی بودند که او یکی از آنان بود، یک مستعد تحلیل گر",
-      "id_number": "@Alfred_Pen_Satan",
-      "user_id_tag": "#Shadow",
-      "photo": "AgACAgQAAxkBAAIn0GiaGrxTb1PLHqDIsiaHdSeWcdQVAAKpyTEbuFiZUBh5gx64RGiLAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "7806240427",
-      "saved_at": "2025-08-11T16:30:53.097363"
     }
   },
   "used_hashtags": [
