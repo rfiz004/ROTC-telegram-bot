@@ -571,9 +571,10 @@
       "items": {
         "طلا": 500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-08-11T23:33:46.890679",
-      "delay_until": "2025-08-12T23:33:46.890684"
+      "delay_until": "2025-08-12T23:33:46.890684",
+      "approved_at": "2025-08-11T23:40:14.753907"
     },
     {
       "id": "transfer_6213073537_1754955264",
@@ -587,9 +588,10 @@
       "items": {
         "طلا": 1500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-08-11T23:34:24.686565",
-      "delay_until": "2025-08-12T23:34:24.686570"
+      "delay_until": "2025-08-12T23:34:24.686570",
+      "approved_at": "2025-08-11T23:40:37.327321"
     },
     {
       "id": "transfer_6213073537_1754955298",
@@ -603,9 +605,27 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-08-11T23:34:58.884873",
-      "delay_until": "2025-08-12T23:34:58.884876"
+      "delay_until": "2025-08-12T23:34:58.884876",
+      "approved_at": "2025-08-11T23:40:54.248458"
+    },
+    {
+      "id": "transfer_6213073537_1754955739",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Haramtul",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-08-11T23:42:19.097243",
+      "delay_until": "2025-08-12T23:42:19.097247",
+      "approved_at": "2025-08-11T23:42:50.007210"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Karavesh",
   "mines": {},
-  "wealth": 1000,
+  "wealth": 0,
   "population": 24000,
   "tax": 10,
   "popularity": 70,
@@ -33,9 +33,9 @@
     "چرم": 0,
     "شراب": 0
   },
-    "economic_structures": {
+  "economic_structures": {
     "دامداری": {
-      "count": 0,
+      "count": 1,
       "product": "گوشت",
       "weekly_output": 100
     },
@@ -49,7 +49,7 @@
       "product": "جواهر",
       "weekly_output": 50
     },
-     "کارخونه‌شیشه": {
+    "کارخونه‌شیشه": {
       "count": 0,
       "product": "شیشه",
       "weekly_output": 50
@@ -68,7 +68,7 @@
       "produces": "جواهر",
       "weekly_per_unit": 50
     },
-     "کارخونه‌شیشه": {
+    "کارخونه‌شیشه": {
       "product": "شیشه",
       "weekly_per_unit": 50
     }
