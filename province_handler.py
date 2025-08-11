@@ -756,7 +756,11 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
     province = user_data.get("selected_province")
 
     if not province:
-        await update.callback_query.edit_message_text("⛔ ابتدا استان را انتخاب کنید.")
+        await update.callback_query.edit_message_text("⛔ ابتدا استان را انتخاب کنید.",
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+            ]))
         return
 
     def find_country_by_province(province_name: str) -> str | None:
@@ -772,14 +776,22 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     country = find_country_by_province(province)
     if not country:
-        await update.callback_query.edit_message_text("⛔ کشور استان پیدا نشد.")
+        await update.callback_query.edit_message_text("⛔ کشور استان پیدا نشد.",
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+            ]))
         return
 
     province_file = os.path.join(PROVINCES_PATH, f"{country}_{province}.json")
     economic_file = os.path.join(ECONOMIC_PATH, f"{province}.json")
 
     if not os.path.exists(province_file) or not os.path.exists(economic_file):
-        await update.callback_query.edit_message_text("⛔ فایل‌های موردنیاز پیدا نشد.")
+        await update.callback_query.edit_message_text("⛔ فایل‌های موردنیاز پیدا نشد.",
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+            ]))
         return
 
     with open(province_file, "r", encoding="utf-8") as f:
@@ -793,9 +805,14 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
     grains = economic_data.get("grains", {})
 
     if not grain_priority:
-        await update.callback_query.edit_message_text("⛔ اولویت غلات تنظیم نشده است.")
+        await update.callback_query.edit_message_text("⛔ اولویت غلات تنظیم نشده است.",
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+            ]))
         return
 
+        
     if not grains:
         await update.callback_query.edit_message_text("⛔ درصد مصرف غلات تنظیم نشده است.")
         return
