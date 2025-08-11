@@ -85,12 +85,20 @@ async def handle_grain_percentage(update: Update, context: ContextTypes.DEFAULT_
         await update.message.reply_text("⛔ فرمت یا مقادیر واردشده معتبر نیستند.")
         return
 
-    province = context.user_data.get(user_id, {}).get("selected_province")
+    # province = context.user_data.get(user_id, {}).get("selected_province")
+    user_data = context.user_data.get(user_id, {})
+    province = user_data.get("selected_province")
+
+    if province:
+        province = province.strip().replace(" ", "_")  # حذف فاصله اضافی و تبدیل فاصله به آندرلاین
+
     if not province:
         await update.message.reply_text("⛔ ابتدا استان را انتخاب کن.")
         return
-
+        
+    print(f"Province after clean-up: '{province}'")
     file_path = os.path.join(ECONOMIC_PATH, f"{province}.json")
+    print(f"Looking for file: '{file_path}'")
 
     if not os.path.exists(file_path):
         await update.message.reply_text("⛔ فایل اقتصادی استان پیدا نشد.")
