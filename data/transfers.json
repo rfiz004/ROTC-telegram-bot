@@ -337,6 +337,22 @@
       "status": "pending",
       "requested_at": "2025-08-11T09:03:18.288929",
       "delay_until": "2025-08-12T09:03:18.288932"
+    },
+    {
+      "id": "transfer_898145344_1754917045",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Sky-Dragon",
+      "target_country": "Hikada",
+      "target_province": "Ryukansai",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1500
+      },
+      "status": "pending",
+      "requested_at": "2025-08-11T12:57:25.213162",
+      "delay_until": "2025-08-12T12:57:25.213189"
     }
   ]
 }
