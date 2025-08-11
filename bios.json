@@ -44,9 +44,18 @@
     "7270352750": {
       "country": "Azure",
       "job": "مشاغل آزاد",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-11T10:44:18.109322",
+      "expires_at": "2025-08-11T11:08:19.993163",
+      "name": "ازمرالدا"
+    },
+    "106647374": {
+      "country": "Alpyr",
+      "job": "مشاور وزارت",
       "step": "asking_name",
       "flow_type": "bio",
-      "saved_at": "2025-08-11T10:38:19.992756"
+      "saved_at": "2025-08-11T10:45:58.507586"
     }
   },
   "used_hashtags": [
