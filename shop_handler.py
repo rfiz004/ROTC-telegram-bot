@@ -286,10 +286,21 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Back button
     buttons.append([InlineKeyboardButton("🔙 بازگشت", callback_data="back_to_country_menu")])
 
-    await update.callback_query.edit_message_text(
-        f"🏪 به فروشگاه خوش آمدید!\n📦 {len(user_items)} آیتم موجود برای کشور {country}\n\nدسته مورد نظر را انتخاب کنید:",
-        reply_markup=InlineKeyboardMarkup(buttons)
-    )
+    try:
+        await update.callback_query.message.delete()
+    except Exception as e:
+        print(f"Error deleting message: {e}")
+    
+    await context.bot.send_message(
+    chat_id=update.callback_query.message.chat.id,
+    text=f"🏪 به فروشگاه خوش آمدید!\n📦 {len(user_items)} آیتم موجود برای کشور {country}\n\nدسته مورد نظر را انتخاب کنید:",
+    reply_markup=InlineKeyboardMarkup(buttons)
+)
+
+    # await update.callback_query.edit_message_text(
+    #     f"🏪 به فروشگاه خوش آمدید!\n📦 {len(user_items)} آیتم موجود برای کشور {country}\n\nدسته مورد نظر را انتخاب کنید:",
+    #     reply_markup=InlineKeyboardMarkup(buttons)
+    # )
 
 async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show items in selected category with navigation"""
