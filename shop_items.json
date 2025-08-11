@@ -168,5 +168,39 @@
     "count": 1,
     "id": "10",
     "created_at": "2025-08-11T08:33:49.456377"
+  },
+  {
+    "name": "ماهیگیری",
+    "type": "EconStructure",
+    "country": "Azure\nAldemar",
+    "description": "هفتگی 100 عدد ماهی میدهد \n\nماهی یکبار هزینه ی نگهداری دارد که توسط ادمین ناظر کشور بهتون اطلاع داده میشه",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Azure\nAldemar"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIj6GiZrVz0L1Kvyqwje7ilIeLkq7aAAAJbzDEbQRHJUP1NGuT1GtPJAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "11",
+    "created_at": "2025-08-11T08:46:08.489580"
+  },
+  {
+    "name": "ماهیگیری",
+    "type": "EconStructure",
+    "country": "Azure",
+    "description": "هفتگی 100 عدد ماهی میدهد \n\nماهی یکبار هزینه ی نگهداری دارد که توسط ادمین ناظر کشور بهتون اطلاع داده میشه",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Azure"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIj6GiZrVz0L1Kvyqwje7ilIeLkq7aAAAJbzDEbQRHJUP1NGuT1GtPJAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "12",
+    "created_at": "2025-08-11T08:53:03.672929"
   }
 ]
