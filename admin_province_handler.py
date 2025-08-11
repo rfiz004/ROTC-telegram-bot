@@ -1596,10 +1596,32 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
         )
         context.user_data[user_id]["step"] = "awaiting_shop_item_type"
 
+    # elif step == "awaiting_shop_item_type":
+    #     context.user_data[user_id]["shop_item_data"]["type"] = text
+    #     await update.message.reply_text(
+    #         "🌍 کشور مربوطه را وارد کنید:\n(مثال: Alpyr, Aldemar, Walden, All)",
+    #         reply_markup=InlineKeyboardMarkup([[
+    #             InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
+    #         ]])
+    #     )
+    #     context.user_data[user_id]["step"] = "awaiting_shop_item_country"
+
+    # elif step == "awaiting_shop_item_country":
+    #     context.user_data[user_id]["shop_item_data"]["country"] = text
+    #     await update.message.reply_text(
+    #         "📄 توضیحات آیتم را وارد کنید:",
+    #         reply_markup=InlineKeyboardMarkup([[
+    #             InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
+    #         ]])
+    #     )
+    #     context.user_data[user_id]["step"] = "awaiting_shop_item_description"
+
     elif step == "awaiting_shop_item_type":
-        context.user_data[user_id]["shop_item_data"]["type"] = text
+        # تبدیل ورودی به لیست کشورها (با حذف فاصله‌ها)
+        countries = [c.strip() for c in text.split(",") if c.strip()]
+        context.user_data[user_id]["shop_item_data"]["countries"] = countries  # تغییر به لیست
         await update.message.reply_text(
-            "🌍 کشور مربوطه را وارد کنید:\n(مثال: Alpyr, Aldemar, Walden, All)",
+            "🏷 هشتگ‌ها را وارد کنید (با # و با کاما جدا کنید):\nمثال: #Army, #All, #Event",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
@@ -1607,7 +1629,9 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
         context.user_data[user_id]["step"] = "awaiting_shop_item_country"
 
     elif step == "awaiting_shop_item_country":
-        context.user_data[user_id]["shop_item_data"]["country"] = text
+        # تبدیل هشتگ‌ها به لیست
+        hashtags = [tag.strip() for tag in text.split(",") if tag.strip()]
+        context.user_data[user_id]["shop_item_data"]["hashtags"] = hashtags
         await update.message.reply_text(
             "📄 توضیحات آیتم را وارد کنید:",
             reply_markup=InlineKeyboardMarkup([[
