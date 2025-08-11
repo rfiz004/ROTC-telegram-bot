@@ -1621,7 +1621,7 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
         countries = [c.strip() for c in text.split(",") if c.strip()]
         context.user_data[user_id]["shop_item_data"]["countries"] = countries  # تغییر به لیست
         await update.message.reply_text(
-            "🏷 هشتگ‌ها را وارد کنید (با # و با کاما جدا کنید):\nمثال: #All, #Alpyr, #Santos,
+            "🏷 هشتگ‌ها را وارد کنید (با # و با کاما جدا کنید):\nمثال: #All, #Alpyr, #Santos",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
@@ -3090,6 +3090,121 @@ async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TY
 
 
 
+# async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Generate and save shop item to JSON file"""
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     item_data = user_data.get("shop_item_data", {})
+
+#     try:
+#         photo = item_data["photo"]
+#         name = item_data["name"]
+#         item_type = item_data["type"]
+#         country = item_data["country"]
+#         description = item_data["description"]
+#         price_materials = item_data["price"]
+#         owner_id = item_data["owner_id"]
+
+#         # Parse price and materials
+#         price = 0
+#         materials = {}
+
+#         # Extract price and materials from price_materials string
+#         # Expected format: "32000, Jewel:32" or "50000, فولاد:20, طلا:10"
+#         parts = price_materials.split(",")
+#         if parts:
+#             try:
+#                 price = int(parts[0].strip())
+#             except ValueError:
+#                 price = 0
+
+#             # Parse materials
+#             for part in parts[1:]:
+#                 if ":" in part:
+#                     mat_name, mat_amount = part.split(":", 1)
+#                     try:
+#                         materials[mat_name.strip()] = int(mat_amount.strip())
+#                     except ValueError:
+#                         continue
+
+#         # Create hashtags
+#         hashtags = [f"#{item_type}", f"#{country}"]
+
+#         # Create item data structure
+#         # new_item = {
+#         #     "name": name,
+#         #     "type": item_type,
+#         #     "country": country,
+#         #     "description": description,
+#         #     "price": price,
+#         #     "materials": materials,
+#         #     "owner": owner_id,
+#         #     "hashtags": hashtags,
+#         #     "photo_file_id": photo
+#         # }
+#         new_item = {
+#     "name": name,
+#     "type": item_type,
+#     "country": country,
+#     "description": description,
+#     "price": price,
+#     "materials": materials,
+#     "owner": owner_id,
+#     "hashtags": hashtags,
+#     "photo_file_id": photo,
+#     "count": item_data.get("count", 1)  # اضافه کردن تعداد سرباز
+# }
+
+
+#         # Save to JSON file
+#         from shop_handler import add_shop_item
+#         item_id = add_shop_item(new_item)
+
+#         # Also send to channel (optional - for backup/display purposes)
+#         try:
+#             caption = f"""──────⊱◈Shop◈⊰──────
+# ✦ Item Name : {name}
+# ✧ Item Type : {item_type}
+# ✦ Country : {country}
+# #{item_type}
+# #{country}
+# ✧ Description :
+# • {description}
+# ✦ Price & Materials :
+# • {price_materials}
+# ✧ Owner ID : {owner_id}
+# ──────⊹⊱✫⊰⊹──────
+# https://t.me/R_O_T_C
+# https://t.me/R_O_T_C_Shop"""
+
+#             await context.bot.send_photo(
+#                 chat_id=SHOP_CHANNEL,
+#                 photo=photo,
+#                 caption=caption
+#             )
+#         except Exception as channel_error:
+#             logger.warning(f"Could not send to channel: {channel_error}")
+
+#         await update.message.reply_text(
+#             f"✅ آیتم با موفقیت به فروشگاه اضافه شد!\n🆔 شناسه آیتم: {item_id}",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
+#             ]])
+#         )
+
+#         # Clear user data
+#         context.user_data[user_id] = {}
+
+#     except Exception as e:
+#         logger.error(f"Error generating shop item: {e}")
+#         await update.message.reply_text(
+#             f"❌ خطا در ایجاد آیتم: {str(e)}",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
+#             ]])
+#         )
+
+
 async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Generate and save shop item to JSON file"""
     user_id = update.message.from_user.id
@@ -3100,7 +3215,7 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         photo = item_data["photo"]
         name = item_data["name"]
         item_type = item_data["type"]
-        country = item_data["country"]
+        countries = item_data.get("countries", [])  # تغییر به لیست
         description = item_data["description"]
         price_materials = item_data["price"]
         owner_id = item_data["owner_id"]
@@ -3109,8 +3224,6 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         price = 0
         materials = {}
 
-        # Extract price and materials from price_materials string
-        # Expected format: "32000, Jewel:32" or "50000, فولاد:20, طلا:10"
         parts = price_materials.split(",")
         if parts:
             try:
@@ -3118,7 +3231,6 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
             except ValueError:
                 price = 0
 
-            # Parse materials
             for part in parts[1:]:
                 if ":" in part:
                     mat_name, mat_amount = part.split(":", 1)
@@ -3127,47 +3239,34 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
                     except ValueError:
                         continue
 
-        # Create hashtags
-        hashtags = [f"#{item_type}", f"#{country}"]
+        # ساخت هشتگ‌ها
+        hashtags = [f"#{item_type}"] + [f"#{c}" for c in countries] + [f"{h}" for h in item_data.get("hashtags", [])]
 
-        # Create item data structure
-        # new_item = {
-        #     "name": name,
-        #     "type": item_type,
-        #     "country": country,
-        #     "description": description,
-        #     "price": price,
-        #     "materials": materials,
-        #     "owner": owner_id,
-        #     "hashtags": hashtags,
-        #     "photo_file_id": photo
-        # }
+        # ایجاد ساختار آیتم
         new_item = {
-    "name": name,
-    "type": item_type,
-    "country": country,
-    "description": description,
-    "price": price,
-    "materials": materials,
-    "owner": owner_id,
-    "hashtags": hashtags,
-    "photo_file_id": photo,
-    "count": item_data.get("count", 1)  # اضافه کردن تعداد سرباز
-}
+            "name": name,
+            "type": item_type,
+            "countries": countries,  # ذخیره لیست کشورها
+            "description": description,
+            "price": price,
+            "materials": materials,
+            "owner": owner_id,
+            "hashtags": hashtags,
+            "photo_file_id": photo,
+            "count": item_data.get("count", 1)
+        }
 
-
-        # Save to JSON file
+        # ذخیره در فایل
         from shop_handler import add_shop_item
         item_id = add_shop_item(new_item)
 
-        # Also send to channel (optional - for backup/display purposes)
+        # ارسال در کانال
         try:
             caption = f"""──────⊱◈Shop◈⊰──────
 ✦ Item Name : {name}
 ✧ Item Type : {item_type}
-✦ Country : {country}
-#{item_type}
-#{country}
+✦ Countries : {', '.join(countries)}
+{' '.join(hashtags)}
 ✧ Description :
 • {description}
 ✦ Price & Materials :
@@ -3192,7 +3291,7 @@ https://t.me/R_O_T_C_Shop"""
             ]])
         )
 
-        # Clear user data
+        # پاک کردن داده‌های کاربر
         context.user_data[user_id] = {}
 
     except Exception as e:
@@ -3203,6 +3302,7 @@ https://t.me/R_O_T_C_Shop"""
                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
             ]])
         )
+
 
 async def admin_view_shop_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Admin function to view all shop items"""
