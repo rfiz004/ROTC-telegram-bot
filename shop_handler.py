@@ -423,10 +423,15 @@ async def show_items_page(query, context, user_id, page, category):
 
         # Fallback to text message
         try:
-            await query.edit_message_text(
+            # await query.edit_message_text(
+            #     text=full_caption,
+            #     reply_markup=InlineKeyboardMarkup(keyboard),
+            #     parse_mode=None  # Preserve original formatting
+            # )
+            await context.bot.send_message(
+                chat_id=query.message.chat.id,
                 text=full_caption,
-                reply_markup=InlineKeyboardMarkup(keyboard),
-                parse_mode=None  # Preserve original formatting
+                reply_markup=InlineKeyboardMarkup([...])
             )
         except Exception as edit_error:
             logger.error(f"Error editing message: {edit_error}")
