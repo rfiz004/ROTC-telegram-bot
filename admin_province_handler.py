@@ -3612,16 +3612,40 @@ async def show_admin_shop_page_internal(query, context, user_id, page):
         )
         return
 
+    # total_pages = len(items)
+    # page = max(0, min(page, total_pages - 1))
+    # current_item = items[page]
+
+    # # Format item display for admin
+    # text = f"👑 مدیریت فروشگاه - آیتم {page + 1} از {total_pages}\n\n"
+    # text += f"📦 {current_item['name']}\n\n"
+    # text += f"🏷 نوع: {current_item['type']}\n"
+    # text += f"🌍 کشور: {current_item['country']}\n"
+    # text += f"💰 قیمت: {current_item['price']:,} طلا\n"
     total_pages = len(items)
     page = max(0, min(page, total_pages - 1))
     current_item = items[page]
-
+    
     # Format item display for admin
     text = f"👑 مدیریت فروشگاه - آیتم {page + 1} از {total_pages}\n\n"
-    text += f"📦 {current_item['name']}\n\n"
-    text += f"🏷 نوع: {current_item['type']}\n"
-    text += f"🌍 کشور: {current_item['country']}\n"
-    text += f"💰 قیمت: {current_item['price']:,} طلا\n"
+    text += f"📦 {current_item.get('name', 'نامشخص')}\n\n"
+    text += f"🏷 نوع: {current_item.get('type', 'نامشخص')}\n"
+    
+    # نمایش کشورها به صورت لیست یا رشته
+    countries_list = current_item.get('countries')
+    country_single = current_item.get('country')
+    
+    if countries_list and isinstance(countries_list, list) and len(countries_list) > 0:
+        countries_str = ', '.join(countries_list)
+    elif country_single:
+        countries_str = country_single
+    else:
+        countries_str = 'نامشخص'
+    
+    text += f"🌍 کشورها: {countries_str}\n"
+    
+    text += f"💰 قیمت: {current_item.get('price', 0):,} طلا\n"
+
 
     if current_item.get('materials'):
         text += "\n🔧 مواد مورد نیاز:\n"
