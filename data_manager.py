@@ -136,7 +136,7 @@ def load_data_file(file_path="data.json"):
         return data
     except FileNotFoundError:
         logger.warning(f"{file_path} not found, using default values")
-        return {"jobs_by_country": {}, "skills_config": {"normal": [], "special": []}}بر
+        return {"jobs_by_country": {}, "skills_config": {"normal": [], "special": []}}
     except Exception as e:
         logger.error(f"Error loading {file_path}: {e}")
         return {"jobs_by_country": {}, "skills_config": {"normal": [], "special": []}}
