@@ -1,5 +1,9 @@
 {
-  "grain_priority": [],
-  "grains": {},
+  "grain_priority": [
+    "ماهی"
+  ],
+  "grains": {
+    "ماهی": 0
+  },
   "unfed_population": 0
 }
