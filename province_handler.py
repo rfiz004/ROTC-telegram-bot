@@ -425,7 +425,7 @@ async def show_province_info(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if "army" in province_data and isinstance(province_data["army"], dict):
         province_data["total_army"] = sum(province_data["army"].values())
     for key, value in province_data.items():
-        if key == "country" or key == "province":
+        if key in ("country", "province", "structure_productions"):
             continue  # already displayed at top
 
         title_map = {
