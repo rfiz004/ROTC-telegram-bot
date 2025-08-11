@@ -1409,7 +1409,12 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 continue
 
             # کم‌کردن از مبدا
-            current_source_amount = source_data[category].get(item_name, 0)
+            # current_source_amount = source_data[category].get(item_name, 0)
+            if isinstance(source_data[category], dict):
+                current_source_amount = source_data[category].get(item_name, 0)
+            else:
+                current_source_amount = source_data[category]
+
             if current_source_amount < amount:
                 raise ValueError(f"آیتم {item_name} در مبدا به اندازه کافی موجود نیست.")
 
