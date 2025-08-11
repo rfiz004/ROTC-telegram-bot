@@ -66,14 +66,31 @@ def add_shop_item(item_data):
         return None
 
 
+# def filter_items_by_country(items, user_country):
+#     """Filter items by user's country - include 'All' country items"""
+#     filtered = []
+#     for item in items:
+#         item_country = item.get("country", "All")
+#         if item_country == "All" or item_country.lower() == user_country.lower():
+#             filtered.append(item)
+#     return filtered
+
 def filter_items_by_country(items, user_country):
-    """Filter items by user's country - include 'All' country items"""
+    """Filter items by user's country (supports multiple countries per item)"""
     filtered = []
     for item in items:
-        item_country = item.get("country", "All")
-        if item_country == "All" or item_country.lower() == user_country.lower():
+        item_countries = item.get("countries") or [item.get("country", "All")]
+
+        # اطمینان از اینکه لیست است
+        if isinstance(item_countries, str):
+            item_countries = [item_countries]
+
+        # چک کردن وجود کشور کاربر یا All
+        item_countries_lower = [c.lower() for c in item_countries]
+        if "all" in item_countries_lower or user_country.lower() in item_countries_lower:
             filtered.append(item)
     return filtered
+
 
 # shop_handler.py
 def delete_shop_item(item_id):
