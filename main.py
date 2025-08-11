@@ -75,7 +75,7 @@ from shop_handler import (
 from transfer_handler import (
     show_transfer_menu, show_domestic_transfer, show_international_transfer,
     show_transfer_items, show_transfer_category_items,
-    handle_transfer_quantity, process_transfer_request
+    handle_transfer_quantity, process_transfer_request, view_pending_transfers
 )
 
 from province_handler import (
@@ -293,6 +293,7 @@ app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_sk
 app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
 app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
 app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
+app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
 app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_"))
 app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
