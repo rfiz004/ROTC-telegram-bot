@@ -830,7 +830,12 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
         food_amount = food_storage.get(grain, 0)
 
         # محاسبه افراد پشتیبانی‌شده
-        people_supported = int((food_amount * base_people) / multiplier)
+        # people_supported = int((food_amount * base_people) / multiplier)
+        units_per_person = base_units / base_people  # هر نفر به چند واحد غذا نیاز داره
+        adjusted_units_per_person = units_per_person * multiplier
+        
+        people_supported = int(food_amount / adjusted_units_per_person)
+
 
         consumption_details.append(
             f"{grain} -> {multiplier:.1f} -> {base_people}(نفر)"
