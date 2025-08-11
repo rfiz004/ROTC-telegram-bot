@@ -88,9 +88,7 @@ async def handle_grain_percentage(update: Update, context: ContextTypes.DEFAULT_
     # province = context.user_data.get(user_id, {}).get("selected_province")
     user_data = context.user_data.get(user_id, {})
     province = user_data.get("selected_province")
-
-    if province:
-        province = province.strip().replace(" ", "_")  # حذف فاصله اضافی و تبدیل فاصله به آندرلاین
+    province = province.strip().replace(" ", "_")
 
     if not province:
         await update.message.reply_text("⛔ ابتدا استان را انتخاب کن.")
@@ -138,7 +136,7 @@ def load_data_file(file_path="data.json"):
         return data
     except FileNotFoundError:
         logger.warning(f"{file_path} not found, using default values")
-        return {"jobs_by_country": {}, "skills_config": {"normal": [], "special": []}}
+        return {"jobs_by_country": {}, "skills_config": {"normal": [], "special": []}}بر
     except Exception as e:
         logger.error(f"Error loading {file_path}: {e}")
         return {"jobs_by_country": {}, "skills_config": {"normal": [], "special": []}}
