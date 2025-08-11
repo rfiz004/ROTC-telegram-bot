@@ -963,7 +963,18 @@ async def show_shop_page(query, context, user_id, page):
     text += f"📦 {current_item['name']}\n\n"
     text += f"🏷 نوع: {current_item['type']}\n"
     # text += f"🌍 کشور: {current_item['country']}\n"
-    text += f"🌍 کشورها: {', '.join(current_item.get('countries', []))}\n"
+    countries = current_item.get('countries')
+    country = current_item.get('country')
+    
+    if countries and isinstance(countries, list) and len(countries) > 0:
+        countries_str = ', '.join(countries)
+    elif country:
+        countries_str = country
+    else:
+        countries_str = 'نامشخص'
+    
+    text += f"🌍 کشورها: {countries_str}\n"
+
     text += f"💰 قیمت: {current_item['price']:,} طلا\n"
 
     if current_item.get('materials'):
