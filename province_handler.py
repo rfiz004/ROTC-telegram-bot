@@ -754,6 +754,7 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
     user_id = update.callback_query.from_user.id
     user_data = context.user_data.get(user_id, {})
     province = user_data.get("selected_province")
+    province = province.strip().replace(" ", "_")
 
     if not province:
         await update.callback_query.edit_message_text("⛔ ابتدا استان را انتخاب کنید.",
