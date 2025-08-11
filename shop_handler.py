@@ -204,7 +204,19 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     # Show loading message
-    await update.callback_query.edit_message_text("🔄 در حال بارگذاری فروشگاه...")
+    # await update.callback_query.edit_message_text("🔄 در حال بارگذاری فروشگاه...")
+    try:
+        await update.callback_query.message.delete()
+    except Exception as e:
+        # اگر حذف پیام خطا داد، اینجا هندل کن یا ردش کن
+            print(f"Error deleting message: {e}")
+        
+    await context.bot.send_message(
+        chat_id=update.callback_query.message.chat.id,
+        text="🔄 در حال بارگذاری فروشگاه..."
+    )
+
+
 
     # Load all items from JSON file
     all_items = load_shop_items()
@@ -328,7 +340,7 @@ async def show_items_page(query, context, user_id, page, category):
         await query.edit_message_text(
             "📭 هیچ آیتمی یافت نشد.",
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop")
+                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
             ]])
         )
         return
@@ -399,7 +411,7 @@ async def show_items_page(query, context, user_id, page, category):
 
     keyboard.extend([
         [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{page}")],
-        [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop")]
+        [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]
     ])
 
     # Get photo file_id
@@ -913,7 +925,7 @@ async def handle_shop_buy(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(
             "❌ خطا در خرید آیتم",
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop")
+                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
             ]])
         )
 
