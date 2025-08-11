@@ -172,5 +172,28 @@
     "count": 1,
     "id": "10",
     "created_at": "2025-08-11T14:51:24.075866"
+  },
+  {
+    "name": "دامداری",
+    "type": "EconStructure",
+    "countries": [
+      "Alestria",
+      "Northwood",
+      "Santos"
+    ],
+    "description": "دامپروری ها که در دشت های باز و وسیع ساخته میشن و هفتگی 100 عدد گوشت بازدهی دارن به علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2500,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Alestria",
+      "#Northwood",
+      "#Santos"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIoc2iaM_3N3kdRu-oQfopvFF2GMkVoAAI0yjEbQRHBULxWHXF8TAWvAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "11",
+    "created_at": "2025-08-11T18:22:46.481958"
   }
 ]
