@@ -135,7 +135,7 @@ async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE)
         # Handle shop item text inputs
         elif step in ["awaiting_shop_item_name", "awaiting_shop_item_type", "awaiting_shop_item_country",
               "awaiting_shop_item_description", "awaiting_shop_item_count", "awaiting_shop_item_price",
-              "awaiting_shop_item_owner",awaiting_shop_item_hashtags]:
+              "awaiting_shop_item_owner","awaiting_shop_item_hashtags"]:
             await handle_shop_item_text_input(update, context)
             return
 
