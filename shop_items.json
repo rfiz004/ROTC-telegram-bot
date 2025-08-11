@@ -260,5 +260,28 @@
     "count": 1,
     "id": "14",
     "created_at": "2025-08-11T19:04:24.040255"
+  },
+  {
+    "name": "چوب بری",
+    "type": "EconStructure",
+    "countries": [
+      "Hikada",
+      "Azure",
+      "Northwood"
+    ],
+    "description": "کارگاه چوب بری که در کشورهایی دارای جنگل های اببوه هستن ساخته میشن\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2500,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Hikada",
+      "#Azure",
+      "#Northwood"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIpy2iaRDmNmg3P93YkxWzNDJZ6RGFSAAPLMRvOTNFQv6kozYzMPEwBAAMCAAN5AAM2BA",
+    "count": 1,
+    "id": "15",
+    "created_at": "2025-08-11T20:10:45.882431"
   }
 ]

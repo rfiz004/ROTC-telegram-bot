@@ -473,6 +473,71 @@
       "requested_at": "2025-08-11T18:01:05.313518",
       "delay_until": "2025-08-12T18:01:05.313522",
       "approved_at": "2025-08-11T18:01:56.811733"
+    },
+    {
+      "id": "transfer_809172681_1754943098",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Alestria",
+      "target_province": "Guardian-of-Sharia",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-08-11T20:11:38.350177",
+      "delay_until": "2025-08-12T20:11:38.350181",
+      "approved_at": "2025-08-11T20:15:16.916662"
+    },
+    {
+      "id": "transfer_6409307983_1754943794",
+      "requester_id": 6409307983,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Azure",
+      "target_province": "Silverain Coast",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-08-11T20:23:14.441754",
+      "delay_until": "2025-08-12T20:23:14.441757"
+    },
+    {
+      "id": "transfer_6409307983_1754943835",
+      "requester_id": 6409307983,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Azure",
+      "target_province": "Velithkara",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-08-11T20:23:55.038338",
+      "delay_until": "2025-08-12T20:23:55.038343"
+    },
+    {
+      "id": "transfer_6409307983_1754943870",
+      "requester_id": 6409307983,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Azure",
+      "target_province": "Iselvern",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-08-11T20:24:30.575230",
+      "delay_until": "2025-08-12T20:24:30.575235"
     }
   ]
 }
