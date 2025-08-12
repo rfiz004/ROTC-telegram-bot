@@ -754,7 +754,7 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
     user_id = update.callback_query.from_user.id
     user_data = context.user_data.get(user_id, {})
     province = user_data.get("selected_province")
-    province = province.strip().replace(" ", "_")
+   
 
     if not province:
         await update.callback_query.edit_message_text("⛔ ابتدا استان را انتخاب کنید.",
@@ -783,7 +783,7 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
             ]))
         return
-
+    province = province.strip().replace(" ", "_")
     province_file = os.path.join(PROVINCES_PATH, f"{country}_{province}.json")
     economic_file = os.path.join(ECONOMIC_PATH, f"{province}.json")
 
