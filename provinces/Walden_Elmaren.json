@@ -2,9 +2,9 @@
   "country": "Walden",
   "province": "Elmaren",
   "mines": {},
-  "wealth": 2500,
+  "wealth": 2000,
   "population": 24000,
-  "tax": 0,
+  "tax": 10,
   "popularity": 70,
   "total_army": 5000,
   "army": {
@@ -42,7 +42,7 @@
       "weekly_output": 100
     },
     "باغ": {
-      "count": 0,
+      "count": 1,
       "product": "میوه",
       "weekly_output": 100
     },
