@@ -62,15 +62,14 @@
       "nickname": "ژبعزلر"
     },
     "1851174253": {
+      "step": "pending",
       "country": "Santos",
-      "job": "ارتشبد",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-12T13:03:41.152241",
-      "expires_at": "2025-08-12T13:13:18.766643",
+      "job": "ارتشبد",
+      "expires_at": "2025-08-12T13:46:07.713458",
       "name": "ارنست لیندمن // Ernest Lindman",
       "nickname": "وینسون // Vinson",
-      "age": "34",
+      "age": "38",
       "skills": [
         "مدیریت امور نظامی",
         "قدرت بدنی بالا",
@@ -84,7 +83,11 @@
       "appearance": "قدی بلند و هیکلی تنومند ، موهای سیاه کم پشت",
       "history": "در خانواده ای معمولی زاده شد و از کودکی رویای ژنرال شدن را داشت ، با سالها تلاش و کوشش و سختی هایی که وجود داشت و استعدادی که در فرماندهی و طراحی نبرد و استراتژی هایی که داشت بلاخره در میانسالی به درجه ارتشبدی رسید .",
       "id_number": "@BB1Bismarck",
-      "user_id_tag": "#Ernest"
+      "user_id_tag": "#Ernest",
+      "photo": "AgACAgQAAxkBAAIukmibPoYEeZFL-MVzGZEN15oCafLEAAJSyDEbzUDYUI7C1NwyFP8MAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "1851174253",
+      "saved_at": "2025-08-12T13:19:19.093841"
     }
   },
   "used_hashtags": [
