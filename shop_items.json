@@ -371,5 +371,49 @@
     "count": 1,
     "id": "19",
     "created_at": "2025-08-12T15:03:10.784588"
+  },
+  {
+    "name": "کارخانه چرم",
+    "type": "EconStructure",
+    "countries": [
+      "Santos",
+      "Northwood"
+    ],
+    "description": "این کارگاه بیشتر در کشور هایی وجود دارد که دارای جنگل ها و دانش نگهداری پوست هستند \n و همینطور قابلیت بازدهی 50 چرم در هفته را دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2500,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Santos",
+      "#Northwood"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIwl2ibYnydV1aAgZLLKHKazFzBZzttAAJryTEbmyHhUCTcOCt_2sYGAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "20",
+    "created_at": "2025-08-12T15:50:54.646630"
+  },
+  {
+    "name": "جواهرسازی",
+    "type": "EconStructure",
+    "countries": [
+      "Santos",
+      "Aldemar",
+      "Alpyr"
+    ],
+    "description": "مهارت بسیار ظریف و کمیابی‌ است و این کارگاه های جواهر سازی می‌تواند در هفته 50 بازدهی داشته باشد\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Santos",
+      "#Aldemar",
+      "#Alpyr"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIw12ibY5iZcGLTYLj3FLgjr3wTpIcZAAJsyTEbmyHhUBPiNJvhwWOeAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "21",
+    "created_at": "2025-08-12T15:57:13.077011"
   }
 ]
