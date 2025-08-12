@@ -718,6 +718,23 @@
       "requested_at": "2025-08-12T09:07:56.561306",
       "delay_until": "2025-08-13T09:07:56.561310",
       "approved_at": "2025-08-12T09:12:58.628914"
+    },
+    {
+      "id": "transfer_7096919075_1754993553",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Aldemar",
+      "target_province": "Lusmyr",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-08-12T10:12:33.104260",
+      "delay_until": "2025-08-13T10:12:33.104264",
+      "approved_at": "2025-08-12T10:14:04.622841"
     }
   ]
 }
