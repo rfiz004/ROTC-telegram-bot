@@ -238,9 +238,10 @@
       "items": {
         "طلا": 1500
       },
-      "status": "pending",
+      "status": "rejected",
       "requested_at": "2025-08-11T05:55:11.424576",
-      "delay_until": "2025-08-12T05:55:11.424581"
+      "delay_until": "2025-08-12T05:55:11.424581",
+      "rejected_at": "2025-08-12T08:22:04.587366"
     },
     {
       "id": "transfer_898145344_1754896045",
@@ -254,9 +255,10 @@
       "items": {
         "طلا": 1500
       },
-      "status": "pending",
+      "status": "rejected",
       "requested_at": "2025-08-11T07:07:25.764504",
-      "delay_until": "2025-08-12T07:07:25.764510"
+      "delay_until": "2025-08-12T07:07:25.764510",
+      "rejected_at": "2025-08-12T08:22:25.367020"
     },
     {
       "id": "transfer_8106529541_1754902788",
@@ -270,9 +272,10 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-08-11T08:59:48.696792",
-      "delay_until": "2025-08-12T08:59:48.696795"
+      "delay_until": "2025-08-12T08:59:48.696795",
+      "approved_at": "2025-08-12T08:27:37.910436"
     },
     {
       "id": "transfer_8106529541_1754902921",
@@ -677,6 +680,22 @@
       "requested_at": "2025-08-12T06:21:11.371271",
       "delay_until": "2025-08-13T06:21:11.371274",
       "approved_at": "2025-08-12T07:04:36.858114"
+    },
+    {
+      "id": "transfer_1051497499_1754987068",
+      "requester_id": 1051497499,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Hozumi-tsuka",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1500
+      },
+      "status": "pending",
+      "requested_at": "2025-08-12T08:24:28.888448",
+      "delay_until": "2025-08-13T08:24:28.888452"
     }
   ]
 }
