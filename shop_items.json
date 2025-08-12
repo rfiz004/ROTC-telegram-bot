@@ -327,5 +327,49 @@
     "count": 1,
     "id": "17",
     "created_at": "2025-08-12T12:16:44.426534"
+  },
+  {
+    "name": "کارخونه فولاد",
+    "type": "EconStructure",
+    "countries": [
+      "Hikada",
+      "Alpyr"
+    ],
+    "description": "کارگاه های آهنگری بسیار بزرگی که تعداد زیاد اهنگر در آنها مشغول تولید فولاد هستند و این مهارت فقط در دست تعداد محدودی از کشور ها است و قابلیت بازدهی 50 فولاد در هفته را دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 3000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Hikada",
+      "#Alpyr"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIvZ2ibVoJ0Kj8DEiwpAAGscqXXqP-utAACmckxG-JE2VARWnThI-xqGAEAAwIAA3gAAzYE",
+    "count": 1,
+    "id": "18",
+    "created_at": "2025-08-12T15:00:20.634216"
+  },
+  {
+    "name": "کارخونه سنگ",
+    "type": "EconStructure",
+    "countries": [
+      "Alpyr",
+      "Azure",
+      "Alestria"
+    ],
+    "description": "منابع سنگ در کشور های محدودی وجود دارد  به علاوه مهارتی که در کارگاه ها این سنگ ها را برش می‌دهند، همچنین این منابع قابلیت بازدهی 50 سنگ در هفته را دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 3000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Alpyr",
+      "#Azure",
+      "#Alestria"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIvgmibVyD3bO_U3cTpHmWE9wvq3nKQAAKayTEb4kTZUBC_a1a1CnTqAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "19",
+    "created_at": "2025-08-12T15:03:10.784588"
   }
 ]
