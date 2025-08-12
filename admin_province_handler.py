@@ -1440,6 +1440,22 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # ذخیره‌سازی داده‌ها
         save_province_data(source_country, source_province, source_data)
         save_province_data(target_country, target_province, target_data)
+        # ارسال پیام به درخواست‌دهنده
+        requester_id = target_transfer.get("requester_id")
+        if requester_id:
+            try:
+                await context.bot.send_message(
+                    chat_id=requester_id,
+                    text=(
+                        f"✅ انتقال شما تایید شد:\n"
+                        f"{source_country}-{source_province} → {target_country}-{target_province}\n"
+                        f"📦 {', '.join([f'{k} × {v:,}' for k, v in items.items()])}"
+                    )
+                )
+            except Exception as e:
+                logger.error(f"Error sending approval message: {e}")
+
+        transfers_data["transfers"] = [t for t in transfers if t.get("id") != transfer_id]
         save_pending_transfers(transfers_data)
 
         await query.edit_message_text("✅ انتقال تایید شد. آیتم‌ها منتقل شدند.")
@@ -1449,6 +1465,32 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"Error approving transfer: {e}\n{traceback.format_exc()}")
         await query.edit_message_text("❌ خطا در تایید انتقال")
 
+
+# async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Reject a pending transfer"""
+#     query = update.callback_query
+#     await query.answer()
+
+#     transfer_id = query.data.replace("reject_transfer_", "")
+
+#     try:
+#         transfers_data = load_pending_transfers()
+#         transfers = transfers_data.get("transfers", [])
+
+#         # Find and reject transfer
+#         for transfer in transfers:
+#             if transfer.get("id") == transfer_id:
+#                 transfer["status"] = "rejected"
+#                 transfer["rejected_at"] = datetime.utcnow().isoformat()
+#                 break
+
+#         save_pending_transfers(transfers_data)
+
+#         await query.edit_message_text("❌ انتقال رد شد.")
+
+#     except Exception as e:
+#         logger.error(f"Error rejecting transfer: {e}")
+#         await query.edit_message_text("❌ خطا در رد انتقال")
 
 async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Reject a pending transfer"""
@@ -1461,20 +1503,46 @@ async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         transfers_data = load_pending_transfers()
         transfers = transfers_data.get("transfers", [])
 
-        # Find and reject transfer
-        for transfer in transfers:
-            if transfer.get("id") == transfer_id:
-                transfer["status"] = "rejected"
-                transfer["rejected_at"] = datetime.utcnow().isoformat()
-                break
+        target_transfer = next((t for t in transfers if t.get("id") == transfer_id), None)
+        if not target_transfer:
+            await query.edit_message_text("❌ انتقال پیدا نشد.")
+            return
 
+        # تغییر وضعیت
+        target_transfer["status"] = "rejected"
+        target_transfer["rejected_at"] = datetime.utcnow().isoformat()
+
+        # پیام به درخواست‌دهنده
+        requester_id = target_transfer.get("requester_id")
+        if requester_id:
+            try:
+                items = target_transfer.get("items", {})
+                source_country = target_transfer.get("source_country")
+                source_province = target_transfer.get("source_province")
+                target_country = target_transfer.get("target_country")
+                target_province = target_transfer.get("target_province")
+
+                await context.bot.send_message(
+                    chat_id=requester_id,
+                    text=(
+                        f"❌ انتقال شما رد شد:\n"
+                        f"{source_country}-{source_province} → {target_country}-{target_province}\n"
+                        f"📦 {', '.join([f'{k} × {v:,}' for k, v in items.items()])}"
+                    )
+                )
+            except Exception as e:
+                logger.error(f"Error sending rejection message: {e}")
+
+        # حذف از لیست انتقالات
+        transfers_data["transfers"] = [t for t in transfers if t.get("id") != transfer_id]
         save_pending_transfers(transfers_data)
 
-        await query.edit_message_text("❌ انتقال رد شد.")
+        await query.edit_message_text("❌ انتقال رد شد و از لیست حذف گردید.")
 
     except Exception as e:
         logger.error(f"Error rejecting transfer: {e}")
         await query.edit_message_text("❌ خطا در رد انتقال")
+
 
 async def admin_manage_shop(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Manage shop items"""
