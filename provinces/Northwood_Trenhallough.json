@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 10000,
+  "wealth": 8500,
   "population": 40000,
   "tax": 0,
   "popularity": 68,
@@ -29,7 +29,7 @@
   "weapons": [],
   "misc": [],
   "economic_items": {
-    "گندم": 30,
+    "گندم": 0,
     "گوشت": 134,
     "ماهی": 0,
     "مرغ": 0,
