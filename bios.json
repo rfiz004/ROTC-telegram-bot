@@ -64,9 +64,12 @@
     "1851174253": {
       "country": "Santos",
       "job": "ارتشبد",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-12T12:41:00.329819"
+      "saved_at": "2025-08-12T12:47:18.216975",
+      "expires_at": "2025-08-12T13:13:18.766643",
+      "name": "ارنست لیندمن // Ernest Lindman",
+      "nickname": "وینسون // Vinson"
     }
   },
   "used_hashtags": [

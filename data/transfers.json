@@ -17,20 +17,20 @@
       "delay_until": "2025-08-13T11:50:13.577580"
     },
     {
-      "id": "transfer_5566736269_1755002484",
+      "id": "transfer_5566736269_1755003377",
       "requester_id": 5566736269,
       "source_country": "Walden",
-      "source_province": "Elmaren",
+      "source_province": "Torevald",
       "target_country": "Walden",
-      "target_province": "Torevald",
+      "target_province": "Brishallow",
       "transfer_type": "domestic",
       "category": "wealth",
       "items": {
-        "طلا": 2000
+        "طلا": 500
       },
       "status": "pending",
-      "requested_at": "2025-08-12T12:41:24.104370",
-      "delay_until": "2025-08-13T12:41:24.104375"
+      "requested_at": "2025-08-12T12:56:17.797643",
+      "delay_until": "2025-08-13T12:56:17.797649"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Torevald",
   "mines": {},
-  "wealth": 0,
+  "wealth": 500,
   "population": 24000,
   "tax": 10,
   "popularity": 70,
@@ -42,7 +42,7 @@
       "weekly_output": 100
     },
     "باغ": {
-      "count": 0,
+      "count": 1,
       "product": "میوه",
       "weekly_output": 100
     },
