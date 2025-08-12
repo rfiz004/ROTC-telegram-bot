@@ -3,5 +3,8 @@
   "province": "DalNomara",
   "army": {
     "کماندار": 1000
+  },
+  "wealth": {
+    "طلا": 1000
   }
 }
