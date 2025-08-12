@@ -415,5 +415,30 @@
     "count": 1,
     "id": "21",
     "created_at": "2025-08-12T15:57:13.077011"
+  },
+  {
+    "name": "کارخانه‌ی شراب",
+    "type": "EconStructure",
+    "countries": [
+      "Azure",
+      "Imperial",
+      "Northwood",
+      "Walden"
+    ],
+    "description": "کارخونه های شرابسازی‌ در کشور های وجود دارد که دارای زمین های بارانی برای کشت تاکستان ها هستند \nاین کارخانه ها در هفته 50 شراب بازدهی دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "price": 2000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#EconStructure",
+      "#Azure",
+      "#Imperial",
+      "#Northwood",
+      "#Walden"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAIxAWibZO2Ut2NEpAJsDrPzg7bt7Q4qAAJuyTEbmyHhUHTQO7u4KuIqAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "22",
+    "created_at": "2025-08-12T16:16:41.510295"
   }
 ]
