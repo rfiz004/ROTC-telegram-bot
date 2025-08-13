@@ -54,9 +54,9 @@
     "7760700178": {
       "country": "Northwood",
       "job": "ملکه",
-      "step": "asking_id_tag",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-13T22:45:26.669026",
+      "saved_at": "2025-08-13T22:47:15.700886",
       "expires_at": "2025-08-13T22:55:48.626692",
       "name": "رایا",
       "nickname": "رز سیاه",
@@ -73,7 +73,8 @@
       "skill3": "مقاومت در برابر سم",
       "appearance": "قد ۱۷۲\nموهای بلند و مشکی\nپوست سفید\nچشمای طوسی تیره",
       "history": "ملکه ای که قبلا طلسم شده بوده و بعد از اینکه طلسمش با کلی داستان باطل شد نسبت به سم مقاوم شد",
-      "id_number": "@im_not_tiara"
+      "id_number": "@im_not_tiara",
+      "user_id_tag": "#Queen"
     }
   },
   "used_hashtags": [
@@ -142,6 +143,7 @@
     "#Ivar",
     "#Emerald",
     "#Enchantress",
-    "#cannelleshi"
+    "#cannelleshi",
+    "#Queen"
   ]
 }
