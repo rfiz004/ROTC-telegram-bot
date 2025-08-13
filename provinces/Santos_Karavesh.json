@@ -60,7 +60,7 @@
       "produces": "گوشت",
       "weekly_per_unit": 100
     },
-    "کارخونه‌چرم": {
+    "کارخونه‌ چرم": {
       "produces": "چرم",
       "weekly_per_unit": 50
     },
@@ -68,7 +68,7 @@
       "produces": "جواهر",
       "weekly_per_unit": 50
     },
-    "کارخونه‌شیشه": {
+    "کارخونه‌ شیشه": {
       "product": "شیشه",
       "weekly_per_unit": 50
     }
