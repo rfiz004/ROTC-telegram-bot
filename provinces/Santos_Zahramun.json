@@ -50,19 +50,9 @@
       "product": "گوشت",
       "weekly_output": 100
     },
-    "کارخونه‌ چرم": {
-      "count": 0,
+    "کارخونه چرم": {
+      "count": 1,
       "product": "چرم",
-      "weekly_output": 50
-    },
-    "جواهرسازی": {
-      "count": 0,
-      "product": "جواهر",
-      "weekly_output": 50
-    },
-    "کارخونه‌ شیشه": {
-      "count": 0,
-      "product": "شیشه",
       "weekly_output": 50
     }
   }
