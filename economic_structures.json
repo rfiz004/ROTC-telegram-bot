@@ -1,0 +1,16 @@
+{
+    "ماهیگیری": {"count": 0, "product": "ماهی", "weekly_output": 100},
+    "دامداری": {"count": 0, "product": "گوشت", "weekly_output": 100},
+    "باغ": {"count": 0, "product": "میوه", "weekly_output": 100},
+    "مزرعه": {"count": 0, "product": "گندم", "weekly_output": 100},
+    "مرغداری": {"count": 0, "product": "مرغ", "weekly_output": 100},
+    "چوب بری": {"count": 0, "product": "چوب", "weekly_output": 50},
+    "کارخونه پارچه": {"count": 0, "product": "پارچه", "weekly_output": 50},
+    "کارخونه شیشه": {"count": 0, "product": "شیشه", "weekly_output": 50},
+    "کارخونه فولاد": {"count": 0, "product": "فولاد", "weekly_output": 50},
+    "کارخونه سنگ": {"count": 0, "product": "سنگ", "weekly_output": 50},
+    "کارخونه چرم": {"count": 0, "product": "چرم", "weekly_output": 50},
+    "جواهرسازی": {"count": 0, "product": "جواهر", "weekly_output": 50},
+    "کارخونه شراب": {"count": 0, "product": "شراب", "weekly_output": 50},
+    "کارخونه پنبه": {"count": 0, "product": "پنبه", "weekly_output": 50}
+}
