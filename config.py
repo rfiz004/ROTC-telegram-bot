@@ -70,17 +70,11 @@ REALCHAT_ID = -1002885798901
 CAPITAL_CITIES = {
     "Alestria": "Alkyanos",
     "Hikada": "Shinrinky", 
-    "Azure": "Azureus",
+    "Azure": "Kalindora",
     "Aldemar": "Marevenport",
     "Alpyr": "Eldhalm",
     "Walden": "Verindel",
     "Northwood": "Trenhallough",
     "Santos": "Zahramun",
-    "Imperial": "Kalindora",
-    "Imperial": "Lusauren",
-    "Santos": "Zahramun",
-    "Northwood": "Trenhallough",
-    "Walden": "Verindel",
-    "Aldemar": "Marevenport",
-    "Alpyr": "Eldhalm"
+    "Imperial": "Kalindora"
 }
