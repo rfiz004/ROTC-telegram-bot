@@ -78,6 +78,16 @@
       "level": 1,
       "unique_id": "7270352750",
       "saved_at": "2025-08-12T22:16:03.534613"
+    },
+    "106647374": {
+      "country": "Alpyr",
+      "job": "مشاور وزارت",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-13T03:50:56.169757",
+      "expires_at": "2025-08-13T04:20:51.432060",
+      "name": "Kāvus",
+      "nickname": "-"
     }
   },
   "used_hashtags": [
