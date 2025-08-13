@@ -1004,45 +1004,70 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
             province_data["structures"] = {}
         province_data["structures"][item_name] = province_data["structures"].get(item_name, 0) + quantity
 
+    # elif item_type == "econstructure":
+    #     if "mines" not in province_data:
+    #         # باید mines وجود داشته باشه ولی اگر نبود، می‌سازیم
+    #         province_data["mines"] = {key:0 for key in mine_keys}
+
+    #     if item_name in mine_keys:
+    #         # اگر معدن بود فقط مقدار اضافه میشه
+    #         province_data["mines"][item_name] = province_data["mines"].get(item_name, 0) + quantity
+    #     else:
+    #         # سازه اقتصادی
+    #         if "economic_structures" not in province_data:
+    #             province_data["economic_structures"] = {}
+
+    #         econ_structs = province_data["economic_structures"]
+
+    #         if item_name in econ_structs:
+    #             econ_structs[item_name]["count"] += quantity
+    #         else:
+    #             # ساخت سازه اقتصادی جدید
+    #             # استخراج product و weekly_output از description
+    #             description = item.get("description", "")
+    #             product = ""
+    #             weekly_output = 0
+    #             import re
+    #             try:
+    #                 parts = description.split('-')
+    #                 product = parts[0].strip()
+    #                 weekly_part = parts[1].strip() if len(parts) > 1 else ""
+    #                 match = re.search(r'(\d+)', weekly_part)
+    #                 if match:
+    #                     weekly_output = int(match.group(1))
+    #             except Exception:
+    #                 pass
+
+    #             econ_structs[item_name] = {
+    #                 "count": quantity,
+    #                 "product": product,
+    #                 "weekly_output": weekly_output
+    #             }
+    
+    # بارگذاری دیکشنری مرکزی سازه‌ها
+    with open("economic_structures.json", "r", encoding="utf-8") as f:
+        all_econ_structs = json.load(f)
+    
     elif item_type == "econstructure":
-        if "mines" not in province_data:
-            # باید mines وجود داشته باشه ولی اگر نبود، می‌سازیم
-            province_data["mines"] = {key:0 for key in mine_keys}
-
-        if item_name in mine_keys:
-            # اگر معدن بود فقط مقدار اضافه میشه
-            province_data["mines"][item_name] = province_data["mines"].get(item_name, 0) + quantity
+        if "economic_structures" not in province_data:
+            province_data["economic_structures"] = {}
+    
+        econ_structs = province_data["economic_structures"]
+    
+        if item_name in econ_structs:
+            # اگر قبلاً موجود بود، فقط count افزایش پیدا کنه
+            econ_structs[item_name]["count"] += quantity
         else:
-            # سازه اقتصادی
-            if "economic_structures" not in province_data:
-                province_data["economic_structures"] = {}
-
-            econ_structs = province_data["economic_structures"]
-
-            if item_name in econ_structs:
-                econ_structs[item_name]["count"] += quantity
-            else:
-                # ساخت سازه اقتصادی جدید
-                # استخراج product و weekly_output از description
-                description = item.get("description", "")
-                product = ""
-                weekly_output = 0
-                import re
-                try:
-                    parts = description.split('-')
-                    product = parts[0].strip()
-                    weekly_part = parts[1].strip() if len(parts) > 1 else ""
-                    match = re.search(r'(\d+)', weekly_part)
-                    if match:
-                        weekly_output = int(match.group(1))
-                except Exception:
-                    pass
-
-                econ_structs[item_name] = {
-                    "count": quantity,
-                    "product": product,
-                    "weekly_output": weekly_output
-                }
+            # اگر توی استان نبود، از فایل مرکزی بگیر
+            struct_info = all_econ_structs.get(item_name, {})
+            product = struct_info.get("product", "")
+            weekly_output = struct_info.get("weekly_output", 0)
+    
+            econ_structs[item_name] = {
+                "count": quantity,
+                "product": product,
+                "weekly_output": weekly_output
+            }
 
     else:  # misc
         if "misc" not in province_data:
