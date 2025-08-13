@@ -1171,6 +1171,7 @@ async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_T
 
 
 async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Approve a pending transfer: add to target and subtract from source"""
     query = update.callback_query
     await query.answer()
 
@@ -1218,11 +1219,20 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.info(f"Source data before: {source_data}")
         logger.info(f"Target data before: {target_data}")
 
+        # Convert wealth/population dict to int if needed
+        if category in ["wealth", "population"]:
+            if isinstance(items, dict):
+                items = sum(items.values())  # تبدیل dict به عدد
+            elif not isinstance(items, int):
+                raise ValueError("فرمت مقدار نامعتبر است.")
+
+        # Ensure category exists
         if category not in source_data:
             source_data[category] = {} if isinstance(items, dict) else 0
         if category not in target_data:
             target_data[category] = {} if isinstance(items, dict) else 0
 
+        # Transfer process
         if isinstance(items, dict):
             logger.info("Processing dict transfer...")
             for item_name, amount in items.items():
@@ -1259,9 +1269,11 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.info(f"Source data after: {source_data}")
         logger.info(f"Target data after: {target_data}")
 
+        # Save updated province data
         save_province_data(source_country, source_province, source_data)
         save_province_data(target_country, target_province, target_data)
 
+        # Notify requester
         requester_id = target_transfer.get("requester_id")
         if requester_id:
             try:
@@ -1281,6 +1293,7 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception as e:
                 logger.error(f"Error sending approval message: {e}")
 
+        # Remove approved transfer from pending list
         transfers_data["transfers"] = [t for t in transfers if t.get("id") != transfer_id]
         save_pending_transfers(transfers_data)
 
