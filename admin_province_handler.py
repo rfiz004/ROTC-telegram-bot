@@ -1171,14 +1171,13 @@ async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_T
 
 
 async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Approve a pending transfer: add to target and subtract from source"""
     query = update.callback_query
     await query.answer()
 
     transfer_id = query.data.replace("approve_transfer_", "")
 
     try:
-        # Load pending transfers
+        logger.info(f"Approving transfer ID: {transfer_id}")
         transfers_data = load_pending_transfers()
         transfers = transfers_data.get("transfers", [])
 
@@ -1187,23 +1186,24 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text("❌ انتقال پیدا نشد.")
             return
 
-        # Update transfer status
+        logger.info(f"Transfer data: {target_transfer}")
+
         target_transfer["status"] = "approved"
         target_transfer["approved_at"] = datetime.utcnow().isoformat()
 
         category = target_transfer.get("category")
         items = target_transfer.get("items", {})
 
+        logger.info(f"Category: {category}, Items: {items}, Items type: {type(items)}")
+
         source_country = target_transfer.get("source_country")
         source_province = target_transfer.get("source_province")
         target_country = target_transfer.get("target_country")
         target_province = target_transfer.get("target_province")
 
-        # Validate transfer data
         if not all([source_country, source_province, target_country, target_province, category, items]):
             raise ValueError("Incomplete transfer data")
 
-        # Load source/target data
         source_data = load_province_data(source_country, source_province)
         target_data = load_province_data(target_country, target_province)
 
@@ -1215,16 +1215,18 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "province": target_province
             }
 
-        # Ensure category exists
+        logger.info(f"Source data before: {source_data}")
+        logger.info(f"Target data before: {target_data}")
+
         if category not in source_data:
             source_data[category] = {} if isinstance(items, dict) else 0
         if category not in target_data:
             target_data[category] = {} if isinstance(items, dict) else 0
 
-        # Transfer process
         if isinstance(items, dict):
-            # For categories with multiple item types (structures, weapons, etc.)
+            logger.info("Processing dict transfer...")
             for item_name, amount in items.items():
+                logger.info(f"Item: {item_name}, Amount: {amount}")
                 if not isinstance(amount, int) or amount <= 0:
                     continue
 
@@ -1237,11 +1239,10 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 if current_source_amount < amount:
                     raise ValueError(f"آیتم {item_name} در مبدا به اندازه کافی موجود نیست.")
 
-                # Subtract from source, add to target
                 source_data[category][item_name] = current_source_amount - amount
                 target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
         else:
-            # For numeric categories (only wealth & population)
+            logger.info("Processing numeric transfer...")
             if category not in ["wealth", "population"]:
                 raise ValueError(f"انتقال برای دسته {category} مجاز نیست.")
 
@@ -1255,11 +1256,12 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             source_data[category] = current_source_amount - items
             target_data[category] = target_data.get(category, 0) + items
 
-        # Save updated province data
+        logger.info(f"Source data after: {source_data}")
+        logger.info(f"Target data after: {target_data}")
+
         save_province_data(source_country, source_province, source_data)
         save_province_data(target_country, target_province, target_data)
 
-        # Notify requester
         requester_id = target_transfer.get("requester_id")
         if requester_id:
             try:
@@ -1279,7 +1281,6 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception as e:
                 logger.error(f"Error sending approval message: {e}")
 
-        # Remove approved transfer from pending list
         transfers_data["transfers"] = [t for t in transfers if t.get("id") != transfer_id]
         save_pending_transfers(transfers_data)
 
@@ -1288,7 +1289,7 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         import traceback
         logger.error(f"Error approving transfer: {e}\n{traceback.format_exc()}")
-        await query.edit_message_text("❌ خطا در تایید انتقال")
+        await query.edit_message_text(f"❌ خطا در تایید انتقال: {e}")
 
 
 
