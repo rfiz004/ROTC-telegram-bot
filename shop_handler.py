@@ -1002,7 +1002,7 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif item_type == "structure":
         if "structures" not in province_data:
             province_data["structures"] = {}
-        province_data["structures"][item_name] = province_data[
+        province_data["structures"][item_name] = province_data["structures"].get(item_name, 0) + quantity
 
     elif item_type == "econstructure":
         if "mines" not in province_data:
