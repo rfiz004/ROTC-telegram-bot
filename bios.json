@@ -54,11 +54,34 @@
     "7760700178": {
       "country": "Northwood",
       "job": "ملکه",
-      "step": "asking_nickname",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-13T22:19:59.067418",
+      "saved_at": "2025-08-13T22:24:55.027195",
       "expires_at": "2025-08-13T22:49:41.262496",
-      "name": "رایا"
+      "name": "رایا",
+      "nickname": "شکوفه",
+      "age": "18",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "مدیریت امور اقتصادی",
+        "ستاره شناسی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "مدیریت امور اقتصادی",
+      "skill3": "ستاره شناسی",
+      "appearance": "قد ۱۷۲\nموهای بلند و مشکی\nپوست روشن \nچشمای خاکستری تیره\nلاغراندام"
+    },
+    "5159282891": {
+      "country": "Northwood",
+      "job": "خاندان سلطنتی",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-13T22:22:21.376620",
+      "expires_at": "2025-08-13T22:50:41.414456",
+      "name": "Valentina",
+      "nickname": "Cannelle"
     }
   },
   "used_hashtags": [
