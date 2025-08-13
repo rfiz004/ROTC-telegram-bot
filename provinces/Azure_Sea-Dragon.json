@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 3200,
+  "wealth": 700,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -49,7 +49,7 @@
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 0,
+      "count": 1,
       "product": "چوب",
       "weekly_output": 50
     },
