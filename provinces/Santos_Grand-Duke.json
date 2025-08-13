@@ -47,7 +47,7 @@
       "product": "گوشت",
       "weekly_output": 100
     },
-    "کارخونه‌چرم": {
+    "کارخونه‌ چرم": {
       "count": 0,
       "product": "چرم",
       "weekly_output": 50
@@ -57,33 +57,10 @@
       "product": "جواهر",
       "weekly_output": 50
     },
-    "کارخونه‌شیشه": {
+    "کارخونه‌ شیشه": {
       "count": 0,
       "product": "شیشه",
       "weekly_output": 50
-    }
-  },
-  "structure_productions": {
-    "دامداری": {
-      "produces": "گوشت",
-      "weekly_per_unit": 100
-    },
-    "کارخونه‌چرم": {
-      "produces": "چرم",
-      "weekly_per_unit": 50
-    },
-    "جواهرسازی": {
-      "produces": "جواهر",
-      "weekly_per_unit": 50
-    },
-    "کارخونه‌شیشه": {
-      "product": "شیشه",
-      "weekly_per_unit": 50
-    }
-  },
-  "mine_productions": {
-    "Stone mine": {
-      "weekly_per_unit": 2000
     }
   }
 }
