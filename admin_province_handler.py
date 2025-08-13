@@ -488,33 +488,47 @@ async def handle_province_edit(update: Update, context: ContextTypes.DEFAULT_TYP
             text += f"• {unit}: {count:,}\n"
         text += "\nسربازان جدید را با فرمت: نوع:تعداد,نوع2:تعداد"
 
-    elif field_type == "castle":
-        current_castle = province_data.get("castle", [])
-        text = f"🏰 قلعه فعلی {province}:\n\n"
-        for i, item in enumerate(current_castle, 1):
-            text += f"{i}. {item}\n"
-        text += "\nآیتم‌های جدید هر خط یک مورد:"
+    # elif field_type == "castle":
+    #     current_castle = province_data.get("castle", [])
+    #     text = f"🏰 قلعه فعلی {province}:\n\n"
+    #     for i, item in enumerate(current_castle, 1):
+    #         text += f"{i}. {item}\n"
+    #     text += "\nآیتم‌های جدید هر خط یک مورد:"
 
-    elif field_type == "structures":
-        current_structures = province_data.get("structures", [])
-        text = f"🏗 سازه‌های فعلی {province}:\n\n"
-        for i, item in enumerate(current_structures, 1):
-            text += f"{i}. {item}\n"
-        text += "\nسازه‌های جدید هر خط یک مورد:"
+    # elif field_type == "structures":
+    #     current_structures = province_data.get("structures", [])
+    #     text = f"🏗 سازه‌های فعلی {province}:\n\n"
+    #     for i, item in enumerate(current_structures, 1):
+    #         text += f"{i}. {item}\n"
+    #     text += "\nسازه‌های جدید هر خط یک مورد:"
+    
+    # elif field_type == "weapons":
+    #     current_weapons = province_data.get("weapons", [])
+    #     text = f"⚔️ سلاح‌های فعلی {province}:\n\n"
+    #     for i, item in enumerate(current_weapons, 1):
+    #         text += f"{i}. {item}\n"
+    #     text += "\nسلاح‌های جدید هر خط یک مورد:"
 
-    elif field_type == "weapons":
-        current_weapons = province_data.get("weapons", [])
-        text = f"⚔️ سلاح‌های فعلی {province}:\n\n"
-        for i, item in enumerate(current_weapons, 1):
-            text += f"{i}. {item}\n"
-        text += "\nسلاح‌های جدید هر خط یک مورد:"
+    # elif field_type == "misc":
+    #     current_misc = province_data.get("misc", [])
+    #     text = f"📦 متفرقه فعلی {province}:\n\n"
+    #     for i, item in enumerate(current_misc, 1):
+    #         text += f"{i}. {item}\n"
+    #     text += "\nآیتم‌های جدید هر خط یک مورد:"
 
-    elif field_type == "misc":
-        current_misc = province_data.get("misc", [])
-        text = f"📦 متفرقه فعلی {province}:\n\n"
-        for i, item in enumerate(current_misc, 1):
-            text += f"{i}. {item}\n"
-        text += "\nآیتم‌های جدید هر خط یک مورد:"
+    elif field_type in ["structures", "weapons", "misc", "castle"]:
+        current_data = province_data.get(field_type, {})
+        text_map = {
+            "structures": "🏗 سازه‌های",
+            "weapons": "⚔️ سلاح‌های",
+            "misc": "📦 متفرقه",
+            "castle": "🏰 قلعه"
+        }
+        text = f"{text_map[field_type]} فعلی {province}:\n\n"
+        for name, count in current_data.items():
+            text += f"• {name}: {count}\n"
+        text += "\nورودی جدید هر خط به فرمت زیر:\nنام - تعداد\nمثال:\nکشتی کوچک - 5\nمنجنیق ساده - 3"
+
 
     elif field_type == "economic_items":
         current_items = province_data.get("economic_items", {})
@@ -573,7 +587,6 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
 
     try:
         province_data = load_province_data(country, province)
-        province_info["structures"] = normalize_structures(province_info.get("structures", {}))
         if not province_data:
             await message.reply_text("❌ اطلاعات استان یافت نشد")
             return True
@@ -644,10 +657,10 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
             province_data["army"] = army
             success = True
 
-        elif field_type == "castle":
-            items = [line.strip() for line in text_input.splitlines() if line.strip()]
-            province_data["castle"] = items
-            success = True
+        # elif field_type == "castle":
+        #     items = [line.strip() for line in text_input.splitlines() if line.strip()]
+        #     province_data["castle"] = items
+        #     success = True
 
         elif field_type == "economic_items":
             economic_items = {}
@@ -684,10 +697,59 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
                 await message.reply_text("❌ مقدار وارد شده معتبر نیست. لطفاً فقط عدد وارد کنید.")
                 return True
 
-        elif field_type in ["structures", "weapons", "misc"]:
-            items = [line.strip() for line in text_input.splitlines() if line.strip()]
-            province_data[field_type] = items
+        elif field_type == "structures":
+            lines = [line.strip() for line in text_input.splitlines() if line.strip()]
+            structures_dict = {}
+            for line in lines:
+                if "-" in line:
+                    name, count = line.split("-", 1)
+                    structures_dict[name.strip()] = int(count.strip())
+                else:
+                    structures_dict[line] = 1
+            province_data["structures"] = structures_dict
             success = True
+        
+        elif field_type == "weapons":
+            lines = [line.strip() for line in text_input.splitlines() if line.strip()]
+            weapons_dict = {}
+            for line in lines:
+                if "-" in line:
+                    name, count = line.split("-", 1)
+                    weapons_dict[name.strip()] = int(count.strip())
+                else:
+                    weapons_dict[line] = 1
+            province_data["weapons"] = weapons_dict
+            success = True
+        
+        elif field_type == "misc":
+            lines = [line.strip() for line in text_input.splitlines() if line.strip()]
+            misc_dict = {}
+            for line in lines:
+                if "-" in line:
+                    name, count = line.split("-", 1)
+                    misc_dict[name.strip()] = int(count.strip())
+                else:
+                    misc_dict[line] = 1
+            province_data["misc"] = misc_dict
+            success = True
+        
+        elif field_type == "castle":
+            lines = [line.strip() for line in text_input.splitlines() if line.strip()]
+            castle_dict = {}
+            for line in lines:
+                if "-" in line:
+                    name, count = line.split("-", 1)
+                    castle_dict[name.strip()] = int(count.strip())
+                else:
+                    castle_dict[line] = 1
+            province_data["castle"] = castle_dict
+            success = True
+
+
+        # elif field_type in ["structures", "weapons", "misc"]:
+        #     items = [line.strip() for line in text_input.splitlines() if line.strip()]
+        #     province_data[field_type] = items
+        #     success = True
 
         else:
             logger.warning(f"نوع فیلد ناشناخته برای ویرایش: {field_type}")
@@ -859,6 +921,121 @@ async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_T
 
 
 
+# async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Approve a pending transfer: add to target and subtract from source"""
+#     query = update.callback_query
+#     await query.answer()
+
+#     transfer_id = query.data.replace("approve_transfer_", "")
+
+#     try:
+#         transfers_data = load_pending_transfers()
+#         transfers = transfers_data.get("transfers", [])
+
+#         target_transfer = next((t for t in transfers if t.get("id") == transfer_id), None)
+
+#         if not target_transfer:
+#             await query.edit_message_text("❌ انتقال پیدا نشد.")
+#             return
+
+#         target_transfer["status"] = "approved"
+#         target_transfer["approved_at"] = datetime.utcnow().isoformat()
+
+#         category = target_transfer.get("category")
+#         items = target_transfer.get("items", {})
+
+#         # مشخصات مبدا و مقصد
+#         source_country = target_transfer.get("source_country")
+#         source_province = target_transfer.get("source_province")
+#         target_country = target_transfer.get("target_country")
+#         target_province = target_transfer.get("target_province")
+
+#         if not all([source_country, source_province, target_country, target_province, category, items]):
+#             raise ValueError("Incomplete transfer data")
+
+#         # لود داده مبدا و مقصد
+#         source_data = load_province_data(source_country, source_province)
+#         target_data = load_province_data(target_country, target_province)
+
+#         if source_data is None:
+#             raise FileNotFoundError(f"مبدا {source_country}_{source_province} پیدا نشد.")
+#         if target_data is None:
+#             # اگر مقصد نبود، یک فایل جدید بساز
+#             target_data = {
+#                 "country": target_country,
+#                 "province": target_province,
+#                 category: {}
+#             }
+
+#         # اطمینان از وجود بخش category
+#         if category not in source_data:
+#             source_data[category] = {}
+#         if category not in target_data:
+#             target_data[category] = {}
+
+#         # انتقال آیتم‌ها
+#         for item_name, amount in items.items():
+#             if not isinstance(amount, int) or amount <= 0:
+#                 continue
+
+#             # کم‌کردن از مبدا
+#             # current_source_amount = source_data[category].get(item_name, 0)
+#             if isinstance(source_data[category], dict):
+#                 current_source_amount = source_data[category].get(item_name, 0)
+#             else:
+#                 current_source_amount = source_data[category]
+
+#             if current_source_amount < amount:
+#                 raise ValueError(f"آیتم {item_name} در مبدا به اندازه کافی موجود نیست.")
+
+#             # source_data[category][item_name] = current_source_amount - amount
+#             if isinstance(source_data.get(category), dict):
+#                 # اگر دیکشنری بود، به item_name مقدار بده
+#                 source_data[category][item_name] = current_source_amount - amount
+#             else:
+#                 # اگر عدد بود، خود category یک مقدار عددی است (مثل ثروت)
+#                 source_data[category] = current_source_amount - amount
+
+
+#             # اضافه‌کردن به مقصد
+#             # target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
+        
+#             if isinstance(target_data.get(category), dict):
+#                 target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
+#             else:
+#                 # category خودش عدد هست، پس مستقیم جمع بزن
+#                 target_data[category] = target_data.get(category, 0) + amount
+
+
+#         # ذخیره‌سازی داده‌ها
+#         save_province_data(source_country, source_province, source_data)
+#         save_province_data(target_country, target_province, target_data)
+#         # ارسال پیام به درخواست‌دهنده
+#         requester_id = target_transfer.get("requester_id")
+#         if requester_id:
+#             try:
+#                 await context.bot.send_message(
+#                     chat_id=requester_id,
+#                     text=(
+#                         f"✅ انتقال شما تایید شد:\n"
+#                         f"{source_country}-{source_province} → {target_country}-{target_province}\n"
+#                         f"📦 {', '.join([f'{k} × {v:,}' for k, v in items.items()])}"
+#                     )
+#                 )
+#             except Exception as e:
+#                 logger.error(f"Error sending approval message: {e}")
+
+#         transfers_data["transfers"] = [t for t in transfers if t.get("id") != transfer_id]
+#         save_pending_transfers(transfers_data)
+
+#         await query.edit_message_text("✅ انتقال تایید شد. آیتم‌ها منتقل شدند.")
+
+#     except Exception as e:
+#         import traceback
+#         logger.error(f"Error approving transfer: {e}\n{traceback.format_exc()}")
+#         await query.edit_message_text("❌ خطا در تایید انتقال")
+
+
 async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Approve a pending transfer: add to target and subtract from source"""
     query = update.callback_query
@@ -871,7 +1048,6 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         transfers = transfers_data.get("transfers", [])
 
         target_transfer = next((t for t in transfers if t.get("id") == transfer_id), None)
-
         if not target_transfer:
             await query.edit_message_text("❌ انتقال پیدا نشد.")
             return
@@ -882,7 +1058,6 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         category = target_transfer.get("category")
         items = target_transfer.get("items", {})
 
-        # مشخصات مبدا و مقصد
         source_country = target_transfer.get("source_country")
         source_province = target_transfer.get("source_province")
         target_country = target_transfer.get("target_country")
@@ -891,78 +1066,72 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if not all([source_country, source_province, target_country, target_province, category, items]):
             raise ValueError("Incomplete transfer data")
 
-        # لود داده مبدا و مقصد
+        # Load province data
         source_data = load_province_data(source_country, source_province)
         target_data = load_province_data(target_country, target_province)
 
         if source_data is None:
             raise FileNotFoundError(f"مبدا {source_country}_{source_province} پیدا نشد.")
         if target_data is None:
-            # اگر مقصد نبود، یک فایل جدید بساز
             target_data = {
                 "country": target_country,
                 "province": target_province,
-                category: {}
+                category: {} if isinstance(items, dict) else 0
             }
 
-        # اطمینان از وجود بخش category
+        # Ensure category exists
         if category not in source_data:
-            source_data[category] = {}
+            source_data[category] = {} if isinstance(items, dict) else 0
         if category not in target_data:
-            target_data[category] = {}
+            target_data[category] = {} if isinstance(items, dict) else 0
 
-        # انتقال آیتم‌ها
-        for item_name, amount in items.items():
-            if not isinstance(amount, int) or amount <= 0:
-                continue
+        # Transfer items
+        if isinstance(items, dict):
+            # dict-type categories (structures, weapons, misc, castle, economic_items)
+            for item_name, amount in items.items():
+                if not isinstance(amount, int) or amount <= 0:
+                    continue
 
-            # کم‌کردن از مبدا
-            # current_source_amount = source_data[category].get(item_name, 0)
-            if isinstance(source_data[category], dict):
+                if not isinstance(source_data[category], dict):
+                    source_data[category] = {}
+                if not isinstance(target_data[category], dict):
+                    target_data[category] = {}
+
                 current_source_amount = source_data[category].get(item_name, 0)
-            else:
-                current_source_amount = source_data[category]
+                if current_source_amount < amount:
+                    raise ValueError(f"آیتم {item_name} در مبدا به اندازه کافی موجود نیست.")
 
-            if current_source_amount < amount:
-                raise ValueError(f"آیتم {item_name} در مبدا به اندازه کافی موجود نیست.")
-
-            # source_data[category][item_name] = current_source_amount - amount
-            if isinstance(source_data.get(category), dict):
-                # اگر دیکشنری بود، به item_name مقدار بده
                 source_data[category][item_name] = current_source_amount - amount
-            else:
-                # اگر عدد بود، خود category یک مقدار عددی است (مثل ثروت)
-                source_data[category] = current_source_amount - amount
-
-
-            # اضافه‌کردن به مقصد
-            # target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
-        
-            if isinstance(target_data.get(category), dict):
                 target_data[category][item_name] = target_data[category].get(item_name, 0) + amount
-            else:
-                # category خودش عدد هست، پس مستقیم جمع بزن
-                target_data[category] = target_data.get(category, 0) + amount
+        else:
+            # numeric-type categories (wealth, population, tax, popularity)
+            total_amount = sum(items.values()) if isinstance(items, dict) else items
+            source_data[category] = source_data.get(category, 0) - total_amount
+            target_data[category] = target_data.get(category, 0) + total_amount
 
-
-        # ذخیره‌سازی داده‌ها
+        # Save changes
         save_province_data(source_country, source_province, source_data)
         save_province_data(target_country, target_province, target_data)
-        # ارسال پیام به درخواست‌دهنده
+
+        # Notify requester
         requester_id = target_transfer.get("requester_id")
         if requester_id:
             try:
+                item_lines = []
+                for k, v in items.items():
+                    item_lines.append(f"{k} × {v:,}")
                 await context.bot.send_message(
                     chat_id=requester_id,
                     text=(
                         f"✅ انتقال شما تایید شد:\n"
                         f"{source_country}-{source_province} → {target_country}-{target_province}\n"
-                        f"📦 {', '.join([f'{k} × {v:,}' for k, v in items.items()])}"
+                        f"📦 {', '.join(item_lines)}"
                     )
                 )
             except Exception as e:
                 logger.error(f"Error sending approval message: {e}")
 
+        # Remove transfer from pending
         transfers_data["transfers"] = [t for t in transfers if t.get("id") != transfer_id]
         save_pending_transfers(transfers_data)
 
