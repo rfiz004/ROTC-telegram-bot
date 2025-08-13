@@ -52,14 +52,32 @@
       "nickname": "-"
     },
     "7270352750": {
+      "step": "pending",
       "country": "Azure",
-      "job": "مشاغل آزاد",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-13T16:13:25.585766",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-08-13T16:43:09.853921",
       "name": "Esmeralda",
-      "nickname": "Emerald Enchantress"
+      "nickname": "Emerald Enchantress",
+      "age": "22",
+      "skills": [
+        "مهارت جراحی",
+        "داروشناسی",
+        "هیپنوتیزم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "مهارت جراحی",
+      "skill2": "داروشناسی",
+      "skill3": "هیپنوتیزم",
+      "appearance": "Height:157\nWeight:57",
+      "history": "ازمرالدا، دختر یک جراح جنگی و گیاه‌شناسی ماهر، از کودکی میان بوی خون و عطر گیاهان دارویی بزرگ شد. او هنر جراحی و ساخت دارو را به همان اندازه آموخت که توانایی خارق‌العاده‌اش در هیپنوتیزم را. در شهر بزرگ، مهارتش در درمان و تسلیم‌کردن ذهن دیگران باعث شد به‌سرعت به «اغواگر زمردین» معروف شود . زنی که می‌تواند هم شفا دهد و هم نابود کند.",
+      "id_number": "@Callme_lilithh",
+      "user_id_tag": "#Enchantress",
+      "photo": "AgACAgQAAxkBAAI1bWicuyqah1v9Ng_uj7HyX3Pq0ajjAALCzDEbVXPpUEF9C_IZ5oaBAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "7270352750",
+      "saved_at": "2025-08-13T16:19:54.469438"
     }
   },
   "used_hashtags": [
@@ -126,6 +144,7 @@
     "#Ash",
     "#Amaryallis",
     "#Ivar",
-    "#Emerald"
+    "#Emerald",
+    "#Enchantress"
   ]
 }
