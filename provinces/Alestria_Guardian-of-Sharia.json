@@ -6,7 +6,7 @@
   },
   "wealth": 0,
   "population": 0,
-  "tax": 40,
+  "tax": 0,
   "popularity": 100,
   "total_army": 5000,
   "army": {
@@ -16,13 +16,13 @@
     "سواره نظام": 100
   },
   "castle": {
-        "عمارت": 1
+    "عمارت": 1
   },
   "structures": {
     "کشتی کوچک": 2,
     "کشتی متوسط": 1,
     "منجنیق": 1
-},
+  },
   "weapons": {},
   "misc": {},
   "economic_items": {
