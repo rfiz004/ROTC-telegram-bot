@@ -54,24 +54,5 @@
       "product": "سنگ",
       "weekly_output": 50
     }
-  },
-  "mine_productions": {},
-  "structure_productions": {
-    "دامداری": {
-      "produces": "گوشت",
-      "weekly_per_unit": 100
-    },
-    "باغ": {
-      "produces": "میوه",
-      "weekly_per_unit": 100
-    },
-    "کارخونه پنبه": {
-      "produces": "پنبه",
-      "weekly_per_unit": 50
-    },
-    "کارخونه سنگ": {
-      "produces": "سنگ",
-      "weekly_per_unit": 50
-    }
   }
 }
