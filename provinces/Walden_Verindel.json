@@ -60,37 +60,9 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 0,
+      "count": 1,
       "product": "شراب",
       "weekly_output": 50
-    },
-    "کارخانه‌ی شراب": {
-      "count": 1,
-      "product": "کارخونه های شرابسازی‌ در کشور های وجود دارد که دارای زمین های بارانی برای کشت تاکستان ها هستند \nاین کارخانه ها در هفته 50 شراب بازدهی دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
-      "weekly_output": 0
-    }
-  },
-  "mine_productions": {
-    "Copper mine": {
-      "weekly_per_unit": 10000
-    }
-  },
-  "structure_productions": {
-    "مزرعه": {
-      "produces": "گندم",
-      "weekly_per_unit": 100
-    },
-    "باغ": {
-      "produces": "میوه",
-      "weekly_per_unit": 100
-    },
-    "کارخونه پنبه": {
-      "produces": "پنبه",
-      "weekly_per_unit": 50
-    },
-    "شراب سازی": {
-      "produces": "شراب",
-      "weekly_per_unit": 50
     }
   }
 }
