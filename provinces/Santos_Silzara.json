@@ -14,7 +14,9 @@
     "سواره نظام": 200
   },
   "castle": {},
-  "structures": {},
+  "structures": {
+    "کشتی کوچک": 0
+  },
   "weapons": {},
   "misc": {},
   "economic_items": {
@@ -33,7 +35,7 @@
     "چرم": 0,
     "شراب": 0
   },
-    "economic_structures": {
+  "economic_structures": {
     "دامداری": {
       "count": 0,
       "product": "گوشت",
@@ -49,7 +51,7 @@
       "product": "جواهر",
       "weekly_output": 50
     },
-     "کارخونه‌ شیشه": {
+    "کارخونه‌ شیشه": {
       "count": 0,
       "product": "شیشه",
       "weekly_output": 50
