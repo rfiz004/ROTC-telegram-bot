@@ -54,24 +54,5 @@
       "product": "شراب",
       "weekly_output": 50
     }
-  },
-  "mine_productions": {},
-  "structure_productions": {
-    "مزرعه": {
-      "produces": "گندم",
-      "weekly_per_unit": 100
-    },
-    "باغ": {
-      "produces": "میوه",
-      "weekly_per_unit": 100
-    },
-    "کارخونه پنبه": {
-      "produces": "پنبه",
-      "weekly_per_unit": 50
-    },
-    "شراب سازی": {
-      "produces": "شراب",
-      "weekly_per_unit": 50
-    }
   }
 }
