@@ -216,7 +216,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIo6WiaONJZgUcEocVsefgrfi7re7UDAAI1yjEbQRHBUGOpt5ejAex3AQADAgADeQADNgQ",
     "count": 1,
     "id": "12",
-    "created_at": "2025-08-11T18:43:22.544645"
+    "created_at": "2025-08-11T18:43:22.544645",
+    "updated_at": "2025-08-13T22:00:24.074088"
   },
   {
     "name": "مزرعه",
@@ -239,7 +240,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIpGWiaOf2xI_xlINX_mRIqovvhss2oAAK-yTEbHFjQULb-yNTofbdMAQADAgADeQADNgQ",
     "count": 1,
     "id": "13",
-    "created_at": "2025-08-11T18:57:19.642678"
+    "created_at": "2025-08-11T18:57:19.642678",
+    "updated_at": "2025-08-13T22:00:49.096920"
   },
   {
     "name": "مرغداری",
@@ -260,7 +262,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIphGiaPibgAll3Xkr9YvSGfx8hVg1aAALfyTEbHFjQUKb_nT44JHQgAQADAgADeQADNgQ",
     "count": 1,
     "id": "14",
-    "created_at": "2025-08-11T19:04:24.040255"
+    "created_at": "2025-08-11T19:04:24.040255",
+    "updated_at": "2025-08-13T22:01:16.521480"
   },
   {
     "name": "چوب بری",
@@ -283,7 +286,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIpy2iaRDmNmg3P93YkxWzNDJZ6RGFSAAPLMRvOTNFQv6kozYzMPEwBAAMCAAN5AAM2BA",
     "count": 1,
     "id": "15",
-    "created_at": "2025-08-11T20:10:45.882431"
+    "created_at": "2025-08-11T20:10:45.882431",
+    "updated_at": "2025-08-13T22:01:46.263533"
   },
   {
     "name": "کارخونه پارچه",
@@ -304,7 +308,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIq_WiabiZ4kZeJRe9PUDeXaPb70Rl4AAJmyzEbzkzRUCant6LG4kJGAQADAgADeAADNgQ",
     "count": 1,
     "id": "16",
-    "created_at": "2025-08-12T12:04:25.627189"
+    "created_at": "2025-08-12T12:04:25.627189",
+    "updated_at": "2025-08-13T22:02:20.063003"
   },
   {
     "name": "کارخونه شیشه",
@@ -327,7 +332,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIt8mibLe3xrUhNfK2gqCv_50nL2VfNAAIJyjEbHFjQUBohNMX69aDqAQADAgADeAADNgQ",
     "count": 1,
     "id": "17",
-    "created_at": "2025-08-12T12:16:44.426534"
+    "created_at": "2025-08-12T12:16:44.426534",
+    "updated_at": "2025-08-13T22:02:47.898048"
   },
   {
     "name": "کارخونه فولاد",
@@ -348,7 +354,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIvZ2ibVoJ0Kj8DEiwpAAGscqXXqP-utAACmckxG-JE2VARWnThI-xqGAEAAwIAA3gAAzYE",
     "count": 1,
     "id": "18",
-    "created_at": "2025-08-12T15:00:20.634216"
+    "created_at": "2025-08-12T15:00:20.634216",
+    "updated_at": "2025-08-13T22:03:12.565569"
   },
   {
     "name": "کارخونه سنگ",
@@ -371,7 +378,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIvgmibVyD3bO_U3cTpHmWE9wvq3nKQAAKayTEb4kTZUBC_a1a1CnTqAQADAgADeAADNgQ",
     "count": 1,
     "id": "19",
-    "created_at": "2025-08-12T15:03:10.784588"
+    "created_at": "2025-08-12T15:03:10.784588",
+    "updated_at": "2025-08-13T22:03:36.657530"
   },
   {
     "name": "کارخونه چرم",
@@ -393,7 +401,7 @@
     "count": 1,
     "id": "20",
     "created_at": "2025-08-12T15:50:54.646630",
-    "updated_at": "2025-08-12T20:04:16.839582"
+    "updated_at": "2025-08-13T22:04:09.862315"
   },
   {
     "name": "جواهرسازی",
@@ -416,7 +424,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIw12ibY5iZcGLTYLj3FLgjr3wTpIcZAAJsyTEbmyHhUBPiNJvhwWOeAQADAgADeAADNgQ",
     "count": 1,
     "id": "21",
-    "created_at": "2025-08-12T15:57:13.077011"
+    "created_at": "2025-08-12T15:57:13.077011",
+    "updated_at": "2025-08-13T22:04:38.541817"
   },
   {
     "name": "کارخونه شراب",
