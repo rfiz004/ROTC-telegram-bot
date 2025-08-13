@@ -1310,13 +1310,38 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
         )
         user_data["step"] = "awaiting_shop_item_description"
 
+    # elif step == "awaiting_shop_item_description":
+    #     user_data["shop_item_data"]["description"] = text
+    #     item_type = user_data["shop_item_data"].get("type", "").lower()
+    #     print(f"[handle_shop_item_text_input] item_type={item_type}")
+    #     if item_type == "army":
+    #         await update.message.reply_text(
+    #             "🔢 تعداد سرباز را وارد کنید:",
+    #             reply_markup=InlineKeyboardMarkup([[
+    #                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
+    #             ]])
+    #         )
+    #         user_data["step"] = "awaiting_shop_item_count"
+    #     else:
+    #         await update.message.reply_text(
+    #             "💰 قیمت و مواد مورد نیاز را وارد کنید:",
+    #             reply_markup=InlineKeyboardMarkup([[
+    #                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
+    #             ]])
+    #         )
+    #         user_data["step"] = "awaiting_shop_item_price"
+
     elif step == "awaiting_shop_item_description":
         user_data["shop_item_data"]["description"] = text
         item_type = user_data["shop_item_data"].get("type", "").lower()
         print(f"[handle_shop_item_text_input] item_type={item_type}")
-        if item_type == "army":
+    
+        # دسته‌هایی که نیاز به گرفتن تعداد دارند
+        count_required_types = ["army", "weapons", "misc", "castle", "structures"]
+    
+        if item_type in count_required_types:
             await update.message.reply_text(
-                "🔢 تعداد سرباز را وارد کنید:",
+                "🔢 تعداد آیتم را وارد کنید:",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
                 ]])
@@ -1330,6 +1355,7 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
                 ]])
             )
             user_data["step"] = "awaiting_shop_item_price"
+
 
     elif step == "awaiting_shop_item_count":
         if not text.isdigit():
@@ -1596,7 +1622,126 @@ async def handle_shop_edit_choice(update: Update, context: ContextTypes.DEFAULT_
 
 import re
 
-def parse_shop_item_text(text: str) -> dict:
+# def parse_shop_item_text(text: str) -> dict:
+#     import re
+
+#     if not text:
+#         return {}
+
+#     text = text.strip()
+#     if '\n' not in text and ':' not in text:
+#         return {"description": text}
+
+#     updates = {}
+#     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+
+#     for line in lines:
+#         if ':' not in line:
+#             updates.setdefault("description", "")
+#             if updates["description"]:
+#                 updates["description"] += "\n"
+#             updates["description"] += line
+#             continue
+
+#         key, val = map(str.strip, line.split(':', 1))
+#         kl = key.lower()
+
+#         if kl in ("نام", "name"):
+#             updates["name"] = val
+
+#         elif kl in ("نوع", "type"):
+#             updates["type"] = val
+
+#         elif kl in ("کشور", "country", "کشورها", "countries"):
+#             # اگر val رشته است، تفکیک به لیست
+#             countries = []
+#             if isinstance(val, str):
+#                 countries = re.split(r'[,\s]+', val)
+#                 countries = [c.strip() for c in countries if c.strip()]
+#             elif isinstance(val, list):
+#                 countries = val
+#             updates["country"] = countries  # بهتره کلید اصلی country باشه، چون دیتابیس همین رو داره
+
+#         elif kl in ("قیمت", "price"):
+#             num = re.sub(r"[^\d]", "", val)
+#             if num:
+#                 try:
+#                     updates["price"] = int(num)
+#                 except:
+#                     pass
+
+#         elif kl in ("تعداد", "count", "موجودی"):
+#             num = re.sub(r"[^\d]", "", val)
+#             if num:
+#                 try:
+#                     updates["count"] = int(num)
+#                 except:
+#                     pass
+
+#         elif kl in ("توضیحات", "description", "شرح"):
+#             updates["description"] = val
+
+#         elif kl in ("مواد", "materials"):
+#             mats = {}
+#             parts = re.split(r'[,\;]', val)
+#             for part in parts:
+#                 part = part.strip()
+#                 if not part:
+#                     continue
+#                 if '=' in part:
+#                     mkey, mval = map(str.strip, part.split('=', 1))
+#                 elif ':' in part:
+#                     mkey, mval = map(str.strip, part.split(':', 1))
+#                 else:
+#                     m = re.match(r'(.+?)\s+(\d+)', part)
+#                     if m:
+#                         mkey, mval = m.group(1).strip(), m.group(2).strip()
+#                     else:
+#                         continue
+#                 num = re.sub(r"[^\d]", "", mval)
+#                 try:
+#                     mats[mkey] = int(num) if num else 0
+#                 except:
+#                     mats[mkey] = 0
+#             updates["materials"] = mats
+
+#         elif kl in ("هشتگ", "هشتگ‌ها", "hashtags", "برچسب", "برچسب‌ها"):
+#             tags = []
+#             if isinstance(val, str):
+#                 tags = re.findall(r'#\w+', val)
+#                 if not tags:
+#                     parts = re.split(r'[,\s]+', val)
+#                     tags = [('#' + p.strip()) if p and not p.strip().startswith('#') else p.strip() for p in parts if p.strip()]
+#             elif isinstance(val, list):
+#                 tags = val
+#             updates["hashtags"] = tags
+
+#         elif kl in ("ایدی سازنده", "سازنده", "owner", "فروشنده", "مالک"):
+#             updates["owner"] = val
+
+#         else:
+#             updates.setdefault("description", "")
+#             if updates["description"]:
+#                 updates["description"] += "\n"
+#             updates["description"] += f"{key}: {val}"
+
+#     # اگر داده‌های قبلی رشته بودن ولی الان باید لیست باشن، مثلا country
+#     if "country" in updates and isinstance(updates["country"], str):
+#         updates["country"] = [c.strip() for c in re.split(r'[,\s]+', updates["country"]) if c.strip()]
+
+#     # همین‌طور برای hashtags اگر رشته بود
+#     if "hashtags" in updates and isinstance(updates["hashtags"], str):
+#         updates["hashtags"] = [t.strip() for t in updates["hashtags"].split() if t.strip()]
+
+#     return updates
+
+
+def parse_shop_item_text(text: str, item_type: str = "") -> dict:
+    """
+    Parse multiline shop item text into a dictionary.
+    پشتیبانی از: name, type, country, price, count, description, materials, hashtags, owner
+    item_type: برای تعیین آیتم‌هایی که نیاز به count پیش‌فرض دارند (misc, weapons, castle, structures)
+    """
     import re
 
     if not text:
@@ -1625,16 +1770,16 @@ def parse_shop_item_text(text: str) -> dict:
 
         elif kl in ("نوع", "type"):
             updates["type"] = val
+            item_type = val.lower()  # ذخیره نوع آیتم برای استفاده بعدی
 
         elif kl in ("کشور", "country", "کشورها", "countries"):
-            # اگر val رشته است، تفکیک به لیست
             countries = []
             if isinstance(val, str):
                 countries = re.split(r'[,\s]+', val)
                 countries = [c.strip() for c in countries if c.strip()]
             elif isinstance(val, list):
                 countries = val
-            updates["country"] = countries  # بهتره کلید اصلی country باشه، چون دیتابیس همین رو داره
+            updates["country"] = countries
 
         elif kl in ("قیمت", "price"):
             num = re.sub(r"[^\d]", "", val)
@@ -1650,7 +1795,11 @@ def parse_shop_item_text(text: str) -> dict:
                 try:
                     updates["count"] = int(num)
                 except:
-                    pass
+                    updates["count"] = 0
+            else:
+                # برای آیتم‌های قابل شمارش، اگر تعداد داده نشده بود، پیش‌فرض 1
+                if item_type in ("misc", "weapons", "castle", "structures", "army"):
+                    updates["count"] = 1
 
         elif kl in ("توضیحات", "description", "شرح"):
             updates["description"] = val
@@ -1699,16 +1848,14 @@ def parse_shop_item_text(text: str) -> dict:
                 updates["description"] += "\n"
             updates["description"] += f"{key}: {val}"
 
-    # اگر داده‌های قبلی رشته بودن ولی الان باید لیست باشن، مثلا country
+    # اطمینان از اینکه countries و hashtags همیشه لیست هستند
     if "country" in updates and isinstance(updates["country"], str):
         updates["country"] = [c.strip() for c in re.split(r'[,\s]+', updates["country"]) if c.strip()]
 
-    # همین‌طور برای hashtags اگر رشته بود
     if "hashtags" in updates and isinstance(updates["hashtags"], str):
         updates["hashtags"] = [t.strip() for t in updates["hashtags"].split() if t.strip()]
 
     return updates
-
 
 
 async def handle_new_shop_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1755,8 +1902,85 @@ async def handle_new_shop_image(update: Update, context: ContextTypes.DEFAULT_TY
 
     return True
 
+# async def handle_new_shop_caption(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Handle new shop item caption (or multi-field edit) during editing"""
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+
+#     # فقط در صورتی که در مرحله ویرایش باشیم
+#     if user_data.get("step") != "awaiting_new_shop_caption":
+#         return False
+
+#     item_id = user_data.get("editing_shop_item_id")
+#     if not item_id:
+#         await update.message.reply_text("❌ خطا: آیتم پیدا نشد (شناسه موجود نیست).")
+#         return True
+
+#     raw_text = update.message.text or ""
+#     updates = parse_shop_item_text(raw_text)
+
+#     if not updates:
+#         await update.message.reply_text(
+#             "❌ فرمت ورودی قابل شناسایی نبود.\n\n"
+#             "مثال‌های قابل قبول:\n"
+#             "1) فقط توضیحات: یک خط متن -> این به عنوان description ذخیره می‌شود.\n"
+#             "2) چند خط کلید: مقدار:\n"
+#             "   نام: شمشیر جادویی\n"
+#             "   نوع: Weapon\n"
+#             "   کشور: Persia\n"
+#             "   قیمت: 32000\n"
+#             "   مواد: آهن:50, چوب:10\n"
+#             "   توضیحات: این شمشیر قوی است.\n"
+#         )
+#         return True
+
+#     logger.info(f"Attempting update for item_id={item_id} with updates={updates}")
+
+#     try:
+#         from shop_handler import update_shop_item, load_shop_items
+
+#         # کمک برای دیباگ: آیا آیتم در فایل موجود است؟
+#         items = load_shop_items()
+#         existing_ids = [it.get("id") for it in items]
+#         found = None
+#         for it in items:
+#             if str(it.get("id")) == str(item_id):
+#                 found = it
+#                 break
+
+#         if not found:
+#             logger.warning(f"Item {item_id} not found. existing ids: {existing_ids}")
+#             await update.message.reply_text("❌ خطا: آیتم مورد نظر در فایل فروشگاه یافت نشد.")
+#             # پاک‌سازی وضعیت برای جلوگیری از لوپ (یا نگه دار اگر خواستی)
+#             context.user_data[user_id]["step"] = None
+#             context.user_data[user_id]["editing_shop_item_id"] = None
+#             return True
+
+#         success = update_shop_item(item_id, updates)
+
+#         if success:
+#             await update.message.reply_text(
+#                 "✅ آیتم با موفقیت به‌روزرسانی شد.",
+#                 reply_markup=InlineKeyboardMarkup([[
+#                     InlineKeyboardButton("🔙 بازگشت", callback_data="admin_view_shop_items")
+#                 ]])
+#             )
+#         else:
+#             logger.error(f"update_shop_item returned False for id={item_id}. existing ids: {existing_ids}")
+#             await update.message.reply_text("❌ خطا در به‌روزرسانی آیتم. لاگ‌ها را بررسی کنید.")
+
+#     except Exception as e:
+#         logger.exception(f"Exception while updating shop item {item_id}: {e}")
+#         await update.message.reply_text("❌ خطای داخلی در به‌روزرسانی آیتم. لاگ سرور را بررسی کنید.")
+
+#     # clear state
+#     context.user_data[user_id]["step"] = None
+#     context.user_data[user_id]["editing_shop_item_id"] = None
+#     return True
+
+
 async def handle_new_shop_caption(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle new shop item caption (or multi-field edit) during editing"""
+    """Handle new shop item caption (or multi-field edit) during editing with default count"""
     user_id = update.message.from_user.id
     user_data = context.user_data.get(user_id, {})
 
@@ -1770,7 +1994,29 @@ async def handle_new_shop_caption(update: Update, context: ContextTypes.DEFAULT_
         return True
 
     raw_text = update.message.text or ""
+    
+    # مشخص کردن نوع آیتم فعلی (برای پشتیبانی از count پیش‌فرض)
+    from shop_handler import load_shop_items
+    items = load_shop_items()
+    found = None
+    for it in items:
+        if str(it.get("id")) == str(item_id):
+            found = it
+            break
+    if not found:
+        await update.message.reply_text("❌ خطا: آیتم مورد نظر در فایل فروشگاه یافت نشد.")
+        context.user_data[user_id]["step"] = None
+        context.user_data[user_id]["editing_shop_item_id"] = None
+        return True
+
+    item_type = found.get("type", "").lower()
+
+    from shop_handler import update_shop_item
     updates = parse_shop_item_text(raw_text)
+
+    # اگر نوع آیتم misc، weapons، castle یا structures باشد و count وارد نشده باشد، مقدار پیش‌فرض 1 بده
+    if item_type in ("misc", "weapons", "castle", "structures") and "count" not in updates:
+        updates["count"] = 1
 
     if not updates:
         await update.message.reply_text(
@@ -1787,28 +2033,11 @@ async def handle_new_shop_caption(update: Update, context: ContextTypes.DEFAULT_
         )
         return True
 
+    import logging
+    logger = logging.getLogger(__name__)
     logger.info(f"Attempting update for item_id={item_id} with updates={updates}")
 
     try:
-        from shop_handler import update_shop_item, load_shop_items
-
-        # کمک برای دیباگ: آیا آیتم در فایل موجود است؟
-        items = load_shop_items()
-        existing_ids = [it.get("id") for it in items]
-        found = None
-        for it in items:
-            if str(it.get("id")) == str(item_id):
-                found = it
-                break
-
-        if not found:
-            logger.warning(f"Item {item_id} not found. existing ids: {existing_ids}")
-            await update.message.reply_text("❌ خطا: آیتم مورد نظر در فایل فروشگاه یافت نشد.")
-            # پاک‌سازی وضعیت برای جلوگیری از لوپ (یا نگه دار اگر خواستی)
-            context.user_data[user_id]["step"] = None
-            context.user_data[user_id]["editing_shop_item_id"] = None
-            return True
-
         success = update_shop_item(item_id, updates)
 
         if success:
@@ -1819,14 +2048,14 @@ async def handle_new_shop_caption(update: Update, context: ContextTypes.DEFAULT_
                 ]])
             )
         else:
-            logger.error(f"update_shop_item returned False for id={item_id}. existing ids: {existing_ids}")
+            logger.error(f"update_shop_item returned False for id={item_id}")
             await update.message.reply_text("❌ خطا در به‌روزرسانی آیتم. لاگ‌ها را بررسی کنید.")
 
     except Exception as e:
         logger.exception(f"Exception while updating shop item {item_id}: {e}")
         await update.message.reply_text("❌ خطای داخلی در به‌روزرسانی آیتم. لاگ سرور را بررسی کنید.")
 
-    # clear state
+    # پاکسازی وضعیت
     context.user_data[user_id]["step"] = None
     context.user_data[user_id]["editing_shop_item_id"] = None
     return True
@@ -2248,8 +2477,113 @@ async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TY
         await query.edit_message_text("❌ خطا در اجرای پردازش هفتگی")
 
 
+# async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Generate and save shop item to JSON file"""
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     item_data = user_data.get("shop_item_data", {})
+
+#     try:
+#         photo = item_data["photo"]
+#         name = item_data["name"]
+#         item_type = item_data["type"]
+#         countries = item_data.get("countries", [])  # لیست کشورها
+#         description = item_data["description"]
+#         price_materials = item_data["price"]
+#         owner_id = item_data.get("owner_id", "-")
+#         count = item_data.get("count", None)
+
+#         # تجزیه قیمت و مواد
+#         price = 0
+#         materials = {}
+
+#         parts = price_materials.split(",")
+#         if parts:
+#             try:
+#                 price = int(parts[0].strip())
+#             except ValueError:
+#                 price = 0
+
+#             for part in parts[1:]:
+#                 if ":" in part:
+#                     mat_name, mat_amount = part.split(":", 1)
+#                     try:
+#                         materials[mat_name.strip()] = int(mat_amount.strip())
+#                     except ValueError:
+#                         continue
+
+#         # حذف تکرار هشتگ‌ها و ایجاد لیست کامل هشتگ‌ها
+#         all_hashtags = [f"#{item_type}"] + [f"#{c}" for c in countries] + [h for h in item_data.get("hashtags", [])]
+#         hashtags = list(dict.fromkeys(all_hashtags))  # حذف تکرار و حفظ ترتیب
+
+#         # افزودن تعداد به توضیحات در صورت وجود و نوع ارتش
+#         if count is not None and item_type.lower() == "army":
+#             description += f", تعداد: {count}"
+
+#         # ساخت آیتم جدید
+#         new_item = {
+#             "name": name,
+#             "type": item_type,
+#             "countries": countries,
+#             "description": description,
+#             "price": price,
+#             "materials": materials,
+#             "owner": owner_id,
+#             "hashtags": hashtags,
+#             "photo_file_id": photo,
+#             "count": count if count is not None else 1
+#         }
+
+#         # ذخیره در فایل
+#         from shop_handler import add_shop_item
+#         item_id = add_shop_item(new_item)
+
+#         # ارسال به کانال
+#         try:
+#             caption = f"""──────⊱◈Shop◈⊰──────
+# ✦ Item Name : {name}
+# ✧ Item Type : {item_type}
+# ✦ Countries : {', '.join(countries)}
+# {' '.join(hashtags)}
+# ✧ Description :
+# • {description}
+# ✦ Price & Materials :
+# • {price_materials}
+# ✧ Owner ID : {owner_id}
+# ──────⊹⊱✫⊰⊹──────
+# https://t.me/R_O_T_C
+# https://t.me/R_O_T_C_Shop"""
+
+#             await context.bot.send_photo(
+#                 chat_id=SHOP_CHANNEL,
+#                 photo=photo,
+#                 caption=caption
+#             )
+#         except Exception as channel_error:
+#             logger.warning(f"Could not send to channel: {channel_error}")
+
+#         await update.message.reply_text(
+#             f"✅ آیتم با موفقیت به فروشگاه اضافه شد!\n🆔 شناسه آیتم: {item_id}",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
+#             ]])
+#         )
+
+#         # پاک کردن داده‌های کاربر
+#         context.user_data[user_id] = {}
+
+#     except Exception as e:
+#         logger.error(f"Error generating shop item: {e}")
+#         await update.message.reply_text(
+#             f"❌ خطا در ایجاد آیتم: {str(e)}",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
+#             ]])
+#         )
+
+
 async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Generate and save shop item to JSON file"""
+    """Generate and save shop item to JSON file with proper count handling"""
     user_id = update.message.from_user.id
     user_data = context.user_data.get(user_id, {})
     item_data = user_data.get("shop_item_data", {})
@@ -2262,13 +2596,13 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         description = item_data["description"]
         price_materials = item_data["price"]
         owner_id = item_data.get("owner_id", "-")
-        count = item_data.get("count", None)
+        count = item_data.get("count", 1)  # پیش‌فرض 1
 
         # تجزیه قیمت و مواد
         price = 0
         materials = {}
 
-        parts = price_materials.split(",")
+        parts = price_materials.split(",") if price_materials else []
         if parts:
             try:
                 price = int(parts[0].strip())
@@ -2287,8 +2621,8 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
         all_hashtags = [f"#{item_type}"] + [f"#{c}" for c in countries] + [h for h in item_data.get("hashtags", [])]
         hashtags = list(dict.fromkeys(all_hashtags))  # حذف تکرار و حفظ ترتیب
 
-        # افزودن تعداد به توضیحات در صورت وجود و نوع ارتش
-        if count is not None and item_type.lower() == "army":
+        # افزودن تعداد به توضیحات در صورت وجود و برای آیتم‌های مرتبط
+        if count is not None and item_type.lower() in ("army", "misc", "weapons", "castle", "structure"):
             description += f", تعداد: {count}"
 
         # ساخت آیتم جدید
@@ -2302,7 +2636,7 @@ async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_
             "owner": owner_id,
             "hashtags": hashtags,
             "photo_file_id": photo,
-            "count": count if count is not None else 1
+            "count": count if count is not None else 1  # همیشه یک عدد داشته باشه
         }
 
         # ذخیره در فایل
@@ -2351,6 +2685,7 @@ https://t.me/R_O_T_C_Shop"""
                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
             ]])
         )
+
 
 
 async def admin_view_shop_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
