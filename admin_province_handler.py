@@ -256,76 +256,50 @@ def format_province_info(province_info):
 
     return text
 
-# async def view_province_admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """View specific province details for admin (safe & robust parsing)."""
-#     # امن‌سازی دسترسی به callback_query
-#     query = getattr(update, "callback_query", None)
-#     if query is None:
-#         logger.error("[view_province_admin] called without callback_query. Update: %s", update)
-#         if getattr(update, "effective_message", None):
-#             try:
-#                 await update.effective_message.reply_text("❌ این عمل فقط از طریق دکمه‌ها قابل اجرا است.")
-#             except Exception:
-#                 pass
-#         return
 
-#     # پاسخ به callback و لاگ ایمن
-#     await query.answer()
-#     callback_data = query.data or ""
-#     logger.debug(f"[view_province_admin] callback_data received: {callback_data}")
+def normalize_structures(structs):
+    # اگر از قبل دیکشنری است، همونو برگردون
+    if isinstance(structs, dict):
+        # مطمئن شو همه مقادیر int هستند
+        return {str(k).strip(): int(v) for k, v in structs.items() if str(k).strip()}
 
-#     try:
-#         # سعی می‌کنیم با regex پارس کنیم تا province شامل "_" هم باشد
-#         # الگو: admin_view_province_<country>_<province...>
-#         m = re.match(r"^admin_view_province_(?P<country>[^_]+)_(?P<province>.+)$", callback_data)
-#         if not m:
-#             logger.error(f"[view_province_admin] unexpected callback_data format: {callback_data}")
-#             await query.edit_message_text("❌ خطا در تشخیص استان (فرمت داده نامعتبر).")
-#             return
+    result = {}
+    if isinstance(structs, list):
+        for entry in structs:
+            if isinstance(entry, str):
+                s = entry.strip()
+                # حالت "نام - تعداد" یا "نام تعداد"
+                if "-" in s:
+                    name_part, count_part = s.split("-", 1)
+                else:
+                    parts = s.rsplit(" ", 1)
+                    if len(parts) == 2 and parts[1].strip().isdigit():
+                        name_part, count_part = parts
+                    else:
+                        name_part, count_part = s, "1"
 
-#         country = m.group("country")
-#         province = m.group("province").replace("_", " ").strip()
+                name = name_part.strip()
+                # فقط رقم‌ها را بردار (برای اعداد با فاصله یا کاراکترهای اضافی)
+                digits = "".join(ch for ch in count_part if ch.isdigit())
+                count = int(digits) if digits else 1
+                if name:
+                    result[name] = result.get(name, 0) + count
 
-#         # بارگذاری داده‌های استان
-#         province_info = load_province_data(country, province)
+            elif isinstance(entry, dict):
+                # اگر قبلاً تکی به صورت {"منجنیق": 2} بود
+                for k, v in entry.items():
+                    name = str(k).strip()
+                    try:
+                        count = int(v)
+                    except:
+                        count = 0
+                    if name:
+                        result[name] = result.get(name, 0) + count
+        return result
 
-#         if not province_info:
-#             text = f"❌ اطلاعات استان «{province}» در کشور «{country}» یافت نشد."
-#             keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data="admin_view_all_provinces")]]
-#             await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-#             return
+    # هیچ چیز معتبر نبود
+    return {}
 
-#         # اگر پیدا شد، متن نمایش و کیبورد ویرایش بساز
-#         text = format_province_info(province_info)
-
-#         safe_prov = province.replace(" ", "_")
-#         keyboard = [
-#             [InlineKeyboardButton("📊 نمای کلی اقتصاد", callback_data=f"admin_economy_overview_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("🪙 معدن‌ها", callback_data=f"edit_province_mines_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("💰 ثروت", callback_data=f"edit_province_wealth_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("👥 جمعیت", callback_data=f"edit_province_population_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("📈 مالیات", callback_data=f"edit_province_tax_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("📊 محبوبیت", callback_data=f"edit_province_popularity_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("🛡 سربازان", callback_data=f"edit_province_army_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("🏰 قلعه", callback_data=f"edit_province_castle_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("🏗 سازه‌ها", callback_data=f"edit_province_structures_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("⚔️ سلاح‌ها", callback_data=f"edit_province_weapons_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("📦 متفرقه", callback_data=f"edit_province_misc_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("📦 اقلام اقتصادی", callback_data=f"edit_province_economic_items_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("🏭 سازه‌های اقتصادی", callback_data=f"edit_province_economic_structures_{country}_{safe_prov}")],
-#             [InlineKeyboardButton("🔙 برگشت", callback_data="admin_view_all_provinces")]
-#         ]
-
-#         await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-#         return
-
-#     except Exception as e:
-#         logger.exception(f"Error in view_province_admin: {e}")
-#         try:
-#             await query.edit_message_text("❌ خطا در نمایش اطلاعات استان")
-#         except Exception:
-#             # اگر ویرایش پیام ممکن نبود، لاگ کن و بدون خطا برگرد
-#             logger.error("Also failed to edit message after exception in view_province_admin")
 
 
 async def view_province_admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -355,6 +329,7 @@ async def view_province_admin(update: Update, context: ContextTypes.DEFAULT_TYPE
         province = m.group("province").replace("_", " ").strip()
 
         province_info = load_province_data(country, province)
+        province_info["structures"] = normalize_structures(province_info.get("structures", {}))
         if not province_info:
             text = f"❌ اطلاعات استان «{province}» در کشور «{country}» یافت نشد."
             keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data="admin_view_all_provinces")]]
@@ -401,218 +376,6 @@ async def view_province_admin(update: Update, context: ContextTypes.DEFAULT_TYPE
             logger.error("Also failed to edit message after exception in view_province_admin")
 
 
-# async def handle_province_edit(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Handle province field editing"""
-#     query = update.callback_query
-#     await query.answer()
-    
-#     callback_data = query.data
-#     parts = callback_data.split("_")
-
-#     # Handle callback_data format: edit_province_<field_type>_<country>_<province>
-#     # where field_type can be compound like "economic_items" or "economic_structures"
-#     if len(parts) < 4 or parts[0] != "edit" or parts[1] != "province":
-#         await query.edit_message_text("❌ خطا در تشخیص داده‌ها")
-#         return
-
-#     # Check if it's a compound field type (economic_items or economic_structures)
-#     if len(parts) >= 6 and parts[2] == "economic" and parts[3] in ["items", "structures"]:
-#         field_type = f"{parts[2]}_{parts[3]}"  # economic_items or economic_structures
-#         country = parts[4]
-#         province = "_".join(parts[5:]).replace("_", " ").strip()
-#     elif len(parts) >= 5:
-#         # Handle simple field types (wealth, population, etc.)
-#         field_type = parts[2]
-#         country = parts[3]
-#         province = "_".join(parts[4:]).replace("_", " ").strip()
-#     else:
-#         await query.edit_message_text("❌ خطا در تشخیص داده‌ها - فرمت نامعتبر")
-#         return
-
-#     user_id = query.from_user.id
-#     context.user_data[user_id] = context.user_data.get(user_id, {})
-#     context.user_data[user_id].update({
-#         "editing_field": field_type,
-#         "editing_country": country,
-#         "editing_province": province,
-#         "province_name": province,  # Store normalized province name
-#         "step": f"awaiting_province_{field_type}_edit"
-#     })
-
-#     # Show current data and ask for new input
-#     # Load province data with improved file name handling
-#     province_data = load_province_data(country, province)
-#     if not province_data:
-#         # Debug logging for troubleshooting
-#         logger.error(f"Province not found: country='{country}', province='{province}'")
-
-#         # Try alternative province name formats
-#         alternative_names = [
-#             province,
-#             province.strip(),
-#             province.replace(" ", "_"),
-#             province.replace("_", " "),
-#         ]
-
-#         for alt_name in alternative_names:
-#             province_data = load_province_data(country, alt_name)
-#             if province_data:
-#                 logger.info(f"Found province data with alternative name: '{alt_name}'")
-#                 context.user_data[user_id]["editing_province"] = alt_name  # Update stored name
-#                 province = alt_name  # Use the working name
-#                 break
-
-#         if not province_data:
-#             # Try direct file access with proper encoding
-#             try:
-#                 import os
-#                 possible_files = [
-#                     f"provinces/{country}_{province.replace(' ', '_')}.json",
-#                     f"provinces/{country}_{province}.json",
-#                     f"provinces/{country}_{province.replace('_', ' ')}.json"
-#                 ]
-
-#                 for province_file in possible_files:
-#                     if os.path.exists(province_file):
-#                         with open(province_file, "r", encoding="utf-8") as f:
-#                             province_data = json.load(f)
-#                         logger.info(f"Loaded province data directly from file: {province_file}")
-#                         # Extract actual province name from successful file
-#                         actual_province = os.path.basename(province_file).replace(f"{country}_", "").replace(".json", "")
-#                         context.user_data[user_id]["editing_province"] = actual_province
-#                         province = actual_province
-#                         break
-
-#                 if not province_data:
-#                     # List available province files for debugging
-#                     try:
-#                         available_files = [f for f in os.listdir("provinces") if f.startswith(f"{country}_")]
-#                         logger.error(f"Available province files for {country}: {available_files}")
-#                     except:
-#                         pass
-#             except Exception as debug_e:
-#                 logger.error(f"Could not load provinces for debugging: {debug_e}")
-
-#         if not province_data:
-#             await query.edit_message_text(
-#                 f"❌ اطلاعات استان {province} در کشور {country} یافت نشد.\n"
-#                 f"لطفاً مطمئن شوید که فایل provinces/{country}_{province.replace(' ', '_')}.json وجود دارد.",
-#                 reply_markup=InlineKeyboardMarkup([[
-#                     InlineKeyboardButton("🔙 برگشت", callback_data="admin_view_all_provinces")
-#                 ]])
-#             )
-#             return
-
-#     if field_type == "mines":
-#         current_data = province_data.get("mines", {})
-#         mine_productions = province_data.get("mine_productions", {})
-#         text = f"⛏️ معدن‌های فعلی {province}:\n\n"
-
-#         for mine_name, count in current_data.items():
-#             weekly_income = mine_productions.get(mine_name, {}).get("weekly_per_unit", 0)
-#             total_weekly = count * weekly_income
-#             text += f"• {mine_name}: {count:,} معدن (درآمد هفتگی: {total_weekly:,})\n"
-
-#         text += "\n💡 فرمت جدید (پیشنهادی):\n"
-#         text += "هر خط: نام معدن - تعداد - درآمد هفتگی هر معدن\n"
-#         text += "مثال:\nCopper mine - 2 - 10000\nGold mine - 1 - 15000\n\n"
-#         text += "📝 فرمت قدیمی (پشتیبانی می‌شود):\n"
-#         text += "نام معدن:تعداد,نام معدن دیگر:تعداد\n"
-#         text += "مثال: Copper mine:2,Gold mine:1"
-
-#     elif field_type == "wealth":
-#         current_wealth = province_data.get("wealth", 0)
-#         text = f"💰 ثروت فعلی {province}: {current_wealth:,}\n\nمقدار ثروت جدید را وارد کنید:"
-
-#     elif field_type == "population":
-#         current_pop = province_data.get("population", 0)
-#         text = f"👥 جمعیت فعلی {province}: {current_pop:,}\n\nمقدار جمعیت جدید را وارد کنید:"
-
-#     elif field_type == "tax":
-#         current_tax = province_data.get("tax", 0)
-#         text = f"📈 مالیات فعلی {province}: {current_tax}\n\nمقدار مالیات جدید را وارد کنید:"
-
-#     elif field_type == "popularity":
-#         current_pop = province_data.get("popularity", 0)
-#         text = f"📊 محبوبیت فعلی {province}: {current_pop}\n\nمقدار محبوبیت جدید را وارد کنید:"
-
-#     elif field_type == "army":
-#         current_army = province_data.get("army", {})
-#         text = f"🛡 سربازان فعلی {province}:\n\n"
-#         for unit, count in current_army.items():
-#             text += f"• {unit}: {count:,}\n"
-#         text += "\nسربازان جدید را با فرمت زیر وارد کنید:\nنوع سرباز:تعداد,نوع دیگر:تعداد\nمثال: کماندار:3000,شمشیرزن:2000"
-
-#     elif field_type == "castle":
-#         current_castle = province_data.get("castle", [])
-#         text = f"🏰 قلعه فعلی {province}:\n\n"
-#         for i, item in enumerate(current_castle, 1):
-#             text += f"{i}. {item}\n"
-#         text += "\nآیتم‌های قلعه جدید را هر کدام در یک خط وارد کنید:"
-
-#     elif field_type == "structures":
-#         current_structures = province_data.get("structures", [])
-#         text = f"🏗 سازه‌های فعلی {province}:\n\n"
-#         for i, item in enumerate(current_structures, 1):
-#             text += f"{i}. {item}\n"
-#         text += "\nسازه‌های جدید را هر کدام در یک خط وارد کنید:"
-
-#     elif field_type == "weapons":
-#         current_weapons = province_data.get("weapons", [])
-#         text = f"⚔️ سلاح‌های فعلی {province}:\n\n"
-#         for i, item in enumerate(current_weapons, 1):
-#             text += f"{i}. {item}\n"
-#         text += "\nسلاح‌های جدید را هر کدام در یک خط وارد کنید:"
-
-#     elif field_type == "misc":
-#         current_misc = province_data.get("misc", [])
-#         text = f"📦 متفرقه فعلی {province}:\n\n"
-#         for i, item in enumerate(current_misc, 1):
-#             text += f"{i}. {item}\n"
-#         text += "\nآیتم‌های متفرقه جدید را هر کدام در یک خط وارد کنید:"
-
-#     elif field_type == "economic_items":
-#         current_items = province_data.get("economic_items", {})
-#         logger.debug(f"Economic items for {province}: {current_items}")
-#         text = f"📦 اقلام اقتصادی فعلی {province}:\n\n"
-
-#         # Show both Persian and English items
-#         all_item_names = set(current_items.keys()) | {
-#             "گندم", "گوشت", "ماهی", "مرغ", "میوه", "فولاد", "شیشه", "سنگ", 
-#             "چوب", "جواهر", "پنبه", "پارچه", "چرم", "شراب",
-#             "Wheat", "Meat", "Fish", "Chicken", "Fruit", "Steel", "Glass", "Stone",
-#             "Wood", "Jewel", "Cotton", "Fabric", "Leather", "Wine"
-#         }
-
-#         for item_name in sorted(all_item_names):
-#             amount = current_items.get(item_name, 0)
-#             if amount > 0 or item_name in ["گندم", "گوشت", "ماهی", "مرغ", "میوه", "فولاد", "شیشه", "سنگ", "چوب", "جواهر", "پنبه", "پارچه", "چرم", "شراب"]:
-#                 text += f"• {item_name}: {amount}\n"
-
-#         text += "\nاقلام اقتصادی جدید را با فرمت زیر وارد کنید:\nنام کالا:مقدار,نام کالای دیگر:مقدار\nمثال: گندم:100,گوشت:50\nیا: Wheat:100,Meat:50"
-
-#     elif field_type == "economic_structures":
-#         current_structures = province_data.get("economic_structures", {})
-#         text = f"🏭 سازه‌های اقتصادی فعلی {province}:\n\n"
-
-#         for struct_name, production_info in current_structures.items():
-#             count = production_info.get("count", 0)
-#             weekly_per_unit = production_info.get("weekly_output", 0)
-#             product = production_info.get("product", "نامشخص")
-#             total_weekly = count * weekly_per_unit
-#             text += f"• {struct_name}: {count:,} واحد (تولید: {total_weekly:,} {product} در هفته)\n"
-
-#         text += "\n💡 فرمت جدید (پیشنهادی):\n"
-#         text += "هر خط: نام سازه - تعداد - کالای تولیدی - تولید هفتگی هر واحد\n"
-#         text += "مثال:\nماهیگیری - 2 - ماهی - 10\nجواهرسازی - 1 - جواهر - 5\n\n"
-
-#     else:
-#         text = "❌ نوع ویرایش نامشخص"
-
-#     keyboard = [[InlineKeyboardButton("🔙 انصراف", callback_data=f"admin_view_province_{country}_{province.replace(' ', '_')}")]]
-#     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-
-
 async def handle_province_edit(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle province field editing (determine field and set explicit back target)."""
     query = update.callback_query
@@ -652,6 +415,7 @@ async def handle_province_edit(update: Update, context: ContextTypes.DEFAULT_TYP
 
     # بارگذاری داده‌ها (با fallback‌هایی که شما قبلاً گذاشته‌اید)
     province_data = load_province_data(country, province)
+    province_info["structures"] = normalize_structures(province_info.get("structures", {}))
     if not province_data:
         # تلاش برای پیدا کردن با نام‌های جایگزین
         alternative_names = [province, province.strip(), province.replace(" ", "_"), province.replace("_", " ")]
@@ -787,184 +551,6 @@ async def handle_province_edit(update: Update, context: ContextTypes.DEFAULT_TYP
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
 
 
-# async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     message = getattr(update, "message", None)
-#     user = update.effective_user
-#     user_id = user.id if user else None
-#     user_store = context.user_data.setdefault(user_id, {})
-
-#     field_type = user_store.get("editing_field")
-#     country = user_store.get("editing_country")
-#     province = user_store.get("editing_province")
-#     step = user_store.get("step")
-
-#     if not all([field_type, country, province, step]):
-#         return False
-#     if not str(step).startswith("awaiting_province_") or not str(step).endswith("_edit"):
-#         return False
-#     if not message or not getattr(message, "text", None):
-#         return False
-
-#     text_input = message.text.strip()
-
-#     try:
-#         province_data = load_province_data(country, province)
-#         if not province_data:
-#             await message.reply_text("❌ اطلاعات استان یافت نشد")
-#             return True
-
-#         success = False
-
-#         def to_int_safe(s):
-#             s = str(s).strip()
-#             s = re.sub(r"[,_\s]", "", s)
-#             return int(s)
-
-#         if field_type == "economic_structures":
-#             # فرمت هر خط: نام سازه - تعداد - کالای تولیدی - تولید هفتگی هر واحد
-#             # مثال:
-#             # ماهیگیری - 2 - ماهی - 10
-#             # جواهرسازی - 1 - جواهر - 5
-#             economic_structures = {}
-#             structure_productions = {}
-#             lines = text_input.splitlines()
-#             for i, line in enumerate(lines, start=1):
-#                 parts = [p.strip() for p in re.split(r"\s*-\s*", line)]
-#                 if len(parts) >= 4:
-#                     try:
-#                         name = parts[0]
-#                         count = to_int_safe(parts[1])
-#                         product = parts[2]
-#                         weekly_per_unit = to_int_safe(parts[3])
-#                         economic_structures[name] = {"count": count, "product": product, "weekly_output": weekly_per_unit}
-#                         structure_productions[name] = {"produces": product, "weekly_per_unit": weekly_per_unit}
-#                     except Exception as e:
-#                         logger.warning(f"خطا در خط {i} سازه اقتصادی: {e}")
-#                         continue
-#                 else:
-#                     logger.warning(f"فرمت نادرست در خط {i} سازه اقتصادی: {line}")
-#                     continue
-#             province_data["economic_structures"] = economic_structures
-#             province_data["structure_productions"] = structure_productions
-#             success = True
-
-#         elif field_type == "mines":
-#             # فرمت هر خط: نام معدن - تعداد - درآمد هفتگی هر معدن
-#             mines = {}
-#             mine_productions = province_data.get("mine_productions", {})
-#             lines = text_input.splitlines()
-#             for i, line in enumerate(lines, start=1):
-#                 parts = [p.strip() for p in re.split(r"\s*-\s*", line)]
-#                 if len(parts) >= 3:
-#                     try:
-#                         name = parts[0]
-#                         count = to_int_safe(parts[1])
-#                         weekly_income = to_int_safe(parts[2])
-#                         mines[name] = count
-#                         mine_productions[name] = {"weekly_per_unit": weekly_income}
-#                     except Exception as e:
-#                         logger.warning(f"خطا در خط {i} معدن: {e}")
-#                         continue
-#                 else:
-#                     logger.warning(f"فرمت نادرست در خط {i} معدن: {line}")
-#                     continue
-#             province_data["mines"] = mines
-#             province_data["mine_productions"] = mine_productions
-#             success = True
-
-#         elif field_type == "army":
-#             # فرمت: نوع سرباز:تعداد,نوع دیگر:تعداد
-#             army = {}
-#             pairs = [p.strip() for p in text_input.split(",") if p.strip()]
-#             for pair in pairs:
-#                 if ":" in pair:
-#                     try:
-#                         unit, count = pair.split(":", 1)
-#                         army[unit.strip()] = to_int_safe(count)
-#                     except Exception as e:
-#                         logger.warning(f"خطا در پردازش ارتش: {e}")
-#                         continue
-#             province_data["army"] = army
-#             success = True
-
-#         elif field_type == "castle":
-#             # هر خط یک آیتم لیست
-#             items = [line.strip() for line in text_input.splitlines() if line.strip()]
-#             province_data["castle"] = items
-#             success = True
-
-#         elif field_type == "economic_items":
-#             # فرمت: نام کالا:مقدار,نام کالای دیگر:مقدار
-#             economic_items = {}
-#             pairs = [p.strip() for p in text_input.split(",") if p.strip()]
-#             for pair in pairs:
-#                 if ":" in pair:
-#                     try:
-#                         item, amount = pair.split(":", 1)
-#                         economic_items[item.strip()] = to_int_safe(amount)
-#                     except Exception as e:
-#                         logger.warning(f"خطا در پردازش اقلام اقتصادی: {e}")
-#                         continue
-#             province_data["economic_items"] = economic_items
-#             success = True
-
-#         elif field_type in ["wealth", "population", "popularity"]:
-#             try:
-#                 val = to_int_safe(text_input)
-#                 province_data[field_type] = val
-#                 success = True
-#             except Exception as e:
-#                 logger.warning(f"خطا در پردازش {field_type}: {e}")
-#                 success = False
-
-#         elif field_type == "tax":
-#             try:
-#                 new_tax = int(text_input)
-#                 if new_tax < 0 or new_tax > 100 or new_tax % 10 != 0:
-#                     await message.reply_text("❌ مقدار مالیات باید عددی بین ۰ تا ۱۰۰ و مضربی از ۱۰ باشد. لطفاً دوباره وارد کنید.")
-#                     return True
-#                 province_data["tax"] = new_tax
-#                 success = True
-#             except ValueError:
-#                 await message.reply_text("❌ مقدار وارد شده معتبر نیست. لطفاً فقط عدد وارد کنید.")
-#                 return True
-
-
-#         elif field_type in ["structures", "weapons", "misc"]:
-#             # هر خط یک آیتم لیست
-#             items = [line.strip() for line in text_input.splitlines() if line.strip()]
-#             province_data[field_type] = items
-#             success = True
-
-#         else:
-#             logger.warning(f"نوع فیلد ناشناخته برای ویرایش: {field_type}")
-#             success = False
-
-#         if success:
-#             save_province_data(country, province, province_data)
-#             await message.reply_text(
-#                 f"✅ بخش «{field_type}» برای استان «{province}» به‌روزرسانی شد.",
-#                 reply_markup=InlineKeyboardMarkup([
-#                     [InlineKeyboardButton("🔙 بازگشت به استان", callback_data=f"admin_view_province_{country}_{province.replace(' ', '_')}")]
-#                 ])
-#             )
-#             # پاک کردن استیت کاربر
-#             for k in ("step", "editing_field", "editing_country", "editing_province", "province_name"):
-#                 user_store.pop(k, None)
-#         else:
-#             await message.reply_text("❌ خطا در پردازش داده‌ها. لطفاً فرمت صحیح را رعایت کنید.")
-
-#         return True
-
-#     except Exception as e:
-#         logger.exception(f"Exception in handle_province_edit_input: {e}")
-#         try:
-#             await message.reply_text("❌ خطا در ذخیره اطلاعات (داخل سرور). لطفاً بعداً تلاش کنید.")
-#         except Exception:
-#             logger.exception("Also failed to send error message to user.")
-#         return True
-
-
 async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message = getattr(update, "message", None)
     user = update.effective_user
@@ -987,6 +573,7 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
 
     try:
         province_data = load_province_data(country, province)
+        province_info["structures"] = normalize_structures(province_info.get("structures", {}))
         if not province_data:
             await message.reply_text("❌ اطلاعات استان یافت نشد")
             return True
@@ -1221,61 +808,6 @@ async def show_country_transfers(update: Update, context: ContextTypes.DEFAULT_T
         logging.error(f"Error in show_country_transfers: {e}")
         await query.edit_message_text("❌ خطا در نمایش انتقالات")
 
-# async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Manage pending transfers"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     transfers_data = load_pending_transfers()
-#     user_id = update.effective_user.id
-#     user_data = context.user_data.get(user_id, {})
-
-#     pending_transfers = [
-#         t for t in transfers_data.get("transfers", [])
-#         if t.get("status") == "pending"
-#     ]
-
-#     text = "🔄 انتقالات در انتظار تایید:\n\n"
-#     keyboard = []
-
-#     for i, transfer in enumerate(pending_transfers):
-#         text += (
-#             f"{i+1}. {transfer.get('source_country', 'نامشخص')}-"
-#             f"{transfer.get('source_province', 'نامشخص')} → "
-#             f"{transfer.get('target_country', 'نامشخص')}-"
-#             f"{transfer.get('target_province', 'نامشخص')}\n"
-#         )
-
-#         items = transfer.get('items', {})
-#         if items:
-#             for item_name, quantity in items.items():
-#                 text += f"   📦 {item_name} × {quantity:,}\n"
-#         else:
-#             text += "   📦 نامشخص × 0\n"
-
-#         text += f"   🔄 نوع: {transfer.get('transfer_type', 'نامشخص')}\n\n"
-
-#         keyboard.append([
-#             InlineKeyboardButton(
-#                 f"✅ تایید #{i+1}",
-#                 callback_data=f"approve_transfer_{transfer.get('id', '')}"
-#             ),
-#             InlineKeyboardButton(
-#                 f"❌ رد #{i+1}",
-#                 callback_data=f"reject_transfer_{transfer.get('id', '')}"
-#             )
-#         ])
-#     # Determine appropriate back destination based on user role
-#     from callback_handlers import check_admin_access
-#     if check_admin_access(user_data, required_role="master_admin"):
-#         back_callback = "admin_province_menu"
-#     else:
-#         back_callback = "admin_menu"
-
-#     keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data=back_callback)])
-
-#     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-
 
 async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Manage pending transfers"""
@@ -1325,31 +857,7 @@ async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_T
     keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data=back_callback)])
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
 
-# async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Approve a pending transfer"""
-#     query = update.callback_query
-#     await query.answer()
 
-#     transfer_id = query.data.replace("approve_transfer_", "")
-
-#     try:
-#         transfers_data = load_pending_transfers()
-#         transfers = transfers_data.get("transfers", [])
-
-#         # Find and approve transfer
-#         for transfer in transfers:
-#             if transfer.get("id") == transfer_id:
-#                 transfer["status"] = "approved"
-#                 transfer["approved_at"] = datetime.utcnow().isoformat()
-#                 break
-
-#         save_pending_transfers(transfers_data)
-
-#         await query.edit_message_text("✅ انتقال تایید شد.")
-
-#     except Exception as e:
-#         logger.error(f"Error approving transfer: {e}")
-#         await query.edit_message_text("❌ خطا در تایید انتقال")
 
 async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Approve a pending transfer: add to target and subtract from source"""
@@ -1466,32 +974,6 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text("❌ خطا در تایید انتقال")
 
 
-# async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Reject a pending transfer"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     transfer_id = query.data.replace("reject_transfer_", "")
-
-#     try:
-#         transfers_data = load_pending_transfers()
-#         transfers = transfers_data.get("transfers", [])
-
-#         # Find and reject transfer
-#         for transfer in transfers:
-#             if transfer.get("id") == transfer_id:
-#                 transfer["status"] = "rejected"
-#                 transfer["rejected_at"] = datetime.utcnow().isoformat()
-#                 break
-
-#         save_pending_transfers(transfers_data)
-
-#         await query.edit_message_text("❌ انتقال رد شد.")
-
-#     except Exception as e:
-#         logger.error(f"Error rejecting transfer: {e}")
-#         await query.edit_message_text("❌ خطا در رد انتقال")
-
 async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Reject a pending transfer"""
     query = update.callback_query
@@ -1600,66 +1082,6 @@ async def handle_shop_item_image(update: Update, context: ContextTypes.DEFAULT_T
 
     context.user_data[user_id]["step"] = "awaiting_shop_item_name"
 
-# async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Handle shop item text inputs"""
-#     user_id = update.message.from_user.id
-#     user_data = context.user_data.get(user_id, {})
-#     text = update.message.text.strip()
-#     step = user_data.get("step")
-
-#     if step == "awaiting_shop_item_name":
-#         context.user_data[user_id]["shop_item_data"]["name"] = text
-#         await update.message.reply_text(
-#             "📝 نوع آیتم را وارد کنید:\n(مثال: Army, Castle, Structure, Weapon, Misc, EconStructure)",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-#             ]])
-#         )
-#         context.user_data[user_id]["step"] = "awaiting_shop_item_type"
-
-#     elif step == "awaiting_shop_item_type":
-#         context.user_data[user_id]["shop_item_data"]["type"] = text
-#         await update.message.reply_text(
-#             "🌍 کشور مربوطه را وارد کنید:\n(مثال: Alpyr, Aldemar, Walden, All)",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-#             ]])
-#         )
-#         context.user_data[user_id]["step"] = "awaiting_shop_item_country"
-
-#     elif step == "awaiting_shop_item_country":
-#         context.user_data[user_id]["shop_item_data"]["country"] = text
-#         await update.message.reply_text(
-#             "📄 توضیحات آیتم را وارد کنید:",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-#             ]])
-#         )
-#         context.user_data[user_id]["step"] = "awaiting_shop_item_description"
-
-#     elif step == "awaiting_shop_item_description":
-#         context.user_data[user_id]["shop_item_data"]["description"] = text
-#         await update.message.reply_text(
-#             "💰 قیمت و مواد مورد نیاز را وارد کنید:",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-#             ]])
-#         )
-#         context.user_data[user_id]["step"] = "awaiting_shop_item_price"
-
-#     elif step == "awaiting_shop_item_price":
-#         context.user_data[user_id]["shop_item_data"]["price"] = text
-#         await update.message.reply_text(
-#             "👤 آیدی مالک را وارد کنید:",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
-#             ]])
-#         )
-#         context.user_data[user_id]["step"] = "awaiting_shop_item_owner"
-
-#     elif step == "awaiting_shop_item_owner":
-#         context.user_data[user_id]["shop_item_data"]["owner_id"] = text
-#         await generate_shop_item_post(update, context)
 
 async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle shop item text inputs with improved checks and logging"""
@@ -1830,38 +1252,6 @@ async def admin_delete_shop_item(update: Update, context: ContextTypes.DEFAULT_T
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
-# async def confirm_delete_shop_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Confirm and delete shop item"""
-#     logger.info("✅ confirm_delete_shop_item triggered")
-#     query = update.callback_query
-#     await query.answer()
-
-#     item_id = query.data.replace("confirm_delete_shop_item_", "")
-
-#     try:
-#         from shop_handler import delete_shop_item
-#         if delete_shop_item(item_id):
-#             await query.edit_message_text(
-#                 f"✅ آیتم با شناسه {item_id} با موفقیت حذف شد.",
-#                 reply_markup=InlineKeyboardMarkup([[
-#                     InlineKeyboardButton("🔙 برگشت", callback_data="admin_manage_shop")
-#                 ]])
-#             )
-#         else:
-#             await query.edit_message_text(
-#                 f"❌ خطا در حذف آیتم {item_id}. ممکن است آیتم وجود نداشته باشد.",
-#                 reply_markup=InlineKeyboardMarkup([[
-#                     InlineKeyboardButton("🔙 برگشت", callback_data="admin_view_shop_items")
-#                 ]])
-#             )
-#     except Exception as e:
-#         logger.error(f"Error deleting shop item: {e}")
-#         await query.edit_message_text(
-#             "❌ خطا در حذف آیتم.",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 برگشت", callback_data="admin_view_shop_items")
-#             ]])
-#         )
 
 async def confirm_delete_shop_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Confirm and delete shop item"""
@@ -1897,174 +1287,6 @@ async def confirm_delete_shop_item(update: Update, context: ContextTypes.DEFAULT
             text=text,
             reply_markup=reply_markup
         )
-
-
-# async def admin_show_economy_overview(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Show economic overview for admin selected province"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     # Parse province data from callback
-#     province_data = query.data.replace("admin_economy_overview_", "")
-#     parts = province_data.split("_")
-
-#     if len(parts) >= 2:
-#         country = parts[0]
-#         province = "_".join(parts[1:]).replace("_", " ")
-#     else:
-#         await query.edit_message_text("❌ خطا در تشخیص استان.")
-#         return
-
-#     # Load province data
-#     province_info = load_province_data(country, province)
-#     if not province_info:
-#         await query.edit_message_text(f"❌ اطلاعات استان {province} در کشور {country} یافت نشد.")
-#         return
-
-#     # Calculate weekly economics
-#     population = province_info.get("population", 0)
-
-#     # Calculate weekly income
-#     mine_income, mine_details = calculate_weekly_income(province_info)
-
-#     # Calculate production (only if population > 0)
-#     if population > 0:
-#         production_results, prod_details = calculate_weekly_production(province_info)
-#     else:
-#         production_results, prod_details = {}, []
-
-#     # Calculate tax effects (assume not capital for now)
-#     # tax_income, popularity_change = calculate_tax_effects(province_info, is_capital=False)
-
-#     with open("countries.json", "r", encoding="utf-8") as f:
-#         countries_data = json.load(f)
-#     provinces = countries_data.get("countries_areas", {}).get(country, [])
-#     tax_income = calculate_tax_income(province_info)
-#     is_capital = (province == provinces[0])
-#     tax_rate = province_info.get("tax", 0)
-#     popularity_change = 0
-#     if is_capital:
-#         if tax_rate > 0:
-#             popularity_change = - tax_rate
-#     else:
-#         if tax_rate > 10:
-#             popularity_change = -((tax_rate - 10)//10)
-    
-#     # Format display
-#     text = f"📊 نمای کلی اقتصاد - {province}\n"
-#     text += f"🌍 کشور: {country}\n\n"
-
-#     text += "💰 درآمد هفتگی:\n"
-#     total_weekly_income = mine_income + tax_income
-#     if total_weekly_income > 0:
-#         text += f"  • کل درآمد: {total_weekly_income:,} طلا\n"
-#         if mine_income > 0:
-#             text += f"    - معادن: {mine_income:,} طلا\n"
-#         if tax_income > 0:
-#             text += f"    - مالیات: {tax_income:,} طلا\n"
-#     else:
-#         text += "  • 0\n"
-
-#     text += "\n📊 تغییرات محبوبیت:\n"
-#     if popularity_change != 0:
-#         change_str = f"+{popularity_change}" if popularity_change > 0 else str(popularity_change)
-#         text += f"  • {change_str} (از مالیات)\n"
-#     else:
-#         text += "  • 0\n"
-
-#     text += "\n🏭 تولید هفتگی:\n"
-#     if production_results and population > 0:
-#         for item, amount in production_results.items():
-#             text += f"  • {item}: +{amount:,}\n"
-#     else:
-#         text += "  • 0\n"
-
-#     text += f"\n👥 جمعیت: {population:,} نفر"
-#     text += f"\n💰 ثروت فعلی: {province_info.get('wealth', 0):,} طلا"
-
-#     keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data=f"admin_view_province_{country}_{province.replace(' ', '_')}")]]
-#     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-
-
-# async def admin_show_economy_overview(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Show economic overview for admin selected province"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     # Parse province data from callback
-#     province_data = query.data.replace("admin_economy_overview_", "")
-#     parts = province_data.split("_")
-
-#     if len(parts) >= 2:
-#         country = parts[0]
-#         province = "_".join(parts[1:]).replace("_", " ")
-#     else:
-#         await query.edit_message_text("❌ خطا در تشخیص استان.")
-#         return
-
-#     # Load province data
-#     province_info = load_province_data(country, province)
-#     if not province_info:
-#         await query.edit_message_text(f"❌ اطلاعات استان {province} در کشور {country} یافت نشد.")
-#         return
-
-#     # بارگذاری لیست استان‌های کشور برای تشخیص پایتخت
-#     with open("countries.json", "r", encoding="utf-8") as f:
-#         countries_data = json.load(f)
-#     provinces = countries_data.get("countries_areas", {}).get(country, [])
-#     is_capital = (province == provinces[0])
-
-#     # اطلاعات اولیه
-#     population = province_info.get("population", 0)
-#     wealth = province_info.get("wealth", 0)
-
-#     # محاسبه درآمد معدن و مالیات
-#     mine_income, mine_details = calculate_weekly_income(province_info)
-#     tax_income = calculate_tax_income(province_info)
-#     total_weekly_income = mine_income + tax_income
-
-#     # محاسبه تولیدات اقتصادی
-#     if population > 0:
-#         production_results, prod_details = calculate_weekly_production(province_info)
-#     else:
-#         production_results, prod_details = {}, []
-
-#     # محاسبه تغییر محبوبیت با تابع جدید
-#     popularity_change = calculate_province_popularity(province)
-
-#     # ساخت متن نهایی
-#     text = f"📊 نمای کلی اقتصاد - {province}\n"
-#     text += f"🌍 کشور: {country}\n\n"
-
-#     text += "💰 درآمد هفتگی:\n"
-#     if total_weekly_income > 0:
-#         text += f"  • کل درآمد: {total_weekly_income:,} طلا\n"
-#         if mine_income > 0:
-#             text += f"    - معادن: {mine_income:,} طلا\n"
-#         if tax_income > 0:
-#             text += f"    - مالیات: {tax_income:,} طلا\n"
-#     else:
-#         text += "  • 0\n"
-
-#     text += "\n📊 تغییرات محبوبیت:\n"
-#     if popularity_change != 0:
-#         change_str = f"+{popularity_change}" if popularity_change > 0 else str(popularity_change)
-#         text += f"  • {change_str} (مالیات، تغذیه، اولویت غلات)\n"
-#     else:
-#         text += "  • 0\n"
-
-#     text += "\n🏭 تولید هفتگی:\n"
-#     if production_results and population > 0:
-#         for item, amount in production_results.items():
-#             text += f"  • {item}: +{amount:,}\n"
-#     else:
-#         text += "  • 0\n"
-
-#     text += f"\n\n👥 جمعیت: {population:,} نفر"
-#     text += f"\n💰 ثروت فعلی: {wealth:,} طلا"
-
-#     keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data=f"admin_view_province_{country}_{province.replace(' ', '_')}")]]
-#     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
 
 
 async def admin_show_economy_overview(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -2170,27 +1392,6 @@ async def handle_shop_edit_choice(update: Update, context: ContextTypes.DEFAULT_
         # ست‌کردن مرحلهٔ انتظار متن برای ویرایش
         context.user_data[user_id]["step"] = "awaiting_new_shop_caption"
 
-        # (اختیاری) اگر می‌خواهی مطمئن بشی آیتمی برای ویرایش انتخاب شده
-        # item_id = context.user_data[user_id].get("editing_shop_item_id")
-        # if not item_id:
-        #     await query.edit_message_text("❌ هیچ آیتمی برای ویرایش انتخاب نشده.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 انصراف", callback_data="admin_view_shop_items")]]))
-        #     return
-
-        # example = (
-        #     "📝 لطفاً اطلاعات جدید آیتم را طبق یکی از قالب‌های زیر وارد کنید:\n\n"
-        #     "📌 **مثال ساده — فقط توضیحات**\n"
-        #     "این یک توضیح جدید برای آیتم است.\n\n"
-        #     "📌 **مثال چند‌خطی (کلید: مقدار)**\n"
-        #     "نام: شمشیر جادویی\n"
-        #     "نوع: Weapon\n"
-        #     "کشور: Santos\n"
-        #     "قیمت: 32000\n"
-        #     "مواد: آهن:50, چوب:20\n"
-        #     "توضیحات: این شمشیر قدرت حمله را دو برابر می‌کند.\n"
-        #     "هشتگ‌ها: #Santos #Weapon\n"
-        #     "ایدی سازنده: @creator_id\n\n"
-        #     "🧠 فقط فیلدهایی که می‌خواهی تغییر کنند را وارد کن. فرمت انعطاف‌پذیر است."
-        # )
 
         example = (
         "📝 لطفاً اطلاعات جدید آیتم را طبق یکی از قالب‌های زیر وارد کنید:\n\n"
@@ -2222,114 +1423,6 @@ async def handle_shop_edit_choice(update: Update, context: ContextTypes.DEFAULT_
         "⚠️ انتخاب نامعتبر. در حال بازگشت به منوی مدیریت فروشگاه.",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")]])
     )
-
-
-
-
-# def parse_shop_item_text(text: str) -> dict:
-#     """
-#     پارس متن ورودی برای آپدیت آیتم فروشگاه.
-#     پشتیبانی از فرم‌های:
-#       - فقط یک خط متن -> توضیحات
-#       - چند خط "کلید: مقدار"
-#       - مواد: آهن:50, چوب=20 یا آهن 50
-#       - هشتگ‌ها: #Tag1 #Tag2 یا Tag1, Tag2
-#     برمی‌گرداند: دیکشنری از فیلدهایی که باید آپدیت شوند.
-#     """
-#     if not text:
-#         return {}
-
-#     text = text.strip()
-#     # اگر یک خط و بدون ":" -> treat as description
-#     if '\n' not in text and ':' not in text:
-#         return {"description": text}
-
-#     updates = {}
-#     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-
-#     for line in lines:
-#         # اگر خط ":" ندارد آن را به توضیحات اضافه کن
-#         if ':' not in line:
-#             updates.setdefault("description", "")
-#             if updates["description"]:
-#                 updates["description"] += "\n"
-#             updates["description"] += line
-#             continue
-
-#         key, val = map(str.strip, line.split(':', 1))
-#         kl = key.lower()
-
-#         # نام
-#         if kl in ("نام", "name"):
-#             updates["name"] = val
-
-#         # نوع
-#         elif kl in ("نوع", "type"):
-#             updates["type"] = val
-
-#         # کشور
-#         elif kl in ("کشور", "country"):
-#             updates["country"] = val
-
-#         # قیمت
-#         elif kl in ("قیمت", "price"):
-#             num = re.sub(r"[^\d]", "", val)
-#             if num:
-#                 try:
-#                     updates["price"] = int(num)
-#                 except:
-#                     pass
-
-#         # توضیحات
-#         elif kl in ("توضیحات", "description", "شرح"):
-#             updates["description"] = val
-
-#         # مواد
-#         elif kl in ("مواد", "materials"):
-#             mats = {}
-#             # جداکننده , or ;
-#             parts = re.split(r'[,\;]', val)
-#             for part in parts:
-#                 part = part.strip()
-#                 if not part:
-#                     continue
-#                 if '=' in part:
-#                     mkey, mval = map(str.strip, part.split('=', 1))
-#                 elif ':' in part:
-#                     mkey, mval = map(str.strip, part.split(':', 1))
-#                 else:
-#                     m = re.match(r'(.+?)\s+(\d+)', part)
-#                     if m:
-#                         mkey, mval = m.group(1).strip(), m.group(2).strip()
-#                     else:
-#                         continue
-#                 num = re.sub(r"[^\d]", "", mval)
-#                 try:
-#                     mats[mkey] = int(num) if num else 0
-#                 except:
-#                     mats[mkey] = 0
-#             updates["materials"] = mats
-
-#         # هشتگ‌ها
-#         elif kl in ("هشتگ", "هشتگ‌ها", "hashtags", "برچسب", "برچسب‌ها"):
-#             tags = re.findall(r'#\w+', val)
-#             if not tags:
-#                 parts = re.split(r'[,\s]+', val)
-#                 tags = [('#' + p.strip()) if p and not p.strip().startswith('#') else p.strip() for p in parts if p.strip()]
-#             updates["hashtags"] = tags
-
-#         # سازنده / مالک
-#         elif kl in ("ایدی سازنده", "سازنده", "owner", "فروشنده", "مالک"):
-#             updates["owner"] = val
-
-#         else:
-#             # نامشخص -> اضافه کن به description تا اطلاعات از بین نره
-#             updates.setdefault("description", "")
-#             if updates["description"]:
-#                 updates["description"] += "\n"
-#             updates["description"] += f"{key}: {val}"
-
-#     return updates
 
 
 import re
@@ -2587,38 +1680,6 @@ async def show_weekly_processing_menu(update: Update, context: ContextTypes.DEFA
 
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
 
-# def calculate_weekly_income(province_data):
-#     """Calculate weekly income from mines"""
-#     mines = province_data.get("mines", {})
-#     mine_productions = province_data.get("mine_productions", {})
-
-#     total_income = 0
-#     details = []
-
-#     for mine_name, count in mines.items():
-#         weekly_per_unit = mine_productions.get(mine_name, {}).get("weekly_per_unit", 0)
-#         mine_income = count * weekly_per_unit
-#         total_income += mine_income
-
-#         if mine_income > 0:
-#             details.append(f"  • {mine_name}: {count} × {weekly_per_unit:,} = {mine_income:,}")
-
-#     return total_income, details
-
-#def calculate_weekly_income(province_data):
-    #"""Calculate weekly income from mines"""
-    #mines = province_data.get("mines", {})
-    #total_income = 0
-    #details = []
-
-    #for mine_name, count in mines.items():
-        ## هر واحد معدن 10,000 پول میده
-        #mine_income = count * 10000
-        #total_income += mine_income
-        #details.append(f"  • {mine_name}: {count} × 10,000 = {mine_income:,}")
-
-    #return total_income, details
-
 
 def calculate_weekly_income(province_data):
     """Calculate weekly income from mines"""
@@ -2720,43 +1781,7 @@ def apply_food_consumption(province_name):
 
     print(f"✅ {province_name}: مصرف اعمال شد. باقی‌مانده گرسنه: {remaining_population}")
 
-    
-# def calculate_weekly_food_consumption(population):
-#     """Calculate weekly food consumption based on population"""
-#     consumption = {}
 
-#     # Every 300 people: -1 گوشت and -1 گندم
-#     consumption["گوشت"] = -(population // 300)
-#     consumption["گندم"] = -(population // 300)
-
-#     # Every 250 people: -1 ماهی and -1 مرغ
-#     consumption["ماهی"] = -(population // 250)
-#     consumption["مرغ"] = -(population // 250)
-
-#     # Every 200 people: -1 میوه
-#     consumption["میوه"] = -(population // 200)
-
-#     return consumption
-
-# def calculate_weekly_production(province_data):
-#     """Calculate weekly production from economic structures"""
-#     structures = province_data.get("economic_structures", {})
-#     structure_productions = province_data.get("structure_productions", {})
-
-#     production_results = {}
-#     details = []
-
-#     for struct_name, count in structures.items():
-#         production_info = structure_productions.get(struct_name, {})
-#         produces = production_info.get("produces", "")
-#         weekly_per_unit = production_info.get("weekly_per_unit", 0)
-
-#         if produces and weekly_per_unit > 0:
-#             total_production = count * weekly_per_unit
-#             production_results[produces] = production_results.get(produces, 0) + total_production
-#             details.append(f"  • {struct_name}: {count} × {weekly_per_unit} = {total_production} {produces}")
-
-#     return production_results, details
 
 def calculate_weekly_production(province_data):
     """Calculate weekly production from economic structures"""
@@ -2778,27 +1803,6 @@ def calculate_weekly_production(province_data):
     return production_results, details
 
 
-#def calculate_tax_effects(province_data, is_capital=False):
-    #"""Calculate tax income and popularity effects"""
-    #tax_rate = province_data.get("tax", 0)
-    #population = province_data.get("population", 0)
-
-    ## Tax income: +1000 wealth per 10 tax units
-    #tax_income = (tax_rate // 10) * 1000
-
-    ## Popularity effects
-    #popularity_change = 0
-    #if is_capital:
-        ## Capital: -1 popularity per 10 tax units from start
-        #if tax_rate > 0:
-            #popularity_change = -(tax_rate // 10)
-    #else:
-        ## Non-capital: first 10 tax units free, then -1 per 10 units
-        #if tax_rate > 10:
-            #popularity_change = -((tax_rate - 10) // 10)
-
-    #return tax_income, popularity_change
-
 def calculate_popularity_effect(province_data, is_capital=False):
     tax_rate = province_data.get("tax", 0)
     popularity_change = 0
@@ -2809,117 +1813,6 @@ def calculate_popularity_effect(province_data, is_capital=False):
         if tax_rate > 10:
             popularity_change = -((tax_rate - 10) // 10)
     return popularity_change
-
-
-# async def preview_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Preview weekly processing results"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     try:
-#         with open("countries.json", "r", encoding="utf-8") as f:
-#             countries_data = json.load(f)
-
-#         text = "📊 پیش‌بینی پردازش هفتگی:\n\n"
-
-#         for country, provinces in countries_data.get("countries_areas", {}).items():
-#             text += f"🌍 {country}:\n"
-
-#             for province in provinces:
-#                 province_data = load_province_data(country, province)
-#                 if not province_data:
-#                     continue
-
-#                 # محاسبه درآمد معدن
-#                 mine_income, mine_details = calculate_weekly_income(province_data)
-
-#                 # محاسبه درآمد مالیات
-#                 tax_income = calculate_tax_income(province_data)
-
-#                 # جمع کل درآمد ثروت
-#                 total_income = mine_income + tax_income
-
-#                 # محاسبه تولیدات اقتصادی
-#                 production_results, prod_details = calculate_weekly_production(province_data)
-
-#                 # محاسبه تاثیر مالیات روی محبوبیت
-#                 is_capital = (province == provinces[0])
-#                 tax_rate = province_data.get("tax", 0)
-#                 popularity_change = 0
-#                 if is_capital:
-#                     if tax_rate > 0:
-#                         popularity_change = - tax_rate
-#                 else:
-#                     if tax_rate > 10:
-#                         popularity_change = -(tax_rate - 10)
-
-
-#                 # پیش‌بینی مصرف غذا
-#                 food_preview = preview_food_consumption(province)
-#                 if food_preview:
-#                     text += "    🍽️ مصرف غلات:\n"
-#                     for line in food_preview:
-#                         text += f"      • {line}\n"
-
-
-#                 # ساخت متن خروجی برای هر استان
-#                 text += f"  📍 {province}:\n"
-
-#                 if mine_details:
-#                     text += "    💎 درآمد معدن:\n"
-#                     for d in mine_details:
-#                         text += f"{d}\n"
-
-#                 if tax_income > 0:
-#                     text += f"    🏛️ درآمد مالیات: +{tax_income:,}\n"
-
-#                 if total_income > 0:
-#                     text += f"    💰 کل درآمد: +{total_income:,}\n"
-
-#                 if production_results:
-#                     text += "    📦 تولیدات اقتصادی:\n"
-#                     for item, amount in production_results.items():
-#                         text += f"      • {item}: +{amount:,}\n"
-
-#                 if popularity_change != 0:
-#                     change_str = f"+{popularity_change}" if popularity_change > 0 else str(popularity_change)
-#                     text += f"    📊 تغییر محبوبیت: {change_str}\n"
-
-#                 text += "\n"
-
-#             text += "\n"
-
-#         #if len(text) > 4000:
-#             #text = text[:4000] + "...\n\n⚠️ خروجی کامل در لاگ‌ها موجود است."
-
-#         #keyboard = [
-#             #[InlineKeyboardButton("⚡ اجرا", callback_data="run_weekly_processing")],
-#             #[InlineKeyboardButton("🔙 برگشت", callback_data="show_weekly_menu")]
-#         #]
-
-#         #await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-
-#         keyboard = [
-#             [InlineKeyboardButton("🥖 اجرای غلات", callback_data="run_food_processing")],
-#             [InlineKeyboardButton("⚡ اجرا", callback_data="run_weekly_processing")],
-#             [InlineKeyboardButton("🔙 برگشت", callback_data="show_weekly_menu")]
-#         ]
-
-#         MAX_LENGTH = 4000
-#         chunks = [text[i:i+MAX_LENGTH] for i in range(0, len(text), MAX_LENGTH)]
-
-#         for i, chunk in enumerate(chunks):
-#             if i == len(chunks) - 1:
-#                 # آخرین بخش: با دکمه‌ها
-#                 await query.message.reply_text(chunk, reply_markup=InlineKeyboardMarkup(keyboard))
-#             else:
-#                 # سایر بخش‌ها بدون دکمه
-#                 await query.message.reply_text(chunk)
-
-
-#     except Exception as e:
-#         logger.error(f"❌ خطا در پیش‌بینی هفتگی: {e}")
-#         await query.edit_message_text("❌ خطا در محاسبه پیش‌بینی")
 
 
 async def preview_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -3102,124 +1995,6 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
         await query.edit_message_text("❌ خطا در اجرای مصرف غذا")
 
 
-
-# async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     query = update.callback_query
-#     await query.answer()
-
-#     try:
-#         processed_count = 0
-#         total_wealth_added = 0
-
-#         # مثال: پردازش هفتگی هر استان (باید جایگزین کد واقعی خودت بشه)
-#         with open("countries.json", "r", encoding="utf-8") as f:
-#             countries_data = json.load(f)
-
-#         for country, provinces in countries_data.get("countries_areas", {}).items():
-#             for province in provinces:
-#                 province_data = load_province_data(country, province)
-#                 if not province_data:
-#                     continue
-
-#                 # محاسبه درآمد معدن
-#                 mine_income, _ = calculate_weekly_income(province_data)
-#                 # محاسبه درآمد مالیات
-#                 tax_income = calculate_tax_income(province_data)
-
-#                 income = mine_income + tax_income
-
-#                 # اضافه کردن درآمد به ثروت استان (مثال)
-#                 province_data["wealth"] = province_data.get("wealth", 0) + income
-#                 save_province_data(country, province, province_data)  # فرض بر وجود این تابع
-
-#                 processed_count += 1
-#                 total_wealth_added += income
-
-#         # به‌روزرسانی زمان آخرین پردازش هفتگی
-#         from timer_manager import update_task_time
-#         update_task_time("last_weekly_update")
-
-#         text = (
-#             f"✅ پردازش هفتگی کامل شد!\n\n"
-#             f"📊 آمار:\n"
-#             f"• استان‌های پردازش شده: {processed_count}\n"
-#             f"• کل ثروت اضافه شده: {total_wealth_added:,}\n"
-#             f"• تاریخ پردازش: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-#             f"• زمان پردازش بعدی: {(datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d %H:%M')}"
-#         )
-
-#         keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data="show_weekly_menu")]]
-#         await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-
-#     except Exception as e:
-#         logger.error(f"❌ خطا در اجرای پردازش هفتگی: {e}")
-#         await query.edit_message_text("❌ خطا در اجرای پردازش هفتگی")
-
-
-
-# async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     query = update.callback_query
-#     await query.answer()
-
-#     try:
-#         processed_count = 0
-#         total_wealth_added = 0
-
-#         with open("countries.json", "r", encoding="utf-8") as f:
-#             countries_data = json.load(f)
-
-#         for country, provinces in countries_data.get("countries_areas", {}).items():
-#             for province in provinces:
-#                 province_data = load_province_data(country, province)
-#                 if not province_data:
-#                     continue
-
-#                 # 💰 محاسبه درآمدها
-#                 mine_income, _ = calculate_weekly_income(province_data)
-#                 tax_income = calculate_tax_income(province_data)
-#                 income = mine_income + tax_income
-#                 province_data["wealth"] = province_data.get("wealth", 0) + income
-#                 total_wealth_added += income
-
-#                 # ⚙️ محاسبه تولیدات اقتصادی
-#                 production_results, _ = calculate_weekly_production(province_data)
-#                 if production_results:
-#                     if "economic_items" not in province_data:
-#                         province_data["economic_items"] = {}
-#                     for item, amount in production_results.items():
-#                         current = province_data["economic_items"].get(item, 0)
-#                         province_data["economic_items"][item] = current + amount
-
-#                 # 📈 محاسبه محبوبیت
-#                 popularity_change = calculate_province_popularity(province)
-#                 province_data["popularity"] = province_data.get("popularity", 50) + popularity_change
-
-#                 # 💾 ذخیره استان
-#                 save_province_data(country, province, province_data)
-#                 processed_count += 1
-
-#         # 🕒 به‌روزرسانی زمان آخرین اجرا
-#         from timer_manager import update_task_time
-#         update_task_time("last_weekly_update")
-
-#         text = (
-#             f"✅ پردازش هفتگی کامل شد!\n\n"
-#             f"📊 آمار:\n"
-#             f"• استان‌های پردازش شده: {processed_count}\n"
-#             f"• کل ثروت اضافه شده: {total_wealth_added:,}\n"
-#             f"• تاریخ پردازش: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-#             f"• زمان پردازش بعدی: {(datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d %H:%M')}"
-#         )
-
-#         keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data="show_weekly_menu")]]
-#         await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-
-#     except Exception as e:
-#         logger.error(f"❌ خطا در اجرای پردازش هفتگی: {e}")
-#         await query.edit_message_text("❌ خطا در اجرای پردازش هفتگی")
-
-
-
 async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -3302,226 +2077,6 @@ async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TY
     except Exception as e:
         logger.error(f"❌ خطا در اجرای پردازش هفتگی: {e}")
         await query.edit_message_text("❌ خطا در اجرای پردازش هفتگی")
-
-
-
-
-
-# async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Generate and save shop item to JSON file"""
-#     user_id = update.message.from_user.id
-#     user_data = context.user_data.get(user_id, {})
-#     item_data = user_data.get("shop_item_data", {})
-
-#     try:
-#         photo = item_data["photo"]
-#         name = item_data["name"]
-#         item_type = item_data["type"]
-#         country = item_data["country"]
-#         description = item_data["description"]
-#         price_materials = item_data["price"]
-#         owner_id = item_data["owner_id"]
-
-#         # Parse price and materials
-#         price = 0
-#         materials = {}
-
-#         # Extract price and materials from price_materials string
-#         # Expected format: "32000, Jewel:32" or "50000, فولاد:20, طلا:10"
-#         parts = price_materials.split(",")
-#         if parts:
-#             try:
-#                 price = int(parts[0].strip())
-#             except ValueError:
-#                 price = 0
-
-#             # Parse materials
-#             for part in parts[1:]:
-#                 if ":" in part:
-#                     mat_name, mat_amount = part.split(":", 1)
-#                     try:
-#                         materials[mat_name.strip()] = int(mat_amount.strip())
-#                     except ValueError:
-#                         continue
-
-#         # Create hashtags
-#         hashtags = [f"#{item_type}", f"#{country}"]
-
-#         # Create item data structure
-#         # new_item = {
-#         #     "name": name,
-#         #     "type": item_type,
-#         #     "country": country,
-#         #     "description": description,
-#         #     "price": price,
-#         #     "materials": materials,
-#         #     "owner": owner_id,
-#         #     "hashtags": hashtags,
-#         #     "photo_file_id": photo
-#         # }
-#         new_item = {
-#     "name": name,
-#     "type": item_type,
-#     "country": country,
-#     "description": description,
-#     "price": price,
-#     "materials": materials,
-#     "owner": owner_id,
-#     "hashtags": hashtags,
-#     "photo_file_id": photo,
-#     "count": item_data.get("count", 1)  # اضافه کردن تعداد سرباز
-# }
-
-
-#         # Save to JSON file
-#         from shop_handler import add_shop_item
-#         item_id = add_shop_item(new_item)
-
-#         # Also send to channel (optional - for backup/display purposes)
-#         try:
-#             caption = f"""──────⊱◈Shop◈⊰──────
-# ✦ Item Name : {name}
-# ✧ Item Type : {item_type}
-# ✦ Country : {country}
-# #{item_type}
-# #{country}
-# ✧ Description :
-# • {description}
-# ✦ Price & Materials :
-# • {price_materials}
-# ✧ Owner ID : {owner_id}
-# ──────⊹⊱✫⊰⊹──────
-# https://t.me/R_O_T_C
-# https://t.me/R_O_T_C_Shop"""
-
-#             await context.bot.send_photo(
-#                 chat_id=SHOP_CHANNEL,
-#                 photo=photo,
-#                 caption=caption
-#             )
-#         except Exception as channel_error:
-#             logger.warning(f"Could not send to channel: {channel_error}")
-
-#         await update.message.reply_text(
-#             f"✅ آیتم با موفقیت به فروشگاه اضافه شد!\n🆔 شناسه آیتم: {item_id}",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
-#             ]])
-#         )
-
-#         # Clear user data
-#         context.user_data[user_id] = {}
-
-#     except Exception as e:
-#         logger.error(f"Error generating shop item: {e}")
-#         await update.message.reply_text(
-#             f"❌ خطا در ایجاد آیتم: {str(e)}",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
-#             ]])
-#         )
-
-
-# async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Generate and save shop item to JSON file"""
-#     user_id = update.message.from_user.id
-#     user_data = context.user_data.get(user_id, {})
-#     item_data = user_data.get("shop_item_data", {})
-
-#     try:
-#         photo = item_data["photo"]
-#         name = item_data["name"]
-#         item_type = item_data["type"]
-#         countries = item_data.get("countries", [])  # تغییر به لیست
-#         description = item_data["description"]
-#         price_materials = item_data["price"]
-#         owner_id = item_data["owner_id"]
-#         count = item_data.get("count")
-#         if count and item_type.lower() == "army":
-#             description += f", تعداد: {count}"
-            
-#         # Parse price and materials
-#         price = 0
-#         materials = {}
-
-#         parts = price_materials.split(",")
-#         if parts:
-#             try:
-#                 price = int(parts[0].strip())
-#             except ValueError:
-#                 price = 0
-
-#             for part in parts[1:]:
-#                 if ":" in part:
-#                     mat_name, mat_amount = part.split(":", 1)
-#                     try:
-#                         materials[mat_name.strip()] = int(mat_amount.strip())
-#                     except ValueError:
-#                         continue
-
-#         # ساخت هشتگ‌ها
-#         hashtags = [f"#{item_type}"] + [h for h in item_data.get("hashtags", [])]
-
-#         # ایجاد ساختار آیتم
-#         new_item = {
-#             "name": name,
-#             "type": item_type,
-#             "countries": countries,  # ذخیره لیست کشورها
-#             "description": description,
-#             "price": price,
-#             "materials": materials,
-#             "owner": owner_id,
-#             "hashtags": hashtags,
-#             "photo_file_id": photo,
-#             "count": item_data.get("count", 1)
-#         }
-
-#         # ذخیره در فایل
-#         from shop_handler import add_shop_item
-#         item_id = add_shop_item(new_item)
-
-#         # ارسال در کانال
-#         try:
-#             caption = f"""──────⊱◈Shop◈⊰──────
-# ✦ Item Name : {name}
-# ✧ Item Type : {item_type}
-# ✦ Countries : {', '.join(countries)}
-# {' '.join(hashtags)}
-# ✧ Description :
-# • {description}
-# ✦ Price & Materials :
-# • {price_materials}
-# ✧ Owner ID : {owner_id}
-# ──────⊹⊱✫⊰⊹──────
-# https://t.me/R_O_T_C
-# https://t.me/R_O_T_C_Shop"""
-
-#             await context.bot.send_photo(
-#                 chat_id=SHOP_CHANNEL,
-#                 photo=photo,
-#                 caption=caption
-#             )
-#         except Exception as channel_error:
-#             logger.warning(f"Could not send to channel: {channel_error}")
-
-#         await update.message.reply_text(
-#             f"✅ آیتم با موفقیت به فروشگاه اضافه شد!\n🆔 شناسه آیتم: {item_id}",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
-#             ]])
-#         )
-
-#         # پاک کردن داده‌های کاربر
-#         context.user_data[user_id] = {}
-
-#     except Exception as e:
-#         logger.error(f"Error generating shop item: {e}")
-#         await update.message.reply_text(
-#             f"❌ خطا در ایجاد آیتم: {str(e)}",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")
-#             ]])
-#         )
 
 
 async def generate_shop_item_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -3795,12 +2350,7 @@ async def show_admin_shop_page_internal(query, context, user_id, page):
                 reply_markup=InlineKeyboardMarkup(keyboard)
             )
     
-# async def show_admin_shop_page(update: Update, context: ContextTypes.DEFAULT_TYPE, page: int = 0):
-#     """Helper function to call the internal shop page display"""
-#     query = update.callback_query
-#     await query.answer()
-#     user_id = update.effective_user.id
-#     await show_admin_shop_page_internal(query, context, user_id, page)
+
 async def show_admin_shop_page(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -3826,49 +2376,6 @@ def find_country_for_province(province_name, countries_file="countries.json"):
             return country
     return None
 
-
-# def preview_food_consumption(province_name):
-#     econ_file = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
-#     province_file = os.path.join(PROVINCE_FOLDER, province_name.replace(" ", "_") + ".json")
-
-#     econ_data = safe_load_json(econ_file)
-#     province_data = safe_load_json(province_file)
-#     if not econ_data or not province_data:
-#         return None
-
-#     population = province_data.get("population", 0)
-#     grain_priority = econ_data.get("grain_priority", [])
-#     grain_settings = econ_data.get("grains", {})
-#     items = province_data.get("economic_items", {}).copy()  # کپی برای جلوگیری از تغییر
-#     remaining_population = population
-
-#     consumption_result = []
-
-#     for grain in grain_priority:
-#         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
-#             continue
-
-#         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
-#         percent = max(0, grain_settings.get(grain, 0))
-#         multiplier = 1 + (percent / 100)
-#         units_per_person = (base_amount / base_people) * multiplier
-#         available_units = items[grain]
-#         max_people_supported = available_units / units_per_person
-
-#         if max_people_supported >= remaining_population:
-#             consumption_result.append(f"🍞 {grain}: تامین کامل ({remaining_population} نفر)")
-#             remaining_population = 0
-#             break
-#         else:
-#             consumption_result.append(f"🍞 {grain}: تامین ناقص ({int(max_people_supported)} نفر)")
-#             remaining_population -= int(max_people_supported)
-
-#     if remaining_population > 0:
-#         consumption_result.append(f"⚠️ جمعیت گرسنه: {int(remaining_population)} نفر")
-#     else:
-#         consumption_result.append("✅ تمام جمعیت غذا دریافت کردند")
-
-#     return consumption_result
 
 def preview_food_consumption(province_name):
     # econ_file فقط اسم استان
