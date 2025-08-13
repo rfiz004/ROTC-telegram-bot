@@ -13,12 +13,10 @@
     "نیزه دار": 100,
     "سواره نظام": 50
   },
-  "castle": [
-    "-"
-  ],
-  "structures": [],
-  "weapons": [],
-  "misc": [],
+  "castle": {},
+  "structures": {},
+  "weapons": {},
+  "misc": {},
   "economic_items": {
     "گندم": 0,
     "گوشت": 47,
