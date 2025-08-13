@@ -434,25 +434,46 @@ async def show_transfer_category_items(update: Update, context: ContextTypes.DEF
                 text += f"• {item}: {count:,}\n"
         text += "\n💡 آیتم‌ها و مقادیر را به فرمت زیر وارد کنید:\nگندم: 100\nگوشت: 50\nفولاد: 25"
 
+    # elif category == "misc":
+    #     text += "آیتم‌های متفرقه موجود:\n"
+    #     misc_items = province_data.get("misc", [])
+    #     for i, item in enumerate(misc_items, 1):
+    #         text += f"{i}. {item}\n"
+    #     text += "\n💡 آیتم‌ها را به فرمت زیر وارد کنید:\nنام آیتم 1: 1\nنام آیتم 2: 1"
+
+    # elif category == "weapons":
+    #     text += "سلاح‌های موجود:\n"
+    #     weapons = province_data.get("weapons", [])
+    #     for i, weapon in enumerate(weapons, 1):
+    #         text += f"{i}. {weapon}\n"
+    #     text += "\n💡 سلاح‌ها را به فرمت زیر وارد کنید:\nنام سلاح 1: 1\nنام سلاح 2: 1"
+
+    # elif category == "structures":
+    #     text += "سازه‌های موجود:\n"
+    #     structures = province_data.get("structures", [])
+    #     for i, structure in enumerate(structures, 1):
+    #         text += f"{i}. {structure}\n"
+    #     text += "\n💡 سازه‌ها را به فرمت زیر وارد کنید:\nنام سازه 1: 1\nنام سازه 2: 1"
+
     elif category == "misc":
         text += "آیتم‌های متفرقه موجود:\n"
-        misc_items = province_data.get("misc", [])
-        for i, item in enumerate(misc_items, 1):
-            text += f"{i}. {item}\n"
+        for item, count in province_data.get("misc", {}).items():
+            if count > 0:
+                text += f"• {item}: {count:,}\n"
         text += "\n💡 آیتم‌ها را به فرمت زیر وارد کنید:\nنام آیتم 1: 1\nنام آیتم 2: 1"
-
+    
     elif category == "weapons":
         text += "سلاح‌های موجود:\n"
-        weapons = province_data.get("weapons", [])
-        for i, weapon in enumerate(weapons, 1):
-            text += f"{i}. {weapon}\n"
+        for weapon, count in province_data.get("weapons", {}).items():
+            if count > 0:
+                text += f"• {weapon}: {count:,}\n"
         text += "\n💡 سلاح‌ها را به فرمت زیر وارد کنید:\nنام سلاح 1: 1\nنام سلاح 2: 1"
-
+    
     elif category == "structures":
         text += "سازه‌های موجود:\n"
-        structures = province_data.get("structures", [])
-        for i, structure in enumerate(structures, 1):
-            text += f"{i}. {structure}\n"
+        for structure, count in province_data.get("structures", {}).items():
+            if count > 0:
+                text += f"• {structure}: {count:,}\n"
         text += "\n💡 سازه‌ها را به فرمت زیر وارد کنید:\nنام سازه 1: 1\nنام سازه 2: 1"
 
     elif category == "army":
@@ -500,10 +521,28 @@ async def handle_transfer_quantity(update: Update, context: ContextTypes.DEFAULT
     province = user_data["province"]
     province_data = load_province_data(country, province)
 
+    # if category == "army":
+    #     current_amount = province_data["army"].get(item_name, 0)
+    # elif category == "weapons":
+    #     current_amount = province_data["weapons"].get(item_name, 0)
+    # elif category == "goods":
+    #     current_amount = province_data["economic_goods"].get(item_name, 0)
+    # elif category == "money":
+    #     current_amount = province_data["wealth"]
+    # elif category == "population":
+    #     current_amount = province_data["population"] // 2  # Max 50%
+    # else:
+    #     current_amount = 0
+
+
     if category == "army":
         current_amount = province_data["army"].get(item_name, 0)
     elif category == "weapons":
         current_amount = province_data["weapons"].get(item_name, 0)
+    elif category == "structures":
+        current_amount = province_data["structures"].get(item_name, 0)
+    elif category == "misc":
+        current_amount = province_data["misc"].get(item_name, 0)
     elif category == "goods":
         current_amount = province_data["economic_goods"].get(item_name, 0)
     elif category == "money":
@@ -513,6 +552,7 @@ async def handle_transfer_quantity(update: Update, context: ContextTypes.DEFAULT
     else:
         current_amount = 0
 
+    
     text = f"📦 انتقال {item_name}\n\n"
     text += f"موجودی فعلی: {current_amount:,}\n"
     text += f"مقصد: {user_data['transfer_target_country']} - {user_data['transfer_target_province']}\n\n"
