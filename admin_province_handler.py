@@ -442,7 +442,7 @@ async def handle_province_edit(update: Update, context: ContextTypes.DEFAULT_TYP
 
     # بارگذاری داده‌ها (با fallback‌هایی که شما قبلاً گذاشته‌اید)
     province_data = load_province_data(country, province)
-    province_info["structures"] = normalize_structures(province_info.get("structures", {}))
+    province_data["structures"] = normalize_structures(province_data.get("structures", {}))
     if not province_data:
         # تلاش برای پیدا کردن با نام‌های جایگزین
         alternative_names = [province, province.strip(), province.replace(" ", "_"), province.replace("_", " ")]
