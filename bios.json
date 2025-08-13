@@ -54,9 +54,9 @@
     "7760700178": {
       "country": "Northwood",
       "job": "ملکه",
-      "step": "asking_history",
+      "step": "asking_id_tag",
       "flow_type": "bio",
-      "saved_at": "2025-08-13T22:30:41.085598",
+      "saved_at": "2025-08-13T22:45:26.669026",
       "expires_at": "2025-08-13T22:55:48.626692",
       "name": "رایا",
       "nickname": "رز سیاه",
@@ -71,31 +71,9 @@
       "skill1": "مهارت شمشیرزنی و تبرزنی",
       "skill2": "رام کردن حیوان",
       "skill3": "مقاومت در برابر سم",
-      "appearance": "قد ۱۷۲\nموهای بلند و مشکی\nپوست سفید\nچشمای طوسی تیره"
-    },
-    "5159282891": {
-      "country": "Northwood",
-      "job": "خاندان سلطنتی",
-      "step": "asking_id_tag",
-      "flow_type": "bio",
-      "saved_at": "2025-08-13T22:40:06.474874",
-      "expires_at": "2025-08-13T23:00:08.000911",
-      "name": "Valentina",
-      "nickname": "Cannelle",
-      "age": "23",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "ستاره شناسی",
-        "مهارت شمشیرزنی و تبرزنی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "ستاره شناسی",
-      "skill3": "مهارت شمشیرزنی و تبرزنی",
-      "appearance": "موی بلند مشکی. چشم های درشت و سرد و گیرا.خال زیر چشم راست.قد 165. چشمای مشکی",
-      "history": "پرنسسی که از معشوقه ی پادشاهه\nو در خفا کارهاش رو انجام میده و مرموز هست",
-      "id_number": "@liliiummw"
+      "appearance": "قد ۱۷۲\nموهای بلند و مشکی\nپوست سفید\nچشمای طوسی تیره",
+      "history": "ملکه ای که قبلا طلسم شده بوده و بعد از اینکه طلسمش با کلی داستان باطل شد نسبت به سم مقاوم شد",
+      "id_number": "@im_not_tiara"
     }
   },
   "used_hashtags": [
@@ -163,6 +141,7 @@
     "#Amaryallis",
     "#Ivar",
     "#Emerald",
-    "#Enchantress"
+    "#Enchantress",
+    "#cannelleshi"
   ]
 }
