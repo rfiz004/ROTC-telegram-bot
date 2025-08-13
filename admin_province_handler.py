@@ -186,19 +186,45 @@ def format_province_info(province_info):
         text += f"✧ {unit} : {format_number(army.get(unit, 0))}\n"
     text += "\n"
 
+    # # قلعه
+    # castle = province_info.get("castle", [])
+    # text += "⬤ قلعه :\n"
+    # if castle:
+    #     for part in castle:
+    #         text += f"✧ {part}\n"
+    # else:
+    #     text += "✧\n"
+    # text += "\n"
+
+    # # سازه‌ها، سلاح، متفرقه
+    # for section in ["structures", "weapons", "misc"]:
+    #     items = province_info.get(section, [])
+    #     title = {
+    #         "structures": "سازه ها",
+    #         "weapons": "سلاح",
+    #         "misc": "متفرقه"
+    #     }[section]
+    #     text += f"⬤ {title} :\n"
+    #     if items:
+    #         for item in items:
+    #             text += f"✧ {item}\n"
+    #     else:
+    #         text += "✧\n"
+    #     text += "\n"
+
     # قلعه
-    castle = province_info.get("castle", [])
+    castle = province_info.get("castle", {})
     text += "⬤ قلعه :\n"
     if castle:
-        for part in castle:
-            text += f"✧ {part}\n"
+        for part, count in castle.items():
+            text += f"✧ {part} : {count}\n"
     else:
         text += "✧\n"
     text += "\n"
-
+    
     # سازه‌ها، سلاح، متفرقه
     for section in ["structures", "weapons", "misc"]:
-        items = province_info.get(section, [])
+        items = province_info.get(section, {})
         title = {
             "structures": "سازه ها",
             "weapons": "سلاح",
@@ -206,11 +232,12 @@ def format_province_info(province_info):
         }[section]
         text += f"⬤ {title} :\n"
         if items:
-            for item in items:
-                text += f"✧ {item}\n"
+            for item, count in items.items():
+                text += f"✧ {item} : {count}\n"
         else:
             text += "✧\n"
         text += "\n"
+
 
     # اقلام اقتصادی
     economic_items = province_info.get("economic_items", {})
