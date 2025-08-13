@@ -379,7 +379,15 @@ async def show_items_page(query, context, user_id, page, category):
         caption += f"{hashtag}\n"
 
     caption += f"✧ Description :\n"
-    caption += f"• {current_item.get('description', 'توضیحات موجود نیست')}\n"
+    caption += f"• {current_item.get('description', 'توضیحات موجود نیست')}"
+    
+    # اضافه کردن تعداد برای دسته‌های مشخص
+    count = current_item.get("count", 1)
+    item_type = current_item.get("type", "").lower()
+    
+    if item_type in ["army", "castle", "misc", "structure", "weapon"]:
+        caption += f"\n✦ تعداد موجود: {count}"
+
 
     caption += f"✦ Price & Materials :\n"
     caption += f"• {current_item.get('price', 0):,}"
@@ -557,15 +565,31 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
     })
     print(f"[DEBUG] handle_item_purchase triggered by user {user_id}")
 
+    # text = f"🛒 **خرید {item['name']}**\n\n"
+    # text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
+
+    # if item.get('materials'):
+    #     text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
+    #     for material, amount in item['materials'].items():
+    #         text += f"   • {material}: {amount}\n"
+
+    # text += "\n🔢 تعداد مورد نظر را وارد کنید:"
     text = f"🛒 **خرید {item['name']}**\n\n"
     text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
-
+    
     if item.get('materials'):
         text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
         for material, amount in item['materials'].items():
             text += f"   • {material}: {amount}\n"
-
+    
+    # اضافه کردن تعداد موجود
+    item_type = item.get("type", "").lower()
+    if item_type in ["army", "castle", "misc", "structure", "weapon"]:
+        count = item.get("count", 1)
+        text += f"\n✦ تعداد موجود: {count}\n"
+    
     text += "\n🔢 تعداد مورد نظر را وارد کنید:"
+
 
     keyboard = [
         [InlineKeyboardButton("🔙 برگشت", callback_data=f"shop_category_{category}")]
@@ -579,6 +603,89 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
     )
 
 
+
+
+# async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Handle quantity input from user"""
+#     user_id = update.message.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+
+#     if user_data.get("step") != "awaiting_quantity" or user_data.get("flow_type") != "shop_purchase":
+#         return False
+
+#     try:
+#         quantity = int(update.message.text.strip())
+#         if quantity <= 0:
+#             await update.message.reply_text("❌ تعداد باید عدد مثبت باشد.")
+#             return True
+
+#         if quantity > 1000:
+#             await update.message.reply_text("❌ حداکثر تعداد مجاز 1000 است.")
+#             return True
+
+#     except ValueError:
+#         await update.message.reply_text("❌ لطفاً عدد معتبر وارد کنید.")
+#         return True
+
+#     item = user_data.get("purchase_item")
+#     if not item:
+#         await update.message.reply_text("❌ خطا در خرید.", reply_markup=back_and_home_buttons())
+#         return True
+
+#     # Validate resources
+#     country = user_data.get("country")
+#     province = user_data.get("province")
+
+#     if not country or not province:
+#         await update.message.reply_text("❌ اطلاعات استان یافت نشد.", reply_markup=back_and_home_buttons())
+#         return True
+
+#     province_data = load_province_data(country, province)
+#     if not province_data:
+#         await update.message.reply_text("❌ خطا در بارگذاری اطلاعات استان.", reply_markup=back_and_home_buttons())
+#         return True
+
+#     total_price = item["price"] * quantity
+#     total_materials = {}
+#     for material, amount in item.get("materials", {}).items():
+#         total_materials[material] = amount * quantity
+
+#     # Check gold
+#     if province_data.get("wealth", 0) < total_price:
+#         shortage = total_price - province_data.get("wealth", 0)
+#         await update.message.reply_text(
+#             f"❌ طلای کافی ندارید!\n\n"
+#             f"💰 مورد نیاز: {total_price:,} طلا\n"
+#             f"💰 موجودی: {province_data.get('wealth', 0):,} طلا\n"
+#             f"❌ کمبود: {shortage:,} طلا"
+#         )
+#         return True
+
+    
+#     # Store final data for confirmation
+#     context.user_data[user_id]["purchase_quantity"] = quantity
+#     context.user_data[user_id]["total_price"] = total_price
+#     context.user_data[user_id]["total_materials"] = total_materials
+
+#     text = f"🛒 **تأیید نهایی خرید**\n\n"
+#     text += f"📦 کالا: {item['name']}\n"
+#     text += f"🔢 تعداد: {quantity:,}\n"
+#     text += f"💰 قیمت کل: {total_price:,} طلا\n"
+
+#     if total_materials:
+#         text += "\n🔧 مواد مصرفی:\n"
+#         for material, amount in total_materials.items():
+#             text += f"   • {material}: {amount:,}\n"
+
+#     text += "\n✅ آیا مطمئن هستید؟"
+
+#     keyboard = [
+#         [InlineKeyboardButton("✅ تأیید خرید", callback_data="confirm_purchase")],
+#         [InlineKeyboardButton("❌ لغو", callback_data=f"shop_category_{user_data.get('category', '')}")]
+#     ]
+
+#     await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
+#     return True
 
 
 async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -608,7 +715,7 @@ async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TY
         await update.message.reply_text("❌ خطا در خرید.", reply_markup=back_and_home_buttons())
         return True
 
-    # Validate resources
+    # Load province data
     country = user_data.get("country")
     province = user_data.get("province")
 
@@ -621,10 +728,8 @@ async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TY
         await update.message.reply_text("❌ خطا در بارگذاری اطلاعات استان.", reply_markup=back_and_home_buttons())
         return True
 
+    # Calculate total price
     total_price = item["price"] * quantity
-    total_materials = {}
-    for material, amount in item.get("materials", {}).items():
-        total_materials[material] = amount * quantity
 
     # Check gold
     if province_data.get("wealth", 0) < total_price:
@@ -637,11 +742,22 @@ async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TY
         )
         return True
 
+    # Check all materials using the helper function
+    missing_materials = check_materials(province_data, item, quantity)
+    if missing_materials:
+        msg = "❌ مواد کافی موجود نیست:\n"
+        for mat, amt in missing_materials.items():
+            msg += f"   • {mat}: کمبود {amt}\n"
+        await update.message.reply_text(msg, reply_markup=back_and_home_buttons())
+        return True
+
     # Store final data for confirmation
+    total_materials = {mat: amt * quantity for mat, amt in item.get("materials", {}).items()}
     context.user_data[user_id]["purchase_quantity"] = quantity
     context.user_data[user_id]["total_price"] = total_price
     context.user_data[user_id]["total_materials"] = total_materials
 
+    # Prepare confirmation text
     text = f"🛒 **تأیید نهایی خرید**\n\n"
     text += f"📦 کالا: {item['name']}\n"
     text += f"🔢 تعداد: {quantity:,}\n"
@@ -661,6 +777,49 @@ async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TY
 
     await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
     return True
+
+
+
+def check_materials(province_data, item, quantity):
+    missing = {}
+    for mat, required in item.get("materials", {}).items():
+        total_required = required * quantity
+        found = False
+
+        # Army
+        if mat in province_data.get("army", {}):
+            if province_data["army"][mat] < total_required:
+                missing[mat] = total_required - province_data["army"][mat]
+            found = True
+
+        # Castle, Structures, Weapons, Misc
+        for key in ["castle", "structures", "weapons", "misc"]:
+            section = province_data.get(key, {})
+            if mat in section:
+                if section[mat] < total_required:
+                    missing[mat] = total_required - section[mat]
+                found = True
+
+        # Economic items
+        if mat in province_data.get("economic_items", {}):
+            if province_data["economic_items"][mat] < total_required:
+                missing[mat] = total_required - province_data["economic_items"][mat]
+            found = True
+
+        # Economic structures
+        for es_name, es_data in province_data.get("economic_structures", {}).items():
+            if es_data.get("product") == mat:
+                available = es_data.get("count", 0) * es_data.get("weekly_output", 0)
+                if available < total_required:
+                    missing[mat] = total_required - available
+                found = True
+
+        if not found:
+            # Material not found anywhere
+            missing[mat] = total_required
+
+    return missing
+
 
 # async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
 #     print(f"[DEBUG] confirm_purchase triggered by user {user_id}")
