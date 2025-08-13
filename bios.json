@@ -41,16 +41,6 @@
       "expires_at": "2025-08-10T08:42:04.345390",
       "name": "Anna"
     },
-    "6633616565": {
-      "country": "Azure",
-      "job": "مسئولین جزیره",
-      "step": "asking_age",
-      "flow_type": "bio",
-      "saved_at": "2025-08-12T08:29:56.884239",
-      "expires_at": "2025-08-12T08:59:42.515527",
-      "name": "رفعژنرا",
-      "nickname": "ژبعزلر"
-    },
     "7270352750": {
       "step": "pending",
       "country": "Azure",
