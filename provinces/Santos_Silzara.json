@@ -54,23 +54,5 @@
       "product": "شیشه",
       "weekly_output": 50
     }
-  },
-  "structure_productions": {
-    "دامداری": {
-      "produces": "گوشت",
-      "weekly_per_unit": 100
-    },
-    "کارخونه‌چرم": {
-      "produces": "چرم",
-      "weekly_per_unit": 50
-    },
-    "جواهرسازی": {
-      "produces": "جواهر",
-      "weekly_per_unit": 50
-    },
-     "کارخونه‌شیشه": {
-      "product": "شیشه",
-      "weekly_per_unit": 50
-    }
   }
 }
