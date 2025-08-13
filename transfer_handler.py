@@ -221,7 +221,7 @@ async def show_transfer_menu(update: Update, context: ContextTypes.DEFAULT_TYPE)
         [InlineKeyboardButton("🏠 انتقال داخلی", callback_data="transfer_domestic")],
         [InlineKeyboardButton("🌍 انتقال بین‌المللی", callback_data="transfer_international")],
         [InlineKeyboardButton("📋 انتقالات در انتظار", callback_data="view_pending_transfers")],
-        [InlineKeyboardButton("🔙 برگشت", callback_data="back_to_previous")]
+        [InlineKeyboardButton("🔙 برگشت", callback_data="back_to_country_menu")]
     ]
 
     await query.edit_message_text(
