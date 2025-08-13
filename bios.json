@@ -50,6 +50,16 @@
       "expires_at": "2025-08-13T04:20:51.432060",
       "name": "Kāvus",
       "nickname": "-"
+    },
+    "7270352750": {
+      "country": "Azure",
+      "job": "مشاغل آزاد",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-13T16:13:25.585766",
+      "expires_at": "2025-08-13T16:43:09.853921",
+      "name": "Esmeralda",
+      "nickname": "Emerald Enchantress"
     }
   },
   "used_hashtags": [
