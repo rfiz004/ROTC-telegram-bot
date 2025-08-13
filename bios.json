@@ -76,12 +76,24 @@
     "5159282891": {
       "country": "Northwood",
       "job": "خاندان سلطنتی",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-13T22:30:22.362639",
+      "saved_at": "2025-08-13T22:32:15.057269",
       "expires_at": "2025-08-13T23:00:08.000911",
       "name": "Valentina",
-      "nickname": "Cannelle"
+      "nickname": "Cannelle",
+      "age": "23",
+      "skills": [
+        "مدیریت امور اقتصادی",
+        "ستاره شناسی",
+        "مهارت شمشیرزنی و تبرزنی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مدیریت امور اقتصادی",
+      "skill2": "ستاره شناسی",
+      "skill3": "مهارت شمشیرزنی و تبرزنی",
+      "appearance": "موی بلند مشکی. چشم های درشت و سرد و گیرا.خال زیر چشم راست.قد 165. چشمای مشکی"
     }
   },
   "used_hashtags": [
