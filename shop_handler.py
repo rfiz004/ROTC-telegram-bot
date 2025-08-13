@@ -955,12 +955,32 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Stone mine", "Tin mine", "Iron mine", "Coal mine",
         "Copper mine", "Silver mine", "Golden mine", "Diamond mine"
     ]
-
+    
     # if item_type == "army":
+    #     base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
+    #     total_units = base_count * quantity  # مجموع سربازها
     #     if "army" not in province_data:
     #         province_data["army"] = {}
-    #     province_data["army"][item_name] = province_data["army"].get(item_name, 0) + quantity
-    #     province_data["total_army"] = province_data.get("total_army", 0) + quantity
+    #     province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
+    #     province_data["total_army"] = province_data.get("total_army", 0) + total_units
+
+
+    # elif item_type == "weapon":
+    #     if "weapons" not in province_data:
+    #         province_data["weapons"] = []
+    #     province_data["weapons"].extend([item_name] * quantity)
+
+    # elif item_type == "castle":
+    #     if "castle" not in province_data:
+    #         province_data["castle"] = []
+    #     province_data["castle"].extend([item_name] * quantity)
+
+    # elif item_type == "structure":
+    #     if "structures" not in province_data:
+    #         province_data["structures"] = []
+    #     province_data["structures"].extend([item_name] * quantity)
+
+
     if item_type == "army":
         base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
         total_units = base_count * quantity  # مجموع سربازها
@@ -968,22 +988,21 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
             province_data["army"] = {}
         province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
         province_data["total_army"] = province_data.get("total_army", 0) + total_units
-
-
+    
     elif item_type == "weapon":
         if "weapons" not in province_data:
-            province_data["weapons"] = []
-        province_data["weapons"].extend([item_name] * quantity)
-
+            province_data["weapons"] = {}
+        province_data["weapons"][item_name] = province_data["weapons"].get(item_name, 0) + quantity
+    
     elif item_type == "castle":
         if "castle" not in province_data:
-            province_data["castle"] = []
-        province_data["castle"].extend([item_name] * quantity)
-
+            province_data["castle"] = {}
+        province_data["castle"][item_name] = province_data["castle"].get(item_name, 0) + quantity
+    
     elif item_type == "structure":
         if "structures" not in province_data:
-            province_data["structures"] = []
-        province_data["structures"].extend([item_name] * quantity)
+            province_data["structures"] = {}
+        province_data["structures"][item_name] = province_data[
 
     elif item_type == "econstructure":
         if "mines" not in province_data:
@@ -1025,10 +1044,10 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     "weekly_output": weekly_output
                 }
 
-    else:
+    else:  # misc
         if "misc" not in province_data:
-            province_data["misc"] = []
-        province_data["misc"].extend([item_name] * quantity)
+            province_data["misc"] = {}
+        province_data["misc"][item_name] = province_data["misc"].get(item_name, 0) + quantity
 
     # ذخیره اطلاعات
     save_province_data(country, province, province_data)
