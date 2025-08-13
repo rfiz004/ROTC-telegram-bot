@@ -4,7 +4,7 @@
   "mines": {
     "Copper": 1
   },
-  "wealth": 7700,
+  "wealth": 1700,
   "population": 40000,
   "tax": 30,
   "popularity": 70,
@@ -21,16 +21,16 @@
     "دروازه لولایی": 1
   },
   "structures": {
-    "کشتی کوچک": 5,
+    "کشتی کوچک": 2,
     "کشتی متوسط": 3,
     "کشتی بزرگ": 1,
-    "منجنیق": 3
+    "منجنیق": 2
   },
   "weapons": {},
   "misc": {},
   "economic_items": {
     "گندم": 44,
-    "گوشت": 0,
+    "گوشت": 50,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,
@@ -51,17 +51,17 @@
       "weekly_output": 100
     },
     "مرغداری": {
-      "count": 0,
+      "count": 1,
       "product": "مرغ",
       "weekly_output": 100
     },
     "کارخونه شراب": {
-      "count": 0,
+      "count": 1,
       "product": "شراب",
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 0,
+      "count": 1,
       "product": "شیشه",
       "weekly_output": 50
     }
