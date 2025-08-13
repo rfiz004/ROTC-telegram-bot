@@ -920,6 +920,9 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
+    with open("economic_structures.json", "r", encoding="utf-8") as f:
+        all_econ_structs = json.load(f)
+
     user_id = query.from_user.id
     user_data = context.user_data.get(user_id, {})
 
@@ -1045,8 +1048,6 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #             }
     
     # بارگذاری دیکشنری مرکزی سازه‌ها
-    with open("economic_structures.json", "r", encoding="utf-8") as f:
-        all_econ_structs = json.load(f)
     
     elif item_type == "econstructure":
         if "economic_structures" not in province_data:
