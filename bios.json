@@ -50,30 +50,6 @@
       "expires_at": "2025-08-13T20:32:02.417141",
       "name": "Kavus",
       "nickname": "-"
-    },
-    "958234818": {
-      "country": "Azure",
-      "job": "دوک",
-      "step": "asking_id_tag",
-      "flow_type": "bio",
-      "saved_at": "2025-08-14T23:04:45.889709",
-      "expires_at": "2025-08-14T23:25:49.873106",
-      "name": "sunraku",
-      "nickname": "نکته بین\nچنگ سرخ",
-      "age": "28",
-      "skills": [
-        "کشتیرانی",
-        "کشتی سازی",
-        "کیمیاگری"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 3,
-      "skill1": "کشتیرانی",
-      "skill2": "کشتی سازی",
-      "skill3": "کیمیاگری",
-      "appearance": "قد 186\nوزن 86\nظاهری آراسته و ورزشکار",
-      "history": "او با تاکتیک های برق آسا و خاص و شجاعت بی بدیلش نامی در جهان برای خود رقم زده است",
-      "id_number": "@Erfan386"
     }
   },
   "used_hashtags": [
@@ -146,6 +122,7 @@
     "#Queen",
     "#ELIZ",
     "#Damian",
-    "#Henry"
+    "#Henry",
+    "#SUN"
   ]
 }
