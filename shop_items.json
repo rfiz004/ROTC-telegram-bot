@@ -522,5 +522,29 @@
     "count": 1,
     "id": "26",
     "created_at": "2025-08-14T19:47:39.972690"
+  },
+  {
+    "name": "کشتی بزرگ",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "کشتی های با اندازه بزرگ که قابلیت انتقال و جا یه جایی 1000 سربازو دارن\nاین نوع کشتی مقاومتی بالا(زیاد) و سرعتی پایین(کم) دارن\nو همچنین قابلیت نصب پنج ابزار جنگی روی این کشتی هست, تعداد: 1",
+    "price": 40000,
+    "materials": {
+      "چوب": 1500,
+      "فولاد": 300,
+      "پنبه": 500,
+      "پارچه": 800
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAI6Y2iePmQlcj2ChUfjPb3oexi-7MIpAAKgyTEbKur5UPldLNsluXWtAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "27",
+    "created_at": "2025-08-14T19:55:08.742974"
   }
 ]
