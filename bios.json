@@ -54,12 +54,27 @@
     "1203085126": {
       "country": "Alpyr",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-14T15:11:24.604974",
+      "saved_at": "2025-08-14T15:19:47.427300",
       "expires_at": "2025-08-14T15:40:52.335294",
       "name": "Elizabeth",
-      "nickname": "Eliz"
+      "nickname": "Eliz",
+      "age": "18",
+      "skills": [
+        "مهارت کار با خنجر",
+        "کیمیاگری",
+        "مخفی‌کاری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "کیمیاگری",
+      "skill3": "مخفی‌کاری",
+      "appearance": "قد: ۱۵۸ سانتی‌متر\n\nاندام: لاغر و ظریف\n\nپوست: روشن\n\nمو: سفید، معمولاً صاف یا کمی موج‌دار \n\nچشم: قرمز، درشت و نافذ\n\nابرو: کشیده و خوش‌فرم\n\nلبخند: مرموز و بازیگوش، انگار پشتش همیشه یک نقشه هست\n\nاستایل رفتاری: شیطنت‌آمیز، خشن در مواقع لازم، همیشه در حال خرابکاری",
+      "history": "ندارد",
+      "id_number": "@Eliz_Robin",
+      "user_id_tag": "#ELIZ"
     }
   },
   "used_hashtags": [
@@ -129,6 +144,7 @@
     "#Emerald",
     "#Enchantress",
     "#cannelleshi",
-    "#Queen"
+    "#Queen",
+    "#ELIZ"
   ]
 }
