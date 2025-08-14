@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Serenavis",
   "mines": {},
-  "wealth": 1500,
+  "wealth": 0,
   "population": 14000,
   "tax": 50,
   "popularity": 70,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "باغ": {
-      "count": 0,
+      "count": 1,
       "product": "میوه",
       "weekly_output": 100
     },
