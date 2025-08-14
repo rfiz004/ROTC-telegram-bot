@@ -50,28 +50,6 @@
       "expires_at": "2025-08-13T20:32:02.417141",
       "name": "Kavus",
       "nickname": "-"
-    },
-    "6700362625": {
-      "country": "Santos",
-      "job": "خاندان امپراطوری",
-      "step": "asking_history",
-      "flow_type": "bio",
-      "saved_at": "2025-08-14T16:30:19.965447",
-      "expires_at": "2025-08-14T16:55:37.554645",
-      "name": "Damian von Waldenheim",
-      "nickname": "Crimson Flame",
-      "age": "34",
-      "skills": [
-        "تیراندازی با کمان",
-        "مدیریت امور نظامی",
-        "رام کردن حیوان"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "تیراندازی با کمان",
-      "skill2": "مدیریت امور نظامی",
-      "skill3": "رام کردن حیوان",
-      "appearance": "…"
     }
   },
   "used_hashtags": [
@@ -142,6 +120,7 @@
     "#Enchantress",
     "#cannelleshi",
     "#Queen",
-    "#ELIZ"
+    "#ELIZ",
+    "#Damian"
   ]
 }
