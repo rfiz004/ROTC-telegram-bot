@@ -2,9 +2,9 @@
   "country": "Alestria",
   "province": "Serenavis",
   "mines": {},
-  "wealth": 1000,
+  "wealth": 1500,
   "population": 14000,
-  "tax": 40,
+  "tax": 50,
   "popularity": 70,
   "total_army": 5000,
   "army": {
