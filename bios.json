@@ -50,6 +50,15 @@
       "expires_at": "2025-08-13T20:32:02.417141",
       "name": "Kavus",
       "nickname": "-"
+    },
+    "958234818": {
+      "country": "Azure",
+      "job": "دوک",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-14T22:34:49.138395",
+      "expires_at": "2025-08-14T23:04:32.889543",
+      "name": "sunraku"
     }
   },
   "used_hashtags": [
