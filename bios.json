@@ -54,11 +54,12 @@
     "958234818": {
       "country": "Azure",
       "job": "دوک",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-14T22:34:49.138395",
+      "saved_at": "2025-08-14T22:47:37.520283",
       "expires_at": "2025-08-14T23:04:32.889543",
-      "name": "sunraku"
+      "name": "sunraku",
+      "nickname": "نکته دان\nچنگ سرخ"
     }
   },
   "used_hashtags": [
