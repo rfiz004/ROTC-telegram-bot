@@ -7,7 +7,7 @@
   "wealth": 1100,
   "population": 40000,
   "tax": 0,
-  "popularity": 68,
+  "popularity": 67,
   "total_army": 5000,
   "army": {
     "کماندار": 3000,
@@ -20,11 +20,11 @@
     "برج در هر گوشه": 4,
     "دروازه لولایی": 1
   },
-"structures": {
+  "structures": {
     "منجنیق": 5,
     "بالیستا": 5,
     "دژکوب": 1
-},
+  },
   "weapons": {},
   "misc": {},
   "economic_items": {
