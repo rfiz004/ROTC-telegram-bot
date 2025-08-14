@@ -498,5 +498,29 @@
     "count": 1,
     "id": "25",
     "created_at": "2025-08-14T18:51:35.241935"
+  },
+  {
+    "name": "کشتی متوسط",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "کشتی های با اندازه متوسط که قابلیت انتقال و جا یه جایی 500 سربازو دارن\nاین نوع کشتی مقاومتی نسبتا بالا(متوسط) و سرعتی نسبتا بالا(متوسط) \nو همچنین قابلیت نصب دو ابزار جنگی روی این کشتی هست, تعداد: 1",
+    "price": 20000,
+    "materials": {
+      "چوب": 750,
+      "فولاد": 150,
+      "پنبه": 250,
+      "پارچه": 400
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAI6TGiePSa7fsxrdQNERIqNCXaYfxuRAAKZyTEbKur5UOPt4XfASoJTAQADAgADeQADNgQ",
+    "count": 1,
+    "id": "26",
+    "created_at": "2025-08-14T19:47:39.972690"
   }
 ]
