@@ -50,62 +50,6 @@
       "expires_at": "2025-08-13T20:32:02.417141",
       "name": "Kavus",
       "nickname": "-"
-    },
-    "7465909250": {
-      "step": "pending",
-      "country": "Alestria",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-08-15T08:04:54.534367",
-      "name": "Charllet",
-      "nickname": "Rainy",
-      "age": "18",
-      "skills": [
-        "ستاره شناسی",
-        "نوازندگی",
-        "حس ششم"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 3,
-      "skill1": "ستاره شناسی",
-      "skill2": "نوازندگی",
-      "skill3": "حس ششم",
-      "appearance": "موهای بلند سفید\nدم و گوش گربه‌ای\nبال های فرشته مانند\nقد حدود ۱۶۰",
-      "history": "بخاطر مشکلات گذشته کمی شخصیت ارومی هستی",
-      "id_number": "@Meiskskjz",
-      "user_id_tag": "#charllet",
-      "photo": "AgACAgQAAxkBAAI78mie5KuFbY9vVsDmoW3CM07TrfzXAAI9yDEbZuH4UOZBOBgZkLZjAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "7465909250",
-      "saved_at": "2025-08-15T07:41:32.133679"
-    },
-    "7645102696": {
-      "step": "pending",
-      "country": "Alestria",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-08-15T08:16:38.764325",
-      "name": "garo",
-      "nickname": "soul",
-      "age": "28",
-      "skills": [
-        "قدرت بدنی بالا",
-        "مقاومت در برابر سم",
-        "مهارت کار با خنجر"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "قدرت بدنی بالا",
-      "skill2": "مقاومت در برابر سم",
-      "skill3": "مهارت کار با خنجر",
-      "appearance": "چشمان قرمز \nکویه سیاه رنگ\nقدی بلند و بدنی ورزیده \nدارایه خالکوبی هایه متعدد رو کل دو دست و قسمت کمر",
-      "history": "او در کودکی خانواده اش را از دست داد و مجبور بود برایه زنده ماندن دست به دزدی و خلاف بزن به همین دلیل بعد سال ها تمرین و کار مکرر او الا قاتلی حرفه است که تنها برایه منفعتش دزدی میکند و میکشد",
-      "id_number": "@Nobody_d_v_h",
-      "user_id_tag": "#soul",
-      "photo": "AgACAgQAAxkBAAI8S2ie7E3a1B5WDGvjCCyIi4Y9lv4RAAIwyTEbh0T4UGDU-lpyO3NiAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "7645102696",
-      "saved_at": "2025-08-15T08:14:05.271691"
     }
   },
   "used_hashtags": [
