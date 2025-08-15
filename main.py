@@ -6,6 +6,18 @@ import signal
 import subprocess
 import sys
 import traceback
+import secrets
+
+import ipaddress
+
+TELEGRAM_IPS = [
+    "149.154.160.0/20",
+    "91.108.4.0/22"
+]
+
+def is_telegram_ip(ip):
+    return any(ipaddress.ip_address(ip) in ipaddress.ip_network(net) for net in TELEGRAM_IPS)
+
 
 # --- Third-party modules ---
 from aiohttp import web
@@ -360,16 +372,97 @@ if hasattr(app, 'job_queue') and app.job_queue:
     app.job_queue.run_repeating(scheduled_cleanup, interval=1800, first=1800)
 
 # ────────────── Webhook Functions
+# async def set_webhook_handler(request):
+#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+#     if not render_url:
+#         return web.Response(text="Missing RENDER_EXTERNAL_HOSTNAME", status=500)
+
+#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+#     await app.bot.set_webhook(url=webhook_url, max_connections=15)
+#     return web.Response(text=f"Webhook set to {webhook_url}")
+
+# async def handle_webhook(request):
+#     try:
+#         data = await request.json()
+#         update = Update.de_json(data, app.bot)
+#         asyncio.create_task(app.process_update(update))
+#         return web.Response(text="OK")
+#     except Exception:
+#         logging.exception("❌ Webhook handler error")
+#         return web.Response(status=503, text="Error")
+
+# async def root(request):
+#     return web.Response(text="Bot is alive!")
+
+# # ────────────── Main
+# async def main():
+#     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+#     if not render_url:
+#         logger.error("❌ RENDER_EXTERNAL_HOSTNAME is not set")
+#         return
+
+#     webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+#     logger.info(f"✅ Setting webhook to: {webhook_url}")
+
+#     await app.initialize()
+#     await set_bot_commands(app)
+#     await app.bot.set_webhook(url=webhook_url, max_connections=15)
+#     await app.start()
+
+#     webapp = web.Application()
+#     webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
+#     webapp.router.add_get("/", root)
+#     webapp.router.add_get("/setwebhook", set_webhook_handler)
+
+#     runner = web.AppRunner(webapp)
+#     await runner.setup()
+#     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
+#     await site.start()
+
+#     # asyncio.create_task(auto_push_every_15_minutes())  # گیت پوش خودکار
+#     asyncio.create_task(periodic_git_push())
+    
+#     logger.info(f"🚀 Bot is running with webhook on port {PORT}")
+#     await asyncio.Event().wait()
+
+# if __name__ == "__main__":
+#     asyncio.run(main())
+
+
+
+WEBHOOK_PATH = secrets.token_hex(32)  # ۶۴ کاراکتر تصادفی
+SECRET_TOKEN = secrets.token_hex(16)  # توکن مخفی ۳۲ کاراکتری
+
+logger = logging.getLogger(__name__)
+
 async def set_webhook_handler(request):
+    # فقط با کلید ادمین اجازه بدیم
+    auth = request.query.get("auth")
+    if auth != os.environ.get("ADMIN_KEY"):  # توی تنظیمات Render مقدار ADMIN_KEY رو ست کن
+        return web.Response(status=403, text="Forbidden")
+
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
         return web.Response(text="Missing RENDER_EXTERNAL_HOSTNAME", status=500)
 
-    webhook_url = f"https://{render_url}/{BOT_TOKEN}"
-    await app.bot.set_webhook(url=webhook_url, max_connections=15)
+    webhook_url = f"https://{render_url}/{WEBHOOK_PATH}"
+    await app.bot.set_webhook(
+        url=webhook_url,
+        max_connections=15,
+        secret_token=SECRET_TOKEN
+    )
     return web.Response(text=f"Webhook set to {webhook_url}")
 
 async def handle_webhook(request):
+    peer_ip = request.remote
+    if not is_telegram_ip(peer_ip):
+        logger.warning(f"❌ Request from non-Telegram IP: {peer_ip}")
+        return web.Response(status=403, text="Forbidden")
+
+    if request.headers.get("X-Telegram-Bot-Api-Secret-Token") != SECRET_TOKEN:
+        logger.warning("❌ Invalid secret token in webhook request")
+        return web.Response(status=403, text="Forbidden")
+
     try:
         data = await request.json()
         update = Update.de_json(data, app.bot)
@@ -379,26 +472,30 @@ async def handle_webhook(request):
         logging.exception("❌ Webhook handler error")
         return web.Response(status=503, text="Error")
 
+
 async def root(request):
     return web.Response(text="Bot is alive!")
 
-# ────────────── Main
 async def main():
     render_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
     if not render_url:
         logger.error("❌ RENDER_EXTERNAL_HOSTNAME is not set")
         return
 
-    webhook_url = f"https://{render_url}/{BOT_TOKEN}"
+    webhook_url = f"https://{render_url}/{WEBHOOK_PATH}"
     logger.info(f"✅ Setting webhook to: {webhook_url}")
 
     await app.initialize()
     await set_bot_commands(app)
-    await app.bot.set_webhook(url=webhook_url, max_connections=15)
+    await app.bot.set_webhook(
+        url=webhook_url,
+        max_connections=15,
+        secret_token=SECRET_TOKEN
+    )
     await app.start()
 
     webapp = web.Application()
-    webapp.router.add_post(f"/{BOT_TOKEN}", handle_webhook)
+    webapp.router.add_post(f"/{WEBHOOK_PATH}", handle_webhook)
     webapp.router.add_get("/", root)
     webapp.router.add_get("/setwebhook", set_webhook_handler)
 
@@ -407,9 +504,7 @@ async def main():
     site = web.TCPSite(runner, host="0.0.0.0", port=PORT)
     await site.start()
 
-    # asyncio.create_task(auto_push_every_15_minutes())  # گیت پوش خودکار
     asyncio.create_task(periodic_git_push())
-    
     logger.info(f"🚀 Bot is running with webhook on port {PORT}")
     await asyncio.Event().wait()
 
