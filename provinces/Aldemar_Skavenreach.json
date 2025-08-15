@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Skavenreach",
   "mines": {},
-  "wealth": 7000,
+  "wealth": 1000,
   "population": 14000,
   "tax": 100,
   "popularity": 61,
@@ -35,12 +35,12 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 2,
+      "count": 4,
       "product": "ماهی",
       "weekly_output": 100
     },
     "جواهرسازی": {
-      "count": 0,
+      "count": 1,
       "product": "جواهر",
       "weekly_output": 50
     },
