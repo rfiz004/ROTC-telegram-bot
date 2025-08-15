@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 20000,
+  "wealth": 10000,
   "population": 30000,
   "tax": 100,
   "popularity": 60,
@@ -46,7 +46,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 1,
+      "count": 6,
       "product": "ماهی",
       "weekly_output": 100
     },
