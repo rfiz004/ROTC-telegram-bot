@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 16800,
+  "wealth": 800,
   "population": 30000,
   "tax": 10,
   "popularity": 71,
@@ -46,7 +46,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 2,
+      "count": 4,
       "product": "مرغ",
       "weekly_output": 100
     },
@@ -56,12 +56,12 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 2,
       "product": "سنگ",
       "weekly_output": 50
     },
     "کارخونه فولاد": {
-      "count": 0,
+      "count": 2,
       "product": "فولاد",
       "weekly_output": 50
     }
