@@ -207,38 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_809172681_1755277654",
-      "requester_id": 809172681,
-      "source_country": "Alestria",
-      "source_province": "Lilura",
-      "target_country": "Alestria",
-      "target_province": "Alkyanos",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 2500
-      },
-      "status": "pending",
-      "requested_at": "2025-08-15T17:07:34.737456",
-      "delay_until": "2025-08-16T17:07:34.737459"
-    },
-    {
-      "id": "transfer_809172681_1755278409",
-      "requester_id": 809172681,
-      "source_country": "Alestria",
-      "source_province": "Guardian-of-Sharia",
-      "target_country": "Alestria",
-      "target_province": "Serenavis",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "گوشت": 100
-      },
-      "status": "pending",
-      "requested_at": "2025-08-15T17:20:09.267072",
-      "delay_until": "2025-08-16T17:20:09.267075"
     }
   ]
 }
