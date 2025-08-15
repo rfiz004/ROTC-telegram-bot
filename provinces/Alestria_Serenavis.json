@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Serenavis",
   "mines": {},
-  "wealth": 2500,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 69,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "گندم": 0,
-    "گوشت": 119,
+    "گوشت": 111,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 100,
