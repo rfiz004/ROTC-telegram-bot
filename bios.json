@@ -54,12 +54,24 @@
     "2087314897": {
       "country": "Northwood",
       "job": "روح گرگ",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T16:10:31.500075",
+      "saved_at": "2025-08-15T16:20:38.421154",
       "expires_at": "2025-08-15T16:35:03.505195",
       "name": "کانکی",
-      "nickname": "پادشاه رانده شدگان"
+      "nickname": "پادشاه رانده شدگان",
+      "age": "33",
+      "skills": [
+        "مهارت کار با خنجر",
+        "سوارکاری",
+        "سم شناسی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "سوارکاری",
+      "skill3": "سم شناسی",
+      "appearance": "موهای مشکی \nظاهری صاف و براق \nریش بزی \nجای زخم های متعدد و برجسته روی دو تا شانه"
     }
   },
   "used_hashtags": [
