@@ -2,9 +2,9 @@
   "country": "Alestria",
   "province": "Serenavis",
   "mines": {},
-  "wealth": 5000,
+  "wealth": 2500,
   "population": 14000,
-  "tax": 50,
+  "tax": 100,
   "popularity": 69,
   "total_army": 5000,
   "army": {
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 0,
+      "count": 1,
       "product": "گوشت",
       "weekly_output": 100
     },
