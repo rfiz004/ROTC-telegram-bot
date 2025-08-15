@@ -546,5 +546,49 @@
     "count": 1,
     "id": "27",
     "created_at": "2025-08-14T19:55:08.742974"
+  },
+  {
+    "name": "دیوار چوبی",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "دیوارهای چوبی اردوگاه های نظامی، سومعه و یا عمارت ها که استحکام کمتری نسبت به قلعه های سنگی دارن با ارتفاع حدود 8 متر و زخامتی کم, تعداد: 1",
+    "price": 1500,
+    "materials": {
+      "سنگ": 100,
+      "چوب": 250
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAI_-mifeFUyGH4jN_siQnSEBwNuI1KrAAKb0DEbOjz4UIQ1L7gypF8hAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "28",
+    "created_at": "2025-08-15T18:17:33.513634"
+  },
+  {
+    "name": "دیوار صومعه",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "دیوارهای سنگی اردوگاه های نظامی، سومعه و یا عمارت ها که استحکام بیشتری نسبت به دیوارهای چوبی دارن با ارتفاع حدود 8 متر و زخامتی کم, تعداد: 1",
+    "price": 2000,
+    "materials": {
+      "سنگ": 250,
+      "چوب": 100
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJAEmifeiNVk5Hu6v3cBs1FvThJ1_PpAAKk0DEbOjz4UFl3z_D7bTe_AQADAgADeAADNgQ",
+    "count": 1,
+    "id": "29",
+    "created_at": "2025-08-15T18:21:32.386675"
   }
 ]
