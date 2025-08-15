@@ -209,86 +209,20 @@
       "delay_until": "2025-08-14T17:40:10.772373"
     },
     {
-      "id": "transfer_1079429121_1755269330",
-      "requester_id": 1079429121,
-      "source_country": "Aldemar",
-      "source_province": "Port Zephalia",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "international",
-      "category": "wealth",
-      "items": {
-        "طلا": 2200
-      },
-      "status": "pending",
-      "requested_at": "2025-08-15T14:48:50.565752",
-      "delay_until": "2025-08-16T14:48:50.565755"
-    },
-    {
-      "id": "transfer_7484790395_1755269417",
-      "requester_id": 7484790395,
-      "source_country": "Aldemar",
-      "source_province": "Karnholm",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "international",
+      "id": "transfer_809172681_1755273162",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Alestria",
+      "target_province": "Orendal",
+      "transfer_type": "domestic",
       "category": "economic_items",
       "items": {
-        "جواهر": 10
+        "گوشت": 1
       },
       "status": "pending",
-      "requested_at": "2025-08-15T14:50:17.849249",
-      "delay_until": "2025-08-16T14:50:17.849252"
-    },
-    {
-      "id": "transfer_2076547132_1755269763",
-      "requester_id": 2076547132,
-      "source_country": "Aldemar",
-      "source_province": "Veldanridge",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "پارچه": 10
-      },
-      "status": "pending",
-      "requested_at": "2025-08-15T14:56:03.189200",
-      "delay_until": "2025-08-16T14:56:03.189204"
-    },
-    {
-      "id": "transfer_5566736269_1755269839",
-      "requester_id": 5566736269,
-      "source_country": "Walden",
-      "source_province": "Verindel",
-      "target_country": "Aldemar",
-      "target_province": "Marevenport",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "گندم": 100,
-        "پنبه": 10,
-        "شراب": 20
-      },
-      "status": "pending",
-      "requested_at": "2025-08-15T14:57:19.293592",
-      "delay_until": "2025-08-16T14:57:19.293596"
-    },
-    {
-      "id": "transfer_7096919075_1755269845",
-      "requester_id": 7096919075,
-      "source_country": "Aldemar",
-      "source_province": "Marevenport",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "شیشه": 10
-      },
-      "status": "pending",
-      "requested_at": "2025-08-15T14:57:25.588975",
-      "delay_until": "2025-08-16T14:57:25.588979"
+      "requested_at": "2025-08-15T15:52:42.307007",
+      "delay_until": "2025-08-16T15:52:42.307010"
     }
   ]
 }
