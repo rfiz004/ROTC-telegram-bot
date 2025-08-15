@@ -12,12 +12,41 @@ import ipaddress
 
 TELEGRAM_IPS = [
     "149.154.160.0/20",
-    "91.108.4.0/22"
+    "91.108.4.0/22",
+]
+TELEGRAM_IPV6 = [
+    "2001:67c:4e8::/48",
+    "2001:b28:f23d::/48",
+    "2001:b28:f23f::/48"
 ]
 
-def is_telegram_ip(ip):
-    return any(ipaddress.ip_address(ip) in ipaddress.ip_network(net) for net in TELEGRAM_IPS)
+# گرفتن IPهای UptimeRobot به‌صورت خودکار
+def get_uptimerobot_ips():
+    try:
+        url = "https://uptimerobot.com/inc/files/ips/IPv4andIPv6.json"
+        resp = requests.get(url, timeout=10)
+        data = resp.json()
+        ipv4_list = data.get("IPv4", [])
+        ipv6_list = data.get("IPv6", [])
+        return ipv4_list + ipv6_list
+    except Exception as e:
+        logger.error(f"❌ خطا در دریافت IPهای UptimeRobot: {e}")
+        return []
 
+# تابع چک کردن IP در یک لیست شبکه
+def is_ip_in_networks(ip, networks):
+    try:
+        ip_addr = ipaddress.ip_address(ip)
+    except ValueError:
+        return False
+    return any(ip_addr in ipaddress.ip_network(net) for net in networks)
+
+# گرفتن IP واقعی کلاینت (با توجه به X-Forwarded-For)
+def get_real_ip(request):
+    forwarded_for = request.headers.get("X-Forwarded-For", "")
+    if forwarded_for:
+        return forwarded_for.split(",")[0].strip()
+    return request.remote or ""
 
 # --- Third-party modules ---
 from aiohttp import web
@@ -454,9 +483,12 @@ async def set_webhook_handler(request):
     return web.Response(text=f"Webhook set to {webhook_url}")
 
 async def handle_webhook(request):
-    peer_ip = request.remote
-    if not is_telegram_ip(peer_ip):
-        logger.warning(f"❌ Request from non-Telegram IP: {peer_ip}")
+    client_ip = get_real_ip(request)
+
+    allowed_ips = TELEGRAM_IPS + TELEGRAM_IPV6 + get_uptimerobot_ips()
+
+    if not is_ip_in_networks(client_ip, allowed_ips):
+        logger.warning(f"❌ Request from non-Telegram/UptimeRobot IP: {client_ip}")
         return web.Response(status=403, text="Forbidden")
 
     if request.headers.get("X-Telegram-Bot-Api-Secret-Token") != SECRET_TOKEN:
@@ -471,7 +503,6 @@ async def handle_webhook(request):
     except Exception:
         logging.exception("❌ Webhook handler error")
         return web.Response(status=503, text="Error")
-
 
 async def root(request):
     return web.Response(text="Bot is alive!")
