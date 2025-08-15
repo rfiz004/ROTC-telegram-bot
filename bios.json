@@ -82,9 +82,12 @@
     "7408748789": {
       "country": "Northwood",
       "job": "اِرِل‌ها",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T21:31:13.738406"
+      "saved_at": "2025-08-15T21:36:46.414239",
+      "expires_at": "2025-08-15T22:01:13.738976",
+      "name": "Astaryth",
+      "nickname": "Aryth"
     }
   },
   "used_hashtags": [
