@@ -82,80 +82,9 @@
     "7408748789": {
       "country": "Northwood",
       "job": "اِرِل‌ها",
-      "step": "asking_history",
+      "step": "asking_name",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T22:05:38.980710",
-      "expires_at": "2025-08-15T22:09:27.897148",
-      "name": "Katherine",
-      "nickname": "Kate",
-      "age": "20",
-      "skills": [
-        "مهارت شمشیرزنی و تبرزنی",
-        "مدیریت امور نظامی",
-        "مخفی‌کاری"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مهارت شمشیرزنی و تبرزنی",
-      "skill2": "مدیریت امور نظامی",
-      "skill3": "مخفی‌کاری",
-      "appearance": "Light brown hair\nHazel eyes\nHeight: 170"
-    },
-    "6365097790": {
-      "step": "pending",
-      "country": "Imperial",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-08-15T22:37:44.940051",
-      "name": "Mokoko",
-      "nickname": "Hand of Justice",
-      "age": "21",
-      "skills": [
-        "مهارت شمشیرزنی و تبرزنی",
-        "سوارکاری",
-        "سم شناسی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "مهارت شمشیرزنی و تبرزنی",
-      "skill2": "سوارکاری",
-      "skill3": "سم شناسی",
-      "appearance": "پسری جوان با موهایه مشکی که فعلا کوسه تشریف داره و قیافه معمولی ای داره با چشمایه سیاه",
-      "history": "وقتی بچه بوده خانوادش اونو تویه یک مسافر خونه ول میکنن و میرن ولی پیرزنه صاحب مسافرخونه این پسره رو بزرگ میکنه تا این شده",
-      "id_number": "@AMIR_BATMAN",
-      "user_id_tag": "#MOKOKOpesar",
-      "photo": "AgACAgQAAxkBAAJBJ2ifs2CS8pgO2xrX2mV_sL0aro9-AAKGyzEbaj0AAVE_9CzxXu_SDwEAAwIAA3kAAzYE",
-      "level": 1,
-      "unique_id": "6365097790",
-      "saved_at": "2025-08-15T22:23:29.147742"
-    },
-    "895473922": {
-      "step": "pending",
-      "country": "Imperial",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-08-15T22:39:59.184860",
-      "name": "Arsha",
-      "nickname": "Arsha",
-      "age": "21",
-      "skills": [
-        "مهارت کار با خنجر",
-        "باز کردن قفل",
-        "مخفی‌کاری"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مهارت کار با خنجر",
-      "skill2": "باز کردن قفل",
-      "skill3": "مخفی‌کاری",
-      "appearance": "۱۸۶ قد\nموهای فر نیمه بلند مشکی\nبدن اسلیم و کات\nته ریش",
-      "history": "توی یه خانواده به نسبت پولدار چشم به جهان گشود و بچه منزوی ای بود ولی توی ۱۲ سالگی به طرز مشکوکی مادر پدرش به علت سکته قلبی میمیرن و ایشون تا ۱۸ سالگی توی پرورشگاه زندگی میکرد\nاونجا همه اذیتش میکردن و ازش باج میگرفتن\nاون هم ب ای بقا شروع به دزدی و کار هاشو با فریب پیش بردن کرد",
-      "id_number": "@D_Ozam",
-      "user_id_tag": "#Arsha",
-      "photo": "AgACAgQAAxkBAAJBFmifsnqL4tsMZvsNJua-Oa3rRl9pAAPLMRuleAABUf7AqDyqJR4FAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "895473922",
-      "saved_at": "2025-08-15T22:19:39.106999"
+      "saved_at": "2025-08-15T22:29:51.183526"
     }
   },
   "used_hashtags": [
