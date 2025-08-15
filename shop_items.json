@@ -612,5 +612,27 @@
     "count": 1,
     "id": "30",
     "created_at": "2025-08-15T20:31:04.720847"
+  },
+  {
+    "name": "دیوار 25 متری",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "دیوارهای مستحکم قلعه با ارتفاع تقریبی 25 متر و زخامت بالا, تعداد: 1",
+    "price": 10000,
+    "materials": {
+      "سنگ": 700,
+      "فولاد": 50
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJAnWifmqZYAAFp-k6NJeQcxYxF1NQMMAACqtAxGzo8-FD2A2M0i_u8QQEAAwIAA3gAAzYE",
+    "count": 1,
+    "id": "31",
+    "created_at": "2025-08-15T20:40:37.680640"
   }
 ]
