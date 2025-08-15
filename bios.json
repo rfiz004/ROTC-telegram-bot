@@ -52,14 +52,32 @@
       "nickname": "-"
     },
     "7465909250": {
+      "step": "pending",
       "country": "Alestria",
-      "job": "مشاغل آزاد",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T07:35:44.960665",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-08-15T08:04:54.534367",
       "name": "Charllet",
-      "nickname": "Rainy"
+      "nickname": "Rainy",
+      "age": "18",
+      "skills": [
+        "ستاره شناسی",
+        "نوازندگی",
+        "حس ششم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "ستاره شناسی",
+      "skill2": "نوازندگی",
+      "skill3": "حس ششم",
+      "appearance": "موهای بلند سفید\nدم و گوش گربه‌ای\nبال های فرشته مانند\nقد حدود ۱۶۰",
+      "history": "بخاطر مشکلات گذشته کمی شخصیت ارومی هستی",
+      "id_number": "@Meiskskjz",
+      "user_id_tag": "#charllet",
+      "photo": "AgACAgQAAxkBAAI78mie5KuFbY9vVsDmoW3CM07TrfzXAAI9yDEbZuH4UOZBOBgZkLZjAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "7465909250",
+      "saved_at": "2025-08-15T07:41:32.133679"
     }
   },
   "used_hashtags": [
@@ -133,6 +151,7 @@
     "#ELIZ",
     "#Damian",
     "#Henry",
-    "#SUN"
+    "#SUN",
+    "#charllet"
   ]
 }
