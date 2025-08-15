@@ -255,6 +255,40 @@
       "status": "pending",
       "requested_at": "2025-08-15T14:56:03.189200",
       "delay_until": "2025-08-16T14:56:03.189204"
+    },
+    {
+      "id": "transfer_5566736269_1755269839",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گندم": 100,
+        "پنبه": 10,
+        "شراب": 20
+      },
+      "status": "pending",
+      "requested_at": "2025-08-15T14:57:19.293592",
+      "delay_until": "2025-08-16T14:57:19.293596"
+    },
+    {
+      "id": "transfer_7096919075_1755269845",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 10
+      },
+      "status": "pending",
+      "requested_at": "2025-08-15T14:57:25.588975",
+      "delay_until": "2025-08-16T14:57:25.588979"
     }
   ]
 }
