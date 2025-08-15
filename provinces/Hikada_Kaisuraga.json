@@ -2,10 +2,10 @@
   "country": "Hikada",
   "province": "Kaisuraga",
   "mines": {},
-  "wealth": 0,
+  "wealth": 10000,
   "population": 24000,
   "tax": 100,
-  "popularity": 72,
+  "popularity": 63,
   "total_army": 5000,
   "army": {
     "کماندار": 540,
@@ -18,7 +18,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گندم": 80,
+    "گندم": 180,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,

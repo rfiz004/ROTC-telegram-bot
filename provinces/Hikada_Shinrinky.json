@@ -4,10 +4,10 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 600,
+  "wealth": 18600,
   "population": 60000,
   "tax": 100,
-  "popularity": 72,
+  "popularity": 63,
   "total_army": 5000,
   "army": {
     "کماندار": 3200,
@@ -41,7 +41,7 @@
     "پنبه": 0,
     "چرم": 0,
     "چوب": 0,
-    "گندم": 201,
+    "گندم": 301,
     "گوشت": 0
   },
   "economic_structures": {

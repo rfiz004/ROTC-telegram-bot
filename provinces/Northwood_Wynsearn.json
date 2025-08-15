@@ -2,10 +2,10 @@
   "country": "Northwood",
   "province": "Wynsearn",
   "mines": {},
-  "wealth": 0,
+  "wealth": 10000,
   "population": 20000,
   "tax": 100,
-  "popularity": 68,
+  "popularity": 59,
   "total_army": 5000,
   "army": {
     "کماندار": 500,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "گندم": 30,
-    "گوشت": 37,
+    "گوشت": 137,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,
