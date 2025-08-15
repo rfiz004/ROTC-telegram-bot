@@ -239,6 +239,22 @@
       "status": "pending",
       "requested_at": "2025-08-15T14:50:17.849249",
       "delay_until": "2025-08-16T14:50:17.849252"
+    },
+    {
+      "id": "transfer_2076547132_1755269763",
+      "requester_id": 2076547132,
+      "source_country": "Aldemar",
+      "source_province": "Veldanridge",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 10
+      },
+      "status": "pending",
+      "requested_at": "2025-08-15T14:56:03.189200",
+      "delay_until": "2025-08-16T14:56:03.189204"
     }
   ]
 }
