@@ -2,10 +2,10 @@
   "country": "Alestria",
   "province": "Lilura",
   "mines": {},
-  "wealth": 5000,
+  "wealth": 2500,
   "population": 14000,
-  "tax": 50,
-  "popularity": 66,
+  "tax": 100,
+  "popularity": 69,
   "total_army": 5000,
   "army": {
     "کماندار": 400,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "گندم": 0,
-    "گوشت": 83,
+    "گوشت": 111,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 100,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 0,
+      "count": 1,
       "product": "گوشت",
       "weekly_output": 100
     },
