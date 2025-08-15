@@ -551,12 +551,13 @@ async def set_webhook_handler(request):
 async def handle_webhook(request):
     client_ip = get_real_ip(request)
 
-    allowed_ips = TELEGRAM_IPS + TELEGRAM_IPV6 + get_uptimerobot_ips()
+    ALL_ALLOWED_IPS = TELEGRAM_IPS + TELEGRAM_IPV6 + UPTIMEROBOT_IPS
 
-    if not is_ip_in_networks(client_ip, allowed_ips):
-        logger.warning(f"❌ Request from non-Telegram/UptimeRobot IP: {client_ip}")
+    if not is_ip_in_networks(client_ip, ALL_ALLOWED_IPS):
+        logger.warning(f"❌ Request from non-allowed IP: {client_ip}")
         return web.Response(status=403, text="Forbidden")
 
+    # چک توکن (می‌تونی بعداً فعالش کنی)
     if request.headers.get("X-Telegram-Bot-Api-Secret-Token") != SECRET_TOKEN:
         logger.warning("❌ Invalid secret token in webhook request")
         return web.Response(status=403, text="Forbidden")
@@ -567,7 +568,7 @@ async def handle_webhook(request):
         asyncio.create_task(app.process_update(update))
         return web.Response(text="OK")
     except Exception:
-        logging.exception("❌ Webhook handler error")
+        logger.exception("❌ Webhook handler error")
         return web.Response(status=503, text="Error")
 
 async def root(request):
