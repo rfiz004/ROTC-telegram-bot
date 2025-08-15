@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Karnholm",
   "mines": {},
-  "wealth": 8000,
+  "wealth": 6000,
   "population": 14000,
   "tax": 100,
   "popularity": 61,
@@ -45,7 +45,7 @@
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 0,
+      "count": 1,
       "product": "پارچه",
       "weekly_output": 50
     },
