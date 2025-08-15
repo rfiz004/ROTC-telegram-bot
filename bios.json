@@ -50,6 +50,15 @@
       "expires_at": "2025-08-13T20:32:02.417141",
       "name": "Kavus",
       "nickname": "-"
+    },
+    "2087314897": {
+      "country": "Northwood",
+      "job": "روح گرگ",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-15T16:07:50.606033",
+      "expires_at": "2025-08-15T16:35:03.505195",
+      "name": "کانکی"
     }
   },
   "used_hashtags": [
