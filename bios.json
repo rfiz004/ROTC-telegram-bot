@@ -82,11 +82,28 @@
     "7245643147": {
       "country": "Imperial",
       "job": "اعضای سنا",
-      "step": "asking_nickname",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T23:18:29.901429",
+      "saved_at": "2025-08-15T23:26:19.714311",
       "expires_at": "2025-08-15T23:48:09.021240",
-      "name": "bartholomew pembroke Featherstonehaugh Harrington"
+      "name": "bartholomew pembroke Featherstonehaugh Harrington",
+      "nickname": "chains of velvet",
+      "age": "39",
+      "skills": [
+        "مدیریت امور داخلی",
+        "ساختمان‌سازی",
+        "آهنگری",
+        "حواس پنجگانه قوی",
+        "مهارت مبارزه با دست خالی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مدیریت امور داخلی",
+      "skill2": "ساختمان‌سازی",
+      "skill3": "آهنگری",
+      "skill4": "حواس پنجگانه قوی",
+      "skill5": "مهارت مبارزه با دست خالی",
+      "appearance": "189cm\n86kg"
     }
   },
   "used_hashtags": [
