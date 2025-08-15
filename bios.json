@@ -54,11 +54,12 @@
     "2087314897": {
       "country": "Northwood",
       "job": "روح گرگ",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T16:07:50.606033",
+      "saved_at": "2025-08-15T16:10:31.500075",
       "expires_at": "2025-08-15T16:35:03.505195",
-      "name": "کانکی"
+      "name": "کانکی",
+      "nickname": "پادشاه رانده شدگان"
     }
   },
   "used_hashtags": [
