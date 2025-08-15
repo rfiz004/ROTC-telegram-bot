@@ -82,12 +82,24 @@
     "7645102696": {
       "country": "Alestria",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-15T07:47:12.527367",
+      "saved_at": "2025-08-15T07:51:05.394879",
       "expires_at": "2025-08-15T08:16:38.764325",
       "name": "garo",
-      "nickname": "soul"
+      "nickname": "soul",
+      "age": "28",
+      "skills": [
+        "قدرت بدنی بالا",
+        "مقاومت در برابر سم",
+        "مهارت کار با خنجر"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "قدرت بدنی بالا",
+      "skill2": "مقاومت در برابر سم",
+      "skill3": "مهارت کار با خنجر",
+      "appearance": "چشمان قرمز \nکویه سیاه رنگ\nقدی بلند و بدنی ورزیده \nدارایه خالکوبی هایه متعدد رو کل دو دست و قسمت کمر"
     }
   },
   "used_hashtags": [
