@@ -140,14 +140,32 @@
       "saved_at": "2025-08-16T20:01:12.612986"
     },
     "7912416910": {
+      "step": "pending",
       "country": "Alpyr",
-      "job": "خانواده ی سلطنتی",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T20:07:36.582056",
+      "job": "خانواده ی سلطنتی",
       "expires_at": "2025-08-16T20:37:07.553814",
       "name": "Shita",
-      "nickname": "Dark Love/ DarkNeko"
+      "nickname": "Dark Love/ DarkNeko",
+      "age": "18",
+      "skills": [
+        "داروشناسی",
+        "سم شناسی",
+        "پرورش گیاه"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "داروشناسی",
+      "skill2": "سم شناسی",
+      "skill3": "پرورش گیاه",
+      "appearance": "موهای سفید و بلند با بدن متناسب و قد 160cm و وزن 67kg با چشمان آبی",
+      "history": "دختری حاصل عشق بانو و پادشاه سرزمین که در عشق و نعمت خانواده‌اش بزرگ شده و‌علاقه خاص و عجیبی به آگاپه داشته و خودش نمونه ای از آگاپه در سرزمینه",
+      "id_number": "@MeowDarky10",
+      "user_id_tag": "#Shitw",
+      "photo": "AgACAgQAAxkBAAJFxWig5oOUveHl5EVXad7OMeNcwBDJAAL-yDEbH8YAAVGktnBlmSRe6QEAAwIAA3kAAzYE",
+      "level": 1,
+      "unique_id": "7912416910",
+      "saved_at": "2025-08-16T20:13:55.353999"
     }
   },
   "used_hashtags": [
@@ -235,6 +253,7 @@
     "#Artor",
     "#The_Word_of_God",
     "#Red_king",
-    "#david"
+    "#david",
+    "#Shitw"
   ]
 }
