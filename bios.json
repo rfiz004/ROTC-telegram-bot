@@ -80,11 +80,10 @@
       "saved_at": "2025-08-15T16:31:09.656795"
     },
     "8252119461": {
+      "step": "pending",
       "country": "Hikada",
-      "job": "مشاغل آزاد",
-      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T08:48:20.365672",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-08-16T09:16:46.940148",
       "name": "Haruna Miva",
       "nickname": "Azalea",
@@ -99,7 +98,14 @@
       "skill1": "داروشناسی",
       "skill2": "مهارت مبارزه با دست خالی",
       "skill3": "قدرت بدنی بالا",
-      "appearance": "Strawberry brown hair they keep in a low ponytail, a beauty mark under their left eye with leather gloves they never take off"
+      "appearance": "Strawberry brown hair they keep in a low ponytail, a beauty mark under their left eye with leather gloves they never take off",
+      "history": "Born into a stringent household, there have always been high expectations from them. 'Always be the best in what you do or quit', they lived up to the rule even after leaving home. Even so, they're trying to make sure their adopted child never feels that way. They have their little life together, Haruna works as a healer–other jobs as well if they're not functioning well–and tries to stay away from trouble.",
+      "id_number": "@Azaleashalo",
+      "user_id_tag": "#Haruna",
+      "photo": "AgACAgQAAxkBAAJCY2igRiN_M1vFqKuujNZWynGvEs1GAAJkzDEbJ4cAAVHHTX9XvrphxwEAAwIAA3gAAzYE",
+      "level": 1,
+      "unique_id": "8252119461",
+      "saved_at": "2025-08-16T08:49:39.818098"
     }
   },
   "used_hashtags": [
@@ -180,6 +186,7 @@
     "#Arsha",
     "#MOKOKOpesar",
     "#kate",
-    "#bar"
+    "#bar",
+    "#Haruna"
   ]
 }
