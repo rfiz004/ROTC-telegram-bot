@@ -82,9 +82,12 @@
     "7408661945": {
       "country": "Imperial",
       "job": "ژنرال اعظم جمهوری",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T09:34:32.678203"
+      "saved_at": "2025-08-16T09:35:44.464012",
+      "expires_at": "2025-08-16T10:04:32.679102",
+      "name": "ژولیوس امیریانوس",
+      "nickname": "امیریان"
     }
   },
   "used_hashtags": [
