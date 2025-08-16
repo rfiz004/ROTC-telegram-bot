@@ -78,6 +78,28 @@
       "level": 1,
       "unique_id": "2087314897",
       "saved_at": "2025-08-15T16:31:09.656795"
+    },
+    "8252119461": {
+      "country": "Hikada",
+      "job": "مشاغل آزاد",
+      "step": "asking_history",
+      "flow_type": "bio",
+      "saved_at": "2025-08-16T08:48:20.365672",
+      "expires_at": "2025-08-16T09:16:46.940148",
+      "name": "Haruna Miva",
+      "nickname": "Azalea",
+      "age": "29",
+      "skills": [
+        "داروشناسی",
+        "مهارت مبارزه با دست خالی",
+        "قدرت بدنی بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "داروشناسی",
+      "skill2": "مهارت مبارزه با دست خالی",
+      "skill3": "قدرت بدنی بالا",
+      "appearance": "Strawberry brown hair they keep in a low ponytail, a beauty mark under their left eye with leather gloves they never take off"
     }
   },
   "used_hashtags": [
