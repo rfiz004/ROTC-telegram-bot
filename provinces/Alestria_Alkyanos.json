@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 11000,
+  "wealth": 2000,
   "population": 30000,
   "tax": 40,
   "popularity": 73,
@@ -56,12 +56,12 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 0,
+      "count": 2,
       "product": "پنبه",
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 2,
       "product": "سنگ",
       "weekly_output": 50
     }
