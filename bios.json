@@ -82,12 +82,28 @@
     "1400441946": {
       "country": "Imperial",
       "job": "رئیس سنا",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T14:54:38.562724",
+      "saved_at": "2025-08-16T15:05:49.009829",
       "expires_at": "2025-08-16T15:20:43.915584",
       "name": "Tedious",
-      "nickname": "The Word of God"
+      "nickname": "The Word of God",
+      "age": "37",
+      "skills": [
+        "مدیریت امور اقتصادی",
+        "مدیریت امور داخلی",
+        "مدیریت امور نظامی",
+        "ساختمان‌سازی",
+        "آهنگری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "مدیریت امور اقتصادی",
+      "skill2": "مدیریت امور داخلی",
+      "skill3": "مدیریت امور نظامی",
+      "skill4": "ساختمان‌سازی",
+      "skill5": "آهنگری",
+      "appearance": "ریش و موهای قهوه ای چشمانی سیاه مایل به قهوه ای پوست سفید"
     }
   },
   "used_hashtags": [
