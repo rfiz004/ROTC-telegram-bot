@@ -82,11 +82,12 @@
     "7368467906": {
       "country": "Hikada",
       "job": "امپراطور",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T09:03:06.327606",
+      "saved_at": "2025-08-16T09:05:32.217122",
       "expires_at": "2025-08-16T09:32:44.889473",
-      "name": "artor"
+      "name": "artor",
+      "nickname": "The Grand Emperor"
     }
   },
   "used_hashtags": [
