@@ -112,11 +112,10 @@
       "saved_at": "2025-08-16T15:14:27.325013"
     },
     "7285439343": {
+      "step": "pending",
       "country": "Imperial",
-      "job": "نخست وزیر",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T19:57:10.941385",
+      "job": "نخست وزیر",
       "expires_at": "2025-08-16T20:15:42.755248",
       "name": "David",
       "nickname": "davi",
@@ -134,7 +133,11 @@
       "appearance": "قد متوسط حدود ۱۸۰ چشم و ابرو و مشکی و موهای نسبتا بلند",
       "history": "پسری بزرگ شده در خانواده متوسط که پله های ترقی رو یکی پس از دیگری طی کرد و با تحصیلات عالی وارد دربار شد و مسیرش را ادامه داد",
       "id_number": "@S_Y_A7",
-      "user_id_tag": "#david"
+      "user_id_tag": "#david",
+      "photo": "AgACAgQAAxkBAAJFmWig44iaRG1O11eqBWBhDF6ekdyQAAIQ0jEbnZEIUbwvfOHWjVQKAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "7285439343",
+      "saved_at": "2025-08-16T20:01:12.612986"
     }
   },
   "used_hashtags": [
