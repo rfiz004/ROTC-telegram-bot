@@ -114,9 +114,9 @@
     "7285439343": {
       "country": "Imperial",
       "job": "نخست وزیر",
-      "step": "asking_history",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T19:54:33.871442",
+      "saved_at": "2025-08-16T19:57:10.941385",
       "expires_at": "2025-08-16T20:15:42.755248",
       "name": "David",
       "nickname": "davi",
@@ -131,7 +131,10 @@
       "skill1": "مدیریت امور اقتصادی",
       "skill2": "حس ششم",
       "skill3": "ستاره شناسی",
-      "appearance": "قد متوسط حدود ۱۸۰ چشم و ابرو و مشکی و موهای نسبتا بلند"
+      "appearance": "قد متوسط حدود ۱۸۰ چشم و ابرو و مشکی و موهای نسبتا بلند",
+      "history": "پسری بزرگ شده در خانواده متوسط که پله های ترقی رو یکی پس از دیگری طی کرد و با تحصیلات عالی وارد دربار شد و مسیرش را ادامه داد",
+      "id_number": "@S_Y_A7",
+      "user_id_tag": "#david"
     }
   },
   "used_hashtags": [
@@ -218,6 +221,7 @@
     "#coach_ahmadi",
     "#Artor",
     "#The_Word_of_God",
-    "#Red_king"
+    "#Red_king",
+    "#david"
   ]
 }
