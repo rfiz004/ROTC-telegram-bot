@@ -723,5 +723,28 @@
     "count": 1,
     "id": "35",
     "created_at": "2025-08-16T20:26:38.592153"
+  },
+  {
+    "name": "دروازه قرقره ای کوچک",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "دروازه قرقره ای فولادی به ارتفاع 13 متر و مقاومت بسیار بالا به ضربات دژکوب, تعداد: 1",
+    "price": 3000,
+    "materials": {
+      "سنگ": 120,
+      "چوب": 10,
+      "فولاد": 50
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJGEmihCAmfT6-1wuEYIq9E5CU0ZIN0AAKn0DEbOjz4UCotIY93p_hjAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "36",
+    "created_at": "2025-08-16T22:40:01.762076"
   }
 ]
