@@ -114,12 +114,24 @@
     "7285439343": {
       "country": "Imperial",
       "job": "نخست وزیر",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-16T19:46:20.627286",
+      "saved_at": "2025-08-16T19:54:33.871442",
       "expires_at": "2025-08-16T20:15:42.755248",
       "name": "David",
-      "nickname": "davi"
+      "nickname": "davi",
+      "age": "29",
+      "skills": [
+        "مدیریت امور اقتصادی",
+        "حس ششم",
+        "ستاره شناسی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مدیریت امور اقتصادی",
+      "skill2": "حس ششم",
+      "skill3": "ستاره شناسی",
+      "appearance": "قد متوسط حدود ۱۸۰ چشم و ابرو و مشکی و موهای نسبتا بلند"
     }
   },
   "used_hashtags": [
