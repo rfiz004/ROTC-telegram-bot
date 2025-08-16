@@ -207,22 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_8106529541_1755360432",
-      "requester_id": 8106529541,
-      "source_country": "Alpyr",
-      "source_province": "Eldhalm",
-      "target_country": "Alpyr",
-      "target_province": "Grenkras",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 6000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-16T16:07:12.746758",
-      "delay_until": "2025-08-17T16:07:12.746763"
     }
   ]
 }
