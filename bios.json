@@ -110,6 +110,16 @@
       "level": 1,
       "unique_id": "1400441946",
       "saved_at": "2025-08-16T15:14:27.325013"
+    },
+    "7285439343": {
+      "country": "Imperial",
+      "job": "نخست وزیر",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-16T19:46:20.627286",
+      "expires_at": "2025-08-16T20:15:42.755248",
+      "name": "David",
+      "nickname": "davi"
     }
   },
   "used_hashtags": [
