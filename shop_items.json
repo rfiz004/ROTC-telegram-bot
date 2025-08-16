@@ -678,5 +678,28 @@
     "count": 1,
     "id": "33",
     "created_at": "2025-08-16T20:07:32.836947"
+  },
+  {
+    "name": "دروازه متوسط",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "دروازه قرقره ای فولادی به ارتفاع 20 متر و مقاومت بسیار بالا به ضربات دژکوب, تعداد: 1",
+    "price": 4000,
+    "materials": {
+      "سنگ": 200,
+      "چوب": 30,
+      "فولاد": 80
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJFzGig5pq8sJqGJjjxdlQ_CRddWmXzAAKl0DEbOjz4UEVa8QM6ofqdAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "34",
+    "created_at": "2025-08-16T20:20:08.023429"
   }
 ]

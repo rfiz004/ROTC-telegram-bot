@@ -110,62 +110,6 @@
       "level": 1,
       "unique_id": "1400441946",
       "saved_at": "2025-08-16T15:14:27.325013"
-    },
-    "7285439343": {
-      "step": "pending",
-      "country": "Imperial",
-      "flow_type": "bio",
-      "job": "نخست وزیر",
-      "expires_at": "2025-08-16T20:15:42.755248",
-      "name": "David",
-      "nickname": "davi",
-      "age": "29",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "حس ششم",
-        "ستاره شناسی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "حس ششم",
-      "skill3": "ستاره شناسی",
-      "appearance": "قد متوسط حدود ۱۸۰ چشم و ابرو و مشکی و موهای نسبتا بلند",
-      "history": "پسری بزرگ شده در خانواده متوسط که پله های ترقی رو یکی پس از دیگری طی کرد و با تحصیلات عالی وارد دربار شد و مسیرش را ادامه داد",
-      "id_number": "@S_Y_A7",
-      "user_id_tag": "#david",
-      "photo": "AgACAgQAAxkBAAJFmWig44iaRG1O11eqBWBhDF6ekdyQAAIQ0jEbnZEIUbwvfOHWjVQKAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "7285439343",
-      "saved_at": "2025-08-16T20:01:12.612986"
-    },
-    "7912416910": {
-      "step": "pending",
-      "country": "Alpyr",
-      "flow_type": "bio",
-      "job": "خانواده ی سلطنتی",
-      "expires_at": "2025-08-16T20:37:07.553814",
-      "name": "Shita",
-      "nickname": "Dark Love/ DarkNeko",
-      "age": "18",
-      "skills": [
-        "داروشناسی",
-        "سم شناسی",
-        "پرورش گیاه"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 1,
-      "skill1": "داروشناسی",
-      "skill2": "سم شناسی",
-      "skill3": "پرورش گیاه",
-      "appearance": "موهای سفید و بلند با بدن متناسب و قد 160cm و وزن 67kg با چشمان آبی",
-      "history": "دختری حاصل عشق بانو و پادشاه سرزمین که در عشق و نعمت خانواده‌اش بزرگ شده و‌علاقه خاص و عجیبی به آگاپه داشته و خودش نمونه ای از آگاپه در سرزمینه",
-      "id_number": "@MeowDarky10",
-      "user_id_tag": "#Shitw",
-      "photo": "AgACAgQAAxkBAAJFxWig5oOUveHl5EVXad7OMeNcwBDJAAL-yDEbH8YAAVGktnBlmSRe6QEAAwIAA3kAAzYE",
-      "level": 1,
-      "unique_id": "7912416910",
-      "saved_at": "2025-08-16T20:13:55.353999"
     }
   },
   "used_hashtags": [
