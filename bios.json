@@ -110,6 +110,16 @@
       "level": 1,
       "unique_id": "1400441946",
       "saved_at": "2025-08-16T15:14:27.325013"
+    },
+    "6723163985": {
+      "country": "Imperial",
+      "job": "رئیس سنا",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-16T19:21:19.535753",
+      "expires_at": "2025-08-16T19:50:00.418906",
+      "name": "Shadow",
+      "nickname": "Redking"
     }
   },
   "used_hashtags": [
