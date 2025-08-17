@@ -748,5 +748,27 @@
     "count": 1,
     "id": "36",
     "created_at": "2025-08-16T22:40:01.762076"
+  },
+  {
+    "name": "برج 9 متری",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "برج هایی با بدنه اکثرا چوبی به همراه پایه های سنگی که قابلیت نصب ماشین های جنگی روی اونها فراهم نیست و بیشتر برای اردوگاه های نظامی و یا صومعه ها ساخته میشن\nهمچنین قابلیت مستقر شدن دو سرباز در این برج ها مهیا هست, تعداد: 1",
+    "price": 1200,
+    "materials": {
+      "سنگ": 70,
+      "چوب": 70
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJHNmihtUf7Jbl61RrPj8SlRuYNGkbvAAKc0DEbOjz4UA5BKY_RC4bgAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "37",
+    "created_at": "2025-08-17T10:59:40.781426"
   }
 ]
