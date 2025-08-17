@@ -100,6 +100,16 @@
       "level": 1,
       "unique_id": "1400441946",
       "saved_at": "2025-08-16T15:14:27.325013"
+    },
+    "1492715243": {
+      "country": "Hikada",
+      "job": "مشاغل آزاد",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-17T14:38:43.135370",
+      "expires_at": "2025-08-17T15:07:41.505769",
+      "name": "Tenzo Tachibana",
+      "nickname": "Dr. T"
     }
   },
   "used_hashtags": [
