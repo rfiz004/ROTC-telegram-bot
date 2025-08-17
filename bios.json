@@ -102,11 +102,10 @@
       "saved_at": "2025-08-16T15:14:27.325013"
     },
     "8112026007": {
+      "step": "pending",
       "country": "Northwood",
-      "job": "شاه بی تاج",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-17T17:15:50.972272",
+      "job": "شاه بی تاج",
       "expires_at": "2025-08-17T17:41:27.617462",
       "name": "Shadow",
       "nickname": "Lord of Shadow",
@@ -124,7 +123,11 @@
       "appearance": "قد بلند ، اندام ورزشی و عضلانی ، موهای بلند مشکی ، لباس سامورایی مشکی و قرمز ، زاویه فک",
       "history": "خانوادش جلوی چشماش سلاخی شدن و از اون موقع سرد و بی‌روح شد و زیاد حرف نمیزنه",
       "id_number": "@Shadow_of_eclipsa",
-      "user_id_tag": "#Lord_of_shadow"
+      "user_id_tag": "#Lord_of_shadow",
+      "photo": "AgACAgQAAxkBAAJIGWiiDo7x86EKxnTEUvTMjhbMpGRfAAL8xzEbKzAIUb1Dn4rxg07VAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "8112026007",
+      "saved_at": "2025-08-17T17:17:03.094193"
     }
   },
   "used_hashtags": [
