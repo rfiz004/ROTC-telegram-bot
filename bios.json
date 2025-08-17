@@ -104,9 +104,12 @@
     "1255276453": {
       "country": "Alpyr",
       "job": "مشاغل آزاد",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-17T08:54:28.322223"
+      "saved_at": "2025-08-17T08:55:12.353464",
+      "expires_at": "2025-08-17T09:24:28.323108",
+      "name": "Monster",
+      "nickname": "Monster"
     }
   },
   "used_hashtags": [
