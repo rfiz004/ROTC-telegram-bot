@@ -102,11 +102,10 @@
       "saved_at": "2025-08-16T15:14:27.325013"
     },
     "1255276453": {
+      "step": "pending",
       "country": "Alpyr",
-      "job": "مشاغل آزاد",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-17T09:03:50.776958",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-08-17T09:24:28.323108",
       "name": "Monster",
       "nickname": "Monster",
@@ -124,7 +123,11 @@
       "appearance": "یک مرد با موی بلوند - پوست کرمی روشن - بدون ریش و سبیل - چشمای آبی - کت قهوه ای تیره و شلوار کرمی - کفش چرم مشکی",
       "history": "یوهان لیبرت شخصیت اصلی منفی مانگا و انیمه Monster است؛ در کودکی قربانی آزمایش‌ها شد، ذهنی شیطانی و دستکاری‌گر پیدا کرد، آدم‌ها را به جنایت و خودکشی می‌کشاند، باهوش اما بی‌احساس بود، تنها پیوندش با خواهر دوقلویش و دکتر تنما بود، و سرنوشتش در پایان داستان مبهم باقی می‌ماند.",
       "id_number": "@SkywalkerMmd",
-      "user_id_tag": "#Monster"
+      "user_id_tag": "#Monster",
+      "photo": "AgACAgQAAxkBAAJHEmihm3JlH-Mn-dMm4Bb3B-rYZUZ8AAKSyDEb_MMRURr_gNY3aA4MAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "1255276453",
+      "saved_at": "2025-08-17T09:05:54.699558"
     }
   },
   "used_hashtags": [
