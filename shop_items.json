@@ -770,5 +770,47 @@
     "count": 1,
     "id": "37",
     "created_at": "2025-08-17T10:59:40.781426"
+  },
+  {
+    "name": "برج سنگی 15 متری",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "برج تماما سنگی با مقاومت بالا و ارتفاع 15 متر، اما روی آن نمی توان تجهیزات مانند منجیق قرار داد\nقابلیت مستقر شدن 20 سرباز بر روی آن, تعداد: 1",
+    "price": 2500,
+    "materials": {
+      "سنگ": 200
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJHSGihttfLFXny84t_cZ86QO57JQWFAAKd0DEbOjz4UN2aQ4HhzYcPAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "38",
+    "created_at": "2025-08-17T11:05:05.262069"
+  },
+  {
+    "name": "برج سنگی 30 متری",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "مقاومت بشدت بالا \nتوانایی نصب منجنیق و بالیستا و ... بر روی آن و قابلیت مستقر شدن 50 سرباز, تعداد: 1",
+    "price": 4500,
+    "materials": {
+      "سنگ": 400
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJHWmiht6BScu6fx3DstFkSUsZh9__MAAKf0DEbOjz4UHUK_VVIFV_EAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "39",
+    "created_at": "2025-08-17T11:07:15.301672"
   }
 ]
