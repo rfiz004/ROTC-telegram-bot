@@ -100,62 +100,6 @@
       "level": 1,
       "unique_id": "1400441946",
       "saved_at": "2025-08-16T15:14:27.325013"
-    },
-    "7869889327": {
-      "step": "pending",
-      "country": "Northwood",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-08-17T08:42:52.963107",
-      "name": "Richard",
-      "nickname": "Ghost",
-      "age": "23",
-      "skills": [
-        "کیمیاگری",
-        "سم شناسی",
-        "پرورش گیاه"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 1,
-      "skill1": "کیمیاگری",
-      "skill2": "سم شناسی",
-      "skill3": "پرورش گیاه",
-      "appearance": "قد ۱۸۰ دارای ردا سیاه و لباسی سیاه رنگ کلاهخود سیاه رنگ عملا بدنش با لباس و کلاهخود پوشونده شده دستکش های تیز که سوراخ های ریز در نوک هر انگشت قرار داره",
-      "history": "زندگی کوچکی داشت به گیاهان و سم ها علاقه داشت از این سو با دیدن که در این زمینه ها تبادلات زیاد نیست بر این عرصه پا گذاشت",
-      "id_number": "@chat_amani",
-      "user_id_tag": "#Richard",
-      "photo": "AgACAgQAAxkBAAJG2mihkEhlag3ZlYJ8g35Zas6hNNWBAALyzDEbrYURUYZvEG2cCpprAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "7869889327",
-      "saved_at": "2025-08-17T08:18:16.783013"
-    },
-    "106647374": {
-      "step": "pending",
-      "country": "Alpyr",
-      "flow_type": "bio",
-      "job": "مشاور وزارت",
-      "expires_at": "2025-08-17T08:45:56.229562",
-      "name": "کاووس",
-      "nickname": "دبیرسپاه",
-      "age": "۳۵",
-      "skills": [
-        "مدیریت امور نظامی",
-        "مترجمی و زبان شناسی",
-        "تعلیم"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 3,
-      "skill1": "مدیریت امور نظامی",
-      "skill2": "مترجمی و زبان شناسی",
-      "skill3": "تعلیم",
-      "appearance": "چهره باریک و استخوانی، سبیل پرپشت و تاب‌دار، چشمان سبز خاکستری نافذ، موهای فرفری کوتاه و قامتی متوسط.",
-      "history": "-",
-      "id_number": "@Kavus_Xwarasani",
-      "user_id_tag": "#Kavus",
-      "photo": "AgACAgQAAxkBAAJG6WihkRB8MZ-Z8yFMWGVPskr3AmEIAALtzTEb7BURURi30Ein1WL0AQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "106647374",
-      "saved_at": "2025-08-17T08:21:36.859653"
     }
   },
   "used_hashtags": [
