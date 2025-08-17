@@ -100,6 +100,31 @@
       "level": 1,
       "unique_id": "1400441946",
       "saved_at": "2025-08-16T15:14:27.325013"
+    },
+    "8112026007": {
+      "country": "Northwood",
+      "job": "شاه بی تاج",
+      "step": "asking_photo",
+      "flow_type": "bio",
+      "saved_at": "2025-08-17T17:15:50.972272",
+      "expires_at": "2025-08-17T17:41:27.617462",
+      "name": "Shadow",
+      "nickname": "Lord of Shadow",
+      "age": "28",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "سوارکاری",
+        "تیراندازی با کراسبو"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "سوارکاری",
+      "skill3": "تیراندازی با کراسبو",
+      "appearance": "قد بلند ، اندام ورزشی و عضلانی ، موهای بلند مشکی ، لباس سامورایی مشکی و قرمز ، زاویه فک",
+      "history": "خانوادش جلوی چشماش سلاخی شدن و از اون موقع سرد و بی‌روح شد و زیاد حرف نمیزنه",
+      "id_number": "@Shadow_of_eclipsa",
+      "user_id_tag": "#Lord_of_shadow"
     }
   },
   "used_hashtags": [
@@ -192,6 +217,7 @@
     "#Richard",
     "#Kavus",
     "#Monster",
-    "#DrT"
+    "#DrT",
+    "#Lord_of_shadow"
   ]
 }
