@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Marashen",
   "mines": {},
-  "wealth": 2500,
+  "wealth": 0,
   "population": 24000,
   "tax": 10,
   "popularity": 69,
@@ -52,6 +52,11 @@
     "کارخونه‌ شیشه": {
       "count": 0,
       "product": "شیشه",
+      "weekly_output": 50
+    },
+    "کارخونه چرم": {
+      "count": 1,
+      "product": "چرم",
       "weekly_output": 50
     }
   },
