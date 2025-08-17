@@ -207,22 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_7096919075_1755452830",
-      "requester_id": 7096919075,
-      "source_country": "Aldemar",
-      "source_province": "Marevenport",
-      "target_country": "Aldemar",
-      "target_province": "Skavenreach",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "ماهی": 56
-      },
-      "status": "pending",
-      "requested_at": "2025-08-17T17:47:10.503727",
-      "delay_until": "2025-08-18T17:47:10.503730"
     }
   ]
 }
