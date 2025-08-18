@@ -130,11 +130,10 @@
       "saved_at": "2025-08-17T17:17:03.094193"
     },
     "5212956519": {
+      "step": "pending",
       "country": "Azure",
-      "job": "دوک",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-18T22:50:49.458016",
+      "job": "دوک",
       "expires_at": "2025-08-18T23:19:05.692874",
       "name": "Raidon",
       "nickname": "The Writer",
@@ -152,7 +151,11 @@
       "appearance": "یک مرد با موه های بلند تا گردن به صورت و مرتب و ته ریش کامل\n چشم های سبز و ریش و مو قهوه ای سوخته و صورت کمی دراز و کشیده\nقد ۱۸۷ \nوزن ۷۸",
       "history": "رایدون در خانواده ای ثروتمند به دنیا اومده ولی از بچگی به مطالعه و کمان داری علاقه داشته \nروی ستاره ها و فلسفه و موضوعات مختلف مطالعه کرده و در کنارش به تمرین کمان داری و تیر اندازی هم مشغول بوده\nدر حال حاضر مجرده و زندگیشو وقف چیزایی که براش اهمیت بیشتری داشته کرده",
       "id_number": "@Panahi_S_M_H",
-      "user_id_tag": "#Raidon"
+      "user_id_tag": "#Raidon",
+      "photo": "AgACAgQAAxkBAAJJhmijr3lmwlkNP9n8mfGSFS4xYr9oAAKi0TEbSOggUVPCjqP3q1gwAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "5212956519",
+      "saved_at": "2025-08-18T22:55:54.422115"
     }
   },
   "used_hashtags": [
