@@ -132,9 +132,12 @@
     "5212956519": {
       "country": "Azure",
       "job": "دوک",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-18T22:20:10.377896"
+      "saved_at": "2025-08-18T22:30:04.270864",
+      "expires_at": "2025-08-18T22:50:10.378705",
+      "name": "Raidon",
+      "nickname": "The Writer"
     }
   },
   "used_hashtags": [
