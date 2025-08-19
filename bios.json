@@ -128,6 +128,15 @@
       "level": 1,
       "unique_id": "8112026007",
       "saved_at": "2025-08-17T17:17:03.094193"
+    },
+    "5619761875": {
+      "country": "Hikada",
+      "job": "مشاغل آزاد",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-19T11:22:31.090564",
+      "expires_at": "2025-08-19T11:52:07.043578",
+      "name": "RyumaHattori"
     }
   },
   "used_hashtags": [

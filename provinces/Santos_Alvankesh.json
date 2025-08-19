@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Alvankesh",
   "mines": {},
-  "wealth": 2500,
+  "wealth": 500,
   "population": 24000,
   "tax": 10,
   "popularity": 69,
@@ -53,6 +53,11 @@
     },
     "کارخونه‌ شیشه": {
       "count": 0,
+      "product": "شیشه",
+      "weekly_output": 50
+    },
+    "کارخونه شیشه": {
+      "count": 1,
       "product": "شیشه",
       "weekly_output": 50
     }
