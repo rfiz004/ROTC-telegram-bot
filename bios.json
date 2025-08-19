@@ -132,11 +132,12 @@
     "5619761875": {
       "country": "Hikada",
       "job": "مشاغل آزاد",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-19T11:22:31.090564",
+      "saved_at": "2025-08-19T11:23:34.148190",
       "expires_at": "2025-08-19T11:52:07.043578",
-      "name": "RyumaHattori"
+      "name": "RyumaHattori",
+      "nickname": "Kanashii-Kage"
     }
   },
   "used_hashtags": [
