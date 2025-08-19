@@ -132,12 +132,24 @@
     "5619761875": {
       "country": "Hikada",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-19T11:23:34.148190",
+      "saved_at": "2025-08-19T11:41:37.319281",
       "expires_at": "2025-08-19T11:52:07.043578",
       "name": "RyumaHattori",
-      "nickname": "Kanashii-Kage"
+      "nickname": "Kanashii-Kage",
+      "age": "21",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "مخفی‌کاری",
+        "باز کردن قفل"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "مخفی‌کاری",
+      "skill3": "باز کردن قفل",
+      "appearance": "‌Height:186\nHair:Ponytail\nHe has an old scar on her left arm and Has a yin and yang tattoo on her right shoulder"
     }
   },
   "used_hashtags": [
