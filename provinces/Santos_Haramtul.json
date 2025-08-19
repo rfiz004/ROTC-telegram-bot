@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Haramtul",
   "mines": {},
-  "wealth": 2700,
+  "wealth": 700,
   "population": 24000,
   "tax": 10,
   "popularity": 69,
@@ -52,6 +52,11 @@
     "کارخونه چرم": {
       "count": 1,
       "product": "چرم",
+      "weekly_output": 50
+    },
+    "کارخونه شیشه": {
+      "count": 1,
+      "product": "شیشه",
       "weekly_output": 50
     }
   }
