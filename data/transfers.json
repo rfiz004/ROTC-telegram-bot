@@ -207,6 +207,54 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
+    },
+    {
+      "id": "transfer_5566736269_1755643241",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شراب": 30
+      },
+      "status": "pending",
+      "requested_at": "2025-08-19T22:40:41.274603",
+      "delay_until": "2025-08-20T22:40:41.274608"
+    },
+    {
+      "id": "transfer_6213073537_1755643263",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-08-19T22:41:03.080088",
+      "delay_until": "2025-08-20T22:41:03.080093"
+    },
+    {
+      "id": "transfer_5566736269_1755643344",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 1500
+      },
+      "status": "pending",
+      "requested_at": "2025-08-19T22:42:24.840188",
+      "delay_until": "2025-08-20T22:42:24.840193"
     }
   ]
 }
