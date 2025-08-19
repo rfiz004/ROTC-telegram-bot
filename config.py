@@ -43,7 +43,7 @@ RP_PASSWORDS = {
 
 # Multi-country admin mapping
 COUNTRY_ADMINS = {
-    "multi_admin_1": ["Alpyr", "Aldemar", "Walden"],
+    "multi_admin_1": ["Aldemar", "Walden"],
     "multi_admin_2": ["Azure", "Hikada", "Alestria"],
     "multi_admin_3": ["Santos", "Imperial", "Northwood"],
 }
@@ -58,7 +58,7 @@ RESERVATION_FILE = "job_reservations.json"
 SHOP_CHANNEL = "@R_O_T_C_Shop"  # Make sure bot is added as admin to this channel
 
 SKILLS_PER_PAGE = 12
-COUNTRIES = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
+COUNTRIES = ["Aldemar", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
 LOCKED_JOBS = {
     "Santos": ["امپراتور"]
 }
@@ -72,7 +72,6 @@ CAPITAL_CITIES = {
     "Hikada": "Shinrinky", 
     "Azure": "Kalindora",
     "Aldemar": "Marevenport",
-    "Alpyr": "Eldhalm",
     "Walden": "Verindel",
     "Northwood": "Trenhallough",
     "Santos": "Zahramun",
