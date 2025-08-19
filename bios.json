@@ -132,12 +132,27 @@
     "5619761875": {
       "country": "Hikada",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-19T12:18:52.974825",
+      "saved_at": "2025-08-19T12:27:16.581273",
       "expires_at": "2025-08-19T12:48:36.756935",
       "name": "RyumaHattori",
-      "nickname": "Kanashii-Kage"
+      "nickname": "Kanashii-Kage",
+      "age": "21",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "مخفی‌کاری",
+        "تیراندازی با کمان"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "مخفی‌کاری",
+      "skill3": "تیراندازی با کمان",
+      "appearance": "‌Height:186\nHair:BlackPonytail\nEyecolor:Black\nHe has a yin and yang tattoo on her left shoulder, which is located over an old scar",
+      "history": "A shinobi with an unknown history",
+      "id_number": "@IKanashiiGod",
+      "user_id_tag": "#RyumaHattori"
     }
   },
   "used_hashtags": [
@@ -232,6 +247,7 @@
     "#Monster",
     "#DrT",
     "#Lord_of_shadow",
-    "#Raidon"
+    "#Raidon",
+    "#RyumaHattori"
   ]
 }
