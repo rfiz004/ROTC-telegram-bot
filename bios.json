@@ -158,14 +158,32 @@
       "saved_at": "2025-08-19T16:49:21.668173"
     },
     "827921340": {
+      "step": "pending",
       "country": "Hikada",
-      "job": "دای شوگون",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-19T22:07:57.404767",
+      "job": "دای شوگون",
       "expires_at": "2025-08-19T22:36:23.730343",
       "name": "Raido kuzunoha XIV",
-      "nickname": "hinokagutsuchi 🏮"
+      "nickname": "hinokagutsuchi 🏮",
+      "age": "22",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "مدیریت امور نظامی",
+        "قدرت بدنی بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "مدیریت امور نظامی",
+      "skill3": "قدرت بدنی بالا",
+      "appearance": "black eyes and short hair \nWears WW1 Japanese military costume",
+      "history": "A mighty general who conquered the East with a supportive family and loyal army and friends \nThanks to Shinto now he can get help from the supernatural beings \n\nNow he is on the way to conquer the world in the name of kuzunoha and hidaki lineage",
+      "id_number": "@REZAVIOLET1",
+      "user_id_tag": "#XIV",
+      "photo": "AgACAgQAAxkBAAJK5mik9koyFoGUDypHaAxAkgkMaNsCAAJFxzEbjjLpUIi0ZOPOdbTlAQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "827921340",
+      "saved_at": "2025-08-19T22:10:19.068883"
     }
   },
   "used_hashtags": [
@@ -262,6 +280,7 @@
     "#Lord_of_shadow",
     "#Raidon",
     "#RyumaHattori",
-    "#nobody"
+    "#nobody",
+    "#XIV"
   ]
 }
