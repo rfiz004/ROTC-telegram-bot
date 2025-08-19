@@ -916,6 +916,190 @@ def check_materials(province_data, item, quantity):
 #     )
 
 
+# async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+
+#     with open("economic_structures.json", "r", encoding="utf-8") as f:
+#         all_econ_structs = json.load(f)
+
+#     user_id = query.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+
+#     item = user_data.get("purchase_item")
+#     quantity = user_data.get("purchase_quantity", 1)
+#     total_price = user_data.get("total_price", 0)
+#     total_materials = user_data.get("total_materials", {})
+
+#     if not item:
+#         await context.bot.send_message(user_id, "❌ خطا در خرید.", reply_markup=back_and_home_buttons())
+#         return
+
+#     country = user_data.get("country")
+#     province = user_data.get("province")
+
+#     if not country or not province:
+#         await context.bot.send_message(user_id, "❌ اطلاعات استان یافت نشد.", reply_markup=back_and_home_buttons())
+#         return
+
+#     province_data = load_province_data(country, province)
+#     if not province_data:
+#         from province_handler import create_new_province
+#         province_data = create_new_province(country, province)
+
+#     # کسر ثروت
+#     province_data["wealth"] -= total_price
+
+#     item_name = item["name"]
+#     item_type = item.get("type", "").lower()
+
+#     # تعریف لیست معدن‌ها
+#     mine_keys = [
+#         "Stone mine", "Tin mine", "Iron mine", "Coal mine",
+#         "Copper mine", "Silver mine", "Golden mine", "Diamond mine"
+#     ]
+    
+#     # if item_type == "army":
+#     #     base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
+#     #     total_units = base_count * quantity  # مجموع سربازها
+#     #     if "army" not in province_data:
+#     #         province_data["army"] = {}
+#     #     province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
+#     #     province_data["total_army"] = province_data.get("total_army", 0) + total_units
+
+
+#     # elif item_type == "weapon":
+#     #     if "weapons" not in province_data:
+#     #         province_data["weapons"] = []
+#     #     province_data["weapons"].extend([item_name] * quantity)
+
+#     # elif item_type == "castle":
+#     #     if "castle" not in province_data:
+#     #         province_data["castle"] = []
+#     #     province_data["castle"].extend([item_name] * quantity)
+
+#     # elif item_type == "structure":
+#     #     if "structures" not in province_data:
+#     #         province_data["structures"] = []
+#     #     province_data["structures"].extend([item_name] * quantity)
+
+
+#     if item_type == "army":
+#         base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
+#         total_units = base_count * quantity  # مجموع سربازها
+#         if "army" not in province_data:
+#             province_data["army"] = {}
+#         province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
+#         province_data["total_army"] = province_data.get("total_army", 0) + total_units
+    
+#     elif item_type == "weapon":
+#         if "weapons" not in province_data:
+#             province_data["weapons"] = {}
+#         province_data["weapons"][item_name] = province_data["weapons"].get(item_name, 0) + quantity
+    
+#     elif item_type == "castle":
+#         if "castle" not in province_data:
+#             province_data["castle"] = {}
+#         province_data["castle"][item_name] = province_data["castle"].get(item_name, 0) + quantity
+    
+#     elif item_type == "structure":
+#         if "structures" not in province_data:
+#             province_data["structures"] = {}
+#         province_data["structures"][item_name] = province_data["structures"].get(item_name, 0) + quantity
+
+#     # elif item_type == "econstructure":
+#     #     if "mines" not in province_data:
+#     #         # باید mines وجود داشته باشه ولی اگر نبود، می‌سازیم
+#     #         province_data["mines"] = {key:0 for key in mine_keys}
+
+#     #     if item_name in mine_keys:
+#     #         # اگر معدن بود فقط مقدار اضافه میشه
+#     #         province_data["mines"][item_name] = province_data["mines"].get(item_name, 0) + quantity
+#     #     else:
+#     #         # سازه اقتصادی
+#     #         if "economic_structures" not in province_data:
+#     #             province_data["economic_structures"] = {}
+
+#     #         econ_structs = province_data["economic_structures"]
+
+#     #         if item_name in econ_structs:
+#     #             econ_structs[item_name]["count"] += quantity
+#     #         else:
+#     #             # ساخت سازه اقتصادی جدید
+#     #             # استخراج product و weekly_output از description
+#     #             description = item.get("description", "")
+#     #             product = ""
+#     #             weekly_output = 0
+#     #             import re
+#     #             try:
+#     #                 parts = description.split('-')
+#     #                 product = parts[0].strip()
+#     #                 weekly_part = parts[1].strip() if len(parts) > 1 else ""
+#     #                 match = re.search(r'(\d+)', weekly_part)
+#     #                 if match:
+#     #                     weekly_output = int(match.group(1))
+#     #             except Exception:
+#     #                 pass
+
+#     #             econ_structs[item_name] = {
+#     #                 "count": quantity,
+#     #                 "product": product,
+#     #                 "weekly_output": weekly_output
+#     #             }
+    
+#     # بارگذاری دیکشنری مرکزی سازه‌ها
+    
+#     elif item_type == "econstructure":
+#         if "economic_structures" not in province_data:
+#             province_data["economic_structures"] = {}
+    
+#         econ_structs = province_data["economic_structures"]
+    
+#         if item_name in econ_structs:
+#             # اگر قبلاً موجود بود، فقط count افزایش پیدا کنه
+#             econ_structs[item_name]["count"] += quantity
+#         else:
+#             # اگر توی استان نبود، از فایل مرکزی بگیر
+#             struct_info = all_econ_structs.get(item_name, {})
+#             product = struct_info.get("product", "")
+#             weekly_output = struct_info.get("weekly_output", 0)
+    
+#             econ_structs[item_name] = {
+#                 "count": quantity,
+#                 "product": product,
+#                 "weekly_output": weekly_output
+#             }
+
+#     else:  # misc
+#         if "misc" not in province_data:
+#             province_data["misc"] = {}
+#         province_data["misc"][item_name] = province_data["misc"].get(item_name, 0) + quantity
+
+#     # ذخیره اطلاعات
+#     save_province_data(country, province, province_data)
+
+#     # حذف داده‌های خرید موقت
+#     for key in ["purchase_item", "purchase_quantity", "total_price", "total_materials", "step", "flow_type"]:
+#         context.user_data[user_id].pop(key, None)
+
+#     text = f"✅ خرید با موفقیت انجام شد!\n\n"
+#     text += f"📦 {item_name} × {quantity:,} به استان شما اضافه شد.\n"
+#     text += f"💰 طلای باقی‌مانده: {province_data['wealth']:,} طلا"
+
+#     keyboard = [
+#         [InlineKeyboardButton("🏠 نمایش استان", callback_data="country_overview")],
+#         [InlineKeyboardButton("🛒 ادامه خرید", callback_data="open_shop_menu")]
+#     ]
+
+#     await context.bot.send_message(
+#         chat_id=query.message.chat_id,
+#         text=text,
+#         reply_markup=InlineKeyboardMarkup(keyboard),
+#     )
+
+
+
+
 async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -958,116 +1142,46 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Stone mine", "Tin mine", "Iron mine", "Coal mine",
         "Copper mine", "Silver mine", "Golden mine", "Diamond mine"
     ]
-    
-    # if item_type == "army":
-    #     base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
-    #     total_units = base_count * quantity  # مجموع سربازها
-    #     if "army" not in province_data:
-    #         province_data["army"] = {}
-    #     province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
-    #     province_data["total_army"] = province_data.get("total_army", 0) + total_units
-
-
-    # elif item_type == "weapon":
-    #     if "weapons" not in province_data:
-    #         province_data["weapons"] = []
-    #     province_data["weapons"].extend([item_name] * quantity)
-
-    # elif item_type == "castle":
-    #     if "castle" not in province_data:
-    #         province_data["castle"] = []
-    #     province_data["castle"].extend([item_name] * quantity)
-
-    # elif item_type == "structure":
-    #     if "structures" not in province_data:
-    #         province_data["structures"] = []
-    #     province_data["structures"].extend([item_name] * quantity)
-
 
     if item_type == "army":
-        base_count = item.get("count", 1)  # تعداد پایه سرباز در هر خرید
-        total_units = base_count * quantity  # مجموع سربازها
+        base_count = item.get("count", 1)
+        total_units = base_count * quantity
         if "army" not in province_data:
             province_data["army"] = {}
         province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
         province_data["total_army"] = province_data.get("total_army", 0) + total_units
-    
+
     elif item_type == "weapon":
         if "weapons" not in province_data:
             province_data["weapons"] = {}
         province_data["weapons"][item_name] = province_data["weapons"].get(item_name, 0) + quantity
-    
+
     elif item_type == "castle":
         if "castle" not in province_data:
             province_data["castle"] = {}
         province_data["castle"][item_name] = province_data["castle"].get(item_name, 0) + quantity
-    
+
     elif item_type == "structure":
         if "structures" not in province_data:
             province_data["structures"] = {}
         province_data["structures"][item_name] = province_data["structures"].get(item_name, 0) + quantity
 
-    # elif item_type == "econstructure":
-    #     if "mines" not in province_data:
-    #         # باید mines وجود داشته باشه ولی اگر نبود، می‌سازیم
-    #         province_data["mines"] = {key:0 for key in mine_keys}
-
-    #     if item_name in mine_keys:
-    #         # اگر معدن بود فقط مقدار اضافه میشه
-    #         province_data["mines"][item_name] = province_data["mines"].get(item_name, 0) + quantity
-    #     else:
-    #         # سازه اقتصادی
-    #         if "economic_structures" not in province_data:
-    #             province_data["economic_structures"] = {}
-
-    #         econ_structs = province_data["economic_structures"]
-
-    #         if item_name in econ_structs:
-    #             econ_structs[item_name]["count"] += quantity
-    #         else:
-    #             # ساخت سازه اقتصادی جدید
-    #             # استخراج product و weekly_output از description
-    #             description = item.get("description", "")
-    #             product = ""
-    #             weekly_output = 0
-    #             import re
-    #             try:
-    #                 parts = description.split('-')
-    #                 product = parts[0].strip()
-    #                 weekly_part = parts[1].strip() if len(parts) > 1 else ""
-    #                 match = re.search(r'(\d+)', weekly_part)
-    #                 if match:
-    #                     weekly_output = int(match.group(1))
-    #             except Exception:
-    #                 pass
-
-    #             econ_structs[item_name] = {
-    #                 "count": quantity,
-    #                 "product": product,
-    #                 "weekly_output": weekly_output
-    #             }
-    
-    # بارگذاری دیکشنری مرکزی سازه‌ها
-    
     elif item_type == "econstructure":
         if "economic_structures" not in province_data:
             province_data["economic_structures"] = {}
-    
+
         econ_structs = province_data["economic_structures"]
-    
+
         if item_name in econ_structs:
-            # اگر قبلاً موجود بود، فقط count افزایش پیدا کنه
-            econ_structs[item_name]["count"] += quantity
+            # اگه قبلاً وجود داره (حتی با count=0) فقط count رو زیاد کن
+            econ_structs[item_name]["count"] = econ_structs[item_name].get("count", 0) + quantity
         else:
-            # اگر توی استان نبود، از فایل مرکزی بگیر
+            # فقط اگر اصلاً وجود نداره، بسازش
             struct_info = all_econ_structs.get(item_name, {})
-            product = struct_info.get("product", "")
-            weekly_output = struct_info.get("weekly_output", 0)
-    
             econ_structs[item_name] = {
                 "count": quantity,
-                "product": product,
-                "weekly_output": weekly_output
+                "product": struct_info.get("product", ""),
+                "weekly_output": struct_info.get("weekly_output", 0)
             }
 
     else:  # misc
@@ -1096,6 +1210,8 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text=text,
         reply_markup=InlineKeyboardMarkup(keyboard),
     )
+
+
 
 
 
