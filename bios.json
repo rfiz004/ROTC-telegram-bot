@@ -180,6 +180,16 @@
       "appearance": "موی قهوه‌ای قد بلند با وزنی معمولی",
       "history": "از بچگی با کمک والدین اشراف خودش به موفقیت رسیده و بخاطر این که خودش به جایی نرسیده عقده پیدا کرده و میخواد آدم خیلی مهمی بشه",
       "id_number": "@Cod_alex"
+    },
+    "8053959416": {
+      "country": "Imperial",
+      "job": "رئیس سنا",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-20T10:29:19.505469",
+      "expires_at": "2025-08-20T10:57:08.679119",
+      "name": "Tedious Alterious",
+      "nickname": "The Word of God"
     }
   },
   "used_hashtags": [
