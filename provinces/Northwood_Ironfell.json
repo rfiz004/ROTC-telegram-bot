@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Ironfell",
   "mines": {},
-  "wealth": 3000,
+  "wealth": 500,
   "population": 20000,
   "tax": 30,
   "popularity": 69,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
