@@ -1690,7 +1690,10 @@ async def admin_show_economy_overview(update: Update, context: ContextTypes.DEFA
         production_results, prod_details = {}, []
 
     # محاسبه تغییر محبوبیت
-    popularity_change = calculate_province_popularity(province)
+    popularity_change = calculate_hunger_and_consumption_popularity(province) + calculate_tax_popularity(province)
+    tax_popularity_change = calculate_tax_popularity(province_name)
+    hunger_consumption_change = calculate_hunger_and_consumption_popularity(province_name)
+
 
     # ساخت متن نهایی
     text = f"📊 نمای کلی اقتصاد - {province}\n"
@@ -1706,12 +1709,29 @@ async def admin_show_economy_overview(update: Update, context: ContextTypes.DEFA
     else:
         text += "  • 0\n"
 
+    # text += "\n📊 تغییرات محبوبیت:\n"
+    # if popularity_change != 0:
+    #     change_str = f"+{popularity_change}" if popularity_change > 0 else str(popularity_change)
+    #     text += f"  • {change_str} (مالیات، تغذیه، اولویت غلات)\n"
+    # else:
+    #     text += "  • 0\n"
+    
     text += "\n📊 تغییرات محبوبیت:\n"
-    if popularity_change != 0:
-        change_str = f"+{popularity_change}" if popularity_change > 0 else str(popularity_change)
-        text += f"  • {change_str} (مالیات، تغذیه، اولویت غلات)\n"
+
+    # بخش مالیات
+    if tax_popularity_change != 0:
+        change_str = f"+{tax_popularity_change}" if tax_popularity_change > 0 else str(tax_popularity_change)
+        text += f"  • {change_str} (مالیات)\n"
     else:
-        text += "  • 0\n"
+        text += "  • 0 (مالیات)\n"
+    
+    # بخش مصرف غلات
+    if hunger_consumption_change != 0:
+        change_str = f"+{hunger_consumption_change}" if hunger_consumption_change > 0 else str(hunger_consumption_change)
+        text += f"  • {change_str} (مصرف غلات/ضریب مصرف)\n"
+    else:
+        text += "  • 0 (مصرف غلات/ضریب مصرف)\n"
+
 
     text += "\n🏭 تولید هفتگی:\n"
     if production_results and population > 0:
@@ -2408,7 +2428,7 @@ async def preview_weekly_processing(update: Update, context: ContextTypes.DEFAUL
                 production_results, prod_details = calculate_weekly_production(province_data)
 
                 # محاسبه محبوبیت
-                popularity_change = calculate_province_popularity(province)
+                popularity_change = calculate_tax_popularity(province)
 
                 # اول اسم استان را بنویس
                 text += f"  📍 {province}:\n\n"
@@ -2504,6 +2524,10 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
                 country_name = find_country_for_province(province_name)
                 if not country_name:
                     continue
+
+                # ───── تغییر محبوبیت شنبه (گرسنگی + ضریب مصرف) ─────
+                hunger_consumption_popularity = calculate_hunger_and_consumption_popularity(province_name)
+                province_data["popularity"] = province_data.get("popularity", 0) + hunger_consumption_popularity
 
                 province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
                 province_file = os.path.join(PROVINCE_FOLDER, province_filename)
@@ -2611,7 +2635,7 @@ async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TY
                         province_data["economic_items"][item] = current + amount
 
                 # محاسبه محبوبیت
-                popularity_change = calculate_province_popularity(province)
+                popularity_change = calculate_tax_popularity(province)
                 province_data["popularity"] = province_data.get("popularity", 50) + popularity_change
 
                 # ذخیره داده استان
@@ -3096,50 +3120,108 @@ def preview_food_consumption(province_name):
     return consumption_result
 
 
-def calculate_province_popularity(province_name: str) -> int:
-    """Calculate total popularity change for a given province"""
+# def calculate_province_popularity(province_name: str) -> int:
+#     """Calculate total popularity change for a given province"""
 
-    # پایتخت‌ها و دوکنشین‌ها
-    CAPITALS = [
-        "Marevenport", "Eldhalm", "Verindel", "Trenhallough",
-        "Zahramun", "Lusauren", "Kalindora", "ShinrinkyAlkyanos", "Alkyanos"
-    ]
-    DUKEDOMS = ["Sea-Dragon", "Sky-Dragon", "Grand-Duke"]
+#     # پایتخت‌ها و دوکنشین‌ها
+#     CAPITALS = [
+#         "Marevenport", "Eldhalm", "Verindel", "Trenhallough",
+#         "Zahramun", "Lusauren", "Kalindora", "ShinrinkyAlkyanos", "Alkyanos"
+#     ]
+#     DUKEDOMS = ["Sea-Dragon", "Sky-Dragon", "Grand-Duke"]
 
-    # پیدا کردن کشور
-    country_name = find_country_for_province(province_name)
-    if not country_name:
-        return 0  # یا None اگه ترجیح بدی
+#     # پیدا کردن کشور
+#     country_name = find_country_for_province(province_name)
+#     if not country_name:
+#         return 0  # یا None اگه ترجیح بدی
 
-    province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
-    province_path = os.path.join(PROVINCE_FOLDER, province_filename)
-    econ_path = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
+#     province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
+#     province_path = os.path.join(PROVINCE_FOLDER, province_filename)
+#     econ_path = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
 
-    province_data = safe_load_json(province_path)
-    econ_data = safe_load_json(econ_path)
+#     province_data = safe_load_json(province_path)
+#     econ_data = safe_load_json(econ_path)
 
-    if not province_data or not econ_data:
+#     if not province_data or not econ_data:
+#         return 0
+
+#     total_popularity = 0
+
+#     # ───── بخش 1: مالیات ─────
+#     tax_rate = province_data.get("tax", 0)
+
+#     if province_name in CAPITALS or province_name in DUKEDOMS:
+#         tax_popularity = - (tax_rate // 10)
+#     else:
+#         tax_popularity = - max(0, (tax_rate - 10) // 10)
+
+#     total_popularity += tax_popularity
+
+#     # ───── بخش 2: جمعیت گرسنه ─────
+#     population = province_data.get("population", 0)
+#     grain_priority = econ_data.get("grain_priority", [])
+#     grain_settings = econ_data.get("grains", {})
+#     items = province_data.get("economic_items", {}).copy()
+#     remaining_population = population
+
+#     for grain in grain_priority:
+#         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
+#             continue
+
+#         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
+#         percent = max(0, grain_settings.get(grain, 0))
+#         multiplier = 1 + (percent / 100)
+#         units_per_person = (base_amount / base_people) * multiplier
+#         available_units = items.get(grain, 0)
+#         max_people_supported = available_units / units_per_person
+
+#         if max_people_supported >= remaining_population:
+#             remaining_population = 0
+#             break
+#         else:
+#             remaining_population -= int(max_people_supported)
+
+#     if remaining_population > 0:
+#         if remaining_population <= 1000:
+#             hunger_penalty = -1
+#         else:
+#             hunger_penalty = - ((remaining_population // 1000)+1)
+#         total_popularity += hunger_penalty
+
+#     # ───── بخش 3: ضریب مصرف غذا ─────
+#     for grain, percent in grain_settings.items():
+#         bonus = percent // 50  # هر ۵۰ درصد = ۱ امتیاز
+#         total_popularity += bonus
+
+#     return total_popularity
+
+
+def calculate_tax_popularity(province_name: str) -> int:
+    """محاسبه تغییرات محبوبیت ناشی از مالیات (جمعه)"""
+    province_data = load_province(province_name)
+    if not province_data:
         return 0
 
-    total_popularity = 0
-
-    # ───── بخش 1: مالیات ─────
     tax_rate = province_data.get("tax", 0)
 
     if province_name in CAPITALS or province_name in DUKEDOMS:
-        tax_popularity = - (tax_rate // 10)
-    else:
-        tax_popularity = - max(0, (tax_rate - 10) // 10)
+        return - (tax_rate // 10)
+    return - max(0, (tax_rate - 10) // 10)
 
-    total_popularity += tax_popularity
+def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
+    """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (شنبه)"""
+    province_data = load_province(province_name)
+    econ_data = load_economic(province_name)
+    if not province_data or not econ_data:
+        return 0
 
-    # ───── بخش 2: جمعیت گرسنه ─────
     population = province_data.get("population", 0)
     grain_priority = econ_data.get("grain_priority", [])
     grain_settings = econ_data.get("grains", {})
     items = province_data.get("economic_items", {}).copy()
     remaining_population = population
 
+    # بخش گرسنگی
     for grain in grain_priority:
         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
             continue
@@ -3157,19 +3239,18 @@ def calculate_province_popularity(province_name: str) -> int:
         else:
             remaining_population -= int(max_people_supported)
 
+    total = 0
     if remaining_population > 0:
         if remaining_population <= 1000:
-            hunger_penalty = -1
+            total -= 1
         else:
-            hunger_penalty = - ((remaining_population // 1000)+1)
-        total_popularity += hunger_penalty
+            total -= (remaining_population // 1000) + 1
 
-    # ───── بخش 3: ضریب مصرف غذا ─────
+    # بخش ضریب مصرف
     for grain, percent in grain_settings.items():
-        bonus = percent // 50  # هر ۵۰ درصد = ۱ امتیاز
-        total_popularity += bonus
+        total += percent // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
-    return total_popularity
+    return total
 
 
 async def toggle_block_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
