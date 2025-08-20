@@ -3241,7 +3241,9 @@ def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
     province_data = load_province_data(country_name,province_name)
     if not province_data:
         return 0
-    econ_data = load_economic(province_name)
+   
+    econ_path = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
+    econ_data = safe_load_json(econ_path)
     if not province_data or not econ_data:
         return 0
 
