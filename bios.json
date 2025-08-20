@@ -1,31 +1,5 @@
 {
-  "bios": {
-    "2123670814": {
-      "country": "Imperial",
-      "job": "اعضای سنا",
-      "step": "asking_photo",
-      "flow_type": "bio",
-      "saved_at": "2025-08-20T17:34:36.248372",
-      "expires_at": "2025-08-20T17:59:02.683769",
-      "name": "John Kelly",
-      "nickname": "Great Nigga",
-      "age": "35",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "مدیریت امور نظامی",
-        "مقاومت در برابر سم"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 1,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "مدیریت امور نظامی",
-      "skill3": "مقاومت در برابر سم",
-      "appearance": "یه فرد با موهای سفید مادرزادی و یک چشم با رنگ متفاوت",
-      "history": "در کودکی به دلیل بی پولی و فقر تمام خانوادش رو از دست داد و از کودکی یتیم شد و الان در به در دنبال اینه که کاری کنی هیچکی فقیر نباشه",
-      "id_number": "@lTsMeti",
-      "user_id_tag": "#John_Kelly"
-    }
-  },
+  "bios": {},
   "used_hashtags": [
     "#Izod",
     "#Valerie",
