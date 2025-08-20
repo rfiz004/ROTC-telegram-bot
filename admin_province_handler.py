@@ -3198,7 +3198,7 @@ def preview_food_consumption(province_name):
 
 def calculate_tax_popularity(province_name: str) -> int:
     """محاسبه تغییرات محبوبیت ناشی از مالیات (جمعه)"""
-    province_data = load_province(province_name)
+    province_data = load_province_data(province_name)
     if not province_data:
         return 0
 
@@ -3210,7 +3210,7 @@ def calculate_tax_popularity(province_name: str) -> int:
 
 def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
     """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (شنبه)"""
-    province_data = load_province(province_name)
+    province_data = load_province_data(province_name)
     econ_data = load_economic(province_name)
     if not province_data or not econ_data:
         return 0
