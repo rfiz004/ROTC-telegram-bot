@@ -3,12 +3,24 @@
     "8425420280": {
       "country": "Hikada",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-20T20:14:15.333263",
-      "expires_at": "2025-08-20T20:40:02.378461",
+      "saved_at": "2025-08-20T21:49:21.618238",
+      "expires_at": "2025-08-20T22:17:18.703756",
       "name": "Confusion",
-      "nickname": "Excluded"
+      "nickname": "Excluded",
+      "age": "27",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "رام کردن حیوان",
+        "آهنگری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "رام کردن حیوان",
+      "skill3": "آهنگری",
+      "appearance": "طبق عکس بیو"
     }
   },
   "used_hashtags": [
