@@ -3206,6 +3206,11 @@ def calculate_tax_popularity(province_name: str) -> int:
         return 0
 
     tax_rate = province_data.get("tax", 0)
+     CAPITALS = [
+        "Marevenport", "Verindel", "Trenhallough",
+         "Zahramun", "Lusauren", "Kalindora", "ShinrinkyAlkyanos", "Alkyanos"
+     ]
+     DUKEDOMS = ["Sea-Dragon", "Sky-Dragon", "Grand-Duke", "Guardian-of-Sharia", "King-of-wealth"]
 
     if province_name in CAPITALS or province_name in DUKEDOMS:
         return - (tax_rate // 10)
