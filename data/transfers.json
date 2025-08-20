@@ -207,22 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_6213073537_1755696591",
-      "requester_id": 6213073537,
-      "source_country": "Santos",
-      "source_province": "Alvankesh",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "international",
-      "category": "wealth",
-      "items": {
-        "طلا": 300
-      },
-      "status": "pending",
-      "requested_at": "2025-08-20T13:29:51.335059",
-      "delay_until": "2025-08-21T13:29:51.335064"
     }
   ]
 }
