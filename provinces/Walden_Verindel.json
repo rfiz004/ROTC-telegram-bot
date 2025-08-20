@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 8700,
+  "wealth": 7200,
   "population": 40000,
   "tax": 10,
   "popularity": 74,
@@ -41,7 +41,7 @@
     "پنبه": 40,
     "پارچه": 10,
     "چرم": 0,
-    "شراب": 30
+    "شراب": 0
   },
   "economic_structures": {
     "مزرعه": {
