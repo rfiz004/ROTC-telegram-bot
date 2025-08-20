@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 14200,
+  "wealth": 12200,
   "population": 40000,
   "tax": 30,
   "popularity": 68,
@@ -56,7 +56,7 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 0,
+      "count": 1,
       "product": "شراب",
       "weekly_output": 50
     },
