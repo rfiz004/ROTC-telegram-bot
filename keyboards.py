@@ -39,7 +39,7 @@ def admin_back_buttons():
 def country_jobs_keyboard():
     """Create keyboard for country selection in bio submission"""
     keyboard = []
-    countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
+    countries = ["Aldemar", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
     for country in countries:
         keyboard.append([InlineKeyboardButton(f"🏛 {country}", callback_data=f"select_bio_country_{country}")])
     keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data="back_to_main")])
