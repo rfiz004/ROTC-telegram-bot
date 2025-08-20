@@ -3,11 +3,12 @@
     "8425420280": {
       "country": "Hikada",
       "job": "مشاغل آزاد",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-20T20:10:17.262664",
+      "saved_at": "2025-08-20T20:14:15.333263",
       "expires_at": "2025-08-20T20:40:02.378461",
-      "name": "Confusion"
+      "name": "Confusion",
+      "nickname": "Excluded"
     }
   },
   "used_hashtags": [
