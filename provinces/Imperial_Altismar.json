@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Altismar",
   "mines": {},
-  "wealth": 5500,
+  "wealth": 3000,
   "population": 24000,
   "tax": 30,
   "popularity": 66,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 0,
+      "count": 1,
       "product": "گندم",
       "weekly_output": 100
     },
