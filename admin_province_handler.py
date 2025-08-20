@@ -2542,17 +2542,18 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
                 if not country_name:
                     continue
 
+                province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
+                province_file = os.path.join(PROVINCE_FOLDER, province_filename)
+                
+                province_data = safe_load_json(province_file)
+                econ_data = safe_load_json(econ_file)
+                if not province_data or not econ_data:
+                    continue
+                
                 # ───── تغییر محبوبیت شنبه (گرسنگی + ضریب مصرف) ─────
                 hunger_consumption_popularity = calculate_hunger_and_consumption_popularity(province_name)
                 province_data["popularity"] = province_data.get("popularity", 0) + hunger_consumption_popularity
 
-                province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
-                province_file = os.path.join(PROVINCE_FOLDER, province_filename)
-
-                econ_data = safe_load_json(econ_file)
-                province_data = safe_load_json(province_file)
-                if not econ_data or not province_data:
-                    continue
 
                 population = province_data.get("population", 0)
                 grain_priority = econ_data.get("grain_priority", [])
