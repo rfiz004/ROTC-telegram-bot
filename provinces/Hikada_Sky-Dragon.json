@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 1000,
+  "wealth": 2500,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -45,8 +45,13 @@
   "economic_structures": {
     "مزرعه": {
       "count": 0,
-      "product": "گندم",
+      "product": "ماهی",
       "weekly_output": 100
+    },
+    "کارخونه پارچه": {
+      "count": 1,
+      "product": "شراب",
+      "weekly_output": 50
     },
     "چوب بری": {
       "count": 0,
@@ -54,13 +59,8 @@
       "weekly_output": 50
     },
     "کارخونه فولاد": {
-      "count": 0,
-      "product": "فولاد",
-      "weekly_output": 50
-    },
-    "کارخونه پارچه": {
-      "count": 0,
-      "product": "پارچه",
+      "count": 2,
+      "product": "سنگ",
       "weekly_output": 50
     }
   },
