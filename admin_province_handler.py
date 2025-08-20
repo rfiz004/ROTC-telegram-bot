@@ -2456,25 +2456,25 @@ async def preview_weekly_processing(update: Update, context: ContextTypes.DEFAUL
                     for item, amount in production_results.items():
                         text += f"      • {item}: +{amount:,}\n"
 
-                tax_popularity_change = calculate_tax_popularity(province_name)
-                hunger_consumption_change = calculate_hunger_and_consumption_popularity(province_name)
-                if popularity_change != 0:
-                    change_str = f"+{popularity_change}" if popularity_change > 0 else str(popularity_change)
-                    text += "\n📊 تغییرات محبوبیت:\n"
+                tax_popularity_change = calculate_tax_popularity(province)
+                hunger_consumption_change = calculate_hunger_and_consumption_popularity(province)
+                
+                text += "\n📊 تغییرات محبوبیت:\n"
+                
+                # بخش مالیات
+                if tax_popularity_change != 0:
+                    change_str = f"+{tax_popularity_change}" if tax_popularity_change > 0 else str(tax_popularity_change)
+                    text += f"  • {change_str} (مالیات)\n"
+                else:
+                    text += "  • 0 (مالیات)\n"
+                
+                # بخش مصرف غلات
+                if hunger_consumption_change != 0:
+                    change_str = f"+{hunger_consumption_change}" if hunger_consumption_change > 0 else str(hunger_consumption_change)
+                    text += f"  • {change_str} (مصرف غلات/ضریب مصرف)\n"
+                else:
+                    text += "  • 0 (مصرف غلات/ضریب مصرف)\n"
 
-                    # بخش مالیات
-                    if tax_popularity_change != 0:
-                        change_str = f"+{tax_popularity_change}" if tax_popularity_change > 0 else str(tax_popularity_change)
-                        text += f"  • {change_str} (مالیات)\n"
-                    else:
-                        text += "  • 0 (مالیات)\n"
-                    
-                    # بخش مصرف غلات
-                    if hunger_consumption_change != 0:
-                        change_str = f"+{hunger_consumption_change}" if hunger_consumption_change > 0 else str(hunger_consumption_change)
-                        text += f"  • {change_str} (مصرف غلات/ضریب مصرف)\n"
-                    else:
-                        text += "  • 0 (مصرف غلات/ضریب مصرف)\n"
 
 
                 text += "\n"
