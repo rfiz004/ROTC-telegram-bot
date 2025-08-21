@@ -1,5 +1,16 @@
 {
-  "bios": {},
+  "bios": {
+    "7199097732": {
+      "country": "Walden",
+      "job": "نگهبان پیمان",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-21T09:53:04.236894",
+      "expires_at": "2025-08-21T10:20:39.550375",
+      "name": "زارد",
+      "nickname": "لرد گمشده"
+    }
+  },
   "used_hashtags": [
     "#Izod",
     "#Valerie",
