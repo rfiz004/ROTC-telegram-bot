@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Skavenreach",
   "mines": {},
-  "wealth": 1000,
+  "wealth": 0,
   "population": 14000,
   "tax": 0,
   "popularity": 64,
@@ -39,9 +39,9 @@
       "product": "ماهی",
       "weekly_output": 100
     },
-    "جواهرسازی": {
+    "کارخونه فولاد": {
       "count": 1,
-      "product": "جواهر",
+      "product": "فولاد",
       "weekly_output": 50
     },
     "کارخونه پارچه": {
