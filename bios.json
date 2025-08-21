@@ -1,11 +1,10 @@
 {
   "bios": {
     "8425420280": {
+      "step": "pending",
       "country": "Hikada",
-      "job": "مشاغل آزاد",
-      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-20T23:52:39.840312",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-08-21T00:16:14.116883",
       "name": "Confusion",
       "nickname": "Excluded",
@@ -20,7 +19,14 @@
       "skill1": "مهارت شمشیرزنی و تبرزنی",
       "skill2": "جعل مدارک",
       "skill3": "رام کردن حیوان",
-      "appearance": "موی سفید و نسبتا بلند ، چشم هایی بنفش ، شنل و ماسکی که کل بدنش رو پوشونده"
+      "appearance": "موی سفید و نسبتا بلند ، چشم هایی بنفش ، شنل و ماسکی که کل بدنش رو پوشونده",
+      "history": "در گذشته های دور ، شخصی به همراه برادرانش متولد شد ، برخلاف خانواده و برادرانش شخصی ساکت بود و همیشه توسط خانواده نیز مورد تحقیر قرار می‌گرفت ، تا که در یکی از آن روز ها یک پیرمرد به اون پیشنهاد میده که از خانواده جدا شه و با پیرمرد به کلبه ای دور از شهر بره ، سالیان ساله که شخصی اونو ندیده",
+      "id_number": "@Confusion_09",
+      "user_id_tag": "#Confusionn",
+      "photo": "AgACAgQAAxkBAAJOQWimRBT0RUgL9l5Y41gl2Dm6FzbNAAI7zDEbZZAwUWrLwuN-J7T9AQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "8425420280",
+      "saved_at": "2025-08-21T00:03:34.171086"
     }
   },
   "used_hashtags": [
@@ -113,6 +119,7 @@
     "#Vilynsia",
     "#Ted",
     "#John_Kelly",
-    "#Confusion"
+    "#Confusion",
+    "#Confusionn"
   ]
 }
