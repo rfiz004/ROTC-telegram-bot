@@ -34,15 +34,15 @@
     "شراب": 0
   },
   "economic_structures": {
-    "مزرعه": {
-      "count": 0,
-      "product": "گندم",
-      "weekly_output": 100
-    },
     "مرغداری": {
       "count": 0,
       "product": "مرغ",
       "weekly_output": 100
+    },
+    "کارخونه فولاد": {
+      "count": 0,
+      "product": "فولاد",
+      "weekly_output": 50
     },
     "کارخونه شراب": {
       "count": 0,
