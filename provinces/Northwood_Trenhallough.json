@@ -4,9 +4,9 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 12200,
+  "wealth": 2200,
   "population": 40000,
-  "tax": 30,
+  "tax": 80,
   "popularity": 68,
   "total_army": 5000,
   "army": {
@@ -46,12 +46,12 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 0,
+      "count": 1,
       "product": "گوشت",
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 0,
+      "count": 1,
       "product": "چرم",
       "weekly_output": 50
     },
