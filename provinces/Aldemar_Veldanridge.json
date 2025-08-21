@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Veldanridge",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 8000,
   "population": 14000,
   "tax": 40,
   "popularity": 64,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "جواهرسازی": {
-      "count": 0,
+      "count": 1,
       "product": "جواهر",
       "weekly_output": 50
     },
