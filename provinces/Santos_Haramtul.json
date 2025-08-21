@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Haramtul",
   "mines": {},
-  "wealth": 700,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 69,
@@ -39,16 +39,6 @@
       "product": "گوشت",
       "weekly_output": 100
     },
-    "جواهرسازی": {
-      "count": 0,
-      "product": "جواهر",
-      "weekly_output": 50
-    },
-    "کارخونه‌ شیشه": {
-      "count": 0,
-      "product": "شیشه",
-      "weekly_output": 50
-    },
     "کارخونه چرم": {
       "count": 1,
       "product": "چرم",
@@ -57,6 +47,11 @@
     "کارخونه شیشه": {
       "count": 1,
       "product": "شیشه",
+      "weekly_output": 50
+    },
+    "کارخونه سنگ": {
+      "count": 0,
+      "product": "سنگ",
       "weekly_output": 50
     }
   }

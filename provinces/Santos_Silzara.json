@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Silzara",
   "mines": {},
-  "wealth": 500,
+  "wealth": 200,
   "population": 24000,
   "tax": 100,
   "popularity": 69,
@@ -41,19 +41,19 @@
       "product": "گوشت",
       "weekly_output": 100
     },
-    "کارخونه‌ چرم": {
+    "کارخونه چرم": {
       "count": 0,
       "product": "چرم",
-      "weekly_output": 50
-    },
-    "جواهرسازی": {
-      "count": 0,
-      "product": "جواهر",
       "weekly_output": 50
     },
     "کارخونه شیشه": {
       "count": 1,
       "product": "شیشه",
+      "weekly_output": 50
+    },
+    "کارخونه سنگ": {
+      "count": 0,
+      "product": "سنگ",
       "weekly_output": 50
     }
   }
