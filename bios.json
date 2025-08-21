@@ -3,12 +3,11 @@
     "7199097732": {
       "country": "Walden",
       "job": "نگهبان پیمان",
-      "step": "asking_age",
+      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-08-21T09:53:04.236894",
-      "expires_at": "2025-08-21T10:20:39.550375",
-      "name": "زارد",
-      "nickname": "لرد گمشده"
+      "saved_at": "2025-08-21T10:00:09.612331",
+      "expires_at": "2025-08-21T10:30:01.484339",
+      "name": "زارد"
     }
   },
   "used_hashtags": [
