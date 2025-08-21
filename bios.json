@@ -1,13 +1,32 @@
 {
   "bios": {
     "7199097732": {
+      "step": "pending",
       "country": "Walden",
-      "job": "نگهبان پیمان",
-      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-08-21T10:00:09.612331",
+      "job": "نگهبان پیمان",
       "expires_at": "2025-08-21T10:30:01.484339",
-      "name": "زارد"
+      "name": "زارد",
+      "nickname": "نور سیاه",
+      "age": "۳۴",
+      "skills": [
+        "مهارت کار با خنجر",
+        "مقاومت در برابر سم",
+        "حس ششم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "مقاومت در برابر سم",
+      "skill3": "حس ششم",
+      "appearance": "****",
+      "history": "؟؟؟",
+      "id_number": "@M2v6v",
+      "user_id_tag": "#zard",
+      "photo": "AgACAgUAAxkBAAJOn2im72R3_Cr9FSXBW91HyKmqE9dEAAIBxjEbEPkxVe0wJnD8YX3rAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "7199097732",
+      "saved_at": "2025-08-21T10:05:24.580667"
     }
   },
   "used_hashtags": [
@@ -101,6 +120,7 @@
     "#Ted",
     "#John_Kelly",
     "#Confusion",
-    "#Confusionn"
+    "#Confusionn",
+    "#zard"
   ]
 }
