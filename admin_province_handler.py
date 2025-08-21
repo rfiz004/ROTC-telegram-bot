@@ -1691,8 +1691,8 @@ async def admin_show_economy_overview(update: Update, context: ContextTypes.DEFA
 
     # محاسبه تغییر محبوبیت
     popularity_change = calculate_hunger_and_consumption_popularity(province) + calculate_tax_popularity(province)
-    tax_popularity_change = calculate_tax_popularity(province_name)
-    hunger_consumption_change = calculate_hunger_and_consumption_popularity(province_name)
+    tax_popularity_change = calculate_tax_popularity(province)
+    hunger_consumption_change = calculate_hunger_and_consumption_popularity(province)
 
 
     # ساخت متن نهایی
