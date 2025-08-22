@@ -3,12 +3,24 @@
     "6492184496": {
       "country": "Santos",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-22T19:17:02.597964",
+      "saved_at": "2025-08-22T19:22:20.555852",
       "expires_at": "2025-08-22T19:45:41.194242",
       "name": "Enzo",
-      "nickname": "Night~Devil"
+      "nickname": "Night~Devil",
+      "age": "32",
+      "skills": [
+        "مهارت کار با خنجر",
+        "باز کردن قفل",
+        "مخفی‌کاری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "باز کردن قفل",
+      "skill3": "مخفی‌کاری",
+      "appearance": "مردی با رنگ پوست کرم و ته ریشی مشکی با رنگ چشم آبی و دارای مو های قهوه ای که بلند هستند و از پشت بسته هستند"
     }
   },
   "used_hashtags": [
