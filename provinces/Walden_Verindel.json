@@ -45,24 +45,19 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 2,
+      "count": 0,
       "product": "گندم",
-      "weekly_output": 100
+      "weekly_output": 0
     },
     "باغ": {
       "count": 0,
       "product": "میوه",
-      "weekly_output": 100
+      "weekly_output": 0
     },
     "کارخونه پنبه": {
       "count": 2,
       "product": "پنبه",
-      "weekly_output": 50
-    },
-    "کارخونه پارچه": {
-      "count": 1,
-      "product": "پارچه",
-      "weekly_output": 50
+      "weekly_output": 100
     }
   }
 }
