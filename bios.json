@@ -1,5 +1,16 @@
 {
-  "bios": {},
+  "bios": {
+    "6492184496": {
+      "country": "Santos",
+      "job": "مشاغل آزاد",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-22T19:17:02.597964",
+      "expires_at": "2025-08-22T19:45:41.194242",
+      "name": "Enzo",
+      "nickname": "Night~Devil"
+    }
+  },
   "used_hashtags": [
     "#Izod",
     "#Valerie",
