@@ -207,38 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_6213073537_1755783117",
-      "requester_id": 6213073537,
-      "source_country": "Santos",
-      "source_province": "Grand-Duke",
-      "target_country": "Santos",
-      "target_province": "Silzara",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "گوشت": 10
-      },
-      "status": "pending",
-      "requested_at": "2025-08-21T13:31:57.982778",
-      "delay_until": "2025-08-22T13:31:57.982781"
-    },
-    {
-      "id": "transfer_7686824742_1755809779",
-      "requester_id": 7686824742,
-      "source_country": "Northwood",
-      "source_province": "Trenhallough",
-      "target_country": "Santos",
-      "target_province": "Zahramun",
-      "transfer_type": "international",
-      "category": "wealth",
-      "items": {
-        "طلا": 1200
-      },
-      "status": "pending",
-      "requested_at": "2025-08-21T20:56:19.916481",
-      "delay_until": "2025-08-22T20:56:19.916484"
     }
   ]
 }
