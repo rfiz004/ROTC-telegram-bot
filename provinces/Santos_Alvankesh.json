@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Alvankesh",
   "mines": {},
-  "wealth": 10200,
+  "wealth": 7700,
   "population": 24000,
   "tax": 100,
   "popularity": 60,
@@ -37,7 +37,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
