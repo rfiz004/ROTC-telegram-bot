@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 0,
+  "wealth": 7000,
   "population": 40000,
   "tax": 10,
   "popularity": 74,
@@ -57,7 +57,12 @@
     "کارخونه پنبه": {
       "count": 2,
       "product": "پنبه",
-      "weekly_output": 100
+      "weekly_output": 50
+    },
+    "کارخونه پارچه": {
+      "count": 0,
+      "product": "پارچه",
+      "weekly_output": 0
     }
   }
 }
