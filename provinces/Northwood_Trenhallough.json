@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 2200,
+  "wealth": 200,
   "population": 40000,
   "tax": 80,
   "popularity": 68,
@@ -46,7 +46,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
