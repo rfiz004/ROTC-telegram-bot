@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Marashen",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 7500,
   "population": 24000,
   "tax": 100,
   "popularity": 63,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
