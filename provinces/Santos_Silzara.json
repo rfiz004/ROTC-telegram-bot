@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Silzara",
   "mines": {},
-  "wealth": 7700,
+  "wealth": 5200,
   "population": 24000,
   "tax": 100,
   "popularity": 60,
@@ -37,7 +37,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 2,
+      "count": 3,
       "product": "گوشت",
       "weekly_output": 100
     },
