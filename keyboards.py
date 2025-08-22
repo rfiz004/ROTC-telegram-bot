@@ -135,7 +135,7 @@ def manage_food_menu():
 
 def country_selection_keyboard(prefix):
     """Create country selection keyboard for admin"""
-    countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
+    countries = ["Aldemar", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
     keyboard = []
     for country in countries:
         keyboard.append([InlineKeyboardButton(f"🌍 {country}", callback_data=f"{prefix}_{country}")])
@@ -200,7 +200,7 @@ def news_type_menu():
 def select_country_menu(countries=None):
     """Create country selection menu for admins"""
     if countries is None:
-        countries = ["Aldemar", "Alpyr", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
+        countries = ["Aldemar", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
 
     keyboard = []
     for country in countries:
