@@ -2,10 +2,10 @@
   "country": "Northwood",
   "province": "Garodhen",
   "mines": {},
-  "wealth": 1000,
+  "wealth": 11000,
   "population": 20000,
   "tax": 100,
-  "popularity": 71,
+  "popularity": 62,
   "total_army": 5000,
   "army": {
     "کماندار": 500,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "گندم": 0,
-    "گوشت": 100.33333333333333,
+    "گوشت": 200.33333333333331,
     "ماهی": 0,
     "مرغ": 0,
     "میوه": 0,

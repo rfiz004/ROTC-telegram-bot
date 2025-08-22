@@ -2,10 +2,10 @@
   "country": "Imperial",
   "province": "Sewandale",
   "mines": {},
-  "wealth": 4000,
+  "wealth": 10000,
   "population": 24000,
   "tax": 60,
-  "popularity": 66,
+  "popularity": 61,
   "total_army": 5000,
   "army": {
     "کماندار": 600,
