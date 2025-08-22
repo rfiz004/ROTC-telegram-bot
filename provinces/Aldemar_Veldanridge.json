@@ -35,9 +35,14 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 3,
+      "count": 1,
       "product": "ماهی",
       "weekly_output": 100
+    },
+    "کارخونه فولاد": {
+      "count": 1,
+      "product": "فولاد",
+      "weekly_output": 50
     },
     "کارخونه پارچه": {
       "count": 1,
