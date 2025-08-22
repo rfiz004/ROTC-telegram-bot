@@ -223,22 +223,6 @@
       "status": "pending",
       "requested_at": "2025-08-22T15:43:57.052787",
       "delay_until": "2025-08-23T15:43:57.052792"
-    },
-    {
-      "id": "transfer_7199097732_1755880315",
-      "requester_id": 7199097732,
-      "source_country": "Walden",
-      "source_province": "Brishallow",
-      "target_country": "Walden",
-      "target_province": "Elmaren",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 1000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-22T16:31:55.985232",
-      "delay_until": "2025-08-23T16:31:55.985236"
     }
   ]
 }
