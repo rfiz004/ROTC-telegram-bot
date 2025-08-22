@@ -27,6 +27,31 @@
       "level": 1,
       "unique_id": "6492184496",
       "saved_at": "2025-08-22T19:30:47.810634"
+    },
+    "8112026007": {
+      "country": "Northwood",
+      "job": "مشاور روح",
+      "step": "asking_photo",
+      "flow_type": "bio",
+      "saved_at": "2025-08-22T22:06:20.547454",
+      "expires_at": "2025-08-22T22:32:13.971444",
+      "name": "Shadow",
+      "nickname": "Lord of Shadow",
+      "age": "30",
+      "skills": [
+        "سوارکاری",
+        "مهارت شمشیرزنی و تبرزنی",
+        "قدرت بدنی بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "سوارکاری",
+      "skill2": "مهارت شمشیرزنی و تبرزنی",
+      "skill3": "قدرت بدنی بالا",
+      "appearance": "مردی قد بلند و عضلانی که یه طرف چهرش سوخته با لباس های سامورایی برنگ قرمز و مشکی",
+      "history": "تو بچگی خونشون آتیش میگیره و کل خانوادش میمیرم و فقط اون زنده میمونه \nاز اون موقع بی‌رحم و سرد شده",
+      "id_number": "@Shadow_of_eclipsa",
+      "user_id_tag": "#cid_kageno"
     }
   },
   "used_hashtags": [
@@ -122,6 +147,7 @@
     "#Confusion",
     "#Confusionn",
     "#zard",
-    "#Night_Assassin"
+    "#Night_Assassin",
+    "#cid_kageno"
   ]
 }
