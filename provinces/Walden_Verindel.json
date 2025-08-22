@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 14000,
+  "wealth": 500,
   "population": 40000,
   "tax": 10,
   "popularity": 76,
@@ -50,7 +50,7 @@
       "weekly_output": 100
     },
     "باغ": {
-      "count": 0,
+      "count": 9,
       "product": "میوه",
       "weekly_output": 100
     },
