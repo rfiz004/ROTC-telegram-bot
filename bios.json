@@ -31,11 +31,12 @@
     "8112026007": {
       "country": "Alestria",
       "job": "فرمانده سپاه محافظ الهی",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-23T18:23:19.181547",
-      "expires_at": "2025-08-23T18:23:19.886697",
-      "name": "Shadow"
+      "saved_at": "2025-08-23T18:35:14.780508",
+      "expires_at": "2025-08-23T19:05:02.541350",
+      "name": "Shadow",
+      "nickname": "Lord of the"
     }
   },
   "used_hashtags": [
