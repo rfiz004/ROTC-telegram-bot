@@ -31,9 +31,11 @@
     "8112026007": {
       "country": "Alestria",
       "job": "فرمانده سپاه محافظ الهی",
-      "step": "asking_name",
+      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-08-23T17:53:19.886254"
+      "saved_at": "2025-08-23T18:23:19.181547",
+      "expires_at": "2025-08-23T18:23:19.886697",
+      "name": "Shadow"
     }
   },
   "used_hashtags": [
