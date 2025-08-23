@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Druvenmarsh",
   "mines": {},
-  "wealth": 8500,
+  "wealth": 1500,
   "population": 20000,
   "tax": 100,
   "popularity": 65,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 3,
       "product": "گوشت",
       "weekly_output": 100
     },
@@ -45,7 +45,7 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 0,
+      "count": 1,
       "product": "شراب",
       "weekly_output": 50
     },
