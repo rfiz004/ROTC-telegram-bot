@@ -31,12 +31,24 @@
     "8112026007": {
       "country": "Alestria",
       "job": "فرمانده سپاه محافظ الهی",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-23T18:35:14.780508",
+      "saved_at": "2025-08-23T18:36:12.420453",
       "expires_at": "2025-08-23T19:05:02.541350",
       "name": "Shadow",
-      "nickname": "Lord of the"
+      "nickname": "Lord of the",
+      "age": "35",
+      "skills": [
+        "سوارکاری",
+        "مهارت شمشیرزنی و تبرزنی",
+        "قدرت بدنی بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "سوارکاری",
+      "skill2": "مهارت شمشیرزنی و تبرزنی",
+      "skill3": "قدرت بدنی بالا",
+      "appearance": "شخصی قد بلند و عضلانی که یه طرف چهرش سوخته لباس سامورایی مشکی و قرمز"
     }
   },
   "used_hashtags": [
