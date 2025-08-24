@@ -370,8 +370,8 @@
     "materials": {},
     "owner": "-",
     "hashtags": [
+      "#Santos",
       "#EconStructure",
-      "#Alpyr",
       "#Azure",
       "#Alestria"
     ],
@@ -379,7 +379,12 @@
     "count": 1,
     "id": "19",
     "created_at": "2025-08-12T15:03:10.784588",
-    "updated_at": "2025-08-13T22:03:36.657530"
+    "updated_at": "2025-08-24T15:30:32.020487",
+    "country": [
+      "Santos",
+      "Azure",
+      "Alestria"
+    ]
   },
   {
     "name": "کارخونه چرم",
