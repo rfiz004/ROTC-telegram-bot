@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Silzara",
   "mines": {},
-  "wealth": 4900,
+  "wealth": 1900,
   "population": 24000,
   "tax": 100,
   "popularity": 63,
@@ -52,7 +52,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 1,
       "product": "سنگ",
       "weekly_output": 50
     }
