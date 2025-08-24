@@ -79,7 +79,7 @@ def filter_items_by_country(items, user_country):
     """Filter items by user's country (supports multiple countries per item)"""
     filtered = []
     for item in items:
-        item_countries = item.get("countries") or [item.get("country", "All")]
+        item_countries = item.get("country") or [item.get("countries", "All")]
 
         # اطمینان از اینکه لیست است
         if isinstance(item_countries, str):
