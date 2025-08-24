@@ -302,6 +302,195 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #     reply_markup=InlineKeyboardMarkup(buttons)
     # )
 
+# async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Show items in selected category with navigation"""
+#     query = update.callback_query
+#     await query.answer()
+
+#     category = query.data.split("_")[-1]  # Extract category from callback data
+#     user_id = query.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     country = user_data.get("country", "")
+
+#     # Get filtered items for this category
+#     all_items = user_data.get("shop_items", [])
+#     category_items = filter_items_by_category(all_items, category)
+
+#     if not category_items:
+#         category_names = {
+#             "army": "⚔️ ارتش",
+#             "castle": "🏰 قلعه",
+#             "structure": "🏗 سازه", 
+#             "weapon": "🗡 سلاح",
+#             "misc": "📦 متفرقه",
+#             "econstructure": "🏭 سازه‌های اقتصادی"
+#         }
+
+#         await query.edit_message_text(
+#             f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {country} یافت نشد.",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
+#             ]])
+#         )
+#         return
+
+#     # Store category items and initialize pagination
+#     context.user_data[user_id]["category_items"] = category_items
+#     context.user_data[user_id]["current_category"] = category
+#     context.user_data[user_id]["current_page"] = 0
+
+#     # Show first page
+#     await show_items_page(query, context, user_id, 0, category)
+
+# async def show_items_page(query, context, user_id, page, category):
+#     """Show single item per page with navigation buttons"""
+#     user_data = context.user_data.get(user_id, {})
+#     category_items = user_data.get("category_items", [])
+
+#     if not category_items:
+#         await query.edit_message_text(
+#             "📭 هیچ آیتمی یافت نشد.",
+#             reply_markup=InlineKeyboardMarkup([[
+#                 InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
+#             ]])
+#         )
+#         return
+
+#     # Calculate pagination
+#     total_items = len(category_items)
+#     page = max(0, min(page, total_items - 1))
+#     current_item = category_items[page]
+
+#     # Update current page in user data
+#     context.user_data[user_id]["current_page"] = page
+
+#     # Build formatted item display
+#     page_info = f"🛍 آیتم {page + 1} از {total_items}\n\n"
+
+#     # Build the item caption
+#     caption = f"──────⊱◈Shop◈⊰──────\n"
+#     caption += f"✦ Item Name : {current_item.get('name', 'نامشخص')}\n"
+#     caption += f"✧ Item Type : {current_item.get('type', 'Misc')}\n"
+#     caption += f"✦ Country : {current_item.get('country', 'All')}\n"
+
+#     # Add hashtags
+#     hashtags = current_item.get('hashtags', [])
+#     for hashtag in hashtags:
+#         caption += f"{hashtag}\n"
+
+#     caption += f"✧ Description :\n"
+#     caption += f"• {current_item.get('description', 'توضیحات موجود نیست')}"
+    
+#     # اضافه کردن تعداد برای دسته‌های مشخص
+#     count = current_item.get("count", 1)
+#     item_type = current_item.get("type", "").lower()
+    
+#     if item_type in ["army", "castle", "misc", "structure", "weapon"]:
+#         caption += f"\n✦ تعداد موجود: {count}"
+
+
+#     caption += f"✦ Price & Materials :\n"
+#     caption += f"• {current_item.get('price', 0):,}"
+
+#     materials = current_item.get('materials', {})
+#     if materials:
+#         material_parts = []
+#         for material, amount in materials.items():
+#             material_parts.append(f"{material}:{amount}")
+#         caption += f", {', '.join(material_parts)}"
+
+#     caption += f"\n✧ Owner ID : {current_item.get('owner', 'نامشخص')}\n"
+#     caption += f"──────⊹⊱✫⊰⊹──────\n"
+#     caption += f"https://t.me/R_O_T_C\n"
+#     caption += f"https://t.me/R_O_T_C_Shop"
+
+#     full_caption = page_info + caption
+
+#     # Create navigation buttons
+#     nav_buttons = []
+#     if total_items > 1:
+#         # Previous button (disabled if first page)
+#         if page > 0:
+#             prev_btn = InlineKeyboardButton("⬅️ قبلی", callback_data=f"shop_page_{category}_{page-1}")
+#         else:
+#             prev_btn = InlineKeyboardButton("⬅️", callback_data="noop")
+
+#         # Next button (disabled if last page)  
+#         if page < total_items - 1:
+#             next_btn = InlineKeyboardButton("➡️ بعدی", callback_data=f"shop_page_{category}_{page+1}")
+#         else:
+#             next_btn = InlineKeyboardButton("➡️", callback_data="noop")
+
+#         nav_buttons = [prev_btn, next_btn]
+
+#     # Build keyboard
+#     keyboard = []
+#     if nav_buttons:
+#         keyboard.append(nav_buttons)
+
+#     keyboard.extend([
+#         [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{page}")],
+#         [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]
+#     ])
+
+#     # Get photo file_id
+#     photo_file_id = current_item.get('photo_file_id')
+
+#     try:
+#         # Try to send with photo first
+#         if photo_file_id:
+#             try:
+#                 await query.delete_message()
+#                 await context.bot.send_photo(
+#                     chat_id=query.message.chat_id,
+#                     photo=photo_file_id,
+#                     caption=full_caption,
+#                     reply_markup=InlineKeyboardMarkup(keyboard),
+#                     parse_mode=None  # No parsing to preserve original formatting
+#                 )
+#                 return
+#             except Exception as photo_error:
+#                 logger.error(f"Error sending photo {photo_file_id}: {photo_error}")
+
+#         # Fallback to text message
+#         try:
+#             # await query.edit_message_text(
+#             #     text=full_caption,
+#             #     reply_markup=InlineKeyboardMarkup(keyboard),
+#             #     parse_mode=None  # Preserve original formatting
+#             # )
+#             await context.bot.send_message(
+#                 chat_id=query.message.chat.id,
+#                 text=full_caption,
+#                 reply_markup=InlineKeyboardMarkup([...])
+#             )
+#         except Exception as edit_error:
+#             logger.error(f"Error editing message: {edit_error}")
+#             # Last resort - send new message
+#             try: 
+#                 await query.delete_message()
+#             except:
+#                 pass
+#             await context.bot.send_message(
+#                 chat_id=query.message.chat_id,
+#                 text=full_caption,
+#                 reply_markup=InlineKeyboardMarkup(keyboard),
+#                 parse_mode=None
+#             )
+
+#     except Exception as e:
+#         logger.error(f"Error displaying item: {e}")
+#         # Emergency fallback
+#         try:
+#             fallback_text = f"❌ خطا در نمایش آیتم\n🛍 آیتم {page + 1} از {total_items}\n📦 {current_item.get('name', 'نامشخص')}"
+#             await query.edit_message_text(
+#                 fallback_text,
+#                 reply_markup=InlineKeyboardMarkup(keyboard)
+#             )
+#         except:
+#             pass
+
+
 async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show items in selected category with navigation"""
     query = update.callback_query
@@ -310,37 +499,41 @@ async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE)
     category = query.data.split("_")[-1]  # Extract category from callback data
     user_id = query.from_user.id
     user_data = context.user_data.get(user_id, {})
-    country = user_data.get("country", "")
+    user_country = user_data.get("country", "")
 
-    # Get filtered items for this category
+    # Get all shop items (آپدیت شده)
     all_items = user_data.get("shop_items", [])
-    category_items = filter_items_by_category(all_items, category)
+
+    # Filter by category AND user country
+    category_items = [
+        item for item in all_items
+        if filter_items_by_category([item], category) and
+           ("countries" in item and user_country in item["countries"])
+    ]
 
     if not category_items:
         category_names = {
             "army": "⚔️ ارتش",
             "castle": "🏰 قلعه",
-            "structure": "🏗 سازه", 
+            "structure": "🏗 سازه",
             "weapon": "🗡 سلاح",
             "misc": "📦 متفرقه",
             "econstructure": "🏭 سازه‌های اقتصادی"
         }
-
         await query.edit_message_text(
-            f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {country} یافت نشد.",
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
-            ]])
+            f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {user_country} یافت نشد.",
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]])
         )
         return
 
-    # Store category items and initialize pagination
+    # Store filtered category items & init pagination
     context.user_data[user_id]["category_items"] = category_items
     context.user_data[user_id]["current_category"] = category
     context.user_data[user_id]["current_page"] = 0
 
     # Show first page
     await show_items_page(query, context, user_id, 0, category)
+
 
 async def show_items_page(query, context, user_id, page, category):
     """Show single item per page with navigation buttons"""
@@ -350,145 +543,74 @@ async def show_items_page(query, context, user_id, page, category):
     if not category_items:
         await query.edit_message_text(
             "📭 هیچ آیتمی یافت نشد.",
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
-            ]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]])
         )
         return
 
-    # Calculate pagination
     total_items = len(category_items)
     page = max(0, min(page, total_items - 1))
     current_item = category_items[page]
 
-    # Update current page in user data
     context.user_data[user_id]["current_page"] = page
 
-    # Build formatted item display
-    page_info = f"🛍 آیتم {page + 1} از {total_items}\n\n"
-
-    # Build the item caption
+    # Build caption
     caption = f"──────⊱◈Shop◈⊰──────\n"
     caption += f"✦ Item Name : {current_item.get('name', 'نامشخص')}\n"
     caption += f"✧ Item Type : {current_item.get('type', 'Misc')}\n"
     caption += f"✦ Country : {current_item.get('country', 'All')}\n"
-
-    # Add hashtags
-    hashtags = current_item.get('hashtags', [])
-    for hashtag in hashtags:
-        caption += f"{hashtag}\n"
-
-    caption += f"✧ Description :\n"
-    caption += f"• {current_item.get('description', 'توضیحات موجود نیست')}"
+    caption += "\n".join(current_item.get("hashtags", [])) + "\n"
+    caption += f"✧ Description :\n• {current_item.get('description', 'توضیحات موجود نیست')}\n"
     
-    # اضافه کردن تعداد برای دسته‌های مشخص
     count = current_item.get("count", 1)
     item_type = current_item.get("type", "").lower()
-    
     if item_type in ["army", "castle", "misc", "structure", "weapon"]:
-        caption += f"\n✦ تعداد موجود: {count}"
+        caption += f"✦ تعداد موجود: {count}\n"
 
-
-    caption += f"✦ Price & Materials :\n"
-    caption += f"• {current_item.get('price', 0):,}"
-
-    materials = current_item.get('materials', {})
+    caption += f"✦ Price & Materials :\n• {current_item.get('price', 0):,}"
+    materials = current_item.get("materials", {})
     if materials:
-        material_parts = []
-        for material, amount in materials.items():
-            material_parts.append(f"{material}:{amount}")
-        caption += f", {', '.join(material_parts)}"
+        caption += ", " + ", ".join(f"{k}:{v}" for k, v in materials.items())
 
     caption += f"\n✧ Owner ID : {current_item.get('owner', 'نامشخص')}\n"
     caption += f"──────⊹⊱✫⊰⊹──────\n"
-    caption += f"https://t.me/R_O_T_C\n"
-    caption += f"https://t.me/R_O_T_C_Shop"
+    caption += f"https://t.me/R_O_T_C\nhttps://t.me/R_O_T_C_Shop"
 
+    page_info = f"🛍 آیتم {page + 1} از {total_items}\n\n"
     full_caption = page_info + caption
 
-    # Create navigation buttons
+    # Navigation buttons
     nav_buttons = []
     if total_items > 1:
-        # Previous button (disabled if first page)
-        if page > 0:
-            prev_btn = InlineKeyboardButton("⬅️ قبلی", callback_data=f"shop_page_{category}_{page-1}")
-        else:
-            prev_btn = InlineKeyboardButton("⬅️", callback_data="noop")
+        prev_btn = InlineKeyboardButton("⬅️ قبلی", callback_data=f"shop_page_{category}_{page-1}") if page > 0 else InlineKeyboardButton("⬅️", callback_data="noop")
+        next_btn = InlineKeyboardButton("➡️ بعدی", callback_data=f"shop_page_{category}_{page+1}") if page < total_items - 1 else InlineKeyboardButton("➡️", callback_data="noop")
+        nav_buttons.append([prev_btn, next_btn])
 
-        # Next button (disabled if last page)  
-        if page < total_items - 1:
-            next_btn = InlineKeyboardButton("➡️ بعدی", callback_data=f"shop_page_{category}_{page+1}")
-        else:
-            next_btn = InlineKeyboardButton("➡️", callback_data="noop")
-
-        nav_buttons = [prev_btn, next_btn]
-
-    # Build keyboard
-    keyboard = []
-    if nav_buttons:
-        keyboard.append(nav_buttons)
-
-    keyboard.extend([
+    keyboard = nav_buttons + [
         [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{page}")],
         [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]
-    ])
+    ]
 
-    # Get photo file_id
-    photo_file_id = current_item.get('photo_file_id')
-
+    # Send new message (delete previous)
     try:
-        # Try to send with photo first
-        if photo_file_id:
-            try:
-                await query.delete_message()
-                await context.bot.send_photo(
-                    chat_id=query.message.chat_id,
-                    photo=photo_file_id,
-                    caption=full_caption,
-                    reply_markup=InlineKeyboardMarkup(keyboard),
-                    parse_mode=None  # No parsing to preserve original formatting
-                )
-                return
-            except Exception as photo_error:
-                logger.error(f"Error sending photo {photo_file_id}: {photo_error}")
+        await query.delete_message()
+    except:
+        pass
 
-        # Fallback to text message
-        try:
-            # await query.edit_message_text(
-            #     text=full_caption,
-            #     reply_markup=InlineKeyboardMarkup(keyboard),
-            #     parse_mode=None  # Preserve original formatting
-            # )
-            await context.bot.send_message(
-                chat_id=query.message.chat.id,
-                text=full_caption,
-                reply_markup=InlineKeyboardMarkup([...])
-            )
-        except Exception as edit_error:
-            logger.error(f"Error editing message: {edit_error}")
-            # Last resort - send new message
-            try: 
-                await query.delete_message()
-            except:
-                pass
-            await context.bot.send_message(
-                chat_id=query.message.chat_id,
-                text=full_caption,
-                reply_markup=InlineKeyboardMarkup(keyboard),
-                parse_mode=None
-            )
+    photo_file_id = current_item.get("photo_file_id")
+    if photo_file_id:
+        await context.bot.send_photo(
+            chat_id=query.message.chat.id,
+            photo=photo_file_id,
+            caption=full_caption,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+    else:
+        await context.bot.send_message(
+            chat_id=query.message.chat.id,
+            text=full_caption,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
 
-    except Exception as e:
-        logger.error(f"Error displaying item: {e}")
-        # Emergency fallback
-        try:
-            fallback_text = f"❌ خطا در نمایش آیتم\n🛍 آیتم {page + 1} از {total_items}\n📦 {current_item.get('name', 'نامشخص')}"
-            await query.edit_message_text(
-                fallback_text,
-                reply_markup=InlineKeyboardMarkup(keyboard)
-            )
-        except:
-            pass
 
 async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle shop item pagination from callback"""
