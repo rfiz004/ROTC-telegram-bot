@@ -1963,6 +1963,7 @@ def parse_shop_item_text(text: str, item_type: str = "") -> dict:
             elif isinstance(val, list):
                 countries = val
             updates["country"] = countries
+            updates["countries"] = countries
 
         elif kl in ("قیمت", "price"):
             num = re.sub(r"[^\d]", "", val)
