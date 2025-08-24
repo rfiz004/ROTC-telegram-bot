@@ -31,12 +31,28 @@
     "6013284719": {
       "country": "Azure",
       "job": "کاپیتان‌های دزدان دریایی",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-24T12:40:13.215723",
+      "saved_at": "2025-08-24T12:47:15.500789",
       "expires_at": "2025-08-24T13:09:53.227570",
       "name": "Akistrefi",
-      "nickname": "Captain Jack sparrow"
+      "nickname": "Captain Jack sparrow",
+      "age": "25",
+      "skills": [
+        "کشتیرانی",
+        "حواس پنجگانه قوی",
+        "مدیریت امور داخلی",
+        "کشتی سازی",
+        "آهنگری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "کشتیرانی",
+      "skill2": "حواس پنجگانه قوی",
+      "skill3": "مدیریت امور داخلی",
+      "skill4": "کشتی سازی",
+      "skill5": "آهنگری",
+      "appearance": "قد بلند و چشم ابرو مشکی با استایل کاپیتان دزدان دریایی و اکسسوری های دزدان دریایی و خالکوبیاشون، بدون ریش و سیبیل"
     }
   },
   "used_hashtags": [
