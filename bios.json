@@ -115,6 +115,16 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "6556015535": {
+      "country": "Alestria",
+      "job": "مشاغل آزاد",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-25T07:41:29.751197",
+      "expires_at": "2025-08-25T08:11:14.341038",
+      "name": "گاتس",
+      "nickname": "برسرکر"
     }
   },
   "used_hashtags": [
