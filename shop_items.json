@@ -850,5 +850,27 @@
     "count": 100,
     "id": "41",
     "created_at": "2025-08-21T20:16:27.330163"
+  },
+  {
+    "name": "دژکوب",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "ماشین جنگی که برای نابود کردن دروازه های قلعه در جنگ ها مورد استفاده قرار میگیره, تعداد: 1",
+    "price": 2000,
+    "materials": {
+      "فولاد": 30,
+      "چوب": 100
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJaLGisvRtO7j5LbcKs8frVMp7PN2nJAAIs0DEbOjz4UESEKVmQq6-8AQADAgADeAADNgQ",
+    "count": 1,
+    "id": "42",
+    "created_at": "2025-08-25T19:46:39.629763"
   }
 ]
