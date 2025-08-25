@@ -893,5 +893,28 @@
     "count": 1,
     "id": "43",
     "created_at": "2025-08-25T20:27:08.274583"
+  },
+  {
+    "name": "منجنیق غولپیکر",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "منجنیق غولپیکر که برای خراب کردن برج ها و دیوارها استفاده میشه و رسیدن به این ماشین جنگی برای مدافع بسیار سخته, تعداد: 1",
+    "price": 4000,
+    "materials": {
+      "فولاد": 30,
+      "چوب": 80,
+      "سنگ": 20
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJammisyUfcZrqn-S_5krYBkg2gD06yAAIt0DEbOjz4ULOI3GqSH0k1AQADAgADeQADNgQ",
+    "count": 1,
+    "id": "44",
+    "created_at": "2025-08-25T20:38:56.580561"
   }
 ]
