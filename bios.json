@@ -115,6 +115,15 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "6803721284": {
+      "country": "Walden",
+      "job": "مشاغل آزاد",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-25T18:42:56.046173",
+      "expires_at": "2025-08-25T19:12:17.662785",
+      "name": "L. Morning star"
     }
   },
   "used_hashtags": [
