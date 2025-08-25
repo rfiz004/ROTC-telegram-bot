@@ -223,38 +223,6 @@
       "status": "pending",
       "requested_at": "2025-08-22T15:43:57.052787",
       "delay_until": "2025-08-23T15:43:57.052792"
-    },
-    {
-      "id": "transfer_5566736269_1756130965",
-      "requester_id": 5566736269,
-      "source_country": "Walden",
-      "source_province": "Torevald",
-      "target_country": "Walden",
-      "target_province": "Kalteryn",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 1000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-25T14:09:25.890316",
-      "delay_until": "2025-08-26T14:09:25.890319"
-    },
-    {
-      "id": "transfer_7199097732_1756131042",
-      "requester_id": 7199097732,
-      "source_country": "Walden",
-      "source_province": "Narwendale",
-      "target_country": "Walden",
-      "target_province": "Brishallow",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 1000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-25T14:10:42.620765",
-      "delay_until": "2025-08-26T14:10:42.620770"
     }
   ]
 }
