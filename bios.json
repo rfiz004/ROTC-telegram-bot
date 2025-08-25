@@ -119,11 +119,24 @@
     "6803721284": {
       "country": "Walden",
       "job": "مشاغل آزاد",
-      "step": "asking_nickname",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-25T18:42:56.046173",
+      "saved_at": "2025-08-25T18:47:00.101828",
       "expires_at": "2025-08-25T19:12:17.662785",
-      "name": "L. Morning star"
+      "name": "L. Morning star",
+      "nickname": "Psychopath",
+      "age": "28",
+      "skills": [
+        "مهارت کار با خنجر",
+        "سم شناسی",
+        "سرعت بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "سم شناسی",
+      "skill3": "سرعت بالا",
+      "appearance": "شخصی با صورت زخمی‌ که با چسب پوشیده شده زخم هاش با ست مشکی \nقد 176 وزن 56"
     }
   },
   "used_hashtags": [
