@@ -255,22 +255,6 @@
       "status": "pending",
       "requested_at": "2025-08-25T14:10:42.620765",
       "delay_until": "2025-08-26T14:10:42.620770"
-    },
-    {
-      "id": "transfer_7245643147_1756135458",
-      "requester_id": 7245643147,
-      "source_country": "Imperial",
-      "source_province": "Lusauren",
-      "target_country": "Imperial",
-      "target_province": "Sewandale",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "گوشت": 80
-      },
-      "status": "pending",
-      "requested_at": "2025-08-25T15:24:18.784113",
-      "delay_until": "2025-08-26T15:24:18.784117"
     }
   ]
 }
