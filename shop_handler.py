@@ -548,17 +548,11 @@ async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE)
     # Get all shop items (آپدیت شده)
     all_items = user_data.get("shop_items", [])
 
-    # Filter by category AND user country (پشتیبانی از هر دو حالت country و countries)
-    category_items = []
-    for item in all_items:
-        if not filter_items_by_category([item], category):
-            continue
+    # اول فیلتر دسته
+    category_items = filter_items_by_category(all_items, category)
 
-        # بررسی کشور
-        if "countries" in item and user_country in item["countries"]:
-            category_items.append(item)
-        elif "country" in item and user_country == item["country"]:
-            category_items.append(item)
+    # بعد فیلتر کشور (پشتیبانی از country و countries + All)
+    category_items = filter_items_by_country(category_items, user_country)
 
     if not category_items:
         category_names = {
