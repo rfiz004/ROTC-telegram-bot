@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Velithkara",
   "mines": {},
-  "wealth": 20000,
+  "wealth": 18000,
   "population": 18000,
   "tax": 30,
   "popularity": 60,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 1,
+      "count": 2,
       "product": "ماهی",
       "weekly_output": 100
     },
