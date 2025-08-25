@@ -115,6 +115,16 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "8443125344": {
+      "country": "Hikada",
+      "job": "مشاغل آزاد",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-25T08:23:43.749581",
+      "expires_at": "2025-08-25T08:52:38.340420",
+      "name": "Ryo",
+      "nickname": "Ryo Amanda"
     }
   },
   "used_hashtags": [
