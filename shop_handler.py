@@ -491,6 +491,50 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
 #             pass
 
 
+# async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Show items in selected category with navigation"""
+#     query = update.callback_query
+#     await query.answer()
+
+#     category = query.data.split("_")[-1]  # Extract category from callback data
+#     user_id = query.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     user_country = user_data.get("country", "")
+
+#     # Get all shop items (آپدیت شده)
+#     all_items = user_data.get("shop_items", [])
+
+#     # Filter by category AND user country
+#     category_items = [
+#         item for item in all_items
+#         if filter_items_by_category([item], category) and
+#            ("countries" in item and user_country in item["countries"])
+#     ]
+
+#     if not category_items:
+#         category_names = {
+#             "army": "⚔️ ارتش",
+#             "castle": "🏰 قلعه",
+#             "structure": "🏗 سازه",
+#             "weapon": "🗡 سلاح",
+#             "misc": "📦 متفرقه",
+#             "econstructure": "🏭 سازه‌های اقتصادی"
+#         }
+#         await query.edit_message_text(
+#             f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {user_country} یافت نشد.",
+#             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]])
+#         )
+#         return
+
+#     # Store filtered category items & init pagination
+#     context.user_data[user_id]["category_items"] = category_items
+#     context.user_data[user_id]["current_category"] = category
+#     context.user_data[user_id]["current_page"] = 0
+
+#     # Show first page
+#     await show_items_page(query, context, user_id, 0, category)
+
+
 async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show items in selected category with navigation"""
     query = update.callback_query
@@ -504,12 +548,17 @@ async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE)
     # Get all shop items (آپدیت شده)
     all_items = user_data.get("shop_items", [])
 
-    # Filter by category AND user country
-    category_items = [
-        item for item in all_items
-        if filter_items_by_category([item], category) and
-           ("countries" in item and user_country in item["countries"])
-    ]
+    # Filter by category AND user country (پشتیبانی از هر دو حالت country و countries)
+    category_items = []
+    for item in all_items:
+        if not filter_items_by_category([item], category):
+            continue
+
+        # بررسی کشور
+        if "countries" in item and user_country in item["countries"]:
+            category_items.append(item)
+        elif "country" in item and user_country == item["country"]:
+            category_items.append(item)
 
     if not category_items:
         category_names = {
@@ -522,7 +571,9 @@ async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE)
         }
         await query.edit_message_text(
             f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {user_country} یافت نشد.",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]])
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]]
+            )
         )
         return
 
