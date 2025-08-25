@@ -916,5 +916,27 @@
     "count": 1,
     "id": "44",
     "created_at": "2025-08-25T20:38:56.580561"
+  },
+  {
+    "name": "منجنیق",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "منجنیق های کوتاه برد ک با نزدیک شدن به دیوارهای قلعه قابلیت فروپاشیدن اونها رو داره\nاین منجنیق ها آسیب بسیار کمتری از منجنیق غولپیکر دارن, تعداد: 1",
+    "price": 500,
+    "materials": {
+      "فولاد": 50,
+      "چوب": 60
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJarGiszSqFTip1YJjp3F33SPM-hjD5AALpzDEbbqU4UTLyBHVRKtDBAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "45",
+    "created_at": "2025-08-25T20:54:28.579983"
   }
 ]
