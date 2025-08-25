@@ -349,9 +349,10 @@
     "type": "EconStructure",
     "countries": [
       "Hikada",
-      "Alpyr"
+      "Aldemar",
+      "Imperial"
     ],
-    "description": "کارگاه های آهنگری بسیار بزرگی که تعداد زیاد اهنگر در آنها مشغول تولید فولاد هستند و این مهارت فقط در دست تعداد محدودی از کشور ها است و قابلیت بازدهی 50 فولاد در هفته را دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "description": "هشتگ ها: #EconStructure #Hikada #Aldemar #Imperial",
     "price": 3000,
     "materials": {},
     "owner": "-",
@@ -364,7 +365,12 @@
     "count": 1,
     "id": "18",
     "created_at": "2025-08-12T15:00:20.634216",
-    "updated_at": "2025-08-13T22:03:12.565569"
+    "updated_at": "2025-08-25T09:03:52.453096",
+    "country": [
+      "Hikada",
+      "Aldemar",
+      "Imperial"
+    ]
   },
   {
     "name": "کارخونه سنگ",
@@ -418,39 +424,14 @@
     "updated_at": "2025-08-13T22:04:09.862315"
   },
   {
-    "name": "جواهرسازی",
-    "type": "EconStructure",
-    "countries": [
-      "Santos",
-      "Aldemar",
-      "Alpyr"
-    ],
-    "description": "مهارت بسیار ظریف و کمیابی‌ است و این کارگاه های جواهر سازی می‌تواند در هفته 50 بازدهی داشته باشد\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
-    "price": 2000,
-    "materials": {},
-    "owner": "-",
-    "hashtags": [
-      "#EconStructure",
-      "#Santos",
-      "#Aldemar",
-      "#Alpyr"
-    ],
-    "photo_file_id": "AgACAgQAAxkBAAIw12ibY5iZcGLTYLj3FLgjr3wTpIcZAAJsyTEbmyHhUBPiNJvhwWOeAQADAgADeAADNgQ",
-    "count": 1,
-    "id": "21",
-    "created_at": "2025-08-12T15:57:13.077011",
-    "updated_at": "2025-08-13T22:04:38.541817"
-  },
-  {
     "name": "کارخونه شراب",
     "type": "EconStructure",
     "countries": [
       "Azure",
       "Imperial",
-      "Northwood",
-      "Walden"
+      "Northwood"
     ],
-    "description": "کارخونه های شرابسازی‌ در کشور های وجود دارد که دارای زمین های بارانی برای کشت تاکستان ها هستند \nاین کارخانه ها در هفته 50 شراب بازدهی دارند\nبه علاوه ماهی یکبار نیاز به بازسازی و مراقبت از این سازه هست(یک سوم پول و ایتم مورد نیاز اولیه برای این کار لازمه)",
+    "description": "هشتگ ها: #EconStructure #Imperial  #Azure  #Northwood",
     "price": 2000,
     "materials": {},
     "owner": "-",
@@ -465,7 +446,12 @@
     "count": 1,
     "id": "22",
     "created_at": "2025-08-12T16:16:41.510295",
-    "updated_at": "2025-08-13T22:05:02.586951"
+    "updated_at": "2025-08-25T09:08:35.081623",
+    "country": [
+      "Azure",
+      "Imperial",
+      "Northwood"
+    ]
   },
   {
     "name": "کارخونه پنبه",
