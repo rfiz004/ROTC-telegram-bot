@@ -223,6 +223,39 @@
       "status": "pending",
       "requested_at": "2025-08-22T15:43:57.052787",
       "delay_until": "2025-08-23T15:43:57.052792"
+    },
+    {
+      "id": "transfer_5566736269_1756215524",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 23,
+        "پارچه": 10
+      },
+      "status": "pending",
+      "requested_at": "2025-08-26T13:38:44.387585",
+      "delay_until": "2025-08-27T13:38:44.387590"
+    },
+    {
+      "id": "transfer_7686824742_1756215614",
+      "requester_id": 7686824742,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Northwood",
+      "target_province": "Garodhen",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 6000
+      },
+      "status": "pending",
+      "requested_at": "2025-08-26T13:40:14.429420",
+      "delay_until": "2025-08-27T13:40:14.429424"
     }
   ]
 }
