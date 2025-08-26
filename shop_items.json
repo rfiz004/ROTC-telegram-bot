@@ -960,5 +960,27 @@
     "count": 1,
     "id": "46",
     "created_at": "2025-08-26T06:25:05.965555"
+  },
+  {
+    "name": "میخانه",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "میخانه و مسافرخونه ها مرکز تجمع مردم شهر هستن که معمولا مسافرها،سربازها،تجار و افراد مختلف دیگه ای در این مکان ها دیده میشن\nمحبوبیت اصلی این مکان ها به دلیل نوشیدنی هایی هست که مردم برای گذران وقت و تفریح در اینجا مینوشن, تعداد: 1",
+    "price": 500,
+    "materials": {
+      "فولاد": 80,
+      "چوب": 300
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJa_2itVU8mA0O7b23CqGcLKL_hU74xAAJI0DEbYxZgUYJZ1nJ2RpY0AQADAgADeAADNgQ",
+    "count": 1,
+    "id": "47",
+    "created_at": "2025-08-26T06:35:51.605761"
   }
 ]
