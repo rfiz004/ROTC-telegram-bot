@@ -207,54 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_7686824742_1756220828",
-      "requester_id": 7686824742,
-      "source_country": "Northwood",
-      "source_province": "Trenhallough",
-      "target_country": "Northwood",
-      "target_province": "Druvenmarsh",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 2500
-      },
-      "status": "pending",
-      "requested_at": "2025-08-26T15:07:08.381619",
-      "delay_until": "2025-08-27T15:07:08.381625"
-    },
-    {
-      "id": "transfer_5566736269_1756226167",
-      "requester_id": 5566736269,
-      "source_country": "Walden",
-      "source_province": "Kalteryn",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 2500
-      },
-      "status": "pending",
-      "requested_at": "2025-08-26T16:36:07.391152",
-      "delay_until": "2025-08-27T16:36:07.391157"
-    },
-    {
-      "id": "transfer_5566736269_1756226424",
-      "requester_id": 5566736269,
-      "source_country": "Walden",
-      "source_province": "Brishallow",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 1000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-26T16:40:24.167119",
-      "delay_until": "2025-08-27T16:40:24.167123"
     }
   ]
 }
