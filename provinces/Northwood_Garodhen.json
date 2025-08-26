@@ -39,18 +39,18 @@
       "product": "گوشت",
       "weekly_output": 100
     },
-    "کارخونه چرم": {
+    "• کارخونه چرم": {
       "count": 4,
       "product": "چرم",
       "weekly_output": 50
     },
-    "کارخونه شراب": {
+    "• کارخونه شراب": {
       "count": 3,
       "product": "شراب",
       "weekly_output": 50
     },
-    "چوب بری": {
-      "count": 0,
+    "• چوب بری": {
+      "count": 1,
       "product": "چوب",
       "weekly_output": 50
     }
