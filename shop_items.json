@@ -971,7 +971,10 @@
     "price": 500,
     "materials": {
       "فولاد": 80,
-      "چوب": 300
+      "چوب": 300,
+      "پنبه": 500,
+      "پارچه": 400,
+      "شیشه": 200
     },
     "owner": "-",
     "hashtags": [
@@ -981,7 +984,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJa_2itVU8mA0O7b23CqGcLKL_hU74xAAJI0DEbYxZgUYJZ1nJ2RpY0AQADAgADeAADNgQ",
     "count": 1,
     "id": "47",
-    "created_at": "2025-08-26T06:35:51.605761"
+    "created_at": "2025-08-26T06:35:51.605761",
+    "updated_at": "2025-08-26T06:49:33.565454"
   },
   {
     "name": "عبادتگاه",
