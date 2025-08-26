@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Iselvern",
   "mines": {},
-  "wealth": 14000,
+  "wealth": 12000,
   "population": 18000,
   "tax": 40,
   "popularity": 66,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 1,
+      "count": 2,
       "product": "ماهی",
       "weekly_output": 100
     },
