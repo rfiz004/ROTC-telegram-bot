@@ -938,5 +938,27 @@
     "count": 1,
     "id": "45",
     "created_at": "2025-08-25T20:54:28.579983"
+  },
+  {
+    "name": "بالیستا",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "کمان مکانیکی بزرگی که قدرت شلیک و برد بسیار بالایی داره و برای از کار انداختن بقیه ماشین های جنگی استفاده میشه, تعداد: 1",
+    "price": 2500,
+    "materials": {
+      "فولاد": 40,
+      "چوب": 50
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJa7WitUu7UDCFdd41Sc-yPlWOllFcIAAIq0DEbOjz4UENzryqHA19BAQADAgADeQADNgQ",
+    "count": 1,
+    "id": "46",
+    "created_at": "2025-08-26T06:25:05.965555"
   }
 ]
