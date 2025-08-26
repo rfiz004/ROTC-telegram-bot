@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 10500,
+  "wealth": 2000,
   "population": 30000,
   "tax": 10,
   "popularity": 75,
@@ -46,22 +46,22 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 3,
+      "count": 4,
       "product": "گوشت",
       "weekly_output": 100
     },
     "باغ": {
-      "count": 3,
+      "count": 4,
       "product": "میوه",
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 2,
+      "count": 3,
       "product": "پنبه",
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 2,
+      "count": 3,
       "product": "سنگ",
       "weekly_output": 50
     }
