@@ -982,5 +982,31 @@
     "count": 1,
     "id": "47",
     "created_at": "2025-08-26T06:35:51.605761"
+  },
+  {
+    "name": "عبادتگاه",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "در کشورهایی که دینی همگانی و مشخص دارن عبادت گاه‌ها بسیار مکان های محترمی شمرده میشن, تعداد: 1",
+    "price": 1800,
+    "materials": {
+      "فولاد": 100,
+      "چوب": 100,
+      "سنگ": 500,
+      "پنبه": 200,
+      "پارچه": 300,
+      "شیشه": 450
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJbD2itVqHowDw6Cfw-uWEMVfcowgxjAAJK0DEbYxZgUZ7kitHgTmVwAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "48",
+    "created_at": "2025-08-26T06:42:35.155791"
   }
 ]
