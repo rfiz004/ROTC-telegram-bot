@@ -119,12 +119,26 @@
     "8053070411": {
       "country": "Aldemar",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_id_tag",
       "flow_type": "bio",
-      "saved_at": "2025-08-27T11:44:21.047478",
+      "saved_at": "2025-08-27T11:50:19.197619",
       "expires_at": "2025-08-27T12:14:07.312539",
       "name": "Dorian Blacktide",
-      "nickname": "-"
+      "nickname": "-",
+      "age": "32",
+      "skills": [
+        "مهارت کار با خنجر",
+        "کشتیرانی",
+        "جعل مدارک"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "کشتیرانی",
+      "skill3": "جعل مدارک",
+      "appearance": "-",
+      "history": "مدتی از زندگیش رو برای یه تاجر جواهر کار میکرد تا وقتی تونست همون کشتیو از تاجر بخره. ظاهرا کارش قانونیه و فقط محصولات بازرگانی رو بین کشور ها جابجا میکنه.",
+      "id_number": "@Blake_505"
     }
   },
   "used_hashtags": [
