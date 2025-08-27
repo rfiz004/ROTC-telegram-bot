@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Iselvern",
   "mines": {},
-  "wealth": 12000,
+  "wealth": 7500,
   "population": 18000,
   "tax": 40,
   "popularity": 66,
@@ -40,12 +40,12 @@
       "weekly_output": 100
     },
     "کارخونه شراب": {
-      "count": 0,
+      "count": 1,
       "product": "شراب",
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 0,
+      "count": 1,
       "product": "چوب",
       "weekly_output": 50
     },
