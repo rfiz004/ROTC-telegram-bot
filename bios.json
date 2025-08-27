@@ -115,28 +115,6 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
-    },
-    "8053070411": {
-      "country": "Azure",
-      "job": "مشاغل آزاد",
-      "step": "asking_history",
-      "flow_type": "bio",
-      "saved_at": "2025-08-27T10:59:23.385288",
-      "expires_at": "2025-08-27T11:27:22.309137",
-      "name": "Dorian Blacktide",
-      "nickname": "-",
-      "age": "32",
-      "skills": [
-        "کشتیرانی",
-        "مهارت شمشیرزنی و تبرزنی",
-        "سوارکاری"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 1,
-      "skill1": "کشتیرانی",
-      "skill2": "مهارت شمشیرزنی و تبرزنی",
-      "skill3": "سوارکاری",
-      "appearance": "-"
     }
   },
   "used_hashtags": [
