@@ -4,9 +4,9 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 0,
+  "wealth": 9500,
   "population": 30000,
-  "tax": 10,
+  "tax": 100,
   "popularity": 75,
   "total_army": 5000,
   "army": {
@@ -30,10 +30,10 @@
   "misc": {},
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0.0,
+    "گوشت": 278.0,
     "ماهی": 0,
     "مرغ": 0,
-    "میوه": 150,
+    "میوه": 463,
     "فولاد": 0,
     "شیشه": 0,
     "سنگ": 100,
@@ -56,12 +56,12 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 3,
+      "count": 4,
       "product": "پنبه",
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 3,
+      "count": 4,
       "product": "سنگ",
       "weekly_output": 50
     }
