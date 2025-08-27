@@ -119,9 +119,9 @@
     "7591301108": {
       "country": "Aldemar",
       "job": "پادشاه ثروت",
-      "step": "asking_history",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-27T23:54:04.681449",
+      "saved_at": "2025-08-27T23:56:14.124785",
       "expires_at": "2025-08-28T00:21:19.730423",
       "name": "کِل",
       "nickname": "Kell",
@@ -136,7 +136,10 @@
       "skill1": "مهارت کار با خنجر",
       "skill2": "مدیریت امور اقتصادی",
       "skill3": "سم شناسی",
-      "appearance": "موهای کوتاه مشکی \nپوست سبزه\nچشمای قهوه روشن\nقد ۱۹۱\nوزن ۹۰"
+      "appearance": "موهای کوتاه مشکی \nپوست سبزه\nچشمای قهوه روشن\nقد ۱۹۱\nوزن ۹۰",
+      "history": "همیشه در مجالس و مهمونی های عام حضور داشته و ب این واسطه با افراد زیادی آشنا شده و ارتباطاتش رو گسترش داده",
+      "id_number": "@Yekidmamoliforcaleg",
+      "user_id_tag": "#kell"
     }
   },
   "used_hashtags": [
@@ -243,6 +246,7 @@
     "#Berserker",
     "#Ryo",
     "#morning_star",
-    "#Dorian"
+    "#Dorian",
+    "#kell"
   ]
 }
