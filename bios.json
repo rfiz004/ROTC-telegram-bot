@@ -115,6 +115,15 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "8053070411": {
+      "country": "Azure",
+      "job": "مشاغل آزاد",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-27T10:58:13.493852",
+      "expires_at": "2025-08-27T11:27:22.309137",
+      "name": "Dorian Blacktide"
     }
   },
   "used_hashtags": [
