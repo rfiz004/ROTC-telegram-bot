@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Orendal",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 20000,
   "population": 14000,
   "tax": 100,
   "popularity": 71,
@@ -19,10 +19,10 @@
   "misc": {},
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0,
+    "گوشت": 207,
     "ماهی": 0,
     "مرغ": 0,
-    "میوه": 182.1,
+    "میوه": 424.1,
     "فولاد": 0,
     "شیشه": 0,
     "سنگ": 0,
@@ -35,12 +35,12 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
     "باغ": {
-      "count": 1,
+      "count": 2,
       "product": "میوه",
       "weekly_output": 100
     },
