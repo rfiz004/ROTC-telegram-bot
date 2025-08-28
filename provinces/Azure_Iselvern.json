@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Iselvern",
   "mines": {},
-  "wealth": 15000,
+  "wealth": 3000,
   "population": 18000,
   "tax": 40,
   "popularity": 68,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 4,
       "product": "سنگ",
       "weekly_output": 50
     }

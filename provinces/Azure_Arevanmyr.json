@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Arevanmyr",
   "mines": {},
-  "wealth": 12500,
+  "wealth": 500,
   "population": 18000,
   "tax": 0,
   "popularity": 62,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 4,
       "product": "سنگ",
       "weekly_output": 50
     }
