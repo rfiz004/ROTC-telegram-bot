@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Port Zephalia",
   "mines": {},
-  "wealth": 1800,
+  "wealth": 3000,
   "population": 14000,
   "tax": 40,
   "popularity": 64,
@@ -20,7 +20,7 @@
   "economic_items": {
     "گندم": 0,
     "گوشت": 0,
-    "ماهی": 340.0,
+    "ماهی": 280.0,
     "مرغ": 0,
     "میوه": 0,
     "فولاد": 0,
