@@ -4,22 +4,24 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 4000,
+  "wealth": 0,
   "population": 0,
   "tax": 0,
   "popularity": 100,
   "total_army": 0,
   "army": {
-    "کماندار": 0,
-    "شمشیرزن": 0,
-    "نیزه دار": 0,
-    "سواره نظام": 0
+    "کماندار": 900,
+    "شمشیرزن": 600,
+    "نیزه دار": 400,
+    "سواره نظام": 100
   },
   "castle": {
     "عمارت": 1
   },
   "structures": {
-    "کشتی کوچک": 0
+    "کشتی کوچک": 2,
+    "کشتی متوسط": 1,
+    "منجنیق": 2
   },
   "weapons": {},
   "misc": {},
@@ -39,5 +41,10 @@
     "چرم": 0,
     "شراب": 0
   },
-  "economic_structures": {}
+  "economic_structures": {},
+  "mine_productions": {
+    "Stone mine": {
+      "weekly_per_unit": 2000
+    }
+  }
 }
