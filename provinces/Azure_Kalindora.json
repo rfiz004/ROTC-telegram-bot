@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 10200,
+  "wealth": 3200,
   "population": 30000,
   "tax": 50,
   "popularity": 69,
@@ -57,7 +57,7 @@
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 2,
+      "count": 4,
       "product": "چوب",
       "weekly_output": 50
     },
