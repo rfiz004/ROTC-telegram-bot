@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 8000,
+  "wealth": 0,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -43,7 +43,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 0,
+      "count": 4,
       "product": "ماهی",
       "weekly_output": 100
     },
