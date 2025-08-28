@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 2000,
+  "wealth": 0,
   "population": 60000,
   "tax": 100,
   "popularity": 78,
