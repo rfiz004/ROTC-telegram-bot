@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Arevanmyr",
   "mines": {},
-  "wealth": 3500,
+  "wealth": 1500,
   "population": 18000,
   "tax": 0,
   "popularity": 62,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 1,
+      "count": 2,
       "product": "ماهی",
       "weekly_output": 100
     },
