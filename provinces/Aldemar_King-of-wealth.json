@@ -41,7 +41,28 @@
     "چرم": 0,
     "شراب": 0
   },
-  "economic_structures": {},
+  "economic_structures": {
+    "ماهیگیری": {
+      "count": 0,
+      "product": "ماهی",
+      "weekly_output": 100
+    },
+    "کارخونه فولاد": {
+      "count": 0,
+      "product": "فولاد",
+      "weekly_output": 50
+    },
+    "کارخونه شیشه": {
+      "count": 0,
+      "product": "شیشه",
+      "weekly_output": 50
+    },
+    "کارخونه پارچه": {
+      "count": 0,
+      "product": "پارچه",
+      "weekly_output": 50
+    }
+  },
   "mine_productions": {
     "Stone mine": {
       "weekly_per_unit": 2000
