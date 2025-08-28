@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 2000,
+  "wealth": 0,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -53,7 +53,7 @@
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 0,
+      "count": 1,
       "product": "شیشه",
       "weekly_output": 50
     },
