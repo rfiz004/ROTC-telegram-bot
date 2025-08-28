@@ -115,34 +115,6 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
-    },
-    "7591301108": {
-      "step": "pending",
-      "country": "Aldemar",
-      "flow_type": "bio",
-      "job": "پادشاه ثروت",
-      "expires_at": "2025-08-28T00:21:19.730423",
-      "name": "کِل",
-      "nickname": "Kell",
-      "age": "27",
-      "skills": [
-        "مهارت کار با خنجر",
-        "مدیریت امور اقتصادی",
-        "سم شناسی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "مهارت کار با خنجر",
-      "skill2": "مدیریت امور اقتصادی",
-      "skill3": "سم شناسی",
-      "appearance": "موهای کوتاه مشکی \nپوست سبزه\nچشمای قهوه روشن\nقد ۱۹۱\nوزن ۹۰",
-      "history": "همیشه در مجالس و مهمونی های عام حضور داشته و ب این واسطه با افراد زیادی آشنا شده و ارتباطاتش رو گسترش داده",
-      "id_number": "@Yekidmamoliforcaleg",
-      "user_id_tag": "#kell",
-      "photo": "AgACAgQAAxkBAAJfXWivnPitim4nRB3_VSv8T72CD-5zAAIFxjEbuIGBUWdvftOnXUkEAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "7591301108",
-      "saved_at": "2025-08-28T00:04:08.584915"
     }
   },
   "used_hashtags": [
