@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Marevenport",
   "mines": {
-    "Copper mine": 1
+    "Coal mine": 1
   },
   "wealth": 15650,
   "population": 30000,
@@ -69,6 +69,9 @@
   "mine_productions": {
     "Copper mine": {
       "weekly_per_unit": 10000
+    },
+    "Coal mine": {
+      "weekly_per_unit": 8000
     }
   },
   "structure_productions": {
