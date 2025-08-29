@@ -241,22 +241,6 @@
       "status": "pending",
       "requested_at": "2025-08-29T10:26:06.944612",
       "delay_until": "2025-08-30T10:26:06.944615"
-    },
-    {
-      "id": "transfer_7358397936_1756463399",
-      "requester_id": 7358397936,
-      "source_country": "Santos",
-      "source_province": "Zahramun",
-      "target_country": "Santos",
-      "target_province": "Alvankesh",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "گوشت": 180
-      },
-      "status": "pending",
-      "requested_at": "2025-08-29T10:29:59.552592",
-      "delay_until": "2025-08-30T10:29:59.552597"
     }
   ]
 }

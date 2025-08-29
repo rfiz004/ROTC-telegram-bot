@@ -49,19 +49,19 @@
       "product": "گندم",
       "weekly_output": 100
     },
-    "کارخونه پارچه": {
-      "count": 1,
-      "product": "پارچه",
-      "weekly_output": 50
-    },
     "چوب بری": {
-      "count": 0,
+      "count": 1,
       "product": "چوب",
       "weekly_output": 50
     },
     "کارخونه فولاد": {
-      "count": 3,
+      "count": 4,
       "product": "فولاد",
+      "weekly_output": 50
+    },
+    "کارخونه پارچه": {
+      "count": 1,
+      "product": "پارچه",
       "weekly_output": 50
     }
   },

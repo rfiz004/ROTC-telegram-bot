@@ -18,7 +18,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گندم": 400,
+    "گندم": 500,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 2,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },

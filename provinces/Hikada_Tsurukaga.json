@@ -2,7 +2,7 @@
   "country": "Hikada",
   "province": "Tsurukaga",
   "mines": {},
-  "wealth": 4000,
+  "wealth": 3000,
   "population": 24000,
   "tax": 70,
   "popularity": 60,
@@ -18,7 +18,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گندم": 400.0,
+    "گندم": 500,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,
@@ -27,15 +27,15 @@
     "شیشه": 0,
     "سنگ": 0,
     "چوب": 100,
-    "جواهر": 0,
     "پنبه": 0,
     "پارچه": 100,
     "چرم": 0,
-    "شراب": 0
+    "شراب": 0,
+    "جواهر": 0
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 2,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },
