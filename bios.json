@@ -119,12 +119,24 @@
     "1395665848": {
       "country": "Santos",
       "job": "خاندان امپراطوری",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-08-29T12:00:37.467887",
+      "saved_at": "2025-08-29T12:11:24.223937",
       "expires_at": "2025-08-29T12:29:57.238108",
       "name": "VARTOLU LOSANTIFIR.",
-      "nickname": "MR."
+      "nickname": "MR.",
+      "age": "30",
+      "skills": [
+        "داروشناسی",
+        "سم شناسی",
+        "ساخت دارو و سم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "داروشناسی",
+      "skill2": "سم شناسی",
+      "skill3": "ساخت دارو و سم",
+      "appearance": "عینک شیشه نازکی روی چشم.\nچشمانی خمار و لبخندی مرموز."
     }
   },
   "used_hashtags": [
