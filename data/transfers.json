@@ -223,22 +223,6 @@
       "status": "pending",
       "requested_at": "2025-08-29T18:31:39.903248",
       "delay_until": "2025-08-30T18:31:39.903252"
-    },
-    {
-      "id": "transfer_1079429121_1756505365",
-      "requester_id": 1079429121,
-      "source_country": "Aldemar",
-      "source_province": "Marevenport",
-      "target_country": "Hikada",
-      "target_province": "Shinrinky",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "شیشه": 50
-      },
-      "status": "pending",
-      "requested_at": "2025-08-29T22:09:25.943054",
-      "delay_until": "2025-08-30T22:09:25.943058"
     }
   ]
 }
