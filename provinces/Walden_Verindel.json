@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 20000,
+  "wealth": 12500,
   "population": 40000,
   "tax": 100,
   "popularity": 71,
@@ -45,7 +45,7 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 1,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },
