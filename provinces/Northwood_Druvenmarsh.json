@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Druvenmarsh",
   "mines": {},
-  "wealth": 6300,
+  "wealth": 4500,
   "population": 20000,
   "tax": 60,
   "popularity": 66,
@@ -30,8 +30,8 @@
     "جواهر": 0,
     "پنبه": 0,
     "پارچه": 0,
-    "چرم": 30,
-    "شراب": 50
+    "چرم": 0,
+    "شراب": 20
   },
   "economic_structures": {
     "دامداری": {

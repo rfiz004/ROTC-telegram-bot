@@ -209,53 +209,36 @@
       "delay_until": "2025-08-14T17:40:10.772373"
     },
     {
-      "id": "transfer_7869889327_1756481869",
+      "id": "transfer_7869889327_1756492299",
       "requester_id": 7869889327,
       "source_country": "Northwood",
       "source_province": "Druvenmarsh",
-      "target_country": "Hikada",
-      "target_province": "Shinrinky",
-      "transfer_type": "international",
+      "target_country": "Northwood",
+      "target_province": "Garodhen",
+      "transfer_type": "domestic",
       "category": "wealth",
       "items": {
-        "طلا": 1800
+        "طلا": 5000
       },
       "status": "pending",
-      "requested_at": "2025-08-29T15:37:49.975236",
-      "delay_until": "2025-08-30T15:37:49.975240"
+      "requested_at": "2025-08-29T18:31:39.903248",
+      "delay_until": "2025-08-30T18:31:39.903252"
     },
     {
-      "id": "transfer_7869889327_1756481901",
+      "id": "transfer_7869889327_1756492400",
       "requester_id": 7869889327,
       "source_country": "Northwood",
       "source_province": "Druvenmarsh",
-      "target_country": "Hikada",
-      "target_province": "Shinrinky",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "شراب": 30,
-        "چرم": 30
-      },
-      "status": "pending",
-      "requested_at": "2025-08-29T15:38:21.733227",
-      "delay_until": "2025-08-30T15:38:21.733230"
-    },
-    {
-      "id": "transfer_7358397936_1756490407",
-      "requester_id": 7358397936,
-      "source_country": "Santos",
-      "source_province": "Grand-Duke",
-      "target_country": "Santos",
-      "target_province": "Zahramun",
+      "target_country": "Northwood",
+      "target_province": "Garodhen",
       "transfer_type": "domestic",
-      "category": "economic_items",
+      "category": "wealth",
       "items": {
-        "گوشت": 69
+        "طلا": 4500
       },
       "status": "pending",
-      "requested_at": "2025-08-29T18:00:07.590334",
-      "delay_until": "2025-08-30T18:00:07.590340"
+      "requested_at": "2025-08-29T18:33:20.605976",
+      "delay_until": "2025-08-30T18:33:20.605981"
     }
   ]
 }
