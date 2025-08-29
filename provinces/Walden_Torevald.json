@@ -2,10 +2,10 @@
   "country": "Walden",
   "province": "Torevald",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 2500,
   "population": 24000,
   "tax": 100,
-  "popularity": 70,
+  "popularity": 73,
   "total_army": 5000,
   "army": {
     "کماندار": 600,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 1,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },
