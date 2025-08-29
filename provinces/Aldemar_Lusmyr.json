@@ -2,10 +2,10 @@
   "country": "Aldemar",
   "province": "Lusmyr",
   "mines": {},
-  "wealth": 0,
+  "wealth": 10000,
   "population": 14000,
   "tax": 100,
-  "popularity": 69,
+  "popularity": 60,
   "total_army": 5000,
   "army": {
     "کماندار": 400,
@@ -20,7 +20,7 @@
   "economic_items": {
     "گندم": 0,
     "گوشت": 0,
-    "ماهی": 280.0,
+    "ماهی": 680.0,
     "مرغ": 0,
     "میوه": 0,
     "فولاد": 0,

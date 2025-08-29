@@ -2,10 +2,10 @@
   "country": "Imperial",
   "province": "Veresta",
   "mines": {},
-  "wealth": 5000,
+  "wealth": 10000,
   "population": 24000,
   "tax": 30,
-  "popularity": 64,
+  "popularity": 62,
   "total_army": 5000,
   "army": {
     "کماندار": 600,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 1,
+      "count": 0,
       "product": "مرغ",
       "weekly_output": 100
     },

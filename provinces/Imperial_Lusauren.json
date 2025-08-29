@@ -4,10 +4,10 @@
   "mines": {
     "Copper": 1
   },
-  "wealth": 6200,
+  "wealth": 18200,
   "population": 40000,
   "tax": 30,
-  "popularity": 62,
+  "popularity": 59,
   "total_army": 5000,
   "army": {
     "کماندار": 3000,
@@ -32,7 +32,7 @@
     "گندم": 11,
     "گوشت": 10,
     "ماهی": 0,
-    "مرغ": 140.0,
+    "مرغ": 240.0,
     "میوه": 0,
     "فولاد": 50,
     "شیشه": 100,
@@ -46,22 +46,22 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 2,
+      "count": 1,
       "product": "مرغ",
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 1,
+      "count": 0,
       "product": "فولاد",
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 1,
+      "count": 0,
       "product": "شراب",
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 1,
+      "count": 0,
       "product": "شیشه",
       "weekly_output": 50
     }

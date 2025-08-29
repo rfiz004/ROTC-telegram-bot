@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 0,
+  "wealth": 2000,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -28,7 +28,7 @@
   "economic_items": {
     "گندم": 0,
     "گوشت": 0,
-    "ماهی": 0,
+    "ماهی": 400,
     "مرغ": 0,
     "میوه": 0,
     "فولاد": 0,
