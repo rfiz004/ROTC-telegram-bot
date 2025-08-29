@@ -209,52 +209,38 @@
       "delay_until": "2025-08-14T17:40:10.772373"
     },
     {
-      "id": "transfer_7358397936_1756460560",
-      "requester_id": 7358397936,
+      "id": "transfer_6213073537_1756463030",
+      "requester_id": 6213073537,
       "source_country": "Santos",
       "source_province": "Zahramun",
-      "target_country": "Santos",
-      "target_province": "Haramtul",
-      "transfer_type": "domestic",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
       "category": "economic_items",
       "items": {
-        "گندم": 90
+        "گوشت": 100,
+        "چرم": 50
       },
       "status": "pending",
-      "requested_at": "2025-08-29T09:42:40.635802",
-      "delay_until": "2025-08-30T09:42:40.635805"
+      "requested_at": "2025-08-29T10:23:50.151742",
+      "delay_until": "2025-08-30T10:23:50.151747"
     },
     {
-      "id": "transfer_7358397936_1756460782",
-      "requester_id": 7358397936,
-      "source_country": "Santos",
-      "source_province": "Grand-Duke",
+      "id": "transfer_5566736269_1756463166",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
       "target_country": "Santos",
-      "target_province": "Silzara",
-      "transfer_type": "domestic",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
       "category": "economic_items",
       "items": {
-        "گوشت": 180
+        "پنبه": 50,
+        "پارچه": 50
       },
       "status": "pending",
-      "requested_at": "2025-08-29T09:46:22.305304",
-      "delay_until": "2025-08-30T09:46:22.305308"
-    },
-    {
-      "id": "transfer_7358397936_1756460806",
-      "requester_id": 7358397936,
-      "source_country": "Santos",
-      "source_province": "Grand-Duke",
-      "target_country": "Santos",
-      "target_province": "Marashen",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "گوشت": 180
-      },
-      "status": "pending",
-      "requested_at": "2025-08-29T09:46:46.551275",
-      "delay_until": "2025-08-30T09:46:46.551278"
+      "requested_at": "2025-08-29T10:26:06.944612",
+      "delay_until": "2025-08-30T10:26:06.944615"
     }
   ]
 }
