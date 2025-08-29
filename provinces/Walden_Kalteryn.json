@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Kalteryn",
   "mines": {},
-  "wealth": 2500,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 73,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 3,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },
