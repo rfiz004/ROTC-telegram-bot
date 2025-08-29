@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Narwendale",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 500,
   "population": 24000,
   "tax": 100,
   "popularity": 73,
@@ -35,12 +35,12 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 1,
+      "count": 3,
       "product": "گندم",
       "weekly_output": 100
     },
     "باغ": {
-      "count": 1,
+      "count": 4,
       "product": "میوه",
       "weekly_output": 100
     },
