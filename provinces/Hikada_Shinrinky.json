@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 36400,
+  "wealth": 21400,
   "population": 60000,
   "tax": 90,
   "popularity": 60,
@@ -29,7 +29,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گندم": 401,
+    "گندم": 501,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,
@@ -46,7 +46,7 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 2,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },
