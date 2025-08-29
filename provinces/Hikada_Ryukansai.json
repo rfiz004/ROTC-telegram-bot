@@ -2,7 +2,7 @@
   "country": "Hikada",
   "province": "Ryukansai",
   "mines": {},
-  "wealth": 7050,
+  "wealth": 50,
   "population": 24000,
   "tax": 70,
   "popularity": 60,
@@ -18,7 +18,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گندم": 331,
+    "گندم": 401,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,
