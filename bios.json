@@ -115,6 +115,16 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "1395665848": {
+      "country": "Santos",
+      "job": "خاندان امپراطوری",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-29T12:00:37.467887",
+      "expires_at": "2025-08-29T12:29:57.238108",
+      "name": "VARTOLU LOSANTIFIR.",
+      "nickname": "MR."
     }
   },
   "used_hashtags": [
