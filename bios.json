@@ -119,9 +119,12 @@
     "6803721284": {
       "country": "Walden",
       "job": "رئیس دبیرخانه",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-08-30T19:58:16.167339"
+      "saved_at": "2025-08-30T20:02:55.282786",
+      "expires_at": "2025-08-30T20:28:16.176650",
+      "name": "Azazel",
+      "nickname": "Temptress Lucifer"
     }
   },
   "used_hashtags": [
