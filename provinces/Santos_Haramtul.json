@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Haramtul",
   "mines": {},
-  "wealth": 1000,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 72,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 3,
+      "count": 4,
       "product": "گوشت",
       "weekly_output": 100
     },
