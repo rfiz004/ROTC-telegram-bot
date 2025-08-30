@@ -117,11 +117,10 @@
       "saved_at": "2025-08-24T21:53:16.724256"
     },
     "6803721284": {
+      "step": "pending",
       "country": "Walden",
-      "job": "رئیس دبیرخانه",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-08-30T20:35:35.620018",
+      "job": "رئیس دبیرخانه",
       "expires_at": "2025-08-30T21:04:39.179256",
       "name": "Azazel",
       "nickname": "Lucifer",
@@ -143,7 +142,11 @@
       "appearance": "موهای مشکی چشمای قرمز معمولا کت شلوار مشکی خز دار \nقد ۱۸۴ وزن ۷۸",
       "history": "از ۲ سالگی خوندن نوشتن یاد گرفت در ۶ سالگی اولین شعر بالای ۲۰ خط خودش و نوشت در ۱۴ سالگی در مدیریت داخلی مهارت پیدا کرد در ۱۸ سالگی در شمشیر زنی در ۲۴ سالگی به ساخت جواهرات فوق گرون روی آورد در ۳۰ سالگی در معماری استاد شد و از اون سن به بعد وارد سیاست های کشور شد توی توی این سال ها مقاومت بالایی رسید\nدر ۳۶ سالگی به سمت فعلی خود رسید",
       "id_number": "@Osolo_levelingO",
-      "user_id_tag": "#lucifer"
+      "user_id_tag": "#lucifer",
+      "photo": "AgACAgQAAxkBAAJnymizYLfr2Yiv5d3BiRP9Dq6Qos00AAIkyDEb3I2YUbCVXMKkTV6-AQADAgADeQADNgQ",
+      "level": 1,
+      "unique_id": "6803721284",
+      "saved_at": "2025-08-30T20:36:07.627996"
     }
   },
   "used_hashtags": [
