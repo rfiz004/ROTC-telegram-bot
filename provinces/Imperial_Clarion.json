@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Clarion",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 4000,
   "population": 24000,
   "tax": 30,
   "popularity": 62,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 0,
+      "count": 3,
       "product": "شیشه",
       "weekly_output": 50
     }
