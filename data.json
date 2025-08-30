@@ -117,12 +117,12 @@
     "Imperial": [
       {
         "name": "رئیس سنا",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
         "name": "اعضای سنا",
-        "count": 4,
+        "count": 6,
         "level": 1
       },
       {
@@ -132,12 +132,12 @@
       },
       {
         "name": "نخست وزیر",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
         "name": "ژنرال اعظم جمهوری",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
