@@ -5,7 +5,7 @@
   "wealth": 9000,
   "population": 24000,
   "tax": 70,
-  "popularity": 67,
+  "popularity": 74,
   "total_army": 5000,
   "army": {
     "کماندار": 540,
@@ -18,7 +18,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گندم": 500,
+    "گندم": 140.0,
     "گوشت": 0,
     "ماهی": 0,
     "مرغ": 0,
