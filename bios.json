@@ -115,6 +115,16 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "7211632494": {
+      "country": "Imperial",
+      "job": "رئیس سنا",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-08-30T21:59:20.938076",
+      "expires_at": "2025-08-30T22:28:27.122679",
+      "name": "فانتوم",
+      "nickname": "پدر شمشیرها"
     }
   },
   "used_hashtags": [
