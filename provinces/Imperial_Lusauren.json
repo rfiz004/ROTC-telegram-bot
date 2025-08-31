@@ -4,9 +4,9 @@
   "mines": {
     "Copper": 1
   },
-  "wealth": 12200,
+  "wealth": 4200,
   "population": 40000,
-  "tax": 50,
+  "tax": 60,
   "popularity": 60,
   "total_army": 5000,
   "army": {
@@ -46,7 +46,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 1,
+      "count": 2,
       "product": "مرغ",
       "weekly_output": 100
     },
@@ -56,7 +56,7 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 0,
+      "count": 3,
       "product": "شراب",
       "weekly_output": 50
     },
