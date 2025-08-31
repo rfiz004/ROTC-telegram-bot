@@ -209,54 +209,6 @@
       "delay_until": "2025-08-14T17:40:10.772373"
     },
     {
-      "id": "transfer_5564554013_1756591176",
-      "requester_id": 5564554013,
-      "source_country": "Azure",
-      "source_province": "Velithkara",
-      "target_country": "Azure",
-      "target_province": "DalNomara",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 3000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-30T21:59:36.159985",
-      "delay_until": "2025-08-31T21:59:36.159989"
-    },
-    {
-      "id": "transfer_5564554013_1756591254",
-      "requester_id": 5564554013,
-      "source_country": "Azure",
-      "source_province": "Arevanmyr",
-      "target_country": "Azure",
-      "target_province": "DalNomara",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 3500
-      },
-      "status": "pending",
-      "requested_at": "2025-08-30T22:00:54.201941",
-      "delay_until": "2025-08-31T22:00:54.201946"
-    },
-    {
-      "id": "transfer_5564554013_1756591329",
-      "requester_id": 5564554013,
-      "source_country": "Azure",
-      "source_province": "Silverain Coast",
-      "target_country": "Azure",
-      "target_province": "DalNomara",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 30000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-30T22:02:09.043400",
-      "delay_until": "2025-08-31T22:02:09.043405"
-    },
-    {
       "id": "transfer_5564554013_1756591364",
       "requester_id": 5564554013,
       "source_country": "Azure",
