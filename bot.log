@@ -861,3 +861,15 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-08-31 19:25:24,514 - __main__ - INFO - 🚀 Bot is running with webhook on port 10000
 2025-08-31 19:25:24,514 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-08-31 19:25:25,495 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:19:25:25 +0000] "HEAD / HTTP/1.1" 200 152 "-" "Go-http-client/1.1"
+2025-08-31 19:33:21,194 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-08-31 19:33:21,279 - __main__ - INFO - ✅ Setting webhook to: https://rotc-telegram-bot.onrender.com/e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e
+2025-08-31 19:33:21,771 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/getMe "HTTP/1.1 200 OK"
+2025-08-31 19:33:21,952 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/setMyCommands "HTTP/1.1 200 OK"
+2025-08-31 19:33:21,953 - __main__ - INFO - Bot commands set successfully
+2025-08-31 19:33:22,116 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/setWebhook "HTTP/1.1 200 OK"
+2025-08-31 19:33:22,117 - apscheduler.scheduler - INFO - Added job "scheduled_cleanup" to job store "default"
+2025-08-31 19:33:22,117 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-31 19:33:22,117 - telegram.ext.Application - INFO - Application started
+2025-08-31 19:33:22,118 - __main__ - INFO - 🚀 Bot is running with webhook on port 10000
+2025-08-31 19:33:22,118 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-08-31 19:33:22,882 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:19:33:22 +0000] "HEAD / HTTP/1.1" 200 152 "-" "Go-http-client/1.1"
