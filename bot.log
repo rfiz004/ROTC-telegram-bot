@@ -57,3 +57,89 @@
 2025-08-31 18:44:08,665 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:08 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
 2025-08-31 18:44:16,555 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:16 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
 2025-08-31 18:44:27,604 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-08-31 18:44:31,691 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:31 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:32,365 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:32 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:43,190 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:43 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:43,717 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:44:45,842 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:45 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:46,013 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:44:46,204 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:44:51,361 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:51 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:51,362 - __main__ - INFO - Text router - User 6213073537: flow_type=None, state=None, step=awaiting_rp_password
+2025-08-31 18:44:51,893 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:44:53,264 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:53 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:53,433 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:44:53,614 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:44:55,958 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:44:55 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:44:56,128 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:44:56,336 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:45:02,173 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:02 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:02,704 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:02,705 - admin_province_handler - INFO - Approving transfer ID: transfer_5564554013_1756665691
+2025-08-31 18:45:02,706 - admin_province_handler - INFO - Transfer data: {'id': 'transfer_5564554013_1756665691', 'requester_id': 5564554013, 'source_country': 'Azure', 'source_province': 'Kalindora', 'target_country': 'Azure', 'target_province': 'DalNomara', 'transfer_type': 'domestic', 'category': 'wealth', 'items': {'طلا': 1200}, 'status': 'pending', 'requested_at': '2025-08-31T18:41:31.612052', 'delay_until': '2025-09-01T18:41:31.612057'}
+2025-08-31 18:45:02,706 - admin_province_handler - INFO - Category: wealth, Items: {'طلا': 1200}, Items type: <class 'dict'>
+2025-08-31 18:45:02,707 - admin_province_handler - INFO - Source data before: {'country': 'Azure', 'province': 'Kalindora', 'mines': {'Coal mine': 1}, 'wealth': 18200, 'population': 30000, 'tax': 100, 'popularity': 75, 'total_army': 5100, 'army': {'کماندار': 2000, 'شمشیرزن': 1400, 'نیزه دار': 900, 'سواره نظام': 500, 'جوخه قاتلان': 100}, 'castle': {'دیوار یک لایه دور شهر': 1, 'برج در هر گوشه': 4, 'دروازه لولایی': 1}, 'structures': {'کشتی کوچک': 3, 'کشتی متوسط': 1, 'کشتی بزرگ': 1, 'منجنیق': 2}, 'weapons': {}, 'misc': {}, 'economic_items': {'گندم': 0, 'گوشت': 0, 'ماهی': 100.0, 'مرغ': 0, 'میوه': 0, 'فولاد': 0, 'شیشه': 0, 'سنگ': 40, 'چوب': 100, 'پنبه': 0, 'پارچه': 200, 'چرم': 0, 'شراب': 200, 'جواهر': 0}, 'economic_structures': {'ماهیگیری': {'count': 2, 'product': 'ماهی', 'weekly_output': 100}, 'کارخونه شراب': {'count': 4, 'product': 'شراب', 'weekly_output': 50}, 'چوب بری': {'count': 4, 'product': 'چوب', 'weekly_output': 50}, 'کارخونه سنگ': {'count': 4, 'product': 'سنگ', 'weekly_output': 50}}, 'mine_productions': {'Goal mine': {'weekly_per_unit': 8000}, 'Coal mine': {'weekly_per_unit': 8000}}, 'structure_productions': {'ماهیگری': {'produces': 'ماهی', 'weekly_per_unit': 100}, 'کارخونه شراب': {'produces': 'شراب', 'weekly_per_unit': 50}, 'کارخونه سنگ': {'produces': 'سنگ', 'weekly_per_unit': 50}, 'چوب بری': {'produces': 'چوب', 'weekly_per_unit': 50}}}
+2025-08-31 18:45:02,707 - admin_province_handler - INFO - Target data before: {'country': 'Azure', 'province': 'DalNomara', 'wealth': 45500}
+2025-08-31 18:45:02,707 - admin_province_handler - INFO - Processing numeric transfer...
+2025-08-31 18:45:02,707 - admin_province_handler - INFO - Source data after: {'country': 'Azure', 'province': 'Kalindora', 'mines': {'Coal mine': 1}, 'wealth': 17000, 'population': 30000, 'tax': 100, 'popularity': 75, 'total_army': 5100, 'army': {'کماندار': 2000, 'شمشیرزن': 1400, 'نیزه دار': 900, 'سواره نظام': 500, 'جوخه قاتلان': 100}, 'castle': {'دیوار یک لایه دور شهر': 1, 'برج در هر گوشه': 4, 'دروازه لولایی': 1}, 'structures': {'کشتی کوچک': 3, 'کشتی متوسط': 1, 'کشتی بزرگ': 1, 'منجنیق': 2}, 'weapons': {}, 'misc': {}, 'economic_items': {'گندم': 0, 'گوشت': 0, 'ماهی': 100.0, 'مرغ': 0, 'میوه': 0, 'فولاد': 0, 'شیشه': 0, 'سنگ': 40, 'چوب': 100, 'پنبه': 0, 'پارچه': 200, 'چرم': 0, 'شراب': 200, 'جواهر': 0}, 'economic_structures': {'ماهیگیری': {'count': 2, 'product': 'ماهی', 'weekly_output': 100}, 'کارخونه شراب': {'count': 4, 'product': 'شراب', 'weekly_output': 50}, 'چوب بری': {'count': 4, 'product': 'چوب', 'weekly_output': 50}, 'کارخونه سنگ': {'count': 4, 'product': 'سنگ', 'weekly_output': 50}}, 'mine_productions': {'Goal mine': {'weekly_per_unit': 8000}, 'Coal mine': {'weekly_per_unit': 8000}}, 'structure_productions': {'ماهیگری': {'produces': 'ماهی', 'weekly_per_unit': 100}, 'کارخونه شراب': {'produces': 'شراب', 'weekly_per_unit': 50}, 'کارخونه سنگ': {'produces': 'سنگ', 'weekly_per_unit': 50}, 'چوب بری': {'produces': 'چوب', 'weekly_per_unit': 50}}}
+2025-08-31 18:45:02,708 - admin_province_handler - INFO - Target data after: {'country': 'Azure', 'province': 'DalNomara', 'wealth': 46700}
+2025-08-31 18:45:02,942 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:45:03,149 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:45:31,223 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:31 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:31,739 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:45:33,787 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:33 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:33,956 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:34,126 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:34,317 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:45:38,633 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:38 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:39,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:39,281 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:45:43,035 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:43 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:43,319 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:43,501 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:45:55,009 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:55 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:55,009 - __main__ - INFO - Text router - User 5564554013: flow_type=country_management, state=awaiting_password, step=None
+2025-08-31 18:45:55,009 - country_handler - INFO - Country handler - User 5564554013: flow_type=country_management, state=awaiting_password
+2025-08-31 18:45:55,009 - country_handler - INFO - [check_password] User ID: 5564554013 وارد کرده رمز: 'K!5nDr#7qP'
+2025-08-31 18:45:55,009 - country_handler - INFO - [check_password] کشور انتخابی: 'Azure', استان انتخابی: 'Kalindora'
+2025-08-31 18:45:55,010 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'K!5nDr#7qP'
+2025-08-31 18:45:55,010 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-08-31 18:45:55,554 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:45:58,952 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:45:58 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:45:59,123 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:59,295 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:45:59,482 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:46:09,168 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:09 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-08-31 18:46:21,082 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:21 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:46:40,794 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:40 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:46:46,340 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:46 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:46:46,526 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:46 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:46:46,835 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:46:47,161 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:46:47,180 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:46:54,558 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:54 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:46:55,161 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:46:55,359 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:46:55,543 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:46:57,059 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:46:57 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:46:57,227 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:46:57,412 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:47:01,535 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:47:01 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:47:01,722 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:47:01,907 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:47:07,105 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:47:07 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:47:07,845 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:47:07 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:47:07,845 - __main__ - INFO - Text router - User 5564554013: flow_type=country_management, state=awaiting_password, step=None
+2025-08-31 18:47:07,845 - country_handler - INFO - Country handler - User 5564554013: flow_type=country_management, state=awaiting_password
+2025-08-31 18:47:07,845 - country_handler - INFO - [check_password] User ID: 5564554013 وارد کرده رمز: 'D#9lNm!4tQ'
+2025-08-31 18:47:07,845 - country_handler - INFO - [check_password] کشور انتخابی: 'Azure', استان انتخابی: 'Dal'Nomara'
+2025-08-31 18:47:07,846 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'D#9lNm!4tQ'
+2025-08-31 18:47:07,846 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-08-31 18:47:08,381 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-08-31 18:47:11,609 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:47:11 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:47:11,832 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:47:12,002 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 18:47:12,187 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 18:48:04,892 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:48:04 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:48:56,543 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:18:48:56 +0000] "POST /2b746b7836f2b31d553e03bf5f3d3f3506d235604d5f5bdd54d8af869d9caf7b HTTP/1.1" 200 153 "-" "-"
+2025-08-31 18:49:31,190 - __main__ - INFO - 🔄 Running scheduled git push...
