@@ -117,11 +117,10 @@
       "saved_at": "2025-08-24T21:53:16.724256"
     },
     "1766859127": {
+      "step": "pending",
       "country": "Imperial",
-      "job": "آیین بان جمهوری",
-      "step": "asking_id_tag",
       "flow_type": "bio",
-      "saved_at": "2025-08-31T14:17:44.244614",
+      "job": "آیین بان جمهوری",
       "expires_at": "2025-08-31T14:41:47.439654",
       "name": "Rio",
       "nickname": "نابودگر سرد",
@@ -138,7 +137,12 @@
       "skill3": "مهارت مبارزه با دست خالی",
       "appearance": "همه در عکس هست",
       "history": "وقتی خیلی کوچیک بود جلو چشماش بهترین دوستاش و خوانوادش توسط راهزن ها کشته شدن و از اون روز به بعد سرد و بی روح شده و خیلی کم پیش میاد که بخنده",
-      "id_number": "@N8888N9"
+      "id_number": "@N8888N9",
+      "user_id_tag": "#N888",
+      "photo": "AgACAgUAAxkBAAJoxGi0WAyh_Svu-W7U-btrwEtw_-j-AAJGwzEbQeWgVRfsKp4uCoL0AQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "1766859127",
+      "saved_at": "2025-08-31T14:18:52.988352"
     }
   },
   "used_hashtags": [
@@ -250,6 +254,7 @@
     "#kelll",
     "#VARTOLU",
     "#lucifer",
-    "#Phantom"
+    "#Phantom",
+    "#N888"
   ]
 }
