@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Garodhen",
   "mines": {},
-  "wealth": 11500,
+  "wealth": 6500,
   "population": 20000,
   "tax": 90,
   "popularity": 65,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 1,
+      "count": 3,
       "product": "چوب",
       "weekly_output": 50
     }
