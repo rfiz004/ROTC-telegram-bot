@@ -4,7 +4,7 @@
   "mines": {
     "Copper": 1
   },
-  "wealth": 18200,
+  "wealth": 12200,
   "population": 40000,
   "tax": 50,
   "popularity": 60,
@@ -51,7 +51,7 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 0,
+      "count": 2,
       "product": "فولاد",
       "weekly_output": 50
     },
