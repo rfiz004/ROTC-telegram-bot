@@ -2,9 +2,9 @@
   "country": "Hikada",
   "province": "Hozumi-tsuka",
   "mines": {},
-  "wealth": 17000,
+  "wealth": 0,
   "population": 24000,
-  "tax": 70,
+  "tax": 100,
   "popularity": 74,
   "total_army": 5000,
   "army": {
