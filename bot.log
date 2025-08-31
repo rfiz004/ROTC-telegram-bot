@@ -3372,3 +3372,11 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-08-31 23:03:21,199 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-08-31 23:33:21 UTC)" executed successfully
 2025-08-31 23:04:01,874 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:23:04:01 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-08-31 23:05:44,065 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-08-31 23:06:07,132 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:23:06:07 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-08-31 23:06:07,648 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 23:06:07,873 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-08-31 23:06:08,091 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-08-31 23:06:27,259 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:23:06:27 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-08-31 23:06:30,383 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:23:06:30 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-08-31 23:09:04,939 - aiohttp.access - INFO - 127.0.0.1 [31/Aug/2025:23:09:04 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-08-31 23:10:47,411 - __main__ - INFO - 🔄 Running scheduled git push...
