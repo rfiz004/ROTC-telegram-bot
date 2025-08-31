@@ -207,38 +207,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_5564554013_1756591364",
-      "requester_id": 5564554013,
-      "source_country": "Azure",
-      "source_province": "Iselvern",
-      "target_country": "Azure",
-      "target_province": "DalNomara",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 4000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-30T22:02:44.412182",
-      "delay_until": "2025-08-31T22:02:44.412187"
-    },
-    {
-      "id": "transfer_7211632494_1756593765",
-      "requester_id": 7211632494,
-      "source_country": "Imperial",
-      "source_province": "Lusauren",
-      "target_country": "Imperial",
-      "target_province": "Sewandale",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "مرغ": 10
-      },
-      "status": "pending",
-      "requested_at": "2025-08-30T22:42:45.159452",
-      "delay_until": "2025-08-31T22:42:45.159457"
     }
   ]
 }
