@@ -115,6 +115,15 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "1766859127": {
+      "country": "Imperial",
+      "job": "آیین بان جمهوری",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-08-31T14:11:56.902614",
+      "expires_at": "2025-08-31T14:41:47.439654",
+      "name": "Rio"
     }
   },
   "used_hashtags": [
