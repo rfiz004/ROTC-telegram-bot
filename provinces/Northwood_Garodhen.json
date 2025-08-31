@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Garodhen",
   "mines": {},
-  "wealth": 6500,
+  "wealth": 8000,
   "population": 20000,
   "tax": 90,
   "popularity": 65,
@@ -31,7 +31,7 @@
     "پنبه": 0,
     "پارچه": 0,
     "چرم": 200,
-    "شراب": 150
+    "شراب": 200
   },
   "economic_structures": {
     "دامداری": {

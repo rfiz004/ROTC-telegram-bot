@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Druvenmarsh",
   "mines": {},
-  "wealth": 0,
+  "wealth": 1500,
   "population": 20000,
   "tax": 100,
   "popularity": 68,
