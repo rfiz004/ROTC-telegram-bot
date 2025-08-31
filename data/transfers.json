@@ -175,22 +175,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_5564554013_1756666639",
-      "requester_id": 5564554013,
-      "source_country": "Azure",
-      "source_province": "Kalindora",
-      "target_country": "Azure",
-      "target_province": "DalNomara",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 1000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-31T18:57:19.901169",
-      "delay_until": "2025-09-01T18:57:19.901172"
     }
   ]
 }
