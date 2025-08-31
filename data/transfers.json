@@ -175,22 +175,6 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
-      "id": "transfer_1218722132_1756671302",
-      "requester_id": 1218722132,
-      "source_country": "Northwood",
-      "source_province": "Garodhen",
-      "target_country": "Northwood",
-      "target_province": "Lusweld",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "شراب": 50
-      },
-      "status": "pending",
-      "requested_at": "2025-08-31T20:15:02.974686",
-      "delay_until": "2025-09-01T20:15:02.974689"
     }
   ]
 }
