@@ -115,34 +115,6 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
-    },
-    "8027414544": {
-      "step": "pending",
-      "country": "Azure",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-09-01T19:29:45.911213",
-      "name": "نینا میلر",
-      "nickname": "نینی",
-      "age": "17",
-      "skills": [
-        "مهارت کار با خنجر",
-        "سوارکاری",
-        "کیمیاگری"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مهارت کار با خنجر",
-      "skill2": "سوارکاری",
-      "skill3": "کیمیاگری",
-      "appearance": "قد 150 و وزن 40\nصورت کک مک",
-      "history": "مشخص نیست",
-      "id_number": "@Lidymiller",
-      "user_id_tag": "#nini_8",
-      "photo": "AgACAgQAAxkBAAJsl2i18J3oa1sSNskWuSq0uFFQhBSWAALxxjEbTn2wUQJn4azRF-OSAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "8027414544",
-      "saved_at": "2025-09-01T19:14:37.872847"
     }
   },
   "used_hashtags": [
