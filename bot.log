@@ -8923,3 +8923,13 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 17:19:30,481 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 17:49:30 UTC)" executed successfully
 2025-09-01 17:21:07,395 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:21:07 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 17:21:25,024 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 17:22:31,863 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:22:31 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:22:41,086 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:22:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:22:41,501 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:22:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:22:55,329 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:22:55 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:23:17,892 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:23:17 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:23:22,335 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:23:22 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:23:28,247 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:23:28 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:24:32,729 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:24:32 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 17:26:10,294 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:17:26:10 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 17:26:28,806 - __main__ - INFO - 🔄 Running scheduled git push...
