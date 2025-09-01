@@ -3528,3 +3528,14 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 01:57:36,498 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-01 02:00:58,637 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:02:00:58 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 02:02:39,958 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 02:03:21,195 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 02:33:21 UTC)" (scheduled at 2025-09-01 02:03:21.193560+00:00)
+2025-09-01 02:03:21,196 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 02:03:21,196 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T00:33:21.197204, should run: True
+2025-09-01 02:03:21,197 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 02:03:21,197 - timer_manager - INFO - Successfully saved timers to file
+2025-09-01 02:03:21,197 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-01 02:03:21,197 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 02:33:21 UTC)" executed successfully
+2025-09-01 02:04:39,492 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:02:04:39 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 02:04:40,321 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:02:04:40 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 02:06:02,364 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:02:06:02 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 02:07:43,303 - __main__ - INFO - 🔄 Running scheduled git push...
