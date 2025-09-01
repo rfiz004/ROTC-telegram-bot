@@ -119,12 +119,24 @@
     "8027414544": {
       "country": "Azure",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-09-01T19:00:12.200298",
+      "saved_at": "2025-09-01T19:07:03.347433",
       "expires_at": "2025-09-01T19:29:45.911213",
       "name": "نینا میلر",
-      "nickname": "نینی"
+      "nickname": "نینی",
+      "age": "17",
+      "skills": [
+        "مهارت کار با خنجر",
+        "سوارکاری",
+        "کیمیاگری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "سوارکاری",
+      "skill3": "کیمیاگری",
+      "appearance": "قد 150 و وزن 40\nصورت کک مک"
     }
   },
   "used_hashtags": [
