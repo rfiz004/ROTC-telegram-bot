@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Sewandale",
   "mines": {},
-  "wealth": 14500,
+  "wealth": 10500,
   "population": 24000,
   "tax": 10,
   "popularity": 62,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 2,
+      "count": 4,
       "product": "مرغ",
       "weekly_output": 100
     },
