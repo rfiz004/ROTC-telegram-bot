@@ -3702,3 +3702,7 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 05:09:26,120 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:05:09:26 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 05:09:39,666 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:05:09:39 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 05:09:43,859 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 05:10:22,269 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:05:10:22 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 05:10:55,029 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:05:10:55 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 05:13:10,331 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:05:13:10 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 05:14:46,971 - __main__ - INFO - 🔄 Running scheduled git push...
