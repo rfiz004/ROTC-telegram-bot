@@ -1,20 +1,27 @@
 {
   "country": "Walden",
   "province": "guardian of the pact",
-  "mines": {},
-  "wealth": 0,
+  "mines": {
+    "Stone mine": 1
+  },
+  "wealth": 2000,
   "population": 0,
   "tax": 0,
   "popularity": 100,
   "total_army": 0,
   "army": {
-    "کماندار": 0,
-    "شمشیرزن": 0,
-    "نیزه دار": 0,
-    "سواره نظام": 0
+    "کماندار": 1100,
+    "شمشیرزن": 900,
+    "نیزه دار": 700,
+    "سواره نظام": 500
   },
-  "castle": {},
-  "structures": {},
+  "castle": {
+    "عمارت": 1
+  },
+  "structures": {
+    "منجنیق": 3,
+    "بالیستا": 2
+  },
   "weapons": {},
   "misc": {},
   "economic_items": {
@@ -53,6 +60,11 @@
       "count": 0,
       "product": "پارچه",
       "weekly_output": 50
+    }
+  },
+  "mine_productions": {
+    "Stone mine": {
+      "weekly_per_unit": 2000
     }
   }
 }
