@@ -3751,3 +3751,9 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 06:25:34,346 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-01 06:28:57,870 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:06:28:57 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 06:30:37,497 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 06:33:21,195 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 07:03:21 UTC)" (scheduled at 2025-09-01 06:33:21.193560+00:00)
+2025-09-01 06:33:21,196 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 06:33:21,196 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T06:03:21.197344, should run: False
+2025-09-01 06:33:21,196 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 07:03:21 UTC)" executed successfully
+2025-09-01 06:34:01,023 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:06:34:01 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 06:35:40,804 - __main__ - INFO - 🔄 Running scheduled git push...
