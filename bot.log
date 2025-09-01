@@ -6178,3 +6178,37 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 10:51:14,207 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:51:14 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 10:51:53,276 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:51:53 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 10:53:38,726 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 10:56:22,464 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:56:22 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:56:33,240 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:56:33 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:56:37,145 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:56:37 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:56:39,936 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:56:39 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:56:56,658 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:56:56 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 10:57:49,211 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:57:49 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:57:49,727 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:57:49,911 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:57:50,116 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 10:57:51,150 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:57:51 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:57:51,393 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:57:51,640 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 10:57:53,692 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:57:53 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:57:53,858 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:57:54,035 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 10:58:00,268 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:58:00 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:58:00,268 - __main__ - INFO - Text router - User 7358397936: flow_type=country_management, state=awaiting_password, step=None
+2025-09-01 10:58:00,268 - country_handler - INFO - Country handler - User 7358397936: flow_type=country_management, state=awaiting_password
+2025-09-01 10:58:00,268 - country_handler - INFO - [check_password] User ID: 7358397936 وارد کرده رمز: 'Z!3hQv#7tL'
+2025-09-01 10:58:00,269 - country_handler - INFO - [check_password] کشور انتخابی: 'Santos', استان انتخابی: 'Zahramun'
+2025-09-01 10:58:00,269 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'Z!3hQv#7tL'
+2025-09-01 10:58:00,269 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-09-01 10:58:00,773 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 10:58:02,431 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:58:02 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:58:02,597 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:58:02,766 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:58:02,948 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 10:58:09,101 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:58:09 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:58:09,608 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:58:09,787 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 10:58:10,799 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:10:58:10 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 10:58:10,991 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 10:58:11,187 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 10:58:42,258 - __main__ - INFO - 🔄 Running scheduled git push...
