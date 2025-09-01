@@ -8180,3 +8180,32 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 15:43:38,118 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
 2025-09-01 15:44:59,363 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:44:59 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 15:45:15,043 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 15:46:39,289 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:46:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:46:46,390 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:46:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:47:04,567 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:47:04 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:47:06,914 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:47:06 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:48:29,630 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:48:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:48:37,917 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:48:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:48:47,267 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:48:47 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:48:51,451 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:48:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:00,052 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:00 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:03,414 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:10,168 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:10 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:23,432 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:23 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:23,956 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 15:49:24,202 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 15:49:25,741 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:25 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:25,936 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 15:49:26,125 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 15:49:26,331 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 15:49:28,671 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:28 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:49:30,478 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 16:19:30 UTC)" (scheduled at 2025-09-01 15:49:30.476452+00:00)
+2025-09-01 15:49:30,478 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 15:49:30,478 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T14:33:21.197794, should run: True
+2025-09-01 15:49:30,479 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 15:49:30,482 - timer_manager - INFO - Successfully saved timers to file
+2025-09-01 15:49:30,482 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-01 15:49:30,482 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 16:19:30 UTC)" executed successfully
+2025-09-01 15:49:44,179 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:49:44 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 15:50:02,155 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:15:50:02 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 15:50:18,837 - __main__ - INFO - 🔄 Running scheduled git push...
