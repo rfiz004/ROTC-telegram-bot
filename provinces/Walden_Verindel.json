@@ -2,18 +2,18 @@
   "country": "Walden",
   "province": "Verindel",
   "mines": {
-    "Copper mine": 1
+    "Coal mine": 1
   },
-  "wealth": 21800,
+  "wealth": 19800,
   "population": 40000,
   "tax": 100,
   "popularity": 74,
   "total_army": 5000,
   "army": {
-    "کماندار": 3000,
-    "شمشیرزن": 2500,
-    "نیزه دار": 1500,
-    "سواره نظام": 1000
+    "کماندار": 2500,
+    "شمشیرزن": 2000,
+    "نیزه دار": 1100,
+    "سواره نظام": 800
   },
   "castle": {
     "دیوار یک لایه دور شهر": 1,
@@ -21,8 +21,8 @@
     "دروازه لولایی": 1
   },
   "structures": {
-    "منجنیق": 4,
-    "بالیستا": 4,
+    "منجنیق": 2,
+    "بالیستا": 2,
     "دژکوب": 1
   },
   "weapons": {},
@@ -63,6 +63,11 @@
       "count": 3,
       "product": "پارچه",
       "weekly_output": 50
+    }
+  },
+  "mine_productions": {
+    "Coal mine": {
+      "weekly_per_unit": 8000
     }
   }
 }
