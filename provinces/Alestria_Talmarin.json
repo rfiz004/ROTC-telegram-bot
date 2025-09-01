@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Talmarin",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 1000,
   "population": 14000,
   "tax": 100,
   "popularity": 80,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "باغ": {
-      "count": 2,
+      "count": 4,
       "product": "میوه",
       "weekly_output": 100
     },
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 2,
       "product": "سنگ",
       "weekly_output": 50
     }
