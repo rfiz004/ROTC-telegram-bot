@@ -27,7 +27,9 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "چوب": 50
+    "گوشت": 200,
+    "میوه": 200,
+    "سنگ": 50
   },
   "economic_structures": {
     "دامداری": {
