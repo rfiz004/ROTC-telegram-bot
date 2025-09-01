@@ -3483,3 +3483,13 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 00:46:50,417 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-01 00:50:09,845 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:50:09 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 00:51:53,518 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 00:52:54,169 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:52:54 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:53:50,318 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:53:50 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:54:12,352 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:54:12 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:54:19,554 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:54:19 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:54:42,199 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:54:42 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:54:46,175 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:54:46 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:54:51,260 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:54:51 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:54:54,218 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:54:54 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 00:55:12,332 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:00:55:12 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 00:56:56,627 - __main__ - INFO - 🔄 Running scheduled git push...
