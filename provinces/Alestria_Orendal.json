@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Orendal",
   "mines": {},
-  "wealth": 7000,
+  "wealth": 1000,
   "population": 14000,
   "tax": 100,
   "popularity": 76,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 2,
       "product": "سنگ",
       "weekly_output": 50
     }
