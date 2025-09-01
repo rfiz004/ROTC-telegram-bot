@@ -9863,3 +9863,22 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 18:47:27,379 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:47:27 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-01 18:47:29,636 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:47:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-01 18:47:29,749 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 18:47:42,987 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:47:42 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:48:19,824 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:48:19 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:48:20,356 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 18:48:20,564 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 18:48:38,475 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:48:38 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:48:49,888 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:48:49 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:48:53,271 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:48:53 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:49:30,477 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 19:19:30 UTC)" (scheduled at 2025-09-01 18:49:30.476452+00:00)
+2025-09-01 18:49:30,477 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 18:49:30,477 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T17:19:30.480606, should run: True
+2025-09-01 18:49:30,478 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 18:49:30,478 - timer_manager - INFO - Successfully saved timers to file
+2025-09-01 18:49:30,478 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-01 18:49:30,479 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 19:19:30 UTC)" executed successfully
+2025-09-01 18:49:34,387 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:49:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:50:08,132 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:50:08 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:51:53,265 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:51:53 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 18:52:06,206 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:18:52:06 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 18:52:33,351 - __main__ - INFO - 🔄 Running scheduled git push...
