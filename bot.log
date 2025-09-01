@@ -10505,3 +10505,10 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 20:08:11,902 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:08:11 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-01 20:08:29,310 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:08:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-01 20:08:30,736 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 20:08:33,067 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:08:33 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 20:08:41,405 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:08:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 20:10:27,425 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:10:27 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 20:10:30,447 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:10:30 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 20:10:39,865 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:10:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 20:13:00,172 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:20:13:00 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 20:13:34,638 - __main__ - INFO - 🔄 Running scheduled git push...
