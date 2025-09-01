@@ -6274,3 +6274,12 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 11:23:59,244 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-01 11:27:15,452 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:11:27:15 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 11:29:02,697 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 11:32:18,468 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:11:32:18 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 11:33:21,196 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 12:03:21 UTC)" (scheduled at 2025-09-01 11:33:21.193560+00:00)
+2025-09-01 11:33:21,197 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 11:33:21,197 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T10:33:21.197242, should run: True
+2025-09-01 11:33:21,198 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 11:33:21,199 - timer_manager - INFO - Successfully saved timers to file
+2025-09-01 11:33:21,199 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-01 11:33:21,199 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 12:03:21 UTC)" executed successfully
+2025-09-01 11:34:06,048 - __main__ - INFO - 🔄 Running scheduled git push...
