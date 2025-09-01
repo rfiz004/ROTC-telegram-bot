@@ -13057,3 +13057,28 @@ KeyError: 'transfer_target_country'
 2025-09-01 22:40:28,171 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-01 22:44:47,399 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:44:47 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 22:45:32,167 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 22:47:48,138 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:47:48 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:48:06,549 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:48:06 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:48:30,360 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:48:30 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:48:32,251 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:48:32 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:48:45,184 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:48:45 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:48:52,236 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:48:52 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:48:59,094 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:48:59 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:02,615 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:02 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:06,758 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:06 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:13,776 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:13 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:21,840 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:21 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:30,477 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 23:19:30 UTC)" (scheduled at 2025-09-01 22:49:30.476452+00:00)
+2025-09-01 22:49:30,477 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 22:49:30,478 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T21:19:30.478945, should run: True
+2025-09-01 22:49:30,480 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 22:49:30,487 - timer_manager - INFO - Successfully saved timers to file
+2025-09-01 22:49:30,487 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-01 22:49:30,487 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 23:19:30 UTC)" executed successfully
+2025-09-01 22:49:33,878 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:33 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:35,162 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:35 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:49:51,147 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:49:51 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 22:50:22,030 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:50:22 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:50:22,760 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:50:22 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:50:28,812 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:22:50:28 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 22:50:36,055 - __main__ - INFO - 🔄 Running scheduled git push...
