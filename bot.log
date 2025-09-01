@@ -13237,3 +13237,7 @@ KeyError: 'transfer_target_country'
 2025-09-01 23:19:30,479 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 23:49:30 UTC)" executed successfully
 2025-09-01 23:20:11,534 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:23:20:11 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 23:20:59,551 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 23:25:09,984 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:23:25:09 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 23:25:12,636 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:23:25:12 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 23:25:14,549 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:23:25:14 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 23:26:03,220 - __main__ - INFO - 🔄 Running scheduled git push...
