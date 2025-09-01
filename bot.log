@@ -6960,3 +6960,18 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 13:44:49,705 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:44:49 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 13:45:12,719 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:45:12 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 13:45:37,174 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 13:46:10,500 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:46:10 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:46:11,002 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 13:46:11,215 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 13:46:12,542 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:46:12 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:46:12,712 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 13:46:12,884 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 13:46:13,072 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 13:47:01,158 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:47:01 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:47:10,338 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:47:10 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:47:19,400 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:47:19 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:47:35,297 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:47:35 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:48:42,199 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:48:42 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:48:43,825 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:48:43 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 13:49:37,493 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:13:49:37 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 13:50:40,707 - __main__ - INFO - 🔄 Running scheduled git push...
