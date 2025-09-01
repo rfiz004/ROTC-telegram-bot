@@ -3773,3 +3773,20 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 06:51:26,726 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
 2025-09-01 06:54:13,408 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:06:54:13 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 06:55:53,964 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 06:59:16,647 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:06:59:16 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 07:00:30,867 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:07:00:30 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 07:00:31,360 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 07:00:31,558 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 07:00:31,736 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 07:00:35,690 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:07:00:35 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 07:00:35,875 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 07:00:37,750 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:07:00:37 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 07:00:37,916 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 07:00:38,097 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 07:00:43,668 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:07:00:43 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 07:00:43,669 - __main__ - INFO - Text router - User 2121665497: flow_type=None, state=None, step=awaiting_rp_password
+2025-09-01 07:00:44,185 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 07:00:50,558 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:07:00:50 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 07:00:51,052 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 07:00:51,231 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 07:00:57,508 - __main__ - INFO - 🔄 Running scheduled git push...
