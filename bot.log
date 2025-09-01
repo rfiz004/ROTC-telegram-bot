@@ -3732,3 +3732,12 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 05:55:14,055 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-01 05:58:39,566 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:05:58:39 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-01 06:00:17,468 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 06:03:21,195 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 06:33:21 UTC)" (scheduled at 2025-09-01 06:03:21.193560+00:00)
+2025-09-01 06:03:21,196 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 06:03:21,196 - timer_manager - INFO - Task last_cleanup: last run 2025-09-01T04:33:21.197289, should run: True
+2025-09-01 06:03:21,197 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-01 06:03:21,198 - timer_manager - INFO - Successfully saved timers to file
+2025-09-01 06:03:21,198 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-01 06:03:21,198 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-01 06:33:21 UTC)" executed successfully
+2025-09-01 06:03:42,219 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:06:03:42 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 06:05:20,842 - __main__ - INFO - 🔄 Running scheduled git push...
