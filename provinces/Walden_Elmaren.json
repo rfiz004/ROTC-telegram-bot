@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Elmaren",
   "mines": {},
-  "wealth": 9500,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 73,
@@ -45,7 +45,7 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 1,
+      "count": 4,
       "product": "پنبه",
       "weekly_output": 50
     },
