@@ -5721,3 +5721,78 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 09:07:18,592 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:07:18 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 09:07:21,035 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:07:21 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
 2025-09-01 09:07:25,548 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 09:07:44,492 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:07:44 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:07:44,985 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:07:45,162 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:07:45,348 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:07:54,685 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:07:54 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:07:55,273 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:07:55,546 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:08:02,217 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:02 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:08:02,712 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:08:02,723 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:08:02,890 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/deleteMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:03,095 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:03,278 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:23,146 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:23 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:08:23,147 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_name
+2025-09-01 09:08:23,147 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:08:23,649 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:30,178 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:30 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:08:30,178 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_nickname
+2025-09-01 09:08:30,179 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:08:30,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:34,615 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:34 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:08:34,615 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_age
+2025-09-01 09:08:34,808 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:35,000 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:08:43,042 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:43 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:08:43,549 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:08:43,744 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:08:50,091 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:50 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:08:50,650 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:08:50,935 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:08:51,143 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:08:54,672 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:08:54 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:09:03,494 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:09:03 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:09:03,985 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:09:04,167 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:09:04,349 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:09:05,148 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:09:05 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:09:08,546 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:09:08 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:09:08,748 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:09:08,935 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:09:19,260 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:09:19 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:09:19,761 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:09:19,954 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:09:25,487 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:09:25 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:09:25,985 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:10:02,962 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:10:02 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:10:02,962 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_appearance
+2025-09-01 09:10:02,963 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:10:03,477 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:10:43,539 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:10:43 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 09:10:56,539 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:10:56 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:10:56,540 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_history
+2025-09-01 09:10:56,541 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:10:57,049 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:11:35,571 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:11:35 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:11:35,571 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_id_number
+2025-09-01 09:11:35,573 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:11:36,135 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:11:40,791 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:11:40 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:11:40,792 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_id_tag
+2025-09-01 09:11:40,974 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:11:58,032 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:11:58 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:12:02,879 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:12:02 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:12:02,880 - __main__ - INFO - Text router - User 6818852965: flow_type=bio, state=None, step=asking_id_tag
+2025-09-01 09:12:02,881 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:12:03,390 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:12:14,827 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:12:14 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:12:14,829 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:12:14,831 - data_manager - INFO - Bios saved successfully
+2025-09-01 09:12:15,355 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
+2025-09-01 09:12:15,383 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
+2025-09-01 09:12:15,383 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
+2025-09-01 09:12:15,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-01 09:12:29,167 - __main__ - INFO - 🔄 Running scheduled git push...
