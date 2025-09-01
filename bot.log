@@ -10081,3 +10081,70 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 19:07:36,480 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:07:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-01 19:07:37,862 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:07:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-01 19:07:44,420 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 19:07:46,658 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:07:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:07:46,863 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:07:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:07:50,024 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:07:50 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:07:53,460 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:07:53 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:00,834 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:00 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:01,499 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:01 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:03,158 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:07,332 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:07 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:08,463 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:08 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:13,465 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:13 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:16,898 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:23,218 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:23 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:34,244 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:35,469 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:35 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:36,579 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:41,014 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:43,475 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:43 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:46,413 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:51,531 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:56,558 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:56 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:08:58,482 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:08:58 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:20,378 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:20 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:21,486 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:21 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:29,063 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:31,158 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:31 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:31,160 - __main__ - ERROR - Error in text router:
+Traceback (most recent call last):
+  File "/opt/render/project/src/main.py", line 204, in handle_text_router
+    user_id = update.message.from_user.id
+AttributeError: 'NoneType' object has no attribute 'from_user'
+
+2025-09-01 19:09:34,515 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:39,403 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:40,014 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:40 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:46,660 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:59,411 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:59 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:09:59,733 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:09:59 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:01,988 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:01 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:10,794 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:10 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:25,680 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:25 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:29,286 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:36,670 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:39,516 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:57,832 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:57 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:58,622 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:10:58 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:10:58,624 - __main__ - ERROR - Error in text router:
+Traceback (most recent call last):
+  File "/opt/render/project/src/main.py", line 204, in handle_text_router
+    user_id = update.message.from_user.id
+AttributeError: 'NoneType' object has no attribute 'from_user'
+
+2025-09-01 19:11:00,279 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:00 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:02,760 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:02 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:15,514 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:15 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:17,907 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:17 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:23,770 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:23 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:26,779 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:26 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:45,666 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:45 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:47,945 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:47 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:11:51,861 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:11:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:12:16,281 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:12:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:12:19,744 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:12:19 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 19:12:29,584 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:12:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:12:30,805 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:12:30 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:12:37,593 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:12:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:12:39,907 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:19:12:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-01 19:12:48,270 - __main__ - INFO - 🔄 Running scheduled git push...
