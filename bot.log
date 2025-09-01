@@ -5796,3 +5796,13 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-01 09:12:15,383 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
 2025-09-01 09:12:15,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
 2025-09-01 09:12:29,167 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-01 09:12:41,098 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:12:41 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:12:43,051 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:12:43 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:12:43,591 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-01 09:12:43,592 - admin_province_handler - INFO - Approving transfer ID: transfer_6213073537_1756667224
+2025-09-01 09:12:43,849 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-01 09:13:20,832 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:13:20 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:13:23,802 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:13:23 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:13:56,964 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:13:56 +0000] "POST /e1804844bbc42b8d9041a64614734e7f0a9053c949434f6683fcdf933031d62e HTTP/1.1" 200 153 "-" "-"
+2025-09-01 09:15:47,370 - aiohttp.access - INFO - 127.0.0.1 [01/Sep/2025:09:15:47 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-01 09:17:32,629 - __main__ - INFO - 🔄 Running scheduled git push...
