@@ -175,6 +175,22 @@
       "status": "pending",
       "requested_at": "2025-08-13T17:40:10.772369",
       "delay_until": "2025-08-14T17:40:10.772373"
+    },
+    {
+      "id": "transfer_1079429121_1756712669",
+      "requester_id": 1079429121,
+      "source_country": "Aldemar",
+      "source_province": "Port Zephalia",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 10
+      },
+      "status": "pending",
+      "requested_at": "2025-09-01T07:44:29.344894",
+      "delay_until": "2025-09-02T07:44:29.344897"
     }
   ]
 }
