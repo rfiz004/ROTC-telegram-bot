@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Markoven",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 0,
   "population": 24000,
   "tax": 30,
   "popularity": 62,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 0,
+      "count": 4,
       "product": "مرغ",
       "weekly_output": 100
     },
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 0,
+      "count": 1,
       "product": "شیشه",
       "weekly_output": 50
     }
