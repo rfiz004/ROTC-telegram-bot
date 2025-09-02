@@ -4,7 +4,7 @@
   "mines": {
     "Copper": 1
   },
-  "wealth": 4200,
+  "wealth": 200,
   "population": 40000,
   "tax": 60,
   "popularity": 60,
@@ -46,7 +46,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 2,
+      "count": 4,
       "product": "مرغ",
       "weekly_output": 100
     },
