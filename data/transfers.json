@@ -177,38 +177,6 @@
       "delay_until": "2025-08-14T17:40:10.772373"
     },
     {
-      "id": "transfer_1766859127_1756818855",
-      "requester_id": 1766859127,
-      "source_country": "Imperial",
-      "source_province": "Altismar",
-      "target_country": "Imperial",
-      "target_province": "Clarion",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 3500
-      },
-      "status": "pending",
-      "requested_at": "2025-09-02T13:14:15.643098",
-      "delay_until": "2025-09-03T13:14:15.643103"
-    },
-    {
-      "id": "transfer_1766859127_1756818974",
-      "requester_id": 1766859127,
-      "source_country": "Imperial",
-      "source_province": "Veresta",
-      "target_country": "Imperial",
-      "target_province": "Clarion",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 500
-      },
-      "status": "pending",
-      "requested_at": "2025-09-02T13:16:14.206411",
-      "delay_until": "2025-09-03T13:16:14.206415"
-    },
-    {
       "id": "transfer_1766859127_1756819036",
       "requester_id": 1766859127,
       "source_country": "Imperial",
