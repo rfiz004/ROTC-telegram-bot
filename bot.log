@@ -16601,3 +16601,9 @@ telegram.error.TimedOut: Timed out
 2025-09-02 23:14:18,250 - __main__ - INFO - 🔄 Running scheduled git push...
 2025-09-02 23:16:14,440 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:23:16:14 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-02 23:19:22,059 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-02 23:19:30,478 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-02 23:49:30 UTC)" (scheduled at 2025-09-02 23:19:30.476452+00:00)
+2025-09-02 23:19:30,478 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-02 23:19:30,478 - timer_manager - INFO - Task last_cleanup: last run 2025-09-02T22:49:30.479555, should run: False
+2025-09-02 23:19:30,479 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-02 23:49:30 UTC)" executed successfully
+2025-09-02 23:21:17,887 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:23:21:17 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-02 23:24:26,069 - __main__ - INFO - 🔄 Running scheduled git push...
