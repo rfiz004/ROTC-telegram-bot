@@ -15039,3 +15039,8 @@ ValueError: wealth در مبدا به اندازه کافی موجود نیست.
 2025-09-02 13:57:06,364 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:13:57:06 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-02 13:59:58,303 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:13:59:58 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-02 14:02:09,868 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-02 14:03:37,459 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:14:03:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 14:05:01,600 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:14:05:01 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-02 14:05:21,063 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:14:05:21 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 14:05:34,776 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:14:05:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 14:07:13,675 - __main__ - INFO - 🔄 Running scheduled git push...
