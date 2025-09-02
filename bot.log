@@ -14071,3 +14071,7 @@ KeyError: 'transfer_target_country'
 2025-09-02 09:21:49,768 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:09:21:49 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-02 09:22:05,113 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:09:22:05 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-02 09:23:33,653 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-02 09:25:36,792 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:09:25:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 09:26:28,659 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:09:26:28 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 09:26:52,518 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:09:26:52 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-02 09:28:37,257 - __main__ - INFO - 🔄 Running scheduled git push...
