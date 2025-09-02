@@ -14177,3 +14177,13 @@ KeyError: 'transfer_target_country'
 2025-09-02 11:49:30,481 - timer_manager - INFO - Updated last run time for last_cleanup
 2025-09-02 11:49:30,481 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-02 12:19:30 UTC)" executed successfully
 2025-09-02 11:50:25,645 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-02 11:52:13,021 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:11:52:13 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 11:52:53,712 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:11:52:53 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 11:52:54,192 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 400 Bad Request"
+2025-09-02 11:52:54,193 - __main__ - WARNING - Network error: There is no text in the message to edit
+2025-09-02 11:53:10,590 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:11:53:10 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 11:53:11,078 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 400 Bad Request"
+2025-09-02 11:53:11,078 - __main__ - WARNING - Network error: There is no text in the message to edit
+2025-09-02 11:53:32,933 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:11:53:32 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-02 11:53:34,744 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:11:53:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 11:55:29,410 - __main__ - INFO - 🔄 Running scheduled git push...
