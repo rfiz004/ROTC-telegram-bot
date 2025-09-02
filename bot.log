@@ -15209,3 +15209,165 @@ ValueError: wealth در مبدا به اندازه کافی موجود نیست.
 2025-09-02 15:47:20,496 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
 2025-09-02 15:47:20,683 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
 2025-09-02 15:48:32,493 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-02 15:48:40,414 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:48:40 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:48:40,926 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:48:41,170 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:48:55,328 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:48:55 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:48:55,328 - __main__ - INFO - Text router - User 1766859127: flow_type=country_management, state=awaiting_password, step=None
+2025-09-02 15:48:55,328 - country_handler - INFO - Country handler - User 1766859127: flow_type=country_management, state=awaiting_password
+2025-09-02 15:48:55,328 - country_handler - INFO - [check_password] User ID: 1766859127 وارد کرده رمز: 'V#4rSt!8mL'
+2025-09-02 15:48:55,329 - country_handler - INFO - [check_password] کشور انتخابی: 'Imperial', استان انتخابی: 'Veresta'
+2025-09-02 15:48:55,329 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'V#4rSt!8mL'
+2025-09-02 15:48:55,329 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-09-02 15:48:55,836 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-02 15:48:59,696 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:48:59 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:48:59,915 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:00,133 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:00,386 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:49:13,051 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:49:13 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:49:13,580 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:13,772 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:49:16,286 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:49:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:49:16,517 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:16,773 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:49:18,854 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:49:18 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:49:19,100 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:19,319 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:19,526 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:49:21,996 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:49:21 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:49:22,166 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:22,367 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:49:25,292 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:49:25 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:49:25,490 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:49:25,670 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:49:30,478 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-02 16:19:30 UTC)" (scheduled at 2025-09-02 15:49:30.476452+00:00)
+2025-09-02 15:49:30,478 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-02 15:49:30,478 - timer_manager - INFO - Task last_cleanup: last run 2025-09-02T14:49:30.480366, should run: False
+2025-09-02 15:49:30,479 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-02 16:19:30 UTC)" executed successfully
+2025-09-02 15:50:04,699 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:50:04 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:50:04,699 - __main__ - INFO - Text router - User 1766859127: flow_type=country_management, state=awaiting_password, step=None
+2025-09-02 15:50:04,699 - country_handler - INFO - Country handler - User 1766859127: flow_type=country_management, state=awaiting_password
+2025-09-02 15:50:04,699 - country_handler - INFO - [check_password] User ID: 1766859127 وارد کرده رمز: 'L!2sRn#7pQ'
+2025-09-02 15:50:04,699 - country_handler - INFO - [check_password] کشور انتخابی: 'Imperial', استان انتخابی: 'Lusauren'
+2025-09-02 15:50:04,699 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'L!2sRn#7pQ'
+2025-09-02 15:50:04,700 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-09-02 15:50:11,904 - country_handler - ERROR - Error checking password: Timed out
+Traceback (most recent call last):
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+  File "/opt/render/project/python/Python-3.10.13/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/opt/render/project/python/Python-3.10.13/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/render/project/src/country_handler.py", line 250, in check_password
+    await update.message.reply_text("✅ خوش اومدی! چه کمکی میتونم بهت بکنم؟", reply_markup=manage_country_menu())
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 2624, in send_message
+    return await super().send_message(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 846, in send_message
+    return await self._send_message(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 703, in _send_message
+    result = await self._post(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/opt/render/project/src/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+2025-09-02 15:50:12,466 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-02 15:50:21,779 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:50:21 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:50:21,780 - __main__ - INFO - Text router - User 1766859127: flow_type=country_management, state=None, step=None
+2025-09-02 15:50:22,300 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-02 15:51:13,466 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:51:13 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-02 15:51:26,282 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:51:26 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:51:26,282 - __main__ - INFO - Text router - User 1766859127: flow_type=country_management, state=None, step=None
+2025-09-02 15:51:26,787 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-02 15:51:44,452 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:51:44 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:51:45,091 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-02 15:51:47,403 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:51:47 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:51:47,576 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:51:47,745 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:51:47,968 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:51:50,375 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:51:50 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:51:50,551 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:51:50,820 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:51:55,398 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:51:55 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:51:55,636 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:51:55,877 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:52:01,023 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:52:01 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:52:01,023 - __main__ - INFO - Text router - User 1766859127: flow_type=country_management, state=awaiting_password, step=None
+2025-09-02 15:52:01,024 - country_handler - INFO - Country handler - User 1766859127: flow_type=country_management, state=awaiting_password
+2025-09-02 15:52:01,024 - country_handler - INFO - [check_password] User ID: 1766859127 وارد کرده رمز: 'L!2sRn#7pQ'
+2025-09-02 15:52:01,024 - country_handler - INFO - [check_password] کشور انتخابی: 'Imperial', استان انتخابی: 'Lusauren'
+2025-09-02 15:52:01,024 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'L!2sRn#7pQ'
+2025-09-02 15:52:01,025 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-09-02 15:52:01,666 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-02 15:52:05,184 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:52:05 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:52:05,352 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:52:05,518 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:52:05,701 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:52:28,879 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:52:28 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:52:34,417 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:52:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:52:43,598 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:52:43 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:52:44,095 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:52:44,280 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:52:46,388 - aiohttp.access - INFO - 127.0.0.1 [02/Sep/2025:15:52:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-02 15:52:46,557 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-02 15:52:46,758 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-02 15:53:36,670 - __main__ - INFO - 🔄 Running scheduled git push...
