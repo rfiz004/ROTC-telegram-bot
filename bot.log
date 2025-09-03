@@ -17653,3 +17653,13 @@ telegram.error.TimedOut: Timed out
 2025-09-03 10:45:41,136 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:10:45:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-03 10:46:04,106 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:10:46:04 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-03 10:48:21,688 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-03 10:48:58,237 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:10:48:58 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-03 10:49:30,479 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-03 11:19:30 UTC)" (scheduled at 2025-09-03 10:49:30.476452+00:00)
+2025-09-03 10:49:30,485 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-03 10:49:30,486 - timer_manager - INFO - Task last_cleanup: last run 2025-09-03T09:49:30.480647, should run: True
+2025-09-03 10:49:30,490 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-03 10:49:30,515 - timer_manager - INFO - Successfully saved timers to file
+2025-09-03 10:49:30,515 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-03 10:49:30,516 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-03 11:19:30 UTC)" executed successfully
+2025-09-03 10:51:16,212 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:10:51:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 10:53:25,673 - __main__ - INFO - 🔄 Running scheduled git push...
