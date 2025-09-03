@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 13000,
+  "wealth": 0,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -42,12 +42,12 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 0,
+      "count": 4,
       "product": "گندم",
       "weekly_output": 100
     },
     "باغ": {
-      "count": 2,
+      "count": 4,
       "product": "میوه",
       "weekly_output": 100
     },
