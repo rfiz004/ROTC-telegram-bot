@@ -191,6 +191,22 @@
       "status": "pending",
       "requested_at": "2025-09-02T13:17:16.966860",
       "delay_until": "2025-09-03T13:17:16.966864"
+    },
+    {
+      "id": "transfer_809172681_1756931363",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-09-03T20:29:23.426834",
+      "delay_until": "2025-09-04T20:29:23.426839"
     }
   ]
 }
