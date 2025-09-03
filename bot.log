@@ -18119,3 +18119,7 @@ telegram.error.TimedOut: Timed out
 2025-09-03 13:04:32,169 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:13:04:32 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-03 13:05:12,855 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:13:05:12 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-03 13:05:12,917 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-03 13:05:33,006 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:13:05:33 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-03 13:10:00,798 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:13:10:00 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 13:10:17,266 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-03 13:10:17,665 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:13:10:17 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
