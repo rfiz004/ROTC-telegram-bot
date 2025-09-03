@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Port Zephalia",
   "mines": {},
-  "wealth": 3000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 66,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 0,
+      "count": 1,
       "product": "فولاد",
       "weekly_output": 50
     },
