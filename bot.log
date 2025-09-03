@@ -16820,3 +16820,19 @@ telegram.error.TimedOut: Timed out
 2025-09-03 02:15:46,552 - callback_handlers - INFO - Callback data received: preview_grain_effect from user 7096919075
 2025-09-03 02:15:46,725 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
 2025-09-03 02:16:40,725 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-03 02:17:36,188 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:17:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:17:36,815 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:17:37,009 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:17:38,858 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:17:38 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:17:39,084 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:17:39,280 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:17:41,280 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:17:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:17:41,537 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:17:41,791 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:17:41,964 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:18:13,361 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:18:13 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-03 02:19:30,479 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-03 02:49:30 UTC)" (scheduled at 2025-09-03 02:19:30.476452+00:00)
+2025-09-03 02:19:30,479 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-03 02:19:30,479 - timer_manager - INFO - Task last_cleanup: last run 2025-09-03T01:49:30.481003, should run: False
+2025-09-03 02:19:30,480 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-03 02:49:30 UTC)" executed successfully
+2025-09-03 02:21:44,957 - __main__ - INFO - 🔄 Running scheduled git push...
