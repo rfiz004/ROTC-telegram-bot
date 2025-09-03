@@ -16737,3 +16737,86 @@ telegram.error.TimedOut: Timed out
 2025-09-03 02:06:55,862 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:06:55 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-03 02:08:07,730 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:08:07 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-03 02:11:36,658 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-03 02:13:11,579 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:13:11 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-03 02:14:19,948 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:19 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:20,454 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:20,637 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:22,544 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:22 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:22,715 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:22,883 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:23,058 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:26,100 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:26 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:26,268 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:26,447 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:29,116 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:29,283 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:29,459 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:37,559 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:37,560 - __main__ - INFO - Text router - User 7096919075: flow_type=country_management, state=awaiting_password, step=None
+2025-09-03 02:14:37,560 - country_handler - INFO - Country handler - User 7096919075: flow_type=country_management, state=awaiting_password
+2025-09-03 02:14:37,560 - country_handler - INFO - [check_password] User ID: 7096919075 وارد کرده رمز: 'K!2oWr#9Xp'
+2025-09-03 02:14:37,560 - country_handler - INFO - [check_password] کشور انتخابی: 'Aldemar', استان انتخابی: 'King-of-wealth'
+2025-09-03 02:14:37,560 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'K!2oWr#9Xp'
+2025-09-03 02:14:37,560 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-09-03 02:14:38,181 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-03 02:14:43,347 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:43 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:43,842 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:43,843 - callback_handlers - INFO - Callback data received: manage_food_menu from user 7096919075
+2025-09-03 02:14:43,843 - callback_handlers - INFO - Grain menu opened for user 7096919075 - selected_province: King-of-wealth
+2025-09-03 02:14:44,026 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:46,093 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:46,272 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:46,273 - callback_handlers - INFO - Callback data received: preview_grain_effect from user 7096919075
+2025-09-03 02:14:46,447 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:49,549 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:49 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:49,717 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:49,718 - callback_handlers - INFO - Callback data received: manage_food_menu from user 7096919075
+2025-09-03 02:14:49,718 - callback_handlers - INFO - Grain menu opened for user 7096919075 - selected_province: King-of-wealth
+2025-09-03 02:14:49,890 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:14:51,839 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:14:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:14:52,007 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:14:52,008 - callback_handlers - INFO - Callback data received: set_grain_consumption from user 7096919075
+2025-09-03 02:14:52,183 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:01,374 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:01 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:01,890 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:01,891 - callback_handlers - INFO - Callback data received: manage_food_menu from user 7096919075
+2025-09-03 02:15:01,891 - callback_handlers - INFO - Grain menu opened for user 7096919075 - selected_province: King-of-wealth
+2025-09-03 02:15:02,072 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:03,673 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:03,839 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:03,840 - callback_handlers - INFO - Callback data received: set_grain_consumption from user 7096919075
+2025-09-03 02:15:04,013 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:18,530 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:18 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:18,530 - __main__ - INFO - Text router - User 7096919075: flow_type=grain_management, state=None, step=awaiting_grain_percentage
+2025-09-03 02:15:19,038 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-03 02:15:25,187 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:25 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:25,704 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:25,705 - callback_handlers - INFO - Callback data received: manage_food_menu from user 7096919075
+2025-09-03 02:15:25,705 - callback_handlers - INFO - Grain menu opened for user 7096919075 - selected_province: King-of-wealth
+2025-09-03 02:15:25,886 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:27,590 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:27 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:27,756 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:27,757 - callback_handlers - INFO - Callback data received: set_grain_priority from user 7096919075
+2025-09-03 02:15:27,935 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:33,372 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:33 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:33,372 - __main__ - INFO - Text router - User 7096919075: flow_type=grain_management, state=None, step=awaiting_grain_priority
+2025-09-03 02:15:33,871 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-03 02:15:35,928 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:35 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:36,097 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:36,098 - callback_handlers - INFO - Callback data received: manage_food_menu from user 7096919075
+2025-09-03 02:15:36,098 - callback_handlers - INFO - Grain menu opened for user 7096919075 - selected_province: King-of-wealth
+2025-09-03 02:15:36,274 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:37,882 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:38,049 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:38,050 - callback_handlers - INFO - Callback data received: set_grain_consumption from user 7096919075
+2025-09-03 02:15:38,223 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:44,127 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:44 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:44,636 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:44,636 - callback_handlers - INFO - Callback data received: manage_food_menu from user 7096919075
+2025-09-03 02:15:44,637 - callback_handlers - INFO - Grain menu opened for user 7096919075 - selected_province: King-of-wealth
+2025-09-03 02:15:44,816 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:15:46,380 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:02:15:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 02:15:46,551 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 02:15:46,552 - callback_handlers - INFO - Callback data received: preview_grain_effect from user 7096919075
+2025-09-03 02:15:46,725 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 02:16:40,725 - __main__ - INFO - 🔄 Running scheduled git push...
