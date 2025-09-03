@@ -17762,3 +17762,13 @@ telegram.error.TimedOut: Timed out
 2025-09-03 11:41:58,646 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
 2025-09-03 11:41:58,840 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
 2025-09-03 11:44:06,451 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-03 11:44:37,105 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:11:44:37 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-03 11:47:43,632 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:11:47:43 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 11:47:44,202 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-03 11:47:46,198 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:11:47:46 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 11:47:46,394 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-03 11:47:46,604 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-03 11:47:52,450 - aiohttp.access - INFO - 127.0.0.1 [03/Sep/2025:11:47:52 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-03 11:47:52,450 - __main__ - INFO - Text router - User 898145344: flow_type=None, state=None, step=awaiting_rp_password
+2025-09-03 11:47:52,995 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-03 11:49:10,153 - __main__ - INFO - 🔄 Running scheduled git push...
