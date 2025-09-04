@@ -2,16 +2,17 @@
   "country": "Aldemar",
   "province": "Karnholm",
   "mines": {},
-  "wealth": 12000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 66,
-  "total_army": 5000,
+  "total_army": 5100,
   "army": {
     "کماندار": 400,
     "شمشیرزن": 250,
     "نیزه دار": 100,
-    "سواره نظام": 50
+    "سواره نظام": 50,
+    "جوخه قاتلان": 100
   },
   "castle": {},
   "structures": {},
