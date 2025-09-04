@@ -207,6 +207,22 @@
       "status": "pending",
       "requested_at": "2025-09-04T08:29:33.332246",
       "delay_until": "2025-09-05T08:29:33.332251"
+    },
+    {
+      "id": "transfer_7358397936_1756990463",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Silzara",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 7500
+      },
+      "status": "pending",
+      "requested_at": "2025-09-04T12:54:23.055883",
+      "delay_until": "2025-09-05T12:54:23.055887"
     }
   ]
 }
