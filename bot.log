@@ -21829,3 +21829,13 @@ ValueError: wealth در مبدا به اندازه کافی موجود نیست.
 2025-09-04 09:57:06,406 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:57:06 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 09:57:13,526 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:57:13 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 09:57:21,095 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-04 09:58:10,351 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:58:10 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:58:38,456 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:58:38 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:58:45,077 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:58:45 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 10:00:03,573 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:10:00:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 10:00:08,525 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:10:00:08 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 10:00:20,394 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:10:00:20 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 10:01:52,975 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:10:01:52 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-04 10:02:17,790 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:10:02:17 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 10:02:18,321 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-04 10:02:25,473 - __main__ - INFO - 🔄 Running scheduled git push...
