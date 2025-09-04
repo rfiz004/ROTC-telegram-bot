@@ -191,22 +191,6 @@
       "status": "pending",
       "requested_at": "2025-09-02T13:17:16.966860",
       "delay_until": "2025-09-03T13:17:16.966864"
-    },
-    {
-      "id": "transfer_7358397936_1756967756",
-      "requester_id": 7358397936,
-      "source_country": "Santos",
-      "source_province": "Zahramun",
-      "target_country": "Santos",
-      "target_province": "Grand-Duke",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 3000
-      },
-      "status": "pending",
-      "requested_at": "2025-09-04T06:35:56.247291",
-      "delay_until": "2025-09-05T06:35:56.247295"
     }
   ]
 }
