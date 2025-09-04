@@ -207,22 +207,6 @@
       "status": "pending",
       "requested_at": "2025-09-04T08:29:33.332246",
       "delay_until": "2025-09-05T08:29:33.332251"
-    },
-    {
-      "id": "transfer_7358397936_1756981018",
-      "requester_id": 7358397936,
-      "source_country": "Santos",
-      "source_province": "Zahramun",
-      "target_country": "Santos",
-      "target_province": "Marashen",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 10000
-      },
-      "status": "pending",
-      "requested_at": "2025-09-04T10:16:58.267917",
-      "delay_until": "2025-09-05T10:16:58.267922"
     }
   ]
 }
