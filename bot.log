@@ -20793,3 +20793,23 @@ telegram.error.TimedOut: Timed out
 2025-09-04 06:27:43,824 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:27:43 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 06:28:47,155 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:28:47 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-04 06:29:24,269 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-04 06:33:52,190 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:33:52 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-04 06:34:16,710 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:34:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 06:34:17,211 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 06:34:17,385 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 06:34:17,570 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-04 06:34:18,894 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:34:18 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 06:34:19,062 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 06:34:19,255 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-04 06:34:20,352 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:34:20 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 06:34:20,544 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 06:34:20,726 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-04 06:34:27,150 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:06:34:27 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 06:34:27,151 - __main__ - INFO - Text router - User 7358397936: flow_type=country_management, state=awaiting_password, step=None
+2025-09-04 06:34:27,151 - country_handler - INFO - Country handler - User 7358397936: flow_type=country_management, state=awaiting_password
+2025-09-04 06:34:27,151 - country_handler - INFO - [check_password] User ID: 7358397936 وارد کرده رمز: 'G!8dDk#4nW'
+2025-09-04 06:34:27,151 - country_handler - INFO - [check_password] کشور انتخابی: 'Santos', استان انتخابی: 'Grand-Duke'
+2025-09-04 06:34:27,152 - country_handler - INFO - [check_password] رمز صحیح پیدا شده: 'G!8dDk#4nW'
+2025-09-04 06:34:27,152 - country_handler - INFO - [check_password] رمز عبور صحیح است.
+2025-09-04 06:34:27,669 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-04 06:34:28,537 - __main__ - INFO - 🔄 Running scheduled git push...
