@@ -22384,3 +22384,21 @@ AttributeError: 'NoneType' object has no attribute 'from_user'
 2025-09-04 12:19:00,093 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:19:00 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 12:19:06,138 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:19:06 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 12:19:21,381 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-04 12:19:30,478 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-04 12:49:30 UTC)" (scheduled at 2025-09-04 12:19:30.476452+00:00)
+2025-09-04 12:19:30,479 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-04 12:19:30,479 - timer_manager - INFO - Task last_cleanup: last run 2025-09-04T11:49:30.479639, should run: False
+2025-09-04 12:19:30,479 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-04 12:49:30 UTC)" executed successfully
+2025-09-04 12:20:10,659 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:20:10 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:20:36,638 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:20:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:21:02,069 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:21:02 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:21:19,742 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:21:19 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:21:25,636 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:21:25 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:21:30,734 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:21:30 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:21:38,482 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:21:38 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:21:53,091 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:21:53 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:22:34,528 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:22:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:22:38,860 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:22:38 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:22:52,789 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:22:52 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:22:57,025 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:22:57 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 12:23:57,570 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:12:23:57 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-04 12:24:25,755 - __main__ - INFO - 🔄 Running scheduled git push...
