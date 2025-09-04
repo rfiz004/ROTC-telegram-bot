@@ -1012,5 +1012,31 @@
     "count": 1,
     "id": "48",
     "created_at": "2025-08-26T06:42:35.155791"
+  },
+  {
+    "name": "قصر",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "قصرها رکن اصلی هر قلعه ها هستن که حاکم اون قلعه درش زندگی میکنن و مقر فرماندهی قلعه هست, تعداد: 1",
+    "price": 5000,
+    "materials": {
+      "فولاد": 100,
+      "چوب": 200,
+      "سنگ": 800,
+      "پنبه": 600,
+      "پارچه": 1000,
+      "شیشه": 1000
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJwlWi53KP4YuDATfNb0TWJ4jImAAFxMgACz8oxG2mh0FGRTOXS51mvIgEAAwIAA3gAAzYE",
+    "count": 1,
+    "id": "49",
+    "created_at": "2025-09-04T18:39:41.085521"
   }
 ]
