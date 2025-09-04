@@ -22171,3 +22171,44 @@ ValueError: wealth در مبدا به اندازه کافی موجود نیست.
 2025-09-04 11:48:51,732 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:48:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 11:48:54,524 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:48:54 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 11:48:55,565 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-04 11:49:04,212 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:04 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:12,837 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:12 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:14,634 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:14 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:15,591 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:15 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:26,480 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:26 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:28,159 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:28 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:30,477 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-04 12:19:30 UTC)" (scheduled at 2025-09-04 11:49:30.476452+00:00)
+2025-09-04 11:49:30,478 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-04 11:49:30,478 - timer_manager - INFO - Task last_cleanup: last run 2025-09-04T10:19:30.484438, should run: True
+2025-09-04 11:49:30,479 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-04 11:49:30,480 - timer_manager - INFO - Successfully saved timers to file
+2025-09-04 11:49:30,480 - timer_manager - INFO - Updated last run time for last_cleanup
+2025-09-04 11:49:30,480 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-04 12:19:30 UTC)" executed successfully
+2025-09-04 11:49:41,939 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:41 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:44,339 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:44 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:45,681 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:45 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:49:54,732 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:49:54 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:50:07,731 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:50:07 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:50:14,849 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:50:14 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:50:16,711 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:50:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:50:17,781 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:50:17 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:50:18,391 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:50:18 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:50:39,152 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:50:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:51:15,414 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:51:15 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:51:29,282 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:51:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:51:31,780 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:51:31 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:51:33,962 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:51:33 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:51:59,504 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:51:59 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:52:03,214 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:52:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:52:36,961 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:52:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:52:37,984 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:52:37 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:52:45,452 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:52:45 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:00,456 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:00 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:13,916 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:13 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:22,934 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:22 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:25,506 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:25 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:29,387 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:32,362 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:32 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-04 11:53:45,737 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:45 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:48,538 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:11:53:48 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 11:53:59,676 - __main__ - INFO - 🔄 Running scheduled git push...
