@@ -21409,3 +21409,35 @@ telegram.error.TimedOut: Timed out
 2025-09-04 08:13:29,884 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:13:29 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 08:15:19,408 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:15:19 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-04 08:15:56,335 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-04 08:18:57,285 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:18:57 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:19:03,194 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:19:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:19:30,478 - apscheduler.executors.default - INFO - Running job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-04 08:49:30 UTC)" (scheduled at 2025-09-04 08:19:30.476452+00:00)
+2025-09-04 08:19:30,479 - timer_manager - INFO - Successfully loaded timers from file
+2025-09-04 08:19:30,479 - timer_manager - INFO - Task last_cleanup: last run 2025-09-04T07:19:30.480303, should run: False
+2025-09-04 08:19:30,479 - apscheduler.executors.default - INFO - Job "scheduled_cleanup (trigger: interval[0:30:00], next run at: 2025-09-04 08:49:30 UTC)" executed successfully
+2025-09-04 08:19:33,139 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:19:33 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:19:52,715 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:19:52 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:19:55,456 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:19:55 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:20:05,133 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:20:05 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:20:05,642 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 08:20:05,829 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/editMessageText "HTTP/1.1 200 OK"
+2025-09-04 08:20:07,858 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:20:07 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:20:08,065 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 08:20:08,230 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/deleteMessage "HTTP/1.1 400 Bad Request"
+2025-09-04 08:20:08,429 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-04 08:20:08,599 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/deleteMessage "HTTP/1.1 400 Bad Request"
+2025-09-04 08:20:08,796 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendMessage "HTTP/1.1 200 OK"
+2025-09-04 08:20:12,970 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:20:12 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:20:13,184 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 08:20:13,359 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/deleteMessage "HTTP/1.1 200 OK"
+2025-09-04 08:20:13,574 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
+2025-09-04 08:20:17,851 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:20:17 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:20:18,031 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 08:20:18,207 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/deleteMessage "HTTP/1.1 200 OK"
+2025-09-04 08:20:18,394 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
+2025-09-04 08:20:23,488 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:20:23 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-04 08:20:26,538 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:08:20:26 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 08:20:27,080 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-04 08:20:27,284 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/deleteMessage "HTTP/1.1 200 OK"
+2025-09-04 08:20:27,475 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8135083594:AAHKW8QXGEd1AVOO_lRJbHZG4P5iu1dCkRo/sendPhoto "HTTP/1.1 200 OK"
+2025-09-04 08:21:00,367 - __main__ - INFO - 🔄 Running scheduled git push...
