@@ -161,22 +161,6 @@
       "delay_until": "2025-08-14T17:32:44.459447"
     },
     {
-      "id": "transfer_6213073537_1755106810",
-      "requester_id": 6213073537,
-      "source_country": "Santos",
-      "source_province": "Silzara",
-      "target_country": "Santos",
-      "target_province": "Zahramun",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 1000
-      },
-      "status": "pending",
-      "requested_at": "2025-08-13T17:40:10.772369",
-      "delay_until": "2025-08-14T17:40:10.772373"
-    },
-    {
       "id": "transfer_1766859127_1756819036",
       "requester_id": 1766859127,
       "source_country": "Imperial",
