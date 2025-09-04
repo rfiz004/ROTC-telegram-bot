@@ -21790,3 +21790,17 @@ ValueError: wealth در مبدا به اندازه کافی موجود نیست.
 2025-09-04 09:41:32,088 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:41:32 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
 2025-09-04 09:42:01,042 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:01 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
 2025-09-04 09:42:08,366 - __main__ - INFO - 🔄 Running scheduled git push...
+2025-09-04 09:42:10,666 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:10 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:42:16,608 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:16 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:42:36,688 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:36 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:42:42,999 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:42 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:42:51,030 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:42:51,524 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:42:51 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:43:27,196 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:43:27 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:43:30,539 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:43:30 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:43:31,143 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:43:31 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:43:34,148 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:43:34 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:43:39,091 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:43:39 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:44:03,765 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:44:03 +0000] "POST /f5b3b24d298b9cc1b7e2fb17e2a05ed0c2a21bf6c0db15e72a4517cb4f3c4071 HTTP/1.1" 200 153 "-" "-"
+2025-09-04 09:46:37,684 - aiohttp.access - INFO - 127.0.0.1 [04/Sep/2025:09:46:37 +0000] "HEAD / HTTP/1.1" 200 152 "https://rotc-telegram-bot.onrender.com/" "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)"
+2025-09-04 09:47:12,587 - __main__ - INFO - 🔄 Running scheduled git push...
