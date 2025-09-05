@@ -431,23 +431,6 @@
       "delay_until": "2025-09-06T16:56:05.407490"
     },
     {
-      "id": "transfer_809172681_1757091410",
-      "requester_id": 809172681,
-      "source_country": "Alestria",
-      "source_province": "Guardian-of-Sharia",
-      "target_country": "Alestria",
-      "target_province": "Alkyanos",
-      "transfer_type": "domestic",
-      "category": "economic_items",
-      "items": {
-        "گوشت": 300,
-        "میوه": 300
-      },
-      "status": "pending",
-      "requested_at": "2025-09-05T16:56:50.118213",
-      "delay_until": "2025-09-06T16:56:50.118219"
-    },
-    {
       "id": "transfer_7358397936_1757091430",
       "requester_id": 7358397936,
       "source_country": "Santos",
