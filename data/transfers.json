@@ -210,20 +210,20 @@
       "delay_until": "2025-09-06T18:06:26.375934"
     },
     {
-      "id": "transfer_7869889327_1757097110",
+      "id": "transfer_7869889327_1757097505",
       "requester_id": 7869889327,
       "source_country": "Northwood",
-      "source_province": "Druvenmarsh",
-      "target_country": "Northwood",
-      "target_province": "Lusweld",
-      "transfer_type": "domestic",
+      "source_province": "Lusweld",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
       "category": "economic_items",
       "items": {
-        "شراب": 60
+        "شراب": 300
       },
       "status": "pending",
-      "requested_at": "2025-09-05T18:31:50.209678",
-      "delay_until": "2025-09-06T18:31:50.209681"
+      "requested_at": "2025-09-05T18:38:25.348521",
+      "delay_until": "2025-09-06T18:38:25.348525"
     }
   ]
 }
