@@ -416,22 +416,6 @@
       "status": "pending",
       "requested_at": "2025-09-05T17:08:34.832240",
       "delay_until": "2025-09-06T17:08:34.832244"
-    },
-    {
-      "id": "transfer_5566736269_1757092684",
-      "requester_id": 5566736269,
-      "source_country": "Walden",
-      "source_province": "Narwendale",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 10000
-      },
-      "status": "pending",
-      "requested_at": "2025-09-05T17:18:04.951253",
-      "delay_until": "2025-09-06T17:18:04.951258"
     }
   ]
 }
