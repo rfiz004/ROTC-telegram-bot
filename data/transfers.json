@@ -400,22 +400,6 @@
       "status": "pending",
       "requested_at": "2025-09-05T16:57:10.178449",
       "delay_until": "2025-09-06T16:57:10.178452"
-    },
-    {
-      "id": "transfer_809172681_1757092114",
-      "requester_id": 809172681,
-      "source_country": "Alestria",
-      "source_province": "Lilura",
-      "target_country": "Alestria",
-      "target_province": "Alkyanos",
-      "transfer_type": "domestic",
-      "category": "wealth",
-      "items": {
-        "طلا": 10000
-      },
-      "status": "pending",
-      "requested_at": "2025-09-05T17:08:34.832240",
-      "delay_until": "2025-09-06T17:08:34.832244"
     }
   ]
 }
