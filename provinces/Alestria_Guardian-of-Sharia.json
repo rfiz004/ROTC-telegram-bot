@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 100,
+  "wealth": 2100,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -27,10 +27,11 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "گوشت": 200,
-    "میوه": 200,
-    "سنگ": 50,
-    "چوب": 50
+    "گوشت": 300,
+    "میوه": 300,
+    "سنگ": 150,
+    "چوب": 50,
+    "پنبه": 0
   },
   "economic_structures": {
     "دامداری": {
