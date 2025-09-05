@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 5000,
+  "wealth": 0,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -48,7 +48,7 @@
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 0,
+      "count": 2,
       "product": "چرم",
       "weekly_output": 50
     },
