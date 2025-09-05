@@ -48,12 +48,12 @@
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 2,
+      "count": 4,
       "product": "چرم",
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 1,
+      "count": 3,
       "product": "شیشه",
       "weekly_output": 50
     },
