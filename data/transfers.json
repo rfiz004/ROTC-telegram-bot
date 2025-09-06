@@ -208,38 +208,6 @@
       "status": "pending",
       "requested_at": "2025-09-05T18:06:26.375931",
       "delay_until": "2025-09-06T18:06:26.375934"
-    },
-    {
-      "id": "transfer_7869889327_1757097505",
-      "requester_id": 7869889327,
-      "source_country": "Northwood",
-      "source_province": "Lusweld",
-      "target_country": "Walden",
-      "target_province": "Verindel",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "شراب": 300
-      },
-      "status": "pending",
-      "requested_at": "2025-09-05T18:38:25.348521",
-      "delay_until": "2025-09-06T18:38:25.348525"
-    },
-    {
-      "id": "transfer_5566736269_1757098253",
-      "requester_id": 5566736269,
-      "source_country": "Walden",
-      "source_province": "Verindel",
-      "target_country": "Northwood",
-      "target_province": "Trenhallough",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "پارچه": 300
-      },
-      "status": "pending",
-      "requested_at": "2025-09-05T18:50:53.021928",
-      "delay_until": "2025-09-06T18:50:53.021932"
     }
   ]
 }
