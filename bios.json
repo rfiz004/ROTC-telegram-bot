@@ -115,6 +115,16 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "5118466455": {
+      "country": "Alestria",
+      "job": "سپهسالار ارتش",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-09-06T19:17:55.932872",
+      "expires_at": "2025-09-06T19:47:26.415221",
+      "name": "Kana Igoru",
+      "nickname": "محکوم شده"
     }
   },
   "used_hashtags": [
