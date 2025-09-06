@@ -1,10 +1,9 @@
 {
   "grain_priority": [
-    "گوشت",
     "مرغ"
   ],
   "grains": {
-    "گوشت": 0
+    "مرغ": 100
   },
   "unfed_population": 0
 }
