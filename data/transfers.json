@@ -209,38 +209,6 @@
       "delay_until": "2025-09-07T08:51:08.413413"
     },
     {
-      "id": "transfer_7686824742_1757178629",
-      "requester_id": 7686824742,
-      "source_country": "Northwood",
-      "source_province": "Trenhallough",
-      "target_country": "Santos",
-      "target_province": "Zahramun",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "چوب": 120
-      },
-      "status": "pending",
-      "requested_at": "2025-09-06T17:10:29.909941",
-      "delay_until": "2025-09-07T17:10:29.909945"
-    },
-    {
-      "id": "transfer_7686824742_1757178869",
-      "requester_id": 7686824742,
-      "source_country": "Northwood",
-      "source_province": "Trenhallough",
-      "target_country": "Santos",
-      "target_province": "Zahramun",
-      "transfer_type": "international",
-      "category": "wealth",
-      "items": {
-        "طلا": 7000
-      },
-      "status": "pending",
-      "requested_at": "2025-09-06T17:14:29.880334",
-      "delay_until": "2025-09-07T17:14:29.880338"
-    },
-    {
       "id": "transfer_1079429121_1757188977",
       "requester_id": 1079429121,
       "source_country": "Aldemar",
