@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "DalNomara",
   "mines": {},
-  "wealth": 40100,
+  "wealth": 32100,
   "population": 18000,
   "tax": 0,
   "popularity": 65,
@@ -35,24 +35,9 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 1,
+      "count": 2,
       "product": "ماهی",
-      "weekly_output": 100
-    },
-    "کارخونه شراب": {
-      "count": 4,
-      "product": "شراب",
-      "weekly_output": 50
-    },
-    "چوب بری": {
-      "count": 4,
-      "product": "چوب",
-      "weekly_output": 50
-    },
-    "کارخونه سنگ": {
-      "count": 1,
-      "product": "سنگ",
-      "weekly_output": 50
+      "weekly_output": 200
     }
   },
   "mine_productions": {},
