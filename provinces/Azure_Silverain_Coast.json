@@ -35,24 +35,24 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 1,
+      "count": 2,
       "product": "ماهی",
       "weekly_output": 100
     },
     "کارخونه شراب": {
       "count": 0,
       "product": "شراب",
-      "weekly_output": 50
+      "weekly_output": 0
     },
     "چوب بری": {
       "count": 0,
       "product": "چوب",
-      "weekly_output": 50
+      "weekly_output": 0
     },
     "کارخونه سنگ": {
       "count": 0,
       "product": "سنگ",
-      "weekly_output": 50
+      "weekly_output": 0
     }
   },
   "structure_productions": {
