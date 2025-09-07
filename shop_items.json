@@ -22,7 +22,7 @@
     "type": "Army",
     "country": "All",
     "description": "سرباز شمشیرزن که تمرینات سخت شمشیرزنی پشت سر گذاشته و دارای زره و شمشیر فولادی هستن, تعداد : 100",
-    "price": 2000,
+    "price": 2500,
     "materials": {},
     "owner": "-",
     "hashtags": [
@@ -32,14 +32,15 @@
     "photo_file_id": "AgACAgQAAxkBAAIhJmiZH4wF7pF6MSos7b95cFbm_ftaAAKCxDEbhotYUSPkTwjZTuf1AQADAgADeQADNgQ",
     "count": 100,
     "id": "2",
-    "created_at": "2025-08-10T22:40:37.473845"
+    "created_at": "2025-08-10T22:40:37.473845",
+    "updated_at": "2025-09-07T15:03:39.475745"
   },
   {
     "name": "نیزه دار زره پوش",
     "type": "Army",
     "country": "All",
     "description": "سرباز نیزه دار که تمرینات سخت کار با نیزه پشت سر گذاشته و دارای زره و نیزه با سر فولادی هست, تعداد : 100",
-    "price": 1500,
+    "price": 2300,
     "materials": {},
     "owner": "-",
     "hashtags": [
@@ -49,14 +50,15 @@
     "photo_file_id": "AgACAgQAAxkBAAIcq2iYzfCE_FGDwc3tmXM_XFkk0PmPAAJvyjEbcG8wUMieCXR6hrr3AQADAgADeAADNgQ",
     "count": 100,
     "id": "3",
-    "created_at": "2025-08-10T22:43:26.865168"
+    "created_at": "2025-08-10T22:43:26.865168",
+    "updated_at": "2025-09-07T15:04:45.437903"
   },
   {
     "name": "شمشیرزن سپردار",
     "type": "Army",
     "country": "All",
     "description": "سرباز شمشیرزن که با کار با سپر آموزش دیده و دارای زره و سپر فولادی در کنار زره چرمی هست, تعداد : 100",
-    "price": 1800,
+    "price": 3100,
     "materials": {},
     "owner": "-",
     "hashtags": [
@@ -66,14 +68,15 @@
     "photo_file_id": "AgACAgQAAxkBAAIhWWiZIfNIxAOStwmZFbG-klSCbpzzAAJtyjEbcG8wUMdVhsFvfuvTAQADAgADeAADNgQ",
     "count": 100,
     "id": "4",
-    "created_at": "2025-08-10T22:50:50.929750"
+    "created_at": "2025-08-10T22:50:50.929750",
+    "updated_at": "2025-09-07T15:05:51.063392"
   },
   {
     "name": "نیزه دار سپردار",
     "type": "Army",
     "country": "All",
     "description": "سرباز نیزه دار که با کار با سپر آموزش دیده و دارای سپر و نیزه با سر فولادی هست, تعداد : 100",
-    "price": 2500,
+    "price": 2800,
     "materials": {},
     "owner": "-",
     "hashtags": [
@@ -83,7 +86,8 @@
     "photo_file_id": "AgACAgQAAxkBAAIhfGiZIqCVrvbO-81S8xqLkA4_24tpAAJsyjEbcG8wUN_0WYVUA6igAQADAgADeQADNgQ",
     "count": 100,
     "id": "5",
-    "created_at": "2025-08-10T22:53:48.213491"
+    "created_at": "2025-08-10T22:53:48.213491",
+    "updated_at": "2025-09-07T15:07:40.884616"
   },
   {
     "name": "سواره نظام",
