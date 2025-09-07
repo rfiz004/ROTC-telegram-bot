@@ -1059,5 +1059,47 @@
     "count": 1,
     "id": "50",
     "created_at": "2025-09-07T11:30:27.446807"
+  },
+  {
+    "name": "نیزه",
+    "type": "Weapon",
+    "countries": [
+      "All"
+    ],
+    "description": "نیزه چوبی با سر فلزی که برای سرباز نیزه‌دار استفاده میشه",
+    "price": 0,
+    "materials": {
+      "چوب": 10
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Weapon",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ2_mi9bdjWKt3Z8KGIi80AAY8Wfdk33gACNcwxGxYjsFGo4Tke6L6vzQEAAwIAA3gAAzYE",
+    "count": 1,
+    "id": "51",
+    "created_at": "2025-09-07T11:35:57.450756"
+  },
+  {
+    "name": "سپر فولادی بزرگ",
+    "type": "Weapon",
+    "countries": [
+      "All"
+    ],
+    "description": "سپر فولادی بزرگ که برای سرباز پیاده نظام استفاده میشه",
+    "price": 0,
+    "materials": {
+      "چرم": 5
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Weapon",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ3Emi9bkS2z-jH9qWWdhVpR-TqjtsJAAI0zDEbFiOwUbazSx2lhwABcQEAAwIAA3gAAzYE",
+    "count": 1,
+    "id": "52",
+    "created_at": "2025-09-07T11:37:40.312289"
   }
 ]
