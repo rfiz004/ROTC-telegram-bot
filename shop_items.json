@@ -1101,5 +1101,48 @@
     "count": 100,
     "id": "52",
     "created_at": "2025-09-07T14:42:06.194026"
+  },
+  {
+    "name": "شمشیر فولادی معمولی",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "شمشیر فولادی که برای اکثر گردان ها قابل استفاده هست, تعداد: 100",
+    "price": 0,
+    "materials": {
+      "چرم": 15
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ3Imi9brg5uaJ1B7eTQwJwQwqzVRcpAAIzzDEbFiOwUbhw0q1OvVBeAQADAgADeAADNgQ",
+    "count": 100,
+    "id": "53",
+    "created_at": "2025-09-07T14:48:13.996200"
+  },
+  {
+    "name": "کمان چوبی",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "کمان چوبی مناسب برای کماندار معمولی, تعداد: 100",
+    "price": 0,
+    "materials": {
+      "چرم": 5,
+      "پنبه": 5
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ3Mmi9b_WBKQwYklLY8wAB_trq1WzH8AACaMkxG2mhyFEHU9m2kHHTDgEAAwIAA3gAAzYE",
+    "count": 100,
+    "id": "54",
+    "created_at": "2025-09-07T14:50:37.455899"
   }
 ]
