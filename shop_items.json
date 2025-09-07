@@ -848,7 +848,7 @@
       "All"
     ],
     "description": "این سرباز کماندار، کار با کمان‌های نیمه خودکار را آموزش دیده\nهمچنین این سرباز با شمشیر کوتاه، زره توری و کمان نیمه خودکار تجهیز شده\nآسیب، دقت و سرعت این نوع کمان زیاد ولی برد اون کمتر از کمان معمولیه, تعداد: 100",
-    "price": 2500,
+    "price": 3200,
     "materials": {},
     "owner": "-",
     "hashtags": [
@@ -858,7 +858,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJPzGinfe2H6vBXWhitXAIqGZT7rZr0AAJtyjEbJ1Y5UWpgXx1EOCdnAQADAgADeAADNgQ",
     "count": 100,
     "id": "41",
-    "created_at": "2025-08-21T20:16:27.330163"
+    "created_at": "2025-08-21T20:16:27.330163",
+    "updated_at": "2025-09-07T16:29:43.615091"
   },
   {
     "name": "دژکوب",
