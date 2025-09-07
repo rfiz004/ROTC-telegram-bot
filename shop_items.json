@@ -1122,7 +1122,9 @@
     "description": "شمشیر فولادی که برای اکثر گردان ها قابل استفاده هست, تعداد: 100",
     "price": 0,
     "materials": {
-      "چرم": 15
+      "فولاد": 5,
+      "چرم": 15,
+      "چوب": 10
     },
     "owner": "-",
     "hashtags": [
@@ -1132,7 +1134,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ3Imi9brg5uaJ1B7eTQwJwQwqzVRcpAAIzzDEbFiOwUbhw0q1OvVBeAQADAgADeAADNgQ",
     "count": 100,
     "id": "53",
-    "created_at": "2025-09-07T14:48:13.996200"
+    "created_at": "2025-09-07T14:48:13.996200",
+    "updated_at": "2025-09-07T16:43:31.214855"
   },
   {
     "name": "کمان چوبی",
