@@ -1101,5 +1101,27 @@
     "count": 1,
     "id": "52",
     "created_at": "2025-09-07T11:37:40.312289"
+  },
+  {
+    "name": "شمشیر فولادی",
+    "type": "Weapon",
+    "countries": [
+      "All"
+    ],
+    "description": "شمشیر فولادی معمولی که گردان های مختلف نیروها قابل استفاده هست",
+    "price": 0,
+    "materials": {
+      "چرم": 15,
+      "چوب": 10
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Weapon",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ3Imi9brg5uaJ1B7eTQwJwQwqzVRcpAAIzzDEbFiOwUbhw0q1OvVBeAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "53",
+    "created_at": "2025-09-07T11:40:26.079445"
   }
 ]
