@@ -1144,5 +1144,62 @@
     "count": 100,
     "id": "54",
     "created_at": "2025-09-07T14:50:37.455899"
+  },
+  {
+    "name": "زره چرمی",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "زره چرمی که از زره های اولیه برای تمام سربازان هستش, تعداد: 100",
+    "price": 0,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ4NWi9m_N8NimqGHQxa5zIVILIIDNkAAJnyTEbk2fpUUP-pdxr3NZCAQADAgADeQADNgQ",
+    "count": 100,
+    "id": "55",
+    "created_at": "2025-09-07T14:52:52.840295"
+  },
+  {
+    "name": "زره توری",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "زرهی که با تعداد زیادی حلقه هایی بسیار ریز از جنس فولاد درست شده, تعداد: 100",
+    "price": 0,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ4R2i9nGgUO79RYYZ-Y3kAAS7Z4pUR6wACaMkxG5Nn6VFgY7leoAwtnQEAAwIAA3gAAzYE",
+    "count": 100,
+    "id": "56",
+    "created_at": "2025-09-07T14:55:25.480985"
+  },
+  {
+    "name": "زره فولادی",
+    "type": "Army",
+    "countries": [
+      "All"
+    ],
+    "description": "زره فولادی بسیار مقاوم که تقریبا تمام قسمت های بدن سربازان رو میپوشونه, تعداد: 100",
+    "price": 0,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAJ4WWi9nPb2jyxA5NsI6WHOrKCEoruRAAJpyTEbk2fpUd8dweMqmWB2AQADAgADeQADNgQ",
+    "count": 100,
+    "id": "57",
+    "created_at": "2025-09-07T14:57:14.132433"
   }
 ]
