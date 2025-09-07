@@ -287,6 +287,22 @@
       "status": "pending",
       "requested_at": "2025-09-07T06:20:22.093679",
       "delay_until": "2025-09-08T06:20:22.093683"
+    },
+    {
+      "id": "transfer_7199097732_1757235335",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-09-07T08:55:35.322744",
+      "delay_until": "2025-09-08T08:55:35.322748"
     }
   ]
 }
