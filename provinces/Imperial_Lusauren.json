@@ -2,9 +2,9 @@
   "country": "Imperial",
   "province": "Lusauren",
   "mines": {
-    "Copper": 1
+    "Copper mine": 1
   },
-  "wealth": 10200,
+  "wealth": 20200,
   "population": 40000,
   "tax": 100,
   "popularity": 58,
@@ -68,6 +68,9 @@
   },
   "mine_productions": {
     "Copper": {
+      "weekly_per_unit": 10000
+    },
+    "Copper mine": {
       "weekly_per_unit": 10000
     }
   },
