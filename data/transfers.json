@@ -191,6 +191,22 @@
       "status": "pending",
       "requested_at": "2025-09-04T08:29:33.332246",
       "delay_until": "2025-09-05T08:29:33.332251"
+    },
+    {
+      "id": "transfer_1766859127_1757344161",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 1200
+      },
+      "status": "pending",
+      "requested_at": "2025-09-08T15:09:21.975732",
+      "delay_until": "2025-09-09T15:09:21.975736"
     }
   ]
 }
