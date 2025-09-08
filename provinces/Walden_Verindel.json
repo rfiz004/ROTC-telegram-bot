@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 6300,
+  "wealth": 4300,
   "population": 40000,
   "tax": 100,
   "popularity": 76,
@@ -60,7 +60,7 @@
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 3,
+      "count": 4,
       "product": "پارچه",
       "weekly_output": 50
     }
