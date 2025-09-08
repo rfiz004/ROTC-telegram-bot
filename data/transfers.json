@@ -191,54 +191,6 @@
       "status": "pending",
       "requested_at": "2025-09-04T08:29:33.332246",
       "delay_until": "2025-09-05T08:29:33.332251"
-    },
-    {
-      "id": "transfer_7096919075_1757341132",
-      "requester_id": 7096919075,
-      "source_country": "Aldemar",
-      "source_province": "King-of-wealth",
-      "target_country": "Azure",
-      "target_province": "Kalindora",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "پارچه": 25
-      },
-      "status": "pending",
-      "requested_at": "2025-09-08T14:18:52.974180",
-      "delay_until": "2025-09-09T14:18:52.974185"
-    },
-    {
-      "id": "transfer_7096919075_1757341158",
-      "requester_id": 7096919075,
-      "source_country": "Aldemar",
-      "source_province": "King-of-wealth",
-      "target_country": "Azure",
-      "target_province": "Kalindora",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "پارچه": 25
-      },
-      "status": "pending",
-      "requested_at": "2025-09-08T14:19:18.338984",
-      "delay_until": "2025-09-09T14:19:18.338988"
-    },
-    {
-      "id": "transfer_7096919075_1757341180",
-      "requester_id": 7096919075,
-      "source_country": "Aldemar",
-      "source_province": "King-of-wealth",
-      "target_country": "Azure",
-      "target_province": "Kalindora",
-      "transfer_type": "international",
-      "category": "economic_items",
-      "items": {
-        "پارچه": 25
-      },
-      "status": "pending",
-      "requested_at": "2025-09-08T14:19:40.898542",
-      "delay_until": "2025-09-09T14:19:40.898546"
     }
   ]
 }
