@@ -905,7 +905,9 @@ async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_T
 
     transfers_data = load_pending_transfers()
     user_id = update.effective_user.id
-    user_data = context.user_data.get(user_id, {})
+    # user_data = context.user_data.get(user_id, {})
+    user_data = context.user_data
+
 
     pending_transfers = [t for t in transfers_data.get("transfers", []) if t.get("status") == "pending"]
 
