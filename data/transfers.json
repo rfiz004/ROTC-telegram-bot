@@ -1,3 +1,20 @@
 {
-  "transfers": []
+  "transfers": [
+    {
+      "id": "transfer_6213073537_1757521068",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 35
+      },
+      "status": "pending",
+      "requested_at": "2025-09-10T16:17:48.358909",
+      "delay_until": "2025-09-11T16:17:48.358938"
+    }
+  ]
 }
