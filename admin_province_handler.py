@@ -2482,6 +2482,61 @@ def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+# def apply_food_consumption(province_name):
+#     econ_file = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
+#     province_file = os.path.join(PROVINCE_FOLDER, province_name.replace(" ", "_") + ".json")
+
+#     econ_data = safe_load_json(econ_file)
+#     province_data = safe_load_json(province_file)
+#     if not econ_data or not province_data:
+#         return
+
+#         # گرفتن جمعیت واقعی از فایل استان
+#     population = province_data.get("population", 0)
+
+#     grain_priority = econ_data.get("grain_priority", [])
+#     grain_settings = econ_data.get("grains", {})
+
+#         # گرفتن موجودی استان
+#     items = province_data.get("economic_items", {})
+
+#     remaining_population = population  # جمعیتی که هنوز باید براش غذا تأمین بشه
+
+#     for grain in grain_priority:
+#         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
+#             continue
+
+#         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
+#         percent = max(0, grain_settings.get(grain, 0))
+#         multiplier = 1 + (percent / 100)
+
+#             # مقدار مصرف برای هر نفر از این غله
+#         units_per_person = (base_amount / base_people) * multiplier
+
+#             # چقدر می‌تونیم از این غله تامین کنیم؟
+#         available_units = items[grain]
+#         max_people_supported = available_units / units_per_person
+
+#         if max_people_supported >= remaining_population:
+#                 # همه جمعیت را میشه ساپورت کرد
+#             items[grain] -= remaining_population * units_per_person
+#             remaining_population = 0
+#             break  # نیاز برطرف شده
+#         else:
+#                 # فقط بخشی از جمعیت را میشه ساپورت کرد
+#             items[grain] = 0
+#             remaining_population -= int(max_people_supported)
+
+#         # اگر هنوز جمعیت باقی مانده که غذا نگرفته‌اند، در econ_data ذخیره کن
+#     econ_data["unfed_population"] = int(remaining_population)
+
+#         # ذخیره تغییرات
+#     save_json(province_file, province_data)
+#     save_json(econ_file, econ_data)
+
+#     print(f"✅ {province_name}: مصرف اعمال شد. باقی‌مانده گرسنه: {remaining_population}")
+
+
 def apply_food_consumption(province_name):
     econ_file = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
     province_file = os.path.join(PROVINCE_FOLDER, province_name.replace(" ", "_") + ".json")
@@ -2491,13 +2546,13 @@ def apply_food_consumption(province_name):
     if not econ_data or not province_data:
         return
 
-        # گرفتن جمعیت واقعی از فایل استان
+    # گرفتن جمعیت واقعی از فایل استان
     population = province_data.get("population", 0)
 
     grain_priority = econ_data.get("grain_priority", [])
-    grain_settings = econ_data.get("grains", {})
+    grain_consumption = econ_data.get("grain_consumption", 0)  # 🔹 درصد کلی
 
-        # گرفتن موجودی استان
+    # گرفتن موجودی استان
     items = province_data.get("economic_items", {})
 
     remaining_population = population  # جمعیتی که هنوز باید براش غذا تأمین بشه
@@ -2507,30 +2562,31 @@ def apply_food_consumption(province_name):
             continue
 
         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
-        percent = max(0, grain_settings.get(grain, 0))
-        multiplier = 1 + (percent / 100)
 
-            # مقدار مصرف برای هر نفر از این غله
+        # 🔹 درصد کلی برای همه غلات اعمال میشه
+        multiplier = 1 + (grain_consumption / 100)
+
+        # مقدار مصرف برای هر نفر از این غله
         units_per_person = (base_amount / base_people) * multiplier
 
-            # چقدر می‌تونیم از این غله تامین کنیم؟
+        # چقدر می‌تونیم از این غله تامین کنیم؟
         available_units = items[grain]
         max_people_supported = available_units / units_per_person
 
         if max_people_supported >= remaining_population:
-                # همه جمعیت را میشه ساپورت کرد
+            # همه جمعیت را میشه ساپورت کرد
             items[grain] -= remaining_population * units_per_person
             remaining_population = 0
             break  # نیاز برطرف شده
         else:
-                # فقط بخشی از جمعیت را میشه ساپورت کرد
+            # فقط بخشی از جمعیت را میشه ساپورت کرد
             items[grain] = 0
             remaining_population -= int(max_people_supported)
 
-        # اگر هنوز جمعیت باقی مانده که غذا نگرفته‌اند، در econ_data ذخیره کن
+    # اگر هنوز جمعیت باقی مانده که غذا نگرفته‌اند، در econ_data ذخیره کن
     econ_data["unfed_population"] = int(remaining_population)
 
-        # ذخیره تغییرات
+    # ذخیره تغییرات
     save_json(province_file, province_data)
     save_json(econ_file, econ_data)
 
@@ -2680,6 +2736,97 @@ async def preview_weekly_processing(update: Update, context: ContextTypes.DEFAUL
 
 
 
+# async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+
+#     try:
+#         # مرحله اول: بررسی زمان آخرین تیک غذا
+#         timers = safe_load_json("timers.json")
+#         if not timers:
+#             await query.edit_message_text("❌ خطا در بارگذاری فایل زمان‌بندی.")
+#             return
+
+#         last_tick_str = timers.get("last_food_tick")
+#         if not last_tick_str:
+#             await query.edit_message_text("❌ زمان آخرین مصرف غذا مشخص نیست.")
+#             return
+
+#         last_tick = datetime.fromisoformat(last_tick_str)
+#         now = datetime.now()
+
+#         if (now - last_tick).days < 8:
+#             await query.edit_message_text("⏳ هنوز ۸ روز از آخرین مصرف غذا نگذشته.")
+#             return
+
+#         # مرحله دوم: بارگذاری داده‌های کشورها
+#         data = safe_load_json(COUNTRIES_FILE)
+#         if not data:
+#             await query.edit_message_text("❌ خطا در بارگذاری داده کشورها")
+#             return
+
+#         for country, provinces in data.get("countries_areas", {}).items():
+#             for province_name in provinces:
+#                 econ_file = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
+#                 country_name = find_country_for_province(province_name)
+#                 if not country_name:
+#                     continue
+
+#                 province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
+#                 province_file = os.path.join(PROVINCE_FOLDER, province_filename)
+                
+#                 province_data = safe_load_json(province_file)
+#                 econ_data = safe_load_json(econ_file)
+#                 if not province_data or not econ_data:
+#                     continue
+                
+#                 # ───── تغییر محبوبیت شنبه (گرسنگی + ضریب مصرف) ─────
+#                 hunger_consumption_popularity = calculate_hunger_and_consumption_popularity(province_name)
+#                 province_data["popularity"] = province_data.get("popularity", 0) + hunger_consumption_popularity
+
+
+#                 population = province_data.get("population", 0)
+#                 grain_priority = econ_data.get("grain_priority", [])
+#                 grain_settings = econ_data.get("grains", {})
+#                 items = province_data.get("economic_items", {})
+
+#                 remaining_population = population
+
+#                 for grain in grain_priority:
+#                     if grain not in BASE_CONSUMPTION_RATES or grain not in items:
+#                         continue
+
+#                     base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
+#                     percent = max(0, grain_settings.get(grain, 0))
+#                     multiplier = 1 + (percent / 100)
+#                     units_per_person = (base_amount / base_people) * multiplier
+#                     available_units = items.get(grain, 0)
+
+#                     max_people_supported = available_units / units_per_person
+
+#                     if max_people_supported >= remaining_population:
+#                         items[grain] -= remaining_population * units_per_person
+#                         remaining_population = 0
+#                         break
+#                     else:
+#                         items[grain] = 0
+#                         remaining_population -= int(max_people_supported)
+
+#                 province_data["economic_items"] = items
+#                 with open(province_file, "w", encoding="utf-8") as f:
+#                     json.dump(province_data, f, ensure_ascii=False, indent=2)
+
+#         # مرحله سوم: به‌روزرسانی زمان مصرف غذا
+#         timers["last_food_tick"] = now.isoformat()
+#         with open("timers.json", "w", encoding="utf-8") as f:
+#             json.dump(timers, f, ensure_ascii=False, indent=2)
+
+#         await query.edit_message_text("✅ مصرف غذا برای همه استان‌ها اعمال شد (۸ روزه).")
+
+#     except Exception as e:
+#         logger.error(f"❌ خطا در اجرای مصرف غذا: {e}")
+#         await query.edit_message_text("❌ خطا در اجرای مصرف غذا")
+
 async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -2728,10 +2875,10 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
                 hunger_consumption_popularity = calculate_hunger_and_consumption_popularity(province_name)
                 province_data["popularity"] = province_data.get("popularity", 0) + hunger_consumption_popularity
 
-
+                # مصرف غذا
                 population = province_data.get("population", 0)
                 grain_priority = econ_data.get("grain_priority", [])
-                grain_settings = econ_data.get("grains", {})
+                grain_consumption = econ_data.get("grain_consumption", 0)  # 🔹 درصد کلی
                 items = province_data.get("economic_items", {})
 
                 remaining_population = population
@@ -2741,8 +2888,10 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
                         continue
 
                     base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
-                    percent = max(0, grain_settings.get(grain, 0))
-                    multiplier = 1 + (percent / 100)
+
+                    # 🔹 ضریب کلی روی همه غلات اعمال میشه
+                    multiplier = 1 + (grain_consumption / 100)
+
                     units_per_person = (base_amount / base_people) * multiplier
                     available_units = items.get(grain, 0)
 
@@ -2757,8 +2906,14 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
                         remaining_population -= int(max_people_supported)
 
                 province_data["economic_items"] = items
+
                 with open(province_file, "w", encoding="utf-8") as f:
                     json.dump(province_data, f, ensure_ascii=False, indent=2)
+
+                # ✅ گرسنه‌ها رو هم تو econ ذخیره کنیم (برای استفاده بعدی)
+                econ_data["unfed_population"] = int(remaining_population)
+                with open(econ_file, "w", encoding="utf-8") as f:
+                    json.dump(econ_data, f, ensure_ascii=False, indent=2)
 
         # مرحله سوم: به‌روزرسانی زمان مصرف غذا
         timers["last_food_tick"] = now.isoformat()
@@ -2770,6 +2925,7 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
     except Exception as e:
         logger.error(f"❌ خطا در اجرای مصرف غذا: {e}")
         await query.edit_message_text("❌ خطا در اجرای مصرف غذا")
+
 
 
 async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -3260,6 +3416,58 @@ def find_country_for_province(province_name, countries_file="countries.json"):
     return None
 
 
+# def preview_food_consumption(province_name):
+#     # econ_file فقط اسم استان
+#     econ_file = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
+
+#     # برای province_file اول کشور رو پیدا می‌کنیم
+#     country_name = find_country_for_province(province_name)
+#     if not country_name:
+#         return None
+
+#     province_filename = f"{country_name}_{province_name}".replace(" ", "_") + ".json"
+#     province_file = os.path.join(PROVINCE_FOLDER, province_filename)
+
+#     econ_data = safe_load_json(econ_file)
+#     province_data = safe_load_json(province_file)
+#     if not econ_data or not province_data:
+#         return None
+
+#     population = province_data.get("population", 0)
+#     grain_priority = econ_data.get("grain_priority", [])
+#     grain_settings = econ_data.get("grains", {})
+#     items = province_data.get("economic_items", {}).copy()  # کپی برای جلوگیری از تغییر
+#     remaining_population = population
+
+#     consumption_result = []
+
+#     for grain in grain_priority:
+#         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
+#             continue
+
+#         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
+#         percent = max(0, grain_settings.get(grain, 0))
+#         multiplier = 1 + (percent / 100)
+#         units_per_person = (base_amount / base_people) * multiplier
+#         available_units = items[grain]
+#         max_people_supported = available_units / units_per_person
+
+#         if max_people_supported >= remaining_population:
+#             consumption_result.append(f"🍞 {grain}: تامین کامل ({remaining_population} نفر)")
+#             remaining_population = 0
+#             break
+#         else:
+#             consumption_result.append(f"🍞 {grain}: تامین ناقص ({int(max_people_supported)} نفر)")
+#             remaining_population -= int(max_people_supported)
+
+#     if remaining_population > 0:
+#         consumption_result.append(f"⚠️ جمعیت گرسنه: {int(remaining_population)} نفر")
+#     else:
+#         consumption_result.append("✅ تمام جمعیت غذا دریافت کردند")
+
+#     return consumption_result
+
+
 def preview_food_consumption(province_name):
     # econ_file فقط اسم استان
     econ_file = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
@@ -3279,7 +3487,7 @@ def preview_food_consumption(province_name):
 
     population = province_data.get("population", 0)
     grain_priority = econ_data.get("grain_priority", [])
-    grain_settings = econ_data.get("grains", {})
+    grain_consumption = econ_data.get("grain_consumption", 0)  # 🔹 درصد کلی
     items = province_data.get("economic_items", {}).copy()  # کپی برای جلوگیری از تغییر
     remaining_population = population
 
@@ -3290,8 +3498,10 @@ def preview_food_consumption(province_name):
             continue
 
         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
-        percent = max(0, grain_settings.get(grain, 0))
-        multiplier = 1 + (percent / 100)
+
+        # 🔹 ضریب کلی برای همه‌ی غلات
+        multiplier = 1 + (grain_consumption / 100)
+
         units_per_person = (base_amount / base_people) * multiplier
         available_units = items[grain]
         max_people_supported = available_units / units_per_person
@@ -3408,56 +3618,111 @@ def calculate_tax_popularity(province_name: str) -> int:
         return - (tax_rate // 10)
     return - max(0, (tax_rate - 10) // 10)
 
+# def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
+#     """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (شنبه)"""
+#     country_name = find_country_for_province(province_name)
+#     if not country_name:
+#          return 0  # یا None اگه ترجیح بدی
+#     province_data = load_province_data(country_name,province_name)
+#     if not province_data:
+#         return 0
+   
+#     econ_path = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
+#     econ_data = safe_load_json(econ_path)
+#     if not province_data or not econ_data:
+#         return 0
+
+#     population = province_data.get("population", 0)
+#     grain_priority = econ_data.get("grain_priority", [])
+#     grain_settings = econ_data.get("grains", {})
+#     items = province_data.get("economic_items", {}).copy()
+#     remaining_population = population
+
+#     # بخش گرسنگی
+#     for grain in grain_priority:
+#         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
+#             continue
+
+#         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
+#         percent = max(0, grain_settings.get(grain, 0))
+#         multiplier = 1 + (percent / 100)
+#         units_per_person = (base_amount / base_people) * multiplier
+#         available_units = items.get(grain, 0)
+#         max_people_supported = available_units / units_per_person
+
+#         if max_people_supported >= remaining_population:
+#             remaining_population = 0
+#             break
+#         else:
+#             remaining_population -= int(max_people_supported)
+
+#     total = 0
+#     if remaining_population > 0:
+#         if remaining_population <= 1000:
+#             total -= 1
+#         else:
+#             total -= (remaining_population // 1000) + 1
+
+#     # بخش ضریب مصرف
+#     for grain, percent in grain_settings.items():
+#         total += percent // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
+
+#     return total
+
+
 def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
-    """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (شنبه)"""
+    """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (نسخه جدید تک‌درصدی)"""
+
+    # پیدا کردن کشور و بارگذاری داده‌ها
     country_name = find_country_for_province(province_name)
     if not country_name:
-         return 0  # یا None اگه ترجیح بدی
-    province_data = load_province_data(country_name,province_name)
+        return 0
+    province_data = load_province_data(country_name, province_name)
     if not province_data:
         return 0
-   
+
     econ_path = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
     econ_data = safe_load_json(econ_path)
-    if not province_data or not econ_data:
+    if not econ_data:
         return 0
 
+    # داده‌های اصلی
     population = province_data.get("population", 0)
-    grain_priority = econ_data.get("grain_priority", [])
-    grain_settings = econ_data.get("grains", {})
     items = province_data.get("economic_items", {}).copy()
     remaining_population = population
 
-    # بخش گرسنگی
-    for grain in grain_priority:
-        if grain not in BASE_CONSUMPTION_RATES or grain not in items:
-            continue
+    # درصد کلی مصرف غلات (پیش‌فرض 0 اگه نباشه)
+    grain_consumption = max(0, econ_data.get("grain_consumption", 0))
 
-        base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
-        percent = max(0, grain_settings.get(grain, 0))
-        multiplier = 1 + (percent / 100)
+    # ---------------- بخش گرسنگی ----------------
+    if "grains" in BASE_CONSUMPTION_RATES and "grains" in items:
+        base_people, base_amount = BASE_CONSUMPTION_RATES["grains"]
+
+        multiplier = 1 + (grain_consumption / 100)
         units_per_person = (base_amount / base_people) * multiplier
-        available_units = items.get(grain, 0)
+        available_units = items.get("grains", 0)
         max_people_supported = available_units / units_per_person
 
         if max_people_supported >= remaining_population:
             remaining_population = 0
-            break
         else:
             remaining_population -= int(max_people_supported)
 
+    # ---------------- محاسبه محبوبیت ----------------
     total = 0
+
+    # اثر گرسنگی
     if remaining_population > 0:
         if remaining_population <= 1000:
             total -= 1
         else:
             total -= (remaining_population // 1000) + 1
 
-    # بخش ضریب مصرف
-    for grain, percent in grain_settings.items():
-        total += percent // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
+    # اثر ضریب مصرف
+    total += grain_consumption // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
     return total
+
 
 
 async def toggle_block_country(update: Update, context: ContextTypes.DEFAULT_TYPE):
