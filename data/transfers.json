@@ -12,9 +12,10 @@
       "items": {
         "چرم": 35
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-10T16:17:48.358909",
-      "delay_until": "2025-09-11T16:17:48.358938"
+      "delay_until": "2025-09-11T16:17:48.358938",
+      "approved_at": "2025-09-10T16:32:47.349271"
     }
   ]
 }
