@@ -62,66 +62,110 @@ async def handle_grain_priority(update: Update, context: ContextTypes.DEFAULT_TY
     context.user_data[user_id]["step"] = None
     return True
 
+# async def handle_grain_percentage(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     user_id = update.message.from_user.id
+#     message = update.message.text.strip()
+
+#     # پارس ورودی
+#     parts = [item.strip() for item in message.split("،") if "=" in item]
+#     grains = {}
+
+#     for part in parts:
+#         name, val = part.split("=")
+#         name = name.strip()
+#         try:
+#             val = int(val.strip())
+#         except ValueError:
+#             continue
+
+#         if val < 0 or val % 50 != 0:
+#             continue
+
+#         grains[name] = val
+
+#     if not grains:
+#         await update.message.reply_text("⛔ فرمت یا مقادیر واردشده معتبر نیستند.")
+#         return
+
+#     # province = context.user_data.get(user_id, {}).get("selected_province")
+#     user_data = context.user_data.get(user_id, {})
+#     province = user_data.get("selected_province")
+#     province = province.strip().replace(" ", "_")
+
+#     if not province:
+#         await update.message.reply_text("⛔ ابتدا استان را انتخاب کن.")
+#         return
+        
+#     print(f"Province after clean-up: '{province}'")
+#     file_path = os.path.join(ECONOMIC_PATH, f"{province}.json")
+#     print(f"Looking for file: '{file_path}'")
+
+#     if not os.path.exists(file_path):
+#         await update.message.reply_text("⛔ فایل اقتصادی استان پیدا نشد.")
+#         return
+
+#     with open(file_path, "r", encoding="utf-8") as f:
+#         data = json.load(f)
+
+#     # بررسی اینکه فقط غلات مجاز تنظیم می‌شن
+#     allowed = data.get("grain_priority", [])
+#     invalid = [g for g in grains if g not in allowed]
+
+#     if invalid:
+#         await update.message.reply_text(f"⛔ نمی‌تونی برای این غلات درصد تنظیم کنی: {', '.join(invalid)}")
+#         return
+
+#     # ذخیره درصد
+#     data["grains"] = grains
+
+#     with open(file_path, "w", encoding="utf-8") as f:
+#         json.dump(data, f, ensure_ascii=False, indent=2)
+
+#     await update.message.reply_text("✅ درصد مصرف غلات با موفقیت ذخیره شد.")
+#     context.user_data[user_id]["step"] = None
+#     return True
+
+
 async def handle_grain_percentage(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
     message = update.message.text.strip()
 
-    # پارس ورودی
-    parts = [item.strip() for item in message.split("،") if "=" in item]
-    grains = {}
-
-    for part in parts:
-        name, val = part.split("=")
-        name = name.strip()
-        try:
-            val = int(val.strip())
-        except ValueError:
-            continue
-
-        if val < 0 or val % 50 != 0:
-            continue
-
-        grains[name] = val
-
-    if not grains:
-        await update.message.reply_text("⛔ فرمت یا مقادیر واردشده معتبر نیستند.")
+    # تلاش برای تبدیل به عدد
+    try:
+        val = int(message)
+    except ValueError:
+        await update.message.reply_text("⛔ لطفاً فقط یک عدد وارد کن (مضرب 50).")
         return
 
-    # province = context.user_data.get(user_id, {}).get("selected_province")
+    # بررسی عدد
+    if val < 0 or val % 50 != 0:
+        await update.message.reply_text("⛔ عدد باید مضرب 50 و بدون مقدار منفی باشه.")
+        return
+
+    # گرفتن استان انتخاب‌شده
     user_data = context.user_data.get(user_id, {})
     province = user_data.get("selected_province")
-    province = province.strip().replace(" ", "_")
-
     if not province:
         await update.message.reply_text("⛔ ابتدا استان را انتخاب کن.")
         return
-        
-    print(f"Province after clean-up: '{province}'")
+
+    province = province.strip().replace(" ", "_")
     file_path = os.path.join(ECONOMIC_PATH, f"{province}.json")
-    print(f"Looking for file: '{file_path}'")
 
     if not os.path.exists(file_path):
         await update.message.reply_text("⛔ فایل اقتصادی استان پیدا نشد.")
         return
 
+    # بارگذاری و ذخیره درصد
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # بررسی اینکه فقط غلات مجاز تنظیم می‌شن
-    allowed = data.get("grain_priority", [])
-    invalid = [g for g in grains if g not in allowed]
-
-    if invalid:
-        await update.message.reply_text(f"⛔ نمی‌تونی برای این غلات درصد تنظیم کنی: {', '.join(invalid)}")
-        return
-
-    # ذخیره درصد
-    data["grains"] = grains
+    data["grain_consumption"] = val  # 🔹 حالا فقط یک عدد کلی ذخیره می‌کنیم
 
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    await update.message.reply_text("✅ درصد مصرف غلات با موفقیت ذخیره شد.")
+    await update.message.reply_text("✅ درصد کلی مصرف غلات با موفقیت ذخیره شد.")
     context.user_data[user_id]["step"] = None
     return True
 
