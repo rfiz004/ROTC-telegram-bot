@@ -898,25 +898,78 @@ async def show_country_transfers(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text("❌ خطا در نمایش انتقالات")
 
 
+# async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """Manage pending transfers"""
+#     query = update.callback_query
+#     await query.answer()
+
+#     transfers_data = load_pending_transfers()
+#     user_id = update.effective_user.id
+#     # user_data = context.user_data.get(user_id, {})
+#     user_data = context.user_data
+
+
+#     pending_transfers = [t for t in transfers_data.get("transfers", []) if t.get("status") == "pending"]
+
+#     text = "🔄 انتقالات در انتظار تایید:\n\n"
+#     keyboard = []
+
+#     for i, transfer in enumerate(pending_transfers):
+#         text += (
+#             f"{i+1}. {transfer.get('source_country', 'نامشخص')}-"
+#             f"{transfer.get('source_province', 'نامشخص')} → "
+#             f"{transfer.get('target_country', 'نامشخص')}-"
+#             f"{transfer.get('target_province', 'نامشخص')}\n"
+#         )
+
+#         items = transfer.get('items', {}) or transfer.get('items_dict', {})
+#         if items:
+#             for item_name, quantity in items.items():
+#                 text += f"   📦 {item_name} × {quantity:,}\n"
+#         else:
+#             text += "   📦 نامشخص × 0\n"
+
+#         text += f"   🔄 نوع: {transfer.get('transfer_type', 'نامشخص')}\n\n"
+
+#         keyboard.append([
+#             InlineKeyboardButton(f"✅ تایید #{i+1}", callback_data=f"approve_transfer_{transfer.get('id', '')}"),
+#             InlineKeyboardButton(f"❌ رد #{i+1}", callback_data=f"reject_transfer_{transfer.get('id', '')}")
+#         ])
+
+#     # تعیین مقصد برگشت دقیق بر اساس نقش / دسترسی
+#     from callback_handlers import check_admin_access
+#     if check_admin_access(user_data, required_role="master_admin"):
+#         back_callback = "admin_province_menu"
+#     elif check_admin_access(user_data, required_role="multi_country_admin"):
+#         back_callback = "admin_province_menu"
+#     else:
+#         back_callback = "admin_menu"
+
+#     keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data=back_callback)])
+#     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
+
+
+
 async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Manage pending transfers"""
+    """Manage pending transfers (only for admins)"""
     query = update.callback_query
     await query.answer()
 
     transfers_data = load_pending_transfers()
-    user_id = update.effective_user.id
-    # user_data = context.user_data.get(user_id, {})
-    user_data = context.user_data
-
-
     pending_transfers = [t for t in transfers_data.get("transfers", []) if t.get("status") == "pending"]
+
+    if not pending_transfers:
+        text = "📭 هیچ انتقال در انتظار تأیید وجود ندارد."
+        keyboard = [[InlineKeyboardButton("🔙 برگشت", callback_data="admin_menu")]]
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
+        return
 
     text = "🔄 انتقالات در انتظار تایید:\n\n"
     keyboard = []
 
-    for i, transfer in enumerate(pending_transfers):
+    for i, transfer in enumerate(pending_transfers, 1):
         text += (
-            f"{i+1}. {transfer.get('source_country', 'نامشخص')}-"
+            f"{i}. {transfer.get('source_country', 'نامشخص')}-"
             f"{transfer.get('source_province', 'نامشخص')} → "
             f"{transfer.get('target_country', 'نامشخص')}-"
             f"{transfer.get('target_province', 'نامشخص')}\n"
@@ -932,20 +985,13 @@ async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_T
         text += f"   🔄 نوع: {transfer.get('transfer_type', 'نامشخص')}\n\n"
 
         keyboard.append([
-            InlineKeyboardButton(f"✅ تایید #{i+1}", callback_data=f"approve_transfer_{transfer.get('id', '')}"),
-            InlineKeyboardButton(f"❌ رد #{i+1}", callback_data=f"reject_transfer_{transfer.get('id', '')}")
+            InlineKeyboardButton(f"✅ تایید #{i}", callback_data=f"approve_transfer_{transfer.get('id', '')}"),
+            InlineKeyboardButton(f"❌ رد #{i}", callback_data=f"reject_transfer_{transfer.get('id', '')}")
         ])
 
-    # تعیین مقصد برگشت دقیق بر اساس نقش / دسترسی
-    from callback_handlers import check_admin_access
-    if check_admin_access(user_data, required_role="master_admin"):
-        back_callback = "admin_province_menu"
-    elif check_admin_access(user_data, required_role="multi_country_admin"):
-        back_callback = "admin_province_menu"
-    else:
-        back_callback = "admin_menu"
+    # برگشت ساده فقط به منوی ادمین
+    keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data="admin_menu")])
 
-    keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data=back_callback)])
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
 
 
