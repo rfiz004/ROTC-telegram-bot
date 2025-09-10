@@ -750,20 +750,138 @@ BASE_CONSUMPTION_RATES = {
     "میوه": (200, 1)
 }
 
+# async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     user_id = update.callback_query.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+#     province = user_data.get("selected_province")
+   
+
+#     if not province:
+#         await update.callback_query.edit_message_text("⛔ ابتدا استان را انتخاب کنید.",
+#             parse_mode="Markdown",
+#             reply_markup=InlineKeyboardMarkup([
+#                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#             ]))
+#         return
+
+#     def find_country_by_province(province_name: str) -> str | None:
+#         if not os.path.exists(COUNTRIES_FILE):
+#             return None
+#         with open(COUNTRIES_FILE, "r", encoding="utf-8") as f:
+#             data = json.load(f)
+#         countries_areas = data.get("countries_areas", {})
+#         for country, provinces in countries_areas.items():
+#             if province_name in provinces:
+#                 return country
+#         return None
+
+#     country = find_country_by_province(province)
+#     if not country:
+#         await update.callback_query.edit_message_text("⛔ کشور استان پیدا نشد.",
+#             parse_mode="Markdown",
+#             reply_markup=InlineKeyboardMarkup([
+#                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#             ]))
+#         return
+#     province = province.strip().replace(" ", "_")
+#     province_file = os.path.join(PROVINCES_PATH, f"{country}_{province}.json")
+#     economic_file = os.path.join(ECONOMIC_PATH, f"{province}.json")
+
+#     if not os.path.exists(province_file) or not os.path.exists(economic_file):
+#         await update.callback_query.edit_message_text("⛔ فایل‌های موردنیاز پیدا نشد.",
+#             parse_mode="Markdown",
+#             reply_markup=InlineKeyboardMarkup([
+#                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#             ]))
+#         return
+
+#     with open(province_file, "r", encoding="utf-8") as f:
+#         province_data = json.load(f)
+
+#     with open(economic_file, "r", encoding="utf-8") as f:
+#         economic_data = json.load(f)
+
+#     population = province_data.get("population", 0)
+#     grain_priority = economic_data.get("grain_priority", [])
+#     grains = economic_data.get("grains", {})
+
+#     if not grain_priority:
+#         await update.callback_query.edit_message_text("⛔ اولویت غلات تنظیم نشده است.",
+#             parse_mode="Markdown",
+#             reply_markup=InlineKeyboardMarkup([
+#                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#             ]))
+#         return
+
+        
+#     if not grains:
+#         await update.callback_query.edit_message_text("⛔ درصد مصرف غلات تنظیم نشده است.")
+#         return
+
+#     # محاسبه میزان مصرف
+#     consumption_details = []
+#     food_storage = province_data.get("economic_items", {})
+#     remaining_population = population
+
+#     for grain in grain_priority:
+#         percent = grains.get(grain, 0)
+#         base_people, base_units = BASE_CONSUMPTION_RATES.get(grain, (250, 1))
+
+#         multiplier = 1 + (percent / 100)
+#         food_amount = food_storage.get(grain, 0)
+
+#         # محاسبه افراد پشتیبانی‌شده
+#         # people_supported = int((food_amount * base_people) / multiplier)
+#         units_per_person = base_units / base_people  # هر نفر به چند واحد غذا نیاز داره
+#         adjusted_units_per_person = units_per_person * multiplier
+        
+#         people_supported = int(food_amount / adjusted_units_per_person)
+
+
+#         consumption_details.append(
+#             f"{grain} -> {multiplier:.1f} -> {base_people}(نفر)"
+#         )
+
+#         if remaining_population > 0:
+#             remaining_population -= people_supported
+
+
+#     # جلوگیری از منفی شدن
+#     unfed_population = max(0, remaining_population)
+
+#     # جزئیات درصد مصرف
+#     grain_percent_details = [f"{grain}: {grains.get(grain, 0)}%" for grain in grain_priority]
+
+#     msg = (
+#         f"👥 جمعیت استان: {population}\n"
+#         f"🍽 تخمین جمعیت تغذیه‌نشده: {unfed_population} نفر\n\n"
+#         "📦 میزان مصرف:\n" + "\n".join(consumption_details) + "\n\n"
+#         "📊 درصد مصرف:\n" + "\n".join(grain_percent_details)
+#     )
+
+#     keyboard = InlineKeyboardMarkup([
+#         [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#     ])
+
+#     await update.callback_query.edit_message_text(msg, reply_markup=keyboard)
+
+
 async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.callback_query.from_user.id
     user_data = context.user_data.get(user_id, {})
     province = user_data.get("selected_province")
-   
 
     if not province:
-        await update.callback_query.edit_message_text("⛔ ابتدا استان را انتخاب کنید.",
+        await update.callback_query.edit_message_text(
+            "⛔ ابتدا استان را انتخاب کنید.",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
-            ]))
+            ])
+        )
         return
 
+    # پیدا کردن کشور
     def find_country_by_province(province_name: str) -> str | None:
         if not os.path.exists(COUNTRIES_FILE):
             return None
@@ -777,22 +895,27 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     country = find_country_by_province(province)
     if not country:
-        await update.callback_query.edit_message_text("⛔ کشور استان پیدا نشد.",
+        await update.callback_query.edit_message_text(
+            "⛔ کشور استان پیدا نشد.",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
-            ]))
+            ])
+        )
         return
-    province = province.strip().replace(" ", "_")
-    province_file = os.path.join(PROVINCES_PATH, f"{country}_{province}.json")
-    economic_file = os.path.join(ECONOMIC_PATH, f"{province}.json")
+
+    province_clean = province.strip().replace(" ", "_")
+    province_file = os.path.join(PROVINCES_PATH, f"{country}_{province_clean}.json")
+    economic_file = os.path.join(ECONOMIC_PATH, f"{province_clean}.json")
 
     if not os.path.exists(province_file) or not os.path.exists(economic_file):
-        await update.callback_query.edit_message_text("⛔ فایل‌های موردنیاز پیدا نشد.",
+        await update.callback_query.edit_message_text(
+            "⛔ فایل‌های موردنیاز پیدا نشد.",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
-            ]))
+            ])
+        )
         return
 
     with open(province_file, "r", encoding="utf-8") as f:
@@ -803,19 +926,16 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     population = province_data.get("population", 0)
     grain_priority = economic_data.get("grain_priority", [])
-    grains = economic_data.get("grains", {})
+    grain_consumption = economic_data.get("grain_consumption", 0)  # درصد کلی مصرف
 
     if not grain_priority:
-        await update.callback_query.edit_message_text("⛔ اولویت غلات تنظیم نشده است.",
+        await update.callback_query.edit_message_text(
+            "⛔ اولویت غلات تنظیم نشده است.",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
-            ]))
-        return
-
-        
-    if not grains:
-        await update.callback_query.edit_message_text("⛔ درصد مصرف غلات تنظیم نشده است.")
+            ])
+        )
         return
 
     # محاسبه میزان مصرف
@@ -824,33 +944,25 @@ async def show_grain_preview(update: Update, context: ContextTypes.DEFAULT_TYPE)
     remaining_population = population
 
     for grain in grain_priority:
-        percent = grains.get(grain, 0)
         base_people, base_units = BASE_CONSUMPTION_RATES.get(grain, (250, 1))
-
-        multiplier = 1 + (percent / 100)
+        multiplier = 1 + (grain_consumption / 100)
         food_amount = food_storage.get(grain, 0)
 
-        # محاسبه افراد پشتیبانی‌شده
-        # people_supported = int((food_amount * base_people) / multiplier)
-        units_per_person = base_units / base_people  # هر نفر به چند واحد غذا نیاز داره
+        units_per_person = base_units / base_people
         adjusted_units_per_person = units_per_person * multiplier
-        
         people_supported = int(food_amount / adjusted_units_per_person)
 
-
         consumption_details.append(
-            f"{grain} -> {multiplier:.1f} -> {base_people}(نفر)"
+            f"🍞 {grain}: {people_supported} نفر ({multiplier:.1f}x)"
         )
 
         if remaining_population > 0:
             remaining_population -= people_supported
 
-
-    # جلوگیری از منفی شدن
     unfed_population = max(0, remaining_population)
 
-    # جزئیات درصد مصرف
-    grain_percent_details = [f"{grain}: {grains.get(grain, 0)}%" for grain in grain_priority]
+    # جزئیات درصد مصرف برای نمایش
+    grain_percent_details = [f"{grain}: {grain_consumption}%" for grain in grain_priority]
 
     msg = (
         f"👥 جمعیت استان: {population}\n"
