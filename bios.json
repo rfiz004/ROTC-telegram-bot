@@ -115,6 +115,13 @@
       "level": 1,
       "unique_id": "6578930068",
       "saved_at": "2025-08-24T21:53:16.724256"
+    },
+    "7686824742": {
+      "country": "Hikada",
+      "job": "مشاغل آزاد",
+      "step": "asking_name",
+      "flow_type": "bio",
+      "saved_at": "2025-09-10T19:00:25.868152"
     }
   },
   "used_hashtags": [
