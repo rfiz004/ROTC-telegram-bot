@@ -7,5 +7,6 @@
     "میوه": 200,
     "گندم": 50
   },
-  "unfed_population": 0
+  "unfed_population": 0,
+  "grain_consumption": 350
 }
