@@ -528,6 +528,56 @@ import logging
 logger = logging.getLogger(__name__)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
+# async def food_handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+#     data = query.data
+#     user_id = update.effective_user.id
+
+#     logger.info(f"Callback data received: {data} from user {user_id}")
+
+#     if user_id not in context.user_data:
+#         context.user_data[user_id] = {}
+
+#     if data == "set_grain_priority":
+#         context.user_data[user_id]["step"] = "awaiting_grain_priority"
+#         context.user_data[user_id]["flow_type"] = "grain_management"
+#         await query.edit_message_text(
+#             "📋 لطفاً اولویت غلات را به این شکل وارد کن:\n\n"
+#             "`گوشت،مرغ،میوه`\n\n"
+#             "✅ فقط از میان موارد زیر انتخاب کن:\n"
+#             "گوشت، گندم، ماهی، مرغ، میوه",
+#             parse_mode="Markdown",
+#             reply_markup=InlineKeyboardMarkup([
+#                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#             ])
+#         )
+
+#     elif data == "set_grain_consumption":
+#         context.user_data[user_id]["step"] = "awaiting_grain_percentage"
+#         context.user_data[user_id]["flow_type"] = "grain_management"
+#         await query.edit_message_text(
+#             "⚙️ لطفاً درصد مصرف هر غله را وارد کن:\n\n"
+#             "`گوشت=100،مرغ=50`\n\n"
+#             "✅ درصد باید مضرب 50 و بدون مقدار منفی باشه.\n"
+#             "❗ فقط غلاتی که توی اولویت نوشتی رو می‌تونی تنظیم کنی.",
+#             parse_mode="Markdown",
+#             reply_markup=InlineKeyboardMarkup([
+#                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
+#             ])
+#         )
+
+#     elif data == "preview_grain_effect":
+#         await show_grain_preview(update, context)  # اگر این تابع پیام یا کیبورد داره، باید توش هم دکمه بازگشت بذاری
+
+#     elif data == "manage_food_menu":
+#         logger.info(f"Grain menu opened for user {user_id} - selected_province: {context.user_data.get(user_id, {}).get('selected_province')}")
+#         await query.edit_message_text(
+#             "🍞 لطفاً یکی از گزینه‌های زیر را انتخاب کنید:",
+#             reply_markup=manage_food_menu()
+#         )
+
+
 async def food_handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -557,10 +607,9 @@ async def food_handle_callback(update: Update, context: ContextTypes.DEFAULT_TYP
         context.user_data[user_id]["step"] = "awaiting_grain_percentage"
         context.user_data[user_id]["flow_type"] = "grain_management"
         await query.edit_message_text(
-            "⚙️ لطفاً درصد مصرف هر غله را وارد کن:\n\n"
-            "`گوشت=100،مرغ=50`\n\n"
-            "✅ درصد باید مضرب 50 و بدون مقدار منفی باشه.\n"
-            "❗ فقط غلاتی که توی اولویت نوشتی رو می‌تونی تنظیم کنی.",
+            "⚙️ لطفاً درصد مصرف غلات را وارد کن (برای همه‌ی غلات به طور کلی):\n\n"
+            "`مثال: 100`\n\n"
+            "✅ درصد باید مضرب 50 و بدون مقدار منفی باشه.",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 بازگشت", callback_data="manage_food_menu")]
