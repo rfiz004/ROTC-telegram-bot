@@ -9,5 +9,6 @@
     "گندم": 150,
     "میوه": 150
   },
-  "unfed_population": 0
+  "unfed_population": 0,
+  "grain_consumption": 100
 }
