@@ -2922,7 +2922,12 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
                 
                 # ───── تغییر محبوبیت شنبه (گرسنگی + ضریب مصرف) ─────
                 hunger_consumption_popularity = calculate_hunger_and_consumption_popularity(province_name)
-                province_data["popularity"] = province_data.get("popularity", 0) + hunger_consumption_popularity
+                # province_data["popularity"] = province_data.get("popularity", 0) + hunger_consumption_popularity
+                check = province_data.get("popularity", 0) + hunger_consumption_popularity
+                if check > 100:
+                    province_data["popularity"] = 100
+                else:
+                    province_data["popularity"] = check
 
                 # مصرف غذا
                 population = province_data.get("population", 0)
