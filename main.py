@@ -393,6 +393,7 @@ app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("id", get_chat_id))
 
 # Callbacks & Message Handlers
+app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
 app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
 app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
 app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
@@ -419,7 +420,6 @@ app.add_handler(CallbackQueryHandler(admin_view_shop_items, pattern="^admin_view
 app.add_handler(CallbackQueryHandler(show_grain_preview, pattern="^preview_grain_effect$"))
 app.add_handler(CallbackQueryHandler(show_all_provinces, pattern="^admin_view_all_provinces$"))
 app.add_handler(CallbackQueryHandler(view_province_admin, pattern="^admin_view_province_"))
-app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
 app.add_handler(CallbackQueryHandler(handle_province_edit, pattern="^edit_province_"))
 app.add_handler(CallbackQueryHandler(approve_transfer, pattern="^approve_transfer_"))
 app.add_handler(CallbackQueryHandler(reject_transfer, pattern="^reject_transfer_"))
