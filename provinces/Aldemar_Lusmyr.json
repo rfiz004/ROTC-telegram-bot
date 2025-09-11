@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Lusmyr",
   "mines": {},
-  "wealth": 2000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 70,
@@ -45,7 +45,7 @@
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 0,
+      "count": 1,
       "product": "پارچه",
       "weekly_output": 50
     },
