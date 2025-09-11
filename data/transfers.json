@@ -81,6 +81,57 @@
       "status": "pending",
       "requested_at": "2025-09-11T08:30:22.200261",
       "delay_until": "2025-09-12T08:30:22.200266"
+    },
+    {
+      "id": "transfer_809172681_1757586243",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Alestria",
+      "target_province": "Serenavis",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 8000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-11T10:24:03.194540",
+      "delay_until": "2025-09-12T10:24:03.194544",
+      "approved_at": "2025-09-11T10:26:17.093896"
+    },
+    {
+      "id": "transfer_809172681_1757586274",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Alestria",
+      "target_province": "Talmarin",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 8000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-11T10:24:34.295640",
+      "delay_until": "2025-09-12T10:24:34.295645",
+      "approved_at": "2025-09-11T10:26:19.178432"
+    },
+    {
+      "id": "transfer_809172681_1757586294",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Alestria",
+      "target_province": "Orendal",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 8000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-11T10:24:54.772329",
+      "delay_until": "2025-09-12T10:24:54.772333",
+      "approved_at": "2025-09-11T10:26:21.450002"
     }
   ]
 }
