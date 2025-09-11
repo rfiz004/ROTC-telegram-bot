@@ -953,6 +953,7 @@ async def show_country_transfers(update: Update, context: ContextTypes.DEFAULT_T
 async def admin_manage_transfers(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Manage pending transfers (only for admins)"""
     query = update.callback_query
+    print("DEBUG callback:", query.data)
     await query.answer()
 
     transfers_data = load_pending_transfers()
