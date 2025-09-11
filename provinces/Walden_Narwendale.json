@@ -45,12 +45,12 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 4,
+      "count": 5,
       "product": "پنبه",
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 1,
+      "count": 2,
       "product": "پارچه",
       "weekly_output": 50
     }
