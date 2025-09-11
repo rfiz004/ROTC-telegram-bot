@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Serenavis",
   "mines": {},
-  "wealth": 6000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 65,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 2,
+      "count": 4,
       "product": "سنگ",
       "weekly_output": 50
     }
