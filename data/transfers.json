@@ -1315,6 +1315,22 @@
       "requested_at": "2025-09-12T10:20:30.933701",
       "delay_until": "2025-09-13T10:20:30.933706",
       "approved_at": "2025-09-12T10:21:29.070521"
+    },
+    {
+      "id": "transfer_6213073537_1757672962",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 1295
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T10:29:22.774661",
+      "delay_until": "2025-09-13T10:29:22.774665"
     }
   ]
 }
