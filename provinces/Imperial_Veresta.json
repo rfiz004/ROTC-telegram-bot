@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Veresta",
   "mines": {},
-  "wealth": 13500,
+  "wealth": 5500,
   "population": 24000,
   "tax": 100,
   "popularity": 54,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 0,
+      "count": 4,
       "product": "شیشه",
       "weekly_output": 50
     }
