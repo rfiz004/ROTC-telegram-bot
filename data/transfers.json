@@ -1912,6 +1912,23 @@
       "status": "pending",
       "requested_at": "2025-09-12T13:02:55.049270",
       "delay_until": "2025-09-13T13:02:55.049273"
+    },
+    {
+      "id": "transfer_7358397936_1757683882",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Grand-Duke",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 60,
+        "چوب": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T13:31:22.004240",
+      "delay_until": "2025-09-13T13:31:22.004243"
     }
   ]
 }
