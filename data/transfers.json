@@ -1896,6 +1896,22 @@
       "requested_at": "2025-09-12T12:50:03.924479",
       "delay_until": "2025-09-13T12:50:03.924483",
       "approved_at": "2025-09-12T12:51:09.623077"
+    },
+    {
+      "id": "transfer_809172681_1757682175",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T13:02:55.049270",
+      "delay_until": "2025-09-13T13:02:55.049273"
     }
   ]
 }
