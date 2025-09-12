@@ -1424,6 +1424,9 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text("❌ انتقال پیدا نشد.")
             return
 
+        if target_transfer["status"] == "approved":
+            await query.edit_message_text("انتقال قبلا تایید شده!")
+            return
         # تغییر وضعیت
         target_transfer["status"] = "approved"
         target_transfer["approved_at"] = datetime.utcnow().isoformat()
@@ -1540,6 +1543,9 @@ async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text("❌ انتقال پیدا نشد.")
             return
 
+        if target_transfer["status"] == "rejected":
+            await query.edit_message_text("انتقال قبلا رد شده!")
+            return
         # تغییر وضعیت
         target_transfer["status"] = "rejected"
         target_transfer["rejected_at"] = datetime.utcnow().isoformat()
