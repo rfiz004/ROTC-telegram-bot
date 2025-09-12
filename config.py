@@ -75,5 +75,5 @@ CAPITAL_CITIES = {
     "Walden": "Verindel",
     "Northwood": "Trenhallough",
     "Santos": "Zahramun",
-    "Imperial": "Kalindora"
+    "Imperial": "Lusauren"
 }
