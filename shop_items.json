@@ -1105,6 +1105,7 @@
     "description": "سپر فولادی بزرگ که برای پیاده نظام استفاده میشه, تعداد: 100",
     "price": 0,
     "materials": {
+      "فولاد": 15,
       "چرم": 5
     },
     "owner": "-",
@@ -1115,7 +1116,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ3Emi9bkS2z-jH9qWWdhVpR-TqjtsJAAI0zDEbFiOwUbazSx2lhwABcQEAAwIAA3gAAzYE",
     "count": 100,
     "id": "52",
-    "created_at": "2025-09-07T14:42:06.194026"
+    "created_at": "2025-09-07T14:42:06.194026",
+    "updated_at": "2025-09-12T13:57:10.972028"
   },
   {
     "name": "شمشیر فولادی معمولی",
@@ -1150,6 +1152,7 @@
     "description": "کمان چوبی مناسب برای کماندار معمولی, تعداد: 100",
     "price": 0,
     "materials": {
+      "چوب": 10,
       "چرم": 5,
       "پنبه": 5
     },
@@ -1161,7 +1164,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ3Mmi9b_WBKQwYklLY8wAB_trq1WzH8AACaMkxG2mhyFEHU9m2kHHTDgEAAwIAA3gAAzYE",
     "count": 100,
     "id": "54",
-    "created_at": "2025-09-07T14:50:37.455899"
+    "created_at": "2025-09-07T14:50:37.455899",
+    "updated_at": "2025-09-12T13:58:25.082307"
   },
   {
     "name": "زره چرمی",
@@ -1171,7 +1175,9 @@
     ],
     "description": "زره چرمی که از زره های اولیه برای تمام سربازان هستش, تعداد: 100",
     "price": 0,
-    "materials": {},
+    "materials": {
+      "چرم": 20
+    },
     "owner": "-",
     "hashtags": [
       "#Army",
@@ -1180,7 +1186,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ4NWi9m_N8NimqGHQxa5zIVILIIDNkAAJnyTEbk2fpUUP-pdxr3NZCAQADAgADeQADNgQ",
     "count": 100,
     "id": "55",
-    "created_at": "2025-09-07T14:52:52.840295"
+    "created_at": "2025-09-07T14:52:52.840295",
+    "updated_at": "2025-09-12T13:59:35.107528"
   },
   {
     "name": "زره توری",
@@ -1190,7 +1197,9 @@
     ],
     "description": "زرهی که با تعداد زیادی حلقه هایی بسیار ریز از جنس فولاد درست شده, تعداد: 100",
     "price": 0,
-    "materials": {},
+    "materials": {
+      "فولاد": 20
+    },
     "owner": "-",
     "hashtags": [
       "#Army",
@@ -1199,7 +1208,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ4R2i9nGgUO79RYYZ-Y3kAAS7Z4pUR6wACaMkxG5Nn6VFgY7leoAwtnQEAAwIAA3gAAzYE",
     "count": 100,
     "id": "56",
-    "created_at": "2025-09-07T14:55:25.480985"
+    "created_at": "2025-09-07T14:55:25.480985",
+    "updated_at": "2025-09-12T14:00:49.084084"
   },
   {
     "name": "زره فولادی",
@@ -1209,7 +1219,9 @@
     ],
     "description": "زره فولادی بسیار مقاوم که تقریبا تمام قسمت های بدن سربازان رو میپوشونه, تعداد: 100",
     "price": 0,
-    "materials": {},
+    "materials": {
+      "فولاد": 25
+    },
     "owner": "-",
     "hashtags": [
       "#Army",
@@ -1218,6 +1230,7 @@
     "photo_file_id": "AgACAgQAAxkBAAJ4WWi9nPb2jyxA5NsI6WHOrKCEoruRAAJpyTEbk2fpUd8dweMqmWB2AQADAgADeQADNgQ",
     "count": 100,
     "id": "57",
-    "created_at": "2025-09-07T14:57:14.132433"
+    "created_at": "2025-09-07T14:57:14.132433",
+    "updated_at": "2025-09-12T14:01:44.384175"
   }
 ]
