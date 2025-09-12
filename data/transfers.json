@@ -1736,9 +1736,10 @@
         "گوشت": 400,
         "سنگ": 300
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-12T12:37:47.734677",
-      "delay_until": "2025-09-13T12:37:47.734680"
+      "delay_until": "2025-09-13T12:37:47.734680",
+      "approved_at": "2025-09-12T12:43:56.312125"
     },
     {
       "id": "transfer_809172681_1757680705",
@@ -1752,9 +1753,10 @@
       "items": {
         "میوه": 2515
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-12T12:38:25.040260",
-      "delay_until": "2025-09-13T12:38:25.040264"
+      "delay_until": "2025-09-13T12:38:25.040264",
+      "approved_at": "2025-09-12T12:43:56.703373"
     },
     {
       "id": "transfer_809172681_1757680720",
@@ -1768,9 +1770,28 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-12T12:38:40.504750",
-      "delay_until": "2025-09-13T12:38:40.504753"
+      "delay_until": "2025-09-13T12:38:40.504753",
+      "approved_at": "2025-09-12T12:43:57.501548"
+    },
+    {
+      "id": "transfer_5566736269_1757680878",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "میوه": 1350,
+        "پنبه": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-09-12T12:41:18.863716",
+      "delay_until": "2025-09-13T12:41:18.863720",
+      "approved_at": "2025-09-12T12:44:06.767812"
     }
   ]
 }
