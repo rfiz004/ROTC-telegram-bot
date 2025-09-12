@@ -1594,9 +1594,10 @@
         "گوشت": 447,
         "سنگ": 300
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-12T11:51:48.422688",
-      "delay_until": "2025-09-13T11:51:48.422693"
+      "delay_until": "2025-09-13T11:51:48.422693",
+      "approved_at": "2025-09-12T11:58:49.328475"
     },
     {
       "id": "transfer_809172681_1757677954",
@@ -1610,9 +1611,10 @@
       "items": {
         "میوه": 2471
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-12T11:52:34.255704",
-      "delay_until": "2025-09-13T11:52:34.255709"
+      "delay_until": "2025-09-13T11:52:34.255709",
+      "approved_at": "2025-09-12T11:58:51.664892"
     },
     {
       "id": "transfer_1329048693_1757678068",
@@ -1629,6 +1631,40 @@
       "status": "pending",
       "requested_at": "2025-09-12T11:54:28.304455",
       "delay_until": "2025-09-13T11:54:28.304461"
+    },
+    {
+      "id": "transfer_5566736269_1757678259",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 60,
+        "پنبه": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T11:57:39.331148",
+      "delay_until": "2025-09-13T11:57:39.331153"
+    },
+    {
+      "id": "transfer_1771323853_1757678307",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 150
+      },
+      "status": "approved",
+      "requested_at": "2025-09-12T11:58:27.540536",
+      "delay_until": "2025-09-13T11:58:27.540539",
+      "approved_at": "2025-09-12T11:58:32.007414"
     }
   ]
 }
