@@ -1415,9 +1415,59 @@
       "items": {
         "شراب": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-12T10:47:40.115059",
-      "delay_until": "2025-09-13T10:47:40.115062"
+      "delay_until": "2025-09-13T10:47:40.115062",
+      "approved_at": "2025-09-12T10:48:54.530172"
+    },
+    {
+      "id": "transfer_1766859127_1757674156",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Veresta",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شراب": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-09-12T10:49:16.497461",
+      "delay_until": "2025-09-13T10:49:16.497465",
+      "approved_at": "2025-09-12T10:50:04.104142"
+    },
+    {
+      "id": "transfer_1766859127_1757674231",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شراب": 300
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T10:50:31.396119",
+      "delay_until": "2025-09-13T10:50:31.396124"
+    },
+    {
+      "id": "transfer_1766859127_1757674325",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 550
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T10:52:05.772399",
+      "delay_until": "2025-09-13T10:52:05.772402"
     }
   ]
 }
