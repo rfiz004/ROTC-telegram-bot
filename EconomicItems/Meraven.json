@@ -1,11 +1,11 @@
 {
   "grain_priority": [
-    "گوشت",
     "میوه"
   ],
   "grains": {
     "گوشت": 400,
     "میوه": 0
   },
-  "unfed_population": 0
+  "unfed_population": 0,
+  "grain_consumption": 500
 }
