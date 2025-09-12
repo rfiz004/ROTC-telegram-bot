@@ -1,11 +1,12 @@
 {
   "grain_priority": [
     "گوشت",
+    "مرغ",
     "گندم"
   ],
   "grains": {
     "مرغ": 100
   },
   "unfed_population": 0,
-  "grain_consumption": 900
+  "grain_consumption": 1450
 }
