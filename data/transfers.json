@@ -1563,6 +1563,23 @@
       "requested_at": "2025-09-12T11:32:34.986674",
       "delay_until": "2025-09-13T11:32:34.986677",
       "approved_at": "2025-09-12T11:32:55.320956"
+    },
+    {
+      "id": "transfer_1771323853_1757677182",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 100,
+        "چرم": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-09-12T11:39:42.732852",
+      "delay_until": "2025-09-13T11:39:42.732855"
     }
   ]
 }
