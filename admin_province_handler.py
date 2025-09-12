@@ -1519,7 +1519,11 @@ async def approve_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # ذخیره تغییر وضعیت (بدون حذف)
         save_pending_transfers(transfers_data)
 
-        await query.edit_message_text("✅ انتقال تایید شد. آیتم‌ها منتقل شدند.")
+        await query.edit_message_text((
+                        f"✅ انتقال تایید شد. آیتم‌ها منتقل شدند.\n"
+                        f"{source_country}-{source_province} → {target_country}-{target_province}\n"
+                        f"📦 {', '.join(item_lines)}"
+                    ))
 
     except Exception as e:
         import traceback
