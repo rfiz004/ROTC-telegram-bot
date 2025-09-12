@@ -899,6 +899,23 @@
       "requested_at": "2025-09-12T07:59:28.549215",
       "delay_until": "2025-09-13T07:59:28.549218",
       "approved_at": "2025-09-12T07:59:36.594363"
+    },
+    {
+      "id": "transfer_1766859127_1757664422",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شراب": 25
+      },
+      "status": "approved",
+      "requested_at": "2025-09-12T08:07:02.265751",
+      "delay_until": "2025-09-13T08:07:02.265756",
+      "approved_at": "2025-09-12T08:07:14.265502"
     }
   ]
 }
