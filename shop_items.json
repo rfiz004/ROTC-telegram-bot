@@ -1059,6 +1059,7 @@
     "description": "سپر فولادی نسبتا کوچک که اکثرا برای سواره نظام ها ساخته شده, تعداد: 100",
     "price": 0,
     "materials": {
+      "فولاد": 10,
       "چرم": 5
     },
     "owner": "-",
@@ -1069,7 +1070,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ27mi9bIRnj6_kJvKLxKMAAXUiLOWxBgACMswxGxYjsFHTEtD6QDA4EAEAAwIAA3gAAzYE",
     "count": 100,
     "id": "50",
-    "created_at": "2025-09-07T14:32:59.724557"
+    "created_at": "2025-09-07T14:32:59.724557",
+    "updated_at": "2025-09-12T13:55:21.960417"
   },
   {
     "name": "نیزه",
@@ -1080,7 +1082,8 @@
     "description": "نیزه چوبی با سر فلزی که برای سرباز نیزه دار استفاده میشه, تعداد: 100",
     "price": 0,
     "materials": {
-      "چوب": 10
+      "چوب": 10,
+      "فولاد": 5
     },
     "owner": "-",
     "hashtags": [
@@ -1090,7 +1093,8 @@
     "photo_file_id": "AgACAgQAAxkBAAJ2_mi9bdjWKt3Z8KGIi80AAY8Wfdk33gACNcwxGxYjsFGo4Tke6L6vzQEAAwIAA3gAAzYE",
     "count": 100,
     "id": "51",
-    "created_at": "2025-09-07T14:37:18.186210"
+    "created_at": "2025-09-07T14:37:18.186210",
+    "updated_at": "2025-09-12T13:56:09.623565"
   },
   {
     "name": "سپر فولادی بزرگ",
