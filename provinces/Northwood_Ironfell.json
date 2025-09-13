@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Ironfell",
   "mines": {},
-  "wealth": 10200,
+  "wealth": 5200,
   "population": 20000,
   "tax": 100,
   "popularity": 64,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 2,
+      "count": 4,
       "product": "چوب",
       "weekly_output": 50
     }
