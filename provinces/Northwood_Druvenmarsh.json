@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Druvenmarsh",
   "mines": {},
-  "wealth": 4000,
+  "wealth": 1500,
   "population": 20000,
   "tax": 100,
   "popularity": 67,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 0,
+      "count": 1,
       "product": "چرم",
       "weekly_output": 50
     },
