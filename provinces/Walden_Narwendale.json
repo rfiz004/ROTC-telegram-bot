@@ -4,7 +4,7 @@
   "mines": {},
   "wealth": 0,
   "population": 24000,
-  "tax": 100,
+  "tax": 10,
   "popularity": 64,
   "total_army": 5000,
   "army": {
