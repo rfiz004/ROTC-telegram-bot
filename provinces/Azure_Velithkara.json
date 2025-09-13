@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Velithkara",
   "mines": {},
-  "wealth": 20000,
+  "wealth": 17000,
   "population": 18000,
   "tax": 40,
   "popularity": 56,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 1,
       "product": "سنگ",
       "weekly_output": 50
     }

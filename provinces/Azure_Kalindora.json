@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 30330,
+  "wealth": 28330,
   "population": 30000,
   "tax": 80,
   "popularity": 61,
@@ -47,7 +47,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 3,
+      "count": 4,
       "product": "ماهی",
       "weekly_output": 100
     },
