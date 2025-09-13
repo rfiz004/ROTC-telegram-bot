@@ -42,17 +42,17 @@
     "کارخونه شراب": {
       "count": 0,
       "product": "شراب",
-      "weekly_output": 0
+      "weekly_output": 50
     },
     "چوب بری": {
       "count": 0,
       "product": "چوب",
-      "weekly_output": 0
+      "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 0,
+      "count": 1,
       "product": "سنگ",
-      "weekly_output": 0
+      "weekly_output": 50
     }
   },
   "structure_productions": {

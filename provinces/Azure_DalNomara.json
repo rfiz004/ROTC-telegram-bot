@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "DalNomara",
   "mines": {},
-  "wealth": 32100,
+  "wealth": 29100,
   "population": 18000,
   "tax": 100,
   "popularity": 67,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه سنگ": {
-      "count": 1,
+      "count": 2,
       "product": "سنگ",
       "weekly_output": 50
     }
