@@ -2310,6 +2310,23 @@
       "requested_at": "2025-09-13T15:25:53.481080",
       "delay_until": "2025-09-14T15:25:53.481083",
       "approved_at": "2025-09-13T15:27:48.137315"
+    },
+    {
+      "id": "transfer_7358397936_1757847705",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Alvankesh",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 5000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-14T11:01:45.356942",
+      "delay_until": "2025-09-15T11:01:45.356947",
+      "approved_at": "2025-09-14T11:03:43.426366"
     }
   ]
 }
