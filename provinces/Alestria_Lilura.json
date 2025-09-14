@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Lilura",
   "mines": {},
-  "wealth": 11000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 69,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 2,
+      "count": 4,
       "product": "گوشت",
       "weekly_output": 100
     },
@@ -45,7 +45,7 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 0,
+      "count": 4,
       "product": "پنبه",
       "weekly_output": 50
     },
