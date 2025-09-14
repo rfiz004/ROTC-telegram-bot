@@ -2,16 +2,17 @@
   "country": "Santos",
   "province": "Silzara",
   "mines": {},
-  "wealth": 500,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 64,
-  "total_army": 1440,
+  "total_army": 1441,
   "army": {
     "کماندار": 540,
     "شمشیرزن": 400,
     "نیزه دار": 300,
-    "سواره نظام": 200
+    "سواره نظام": 200,
+    "منجنیق": 1
   },
   "castle": {},
   "structures": {
