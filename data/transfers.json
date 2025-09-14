@@ -2374,9 +2374,10 @@
       "items": {
         "طلا": 500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-14T11:19:24.395987",
-      "delay_until": "2025-09-15T11:19:24.395992"
+      "delay_until": "2025-09-15T11:19:24.395992",
+      "approved_at": "2025-09-14T11:25:02.730926"
     },
     {
       "id": "transfer_7358397936_1757848792",
@@ -2391,9 +2392,10 @@
         "فولاد": 50,
         "چوب": 60
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-14T11:19:52.235159",
-      "delay_until": "2025-09-15T11:19:52.235162"
+      "delay_until": "2025-09-15T11:19:52.235162",
+      "approved_at": "2025-09-14T11:25:13.448662"
     },
     {
       "id": "transfer_7358397936_1757848843",
@@ -2407,9 +2409,28 @@
       "items": {
         "طلا": 500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-14T11:20:43.192503",
-      "delay_until": "2025-09-15T11:20:43.192508"
+      "delay_until": "2025-09-15T11:20:43.192508",
+      "approved_at": "2025-09-14T11:25:24.532644"
+    },
+    {
+      "id": "transfer_7358397936_1757848863",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Silzara",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 50,
+        "چوب": 60
+      },
+      "status": "approved",
+      "requested_at": "2025-09-14T11:21:03.665158",
+      "delay_until": "2025-09-15T11:21:03.665162",
+      "approved_at": "2025-09-14T11:22:28.283778"
     }
   ]
 }
