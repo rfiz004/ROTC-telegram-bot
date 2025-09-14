@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Narwendale",
   "mines": {},
-  "wealth": 2000,
+  "wealth": 0,
   "population": 24000,
   "tax": 10,
   "popularity": 64,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 3,
+      "count": 4,
       "product": "پارچه",
       "weekly_output": 50
     }
