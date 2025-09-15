@@ -948,44 +948,73 @@ async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TY
 
 
 def check_materials(province_data, item, quantity):
+    """
+    بررسی مواد مورد نیاز و موجودی استان.
+    بر اساس کل موجودی از همه‌ی بخش‌ها جمع می‌کند و سپس مقایسه می‌کند.
+    """
     missing = {}
     for mat, required in item.get("materials", {}).items():
         total_required = required * quantity
-        found = False
+        total_available = 0
 
-        # Army
-        if mat in province_data.get("army", {}):
-            if province_data["army"][mat] < total_required:
-                missing[mat] = total_required - province_data["army"][mat]
-            found = True
+        # جمع موجودی از همه‌ی بخش‌های اصلی
+        sections = ["army", "castle", "structures", "weapons", "misc", "economic_items"]
+        for section_name in sections:
+            section = province_data.get(section_name, {})
+            total_available += section.get(mat, 0)
 
-        # Castle, Structures, Weapons, Misc
-        for key in ["castle", "structures", "weapons", "misc"]:
-            section = province_data.get(key, {})
-            if mat in section:
-                if section[mat] < total_required:
-                    missing[mat] = total_required - section[mat]
-                found = True
-
-        # Economic items
-        if mat in province_data.get("economic_items", {}):
-            if province_data["economic_items"][mat] < total_required:
-                missing[mat] = total_required - province_data["economic_items"][mat]
-            found = True
-
-        # Economic structures
-        for es_name, es_data in province_data.get("economic_structures", {}).items():
+        # محصولات ساختارهای اقتصادی
+        for es_data in province_data.get("economic_structures", {}).values():
             if es_data.get("product") == mat:
-                available = es_data.get("count", 0) * es_data.get("weekly_output", 0)
-                if available < total_required:
-                    missing[mat] = total_required - available
-                found = True
+                total_available += es_data.get("count", 0) * es_data.get("weekly_output", 0)
 
-        if not found:
-            # Material not found anywhere
-            missing[mat] = total_required
+        # اگر موجودی کافی نبود → کمبود
+        if total_available < total_required:
+            missing[mat] = total_required - total_available
 
     return missing
+
+
+
+# def check_materials(province_data, item, quantity):
+#     missing = {}
+#     for mat, required in item.get("materials", {}).items():
+#         total_required = required * quantity
+#         found = False
+
+#         # Army
+#         if mat in province_data.get("army", {}):
+#             if province_data["army"][mat] < total_required:
+#                 missing[mat] = total_required - province_data["army"][mat]
+#             found = True
+
+#         # Castle, Structures, Weapons, Misc
+#         for key in ["castle", "structures", "weapons", "misc"]:
+#             section = province_data.get(key, {})
+#             if mat in section:
+#                 if section[mat] < total_required:
+#                     missing[mat] = total_required - section[mat]
+#                 found = True
+
+#         # Economic items
+#         if mat in province_data.get("economic_items", {}):
+#             if province_data["economic_items"][mat] < total_required:
+#                 missing[mat] = total_required - province_data["economic_items"][mat]
+#             found = True
+
+#         # Economic structures
+#         for es_name, es_data in province_data.get("economic_structures", {}).items():
+#             if es_data.get("product") == mat:
+#                 available = es_data.get("count", 0) * es_data.get("weekly_output", 0)
+#                 if available < total_required:
+#                     missing[mat] = total_required - available
+#                 found = True
+
+#         if not found:
+#             # Material not found anywhere
+#             missing[mat] = total_required
+
+#     return missing
 
 
 # async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
