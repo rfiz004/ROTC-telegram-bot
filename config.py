@@ -23,7 +23,7 @@ COUNTRY_ADMIN_ID = {
     "Hikada": [2121665497],
     "Alestria": [2121665497],
 
-    "Santos": [5890943003],
+    "Santos": [1771323853],
     "Imperial": [2121665497],
     "Northwood": [1771323853],
 }
