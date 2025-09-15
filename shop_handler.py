@@ -10,7 +10,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.error import BadRequest, Forbidden
 from keyboards import back_and_home_buttons
-from config import SHOP_CHANNEL
+from config import SHOP_CHANNEL, COUNTRY_ADMIN_ID 
 from province_handler import load_province_data, save_province_data
 from admin_province_handler import is_shop_blocked_for_user
 
@@ -1510,6 +1510,24 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # 🔻 ذخیره اطلاعات
     save_province_data(country, province, province_data)
+
+        # 🔻 ارسال گزارش خرید برای ادمین‌های کشور
+    admin_ids = COUNTRY_ADMIN_ID.get(country, [])
+    if admin_ids:
+        report = (
+            f"📢 گزارش خرید در کشور {country}\n\n"
+            f"🏰 استان: {province}\n"
+            f"👤 پلیر: {query.from_user.full_name} (@{query.from_user.username or '---'})\n\n"
+            f"📦 {item_name} × {quantity:,}\n"
+            f"💰 قیمت کل: {total_price:,} طلا\n"
+            f"⚒️ مصرف متریال: {', '.join([f'{m}×{a}' for m,a in total_materials.items()]) if total_materials else 'ندارد'}"
+        )
+        for admin_id in admin_ids:
+            try:
+                await context.bot.send_message(chat_id=admin_id, text=report)
+            except Exception as e:
+                print(f"خطا در ارسال پیام به ادمین {admin_id}: {e}")
+
 
     # 🔻 حذف داده‌های موقت خرید
     for key in ["purchase_item", "purchase_quantity", "total_price", "total_materials", "step", "flow_type"]:
