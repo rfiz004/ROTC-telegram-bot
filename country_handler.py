@@ -532,8 +532,6 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "https://t.me/R_O_T_C_News"
         )
 
-        {query.from_user.full_name} (@{query.from_user.username or '---'})\n\n"
-
         try:
             await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
             success_msg = "✅ اعلامیه شما ارسال شد!"
