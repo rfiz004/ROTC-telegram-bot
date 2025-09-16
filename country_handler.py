@@ -501,20 +501,6 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         recipient_name = user_store.get("recipient_name")  # ممکنه None باشه
         news_type = user_store.get("news_type", "normal")
 
-        # اگر گیرنده انتخاب نشده، متن را نگه‌دار و لیست کشورها را نشان بده
-        # if not recipient_name:
-        #     user_store["pending_news_text"] = news_text
-        #     user_store["state"] = "waiting_for_recipient_from_news"
-
-        #     buttons = [
-        #         [InlineKeyboardButton(country, callback_data=f"news_recipient:{country}")]
-        #         for country in COUNTRIES
-        #     ]
-        #     await update.message.reply_text(
-        #         "گیرنده مشخص نشده — یکی از کشورها را انتخاب کنید:",
-        #         reply_markup=InlineKeyboardMarkup(buttons)
-        #     )
-        #     return  # صبر می‌کنیم تا callback بیاد
 
         if not recipient_name:
             user_store["pending_news_text"] = news_text
@@ -537,7 +523,7 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         formatted_message = (
             "──────⊱◈News◈⊰──────\n\n"
-            f"✦ Sender Name : {sender_name}\n"
+            f"✦ Sender Name : {sender_name} (@{query.from_user.username or query.from_user.full_name})\n"
             f"✧ Recipient Name : {recipient_name}\n"
             f"✦ News text : {news_text}\n\n"
             f"{hashtag} \n\n"
@@ -545,6 +531,8 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "https://t.me/R_O_T_C\n"
             "https://t.me/R_O_T_C_News"
         )
+
+        {query.from_user.full_name} (@{query.from_user.username or '---'})\n\n"
 
         try:
             await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
