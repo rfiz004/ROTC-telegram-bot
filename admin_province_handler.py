@@ -1181,7 +1181,7 @@ async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_pending_transfers(transfers_data)
 
         await query.edit_message_text((
-                f"❌ انتقال رد شد."\n"
+                f"❌ انتقال رد شد.\n"
                 f"{source_country}-{source_province} → {target_country}-{target_province}\n"
                 f"📦 {', '.join(item_lines)}"
             ))
