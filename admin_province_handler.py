@@ -1180,7 +1180,11 @@ async def reject_transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # ذخیره تغییر وضعیت (بدون حذف)
         save_pending_transfers(transfers_data)
 
-        await query.edit_message_text("❌ انتقال رد شد.")
+        await query.edit_message_text((
+                f"❌ انتقال رد شد."\n"
+                f"{source_country}-{source_province} → {target_country}-{target_province}\n"
+                f"📦 {', '.join(item_lines)}"
+            ))
 
     except Exception as e:
         logger.error(f"Error rejecting transfer: {e}")
