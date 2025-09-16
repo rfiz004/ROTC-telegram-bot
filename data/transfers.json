@@ -2879,6 +2879,38 @@
       "requested_at": "2025-09-16T13:22:39.536038",
       "delay_until": "2025-09-17T13:22:39.536041",
       "approved_at": "2025-09-16T13:27:17.243728"
+    },
+    {
+      "id": "transfer_1079429121_1758037536",
+      "requester_id": 1079429121,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 25
+      },
+      "status": "pending",
+      "requested_at": "2025-09-16T15:45:36.194351",
+      "delay_until": "2025-09-17T15:45:36.194355"
+    },
+    {
+      "id": "transfer_1079429121_1758037634",
+      "requester_id": 1079429121,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 25
+      },
+      "status": "pending",
+      "requested_at": "2025-09-16T15:47:14.374274",
+      "delay_until": "2025-09-17T15:47:14.374278"
     }
   ]
 }
