@@ -521,9 +521,10 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             hashtag = "#News"
 
+        sender_user = update.message.from_user
         formatted_message = (
             "──────⊱◈News◈⊰──────\n\n"
-            f"✦ Sender Name : {sender_name} (@{query.from_user.username or query.from_user.full_name})\n"
+            f"✦ Sender Name : {sender_name} (@{sender_user.username or sender_user.full_name})\n"
             f"✧ Recipient Name : {recipient_name}\n"
             f"✦ News text : {news_text}\n\n"
             f"{hashtag} \n\n"
@@ -531,6 +532,17 @@ async def collect_news_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "https://t.me/R_O_T_C\n"
             "https://t.me/R_O_T_C_News"
         )
+
+        # formatted_message = (
+        #     "──────⊱◈News◈⊰──────\n\n"
+        #     f"✦ Sender Name : {sender_name}\n"
+        #     f"✧ Recipient Name : {recipient_name}\n"
+        #     f"✦ News text : {news_text}\n\n"
+        #     f"{hashtag} \n\n"
+        #     "──────⊹⊱✫⊰⊹──────\n"
+        #     "https://t.me/R_O_T_C\n"
+        #     "https://t.me/R_O_T_C_News"
+        # )
 
         try:
             await context.bot.send_message(chat_id=CHANNEL_ID, text=formatted_message)
