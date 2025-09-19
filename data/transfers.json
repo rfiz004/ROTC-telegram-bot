@@ -2982,6 +2982,23 @@
       "requested_at": "2025-09-17T14:31:12.469876",
       "delay_until": "2025-09-18T14:31:12.469881",
       "approved_at": "2025-09-17T14:31:37.990522"
+    },
+    {
+      "id": "transfer_5564554013_1758281734",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "DalNomara",
+      "target_country": "Azure",
+      "target_province": "Silverain Coast",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 6000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-19T11:35:34.524414",
+      "delay_until": "2025-09-20T11:35:34.524419",
+      "approved_at": "2025-09-19T11:35:51.351763"
     }
   ]
 }
