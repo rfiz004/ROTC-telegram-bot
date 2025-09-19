@@ -3136,9 +3136,10 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-19T13:40:41.239736",
-      "delay_until": "2025-09-20T13:40:41.239739"
+      "delay_until": "2025-09-20T13:40:41.239739",
+      "approved_at": "2025-09-19T13:42:51.204213"
     },
     {
       "id": "transfer_5566736269_1758289291",
@@ -3152,9 +3153,27 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-19T13:41:31.963906",
-      "delay_until": "2025-09-20T13:41:31.963910"
+      "delay_until": "2025-09-20T13:41:31.963910",
+      "approved_at": "2025-09-19T13:42:50.466891"
+    },
+    {
+      "id": "transfer_5566736269_1758289353",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 8500
+      },
+      "status": "approved",
+      "requested_at": "2025-09-19T13:42:33.228876",
+      "delay_until": "2025-09-20T13:42:33.228880",
+      "approved_at": "2025-09-19T13:42:52.877649"
     }
   ]
 }
