@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Ironfell",
   "mines": {},
-  "wealth": 11200,
+  "wealth": 6200,
   "population": 20000,
   "tax": 70,
   "popularity": 60,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 2,
+      "count": 4,
       "product": "چرم",
       "weekly_output": 50
     },
