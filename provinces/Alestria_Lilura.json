@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Lilura",
   "mines": {},
-  "wealth": 0,
+  "wealth": 4500,
   "population": 14000,
   "tax": 100,
   "popularity": 68,
@@ -45,7 +45,7 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 4,
+      "count": 1,
       "product": "پنبه",
       "weekly_output": 50
     },

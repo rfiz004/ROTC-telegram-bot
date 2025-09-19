@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Meraven",
   "mines": {},
-  "wealth": 0,
+  "wealth": 9500,
   "population": 14000,
   "tax": 100,
   "popularity": 68,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 4,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
@@ -45,7 +45,7 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 4,
+      "count": 1,
       "product": "پنبه",
       "weekly_output": 50
     },
