@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Markoven",
   "mines": {},
-  "wealth": 0,
+  "wealth": 26000,
   "population": 24000,
   "tax": 100,
   "popularity": 65,
@@ -40,17 +40,17 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 4,
+      "count": 0,
       "product": "فولاد",
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 4,
+      "count": 1,
       "product": "شراب",
       "weekly_output": 50
     },
     "کارخونه شیشه": {
-      "count": 4,
+      "count": 0,
       "product": "شیشه",
       "weekly_output": 50
     }

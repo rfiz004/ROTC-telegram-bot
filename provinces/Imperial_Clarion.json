@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Clarion",
   "mines": {},
-  "wealth": 0,
+  "wealth": 16000,
   "population": 24000,
   "tax": 100,
   "popularity": 65,
@@ -35,12 +35,12 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 4,
+      "count": 2,
       "product": "مرغ",
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 4,
+      "count": 0,
       "product": "فولاد",
       "weekly_output": 50
     },
