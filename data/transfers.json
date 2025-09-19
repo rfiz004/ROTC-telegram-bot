@@ -3208,6 +3208,25 @@
       "status": "pending",
       "requested_at": "2025-09-19T13:51:41.217824",
       "delay_until": "2025-09-20T13:51:41.217830"
+    },
+    {
+      "id": "transfer_809172681_1758292696",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 400,
+        "سنگ": 200,
+        "پنبه": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-09-19T14:38:16.031885",
+      "delay_until": "2025-09-20T14:38:16.031888",
+      "approved_at": "2025-09-19T14:38:33.029638"
     }
   ]
 }
