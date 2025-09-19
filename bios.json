@@ -132,6 +132,16 @@
       "expires_at": "2025-09-15T18:22:58.083605",
       "name": "تخ",
       "nickname": "ته"
+    },
+    "6468602755": {
+      "country": "Imperial",
+      "job": "نخست وزیر",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-09-19T17:21:26.221744",
+      "expires_at": "2025-09-19T17:46:35.913371",
+      "name": "FEIT",
+      "nickname": "Mukuro"
     }
   },
   "used_hashtags": [
