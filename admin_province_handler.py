@@ -3434,16 +3434,17 @@ def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
 
     # ---------------- محاسبه محبوبیت ----------------
     total = 0
-
+    
     # اثر گرسنگی
     if remaining_population > 0:
         if remaining_population <= 1000:
             total -= 1
         else:
             total -= (remaining_population // 1000) + 1
+    else:
+        # اثر ضریب مصرف (فقط اگه کسی گرسنه نمونه)
+        total += grain_consumption // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
-    # اثر ضریب مصرف
-    total += grain_consumption // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
     return total
 
