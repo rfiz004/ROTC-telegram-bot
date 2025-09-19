@@ -136,12 +136,27 @@
     "6468602755": {
       "country": "Imperial",
       "job": "نخست وزیر",
-      "step": "asking_age",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-09-19T17:21:26.221744",
+      "saved_at": "2025-09-19T17:25:27.915038",
       "expires_at": "2025-09-19T17:46:35.913371",
       "name": "FEIT",
-      "nickname": "Mukuro"
+      "nickname": "Mukuro",
+      "age": "19",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "آهنگری",
+        "حواس پنجگانه قوی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "آهنگری",
+      "skill3": "حواس پنجگانه قوی",
+      "appearance": "هیچی",
+      "history": "نداره",
+      "id_number": "@KIRITO1385",
+      "user_id_tag": "#Country"
     }
   },
   "used_hashtags": [
@@ -263,6 +278,7 @@
     "#eston",
     "#Ervin",
     "#Ervine",
-    "#b_r"
+    "#b_r",
+    "#Country"
   ]
 }
