@@ -3284,64 +3284,16 @@ def calculate_tax_popularity(province_name: str) -> int:
     return - max(0, (tax_rate - 10) // 10)
 
 # def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
-#     """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (شنبه)"""
-#     country_name = find_country_for_province(province_name)
-#     if not country_name:
-#          return 0  # یا None اگه ترجیح بدی
-#     province_data = load_province_data(country_name,province_name)
-#     if not province_data:
-#         return 0
-   
-#     econ_path = os.path.join(ECONOMIC_FOLDER, province_name.replace(" ", "_") + ".json")
-#     econ_data = safe_load_json(econ_path)
-#     if not province_data or not econ_data:
-#         return 0
-
-#     population = province_data.get("population", 0)
-#     grain_priority = econ_data.get("grain_priority", [])
-#     grain_settings = econ_data.get("grains", {})
-#     items = province_data.get("economic_items", {}).copy()
-#     remaining_population = population
-
-#     # بخش گرسنگی
-#     for grain in grain_priority:
-#         if grain not in BASE_CONSUMPTION_RATES or grain not in items:
-#             continue
-
-#         base_people, base_amount = BASE_CONSUMPTION_RATES[grain]
-#         percent = max(0, grain_settings.get(grain, 0))
-#         multiplier = 1 + (percent / 100)
-#         units_per_person = (base_amount / base_people) * multiplier
-#         available_units = items.get(grain, 0)
-#         max_people_supported = available_units / units_per_person
-
-#         if max_people_supported >= remaining_population:
-#             remaining_population = 0
-#             break
-#         else:
-#             remaining_population -= int(max_people_supported)
-
-#     total = 0
-#     if remaining_population > 0:
-#         if remaining_population <= 1000:
-#             total -= 1
-#         else:
-#             total -= (remaining_population // 1000) + 1
-
-#     # بخش ضریب مصرف
-#     for grain, percent in grain_settings.items():
-#         total += percent // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
-
-#     return total
-
-
-# def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
-#     """محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (نسخه جدید تک‌درصدی)"""
+#     """
+#     محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (نسخه جدید تک‌درصدی)
+#     grain_consumption: درصد کلی مصرف برای همه غلات
+#     """
 
 #     # پیدا کردن کشور و بارگذاری داده‌ها
 #     country_name = find_country_for_province(province_name)
 #     if not country_name:
 #         return 0
+
 #     province_data = load_province_data(country_name, province_name)
 #     if not province_data:
 #         return 0
@@ -3351,46 +3303,49 @@ def calculate_tax_popularity(province_name: str) -> int:
 #     if not econ_data:
 #         return 0
 
-#     # داده‌های اصلی
 #     population = province_data.get("population", 0)
 #     items = province_data.get("economic_items", {}).copy()
 #     remaining_population = population
 
-#     # درصد کلی مصرف غلات (پیش‌فرض 0 اگه نباشه)
+#     # درصد کلی مصرف غلات
 #     grain_consumption = max(0, econ_data.get("grain_consumption", 0))
 
 #     # ---------------- بخش گرسنگی ----------------
-#     if "grains" in BASE_CONSUMPTION_RATES and "grains" in items:
-#         base_people, base_amount = BASE_CONSUMPTION_RATES["grains"]
+#     for grain, (base_people, base_units) in BASE_CONSUMPTION_RATES.items():
+#         # اگر موجودی این غله در استان نیست، رد کن
+#         food_amount = items.get(grain, 0)
+#         if food_amount <= 0:
+#             continue
 
 #         multiplier = 1 + (grain_consumption / 100)
-#         units_per_person = (base_amount / base_people) * multiplier
-#         available_units = items.get("grains", 0)
-#         max_people_supported = available_units / units_per_person
+#         units_per_person = base_units / base_people * multiplier
+#         max_people_supported = food_amount / units_per_person
 
 #         if max_people_supported >= remaining_population:
 #             remaining_population = 0
+#             break
 #         else:
 #             remaining_population -= int(max_people_supported)
 
 #     # ---------------- محاسبه محبوبیت ----------------
 #     total = 0
-
+    
 #     # اثر گرسنگی
 #     if remaining_population > 0:
 #         if remaining_population <= 1000:
 #             total -= 1
 #         else:
 #             total -= (remaining_population // 1000) + 1
+#     else:
+#         # اثر ضریب مصرف (فقط اگه کسی گرسنه نمونه)
+#         total += grain_consumption // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
-#     # اثر ضریب مصرف
-#     total += grain_consumption // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
 #     return total
 
 def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
     """
-    محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (نسخه جدید تک‌درصدی)
+    محاسبه تغییرات محبوبیت ناشی از گرسنگی و ضریب مصرف (نسخه اصلاح‌شده)
     grain_consumption: درصد کلی مصرف برای همه غلات
     """
 
@@ -3417,7 +3372,6 @@ def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
 
     # ---------------- بخش گرسنگی ----------------
     for grain, (base_people, base_units) in BASE_CONSUMPTION_RATES.items():
-        # اگر موجودی این غله در استان نیست، رد کن
         food_amount = items.get(grain, 0)
         if food_amount <= 0:
             continue
@@ -3435,18 +3389,19 @@ def calculate_hunger_and_consumption_popularity(province_name: str) -> int:
     # ---------------- محاسبه محبوبیت ----------------
     total = 0
     
-    # اثر گرسنگی
+    # اثر گرسنگی (همیشه)
     if remaining_population > 0:
         if remaining_population <= 1000:
             total -= 1
         else:
             total -= (remaining_population // 1000) + 1
-    else:
-        # اثر ضریب مصرف (فقط اگه کسی گرسنه نمونه)
+
+    # اثر ضریب مصرف (فقط اگر کسی گرسنه نمونده باشه)
+    if remaining_population == 0 and grain_consumption > 0:
         total += grain_consumption // 50  # هر ۵۰٪ مصرف = +۱ محبوبیت
 
-
     return total
+
 
 
 
