@@ -2325,7 +2325,7 @@ async def preview_weekly_processing(update: Update, context: ContextTypes.DEFAUL
                 text += f"  📍 {province}:\n\n"
 
                 # پیش‌بینی مصرف غذا بعد از اسم استان
-                food_preview = preview(province)
+                food_preview = preview_food_consumption(province)
                 if food_preview:
                     text += "    🍽️ مصرف غلات:\n\n"
                     for line in food_preview:
