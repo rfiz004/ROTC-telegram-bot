@@ -4177,6 +4177,22 @@
       "status": "pending",
       "requested_at": "2025-09-21T08:10:34.708358",
       "delay_until": "2025-09-22T08:10:34.708362"
+    },
+    {
+      "id": "transfer_1079429121_1758442640",
+      "requester_id": 1079429121,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-09-21T08:17:20.253001",
+      "delay_until": "2025-09-22T08:17:20.253005"
     }
   ]
 }
