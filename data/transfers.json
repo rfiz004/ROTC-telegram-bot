@@ -4330,6 +4330,40 @@
       "requested_at": "2025-09-21T12:05:11.120586",
       "delay_until": "2025-09-22T12:05:11.120591",
       "approved_at": "2025-09-21T12:05:43.639887"
+    },
+    {
+      "id": "transfer_6213073537_1758456458",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-09-21T12:07:38.098630",
+      "delay_until": "2025-09-22T12:07:38.098654"
+    },
+    {
+      "id": "transfer_5566736269_1758456553",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گندم": 600,
+        "میوه": 400,
+        "پارچه": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-09-21T12:09:13.782072",
+      "delay_until": "2025-09-22T12:09:13.782075"
     }
   ]
 }
