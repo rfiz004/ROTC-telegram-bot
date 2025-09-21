@@ -159,14 +159,32 @@
       "user_id_tag": "#Country"
     },
     "7450258907": {
+      "step": "pending",
       "country": "Azure",
-      "job": "مشاغل آزاد",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-09-21T23:21:03.556298",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-09-21T23:50:51.301010",
       "name": "نامیکو",
-      "nickname": "نامی، نام‌نام"
+      "nickname": "نامی، نام‌نام",
+      "age": "۲۱",
+      "skills": [
+        "حواس پنجگانه قوی",
+        "مهارت کار با خنجر",
+        "کشتیرانی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "حواس پنجگانه قوی",
+      "skill2": "مهارت کار با خنجر",
+      "skill3": "کشتیرانی",
+      "appearance": "چشم های ابی، موهای قهوه ای موج دار که تا روی شونه به طرز شلخته ای کوتاه شده، تتو به شکل بخیه دور گردنش و روی دستش داره،",
+      "history": "یه دختر عادی از یه خانواده ی عادی، به خاطر مشکلاتی که با مادرش داشت خونه رو تو سن کم ترک میکنه و شروع میکنه به مستقل زندگی کردن، تتو ها رو به یاد زمان زندگی توی خونه زده و حسی که زندگی اونجا بهش میداد",
+      "id_number": "@Naamnami",
+      "user_id_tag": "#namiko",
+      "photo": "AgACAgUAAxkBAAKYrGjQiZ91ynQu8OHq9FIHCJ1ITHZMAAK9xzEbEAOAVrY3Poyzuz1cAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "7450258907",
+      "saved_at": "2025-09-21T23:26:23.415870"
     }
   },
   "used_hashtags": [
@@ -289,6 +307,7 @@
     "#Ervin",
     "#Ervine",
     "#b_r",
-    "#Country"
+    "#Country",
+    "#namiko"
   ]
 }
