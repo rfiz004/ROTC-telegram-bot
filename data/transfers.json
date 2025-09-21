@@ -4296,6 +4296,23 @@
       "requested_at": "2025-09-21T11:21:26.705984",
       "delay_until": "2025-09-22T11:21:26.705989",
       "approved_at": "2025-09-21T11:27:07.254661"
+    },
+    {
+      "id": "transfer_898145344_1758455086",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-09-21T11:44:46.177845",
+      "delay_until": "2025-09-22T11:44:46.177849",
+      "approved_at": "2025-09-21T11:45:27.918353"
     }
   ]
 }
