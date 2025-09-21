@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 13100,
+  "wealth": 7100,
   "population": 13000,
   "tax": 100,
   "popularity": 96,
@@ -51,7 +51,7 @@
       "weekly_output": 100
     },
     "باغ": {
-      "count": 1,
+      "count": 5,
       "product": "میوه",
       "weekly_output": 100
     },

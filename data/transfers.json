@@ -4245,6 +4245,22 @@
       "requested_at": "2025-09-21T09:56:42.837226",
       "delay_until": "2025-09-22T09:56:42.837229",
       "approved_at": "2025-09-21T09:58:05.539505"
+    },
+    {
+      "id": "transfer_5559178724_1758452864",
+      "requester_id": 5559178724,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 4000
+      },
+      "status": "pending",
+      "requested_at": "2025-09-21T11:07:44.808287",
+      "delay_until": "2025-09-22T11:07:44.808291"
     }
   ]
 }
