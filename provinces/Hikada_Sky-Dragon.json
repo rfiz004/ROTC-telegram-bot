@@ -5,8 +5,8 @@
     "Stone mine": 1
   },
   "wealth": 0,
-  "population": 0,
-  "tax": 0,
+  "population": 5000,
+  "tax": 100,
   "popularity": 100,
   "total_army": 6100,
   "army": {
