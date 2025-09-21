@@ -161,11 +161,12 @@
     "7450258907": {
       "country": "Azure",
       "job": "مشاغل آزاد",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-09-21T22:30:47.987395",
+      "saved_at": "2025-09-21T22:56:48.504159",
       "expires_at": "2025-09-21T23:00:41.337494",
-      "name": "نامیکو"
+      "name": "نامیکو",
+      "nickname": "نامی، نام‌نام"
     }
   },
   "used_hashtags": [
