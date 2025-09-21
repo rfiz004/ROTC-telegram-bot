@@ -157,6 +157,15 @@
       "history": "نداره",
       "id_number": "@KIRITO1385",
       "user_id_tag": "#Country"
+    },
+    "7450258907": {
+      "country": "Azure",
+      "job": "مشاغل آزاد",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-09-21T22:28:58.522689",
+      "expires_at": "2025-09-21T22:55:50.287775",
+      "name": "نامیکو"
     }
   },
   "used_hashtags": [
