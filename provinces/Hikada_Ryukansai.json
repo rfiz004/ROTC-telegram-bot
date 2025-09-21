@@ -2,7 +2,7 @@
   "country": "Hikada",
   "province": "Ryukansai",
   "mines": {},
-  "wealth": 20000,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 78,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 1,
+      "count": 3,
       "product": "پارچه",
       "weekly_output": 50
     }
