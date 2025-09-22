@@ -4419,6 +4419,23 @@
       "requested_at": "2025-09-22T12:38:08.328297",
       "delay_until": "2025-09-23T12:38:08.328301",
       "approved_at": "2025-09-22T12:39:46.067511"
+    },
+    {
+      "id": "transfer_7199097732_1758544830",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گندم": 800,
+        "میوه": 400
+      },
+      "status": "pending",
+      "requested_at": "2025-09-22T12:40:30.413709",
+      "delay_until": "2025-09-23T12:40:30.413714"
     }
   ]
 }
