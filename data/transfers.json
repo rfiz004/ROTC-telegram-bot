@@ -4471,6 +4471,23 @@
       "requested_at": "2025-09-22T15:28:07.548918",
       "delay_until": "2025-09-23T15:28:07.548922",
       "approved_at": "2025-09-22T15:44:05.724093"
+    },
+    {
+      "id": "transfer_5566736269_1758556075",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 250
+      },
+      "status": "approved",
+      "requested_at": "2025-09-22T15:47:55.449847",
+      "delay_until": "2025-09-23T15:47:55.449852",
+      "approved_at": "2025-09-22T15:49:00.468846"
     }
   ]
 }
