@@ -4385,6 +4385,22 @@
       "requested_at": "2025-09-22T08:40:55.237318",
       "delay_until": "2025-09-23T08:40:55.237322",
       "approved_at": "2025-09-22T08:42:06.848727"
+    },
+    {
+      "id": "transfer_7096919075_1758534511",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 21000
+      },
+      "status": "pending",
+      "requested_at": "2025-09-22T09:48:31.753413",
+      "delay_until": "2025-09-23T09:48:31.753417"
     }
   ]
 }
