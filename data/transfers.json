@@ -4527,6 +4527,25 @@
       "requested_at": "2025-09-22T16:41:47.791541",
       "delay_until": "2025-09-23T16:41:47.791545",
       "approved_at": "2025-09-22T16:42:09.833783"
+    },
+    {
+      "id": "transfer_7096919075_1758637040",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 600,
+        "شیشه": 600,
+        "پارچه": 400
+      },
+      "status": "approved",
+      "requested_at": "2025-09-23T14:17:20.056313",
+      "delay_until": "2025-09-24T14:17:20.056316",
+      "approved_at": "2025-09-23T14:18:47.316333"
     }
   ]
 }
