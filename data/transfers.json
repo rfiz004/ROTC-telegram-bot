@@ -4546,6 +4546,22 @@
       "requested_at": "2025-09-23T14:17:20.056313",
       "delay_until": "2025-09-24T14:17:20.056316",
       "approved_at": "2025-09-23T14:18:47.316333"
+    },
+    {
+      "id": "transfer_1079429121_1758637195",
+      "requester_id": 1079429121,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-09-23T14:19:55.435133",
+      "delay_until": "2025-09-24T14:19:55.435139"
     }
   ]
 }
