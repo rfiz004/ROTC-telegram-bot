@@ -4614,6 +4614,23 @@
       "requested_at": "2025-09-24T15:19:09.050730",
       "delay_until": "2025-09-25T15:19:09.050733",
       "approved_at": "2025-09-24T15:19:22.134026"
+    },
+    {
+      "id": "transfer_5566736269_1758727905",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 16150
+      },
+      "status": "approved",
+      "requested_at": "2025-09-24T15:31:45.119897",
+      "delay_until": "2025-09-25T15:31:45.119900",
+      "approved_at": "2025-09-24T15:32:02.756322"
     }
   ]
 }
