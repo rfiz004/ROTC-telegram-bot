@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Wynsearn",
   "mines": {},
-  "wealth": 2000,
+  "wealth": 9500,
   "population": 20000,
   "tax": 20,
   "popularity": 67,
@@ -44,8 +44,8 @@
       "product": "چرم",
       "weekly_output": 50
     },
-    "چوب بری": {
-      "count": 6,
+    "کارخونه چوب بری": {
+      "count": 3,
       "product": "چوب",
       "weekly_output": 50
     },
