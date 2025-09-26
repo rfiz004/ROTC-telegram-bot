@@ -161,11 +161,24 @@
     "7855144183": {
       "country": "Alestria",
       "job": "مشاغل آزاد",
-      "step": "asking_nickname",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-09-26T19:35:24.663010",
+      "saved_at": "2025-09-26T19:40:17.477377",
       "expires_at": "2025-09-26T20:05:12.600908",
-      "name": "ryuk kenshino"
+      "name": "ryuk kenshino",
+      "nickname": "crime of treason",
+      "age": "18",
+      "skills": [
+        "مهارت کار با خنجر",
+        "جعل مدارک",
+        "سم شناسی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "جعل مدارک",
+      "skill3": "سم شناسی",
+      "appearance": ""
     }
   },
   "used_hashtags": [
