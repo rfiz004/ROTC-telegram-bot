@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Wynsearn",
   "mines": {},
-  "wealth": 9500,
+  "wealth": 2000,
   "population": 20000,
   "tax": 20,
   "popularity": 67,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 4,
       "product": "گوشت",
       "weekly_output": 100
     },
