@@ -159,11 +159,10 @@
       "user_id_tag": "#Country"
     },
     "7855144183": {
+      "step": "pending",
       "country": "Alestria",
-      "job": "مشاغل آزاد",
-      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-09-26T19:40:17.477377",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-09-26T20:05:12.600908",
       "name": "ryuk kenshino",
       "nickname": "crime of treason",
@@ -178,7 +177,14 @@
       "skill1": "مهارت کار با خنجر",
       "skill2": "جعل مدارک",
       "skill3": "سم شناسی",
-      "appearance": ""
+      "appearance": "",
+      "history": "یه پسر ساده و خونسرد که  با قدرت های زیادی که داشت خیلی قوی بود و یکی از مهره های اصلی پادشاهی میشد ولی یه روز اون وقتی بعد از تمرین برگشت خانه دید دو نفر از کشور های مخالف بهترین رفیقش که تنها کسی که بوده با هم زندگی میکردن رو کشتن اون قسم میخوره که انتقامشو بگیره و به شایعی که به گوشش خورده بوده اون میفهمه کار پادشاهی خودشونه اون تا یه حد نصفی از پادشاهی خودشون رو نابود میکنه و به عنوان یه جنایت کار سطح بالا شناخته میشه چ بخاطر هم بهش میگن مجرم خیانت کار",
+      "id_number": "@Skzio",
+      "user_id_tag": "#Kenshino",
+      "photo": "AgACAgQAAxkBAAKeuWjW7Udmf1H1_cPF9H8WFe6ih51CAAIozTEbxAq5UjPc9KgmjObgAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "7855144183",
+      "saved_at": "2025-09-26T19:45:11.696763"
     }
   },
   "used_hashtags": [
@@ -303,6 +309,7 @@
     "#b_r",
     "#Country",
     "#namiko",
-    "#eiuw"
+    "#eiuw",
+    "#Kenshino"
   ]
 }
