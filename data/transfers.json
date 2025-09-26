@@ -4978,6 +4978,24 @@
       "requested_at": "2025-09-26T10:43:03.152081",
       "delay_until": "2025-09-27T10:43:03.152086",
       "approved_at": "2025-09-26T10:43:04.817330"
+    },
+    {
+      "id": "transfer_1771323853_1758884760",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Grand-Duke",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 100,
+        "چوب": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-09-26T11:06:00.364048",
+      "delay_until": "2025-09-27T11:06:00.364052",
+      "approved_at": "2025-09-26T11:06:02.187670"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 1000,
+  "wealth": 0,
   "population": 0,
   "tax": 0,
   "popularity": 98,
@@ -19,7 +19,8 @@
   },
   "castle": {
     "عمارت": 1,
-    "دیوار صومعه": 4
+    "دیوار صومعه": 4,
+    "دروازه کوچک": 1
   },
   "structures": {
     "کشتی کوچک": 2,
