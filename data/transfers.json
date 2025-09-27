@@ -5549,9 +5549,28 @@
         "میوه": 1550,
         "پنبه": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-27T14:11:00.546796",
-      "delay_until": "2025-09-28T14:11:00.546801"
+      "delay_until": "2025-09-28T14:11:00.546801",
+      "approved_at": "2025-09-27T14:12:37.599928"
+    },
+    {
+      "id": "transfer_5566736269_1758982340",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 50,
+        "پنبه": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-09-27T14:12:20.647613",
+      "delay_until": "2025-09-28T14:12:20.647617",
+      "approved_at": "2025-09-27T14:12:28.202156"
     }
   ]
 }
