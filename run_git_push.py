@@ -148,7 +148,7 @@ def run_git_push():
                     f"[auto-json-force] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                 ], check=True)
 
-            subprocess.run(["git", "push", "--force-with-lease", "origin", GITHUB_BRANCH], check=True)
+            subprocess.run(["git", "push", "--force", "origin", GITHUB_BRANCH], check=True)
             print("✅ Force push (JSON only) succeeded.")
 
     except subprocess.CalledProcessError as e:
