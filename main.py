@@ -137,7 +137,6 @@ from callback_handlers import (
 )
 from message_handlers import handle_all_messages
 from run_git_push import run_git_push
-from auto_commit_push import schedule_auto_push
 
 # Handlers
 from bio_handler import (
