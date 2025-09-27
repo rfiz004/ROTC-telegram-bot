@@ -105,7 +105,6 @@ def run_git_push():
             "block_shop.json",
             "data.json",
             "job_reservations.json",
-            "bot.log",
         ]
 
         for pattern in files_to_add:
