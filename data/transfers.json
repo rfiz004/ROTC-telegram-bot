@@ -5657,6 +5657,39 @@
       "requested_at": "2025-09-27T17:28:16.246908",
       "delay_until": "2025-09-28T17:28:16.246913",
       "approved_at": "2025-09-27T17:39:24.675821"
+    },
+    {
+      "id": "transfer_1329048693_1758995362",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شراب": 30,
+        "چرم": 30
+      },
+      "status": "pending",
+      "requested_at": "2025-09-27T17:49:22.855788",
+      "delay_until": "2025-09-28T17:49:22.855793"
+    },
+    {
+      "id": "transfer_1329048693_1758995406",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 1800
+      },
+      "status": "pending",
+      "requested_at": "2025-09-27T17:50:06.844509",
+      "delay_until": "2025-09-28T17:50:06.844514"
     }
   ]
 }
