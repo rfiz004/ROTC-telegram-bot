@@ -185,15 +185,6 @@
       "level": 1,
       "unique_id": "7855144183",
       "saved_at": "2025-09-26T19:45:11.696763"
-    },
-    "7422330107": {
-      "country": "Imperial",
-      "job": "نخست وزیر",
-      "step": "asking_nickname",
-      "flow_type": "bio",
-      "saved_at": "2025-09-27T17:21:51.862774",
-      "expires_at": "2025-09-27T17:51:30.486703",
-      "name": "Elara"
     }
   },
   "used_hashtags": [

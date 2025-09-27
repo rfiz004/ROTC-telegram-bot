@@ -5623,6 +5623,39 @@
       "requested_at": "2025-09-27T17:20:39.269923",
       "delay_until": "2025-09-28T17:20:39.269927",
       "approved_at": "2025-09-27T17:21:42.230883"
+    },
+    {
+      "id": "transfer_898145344_1758993874",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 80
+      },
+      "status": "approved",
+      "requested_at": "2025-09-27T17:24:34.019084",
+      "delay_until": "2025-09-28T17:24:34.019088",
+      "approved_at": "2025-09-27T17:24:46.534090"
+    },
+    {
+      "id": "transfer_898145344_1758994096",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-09-27T17:28:16.246908",
+      "delay_until": "2025-09-28T17:28:16.246913"
     }
   ]
 }
