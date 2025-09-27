@@ -91,7 +91,7 @@ UPTIMEROBOT_IPS = [
     "2607:ff68:107::60"
 ]
 
-
+# یه تست
 # گرفتن IPهای UptimeRobot به‌صورت خودکار
 # ترکیب همه IPها
 ALL_ALLOWED_IPS = TELEGRAM_IPS + TELEGRAM_IPV6 + UPTIMEROBOT_IPS
