@@ -189,12 +189,28 @@
     "7422330107": {
       "country": "Imperial",
       "job": "نخست وزیر",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-09-27T19:18:07.299320",
+      "saved_at": "2025-09-27T19:24:37.664496",
       "expires_at": "2025-09-27T19:47:07.063222",
       "name": "Elara Watson",
-      "nickname": "Ivory"
+      "nickname": "Ivory",
+      "age": "21",
+      "skills": [
+        "مدیریت امور اقتصادی",
+        "مدیریت امور داخلی",
+        "کشتی سازی",
+        "ساختمان‌سازی",
+        "حواس پنجگانه قوی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مدیریت امور اقتصادی",
+      "skill2": "مدیریت امور داخلی",
+      "skill3": "کشتی سازی",
+      "skill4": "ساختمان‌سازی",
+      "skill5": "حواس پنجگانه قوی",
+      "appearance": "موهای سفید بلند، صورت گرد و رنگ پریده، چشم های خاکستری، ابرو های کشیده، قد کوتاه"
     }
   },
   "used_hashtags": [
