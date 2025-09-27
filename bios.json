@@ -189,9 +189,12 @@
     "7422330107": {
       "country": "Imperial",
       "job": "نخست وزیر",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-09-27T17:32:11.472764"
+      "saved_at": "2025-09-27T19:18:07.299320",
+      "expires_at": "2025-09-27T19:47:07.063222",
+      "name": "Elara Watson",
+      "nickname": "Ivory"
     }
   },
   "used_hashtags": [
