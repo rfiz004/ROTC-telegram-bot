@@ -5571,6 +5571,58 @@
       "requested_at": "2025-09-27T14:12:20.647613",
       "delay_until": "2025-09-28T14:12:20.647617",
       "approved_at": "2025-09-27T14:12:28.202156"
+    },
+    {
+      "id": "transfer_898145344_1758993432",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-09-27T17:17:12.621976",
+      "delay_until": "2025-09-28T17:17:12.621980",
+      "approved_at": "2025-09-27T17:18:50.351742"
+    },
+    {
+      "id": "transfer_898145344_1758993516",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "چوب": 225
+      },
+      "status": "approved",
+      "requested_at": "2025-09-27T17:18:36.361180",
+      "delay_until": "2025-09-28T17:18:36.361184",
+      "approved_at": "2025-09-27T17:18:46.859511"
+    },
+    {
+      "id": "transfer_898145344_1758993639",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-09-27T17:20:39.269923",
+      "delay_until": "2025-09-28T17:20:39.269927",
+      "approved_at": "2025-09-27T17:21:42.230883"
     }
   ]
 }
