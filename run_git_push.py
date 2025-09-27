@@ -1,3 +1,4 @@
+
 # import subprocess
 # import glob
 # from datetime import datetime
@@ -18,12 +19,16 @@
 #     commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
 #     try:
-#         # ست کردن یوزرنیم و ایمیل گیت
-#         subprocess.run(["git", "config", "--global", "user.name", "Render Bot"], check=True)
-#         subprocess.run(["git", "config", "--global", "user.email", "render@example.com"], check=True)
+#         # تنظیم user.name و user.email فقط برای این مخزن (local)
+#         subprocess.run(["git", "config", "user.name", "Render Bot"], check=True)
+#         subprocess.run(["git", "config", "user.email", "render@example.com"], check=True)
 
-#         # سوئیچ کردن به برنچ اصلی
-#         subprocess.run(["git", "checkout", GITHUB_BRANCH], check=True)
+#         # چک کردن وجود برنچ و سوییچ کردن یا ساختن
+#         branches = subprocess.check_output(["git", "branch"]).decode()
+#         if GITHUB_BRANCH not in branches:
+#             subprocess.run(["git", "checkout", "-b", GITHUB_BRANCH], check=True)
+#         else:
+#             subprocess.run(["git", "checkout", GITHUB_BRANCH], check=True)
 
 #         set_git_remote_url(GITHUB_REPO_URL)
 
@@ -37,12 +42,12 @@
 #             "block_shop.json",
 #             "data.json",
 #             "job_reservations.json",
-#             "bot.log",   # اضافه کردن فایل لاگ
+#             "bot.log",
 #         ]
 
 #         for pattern in files_to_add:
 #             for filepath in glob.glob(pattern):
-#                 subprocess.run(["git", "add", "-f", filepath], check=True)  # -f برای فایل‌های ignore شده
+#                 subprocess.run(["git", "add", "-f", filepath], check=True)
 
 #         status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
 #         if not status_output:
@@ -113,8 +118,42 @@ def run_git_push():
             return
 
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
-        print("✅ فایل‌ها با موفقیت push شدند.")
+
+        try:
+            subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
+            print("✅ فایل‌ها با موفقیت push شدند.")
+        except subprocess.CalledProcessError as push_err:
+            print(f"❌ Push معمولی ناموفق بود: {push_err}")
+            print("⚠️ تلاش برای force push فقط فایل‌های JSON...")
+
+            json_patterns = [
+                "provinces/*.json",
+                "EconomicItems/*.json",
+                "data/transfers.json",
+                "timers.json",
+                "shop_items.json",
+                "bios.json",
+                "block_shop.json",
+                "data.json",
+                "job_reservations.json",
+            ]
+
+            for pattern in json_patterns:
+                for filepath in glob.glob(pattern):
+                    subprocess.run(["git", "add", "-f", filepath], check=True)
+
+            status_after_add = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
+            if status_after_add:
+                subprocess.run([
+                    "git", "commit", "-m",
+                    f"[auto-json-force] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                ], check=True)
+
+            subprocess.run(["git", "push", "--force-with-lease", "origin", GITHUB_BRANCH], check=True)
+            print("✅ Force push (JSON only) succeeded.")
 
     except subprocess.CalledProcessError as e:
         print(f"❌ خطا در اجرای git: {e}")
+
+# if __name__ == "__main__":
+#     run_git_push()
