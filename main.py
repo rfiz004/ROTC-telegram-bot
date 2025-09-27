@@ -196,7 +196,7 @@ async def periodic_git_push():
         # await asyncio.get_running_loop().run_in_executor(None, run_git_push())
         loop = asyncio.get_running_loop()
         await loop.run_in_executor(None, run_git_push)
-        await asyncio.sleep(5 * 60)
+        await asyncio.sleep(10 * 60)
 
 
 async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
