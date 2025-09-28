@@ -6066,6 +6066,23 @@
       "requested_at": "2025-09-28T13:19:02.943877",
       "delay_until": "2025-09-29T13:19:02.943881",
       "approved_at": "2025-09-28T13:38:56.176581"
+    },
+    {
+      "id": "transfer_1771323853_1759067889",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 10
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T13:58:09.805723",
+      "delay_until": "2025-09-29T13:58:09.805728",
+      "approved_at": "2025-09-28T13:58:11.265198"
     }
   ]
 }
