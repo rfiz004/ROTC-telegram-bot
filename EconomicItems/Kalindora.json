@@ -1,10 +1,11 @@
 {
   "grain_priority": [
-    "ماهی"
+    "ماهی",
+    "گندم"
   ],
   "grains": {
     "ماهی": 50
   },
   "unfed_population": 0,
-  "grain_consumption": 300
+  "grain_consumption": 800
 }
