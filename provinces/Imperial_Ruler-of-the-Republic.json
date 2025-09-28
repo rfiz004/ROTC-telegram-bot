@@ -1,8 +1,10 @@
 {
   "country": "Imperial",
   "province": "Ruler-of-the-Republic",
-  "mines": {},
-  "wealth": 0,
+  "mines": {
+    "Stone mine": 1
+  },
+  "wealth": 2000,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -13,7 +15,9 @@
     "نیزه دار": 0,
     "سواره نظام": 0
   },
-  "castle": {},
+  "castle": {
+    "عمارت": 1
+  },
   "structures": {},
   "weapons": {},
   "misc": {},
@@ -53,6 +57,11 @@
       "count": 0,
       "product": "شیشه",
       "weekly_output": 50
+    }
+  },
+  "mine_productions": {
+    "Stone mine": {
+      "weekly_per_unit": 2000
     }
   }
 }
