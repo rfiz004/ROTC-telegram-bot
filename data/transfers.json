@@ -6152,6 +6152,55 @@
       "requested_at": "2025-09-28T14:09:41.203695",
       "delay_until": "2025-09-29T14:09:41.203699",
       "approved_at": "2025-09-28T14:11:26.830062"
+    },
+    {
+      "id": "transfer_1771323853_1759069300",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Karavesh",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 7500
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T14:21:40.347292",
+      "delay_until": "2025-09-29T14:21:40.347295",
+      "approved_at": "2025-09-28T14:21:41.840849"
+    },
+    {
+      "id": "transfer_7199097732_1759069459",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "میوه": 800
+      },
+      "status": "pending",
+      "requested_at": "2025-09-28T14:24:19.034763",
+      "delay_until": "2025-09-29T14:24:19.034768"
+    },
+    {
+      "id": "transfer_7199097732_1759069534",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 12200
+      },
+      "status": "pending",
+      "requested_at": "2025-09-28T14:25:34.139432",
+      "delay_until": "2025-09-29T14:25:34.139436"
     }
   ]
 }
