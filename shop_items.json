@@ -1289,5 +1289,29 @@
     "count": 50,
     "id": "60",
     "created_at": "2025-09-28T14:01:57.672857"
+  },
+  {
+    "name": "کشتی دوقلو آلدمر",
+    "type": "Structure",
+    "countries": [
+      "Aldemar"
+    ],
+    "description": "بزرگترین کشتی جنگی ساخته شده به دست کشور آلدمر که دارای\nظرفیت حمل 5000 سرباز، برجک و شیلد و مقاومت زیاد به ضربات هست \nهمچنین سرعت حرکت این کشتی سرعت نسبتا متوسط هست به دلیل بزرگی و نداشتن بادبان, تعداد: 1",
+    "price": 120000,
+    "materials": {
+      "چوب": 7500,
+      "فولاد": 900,
+      "پنبه": 1500,
+      "پارچه": 200
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#Aldemar"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAKjB2jZQFcXR9HzqFDNRyPVw5pue-HaAAKSzDEbPzaoUVdE5hWpLix7AQADAgADeAADNgQ",
+    "count": 1,
+    "id": "61",
+    "created_at": "2025-09-28T14:11:11.344112"
   }
 ]
