@@ -6322,6 +6322,56 @@
       "requested_at": "2025-09-28T16:46:34.171183",
       "delay_until": "2025-09-29T16:46:34.171188",
       "approved_at": "2025-09-28T16:47:12.383126"
+    },
+    {
+      "id": "transfer_7199097732_1759079545",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "میوه": 800
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T17:12:25.665212",
+      "delay_until": "2025-09-29T17:12:25.665217",
+      "approved_at": "2025-09-28T17:14:25.035276"
+    },
+    {
+      "id": "transfer_7199097732_1759079581",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 12200
+      },
+      "status": "pending",
+      "requested_at": "2025-09-28T17:13:01.334024",
+      "delay_until": "2025-09-29T17:13:01.334028"
+    },
+    {
+      "id": "transfer_898145344_1759079631",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "کاتافراکت مخصوص هیکادا": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T17:13:51.378874",
+      "delay_until": "2025-09-29T17:13:51.378879",
+      "approved_at": "2025-09-28T17:14:03.391917"
     }
   ]
 }
