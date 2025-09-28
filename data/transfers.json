@@ -6083,6 +6083,74 @@
       "requested_at": "2025-09-28T13:58:09.805723",
       "delay_until": "2025-09-29T13:58:09.805728",
       "approved_at": "2025-09-28T13:58:11.265198"
+    },
+    {
+      "id": "transfer_5566736269_1759068241",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 600
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T14:04:01.667777",
+      "delay_until": "2025-09-29T14:04:01.667781",
+      "approved_at": "2025-09-28T14:04:17.132223"
+    },
+    {
+      "id": "transfer_5566736269_1759068454",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1055,
+        "فولاد": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T14:07:34.602652",
+      "delay_until": "2025-09-29T14:07:34.602655",
+      "approved_at": "2025-09-28T14:07:46.653133"
+    },
+    {
+      "id": "transfer_5566736269_1759068495",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 15000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-28T14:08:15.075155",
+      "delay_until": "2025-09-29T14:08:15.075160",
+      "approved_at": "2025-09-28T14:08:20.027305"
+    },
+    {
+      "id": "transfer_5566736269_1759068581",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "guardian-of-the-pact",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "pending",
+      "requested_at": "2025-09-28T14:09:41.203695",
+      "delay_until": "2025-09-29T14:09:41.203699"
     }
   ]
 }
