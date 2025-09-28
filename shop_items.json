@@ -1232,5 +1232,24 @@
     "id": "57",
     "created_at": "2025-09-07T14:57:14.132433",
     "updated_at": "2025-09-12T14:01:44.384175"
+  },
+  {
+    "name": "سواره نظام مخصوص سانتوس",
+    "type": "Army",
+    "countries": [
+      "Santos"
+    ],
+    "description": "سواره نظام کماندار و آموزش دیده برای نبردهای چریکی و سریع\nدارای شمشیر کوتاه و زره سبک چرمی\nو همچنین دارای اسب های درجه یک با سرعت و قدرت مانور بالا که فقط در کشور سانتوس نحوه پرورش این نوع اسب و آموزش این نوع سوار نظام دیده میشه, تعداد: 50",
+    "price": 17000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#Santos"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAKitWjZOcdcfzEC4FEmAAGNbUSbt_u5EwACnMwxGz82qFFnES_3EnXXrgEAAwIAA3gAAzYE",
+    "count": 50,
+    "id": "58",
+    "created_at": "2025-09-28T13:44:39.114655"
   }
 ]
