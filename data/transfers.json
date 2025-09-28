@@ -6015,6 +6015,22 @@
       "requested_at": "2025-09-28T09:48:53.873797",
       "delay_until": "2025-09-29T09:48:53.873801",
       "approved_at": "2025-09-28T09:59:52.518089"
+    },
+    {
+      "id": "transfer_1766859127_1759064287",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Markoven",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "pending",
+      "requested_at": "2025-09-28T12:58:07.908026",
+      "delay_until": "2025-09-29T12:58:07.908031"
     }
   ]
 }
