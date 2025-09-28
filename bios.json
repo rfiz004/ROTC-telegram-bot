@@ -185,6 +185,28 @@
       "level": 1,
       "unique_id": "7855144183",
       "saved_at": "2025-09-26T19:45:11.696763"
+    },
+    "6723163985": {
+      "country": "Aldemar",
+      "job": "خزانه‌دار اعظم",
+      "step": "asking_history",
+      "flow_type": "bio",
+      "saved_at": "2025-09-28T20:00:15.792129",
+      "expires_at": "2025-09-28T20:27:22.918861",
+      "name": "مارکوس",
+      "nickname": "بلک وود",
+      "age": "25",
+      "skills": [
+        "مدیریت امور اقتصادی",
+        "مهارت کار با نیزه",
+        "سرعت بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مدیریت امور اقتصادی",
+      "skill2": "مهارت کار با نیزه",
+      "skill3": "سرعت بالا",
+      "appearance": "چشم ابرو مو مشکی ،پوست گندمی"
     }
   },
   "used_hashtags": [
