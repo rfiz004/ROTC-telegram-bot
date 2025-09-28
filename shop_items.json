@@ -1332,5 +1332,24 @@
     "count": 50,
     "id": "62",
     "created_at": "2025-09-28T14:26:23.133863"
+  },
+  {
+    "name": "زوبین زرهی امپریال",
+    "type": "Army",
+    "countries": [
+      "imperial"
+    ],
+    "description": "سربازی که کمانی خاص و ویژه داره \nکه همانند کراسبو دمیج و دقت بالا و همانند کمان معمولی برد بالا تر از کراسبو دارد\nولی قابلیت اصلی آن رگباری شلیک کردن تیر است \nو ۲۰ خشاب تیر میخورد \nکه میتواند به سه صورت تیر اندازی کند :\nتک تیر \nرگباری \nوینچستری یا همون گروهی\nو در کنار این کمان دارای زره فولادی و شمشیر کوتاه هست, تعداد: 50",
+    "price": 12000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#imperial"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAKjgWjZSCQlVAgTFz0G0LFnBqqoiCyAAAKszDEbPzaoUcj61YlV2jhgAQADAgADeAADNgQ",
+    "count": 50,
+    "id": "63",
+    "created_at": "2025-09-28T14:44:33.931455"
   }
 ]
