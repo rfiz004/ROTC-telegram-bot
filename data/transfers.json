@@ -6506,9 +6506,27 @@
       "items": {
         "چوب": 350
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-09-29T14:43:45.309071",
-      "delay_until": "2025-09-30T14:43:45.309075"
+      "delay_until": "2025-09-30T14:43:45.309075",
+      "approved_at": "2025-09-29T14:49:44.941714"
+    },
+    {
+      "id": "transfer_5566736269_1759157399",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 600
+      },
+      "status": "approved",
+      "requested_at": "2025-09-29T14:49:59.315243",
+      "delay_until": "2025-09-30T14:49:59.315248",
+      "approved_at": "2025-09-29T14:50:08.413929"
     }
   ]
 }
