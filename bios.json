@@ -213,34 +213,6 @@
       "level": 1,
       "unique_id": "6723163985",
       "saved_at": "2025-09-28T20:03:09.069555"
-    },
-    "7894070653": {
-      "step": "pending",
-      "country": "Hikada",
-      "flow_type": "bio",
-      "job": "دای شوگون",
-      "expires_at": "2025-09-29T11:30:56.444249",
-      "name": "Sia",
-      "nickname": "hunter",
-      "age": "31",
-      "skills": [
-        "مهارت شمشیرزنی و تبرزنی",
-        "مهارت مبارزه با دست خالی",
-        "حس ششم"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 3,
-      "skill1": "مهارت شمشیرزنی و تبرزنی",
-      "skill2": "مهارت مبارزه با دست خالی",
-      "skill3": "حس ششم",
-      "appearance": ".",
-      "history": ".",
-      "id_number": "@Sia_v7",
-      "user_id_tag": "#siav",
-      "photo": "AgACAgQAAxkBAAKk8WjaZ6JEaivGz5PDaNrDrm0ELDWLAAL1yjEb0n3ZUkUGj7zJG7mgAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "7894070653",
-      "saved_at": "2025-09-29T11:04:02.496633"
     }
   },
   "used_hashtags": [
