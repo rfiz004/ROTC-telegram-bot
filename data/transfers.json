@@ -6595,6 +6595,40 @@
       "requested_at": "2025-09-29T16:53:55.006351",
       "delay_until": "2025-09-30T16:53:55.006355",
       "approved_at": "2025-09-29T16:54:03.051212"
+    },
+    {
+      "id": "transfer_809172681_1759168162",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 150
+      },
+      "status": "approved",
+      "requested_at": "2025-09-29T17:49:22.650396",
+      "delay_until": "2025-09-30T17:49:22.650401",
+      "approved_at": "2025-09-29T17:49:53.433149"
+    },
+    {
+      "id": "transfer_1771323853_1759168432",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Grand-Duke",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 5000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-29T17:53:52.273392",
+      "delay_until": "2025-09-30T17:53:52.273395",
+      "approved_at": "2025-09-29T17:53:53.766443"
     }
   ]
 }
