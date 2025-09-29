@@ -6373,6 +6373,24 @@
       "requested_at": "2025-09-28T17:13:51.378874",
       "delay_until": "2025-09-29T17:13:51.378879",
       "approved_at": "2025-09-28T17:14:03.391917"
+    },
+    {
+      "id": "transfer_5566736269_1759137136",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "دژکوب": 1,
+        "منجنیق غولپیکر": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-09-29T09:12:16.064418",
+      "delay_until": "2025-09-30T09:12:16.064422",
+      "approved_at": "2025-09-29T09:13:20.557051"
     }
   ]
 }
