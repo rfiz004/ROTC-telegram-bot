@@ -6476,6 +6476,39 @@
       "requested_at": "2025-09-29T14:30:23.442732",
       "delay_until": "2025-09-30T14:30:23.442736",
       "approved_at": "2025-09-29T14:30:34.709185"
+    },
+    {
+      "id": "transfer_1771323853_1759156687",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Grand-Duke",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 2500
+      },
+      "status": "approved",
+      "requested_at": "2025-09-29T14:38:07.572841",
+      "delay_until": "2025-09-30T14:38:07.572846",
+      "approved_at": "2025-09-29T14:38:09.401837"
+    },
+    {
+      "id": "transfer_5564554013_1759157025",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Velithkara",
+      "target_country": "Azure",
+      "target_province": "DalNomara",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "چوب": 350
+      },
+      "status": "pending",
+      "requested_at": "2025-09-29T14:43:45.309071",
+      "delay_until": "2025-09-30T14:43:45.309075"
     }
   ]
 }
