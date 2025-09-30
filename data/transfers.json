@@ -6731,6 +6731,40 @@
       "requested_at": "2025-09-30T11:02:47.194916",
       "delay_until": "2025-10-01T11:02:47.194919",
       "approved_at": "2025-09-30T12:08:47.262619"
+    },
+    {
+      "id": "transfer_1771323853_1759247951",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 50000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-30T15:59:11.172456",
+      "delay_until": "2025-10-01T15:59:11.172460",
+      "approved_at": "2025-09-30T15:59:12.790260"
+    },
+    {
+      "id": "transfer_5566736269_1759248136",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 20000
+      },
+      "status": "approved",
+      "requested_at": "2025-09-30T16:02:16.725757",
+      "delay_until": "2025-10-01T16:02:16.725762",
+      "approved_at": "2025-09-30T16:02:37.915108"
     }
   ]
 }
