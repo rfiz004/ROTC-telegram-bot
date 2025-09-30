@@ -864,7 +864,7 @@
   },
   {
     "name": "دژکوب",
-    "type": "Army",
+    "type": "Structure",
     "countries": [
       "All"
     ],
@@ -876,17 +876,18 @@
     },
     "owner": "-",
     "hashtags": [
-      "#Army",
+      "#Structure",
       "#All"
     ],
     "photo_file_id": "AgACAgQAAxkBAAJaLGisvRtO7j5LbcKs8frVMp7PN2nJAAIs0DEbOjz4UESEKVmQq6-8AQADAgADeAADNgQ",
     "count": 1,
     "id": "42",
-    "created_at": "2025-08-25T19:46:39.629763"
+    "created_at": "2025-08-25T19:46:39.629763",
+    "updated_at": "2025-09-30T07:16:40.258001"
   },
   {
     "name": "برج محاصره",
-    "type": "Army",
+    "type": "Structure",
     "countries": [
       "All"
     ],
@@ -897,17 +898,18 @@
     },
     "owner": "-",
     "hashtags": [
-      "#Army",
+      "#Structure",
       "#All"
     ],
     "photo_file_id": "AgACAgQAAxkBAAJahmisxsegN666X0FVVxXdreURIs9mAAIr0DEbOjz4UPIFZPjk6JmMAQADAgADeQADNgQ",
     "count": 1,
     "id": "43",
-    "created_at": "2025-08-25T20:27:08.274583"
+    "created_at": "2025-08-25T20:27:08.274583",
+    "updated_at": "2025-09-30T07:18:43.086710"
   },
   {
     "name": "منجنیق غولپیکر",
-    "type": "Army",
+    "type": "Structure",
     "countries": [
       "All"
     ],
@@ -920,17 +922,18 @@
     },
     "owner": "-",
     "hashtags": [
-      "#Army",
+      "#Structure",
       "#All"
     ],
     "photo_file_id": "AgACAgQAAxkBAAJammisyUfcZrqn-S_5krYBkg2gD06yAAIt0DEbOjz4ULOI3GqSH0k1AQADAgADeQADNgQ",
     "count": 1,
     "id": "44",
-    "created_at": "2025-08-25T20:38:56.580561"
+    "created_at": "2025-08-25T20:38:56.580561",
+    "updated_at": "2025-09-30T07:19:23.993738"
   },
   {
     "name": "منجنیق",
-    "type": "Army",
+    "type": "Structure",
     "countries": [
       "All"
     ],
@@ -942,17 +945,18 @@
     },
     "owner": "-",
     "hashtags": [
-      "#Army",
+      "#Structure",
       "#All"
     ],
     "photo_file_id": "AgACAgQAAxkBAAJarGiszSqFTip1YJjp3F33SPM-hjD5AALpzDEbbqU4UTLyBHVRKtDBAQADAgADeAADNgQ",
     "count": 1,
     "id": "45",
-    "created_at": "2025-08-25T20:54:28.579983"
+    "created_at": "2025-08-25T20:54:28.579983",
+    "updated_at": "2025-09-30T07:19:57.656655"
   },
   {
     "name": "بالیستا",
-    "type": "Army",
+    "type": "Structure",
     "countries": [
       "All"
     ],
@@ -964,13 +968,14 @@
     },
     "owner": "-",
     "hashtags": [
-      "#Army",
+      "#Structure",
       "#All"
     ],
     "photo_file_id": "AgACAgQAAxkBAAJa7WitUu7UDCFdd41Sc-yPlWOllFcIAAIq0DEbOjz4UENzryqHA19BAQADAgADeQADNgQ",
     "count": 1,
     "id": "46",
-    "created_at": "2025-08-26T06:25:05.965555"
+    "created_at": "2025-08-26T06:25:05.965555",
+    "updated_at": "2025-09-30T07:20:34.264220"
   },
   {
     "name": "میخانه",
