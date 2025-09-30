@@ -6765,6 +6765,40 @@
       "requested_at": "2025-09-30T16:02:16.725757",
       "delay_until": "2025-10-01T16:02:16.725762",
       "approved_at": "2025-09-30T16:02:37.915108"
+    },
+    {
+      "id": "transfer_1771323853_1759248312",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 5
+      },
+      "status": "approved",
+      "requested_at": "2025-09-30T16:05:12.389877",
+      "delay_until": "2025-10-01T16:05:12.389884",
+      "approved_at": "2025-09-30T16:05:14.018985"
+    },
+    {
+      "id": "transfer_5566736269_1759248424",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 5
+      },
+      "status": "approved",
+      "requested_at": "2025-09-30T16:07:04.933529",
+      "delay_until": "2025-10-01T16:07:04.933534",
+      "approved_at": "2025-09-30T16:09:21.984354"
     }
   ]
 }
