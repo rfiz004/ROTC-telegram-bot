@@ -213,6 +213,28 @@
       "level": 1,
       "unique_id": "6723163985",
       "saved_at": "2025-09-28T20:03:09.069555"
+    },
+    "2046640879": {
+      "country": "Aldemar",
+      "job": "خزانه‌دار اعظم",
+      "step": "asking_history",
+      "flow_type": "bio",
+      "saved_at": "2025-09-30T12:11:28.741631",
+      "expires_at": "2025-09-30T12:34:45.440085",
+      "name": "Aurelian morgan",
+      "nickname": "The Gilded Regent",
+      "age": "28",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "مدیریت امور اقتصادی",
+        "هیپنوتیزم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "مدیریت امور اقتصادی",
+      "skill3": "هیپنوتیزم",
+      "appearance": "چشم های طلایی، مو های سفید-طلایی، بدن عضلانی، قد 187، اکثرا لباس های رسمی تیره به تن داره"
     }
   },
   "used_hashtags": [
