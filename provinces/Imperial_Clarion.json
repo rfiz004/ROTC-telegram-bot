@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Clarion",
   "mines": {},
-  "wealth": 27000,
+  "wealth": 25000,
   "population": 24000,
   "tax": 20,
   "popularity": 51,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 4,
+      "count": 5,
       "product": "مرغ",
       "weekly_output": 100
     },
