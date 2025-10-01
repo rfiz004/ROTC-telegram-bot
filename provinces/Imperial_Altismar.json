@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Altismar",
   "mines": {},
-  "wealth": 28000,
+  "wealth": 22000,
   "population": 24000,
   "tax": 10,
   "popularity": 66,
@@ -45,7 +45,7 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 4,
+      "count": 7,
       "product": "شراب",
       "weekly_output": 50
     },
