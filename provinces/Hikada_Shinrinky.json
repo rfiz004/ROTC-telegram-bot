@@ -67,6 +67,11 @@
       "count": 2,
       "product": "پارچه",
       "weekly_output": 50
+    },
+    "جواهرسازی": {
+      "count": 1,
+      "product": "جواهر",
+      "weekly_output": 50
     }
   },
   "mine_productions": {

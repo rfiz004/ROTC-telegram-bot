@@ -67,6 +67,11 @@
       "count": 4,
       "product": "سنگ",
       "weekly_output": 50
+    },
+    "جواهرسازی": {
+      "count": 2,
+      "product": "جواهر",
+      "weekly_output": 50
     }
   },
   "mine_productions": {
