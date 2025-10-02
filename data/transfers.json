@@ -6929,9 +6929,10 @@
       "items": {
         "چوب": 700
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-02T15:54:44.948672",
-      "delay_until": "2025-10-03T15:54:44.948676"
+      "delay_until": "2025-10-03T15:54:44.948676",
+      "approved_at": "2025-10-02T16:03:28.061486"
     },
     {
       "id": "transfer_5564554013_1759420538",
@@ -6945,9 +6946,10 @@
       "items": {
         "چوب": 350
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-02T15:55:38.292352",
-      "delay_until": "2025-10-03T15:55:38.292356"
+      "delay_until": "2025-10-03T15:55:38.292356",
+      "approved_at": "2025-10-02T16:03:29.023016"
     },
     {
       "id": "transfer_7422330107_1759420545",
@@ -6961,9 +6963,44 @@
       "items": {
         "مرغ": 136
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-02T15:55:45.342297",
-      "delay_until": "2025-10-03T15:55:45.342302"
+      "delay_until": "2025-10-03T15:55:45.342302",
+      "approved_at": "2025-10-02T16:03:30.783646"
+    },
+    {
+      "id": "transfer_5564554013_1759420592",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Arevanmyr",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "چوب": 400
+      },
+      "status": "approved",
+      "requested_at": "2025-10-02T15:56:32.543145",
+      "delay_until": "2025-10-03T15:56:32.543149",
+      "approved_at": "2025-10-02T16:03:35.076382"
+    },
+    {
+      "id": "transfer_5564554013_1759420642",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Iselvern",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "چوب": 400
+      },
+      "status": "approved",
+      "requested_at": "2025-10-02T15:57:22.814265",
+      "delay_until": "2025-10-03T15:57:22.814270",
+      "approved_at": "2025-10-02T16:03:39.980607"
     }
   ]
 }
