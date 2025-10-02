@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 42000,
+  "wealth": 34000,
   "population": 0,
   "tax": 0,
   "popularity": 100,
@@ -43,7 +43,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 0,
+      "count": 4,
       "product": "مرغ",
       "weekly_output": 100
     },
