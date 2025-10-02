@@ -1356,5 +1356,24 @@
     "count": 50,
     "id": "63",
     "created_at": "2025-09-28T14:44:33.931455"
+  },
+  {
+    "name": "فیل جنگی آلستریا",
+    "type": "Army",
+    "countries": [
+      "Alestria"
+    ],
+    "description": "قویترین نیروی زمینی زنده در نبردها \nفیل جنگی قدرت بدنی بالا، پوستی کلف تر از فیل‌های عادی و قابلیت حمل پنج سرباز بر روی خود را دارد \nهمچنین این نیرو دارای آسیب سنگین به سازه ها و صف شکن ارتش هست, تعداد: 1",
+    "price": 40000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#Alestria"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAKo_GjeTsYaF7knqgABVny7uQyOIWYxJgACh8wxGz82qFGXtJsgHi-LpAEAAwIAA3kAAzYE",
+    "count": 1,
+    "id": "64",
+    "created_at": "2025-10-02T10:11:10.761949"
   }
 ]
