@@ -1375,5 +1375,25 @@
     "count": 1,
     "id": "64",
     "created_at": "2025-10-02T10:11:10.761949"
+  },
+  {
+    "name": "نیزه دارهای ویژه والدن",
+    "type": "Army",
+    "countries": [
+      "Walden"
+    ],
+    "description": "نیزه دار هایی با نیزه های ۴ متری \n، سپر کوتاه و زره سبک \nبسیار قدرت مند در نبرد هایی زمینی \nو کانتر سواره نظام با آرایش مناسب, تعداد: 50",
+    "price": 17000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Army",
+      "#Walden",
+      "#walden"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAAKpGGjeUSOy99GbRMt4W_KGCl8FbGWuAAKdzDEbPzaoUQ8-IZbZHhd9AQADAgADeAADNgQ",
+    "count": 50,
+    "id": "65",
+    "created_at": "2025-10-02T10:18:49.900259"
   }
 ]
