@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 12,
+      "count": 4,
       "product": "مرغ",
       "weekly_output": 100
     },
@@ -45,7 +45,7 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 7,
+      "count": 4,
       "product": "شراب",
       "weekly_output": 50
     },
