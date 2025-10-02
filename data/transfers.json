@@ -6900,6 +6900,22 @@
       "status": "pending",
       "requested_at": "2025-10-02T14:11:12.282849",
       "delay_until": "2025-10-03T14:11:12.282854"
+    },
+    {
+      "id": "transfer_7199097732_1759417406",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 16000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-02T15:03:26.617066",
+      "delay_until": "2025-10-03T15:03:26.617069"
     }
   ]
 }
