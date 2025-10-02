@@ -203,6 +203,13 @@
       "level": 1,
       "unique_id": "6723163985",
       "saved_at": "2025-09-28T20:03:09.069555"
+    },
+    "5886180797": {
+      "country": "Alestria",
+      "job": "جانشین مقدس",
+      "step": "asking_name",
+      "flow_type": "bio",
+      "saved_at": "2025-10-02T01:52:34.733698"
     }
   },
   "used_hashtags": [
