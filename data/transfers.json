@@ -7037,6 +7037,22 @@
       "requested_at": "2025-10-02T16:22:16.953200",
       "delay_until": "2025-10-03T16:22:16.953203",
       "approved_at": "2025-10-02T16:28:06.615349"
+    },
+    {
+      "id": "transfer_1766859127_1759430127",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Ruler-of-the-Republic",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 15000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-02T18:35:27.663869",
+      "delay_until": "2025-10-03T18:35:27.663873"
     }
   ]
 }
