@@ -7088,6 +7088,23 @@
       "requested_at": "2025-10-02T20:07:22.272215",
       "delay_until": "2025-10-03T20:07:22.272219",
       "approved_at": "2025-10-02T20:11:02.261674"
+    },
+    {
+      "id": "transfer_6213073537_1759517936",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Silzara",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T18:58:56.639399",
+      "delay_until": "2025-10-04T18:58:56.639402",
+      "approved_at": "2025-10-03T18:59:19.780330"
     }
   ]
 }
