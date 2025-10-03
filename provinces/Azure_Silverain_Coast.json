@@ -2,9 +2,9 @@
   "country": "Azure",
   "province": "Silverain Coast",
   "mines": {},
-  "wealth": 17000,
+  "wealth": 13000,
   "population": 18000,
-  "tax": 50,
+  "tax": 100,
   "popularity": 70,
   "total_army": 5000,
   "army": {
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "ماهیگیری": {
-      "count": 2,
+      "count": 4,
       "product": "ماهی",
       "weekly_output": 100
     },
