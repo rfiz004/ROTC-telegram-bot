@@ -309,12 +309,19 @@ async def handle_photo_router(update: Update, context: ContextTypes.DEFAULT_TYPE
         logger.error(f"Error in photo router: {e}")
 
 # ────────────── Logging
+# logging.basicConfig(
+#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+#     level=logging.INFO,
+#     handlers=[
+#         logging.StreamHandler(sys.stdout),
+#         logging.FileHandler('bot.log', encoding='utf-8')
+#     ]
+# )
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('bot.log', encoding='utf-8')
+        logging.StreamHandler(sys.stdout)  # فقط خروجی روی ترمینال
     ]
 )
 logger = logging.getLogger(__name__)
