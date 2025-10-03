@@ -7118,9 +7118,130 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-03T20:25:37.971054",
-      "delay_until": "2025-10-04T20:25:37.971059"
+      "delay_until": "2025-10-04T20:25:37.971059",
+      "approved_at": "2025-10-03T20:29:53.535211"
+    },
+    {
+      "id": "transfer_7358397936_1759523253",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:27:33.715426",
+      "delay_until": "2025-10-04T20:27:33.715429",
+      "approved_at": "2025-10-03T20:29:54.685548"
+    },
+    {
+      "id": "transfer_7358397936_1759523303",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:28:23.649655",
+      "delay_until": "2025-10-04T20:28:23.649659",
+      "approved_at": "2025-10-03T20:29:55.682680"
+    },
+    {
+      "id": "transfer_7358397936_1759523375",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:29:35.998903",
+      "delay_until": "2025-10-04T20:29:35.998907",
+      "approved_at": "2025-10-03T20:29:56.430251"
+    },
+    {
+      "id": "transfer_7358397936_1759523425",
+      "requester_id": 7358397936,
+      "source_country": "Santos",
+      "source_province": "Grand-Duke",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:30:25.731686",
+      "delay_until": "2025-10-04T20:30:25.731690",
+      "approved_at": "2025-10-03T20:30:32.431538"
+    },
+    {
+      "id": "transfer_5566736269_1759523668",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Narwendale",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-03T20:34:28.501272",
+      "delay_until": "2025-10-04T20:34:28.501276"
+    },
+    {
+      "id": "transfer_5566736269_1759523694",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Narwendale",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-03T20:34:54.265534",
+      "delay_until": "2025-10-04T20:34:54.265539"
+    },
+    {
+      "id": "transfer_5566736269_1759523749",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Kalteryn",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-03T20:35:49.354517",
+      "delay_until": "2025-10-04T20:35:49.354521"
     }
   ]
 }
