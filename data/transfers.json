@@ -7205,9 +7205,10 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-03T20:34:28.501272",
-      "delay_until": "2025-10-04T20:34:28.501276"
+      "delay_until": "2025-10-04T20:34:28.501276",
+      "approved_at": "2025-10-03T20:40:47.185011"
     },
     {
       "id": "transfer_5566736269_1759523694",
@@ -7221,9 +7222,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-03T20:34:54.265534",
-      "delay_until": "2025-10-04T20:34:54.265539"
+      "delay_until": "2025-10-04T20:34:54.265539",
+      "approved_at": "2025-10-03T20:40:47.965010"
     },
     {
       "id": "transfer_5566736269_1759523749",
@@ -7239,9 +7241,135 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-03T20:35:49.354517",
-      "delay_until": "2025-10-04T20:35:49.354521"
+      "delay_until": "2025-10-04T20:35:49.354521",
+      "approved_at": "2025-10-03T20:40:48.900912"
+    },
+    {
+      "id": "transfer_5566736269_1759523792",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Kalteryn",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:36:32.538818",
+      "delay_until": "2025-10-04T20:36:32.538820",
+      "approved_at": "2025-10-03T20:40:50.027328"
+    },
+    {
+      "id": "transfer_5566736269_1759523859",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:37:39.612626",
+      "delay_until": "2025-10-04T20:37:39.612630",
+      "approved_at": "2025-10-03T20:40:51.173957"
+    },
+    {
+      "id": "transfer_5566736269_1759523891",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:38:11.308899",
+      "delay_until": "2025-10-04T20:38:11.308903",
+      "approved_at": "2025-10-03T20:40:52.331272"
+    },
+    {
+      "id": "transfer_5566736269_1759523968",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:39:28.523580",
+      "delay_until": "2025-10-04T20:39:28.523585",
+      "approved_at": "2025-10-03T20:40:52.998523"
+    },
+    {
+      "id": "transfer_5566736269_1759524003",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:40:03.179379",
+      "delay_until": "2025-10-04T20:40:03.179383",
+      "approved_at": "2025-10-03T20:40:54.074608"
+    },
+    {
+      "id": "transfer_5566736269_1759524073",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:41:13.609508",
+      "delay_until": "2025-10-04T20:41:13.609513",
+      "approved_at": "2025-10-03T20:41:34.142762"
+    },
+    {
+      "id": "transfer_5566736269_1759524094",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-03T20:41:34.922427",
+      "delay_until": "2025-10-04T20:41:34.922431",
+      "approved_at": "2025-10-03T20:41:36.914450"
     }
   ]
 }
