@@ -152,6 +152,8 @@ def run_git_push():
         print("❌ GitHub token not found in environment variables!")
         exit(1)
 
+    commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+
     try:
         # تنظیم user.name و user.email فقط برای این مخزن (local)
         subprocess.run(["git", "config", "user.name", "Render Bot"], check=True)
@@ -166,48 +168,29 @@ def run_git_push():
 
         set_git_remote_url(GITHUB_REPO_URL)
 
-        # اضافه کردن فایل‌ها
-        files_to_add = [
-            "provinces/*.json",
-            "EconomicItems/*.json",
-            "data/transfers.json",
-            "timers.json",
-            "shop_items.json",
-            "bios.json",
-            "block_shop.json",
-            "data.json",
-            "job_reservations.json"
-        ]
-
-        for pattern in files_to_add:
-            for filepath in glob.glob(pattern):
-                subprocess.run(["git", "add", "-f", filepath], check=True)
+        # اضافه کردن همه فایل‌ها (staged و untracked)
+        subprocess.run(["git", "add", "-A"], check=True)
 
         # بررسی تغییرات
         status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
         if not status_output:
             print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
-            return
+        else:
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)
 
-        # pull با rebase قبل از commit برای جلوگیری از خطا
+        # pull با rebase (برای گرفتن تغییرات GitHub)
         try:
             subprocess.run(["git", "pull", "--rebase", "origin", GITHUB_BRANCH], check=True)
         except subprocess.CalledProcessError:
             print("⚠️ کانفلیکت پیدا شد. انتخاب نسخه لوکال...")
-
-            # ری‌بیس اگه در جریان نبود ارور نمیده
+            # abort rebase اگه چیزی در جریان باشه
             subprocess.run(["git", "rebase", "--abort"], check=False)
             subprocess.run(["git", "reset", "--hard", "HEAD"], check=True)
             subprocess.run(["git", "pull", "origin", GITHUB_BRANCH], check=True)
-
             # force push برای نگه داشتن تغییرات لوکال
             subprocess.run(["git", "push", "origin", GITHUB_BRANCH, "--force"], check=True)
             print("✅ کانفلیکت با انتخاب نسخه لوکال حل شد و push انجام شد.")
             return
-
-        # commit تغییرات بعد از pull
-        commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
 
         # push نهایی
         subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
@@ -215,4 +198,5 @@ def run_git_push():
 
     except subprocess.CalledProcessError as e:
         print(f"❌ خطا در اجرای git: {e}")
+
 
