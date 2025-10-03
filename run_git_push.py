@@ -135,7 +135,6 @@
 #     except subprocess.CalledProcessError as e:
 #         print(f"❌ خطا در اجرای git: {e}")
 
-
 import subprocess
 import glob
 from datetime import datetime
@@ -152,8 +151,6 @@ def run_git_push():
     if not GITHUB_TOKEN:
         print("❌ GitHub token not found in environment variables!")
         exit(1)
-
-    commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     try:
         # تنظیم user.name و user.email فقط برای این مخزن (local)
@@ -192,13 +189,7 @@ def run_git_push():
             print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
             return
 
-        # commit تغییرات
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
-
-        # مطمئن شدن از اینکه همه فایل‌ها staged شدن
-        subprocess.run(["git", "add", "-A"], check=True)
-
-        # pull با rebase
+        # pull با rebase قبل از commit برای جلوگیری از خطا
         try:
             subprocess.run(["git", "pull", "--rebase", "origin", GITHUB_BRANCH], check=True)
         except subprocess.CalledProcessError:
@@ -214,9 +205,14 @@ def run_git_push():
             print("✅ کانفلیکت با انتخاب نسخه لوکال حل شد و push انجام شد.")
             return
 
+        # commit تغییرات بعد از pull
+        commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+
         # push نهایی
         subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
         print("✅ فایل‌ها با موفقیت push شدند.")
 
     except subprocess.CalledProcessError as e:
         print(f"❌ خطا در اجرای git: {e}")
+
