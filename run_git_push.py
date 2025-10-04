@@ -199,7 +199,6 @@
 #     except subprocess.CalledProcessError as e:
 #         print(f"❌ خطا در اجرای git: {e}")
 
-
 import subprocess
 from datetime import datetime
 from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
@@ -211,7 +210,7 @@ def set_git_remote_url(url):
     else:
         subprocess.run(["git", "remote", "add", "origin", url], check=True)
 
-def run_git_force_push():
+def run_git_push():
     if not GITHUB_TOKEN:
         print("❌ GitHub token not found in environment variables!")
         exit(1)
