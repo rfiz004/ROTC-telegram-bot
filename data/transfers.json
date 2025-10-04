@@ -7370,6 +7370,25 @@
       "requested_at": "2025-10-03T20:41:34.922427",
       "delay_until": "2025-10-04T20:41:34.922431",
       "approved_at": "2025-10-03T20:41:36.914450"
+    },
+    {
+      "id": "transfer_898145344_1759591108",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "چوب": 200,
+        "پارچه": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-04T15:18:28.973995",
+      "delay_until": "2025-10-05T15:18:28.974001",
+      "approved_at": "2025-10-04T15:19:54.706986"
     }
   ]
 }
