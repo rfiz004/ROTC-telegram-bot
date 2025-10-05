@@ -7,7 +7,7 @@
   "wealth": 101550,
   "population": 40000,
   "tax": 100,
-  "popularity": 72,
+  "popularity": 74,
   "total_army": 5106,
   "army": {
     "کماندار": 2500,
@@ -71,5 +71,6 @@
     "Coal mine": {
       "weekly_per_unit": 8000
     }
-  }
+  },
+  "last_updated": "2025-10-05T17:15:30.574116"
 }
