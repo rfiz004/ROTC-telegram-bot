@@ -5,7 +5,7 @@ import logging
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.error import BadRequest, Forbidden
@@ -1075,6 +1075,7 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         province_data["misc"][item_name] = province_data["misc"].get(item_name, 0) + quantity
 
     # 🔻 ذخیره اطلاعات
+    province_data["last_updated"] = datetime.utcnow().isoformat()
     save_province_data(country, province, province_data)
 
         # 🔻 ارسال گزارش خرید برای ادمین‌های کشور
