@@ -2248,6 +2248,8 @@ def apply_food_consumption(province_name):
     # اگر هنوز جمعیت باقی مانده که غذا نگرفته‌اند، در econ_data ذخیره کن
     econ_data["unfed_population"] = int(remaining_population)
 
+    econ_data["last_updated"] = datetime.utcnow().isoformat()
+    province_data["last_updated"] = datetime.utcnow().isoformat()
     # ذخیره تغییرات
     save_json(province_file, province_data)
     save_json(econ_file, econ_data)
@@ -2576,6 +2578,7 @@ async def run_food_processing(update: Update, context: ContextTypes.DEFAULT_TYPE
 
                 # ✅ گرسنه‌ها رو هم تو econ ذخیره کنیم (برای استفاده بعدی)
                 econ_data["unfed_population"] = int(remaining_population)
+                econ_data["last_updated"] = datetime.now().isoformat()
                 with open(econ_file, "w", encoding="utf-8") as f:
                     json.dump(econ_data, f, ensure_ascii=False, indent=2)
 
