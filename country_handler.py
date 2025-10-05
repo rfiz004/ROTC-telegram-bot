@@ -794,6 +794,7 @@ async def handle_admin_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
             province_data = load_province_data(country, province)
             old_tax = province_data.get("tax", 0)
             province_data["tax"] = new_tax
+            province_data["last_updated"] = datetime.utcnow().isoformat()
             save_province_data(country, province, province_data)
             
             await update.message.reply_text(
@@ -812,6 +813,7 @@ async def handle_admin_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
             province_data = load_province_data(country, province)
             old_population = province_data.get("population", 0)
             province_data["population"] = new_population
+            province_data["last_updated"] = datetime.utcnow().isoformat()
             save_province_data(country, province, province_data)
             
             await update.message.reply_text(
@@ -830,6 +832,7 @@ async def handle_admin_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
             province_data = load_province_data(country, province)
             old_popularity = province_data.get("popularity", 0)
             province_data["popularity"] = new_popularity
+            province_data["last_updated"] = datetime.utcnow().isoformat()
             save_province_data(country, province, province_data)
             
             await update.message.reply_text(
