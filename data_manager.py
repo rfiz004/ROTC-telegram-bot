@@ -54,6 +54,7 @@ async def handle_grain_priority(update: Update, context: ContextTypes.DEFAULT_TY
 
     # بروزرسانی اولویت
     data["grain_priority"] = priorities
+    data["last_updated"] = datetime.now().isoformat()
 
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -161,6 +162,7 @@ async def handle_grain_percentage(update: Update, context: ContextTypes.DEFAULT_
         data = json.load(f)
 
     data["grain_consumption"] = val  # 🔹 حالا فقط یک عدد کلی ذخیره می‌کنیم
+    data["last_updated"] = datetime.now().isoformat()
 
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
