@@ -1,69 +1,58 @@
 
-import subprocess
-import glob
-from datetime import datetime
-from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
-
-def set_git_remote_url(url):
-    remotes = subprocess.check_output(["git", "remote"]).decode().split()
-    if "origin" in remotes:
-        subprocess.run(["git", "remote", "set-url", "origin", url], check=True)
-    else:
-        subprocess.run(["git", "remote", "add", "origin", url], check=True)
-
-def run_git_push():
-    if not GITHUB_TOKEN:
-        print("❌ GitHub token not found in environment variables!")
-        exit(1)
-
-    commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-
-    try:
-        # تنظیم user.name و user.email فقط برای این مخزن (local)
-        subprocess.run(["git", "config", "user.name", "Render Bot"], check=True)
-        subprocess.run(["git", "config", "user.email", "render@example.com"], check=True)
-
-        # چک کردن وجود برنچ و سوییچ کردن یا ساختن
-        branches = subprocess.check_output(["git", "branch"]).decode()
-        if GITHUB_BRANCH not in branches:
-            subprocess.run(["git", "checkout", "-b", GITHUB_BRANCH], check=True)
-        else:
-            subprocess.run(["git", "checkout", GITHUB_BRANCH], check=True)
-
-        set_git_remote_url(GITHUB_REPO_URL)
-
-        files_to_add = [
-            "provinces/*.json",
-            "EconomicItems/*.json",
-            "data/transfers.json",
-            "timers.json",
-            "shop_items.json",
-            "bios.json",
-            "block_shop.json",
-            "data.json",
-            "job_reservations.json"
-        ]
-
-        for pattern in files_to_add:
-            for filepath in glob.glob(pattern):
-                subprocess.run(["git", "add", "-f", filepath], check=True)
-
-        status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
-        if not status_output:
-            print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
-            return
-
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
-        print("✅ فایل‌ها با موفقیت push شدند.")
-
-    except subprocess.CalledProcessError as e:
-        print(f"❌ خطا در اجرای git: {e}")
-
 # import subprocess
 # import glob
 # from datetime import datetime
 # from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
+
+# import json
+# from datetime import datetime
+
+# def get_latest_province_update(province_file):
+#     with open(province_file, "r", encoding="utf-8") as f:
+#         data = json.load(f)
+#     latest_time = None
+#     for prov in data:
+#         t = prov.get("last_updated")  # تو همین فیلدی که اضافه کردی
+#         if t:
+#             t_dt = datetime.fromisoformat(t)
+#             if not latest_time or t_dt > latest_time:
+#                 latest_time = t_dt
+#     return latest_time
+
+# def get_latest_shop_update(shop_file):
+#     with open(shop_file, "r", encoding="utf-8") as f:
+#         data = json.load(f)
+#     latest_time = None
+#     for item in data:
+#         # created_at و updated_at هر دو وجود دارند
+#         for key in ["created_at", "updated_at"]:
+#             t = item.get(key)
+#             if t:
+#                 t_dt = datetime.fromisoformat(t)
+#                 if not latest_time or t_dt > latest_time:
+#                     latest_time = t_dt
+#     return latest_time
+
+
+# def get_latest_transfer_update(transfers_file):
+#     with open(transfers_file, "r", encoding="utf-8") as f:
+#         data = json.load(f)
+#     latest_time = None
+#     for tr in data.get("transfers", []):
+#         for key in ["requested_at", "approved_at", "delay_until"]:
+#             t = tr.get(key)
+#             if t:
+#                 t_dt = datetime.fromisoformat(t)
+#                 if not latest_time or t_dt > latest_time:
+#                     latest_time = t_dt
+#     return latest_time
+
+# def get_github_latest_commit_timestamp(branch="main"):
+#     output = subprocess.check_output(["git", "ls-remote", GITHUB_REPO_URL, branch]).decode()
+#     # خروجی: hash \t refs/heads/main
+#     # برای امن بودن، میشه hash رو بگیریم و با local مقایسه کنیم
+#     return output.split()[0]  # hash آخرین commit
+
 
 # def set_git_remote_url(url):
 #     remotes = subprocess.check_output(["git", "remote"]).decode().split()
@@ -115,87 +104,151 @@ def run_git_push():
 #             return
 
 #         subprocess.run(["git", "commit", "-m", commit_message], check=True)
-
-#         # قبل از push → pull با rebase
-#         try:
-#             subprocess.run(["git", "pull", "--rebase", "origin", GITHUB_BRANCH], check=True)
-#         except subprocess.CalledProcessError:
-#             print("⚠️ کانفلیکت پیدا شد. انتخاب نسخه لوکال...")
-#             subprocess.run(["git", "rebase", "--abort"], check=True)
-#             subprocess.run(["git", "reset", "--hard", "HEAD"], check=True)
-#             subprocess.run(["git", "pull", "origin", GITHUB_BRANCH], check=True)
-#             # نگه داشتن تغییرات لوکال → force push
-#             subprocess.run(["git", "push", "origin", GITHUB_BRANCH, "--force"], check=True)
-#             print("✅ کانفلیکت با انتخاب نسخه لوکال حل شد و push انجام شد.")
-#             return
-
 #         subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
 #         print("✅ فایل‌ها با موفقیت push شدند.")
 
 #     except subprocess.CalledProcessError as e:
 #         print(f"❌ خطا در اجرای git: {e}")
 
-# import subprocess
-# import glob
-# from datetime import datetime
-# from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 
-# def set_git_remote_url(url):
-#     remotes = subprocess.check_output(["git", "remote"]).decode().split()
-#     if "origin" in remotes:
-#         subprocess.run(["git", "remote", "set-url", "origin", url], check=True)
-#     else:
-#         subprocess.run(["git", "remote", "add", "origin", url], check=True)
+import subprocess
+import glob
+import json
+import os
+from datetime import datetime
+from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 
-# def run_git_push():
-#     if not GITHUB_TOKEN:
-#         print("❌ GitHub token not found in environment variables!")
-#         exit(1)
+# -------------------
+# Helper functions
+# -------------------
 
-#     commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+def get_latest_province_update(province_file):
+    with open(province_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    latest_time = None
+    for prov in data:
+        t = prov.get("last_updated")
+        if t:
+            t_dt = datetime.fromisoformat(t)
+            if not latest_time or t_dt > latest_time:
+                latest_time = t_dt
+    return latest_time
 
-#     try:
-#         # تنظیم user.name و user.email فقط برای این مخزن (local)
-#         subprocess.run(["git", "config", "user.name", "Render Bot"], check=True)
-#         subprocess.run(["git", "config", "user.email", "render@example.com"], check=True)
 
-#         # چک کردن وجود برنچ و سوییچ کردن یا ساختن
-#         branches = subprocess.check_output(["git", "branch"]).decode()
-#         if GITHUB_BRANCH not in branches:
-#             subprocess.run(["git", "checkout", "-b", GITHUB_BRANCH], check=True)
-#         else:
-#             subprocess.run(["git", "checkout", GITHUB_BRANCH], check=True)
+def get_latest_shop_update(shop_file):
+    with open(shop_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    latest_time = None
+    for item in data:
+        for key in ["created_at", "updated_at"]:
+            t = item.get(key)
+            if t:
+                t_dt = datetime.fromisoformat(t)
+                if not latest_time or t_dt > latest_time:
+                    latest_time = t_dt
+    return latest_time
 
-#         set_git_remote_url(GITHUB_REPO_URL)
 
-#         # اضافه کردن همه فایل‌ها (staged و untracked)
-#         subprocess.run(["git", "add", "-A"], check=True)
+def get_latest_transfer_update(transfers_file):
+    with open(transfers_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    latest_time = None
+    for tr in data.get("transfers", []):
+        for key in ["requested_at", "approved_at", "delay_until"]:
+            t = tr.get(key)
+            if t:
+                t_dt = datetime.fromisoformat(t)
+                if not latest_time or t_dt > latest_time:
+                    latest_time = t_dt
+    return latest_time
 
-#         # بررسی تغییرات
-#         status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
-#         if not status_output:
-#             print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
-#         else:
-#             subprocess.run(["git", "commit", "-m", commit_message], check=True)
 
-#         # pull با rebase (برای گرفتن تغییرات GitHub)
-#         try:
-#             subprocess.run(["git", "pull", "--rebase", "origin", GITHUB_BRANCH], check=True)
-#         except subprocess.CalledProcessError:
-#             print("⚠️ کانفلیکت پیدا شد. انتخاب نسخه لوکال...")
-#             # abort rebase اگه چیزی در جریان باشه
-#             subprocess.run(["git", "rebase", "--abort"], check=False)
-#             subprocess.run(["git", "reset", "--hard", "HEAD"], check=True)
-#             subprocess.run(["git", "pull", "origin", GITHUB_BRANCH], check=True)
-#             # force push برای نگه داشتن تغییرات لوکال
-#             subprocess.run(["git", "push", "origin", GITHUB_BRANCH, "--force"], check=True)
-#             print("✅ کانفلیکت با انتخاب نسخه لوکال حل شد و push انجام شد.")
-#             return
+def get_latest_economic_update(econ_file):
+    """زمان آخرین آپدیت فایل اقتصادی (EconomicItems/*.json)"""
+    with open(econ_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    t = data.get("last_update_time")
+    return datetime.fromisoformat(t) if t else None
 
-#         # push نهایی
-#         subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
-#         print("✅ فایل‌ها با موفقیت push شدند.")
 
-#     except subprocess.CalledProcessError as e:
-#         print(f"❌ خطا در اجرای git: {e}")
+def set_git_remote_url(url):
+    remotes = subprocess.check_output(["git", "remote"]).decode().split()
+    if "origin" in remotes:
+        subprocess.run(["git", "remote", "set-url", "origin", url], check=True)
+    else:
+        subprocess.run(["git", "remote", "add", "origin", url], check=True)
+
+# -------------------
+# Main push function
+# -------------------
+
+def run_git_push():
+    if not GITHUB_TOKEN:
+        print("❌ GitHub token not found in environment variables!")
+        exit(1)
+
+    commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+
+    try:
+        # تنظیم user.name و user.email فقط برای این مخزن (local)
+        subprocess.run(["git", "config", "user.name", "Render Bot"], check=True)
+        subprocess.run(["git", "config", "user.email", "render@example.com"], check=True)
+
+        # چک کردن وجود برنچ و سوییچ کردن یا ساختن
+        branches = subprocess.check_output(["git", "branch"]).decode()
+        if GITHUB_BRANCH not in branches:
+            subprocess.run(["git", "checkout", "-b", GITHUB_BRANCH], check=True)
+        else:
+            subprocess.run(["git", "checkout", GITHUB_BRANCH], check=True)
+
+        set_git_remote_url(GITHUB_REPO_URL)
+
+        # -------------------
+        # Files that need safe check
+        # -------------------
+        safe_files = {
+            "provinces/*.json": get_latest_province_update,
+            "shop_items.json": get_latest_shop_update,
+            "data/transfers.json": get_latest_transfer_update,
+            "EconomicItems/*.json": get_latest_economic_update,
+        }
+
+        for pattern, update_func in safe_files.items():
+            for filepath in glob.glob(pattern):
+                try:
+                    local_time = update_func(filepath)
+                    if local_time:
+                        print(f"🕓 {filepath} | آخرین تغییر: {local_time}")
+                except Exception as e:
+                    print(f"⚠️ خطا در بررسی {filepath}: {e}")
+                subprocess.run(["git", "add", "-f", filepath], check=True)
+
+        # -------------------
+        # Other files - always push
+        # -------------------
+        always_push_files = [
+            "timers.json",
+            "bios.json",
+            "block_shop.json",
+            "data.json",
+            "job_reservations.json",
+        ]
+        for pattern in always_push_files:
+            for filepath in glob.glob(pattern):
+                subprocess.run(["git", "add", "-f", filepath], check=True)
+
+        # -------------------
+        # Commit & push
+        # -------------------
+        status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
+        if not status_output:
+            print("ℹ️ هیچ تغییری برای commit وجود ندارد.")
+            return
+
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        subprocess.run(["git", "push", "origin", GITHUB_BRANCH], check=True)
+        print("✅ فایل‌ها با موفقیت push شدند.")
+
+    except subprocess.CalledProcessError as e:
+        print(f"❌ خطا در اجرای git: {e}")
 
