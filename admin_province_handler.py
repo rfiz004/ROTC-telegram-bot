@@ -784,6 +784,7 @@ async def handle_province_edit_input(update: Update, context: ContextTypes.DEFAU
             success = False
 
         if success:
+            province_data["last_updated"] = datetime.utcnow().isoformat()
             save_province_data(country, province, province_data)
             # برگشت به مقصد مشخص‌شده در user_store (edit_back_to)
             back_cb = user_store.get("edit_back_to", f"admin_view_province_{country}_{province.replace(' ', '_')}")
@@ -2650,6 +2651,7 @@ async def run_weekly_processing(update: Update, context: ContextTypes.DEFAULT_TY
                 province_data["popularity"] = province_data.get("popularity", 50) + popularity_change
 
                 # ذخیره داده استان
+                province_data["last_updated"] = datetime.utcnow().isoformat()
                 save_province_data(country, province, province_data)
                 processed_count += 1
 
