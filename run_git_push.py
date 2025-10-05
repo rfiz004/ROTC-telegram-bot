@@ -123,16 +123,17 @@ from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 # -------------------
 
 def get_latest_province_update(province_file):
-    with open(province_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    latest_time = None
-    for prov in data:
-        t = prov.get("last_updated")
+    """بررسی آخرین زمان آپدیت فایل استان"""
+    try:
+        with open(province_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        t = data.get("last_updated")
         if t:
-            t_dt = datetime.fromisoformat(t)
-            if not latest_time or t_dt > latest_time:
-                latest_time = t_dt
-    return latest_time
+            return datetime.fromisoformat(t)
+    except Exception as e:
+        print(f"⚠️ خطا در بررسی {province_file}: {e}")
+    return None
+
 
 
 def get_latest_shop_update(shop_file):
