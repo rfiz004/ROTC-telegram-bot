@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Ironfell",
   "mines": {},
-  "wealth": 20200,
+  "wealth": 16600,
   "population": 20000,
   "tax": 70,
   "popularity": 74,
@@ -31,7 +31,7 @@
     "چرم": 500,
     "چوب": 510,
     "گندم": 0,
-    "گوشت": 626
+    "گوشت": 576
   },
   "economic_structures": {
     "دامداری": {
@@ -73,5 +73,6 @@
       "produces": "چوب",
       "weekly_per_unit": 50
     }
-  }
+  },
+  "last_updated": "2025-10-06T18:03:01.994144"
 }
