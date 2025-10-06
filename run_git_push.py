@@ -123,7 +123,6 @@ from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 # -------------------
 
 def get_latest_province_update(province_file):
-    """بررسی آخرین زمان آپدیت فایل استان"""
     try:
         with open(province_file, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -133,7 +132,6 @@ def get_latest_province_update(province_file):
     except Exception as e:
         print(f"⚠️ خطا در بررسی {province_file}: {e}")
     return None
-
 
 
 def get_latest_shop_update(shop_file):
@@ -165,7 +163,6 @@ def get_latest_transfer_update(transfers_file):
 
 
 def get_latest_economic_update(econ_file):
-    """زمان آخرین آپدیت فایل اقتصادی (EconomicItems/*.json)"""
     with open(econ_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     t = data.get("last_update_time")
@@ -179,6 +176,15 @@ def set_git_remote_url(url):
     else:
         subprocess.run(["git", "remote", "add", "origin", url], check=True)
 
+
+def is_remote_newer():
+    """مقایسه commitهای لوکال و ریموت"""
+    subprocess.run(["git", "fetch", "origin", GITHUB_BRANCH], check=True)
+    local_hash = subprocess.check_output(["git", "rev-parse", GITHUB_BRANCH]).decode().strip()
+    remote_hash = subprocess.check_output(["git", "rev-parse", f"origin/{GITHUB_BRANCH}"]).decode().strip()
+    return local_hash != remote_hash
+
+
 # -------------------
 # Main push function
 # -------------------
@@ -191,11 +197,10 @@ def run_git_push():
     commit_message = f"Auto update {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     try:
-        # تنظیم user.name و user.email فقط برای این مخزن (local)
         subprocess.run(["git", "config", "user.name", "Render Bot"], check=True)
         subprocess.run(["git", "config", "user.email", "render@example.com"], check=True)
 
-        # چک کردن وجود برنچ و سوییچ کردن یا ساختن
+        # چک برنچ
         branches = subprocess.check_output(["git", "branch"]).decode()
         if GITHUB_BRANCH not in branches:
             subprocess.run(["git", "checkout", "-b", GITHUB_BRANCH], check=True)
@@ -203,6 +208,11 @@ def run_git_push():
             subprocess.run(["git", "checkout", GITHUB_BRANCH], check=True)
 
         set_git_remote_url(GITHUB_REPO_URL)
+
+        # بررسی ریموت
+        if is_remote_newer():
+            print("🌐 نسخه جدیدتری در GitHub موجود است، pull می‌شود...")
+            subprocess.run(["git", "pull", "origin", GITHUB_BRANCH, "--no-edit"], check=True)
 
         # -------------------
         # Files that need safe check
@@ -220,9 +230,9 @@ def run_git_push():
                     local_time = update_func(filepath)
                     if local_time:
                         print(f"🕓 {filepath} | آخرین تغییر: {local_time}")
+                    subprocess.run(["git", "add", "-f", filepath], check=True)
                 except Exception as e:
                     print(f"⚠️ خطا در بررسی {filepath}: {e}")
-                subprocess.run(["git", "add", "-f", filepath], check=True)
 
         # -------------------
         # Other files - always push
@@ -252,4 +262,3 @@ def run_git_push():
 
     except subprocess.CalledProcessError as e:
         print(f"❌ خطا در اجرای git: {e}")
-
