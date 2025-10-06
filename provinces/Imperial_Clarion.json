@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Clarion",
   "mines": {},
-  "wealth": 29000,
+  "wealth": 0,
   "population": 24000,
   "tax": 20,
   "popularity": 68,
@@ -73,5 +73,6 @@
       "produces": "شیشه",
       "weekly_per_unit": 50
     }
-  }
+  },
+  "last_updated": "2025-10-06T17:58:04.826494"
 }

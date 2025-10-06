@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 72500,
+  "wealth": 101500,
   "population": 40000,
   "tax": 0,
   "popularity": 60,
@@ -95,5 +95,6 @@
       "produces": "شیشه",
       "weekly_per_unit": 50
     }
-  }
+  },
+  "last_updated": "2025-10-06T17:58:33.950364"
 }
