@@ -7,7 +7,7 @@
   "wealth": 0,
   "population": 7000,
   "tax": 100,
-  "popularity": 90,
+  "popularity": 100,
   "total_army": 3601,
   "army": {
     "کماندار": 1300,
@@ -66,5 +66,6 @@
       "product": "سنگ",
       "weekly_output": 50
     }
-  }
+  },
+  "last_updated": "2025-10-06T09:36:09.697893"
 }
