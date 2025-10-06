@@ -109,16 +109,12 @@
 
 #     except subprocess.CalledProcessError as e:
 #         print(f"❌ خطا در اجرای git: {e}")
-
 import subprocess
 import glob
 import json
 from datetime import datetime
 from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 
-# -------------------
-# Helper functions
-# -------------------
 
 def get_latest_province_update(province_file):
     try:
@@ -130,6 +126,7 @@ def get_latest_province_update(province_file):
     except Exception as e:
         print(f"⚠️ خطا در بررسی {province_file}: {e}")
     return None
+
 
 def get_latest_shop_update(shop_file):
     with open(shop_file, "r", encoding="utf-8") as f:
@@ -144,6 +141,7 @@ def get_latest_shop_update(shop_file):
                     latest_time = t_dt
     return latest_time
 
+
 def get_latest_transfer_update(transfers_file):
     with open(transfers_file, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -157,11 +155,13 @@ def get_latest_transfer_update(transfers_file):
                     latest_time = t_dt
     return latest_time
 
+
 def get_latest_economic_update(econ_file):
     with open(econ_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     t = data.get("last_update_time")
     return datetime.fromisoformat(t) if t else None
+
 
 def set_git_remote_url(url):
     remotes = subprocess.check_output(["git", "remote"]).decode().split()
@@ -170,9 +170,6 @@ def set_git_remote_url(url):
     else:
         subprocess.run(["git", "remote", "add", "origin", url], check=True)
 
-# -------------------
-# Main push function
-# -------------------
 
 def run_git_push():
     if not GITHUB_TOKEN:
@@ -195,10 +192,21 @@ def run_git_push():
         set_git_remote_url(GITHUB_REPO_URL)
 
         # -------------------
-        # Fetch latest remote and rebase
+        # Stash changes before rebase (حل مشکل unstaged changes)
+        # -------------------
+        subprocess.run(["git", "add", "-A"], check=False)
+        subprocess.run(["git", "stash"], check=False)
+
+        # -------------------
+        # Fetch & rebase (برای گرفتن تغییرات جدید)
         # -------------------
         subprocess.run(["git", "fetch", "origin", GITHUB_BRANCH], check=True)
-        subprocess.run(["git", "rebase", f"origin/{GITHUB_BRANCH}"], check=True)
+        subprocess.run(["git", "rebase", f"origin/{GITHUB_BRANCH}"], check=False)
+
+        # -------------------
+        # Restore stashed changes
+        # -------------------
+        subprocess.run(["git", "stash", "pop"], check=False)
 
         # -------------------
         # Files that need safe check
@@ -221,7 +229,7 @@ def run_git_push():
                     print(f"⚠️ خطا در بررسی {filepath}: {e}")
 
         # -------------------
-        # Other files - always push
+        # Always-push files
         # -------------------
         always_push_files = [
             "timers.json",
@@ -235,7 +243,7 @@ def run_git_push():
                 subprocess.run(["git", "add", "-f", filepath], check=True)
 
         # -------------------
-        # Commit & push
+        # Commit & Push
         # -------------------
         status_output = subprocess.check_output(["git", "status", "--porcelain"]).decode().strip()
         if not status_output:
