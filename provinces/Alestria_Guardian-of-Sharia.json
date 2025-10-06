@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 20700,
+  "wealth": 8700,
   "population": 13000,
   "tax": 100,
   "popularity": 87,
@@ -89,5 +89,6 @@
       "produces": "سنگ",
       "weekly_per_unit": 50
     }
-  }
+  },
+  "last_updated": "2025-10-06T17:55:34.178822"
 }
