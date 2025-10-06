@@ -5,7 +5,7 @@
   "wealth": 15000,
   "population": 24000,
   "tax": 100,
-  "popularity": 69,
+  "popularity": 74,
   "total_army": 5000,
   "army": {
     "کماندار": 500,
@@ -65,5 +65,6 @@
       "product": "پارچه",
       "weekly_output": 50
     }
-  }
+  },
+  "last_updated": "2025-10-06T09:33:58.397268"
 }
