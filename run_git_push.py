@@ -110,11 +110,9 @@
 #     except subprocess.CalledProcessError as e:
 #         print(f"❌ خطا در اجرای git: {e}")
 
-
 import subprocess
 import glob
 import json
-import os
 from datetime import datetime
 from config import GITHUB_BRANCH, GITHUB_REPO_URL, GITHUB_TOKEN
 
@@ -133,7 +131,6 @@ def get_latest_province_update(province_file):
         print(f"⚠️ خطا در بررسی {province_file}: {e}")
     return None
 
-
 def get_latest_shop_update(shop_file):
     with open(shop_file, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -146,7 +143,6 @@ def get_latest_shop_update(shop_file):
                 if not latest_time or t_dt > latest_time:
                     latest_time = t_dt
     return latest_time
-
 
 def get_latest_transfer_update(transfers_file):
     with open(transfers_file, "r", encoding="utf-8") as f:
@@ -161,13 +157,11 @@ def get_latest_transfer_update(transfers_file):
                     latest_time = t_dt
     return latest_time
 
-
 def get_latest_economic_update(econ_file):
     with open(econ_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     t = data.get("last_update_time")
     return datetime.fromisoformat(t) if t else None
-
 
 def set_git_remote_url(url):
     remotes = subprocess.check_output(["git", "remote"]).decode().split()
@@ -175,15 +169,6 @@ def set_git_remote_url(url):
         subprocess.run(["git", "remote", "set-url", "origin", url], check=True)
     else:
         subprocess.run(["git", "remote", "add", "origin", url], check=True)
-
-
-def is_remote_newer():
-    """مقایسه commitهای لوکال و ریموت"""
-    subprocess.run(["git", "fetch", "origin", GITHUB_BRANCH], check=True)
-    local_hash = subprocess.check_output(["git", "rev-parse", GITHUB_BRANCH]).decode().strip()
-    remote_hash = subprocess.check_output(["git", "rev-parse", f"origin/{GITHUB_BRANCH}"]).decode().strip()
-    return local_hash != remote_hash
-
 
 # -------------------
 # Main push function
@@ -209,10 +194,11 @@ def run_git_push():
 
         set_git_remote_url(GITHUB_REPO_URL)
 
-        # بررسی ریموت
-        if is_remote_newer():
-            print("🌐 نسخه جدیدتری در GitHub موجود است، pull می‌شود...")
-            subprocess.run(["git", "pull", "origin", GITHUB_BRANCH, "--no-edit"], check=True)
+        # -------------------
+        # Fetch latest remote and rebase
+        # -------------------
+        subprocess.run(["git", "fetch", "origin", GITHUB_BRANCH], check=True)
+        subprocess.run(["git", "rebase", f"origin/{GITHUB_BRANCH}"], check=True)
 
         # -------------------
         # Files that need safe check
