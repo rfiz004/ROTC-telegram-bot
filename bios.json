@@ -214,11 +214,12 @@
     "7905544001": {
       "country": "Aldemar",
       "job": "مشاغل آزاد",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-10-07T10:45:11.475818",
+      "saved_at": "2025-10-07T10:47:01.646692",
       "expires_at": "2025-10-07T11:14:52.624945",
-      "name": "Edwin Henderson"
+      "name": "Edwin Henderson",
+      "nickname": "The Oathbreaker"
     }
   },
   "used_hashtags": [
