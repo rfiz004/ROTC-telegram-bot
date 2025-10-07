@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 8700,
+  "wealth": 6200,
   "population": 13000,
   "tax": 100,
   "popularity": 87,
@@ -47,7 +47,7 @@
   },
   "economic_structures": {
     "دامداری": {
-      "count": 1,
+      "count": 2,
       "product": "گوشت",
       "weekly_output": 100
     },
@@ -90,5 +90,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-06T17:55:34.178822"
+  "last_updated": "2025-10-07T10:30:04.970361"
 }
