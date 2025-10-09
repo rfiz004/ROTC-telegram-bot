@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Velithkara",
   "mines": {},
-  "wealth": 17000,
+  "wealth": 0,
   "population": 18000,
   "tax": 100,
   "popularity": 65,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-06T16:25:20.632783"
+  "last_updated": "2025-10-09T09:02:51.100307"
 }
