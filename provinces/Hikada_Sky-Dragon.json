@@ -4,7 +4,7 @@
   "mines": {
     "Stone mine": 1
   },
-  "wealth": 12000,
+  "wealth": 0,
   "population": 5000,
   "tax": 100,
   "popularity": 97,
@@ -95,5 +95,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-06T16:12:59.418647"
+  "last_updated": "2025-10-09T08:57:12.431155"
 }
