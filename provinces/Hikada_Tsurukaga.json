@@ -2,7 +2,7 @@
   "country": "Hikada",
   "province": "Tsurukaga",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 77,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-06T16:16:19.935393"
+  "last_updated": "2025-10-09T08:56:46.052045"
 }
