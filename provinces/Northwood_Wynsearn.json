@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Wynsearn",
   "mines": {},
-  "wealth": 4000,
+  "wealth": 1500,
   "population": 20000,
   "tax": 50,
   "popularity": 73,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-06T18:04:30.466670"
+  "last_updated": "2025-10-09T09:06:08.922128"
 }

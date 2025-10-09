@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 117100,
+  "wealth": 20100,
   "population": 60000,
   "tax": 100,
   "popularity": 78,
@@ -71,5 +71,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-10-06T18:01:08.932977"
+  "last_updated": "2025-10-09T09:04:40.877603"
 }

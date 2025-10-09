@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Garodhen",
   "mines": {},
-  "wealth": 26200,
+  "wealth": 200,
   "population": 20000,
   "tax": 50,
   "popularity": 66,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-06T18:05:09.805482"
+  "last_updated": "2025-10-09T09:06:01.014205"
 }
