@@ -8161,6 +8161,24 @@
       "status": "pending",
       "requested_at": "2025-10-10T14:36:02.680186",
       "delay_until": "2025-10-11T14:36:02.680190"
+    },
+    {
+      "id": "transfer_898145344_1760106995",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Kaisuraga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T14:36:35.242514",
+      "delay_until": "2025-10-11T14:36:35.242518"
     }
   ]
 }

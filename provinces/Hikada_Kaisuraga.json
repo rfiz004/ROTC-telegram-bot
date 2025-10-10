@@ -2,7 +2,7 @@
   "country": "Hikada",
   "province": "Kaisuraga",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 75,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-10T06:56:37.979743"
+  "last_updated": "2025-10-10T14:37:47.984367"
 }
