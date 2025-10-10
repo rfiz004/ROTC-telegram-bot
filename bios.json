@@ -210,34 +210,6 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2025-10-02T01:52:34.733698"
-    },
-    "7980617348": {
-      "step": "pending",
-      "country": "Azure",
-      "flow_type": "bio",
-      "job": "دوک",
-      "expires_at": "2025-10-10T05:02:54.803939",
-      "name": "تورفین",
-      "nickname": "دست قیچی",
-      "age": "41",
-      "skills": [
-        "کشتیرانی",
-        "مهارت شمشیرزنی و تبرزنی",
-        "مدیریت امور اقتصادی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "کشتیرانی",
-      "skill2": "مهارت شمشیرزنی و تبرزنی",
-      "skill3": "مدیریت امور اقتصادی",
-      "appearance": "موهای طلایی بلند\nقد یک و هشتادوپنج با صورت کشیده و کمی ته ریش",
-      "history": "فرزند ژنرال سابق و بازنشسته",
-      "id_number": "@Imyasinge",
-      "user_id_tag": "#Thorfinn",
-      "photo": "AgACAgQAAxkBAAK3gWjojt6ITW3RdlGQjYxIOjOQrBPHAAIcyzEbfmpIUzVvnTDcehagAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "7980617348",
-      "saved_at": "2025-10-10T04:43:10.941486"
     }
   },
   "used_hashtags": [
