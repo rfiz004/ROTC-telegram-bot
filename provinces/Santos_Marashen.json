@@ -37,23 +37,23 @@
     "دامداری": {
       "count": 4,
       "product": "گوشت",
-      "weekly_output": 100
+      "weekly_output": 50
     },
     "کارخونه چرم": {
       "count": 4,
       "product": "چرم",
-      "weekly_output": 50
+      "weekly_output": 25
     },
     "کارخونه شیشه": {
       "count": 4,
       "product": "شیشه",
-      "weekly_output": 50
+      "weekly_output": 25
     },
     "کارخونه سنگ": {
       "count": 4,
       "product": "سنگ",
-      "weekly_output": 50
+      "weekly_output": 25
     }
   },
-  "last_updated": "2025-10-06T09:35:56.127064"
+  "last_updated": "2025-10-10T06:01:01.875413"
 }
