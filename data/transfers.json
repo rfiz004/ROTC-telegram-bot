@@ -7798,6 +7798,25 @@
       "requested_at": "2025-10-10T14:13:47.024521",
       "delay_until": "2025-10-11T14:13:47.024524",
       "approved_at": "2025-10-10T14:13:48.416615"
+    },
+    {
+      "id": "transfer_1771323853_1760105683",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Grand-Duke",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 375,
+        "سنگ": 375,
+        "چرم": 375
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:14:43.804738",
+      "delay_until": "2025-10-11T14:14:43.804743",
+      "approved_at": "2025-10-10T14:14:45.170364"
     }
   ]
 }
