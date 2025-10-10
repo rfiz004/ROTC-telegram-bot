@@ -8357,6 +8357,23 @@
       "requested_at": "2025-10-10T15:20:07.983446",
       "delay_until": "2025-10-11T15:20:07.983451",
       "approved_at": "2025-10-10T15:20:19.646902"
+    },
+    {
+      "id": "transfer_7869889327_1760109769",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Druvenmarsh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:22:49.564110",
+      "delay_until": "2025-10-11T15:22:49.564113",
+      "approved_at": "2025-10-10T15:22:53.708322"
     }
   ]
 }
