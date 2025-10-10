@@ -45,7 +45,7 @@
     "مرغداری": {
       "count": 4,
       "product": "مرغ",
-      "weekly_output": 100
+      "weekly_output": 50
     },
     "کارخونه فولاد": {
       "count": 0,
@@ -67,5 +67,6 @@
     "Stone mine": {
       "weekly_per_unit": 2000
     }
-  }
+  },
+  "last_updated": "2025-10-10T06:11:23.806378"
 }

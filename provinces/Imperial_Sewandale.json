@@ -37,7 +37,7 @@
     "مرغداری": {
       "count": 4,
       "product": "مرغ",
-      "weekly_output": 100
+      "weekly_output": 50
     },
     "کارخونه فولاد": {
       "count": 2,
@@ -73,5 +73,6 @@
       "produces": "شیشه",
       "weekly_per_unit": 50
     }
-  }
+  },
+  "last_updated": "2025-10-10T06:10:47.477784"
 }
