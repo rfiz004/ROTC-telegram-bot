@@ -594,26 +594,37 @@ def load_bios():
         logger.error(f"Unexpected error loading bios: {e}")
         return {"bios": {}}
 
-def save_bios(bios_data):
-    """Save bios to JSON file with proper error handling"""
-    try:
-        # Create backup first
-        if os.path.exists("bios.json"):
-            backup_file = f"bios.json.backup"
-            try:
-                with open("bios.json", 'r', encoding='utf-8') as src:
-                    with open(backup_file, 'w', encoding='utf-8') as dst:
-                        dst.write(src.read())
-            except:
-                pass
+# def save_bios(bios_data):
+#     """Save bios to JSON file with proper error handling"""
+#     try:
+#         # Create backup first
+#         if os.path.exists("bios.json"):
+#             backup_file = f"bios.json.backup"
+#             try:
+#                 with open("bios.json", 'r', encoding='utf-8') as src:
+#                     with open(backup_file, 'w', encoding='utf-8') as dst:
+#                         dst.write(src.read())
+#             except:
+#                 pass
 
-        # Save new bios
+#         # Save new bios
+#         with open("bios.json", "w", encoding="utf-8") as f:
+#             json.dump(bios_data, f, ensure_ascii=False, indent=2)
+#         logger.info("Bios saved successfully")
+#     except Exception as e:
+#         logger.error(f"❌ Error saving bios: {e}")
+#         return False
+
+def save_bios(bios_data):
+    """Save bios to JSON file without creating backup"""
+    try:
         with open("bios.json", "w", encoding="utf-8") as f:
             json.dump(bios_data, f, ensure_ascii=False, indent=2)
         logger.info("Bios saved successfully")
     except Exception as e:
         logger.error(f"❌ Error saving bios: {e}")
         return False
+
 
 def load_passwords():
     """Load passwords from JSON file"""
