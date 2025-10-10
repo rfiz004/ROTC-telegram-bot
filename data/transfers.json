@@ -8303,9 +8303,27 @@
       "items": {
         "طلا": 33500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T14:48:53.413918",
-      "delay_until": "2025-10-11T14:48:53.413921"
+      "delay_until": "2025-10-11T14:48:53.413921",
+      "approved_at": "2025-10-10T15:05:19.321143"
+    },
+    {
+      "id": "transfer_5566736269_1760108643",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 2000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:04:03.069703",
+      "delay_until": "2025-10-11T15:04:03.069707",
+      "approved_at": "2025-10-10T15:05:21.175022"
     }
   ]
 }
