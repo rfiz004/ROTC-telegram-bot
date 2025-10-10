@@ -8176,9 +8176,28 @@
         "پارچه": 100,
         "چوب": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T14:36:35.242514",
-      "delay_until": "2025-10-11T14:36:35.242518"
+      "delay_until": "2025-10-11T14:36:35.242518",
+      "approved_at": "2025-10-10T14:41:31.722371"
+    },
+    {
+      "id": "transfer_5566736269_1760107287",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 1000,
+        "پارچه": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:41:27.110250",
+      "delay_until": "2025-10-11T14:41:27.110253",
+      "approved_at": "2025-10-10T14:41:59.563872"
     }
   ]
 }
