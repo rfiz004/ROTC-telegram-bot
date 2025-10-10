@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Druvenmarsh",
   "mines": {},
-  "wealth": 34000,
+  "wealth": 47000,
   "population": 20000,
   "tax": 100,
   "popularity": 58,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-10T15:11:05.712656"
+  "last_updated": "2025-10-10T15:21:42.462638"
 }

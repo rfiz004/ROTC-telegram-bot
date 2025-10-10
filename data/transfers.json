@@ -8324,6 +8324,39 @@
       "requested_at": "2025-10-10T15:04:03.069703",
       "delay_until": "2025-10-11T15:04:03.069707",
       "approved_at": "2025-10-10T15:05:21.175022"
+    },
+    {
+      "id": "transfer_5566736269_1760109581",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 600
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T15:19:41.080164",
+      "delay_until": "2025-10-11T15:19:41.080167"
+    },
+    {
+      "id": "transfer_898145344_1760109607",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:20:07.983446",
+      "delay_until": "2025-10-11T15:20:07.983451",
+      "approved_at": "2025-10-10T15:20:19.646902"
     }
   ]
 }
