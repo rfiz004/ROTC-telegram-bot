@@ -7834,6 +7834,23 @@
       "requested_at": "2025-10-10T14:19:10.426502",
       "delay_until": "2025-10-11T14:19:10.426506",
       "approved_at": "2025-10-10T14:19:11.777119"
+    },
+    {
+      "id": "transfer_1771323853_1760106157",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 37000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:22:37.039077",
+      "delay_until": "2025-10-11T14:22:37.039083",
+      "approved_at": "2025-10-10T14:22:38.284408"
     }
   ]
 }
