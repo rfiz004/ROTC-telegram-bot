@@ -8290,6 +8290,22 @@
       "requested_at": "2025-10-10T14:46:17.008952",
       "delay_until": "2025-10-11T14:46:17.008958",
       "approved_at": "2025-10-10T14:46:41.260064"
+    },
+    {
+      "id": "transfer_898145344_1760107733",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 33500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T14:48:53.413918",
+      "delay_until": "2025-10-11T14:48:53.413921"
     }
   ]
 }
