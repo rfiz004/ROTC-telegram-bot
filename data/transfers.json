@@ -8439,9 +8439,10 @@
       "items": {
         "شراب": 500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T15:36:38.473833",
-      "delay_until": "2025-10-11T15:36:38.473836"
+      "delay_until": "2025-10-11T15:36:38.473836",
+      "approved_at": "2025-10-10T15:37:39.639648"
     },
     {
       "id": "transfer_7096919075_1760110613",
@@ -8459,6 +8460,23 @@
       "requested_at": "2025-10-10T15:36:53.931229",
       "delay_until": "2025-10-11T15:36:53.931232",
       "approved_at": "2025-10-10T15:37:19.451611"
+    },
+    {
+      "id": "transfer_7096919075_1760110755",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 42000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:39:15.450089",
+      "delay_until": "2025-10-11T15:39:15.450093",
+      "approved_at": "2025-10-10T15:39:22.566410"
     }
   ]
 }
