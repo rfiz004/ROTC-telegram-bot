@@ -8051,9 +8051,10 @@
         "پارچه": 200,
         "چوب": 250
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T14:32:18.523170",
-      "delay_until": "2025-10-11T14:32:18.523172"
+      "delay_until": "2025-10-11T14:32:18.523172",
+      "approved_at": "2025-10-10T14:33:26.469168"
     },
     {
       "id": "transfer_5566736269_1760106746",
@@ -8071,6 +8072,95 @@
       "requested_at": "2025-10-10T14:32:26.374848",
       "delay_until": "2025-10-11T14:32:26.374851",
       "approved_at": "2025-10-10T14:32:29.077226"
+    },
+    {
+      "id": "transfer_6723163985_1760106822",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:33:42.379076",
+      "delay_until": "2025-10-11T14:33:42.379082",
+      "approved_at": "2025-10-10T14:33:48.872209"
+    },
+    {
+      "id": "transfer_898145344_1760106824",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T14:33:44.292773",
+      "delay_until": "2025-10-11T14:33:44.292777"
+    },
+    {
+      "id": "transfer_898145344_1760106887",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Tsurukaga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T14:34:47.156512",
+      "delay_until": "2025-10-11T14:34:47.156516"
+    },
+    {
+      "id": "transfer_898145344_1760106926",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Fujinara",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T14:35:26.216278",
+      "delay_until": "2025-10-11T14:35:26.216283"
+    },
+    {
+      "id": "transfer_898145344_1760106962",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Hozumi-tsuka",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T14:36:02.680186",
+      "delay_until": "2025-10-11T14:36:02.680190"
     }
   ]
 }
