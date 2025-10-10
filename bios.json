@@ -214,9 +214,12 @@
     "7980617348": {
       "country": "Azure",
       "job": "دوک",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-10-10T04:32:54.803038"
+      "saved_at": "2025-10-10T04:35:25.542884",
+      "expires_at": "2025-10-10T05:02:54.803939",
+      "name": "تورفین",
+      "nickname": "دست قیچی"
     }
   },
   "used_hashtags": [
