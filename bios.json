@@ -214,12 +214,24 @@
     "8016979493": {
       "country": "Santos",
       "job": "ارتشبد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-10-10T20:14:18.549105",
+      "saved_at": "2025-10-10T20:17:49.368526",
       "expires_at": "2025-10-10T20:43:44.013844",
       "name": "Criston Cole",
-      "nickname": "Kingmaker"
+      "nickname": "Kingmaker",
+      "age": "30",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "مدیریت امور نظامی",
+        "حواس پنجگانه قوی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "مدیریت امور نظامی",
+      "skill3": "حواس پنجگانه قوی",
+      "appearance": "چهره: تراش‌خورده، متقارن و جذاب با خطوطی محکم و نگاه نافذ\nمو: قهوه‌ای تیره، معمولاً نیمه‌بلند و مرتب نگه‌داشته‌شده\nچشم‌ها: فندقی روشن با نگاهی سخت و مصمم"
     }
   },
   "used_hashtags": [
