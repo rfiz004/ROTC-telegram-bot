@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Druvenmarsh",
   "mines": {},
-  "wealth": 41500,
+  "wealth": 34000,
   "population": 20000,
   "tax": 100,
   "popularity": 58,
@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 1,
+      "count": 4,
       "product": "چوب",
       "weekly_output": 50
     }
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-10T06:56:37.892110"
+  "last_updated": "2025-10-10T07:17:22.248241"
 }
