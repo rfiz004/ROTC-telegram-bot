@@ -7424,6 +7424,24 @@
       "requested_at": "2025-10-10T08:40:33.186587",
       "delay_until": "2025-10-11T08:40:33.186591",
       "approved_at": "2025-10-10T08:40:39.771408"
+    },
+    {
+      "id": "transfer_5566736269_1760085961",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 50,
+        "پارچه": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T08:46:01.866893",
+      "delay_until": "2025-10-11T08:46:01.866897",
+      "approved_at": "2025-10-10T08:46:13.161932"
     }
   ]
 }
