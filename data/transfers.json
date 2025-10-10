@@ -8216,9 +8216,10 @@
       "items": {
         "طلا": 8400
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T14:44:54.792831",
-      "delay_until": "2025-10-11T14:44:54.792834"
+      "delay_until": "2025-10-11T14:44:54.792834",
+      "approved_at": "2025-10-10T14:47:48.628367"
     },
     {
       "id": "transfer_898145344_1760107502",
@@ -8234,9 +8235,61 @@
         "فولاد": 100,
         "پارچه": 50
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T14:45:02.944720",
-      "delay_until": "2025-10-11T14:45:02.944723"
+      "delay_until": "2025-10-11T14:45:02.944723",
+      "approved_at": "2025-10-10T14:47:52.980150"
+    },
+    {
+      "id": "transfer_898145344_1760107531",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 388
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:45:31.445848",
+      "delay_until": "2025-10-11T14:45:31.445852",
+      "approved_at": "2025-10-10T14:46:00.827110"
+    },
+    {
+      "id": "transfer_898145344_1760107552",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:45:52.252798",
+      "delay_until": "2025-10-11T14:45:52.252802",
+      "approved_at": "2025-10-10T14:45:58.934907"
+    },
+    {
+      "id": "transfer_898145344_1760107577",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 5
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:46:17.008952",
+      "delay_until": "2025-10-11T14:46:17.008958",
+      "approved_at": "2025-10-10T14:46:41.260064"
     }
   ]
 }
