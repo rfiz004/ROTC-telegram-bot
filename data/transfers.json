@@ -7904,9 +7904,81 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-10T14:26:25.976495",
-      "delay_until": "2025-10-11T14:26:25.976499"
+      "delay_until": "2025-10-11T14:26:25.976499",
+      "approved_at": "2025-10-10T14:28:44.651845"
+    },
+    {
+      "id": "transfer_5566736269_1760106447",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Kalteryn",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:27:27.896127",
+      "delay_until": "2025-10-11T14:27:27.896130",
+      "approved_at": "2025-10-10T14:28:46.203188"
+    },
+    {
+      "id": "transfer_1329048693_1760106454",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 250
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:27:34.318437",
+      "delay_until": "2025-10-11T14:27:34.318442",
+      "approved_at": "2025-10-10T14:29:28.661850"
+    },
+    {
+      "id": "transfer_5566736269_1760106547",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 640,
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:29:07.112252",
+      "delay_until": "2025-10-11T14:29:07.112256",
+      "approved_at": "2025-10-10T14:29:30.135898"
+    },
+    {
+      "id": "transfer_5566736269_1760106583",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:29:43.920305",
+      "delay_until": "2025-10-11T14:29:43.920308",
+      "approved_at": "2025-10-10T14:29:50.188540"
     }
   ]
 }
