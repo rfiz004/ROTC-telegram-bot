@@ -8477,6 +8477,23 @@
       "requested_at": "2025-10-10T15:39:15.450089",
       "delay_until": "2025-10-11T15:39:15.450093",
       "approved_at": "2025-10-10T15:39:22.566410"
+    },
+    {
+      "id": "transfer_1771323853_1760110850",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:40:50.193046",
+      "delay_until": "2025-10-11T15:40:50.193049",
+      "approved_at": "2025-10-10T15:40:51.474444"
     }
   ]
 }
