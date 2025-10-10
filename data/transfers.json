@@ -7741,6 +7741,63 @@
       "requested_at": "2025-10-10T14:11:05.029323",
       "delay_until": "2025-10-11T14:11:05.029327",
       "approved_at": "2025-10-10T14:11:06.284448"
+    },
+    {
+      "id": "transfer_1771323853_1760105570",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 300,
+        "سنگ": 300,
+        "چرم": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:12:50.277182",
+      "delay_until": "2025-10-11T14:12:50.277185",
+      "approved_at": "2025-10-10T14:12:51.563725"
+    },
+    {
+      "id": "transfer_1771323853_1760105597",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 300,
+        "سنگ": 300,
+        "چرم": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:13:17.343489",
+      "delay_until": "2025-10-11T14:13:17.343493",
+      "approved_at": "2025-10-10T14:13:18.460599"
+    },
+    {
+      "id": "transfer_1771323853_1760105627",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 300,
+        "سنگ": 300,
+        "چرم": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:13:47.024521",
+      "delay_until": "2025-10-11T14:13:47.024524",
+      "approved_at": "2025-10-10T14:13:48.416615"
     }
   ]
 }
