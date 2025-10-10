@@ -7817,6 +7817,23 @@
       "requested_at": "2025-10-10T14:14:43.804738",
       "delay_until": "2025-10-11T14:14:43.804743",
       "approved_at": "2025-10-10T14:14:45.170364"
+    },
+    {
+      "id": "transfer_1771323853_1760105950",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1250
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T14:19:10.426502",
+      "delay_until": "2025-10-11T14:19:10.426506",
+      "approved_at": "2025-10-10T14:19:11.777119"
     }
   ]
 }
