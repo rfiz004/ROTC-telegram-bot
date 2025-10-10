@@ -8409,6 +8409,56 @@
       "requested_at": "2025-10-10T15:33:17.710411",
       "delay_until": "2025-10-11T15:33:17.710414",
       "approved_at": "2025-10-10T15:33:45.856904"
+    },
+    {
+      "id": "transfer_1771323853_1760110586",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 15000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:36:26.917674",
+      "delay_until": "2025-10-11T15:36:26.917679",
+      "approved_at": "2025-10-10T15:36:28.527708"
+    },
+    {
+      "id": "transfer_7869889327_1760110598",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Druvenmarsh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شراب": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-10T15:36:38.473833",
+      "delay_until": "2025-10-11T15:36:38.473836"
+    },
+    {
+      "id": "transfer_7096919075_1760110613",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Skavenreach",
+      "target_country": "Aldemar",
+      "target_province": "King-of-wealth",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 41000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-10T15:36:53.931229",
+      "delay_until": "2025-10-11T15:36:53.931232",
+      "approved_at": "2025-10-10T15:37:19.451611"
     }
   ]
 }
