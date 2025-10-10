@@ -4,7 +4,7 @@
   "mines": {},
   "wealth": 40000,
   "population": 14000,
-  "tax": 100,
+  "tax": 10,
   "popularity": 73,
   "total_army": 5100,
   "army": {
@@ -74,5 +74,6 @@
       "produces": "شیشه",
       "weekly_per_unit": 50
     }
-  }
+  },
+  "last_updated": "2025-10-10T05:56:06.810484"
 }
