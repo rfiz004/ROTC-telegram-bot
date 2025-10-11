@@ -8612,6 +8612,23 @@
       "requested_at": "2025-10-11T10:44:31.826873",
       "delay_until": "2025-10-12T10:44:31.826876",
       "approved_at": "2025-10-11T10:46:24.064559"
+    },
+    {
+      "id": "transfer_809172681_1760182704",
+      "requester_id": 809172681,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-11T11:38:24.450333",
+      "delay_until": "2025-10-12T11:38:24.450337",
+      "approved_at": "2025-10-11T11:39:58.077569"
     }
   ]
 }
