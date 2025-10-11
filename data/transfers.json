@@ -8731,6 +8731,22 @@
       "requested_at": "2025-10-11T16:57:16.932088",
       "delay_until": "2025-10-12T16:57:16.932093",
       "approved_at": "2025-10-11T16:57:18.280234"
+    },
+    {
+      "id": "transfer_1771323853_1760203802",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 18000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-11T17:30:02.050585",
+      "delay_until": "2025-10-12T17:30:02.050590"
     }
   ]
 }
