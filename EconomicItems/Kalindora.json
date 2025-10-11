@@ -1,12 +1,12 @@
 {
   "grain_priority": [
     "ماهی",
-    "گندم"
+    "میوه"
   ],
   "grains": {
     "ماهی": 50
   },
   "unfed_population": 0,
-  "grain_consumption": 400,
-  "last_updated": "2025-10-09T09:09:02.390570"
+  "grain_consumption": 1000,
+  "last_updated": "2025-10-11T16:17:55.547094"
 }
