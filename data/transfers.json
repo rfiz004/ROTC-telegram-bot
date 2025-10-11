@@ -8494,6 +8494,39 @@
       "requested_at": "2025-10-10T15:40:50.193046",
       "delay_until": "2025-10-11T15:40:50.193049",
       "approved_at": "2025-10-10T15:40:51.474444"
+    },
+    {
+      "id": "transfer_5566736269_1760172103",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 50000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-11T08:41:43.832161",
+      "delay_until": "2025-10-12T08:41:43.832164",
+      "approved_at": "2025-10-11T08:42:19.791321"
+    },
+    {
+      "id": "transfer_5566736269_1760172214",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 24000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-11T08:43:34.479476",
+      "delay_until": "2025-10-12T08:43:34.479481"
     }
   ]
 }
