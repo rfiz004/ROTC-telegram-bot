@@ -8744,9 +8744,26 @@
       "items": {
         "طلا": 18000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-11T17:30:02.050585",
-      "delay_until": "2025-10-12T17:30:02.050590"
+      "delay_until": "2025-10-12T17:30:02.050590",
+      "approved_at": "2025-10-11T17:35:09.701569"
+    },
+    {
+      "id": "transfer_898145344_1760204026",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-11T17:33:46.093321",
+      "delay_until": "2025-10-12T17:33:46.093327"
     }
   ]
 }
