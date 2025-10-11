@@ -8594,6 +8594,22 @@
       "status": "pending",
       "requested_at": "2025-10-11T09:41:48.406336",
       "delay_until": "2025-10-12T09:41:48.406341"
+    },
+    {
+      "id": "transfer_5564554013_1760179471",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 15000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-11T10:44:31.826873",
+      "delay_until": "2025-10-12T10:44:31.826876"
     }
   ]
 }
