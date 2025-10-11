@@ -5,7 +5,7 @@
   "wealth": 23600,
   "population": 20000,
   "tax": 70,
-  "popularity": 72,
+  "popularity": 76,
   "total_army": 5000,
   "army": {
     "کماندار": 500,
@@ -31,7 +31,7 @@
     "چرم": 700,
     "چوب": 0,
     "گندم": 0,
-    "گوشت": 776.0
+    "گوشت": 576.0
   },
   "economic_structures": {
     "دامداری": {
