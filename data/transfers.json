@@ -8578,6 +8578,22 @@
       "requested_at": "2025-10-11T09:16:27.731977",
       "delay_until": "2025-10-12T09:16:27.731980",
       "approved_at": "2025-10-11T09:16:29.240899"
+    },
+    {
+      "id": "transfer_5566736269_1760175708",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 1250
+      },
+      "status": "pending",
+      "requested_at": "2025-10-11T09:41:48.406336",
+      "delay_until": "2025-10-12T09:41:48.406341"
     }
   ]
 }
