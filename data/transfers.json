@@ -8527,6 +8527,23 @@
       "status": "pending",
       "requested_at": "2025-10-11T08:43:34.479476",
       "delay_until": "2025-10-12T08:43:34.479481"
+    },
+    {
+      "id": "transfer_5566736269_1760172476",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 24000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-11T08:47:56.011191",
+      "delay_until": "2025-10-12T08:47:56.011194",
+      "approved_at": "2025-10-11T08:48:00.798382"
     }
   ]
 }
