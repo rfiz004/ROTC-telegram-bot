@@ -210,34 +210,6 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2025-10-02T01:52:34.733698"
-    },
-    "7426482626": {
-      "step": "pending",
-      "country": "Santos",
-      "flow_type": "bio",
-      "job": "خاندان امپراطوری",
-      "expires_at": "2025-10-12T19:11:42.423654",
-      "name": "Virel Alaric Drakov",
-      "nickname": "Flame",
-      "age": "32",
-      "skills": [
-        "سوارکاری",
-        "مهارت جراحی",
-        "تعلیم"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 3,
-      "skill1": "سوارکاری",
-      "skill2": "مهارت جراحی",
-      "skill3": "تعلیم",
-      "appearance": "-",
-      "history": "...",
-      "id_number": "@Kill_Hel",
-      "user_id_tag": "#Virel",
-      "photo": "AgACAgQAAxkBAAK-eGjr9us1b2aES4tKdzwr1t-D5BpjAAKGyjEbsIdhU_rPDb9MXQ0fAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "7426482626",
-      "saved_at": "2025-10-12T18:43:55.502080"
     }
   },
   "used_hashtags": [
