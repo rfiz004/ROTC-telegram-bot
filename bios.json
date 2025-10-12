@@ -210,6 +210,15 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2025-10-02T01:52:34.733698"
+    },
+    "7426482626": {
+      "country": "Santos",
+      "job": "خاندان امپراطوری",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-10-12T18:41:55.928607",
+      "expires_at": "2025-10-12T19:11:42.423654",
+      "name": "Virel Alaric Drakov"
     }
   },
   "used_hashtags": [
