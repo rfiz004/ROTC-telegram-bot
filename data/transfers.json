@@ -8799,6 +8799,22 @@
       "requested_at": "2025-10-12T09:44:14.095377",
       "delay_until": "2025-10-13T09:44:14.095382",
       "approved_at": "2025-10-12T09:44:16.510989"
+    },
+    {
+      "id": "transfer_898145344_1760277228",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "کشتی دوقلو آلدمر": 1
+      },
+      "status": "pending",
+      "requested_at": "2025-10-12T13:53:48.788965",
+      "delay_until": "2025-10-13T13:53:48.788970"
     }
   ]
 }
