@@ -8833,6 +8833,25 @@
       "requested_at": "2025-10-12T16:39:26.530136",
       "delay_until": "2025-10-13T16:39:26.530141",
       "approved_at": "2025-10-12T16:47:54.806998"
+    },
+    {
+      "id": "transfer_898145344_1760287923",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "شمشیرزن زره پوش": 1000,
+        "سپر فولادی بزرگ": 1000,
+        "نیزه دار سپردار": 1000,
+        "جوخه قاتلان": 289
+      },
+      "status": "pending",
+      "requested_at": "2025-10-12T16:52:03.200661",
+      "delay_until": "2025-10-13T16:52:03.200667"
     }
   ]
 }
