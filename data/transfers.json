@@ -8938,6 +8938,57 @@
       "requested_at": "2025-10-14T13:25:15.882088",
       "delay_until": "2025-10-15T13:25:15.882094",
       "approved_at": "2025-10-14T13:25:17.694542"
+    },
+    {
+      "id": "transfer_1771323853_1760455423",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "منجنیق": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-14T15:23:43.058787",
+      "delay_until": "2025-10-15T15:23:43.058792",
+      "approved_at": "2025-10-14T15:23:44.592652"
+    },
+    {
+      "id": "transfer_1771323853_1760455452",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "بالیستا": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-14T15:24:12.045622",
+      "delay_until": "2025-10-15T15:24:12.045626",
+      "approved_at": "2025-10-14T15:24:13.533996"
+    },
+    {
+      "id": "transfer_1771323853_1760455530",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "بالیستا": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-14T15:25:30.713284",
+      "delay_until": "2025-10-15T15:25:30.713289",
+      "approved_at": "2025-10-14T15:25:32.214431"
     }
   ]
 }
