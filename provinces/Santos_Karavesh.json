@@ -2,7 +2,7 @@
   "country": "Santos",
   "province": "Karavesh",
   "mines": {},
-  "wealth": 7500,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 66,
@@ -58,5 +58,5 @@
       "weekly_output": 25
     }
   },
-  "last_updated": "2025-10-11T16:53:05.513304"
+  "last_updated": "2025-10-14T13:27:19.433313"
 }
