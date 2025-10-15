@@ -1,11 +1,12 @@
 {
   "grain_priority": [
-    "میوه"
+    "میوه",
+    "گوشت"
   ],
   "grains": {
     "گوشت": 400
   },
   "unfed_population": 0,
   "grain_consumption": 500,
-  "last_updated": "2025-10-11T16:34:18.178711"
+  "last_updated": "2025-10-15T04:57:26.824402"
 }
