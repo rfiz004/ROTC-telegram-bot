@@ -9091,6 +9091,42 @@
       "requested_at": "2025-10-16T08:27:09.545937",
       "delay_until": "2025-10-17T08:27:09.545940",
       "approved_at": "2025-10-16T08:42:39.020337"
+    },
+    {
+      "id": "transfer_1771323853_1760609076",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Karavesh",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 20,
+        "چوب": 80,
+        "سنگ": 20
+      },
+      "status": "approved",
+      "requested_at": "2025-10-16T10:04:36.109913",
+      "delay_until": "2025-10-17T10:04:36.109918",
+      "approved_at": "2025-10-16T10:04:38.305231"
+    },
+    {
+      "id": "transfer_1771323853_1760609099",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Karavesh",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 4000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-16T10:04:59.096135",
+      "delay_until": "2025-10-17T10:04:59.096138",
+      "approved_at": "2025-10-16T10:05:00.388401"
     }
   ]
 }
