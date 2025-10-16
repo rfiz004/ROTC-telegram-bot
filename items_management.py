@@ -1,23 +1,19 @@
 import os
 import json
-from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
-from loader import dp  # فرض بر اینکه Dispatcher از loader وارد میشه
-
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
+from telegram.ext import CallbackContext
 
 # ======= 🔹 1. نمایش کشورها =======
-@dp.callback_query_handler(lambda c: c.data == "admin_structure_status")
-async def show_country_list(callback_query: CallbackQuery):
+async def show_country_list(update: Update, context: CallbackContext):
     countries = []
     base_path = os.path.join(os.getcwd(), "provinces")
 
-    # استخراج کشورها از فایل‌ها (با فرض اینکه در فایل province مقدار "country" هست)
     for file_name in os.listdir(base_path):
         if file_name.endswith(".json"):
             with open(os.path.join(base_path, file_name), "r", encoding="utf-8") as f:
                 data = json.load(f)
-            if "country" in data:
-                if data["country"] not in countries:
-                    countries.append(data["country"])
+            if "country" in data and data["country"] not in countries:
+                countries.append(data["country"])
 
     keyboard = [
         [InlineKeyboardButton(country, callback_data=f"admin_select_country_{country}")]
@@ -25,13 +21,13 @@ async def show_country_list(callback_query: CallbackQuery):
     ]
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_menu_back")])
 
-    await callback_query.message.edit_text("🌍 یکی از کشورها را انتخاب کنید:", reply_markup=InlineKeyboardMarkup(keyboard))
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.callback_query.edit_message_text("🌍 یکی از کشورها را انتخاب کنید:", reply_markup=reply_markup)
 
 
 # ======= 🔹 2. نمایش استان‌ها =======
-@dp.callback_query_handler(lambda c: c.data.startswith("admin_select_country_"))
-async def show_provinces(callback_query: CallbackQuery):
-    country = callback_query.data.replace("admin_select_country_", "")
+async def show_provinces(update: Update, context: CallbackContext):
+    country = update.callback_query.data.replace("admin_select_country_", "")
     base_path = os.path.join(os.getcwd(), "provinces")
 
     provinces = []
@@ -48,13 +44,13 @@ async def show_provinces(callback_query: CallbackQuery):
     ]
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_structure_status")])
 
-    await callback_query.message.edit_text(f"🏰 استان‌های کشور {country}:", reply_markup=InlineKeyboardMarkup(keyboard))
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.callback_query.edit_message_text(f"🏰 استان‌های کشور {country}:", reply_markup=reply_markup)
 
 
 # ======= 🔹 3. نمایش آیتم‌های در انتظار =======
-@dp.callback_query_handler(lambda c: c.data.startswith("admin_select_province_"))
-async def show_pending_items(callback_query: CallbackQuery):
-    province = callback_query.data.replace("admin_select_province_", "")
+async def show_pending_items(update: Update, context: CallbackContext):
+    province = update.callback_query.data.replace("admin_select_province_", "")
     base_path = os.path.join(os.getcwd(), "provinces")
 
     file_path = None
@@ -64,7 +60,7 @@ async def show_pending_items(callback_query: CallbackQuery):
             break
 
     if not file_path:
-        await callback_query.message.edit_text("❌ فایل استان پیدا نشد.")
+        await update.callback_query.edit_message_text("❌ فایل استان پیدا نشد.")
         return
 
     with open(file_path, "r", encoding="utf-8") as f:
@@ -78,7 +74,7 @@ async def show_pending_items(callback_query: CallbackQuery):
                     pending_items.append((section, name))
 
     if not pending_items:
-        await callback_query.message.edit_text("✅ هیچ سازه‌ی در انتظار تأییدی وجود ندارد.")
+        await update.callback_query.edit_message_text("✅ هیچ سازه‌ی در انتظار تأییدی وجود ندارد.")
         return
 
     keyboard = [
@@ -87,13 +83,13 @@ async def show_pending_items(callback_query: CallbackQuery):
     ]
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_structure_status")])
 
-    await callback_query.message.edit_text(f"🔎 سازه‌های در انتظار تأیید ({province}):", reply_markup=InlineKeyboardMarkup(keyboard))
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.callback_query.edit_message_text(f"🔎 سازه‌های در انتظار تأیید ({province}):", reply_markup=reply_markup)
 
 
 # ======= 🔹 4. مرور آیتم =======
-@dp.callback_query_handler(lambda c: c.data.startswith("admin_review_item_"))
-async def review_item(callback_query: CallbackQuery):
-    _, _, province, section, name = callback_query.data.split("_", 4)
+async def review_item(update: Update, context: CallbackContext):
+    _, _, province, section, name = update.callback_query.data.split("_", 4)
 
     keyboard = [
         [
@@ -103,7 +99,11 @@ async def review_item(callback_query: CallbackQuery):
         [InlineKeyboardButton("🔙 بازگشت", callback_data=f"admin_select_province_{province}")]
     ]
 
-    await callback_query.message.edit_text(f"آیتم انتخاب‌شده:\n🏰 {name}\n📂 بخش: {section}\n\nمی‌خواهید تأیید یا رد شود؟", reply_markup=InlineKeyboardMarkup(keyboard))
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.callback_query.edit_message_text(
+        f"آیتم انتخاب‌شده:\n🏰 {name}\n📂 بخش: {section}\n\nمی‌خواهید تأیید یا رد شود؟",
+        reply_markup=reply_markup
+    )
 
 
 # ======= 🔹 5. تابع آپدیت وضعیت =======
@@ -170,18 +170,16 @@ def decrement_structure_count(province_name: str, structure_name: str):
 
 
 # ======= 🔹 7. تأیید / رد =======
-@dp.callback_query_handler(lambda c: c.data.startswith("admin_approve_item_"))
-async def approve_item(callback_query: CallbackQuery):
-    _, _, province, section, name = callback_query.data.split("_", 4)
+async def approve_item(update: Update, context: CallbackContext):
+    _, _, province, section, name = update.callback_query.data.split("_", 4)
     update_item_status(province, section, name, "Approved")
-    await callback_query.answer("✅ آیتم تأیید شد.", show_alert=True)
-    await show_pending_items(callback_query)
+    await update.callback_query.answer("✅ آیتم تأیید شد.", show_alert=True)
+    await show_pending_items(update, context)
 
 
-@dp.callback_query_handler(lambda c: c.data.startswith("admin_reject_item_"))
-async def reject_item(callback_query: CallbackQuery):
-    _, _, province, section, name = callback_query.data.split("_", 4)
+async def reject_item(update: Update, context: CallbackContext):
+    _, _, province, section, name = update.callback_query.data.split("_", 4)
     update_item_status(province, section, name, "Rejected")
     decrement_structure_count(province, name)
-    await callback_query.answer("❌ آیتم رد شد و از شمارش کم شد.", show_alert=True)
-    await show_pending_items(callback_query)
+    await update.callback_query.answer("❌ آیتم رد شد و از شمارش کم شد.", show_alert=True)
+    await show_pending_items(update, context)
