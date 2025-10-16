@@ -1155,22 +1155,18 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     for mat, required_amount in total_materials.items():
         remaining = required_amount
         sections = ["army", "castle", "structures", "weapons", "misc", "economic_items"]
-
         for section_name in sections:
             if remaining <= 0:
                 break
             section = province_data.get(section_name, {})
             if mat in section and section[mat] > 0:
-                available = section[mat]
-                consume = min(available, remaining)
+                consume = min(section[mat], remaining)
                 section[mat] -= consume
                 remaining -= consume
-
         if remaining > 0:
             econ_items = province_data.setdefault("economic_items", {})
             if mat in econ_items and econ_items[mat] > 0:
-                available = econ_items[mat]
-                consume = min(available, remaining)
+                consume = min(econ_items[mat], remaining)
                 econ_items[mat] -= consume
                 remaining -= consume
 
@@ -1200,7 +1196,6 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif item_type == "econstructure":
         province_data.setdefault("economic_structures", {})
         econ_structs = province_data["economic_structures"]
-
         if item_name in econ_structs:
             econ_structs[item_name]["count"] = econ_structs[item_name].get("count", 0) + quantity
         else:
@@ -1211,7 +1206,7 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "weekly_output": struct_info.get("weekly_output", 0)
             }
 
-    else:  # سایر آیتم‌ها
+    else:
         province_data.setdefault("misc", {})
         province_data["misc"][item_name] = province_data["misc"].get(item_name, 0) + quantity
 
@@ -1236,22 +1231,17 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "economic_structures": {}
         })
 
-        target_section = (
-            "economic_structures" if item_type == "econstructure" else item_type
-        )
-
+        target_section = "economic_structures" if item_type == "econstructure" else item_type
         section = province_info.setdefault(target_section, {})
         structure_list = section.setdefault(item_name, [])
 
         for i in range(quantity):
             next_id = f"{item_name}_{len(structure_list) + 1}"
-            new_entry = {
-                "id": next_id,
-                "status": "Pending"
-            }
+            new_entry = {"id": next_id, "status": "Pending"}
             if target_section == "economic_structures":
                 struct_info = all_econ_structs.get(item_name, {})
                 new_entry["product"] = struct_info.get("product", "")
+                new_entry["weekly_output"] = struct_info.get("weekly_output", 0)
             structure_list.append(new_entry)
 
         with open("countries_data.json", "w", encoding="utf-8") as f:
