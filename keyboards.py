@@ -81,6 +81,7 @@ def master_admin_menu():
         [InlineKeyboardButton("💼 مدیریت مشاغل", callback_data="admin_jobs")],
         [InlineKeyboardButton("🎯 مدیریت مهارت‌ها", callback_data="admin_skills")],
         [InlineKeyboardButton("🏰 مدیریت استان‌ها", callback_data="admin_province_menu")],
+        [InlineKeyboardButton("🏗 مدیریت وضعیت سازه‌ها", callback_data="admin_structure_status")],
         [InlineKeyboardButton("🔙 بازگشت", callback_data="back_to_main")]
     ]
     return InlineKeyboardMarkup(keyboard)
@@ -102,6 +103,7 @@ def multi_country_admin_menu(countries):
         keyboard.append([InlineKeyboardButton(f"🌍 مدیریت {country.capitalize()}", callback_data=f"admin_country_menu_{country}")])
     keyboard.append([InlineKeyboardButton("🏰 همه استان‌ها", callback_data="admin_view_all_provinces")])
     keyboard.append([InlineKeyboardButton("🔄 همه انتقالات", callback_data="admin_manage_transfers")])
+    keyboard.append([InlineKeyboardButton("🏗 مدیریت وضعیت سازه‌ها", callback_data="admin_structure_status")])
     keyboard.append([InlineKeyboardButton("🔙 برگشت", callback_data="back_to_main")])
     return InlineKeyboardMarkup(keyboard)
 
