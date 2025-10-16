@@ -9127,6 +9127,23 @@
       "requested_at": "2025-10-16T10:04:59.096135",
       "delay_until": "2025-10-17T10:04:59.096138",
       "approved_at": "2025-10-16T10:05:00.388401"
+    },
+    {
+      "id": "transfer_1771323853_1760609188",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Karavesh",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 10
+      },
+      "status": "approved",
+      "requested_at": "2025-10-16T10:06:28.779896",
+      "delay_until": "2025-10-17T10:06:28.779899",
+      "approved_at": "2025-10-16T10:06:30.124328"
     }
   ]
 }
