@@ -9144,6 +9144,24 @@
       "requested_at": "2025-10-16T10:06:28.779896",
       "delay_until": "2025-10-17T10:06:28.779899",
       "approved_at": "2025-10-16T10:06:30.124328"
+    },
+    {
+      "id": "transfer_1771323853_1760612634",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Marashen",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 30,
+        "چوب": 80,
+        "سنگ": 20
+      },
+      "status": "pending",
+      "requested_at": "2025-10-16T11:03:54.985668",
+      "delay_until": "2025-10-17T11:03:54.985672"
     }
   ]
 }
