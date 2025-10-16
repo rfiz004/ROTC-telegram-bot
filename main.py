@@ -188,6 +188,17 @@ from province_handler import (
     show_grain_preview, edit_tax_callback, handle_tax_input
 )
 from run_git_push import run_git_push
+# ────────────── Items Management Handlers
+from items_management import (
+    show_country_list,
+    show_provinces,
+    show_pending_items,
+    review_item,
+    approve_item,
+    reject_item
+)
+
+
 
 async def periodic_git_push():
     while True:
@@ -402,6 +413,12 @@ app.add_handler(CommandHandler("id", get_chat_id))
 app.add_handler(CallbackQueryHandler(admin_manage_transfers, pattern="^admin_manage_transfers$"))
 app.add_handler(CallbackQueryHandler(handle_skill_navigation, pattern="^skill_page_"))
 app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$"))
+app.add_handler(CallbackQueryHandler(show_country_list, pattern="^admin_structure_status$"))
+app.add_handler(CallbackQueryHandler(show_provinces, pattern="^admin_select_country_"))
+app.add_handler(CallbackQueryHandler(show_pending_items, pattern="^admin_select_province_"))
+app.add_handler(CallbackQueryHandler(review_item, pattern="^admin_review_item_"))
+app.add_handler(CallbackQueryHandler(approve_item, pattern="^admin_approve_item_"))
+app.add_handler(CallbackQueryHandler(reject_item, pattern="^admin_reject_item_"))
 app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
 app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
 app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
