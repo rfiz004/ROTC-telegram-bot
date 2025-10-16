@@ -974,10 +974,153 @@ def check_materials(province_data, item, quantity):
 
     return missing
 
+# async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+
+#     with open("economic_structures.json", "r", encoding="utf-8") as f:
+#         all_econ_structs = json.load(f)
+
+#     user_id = query.from_user.id
+#     user_data = context.user_data.get(user_id, {})
+
+#     item = user_data.get("purchase_item")
+#     quantity = user_data.get("purchase_quantity", 1)
+#     total_price = user_data.get("total_price", 0)
+#     total_materials = user_data.get("total_materials", {})
+
+#     if not item:
+#         await context.bot.send_message(user_id, "❌ خطا در خرید.", reply_markup=back_and_home_buttons())
+#         return
+
+#     country = user_data.get("country")
+#     province = user_data.get("province")
+
+#     if not country or not province:
+#         await context.bot.send_message(user_id, "❌ اطلاعات استان یافت نشد.", reply_markup=back_and_home_buttons())
+#         return
+
+#     province_data = load_province_data(country, province)
+#     if not province_data:
+#         from province_handler import create_new_province
+#         province_data = create_new_province(country, province)
+
+#     # 🔻 کسر ثروت
+#     province_data["wealth"] -= total_price
+
+#     # 🔻 کسر متریال‌ها
+#     for mat, required_amount in total_materials.items():
+#         remaining = required_amount
+
+#         # مصرف از همه بخش‌ها
+#         sections = ["army", "castle", "structures", "weapons", "misc", "economic_items"]
+#         for section_name in sections:
+#             if remaining <= 0:
+#                 break
+#             section = province_data.get(section_name, {})
+#             if mat in section and section[mat] > 0:
+#                 available = section[mat]
+#                 consume = min(available, remaining)
+#                 section[mat] -= consume
+#                 remaining -= consume
+
+#         # اگر هنوز باقی موند از economic_items کم کن
+#         if remaining > 0:
+#             econ_items = province_data.setdefault("economic_items", {})
+#             if mat in econ_items and econ_items[mat] > 0:
+#                 available = econ_items[mat]
+#                 consume = min(available, remaining)
+#                 econ_items[mat] -= consume
+#                 remaining -= consume
+
+#     item_name = item["name"]
+#     item_type = item.get("type", "").lower()
+
+#     # 🔻 اضافه کردن آیتم به استان
+#     if item_type == "army":
+#         base_count = item.get("count", 1)
+#         total_units = base_count * quantity
+#         province_data.setdefault("army", {})
+#         province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
+#         province_data["total_army"] = province_data.get("total_army", 0) + total_units
+
+#     elif item_type == "weapon":
+#         province_data.setdefault("weapons", {})
+#         province_data["weapons"][item_name] = province_data["weapons"].get(item_name, 0) + quantity
+
+#     elif item_type == "castle":
+#         province_data.setdefault("castle", {})
+#         province_data["castle"][item_name] = province_data["castle"].get(item_name, 0) + quantity
+
+#     elif item_type == "structure":
+#         province_data.setdefault("structures", {})
+#         province_data["structures"][item_name] = province_data["structures"].get(item_name, 0) + quantity
+
+#     elif item_type == "econstructure":
+#         province_data.setdefault("economic_structures", {})
+#         econ_structs = province_data["economic_structures"]
+
+#         if item_name in econ_structs:
+#             econ_structs[item_name]["count"] = econ_structs[item_name].get("count", 0) + quantity
+#         else:
+#             struct_info = all_econ_structs.get(item_name, {})
+#             econ_structs[item_name] = {
+#                 "count": quantity,
+#                 "product": struct_info.get("product", ""),
+#                 "weekly_output": struct_info.get("weekly_output", 0)
+#             }
+
+#     else:  # misc
+#         province_data.setdefault("misc", {})
+#         province_data["misc"][item_name] = province_data["misc"].get(item_name, 0) + quantity
+
+#     # 🔻 ذخیره اطلاعات
+#     province_data["last_updated"] = datetime.utcnow().isoformat()
+#     save_province_data(country, province, province_data)
+
+#         # 🔻 ارسال گزارش خرید برای ادمین‌های کشور
+#     admin_ids = COUNTRY_ADMIN_ID.get(country, [])
+#     if admin_ids:
+#         report = (
+#             f"📢 گزارش خرید در کشور {country}\n\n"
+#             f"🏰 استان: {province}\n"
+#             f"👤 پلیر: {query.from_user.full_name} (@{query.from_user.username or '---'})\n\n"
+#             f"📦 {item_name} × {quantity:,}\n"
+#             f"💰 قیمت کل: {total_price:,} طلا\n"
+#             f"⚒️ مصرف متریال: {', '.join([f'{m}×{a}' for m,a in total_materials.items()]) if total_materials else 'ندارد'}"
+#         )
+#         for admin_id in admin_ids:
+#             try:
+#                 await context.bot.send_message(chat_id=admin_id, text=report)
+#             except Exception as e:
+#                 print(f"خطا در ارسال پیام به ادمین {admin_id}: {e}")
+
+
+#     # 🔻 حذف داده‌های موقت خرید
+#     for key in ["purchase_item", "purchase_quantity", "total_price", "total_materials", "step", "flow_type"]:
+#         context.user_data[user_id].pop(key, None)
+
+#     text = f"✅ خرید با موفقیت انجام شد!\n\n"
+#     text += f"📦 {item_name} × {quantity:,} به استان شما اضافه شد.\n"
+#     text += f"💰 طلای باقی‌مانده: {province_data['wealth']:,} طلا"
+
+#     keyboard = [
+#         [InlineKeyboardButton("🏠 نمایش استان", callback_data="country_overview")],
+#         [InlineKeyboardButton("🛒 ادامه خرید", callback_data="open_shop_menu")]
+#     ]
+
+#     await context.bot.send_message(
+#         chat_id=query.message.chat_id,
+#         text=text,
+#         reply_markup=InlineKeyboardMarkup(keyboard),
+#     )
+
+
 async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
+    # 🔹 بارگذاری ساختارهای اقتصادی
     with open("economic_structures.json", "r", encoding="utf-8") as f:
         all_econ_structs = json.load(f)
 
@@ -1008,12 +1151,11 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # 🔻 کسر ثروت
     province_data["wealth"] -= total_price
 
-    # 🔻 کسر متریال‌ها
+    # 🔻 کسر متریال‌ها از بخش‌های مختلف
     for mat, required_amount in total_materials.items():
         remaining = required_amount
-
-        # مصرف از همه بخش‌ها
         sections = ["army", "castle", "structures", "weapons", "misc", "economic_items"]
+
         for section_name in sections:
             if remaining <= 0:
                 break
@@ -1024,7 +1166,6 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 section[mat] -= consume
                 remaining -= consume
 
-        # اگر هنوز باقی موند از economic_items کم کن
         if remaining > 0:
             econ_items = province_data.setdefault("economic_items", {})
             if mat in econ_items and econ_items[mat] > 0:
@@ -1070,15 +1211,53 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "weekly_output": struct_info.get("weekly_output", 0)
             }
 
-    else:  # misc
+    else:  # سایر آیتم‌ها
         province_data.setdefault("misc", {})
         province_data["misc"][item_name] = province_data["misc"].get(item_name, 0) + quantity
 
-    # 🔻 ذخیره اطلاعات
+    # 🔻 ذخیره اطلاعات استان
     province_data["last_updated"] = datetime.utcnow().isoformat()
     save_province_data(country, province, province_data)
 
-        # 🔻 ارسال گزارش خرید برای ادمین‌های کشور
+    # 🔻 ذخیره در countries_data.json برای بررسی ادمین‌ها
+    allowed_types = ["castle", "structures", "weapons", "econstructure"]
+    if item_type in allowed_types:
+        try:
+            with open("countries_data.json", "r", encoding="utf-8") as f:
+                countries_data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            countries_data = {}
+
+        country_info = countries_data.setdefault(country, {})
+        province_info = country_info.setdefault(province, {
+            "castle": {},
+            "structures": {},
+            "weapons": {},
+            "economic_structures": {}
+        })
+
+        target_section = (
+            "economic_structures" if item_type == "econstructure" else item_type
+        )
+
+        section = province_info.setdefault(target_section, {})
+        structure_list = section.setdefault(item_name, [])
+
+        for i in range(quantity):
+            next_id = f"{item_name}_{len(structure_list) + 1}"
+            new_entry = {
+                "id": next_id,
+                "status": "Pending"
+            }
+            if target_section == "economic_structures":
+                struct_info = all_econ_structs.get(item_name, {})
+                new_entry["product"] = struct_info.get("product", "")
+            structure_list.append(new_entry)
+
+        with open("countries_data.json", "w", encoding="utf-8") as f:
+            json.dump(countries_data, f, ensure_ascii=False, indent=4)
+
+    # 🔻 ارسال گزارش خرید برای ادمین‌های کشور
     admin_ids = COUNTRY_ADMIN_ID.get(country, [])
     if admin_ids:
         report = (
@@ -1095,14 +1274,16 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception as e:
                 print(f"خطا در ارسال پیام به ادمین {admin_id}: {e}")
 
-
-    # 🔻 حذف داده‌های موقت خرید
+    # 🔻 حذف داده‌های موقت خرید از حافظه کاربر
     for key in ["purchase_item", "purchase_quantity", "total_price", "total_materials", "step", "flow_type"]:
         context.user_data[user_id].pop(key, None)
 
-    text = f"✅ خرید با موفقیت انجام شد!\n\n"
-    text += f"📦 {item_name} × {quantity:,} به استان شما اضافه شد.\n"
-    text += f"💰 طلای باقی‌مانده: {province_data['wealth']:,} طلا"
+    # 🔻 پیام موفقیت به کاربر
+    text = (
+        f"✅ خرید با موفقیت انجام شد!\n\n"
+        f"📦 {item_name} × {quantity:,} به استان شما اضافه شد.\n"
+        f"💰 طلای باقی‌مانده: {province_data['wealth']:,} طلا"
+    )
 
     keyboard = [
         [InlineKeyboardButton("🏠 نمایش استان", callback_data="country_overview")],
