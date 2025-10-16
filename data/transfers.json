@@ -9074,6 +9074,22 @@
       "requested_at": "2025-10-15T04:56:11.367036",
       "delay_until": "2025-10-16T04:56:11.367040",
       "approved_at": "2025-10-15T06:42:18.968838"
+    },
+    {
+      "id": "transfer_6213073537_1760603229",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Grand-Duke",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-16T08:27:09.545937",
+      "delay_until": "2025-10-17T08:27:09.545940"
     }
   ]
 }
