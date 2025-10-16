@@ -9159,9 +9159,27 @@
         "چوب": 80,
         "سنگ": 20
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-16T11:03:54.985668",
-      "delay_until": "2025-10-17T11:03:54.985672"
+      "delay_until": "2025-10-17T11:03:54.985672",
+      "approved_at": "2025-10-16T11:03:56.596108"
+    },
+    {
+      "id": "transfer_1771323853_1760612654",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Marashen",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 4000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-16T11:04:14.758426",
+      "delay_until": "2025-10-17T11:04:14.758430",
+      "approved_at": "2025-10-16T11:04:18.515371"
     }
   ]
 }
