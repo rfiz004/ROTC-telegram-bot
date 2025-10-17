@@ -9430,6 +9430,23 @@
       "status": "pending",
       "requested_at": "2025-10-17T10:37:41.058427",
       "delay_until": "2025-10-18T10:37:41.058432"
+    },
+    {
+      "id": "transfer_898145344_1760697566",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 100,
+        "پارچه": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:39:26.191815",
+      "delay_until": "2025-10-18T10:39:26.191819"
     }
   ]
 }
