@@ -9381,6 +9381,38 @@
       "status": "pending",
       "requested_at": "2025-10-17T10:31:05.871216",
       "delay_until": "2025-10-18T10:31:05.871221"
+    },
+    {
+      "id": "transfer_898145344_1760697242",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 160
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:34:02.172568",
+      "delay_until": "2025-10-18T10:34:02.172571"
+    },
+    {
+      "id": "transfer_898145344_1760697268",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:34:28.189742",
+      "delay_until": "2025-10-18T10:34:28.189746"
     }
   ]
 }
