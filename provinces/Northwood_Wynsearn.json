@@ -50,7 +50,7 @@
       "weekly_output": 50
     },
     "کارخونه شراب": {
-      "count": 1,
+      "count": 4,
       "product": "شراب",
       "weekly_output": 50
     }
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-17T09:09:41.291735"
+  "last_updated": "2025-10-17T09:12:33.254903"
 }
