@@ -9912,6 +9912,23 @@
       "requested_at": "2025-10-17T16:32:09.118078",
       "delay_until": "2025-10-18T16:32:09.118081",
       "approved_at": "2025-10-17T16:32:34.204529"
+    },
+    {
+      "id": "transfer_6723163985_1760720199",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Altismar",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "مرغ": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T16:56:39.976858",
+      "delay_until": "2025-10-18T16:56:39.976861",
+      "approved_at": "2025-10-17T16:58:37.189455"
     }
   ]
 }
