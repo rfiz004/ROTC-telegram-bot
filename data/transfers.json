@@ -9502,6 +9502,74 @@
       "requested_at": "2025-10-17T13:39:51.364571",
       "delay_until": "2025-10-18T13:39:51.364574",
       "approved_at": "2025-10-17T13:39:52.738156"
+    },
+    {
+      "id": "transfer_1771323853_1760708413",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T13:40:13.736826",
+      "delay_until": "2025-10-18T13:40:13.736832",
+      "approved_at": "2025-10-17T13:40:15.148310"
+    },
+    {
+      "id": "transfer_1771323853_1760708468",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T13:41:08.263151",
+      "delay_until": "2025-10-18T13:41:08.263155",
+      "approved_at": "2025-10-17T13:41:09.762944"
+    },
+    {
+      "id": "transfer_1771323853_1760708492",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T13:41:32.412983",
+      "delay_until": "2025-10-18T13:41:32.412987",
+      "approved_at": "2025-10-17T13:41:33.900622"
+    },
+    {
+      "id": "transfer_1771323853_1760708535",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Grand-Duke",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 13000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T13:42:15.994035",
+      "delay_until": "2025-10-18T13:42:15.994039",
+      "approved_at": "2025-10-17T13:42:17.301511"
     }
   ]
 }
