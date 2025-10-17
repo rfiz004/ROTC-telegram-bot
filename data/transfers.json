@@ -9947,6 +9947,39 @@
       "requested_at": "2025-10-17T17:03:17.255395",
       "delay_until": "2025-10-18T17:03:17.255399",
       "approved_at": "2025-10-17T17:04:31.807615"
+    },
+    {
+      "id": "transfer_5566736269_1760723668",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T17:54:28.675223",
+      "delay_until": "2025-10-18T17:54:28.675226",
+      "approved_at": "2025-10-17T17:55:02.071954"
+    },
+    {
+      "id": "transfer_898145344_1760723731",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T17:55:31.935850",
+      "delay_until": "2025-10-18T17:55:31.935853"
     }
   ]
 }
