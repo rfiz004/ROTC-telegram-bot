@@ -9413,6 +9413,23 @@
       "status": "pending",
       "requested_at": "2025-10-17T10:34:28.189742",
       "delay_until": "2025-10-18T10:34:28.189746"
+    },
+    {
+      "id": "transfer_898145344_1760697461",
+      "requester_id": 898145344,
+      "source_country": "Azure",
+      "source_province": "Sea-Dragon",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شراب": 100,
+        "سنگ": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:37:41.058427",
+      "delay_until": "2025-10-18T10:37:41.058432"
     }
   ]
 }
