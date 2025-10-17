@@ -9587,6 +9587,23 @@
       "requested_at": "2025-10-17T13:51:22.344475",
       "delay_until": "2025-10-18T13:51:22.344480",
       "approved_at": "2025-10-17T13:51:30.784261"
+    },
+    {
+      "id": "transfer_5566736269_1760709787",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "میوه": 1550,
+        "پنبه": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T14:03:07.394433",
+      "delay_until": "2025-10-18T14:03:07.394437"
     }
   ]
 }
