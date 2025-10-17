@@ -1115,10 +1115,6 @@ def check_materials(province_data, item, quantity):
 #         reply_markup=InlineKeyboardMarkup(keyboard),
 #     )
 
-import json
-from datetime import datetime
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import ContextTypes
 
 async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -1176,6 +1172,7 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     item_name = item["name"]
     item_type = item.get("type", "").lower()
+    print(f"🟢 Processing purchase: {item_name} (type={item_type}, qty={quantity})")
 
     # 🔻 اضافه کردن آیتم به استان
     if item_type == "army":
@@ -1185,19 +1182,19 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         province_data["army"][item_name] = province_data["army"].get(item_name, 0) + total_units
         province_data["total_army"] = province_data.get("total_army", 0) + total_units
 
-    elif item_type == "weapon":
+    elif item_type in ["weapon", "weapons"]:
         province_data.setdefault("weapons", {})
         province_data["weapons"][item_name] = province_data["weapons"].get(item_name, 0) + quantity
 
-    elif item_type == "castle":
+    elif item_type in ["castle"]:
         province_data.setdefault("castle", {})
         province_data["castle"][item_name] = province_data["castle"].get(item_name, 0) + quantity
 
-    elif item_type == "structure":
+    elif item_type in ["structure", "structures"]:
         province_data.setdefault("structures", {})
         province_data["structures"][item_name] = province_data["structures"].get(item_name, 0) + quantity
 
-    elif item_type == "econstructure":
+    elif item_type in ["econstructure", "economic_structure"]:
         province_data.setdefault("economic_structures", {})
         econ_structs = province_data["economic_structures"]
         if item_name in econ_structs:
@@ -1217,16 +1214,26 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # 🔻 ذخیره اطلاعات استان
     province_data["last_updated"] = datetime.utcnow().isoformat()
     save_province_data(country, province, province_data)
+    print(f"✅ Updated province data for {province}")
 
-    # 🔻 ذخیره در countries_data.json برای بررسی ادمین‌ها
-    allowed_types = ["castle", "structures", "weapons", "econstructure"]
+    # ─────────────────────────────────────────────
+    # 🔻 ثبت آیتم در فایل countries_data.json
+    allowed_types = ["castle", "structure", "structures", "weapon", "weapons", "econstructure", "economic_structure"]
+    print(f"🟢 Allowed types: {allowed_types}")
+    print(f"🟢 CWD: {os.getcwd()}")
+
     if item_type in allowed_types:
+        file_path = os.path.join(os.path.dirname(__file__), "countries_data.json")
+        print(f"📁 Using countries_data file: {file_path}")
+
         try:
-            with open("countries_data.json", "r", encoding="utf-8") as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 countries_data = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
+            print("⚠️ countries_data.json missing or invalid — creating new one")
             countries_data = {}
 
+        # اطمینان از ساختار کشور و استان
         country_info = countries_data.setdefault(country, {})
         province_info = country_info.setdefault(province, {
             "castle": {},
@@ -1235,30 +1242,33 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "economic_structures": {}
         })
 
-        target_section = "economic_structures" if item_type == "econstructure" else item_type
+        target_section = "economic_structures" if item_type in ["econstructure", "economic_structure"] else item_type
         section = province_info.setdefault(target_section, {})
 
-        # ✅ اطمینان از اینکه همیشه لیست هست
-        current_value = section.get(item_name)
-        if not isinstance(current_value, list):
+        # اطمینان از اینکه همیشه لیست است
+        if not isinstance(section.get(item_name), list):
             section[item_name] = []
         structure_list = section[item_name]
 
-        # ✅ افزودن آیتم‌ها با وضعیت Pending
+        # افزودن آیتم جدید به حالت Pending
         for i in range(quantity):
             next_id = f"{item_name}_{len(structure_list) + 1}"
             new_entry = {"id": next_id, "status": "Pending"}
             if target_section == "economic_structures":
                 struct_info = all_econ_structs.get(item_name, {})
                 new_entry["product"] = struct_info.get("product", "")
-                new_entry["weekly_output"] = struct_info.get("weekly_output", 0)
             structure_list.append(new_entry)
 
-        # ✅ ذخیره نهایی در فایل
-        with open("countries_data.json", "w", encoding="utf-8") as f:
+        # ذخیره نهایی
+        with open(file_path, "w", encoding="utf-8") as f:
             json.dump(countries_data, f, ensure_ascii=False, indent=4)
+            f.flush()
+            os.fsync(f.fileno())
 
-    # 🔻 ارسال گزارش خرید برای ادمین‌های کشور
+        print(f"✅ Added {quantity}× {item_name} to {country}/{province} in {file_path}")
+
+    # ─────────────────────────────────────────────
+    # 🔻 گزارش برای ادمین‌ها
     admin_ids = COUNTRY_ADMIN_ID.get(country, [])
     if admin_ids:
         report = (
@@ -1273,9 +1283,9 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
             try:
                 await context.bot.send_message(chat_id=admin_id, text=report)
             except Exception as e:
-                print(f"خطا در ارسال پیام به ادمین {admin_id}: {e}")
+                print(f"⚠️ خطا در ارسال پیام به ادمین {admin_id}: {e}")
 
-    # 🔻 حذف داده‌های موقت خرید از حافظه کاربر
+    # 🔻 پاک‌سازی داده‌های موقت خرید
     for key in ["purchase_item", "purchase_quantity", "total_price", "total_materials", "step", "flow_type"]:
         context.user_data[user_id].pop(key, None)
 
@@ -1296,10 +1306,6 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text=text,
         reply_markup=InlineKeyboardMarkup(keyboard),
     )
-
-
-
-
 
 # Legacy function for compatibility
 async def fetch_channel_items(context: ContextTypes.DEFAULT_TYPE):
