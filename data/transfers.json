@@ -9861,6 +9861,23 @@
       "requested_at": "2025-10-17T16:04:12.411215",
       "delay_until": "2025-10-18T16:04:12.411219",
       "approved_at": "2025-10-17T16:08:30.941269"
+    },
+    {
+      "id": "transfer_898145344_1760717715",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 34000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T16:15:15.966604",
+      "delay_until": "2025-10-18T16:15:15.966608",
+      "approved_at": "2025-10-17T16:15:21.977308"
     }
   ]
 }
