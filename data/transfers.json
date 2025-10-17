@@ -9216,6 +9216,24 @@
       "requested_at": "2025-10-16T19:02:56.845041",
       "delay_until": "2025-10-17T19:02:56.845045",
       "approved_at": "2025-10-16T19:02:58.432580"
+    },
+    {
+      "id": "transfer_898145344_1760696056",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Sky-Dragon",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "چوب": 250,
+        "پارچه": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:14:16.393765",
+      "delay_until": "2025-10-18T10:14:16.393770"
     }
   ]
 }
