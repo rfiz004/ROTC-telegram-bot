@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Altismar",
   "mines": {},
-  "wealth": 32500,
+  "wealth": 30500,
   "population": 24000,
   "tax": 10,
   "popularity": 77,
@@ -35,7 +35,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 4,
+      "count": 5,
       "product": "مرغ",
       "weekly_output": 100
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-17T08:14:57.489205"
+  "last_updated": "2025-10-17T09:10:56.341555"
 }

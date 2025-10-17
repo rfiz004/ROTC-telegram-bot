@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 35966,
+  "wealth": 32466,
   "population": 40000,
   "tax": 60,
   "popularity": 73,
@@ -91,5 +91,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-11T12:40:59.243359"
+  "last_updated": "2025-10-17T09:10:11.810751"
 }
