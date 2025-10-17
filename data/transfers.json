@@ -9658,9 +9658,70 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-17T15:23:51.553966",
-      "delay_until": "2025-10-18T15:23:51.553972"
+      "delay_until": "2025-10-18T15:23:51.553972",
+      "approved_at": "2025-10-17T15:26:50.534197"
+    },
+    {
+      "id": "transfer_5566736269_1760714700",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Kalteryn",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 400,
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T15:25:00.219775",
+      "delay_until": "2025-10-18T15:25:00.219779",
+      "approved_at": "2025-10-17T15:26:51.838895"
+    },
+    {
+      "id": "transfer_5566736269_1760714771",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 400,
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T15:26:11.979163",
+      "delay_until": "2025-10-18T15:26:11.979166",
+      "approved_at": "2025-10-17T15:26:53.546509"
+    },
+    {
+      "id": "transfer_5566736269_1760714816",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 400,
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T15:26:56.296067",
+      "delay_until": "2025-10-18T15:26:56.296070",
+      "approved_at": "2025-10-17T15:26:58.257855"
     }
   ]
 }
