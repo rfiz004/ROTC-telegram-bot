@@ -9878,6 +9878,23 @@
       "requested_at": "2025-10-17T16:15:15.966604",
       "delay_until": "2025-10-18T16:15:15.966608",
       "approved_at": "2025-10-17T16:15:21.977308"
+    },
+    {
+      "id": "transfer_5566736269_1760718548",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "نیزه دارهای ویژه والدن": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T16:29:08.892433",
+      "delay_until": "2025-10-18T16:29:08.892437",
+      "approved_at": "2025-10-17T16:31:28.924766"
     }
   ]
 }
