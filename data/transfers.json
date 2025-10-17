@@ -9468,6 +9468,40 @@
       "status": "pending",
       "requested_at": "2025-10-17T10:57:50.092012",
       "delay_until": "2025-10-18T10:57:50.092017"
+    },
+    {
+      "id": "transfer_1771323853_1760708314",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Alvankesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T13:38:34.030831",
+      "delay_until": "2025-10-18T13:38:34.030834",
+      "approved_at": "2025-10-17T13:38:35.344970"
+    },
+    {
+      "id": "transfer_1771323853_1760708391",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Silzara",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T13:39:51.364571",
+      "delay_until": "2025-10-18T13:39:51.364574",
+      "approved_at": "2025-10-17T13:39:52.738156"
     }
   ]
 }
