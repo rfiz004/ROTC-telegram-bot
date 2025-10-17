@@ -9343,9 +9343,10 @@
       "items": {
         "طلا": 33500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-17T10:27:20.838423",
-      "delay_until": "2025-10-18T10:27:20.838427"
+      "delay_until": "2025-10-18T10:27:20.838427",
+      "approved_at": "2025-10-17T10:31:19.018600"
     },
     {
       "id": "transfer_898145344_1760696940",
@@ -9360,9 +9361,26 @@
         "فولاد": 312,
         "پارچه": 1250
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-17T10:29:00.878631",
-      "delay_until": "2025-10-18T10:29:00.878635"
+      "delay_until": "2025-10-18T10:29:00.878635",
+      "approved_at": "2025-10-17T10:31:21.451608"
+    },
+    {
+      "id": "transfer_898145344_1760697065",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 388
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:31:05.871216",
+      "delay_until": "2025-10-18T10:31:05.871221"
     }
   ]
 }
