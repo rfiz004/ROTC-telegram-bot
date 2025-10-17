@@ -9929,6 +9929,24 @@
       "requested_at": "2025-10-17T16:56:39.976858",
       "delay_until": "2025-10-18T16:56:39.976861",
       "approved_at": "2025-10-17T16:58:37.189455"
+    },
+    {
+      "id": "transfer_5566736269_1760720597",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 335,
+        "میوه": 665
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T17:03:17.255395",
+      "delay_until": "2025-10-18T17:03:17.255399",
+      "approved_at": "2025-10-17T17:04:31.807615"
     }
   ]
 }
