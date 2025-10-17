@@ -9895,6 +9895,23 @@
       "requested_at": "2025-10-17T16:29:08.892433",
       "delay_until": "2025-10-18T16:29:08.892437",
       "approved_at": "2025-10-17T16:31:28.924766"
+    },
+    {
+      "id": "transfer_898145344_1760718729",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "نیزه دارهای ویژه والدن": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T16:32:09.118078",
+      "delay_until": "2025-10-18T16:32:09.118081",
+      "approved_at": "2025-10-17T16:32:34.204529"
     }
   ]
 }
