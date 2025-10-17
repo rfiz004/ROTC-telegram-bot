@@ -1115,6 +1115,10 @@ def check_materials(province_data, item, quantity):
 #         reply_markup=InlineKeyboardMarkup(keyboard),
 #     )
 
+import json
+from datetime import datetime
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
+from telegram.ext import ContextTypes
 
 async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -1233,8 +1237,14 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         target_section = "economic_structures" if item_type == "econstructure" else item_type
         section = province_info.setdefault(target_section, {})
-        structure_list = section.setdefault(item_name, [])
 
+        # ✅ اطمینان از اینکه همیشه لیست هست
+        current_value = section.get(item_name)
+        if not isinstance(current_value, list):
+            section[item_name] = []
+        structure_list = section[item_name]
+
+        # ✅ افزودن آیتم‌ها با وضعیت Pending
         for i in range(quantity):
             next_id = f"{item_name}_{len(structure_list) + 1}"
             new_entry = {"id": next_id, "status": "Pending"}
@@ -1244,6 +1254,7 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 new_entry["weekly_output"] = struct_info.get("weekly_output", 0)
             structure_list.append(new_entry)
 
+        # ✅ ذخیره نهایی در فایل
         with open("countries_data.json", "w", encoding="utf-8") as f:
             json.dump(countries_data, f, ensure_ascii=False, indent=4)
 
