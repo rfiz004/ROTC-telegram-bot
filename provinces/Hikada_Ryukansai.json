@@ -2,7 +2,7 @@
   "country": "Hikada",
   "province": "Ryukansai",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 0,
   "population": 24000,
   "tax": 100,
   "popularity": 73,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-17T10:07:54.099018"
+  "last_updated": "2025-10-17T10:21:31.361469"
 }
