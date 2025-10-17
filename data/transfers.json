@@ -9269,9 +9269,66 @@
         "چوب": 200,
         "پارچه": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-17T10:17:31.724130",
-      "delay_until": "2025-10-18T10:17:31.724134"
+      "delay_until": "2025-10-18T10:17:31.724134",
+      "approved_at": "2025-10-17T10:19:54.375355"
+    },
+    {
+      "id": "transfer_898145344_1760696289",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Fujinara",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "چوب": 200,
+        "پارچه": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T10:18:09.370335",
+      "delay_until": "2025-10-18T10:18:09.370339",
+      "approved_at": "2025-10-17T10:19:54.978957"
+    },
+    {
+      "id": "transfer_898145344_1760696384",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Hozumi-tsuka",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "چوب": 200,
+        "پارچه": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-17T10:19:44.454353",
+      "delay_until": "2025-10-18T10:19:44.454357",
+      "approved_at": "2025-10-17T10:19:55.770711"
+    },
+    {
+      "id": "transfer_898145344_1760696442",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Kaisuraga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "چوب": 200,
+        "پارچه": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-17T10:20:42.981914",
+      "delay_until": "2025-10-18T10:20:42.981918"
     }
   ]
 }
