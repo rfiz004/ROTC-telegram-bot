@@ -52,7 +52,7 @@
     "کارخونه سنگ": {
       "count": 4,
       "product": "سنگ",
-      "weekly_output": 20
+      "weekly_output": 50
     }
   },
   "structure_productions": {
@@ -74,5 +74,5 @@
     }
   },
   "mine_productions": {},
-  "last_updated": "2025-10-10T06:56:37.968334"
+  "last_updated": "2025-10-17T08:08:50.254111"
 }

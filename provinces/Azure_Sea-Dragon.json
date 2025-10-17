@@ -60,7 +60,7 @@
     "کارخونه سنگ": {
       "count": 4,
       "product": "سنگ",
-      "weekly_output": 20
+      "weekly_output": 50
     }
   },
   "mine_productions": {
@@ -86,5 +86,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-10T06:56:37.973713"
+  "last_updated": "2025-10-17T08:08:12.698872"
 }
