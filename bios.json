@@ -214,9 +214,11 @@
     "5743974853": {
       "country": "Imperial",
       "job": "اشراف بنیان گذار",
-      "step": "asking_name",
+      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-10-18T16:16:11.103919"
+      "saved_at": "2025-10-18T16:31:54.925692",
+      "expires_at": "2025-10-18T16:46:11.105396",
+      "name": "Valtherin"
     }
   },
   "used_hashtags": [
