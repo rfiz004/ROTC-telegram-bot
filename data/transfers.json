@@ -10049,6 +10049,40 @@
       "requested_at": "2025-10-18T04:09:46.495825",
       "delay_until": "2025-10-19T04:09:46.495829",
       "approved_at": "2025-10-18T04:09:52.610546"
+    },
+    {
+      "id": "transfer_1771323853_1760760774",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-18T04:12:54.761184",
+      "delay_until": "2025-10-19T04:12:54.761187",
+      "approved_at": "2025-10-18T04:12:56.280151"
+    },
+    {
+      "id": "transfer_1329048693_1760760813",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 350
+      },
+      "status": "approved",
+      "requested_at": "2025-10-18T04:13:33.356548",
+      "delay_until": "2025-10-19T04:13:33.356553",
+      "approved_at": "2025-10-18T04:13:50.768279"
     }
   ]
 }
