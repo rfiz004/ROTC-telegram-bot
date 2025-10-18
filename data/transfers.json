@@ -10334,6 +10334,44 @@
       "requested_at": "2025-10-18T09:23:43.508803",
       "delay_until": "2025-10-19T09:23:43.508807",
       "approved_at": "2025-10-18T09:25:47.649933"
+    },
+    {
+      "id": "transfer_1771323853_1760804830",
+      "requester_id": 1771323853,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 1593,
+        "سنگ": 800,
+        "پنبه": 400
+      },
+      "status": "rejected",
+      "requested_at": "2025-10-18T16:27:10.850140",
+      "delay_until": "2025-10-19T16:27:10.850143",
+      "rejected_at": "2025-10-18T16:27:56.621945"
+    },
+    {
+      "id": "transfer_1771323853_1760804954",
+      "requester_id": 1771323853,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 1593,
+        "سنگ": 800,
+        "پنبه": 400
+      },
+      "status": "approved",
+      "requested_at": "2025-10-18T16:29:14.419245",
+      "delay_until": "2025-10-19T16:29:14.419249",
+      "approved_at": "2025-10-18T16:29:17.436423"
     }
   ]
 }
