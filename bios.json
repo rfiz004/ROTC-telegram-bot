@@ -207,11 +207,12 @@
     "8066414601": {
       "country": "Santos",
       "job": "ارتشبد",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-10-18T23:35:07.537204",
+      "saved_at": "2025-10-18T23:38:25.698759",
       "expires_at": "2025-10-19T00:05:01.816424",
-      "name": "Ray Morin"
+      "name": "Ray Morin",
+      "nickname": "Iron seraph"
     }
   },
   "used_hashtags": [
