@@ -10283,6 +10283,22 @@
       "requested_at": "2025-10-18T07:09:12.862717",
       "delay_until": "2025-10-19T07:09:12.862722",
       "approved_at": "2025-10-18T07:09:14.161048"
+    },
+    {
+      "id": "transfer_7096919075_1760771738",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Veldanridge",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-18T07:15:38.074669",
+      "delay_until": "2025-10-19T07:15:38.074674"
     }
   ]
 }
