@@ -210,34 +210,6 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2025-10-02T01:52:34.733698"
-    },
-    "5743974853": {
-      "step": "pending",
-      "country": "Imperial",
-      "flow_type": "bio",
-      "job": "اشراف بنیان گذار",
-      "expires_at": "2025-10-18T17:25:53.164199",
-      "name": "Valtherin",
-      "nickname": "Voidwalker",
-      "age": "19",
-      "skills": [
-        "مدیریت امور اقتصادی",
-        "مخفی‌کاری",
-        "مهارت شمشیرزنی و تبرزنی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "مدیریت امور اقتصادی",
-      "skill2": "مخفی‌کاری",
-      "skill3": "مهارت شمشیرزنی و تبرزنی",
-      "appearance": "ظاهری درخشان و باشکوه که نشان دهنده اصالت اوست ؛ دارای پوستی روشن ؛ موهای آبی و اندامی متعادل .",
-      "history": "فرزند سوم یکی از اشراف بنیانگذار که به تازگی از آکادمی سلطنتی فارغ التحصیل شده",
-      "id_number": "@NipponKami",
-      "user_id_tag": "#Valtherin",
-      "photo": "AgACAgQAAxkBAALF6Gjzx6jCX-RiHd6oczH61hTxHdKBAAKKyzEb5WihU0_Px1NiWbFuAQADAgADeAADNgQ",
-      "level": 1,
-      "unique_id": "5743974853",
-      "saved_at": "2025-10-18T17:00:24.756977"
     }
   },
   "used_hashtags": [
