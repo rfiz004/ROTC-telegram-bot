@@ -203,6 +203,15 @@
       "level": 1,
       "unique_id": "6723163985",
       "saved_at": "2025-09-28T20:03:09.069555"
+    },
+    "8066414601": {
+      "country": "Santos",
+      "job": "ارتشبد",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-10-18T23:35:07.537204",
+      "expires_at": "2025-10-19T00:05:01.816424",
+      "name": "Ray Morin"
     }
   },
   "used_hashtags": [
