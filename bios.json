@@ -207,12 +207,24 @@
     "8066414601": {
       "country": "Santos",
       "job": "ارتشبد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-10-18T23:38:25.698759",
+      "saved_at": "2025-10-18T23:48:29.774308",
       "expires_at": "2025-10-19T00:05:01.816424",
       "name": "Ray Morin",
-      "nickname": "Iron seraph"
+      "nickname": "Iron seraph",
+      "age": "36",
+      "skills": [
+        "تیراندازی با کراسبو",
+        "مهارت شمشیرزنی و تبرزنی",
+        "حواس پنجگانه قوی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "تیراندازی با کراسبو",
+      "skill2": "مهارت شمشیرزنی و تبرزنی",
+      "skill3": "حواس پنجگانه قوی",
+      "appearance": "موهای توهم رفته کوتاه(مشکی رنگ)،چشمای سبز با فرم نسبتا بادومی و خطوط زیاد دور گودی چشم،زخم روی لپ سمت چپ که از مسیر ریش رد میشه"
     }
   },
   "used_hashtags": [
