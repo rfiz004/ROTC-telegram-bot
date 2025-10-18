@@ -207,9 +207,11 @@
     "8066414601": {
       "country": "Hikada",
       "job": "امپراطریس",
-      "step": "asking_name",
+      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-10-18T23:23:45.694926"
+      "saved_at": "2025-10-18T23:24:29.317587",
+      "expires_at": "2025-10-18T23:53:45.695508",
+      "name": "Ray Morin"
     }
   },
   "used_hashtags": [
