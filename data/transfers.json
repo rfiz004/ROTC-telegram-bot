@@ -10493,6 +10493,22 @@
       "status": "pending",
       "requested_at": "2025-10-19T08:58:40.596940",
       "delay_until": "2025-10-20T08:58:40.596944"
+    },
+    {
+      "id": "transfer_6723163985_1760864532",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 68000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-19T09:02:12.404722",
+      "delay_until": "2025-10-20T09:02:12.404728"
     }
   ]
 }
