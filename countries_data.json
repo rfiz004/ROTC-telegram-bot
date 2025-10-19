@@ -3332,6 +3332,11 @@
                         "status": "Pending",
                         "product": "مرغ",
                         "weekly_output": 100
+                    },
+                    {
+                        "id": "مرغداری_5",
+                        "status": "Pending",
+                        "product": "مرغ"
                     }
                 ],
                 "کارخونه فولاد": [

@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 26000,
+  "wealth": 24000,
   "population": 40000,
   "tax": 0,
   "popularity": 73,
@@ -47,7 +47,7 @@
   },
   "economic_structures": {
     "مرغداری": {
-      "count": 4,
+      "count": 5,
       "product": "مرغ",
       "weekly_output": 100
     },
@@ -96,5 +96,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-18T10:59:59.455551"
+  "last_updated": "2025-10-19T12:26:09.065848"
 }
