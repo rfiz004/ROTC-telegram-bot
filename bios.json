@@ -267,11 +267,9 @@
     "1208514381": {
       "country": "Alestria",
       "job": "رهبر اعظم",
-      "step": "asking_nickname",
+      "step": "asking_name",
       "flow_type": "bio",
-      "saved_at": "2025-10-19T06:51:42.898608",
-      "expires_at": "2025-10-19T07:21:16.119545",
-      "name": "Alastor"
+      "saved_at": "2025-10-19T07:04:00.982990"
     }
   },
   "used_hashtags": [
