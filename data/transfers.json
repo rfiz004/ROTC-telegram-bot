@@ -10389,6 +10389,23 @@
       "requested_at": "2025-10-18T19:12:27.895990",
       "delay_until": "2025-10-19T19:12:27.895992",
       "approved_at": "2025-10-18T19:12:29.710167"
+    },
+    {
+      "id": "transfer_6723163985_1760862125",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-19T08:22:05.918074",
+      "delay_until": "2025-10-20T08:22:05.918079",
+      "approved_at": "2025-10-19T08:22:13.885074"
     }
   ]
 }
