@@ -10476,6 +10476,23 @@
       "status": "pending",
       "requested_at": "2025-10-19T08:55:33.910405",
       "delay_until": "2025-10-20T08:55:33.910409"
+    },
+    {
+      "id": "transfer_898145344_1760864320",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 1000,
+        "پارچه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-19T08:58:40.596940",
+      "delay_until": "2025-10-20T08:58:40.596944"
     }
   ]
 }
