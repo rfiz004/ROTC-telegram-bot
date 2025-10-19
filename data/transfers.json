@@ -10406,6 +10406,22 @@
       "requested_at": "2025-10-19T08:22:05.918074",
       "delay_until": "2025-10-20T08:22:05.918079",
       "approved_at": "2025-10-19T08:22:13.885074"
+    },
+    {
+      "id": "transfer_1329048693_1760862246",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Garodhen",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-19T08:24:06.708981",
+      "delay_until": "2025-10-20T08:24:06.708985"
     }
   ]
 }
