@@ -267,12 +267,24 @@
     "1208514381": {
       "country": "Alestria",
       "job": "رهبر اعظم",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-10-19T07:04:28.405994",
+      "saved_at": "2025-10-19T07:09:25.439544",
       "expires_at": "2025-10-19T07:34:00.983775",
       "name": "Alastor Shouyou",
-      "nickname": "شاه گمگشته"
+      "nickname": "شاه گمگشته",
+      "age": "21",
+      "skills": [
+        "مدیریت امور اقتصادی",
+        "مدیریت امور نظامی",
+        "حس ششم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "مدیریت امور اقتصادی",
+      "skill2": "مدیریت امور نظامی",
+      "skill3": "حس ششم",
+      "appearance": "مردی جوان و زیبا با موهای مشکلی و بلند و هیکلی مناسب"
     }
   },
   "used_hashtags": [
