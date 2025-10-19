@@ -263,6 +263,15 @@
       "level": 1,
       "unique_id": "5886180797",
       "saved_at": "2025-10-19T05:09:29.568570"
+    },
+    "1208514381": {
+      "country": "Alestria",
+      "job": "رهبر اعظم",
+      "step": "asking_nickname",
+      "flow_type": "bio",
+      "saved_at": "2025-10-19T06:51:42.898608",
+      "expires_at": "2025-10-19T07:21:16.119545",
+      "name": "Alastor"
     }
   },
   "used_hashtags": [
