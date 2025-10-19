@@ -1395,5 +1395,30 @@
     "count": 50,
     "id": "65",
     "created_at": "2025-10-02T10:18:49.900259"
+  },
+  {
+    "name": "کمپانی",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "کمپانی ها مراکزی هستن که به دست افراد ثروتمند و با نفوذ ساخته میشن تا مرکزی باشه برای رسیدگی به امورات، مسئولیت ها و کارهای تجاری و نظامی که به وسیله قرارداد بستن با بزرگان کشورها بهشون داده میشه, تعداد: 1",
+    "price": 10000,
+    "materials": {
+      "فولاد": 200,
+      "سنگ": 500,
+      "پنبه": 100,
+      "پارچه": 200,
+      "شیشه": 200
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALHaWj1Ay_wx-frj3DyE2Lh_crnT8bkAALWyjEbhn-pU9TK9NR0B_3BAQADAgADeQADNgQ",
+    "count": 1,
+    "id": "66",
+    "created_at": "2025-10-19T15:31:07.210131"
   }
 ]
