@@ -10423,6 +10423,41 @@
       "requested_at": "2025-10-19T08:24:06.708981",
       "delay_until": "2025-10-20T08:24:06.708985",
       "approved_at": "2025-10-19T08:42:18.959081"
+    },
+    {
+      "id": "transfer_6723163985_1760863797",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 500,
+        "شیشه": 700,
+        "شراب": 1000,
+        "مرغ": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-19T08:49:57.202365",
+      "delay_until": "2025-10-20T08:49:57.202370"
+    },
+    {
+      "id": "transfer_6723163985_1760863828",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 15000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-19T08:50:28.876452",
+      "delay_until": "2025-10-20T08:50:28.876456"
     }
   ]
 }
