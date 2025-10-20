@@ -3,7 +3,7 @@
   "province": "Elmaren",
   "mines": {},
   "wealth": 66150,
-  "population": 24000,
+  "population": 35000,
   "tax": 100,
   "popularity": 88,
   "total_army": 5000,
@@ -66,5 +66,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-10-17T10:07:53.977915"
+  "last_updated": "2025-10-20T16:44:08.352953"
 }
