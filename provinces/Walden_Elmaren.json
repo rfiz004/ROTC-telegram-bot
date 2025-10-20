@@ -2,16 +2,17 @@
   "country": "Walden",
   "province": "Elmaren",
   "mines": {},
-  "wealth": 66150,
+  "wealth": 59950,
   "population": 35000,
   "tax": 100,
   "popularity": 88,
-  "total_army": 5000,
+  "total_army": 5200,
   "army": {
     "کماندار": 1000,
     "شمشیرزن": 680,
     "نیزه دار": 480,
-    "سواره نظام": 220
+    "سواره نظام": 220,
+    "شمشیرزن سپردار": 200
   },
   "castle": {
     "دیوار 25 متری": 1,
@@ -66,5 +67,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-10-20T16:45:14.915748"
+  "last_updated": "2025-10-20T19:47:15.410570"
 }
