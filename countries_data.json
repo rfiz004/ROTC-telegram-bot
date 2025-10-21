@@ -3560,6 +3560,11 @@
                         "status": "Approved",
                         "product": "مرغ",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "مرغداری_5",
+                        "status": "Pending",
+                        "product": "مرغ"
                     }
                 ],
                 "کارخونه فولاد": [
