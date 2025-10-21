@@ -302,12 +302,24 @@
     "8216786567": {
       "country": "Santos",
       "job": "مشاغل آزاد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-10-21T19:20:45.579241",
+      "saved_at": "2025-10-21T19:23:22.745458",
       "expires_at": "2025-10-21T19:37:44.471344",
       "name": "اسم گوجو\nیه پسر اروم تعمیر کار وسایل\nبه کسی کاری ندارم خون سردم",
-      "nickname": "ساتورو گوجو"
+      "nickname": "ساتورو گوجو",
+      "age": "۱۹",
+      "skills": [
+        "جعل مدارک",
+        "پرورش گیاه",
+        "حس ششم"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "جعل مدارک",
+      "skill2": "پرورش گیاه",
+      "skill3": "حس ششم",
+      "appearance": "موهای سفید لباس سیاه"
     }
   },
   "used_hashtags": [
