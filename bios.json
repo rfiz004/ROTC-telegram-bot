@@ -274,9 +274,12 @@
     "810047031": {
       "country": "Hikada",
       "job": "دایمیوها",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-10-21T15:45:31.836930"
+      "saved_at": "2025-10-21T15:48:20.954840",
+      "expires_at": "2025-10-21T16:15:31.837745",
+      "name": "Sato Naoya",
+      "nickname": "Blade of honesty"
     }
   },
   "used_hashtags": [
