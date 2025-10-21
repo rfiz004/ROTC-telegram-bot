@@ -274,12 +274,24 @@
     "810047031": {
       "country": "Hikada",
       "job": "دایمیوها",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-10-21T15:48:20.954840",
+      "saved_at": "2025-10-21T15:52:01.689281",
       "expires_at": "2025-10-21T16:15:31.837745",
       "name": "Sato Naoya",
-      "nickname": "Blade of honesty"
+      "nickname": "Blade of honesty",
+      "age": "30",
+      "skills": [
+        "رام کردن حیوان",
+        "مهارت مبارزه با دست خالی",
+        "مهارت شمشیرزنی و تبرزنی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "رام کردن حیوان",
+      "skill2": "مهارت مبارزه با دست خالی",
+      "skill3": "مهارت شمشیرزنی و تبرزنی",
+      "appearance": "چند زخم سطحی روی صورت و یک زخم غیر حیاتی روی چشم چپش داره، تتوی اژدها پشت کمرش، بدنی ورزیده و ورزشکاری"
     }
   },
   "used_hashtags": [
