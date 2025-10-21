@@ -10580,6 +10580,22 @@
       "requested_at": "2025-10-21T18:01:18.981011",
       "delay_until": "2025-10-22T18:01:18.981016",
       "approved_at": "2025-10-21T18:01:26.332993"
+    },
+    {
+      "id": "transfer_898145344_1761074300",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "زره فولادی": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-21T19:18:20.677449",
+      "delay_until": "2025-10-22T19:18:20.677452"
     }
   ]
 }
