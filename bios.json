@@ -300,11 +300,10 @@
       "saved_at": "2025-10-21T16:03:29.686080"
     },
     "8216786567": {
+      "step": "pending",
       "country": "Santos",
-      "job": "مشاغل آزاد",
-      "step": "asking_id_tag",
       "flow_type": "bio",
-      "saved_at": "2025-10-21T19:25:53.271674",
+      "job": "مشاغل آزاد",
       "expires_at": "2025-10-21T19:37:44.471344",
       "name": "اسم گوجو\nیه پسر اروم تعمیر کار وسایل\nبه کسی کاری ندارم خون سردم",
       "nickname": "ساتورو گوجو",
@@ -321,7 +320,12 @@
       "skill3": "حس ششم",
       "appearance": "موهای سفید لباس سیاه",
       "history": "ادم مهربون ولی عصبی",
-      "id_number": "@hamedreza4"
+      "id_number": "@hamedreza4",
+      "user_id_tag": "#GojoMode",
+      "photo": "AgACAgUAAxkBAALJeWj33-TXpHlPySpE-oNtObtO8Lb1AAJED2sb53W4VxWmKgiP1ogWAQADAgADeAADNgQ",
+      "level": 1,
+      "unique_id": "8216786567",
+      "saved_at": "2025-10-21T19:32:52.491085"
     }
   },
   "used_hashtags": [
@@ -462,6 +466,7 @@
     "#Ray",
     "#Leviathan",
     "#Alastor",
-    "#Naoya"
+    "#Naoya",
+    "#GojoMode"
   ]
 }
