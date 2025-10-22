@@ -306,27 +306,12 @@
     "6213073537": {
       "country": "Santos",
       "job": "مشاغل آزاد",
-      "step": "asking_photo",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-10-22T14:04:44.819534",
-      "expires_at": "2025-10-22T14:34:16.800947",
-      "name": "تقصبصثمبن",
-      "nickname": "صکثثنبکصث",
-      "age": "23",
-      "skills": [
-        "کشتیرانی",
-        "مهارت شمشیرزنی و تبرزنی",
-        "سم شناسی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "کشتیرانی",
-      "skill2": "مهارت شمشیرزنی و تبرزنی",
-      "skill3": "سم شناسی",
-      "appearance": "نمثتبیصث",
-      "history": "مسثبنگس",
-      "id_number": "@Valeria_Cas",
-      "user_id_tag": "#test2"
+      "saved_at": "2025-10-22T14:11:53.790298",
+      "expires_at": "2025-10-22T14:41:48.103451",
+      "name": "عهاخم",
+      "nickname": "تخهعحع"
     }
   },
   "used_hashtags": [
@@ -471,7 +456,6 @@
     "#GojoMode",
     "#seraphine",
     "#Mosaken",
-    "#hhvhjjgj",
-    "#test2"
+    "#hhvhjjgj"
   ]
 }
