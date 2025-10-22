@@ -10962,6 +10962,40 @@
       "status": "pending",
       "requested_at": "2025-10-22T16:37:45.863432",
       "delay_until": "2025-10-23T16:37:45.863437"
+    },
+    {
+      "id": "transfer_6723163985_1761151502",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-22T16:45:02.786615",
+      "delay_until": "2025-10-23T16:45:02.786620",
+      "approved_at": "2025-10-22T16:45:09.711922"
+    },
+    {
+      "id": "transfer_6723163985_1761151563",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 21000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-22T16:46:03.511388",
+      "delay_until": "2025-10-23T16:46:03.511409",
+      "approved_at": "2025-10-22T16:47:15.900851"
     }
   ]
 }
