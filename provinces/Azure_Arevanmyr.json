@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Arevanmyr",
   "mines": {},
-  "wealth": 14000,
+  "wealth": 9500,
   "population": 18000,
   "tax": 100,
   "popularity": 61,
@@ -40,12 +40,12 @@
       "weekly_output": 100
     },
     "کارخونه شراب": {
-      "count": 1,
+      "count": 2,
       "product": "شراب",
       "weekly_output": 50
     },
     "چوب بری": {
-      "count": 3,
+      "count": 4,
       "product": "چوب",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-17T10:07:54.085428"
+  "last_updated": "2025-10-22T16:35:10.653415"
 }
