@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Arevanmyr",
   "mines": {},
-  "wealth": 34000,
+  "wealth": 14000,
   "population": 18000,
   "tax": 100,
   "popularity": 61,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "جواهر": 0,
-    "سنگ": 480,
+    "سنگ": 0,
     "شراب": 400,
     "شیشه": 0,
     "فولاد": 0,
