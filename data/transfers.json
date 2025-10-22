@@ -10671,6 +10671,23 @@
       "requested_at": "2025-10-22T06:22:41.331246",
       "delay_until": "2025-10-23T06:22:41.331250",
       "approved_at": "2025-10-22T09:04:39.126969"
+    },
+    {
+      "id": "transfer_5566736269_1761125202",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 165,
+        "میوه": 335
+      },
+      "status": "pending",
+      "requested_at": "2025-10-22T09:26:42.104948",
+      "delay_until": "2025-10-23T09:26:42.104951"
     }
   ]
 }
