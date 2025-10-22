@@ -900,54 +900,153 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await update.message.reply_text(msg)
             return
 
+    # if step == "asking_photo":
+    #     if not update.message.photo:
+    #         await update.message.reply_text("⚠️ لطفا فقط عکس ارسال کنید.")
+    #         return
+
+    #     photo_file_id = update.message.photo[-1].file_id
+    #     current["photo"] = photo_file_id
+    #     context.user_data[user_id]["step"] = "pending"
+
+    #     country = current.get("country")
+    #     job = current.get("job")
+    #     job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job), None)
+    #     if not job_data:
+    #         await update.message.reply_text("❌ شغل انتخابی شما معتبر نیست.")
+    #         return
+
+    #     current["level"] = job_data.get("level")
+
+    #     caption = format_bio_text(current)
+    #     unique_id = str(user_id)
+    #     context.user_data[user_id]["unique_id"] = unique_id
+
+    #     buttons = bio_approval_keyboard(unique_id)
+
+    #     add_bio_to_storage(user_id, current)
+    #     add_used_hashtag(current["user_id_tag"])
+
+    #     # ذخیره نهایی بیو در حالت pending
+    #     bios = load_bios()
+    #     bios.setdefault("bios", {})
+    #     saved = bios["bios"].get(str(user_id), {})
+    #     saved.update(current)
+    #     saved["step"] = "pending"
+    #     saved["saved_at"] = datetime.utcnow().isoformat()
+    #     bios["bios"][str(user_id)] = saved
+    #     save_bios(bios)
+
+    #     await asyncio.gather(*[
+    #         context.bot.send_photo(
+    #             chat_id=admin_id,
+    #             photo=photo_file_id,
+    #             caption=caption,
+    #             reply_markup=buttons
+    #         )
+    #         for admin_id in BIO_ADMIN_ID
+    #     ])
+
+    #     await update.message.reply_text("✅ فرم بیو شما کامل شد و ارسال شد برای بررسی ادمین.", reply_markup=restart_button())
+    #     context.user_data.pop(user_id, None)
+    #     return
+
     if step == "asking_photo":
         if not update.message.photo:
-            await update.message.reply_text("⚠️ لطفا فقط عکس ارسال کنید.")
+            await update.message.reply_text("⚠️ لطفاً فقط عکس بفرست، نه متن یا چیز دیگه.")
             return
-
-        photo_file_id = update.message.photo[-1].file_id
-        current["photo"] = photo_file_id
-        context.user_data[user_id]["step"] = "pending"
-
-        country = current.get("country")
-        job = current.get("job")
-        job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job), None)
-        if not job_data:
-            await update.message.reply_text("❌ شغل انتخابی شما معتبر نیست.")
+    
+        # ذخیره عکس در لیست
+        photo_id = update.message.photo[-1].file_id
+        photos = current.get("photos", [])
+        photos.append(photo_id)
+        current["photos"] = photos
+    
+        # بررسی محدودیت
+        if len(photos) > 5:
+            photos.pop()  # آخرین عکس حذف شود
+            await update.message.reply_text("🚫 حداکثر می‌تونی ۵ تا عکس بفرستی.")
             return
-
-        current["level"] = job_data.get("level")
-
-        caption = format_bio_text(current)
-        unique_id = str(user_id)
-        context.user_data[user_id]["unique_id"] = unique_id
-
-        buttons = bio_approval_keyboard(unique_id)
-
-        add_bio_to_storage(user_id, current)
-        add_used_hashtag(current["user_id_tag"])
-
-        # ذخیره نهایی بیو در حالت pending
-        bios = load_bios()
-        bios.setdefault("bios", {})
-        saved = bios["bios"].get(str(user_id), {})
-        saved.update(current)
-        saved["step"] = "pending"
-        saved["saved_at"] = datetime.utcnow().isoformat()
-        bios["bios"][str(user_id)] = saved
-        save_bios(bios)
-
-        await asyncio.gather(*[
-            context.bot.send_photo(
-                chat_id=admin_id,
-                photo=photo_file_id,
-                caption=caption,
-                reply_markup=buttons
-            )
-            for admin_id in BIO_ADMIN_ID
+    
+        # نمایش شماره عکس و دکمه تأیید
+        photo_num = len(photos)
+        text = f"📸 عکس {photo_num} دریافت شد."
+        if photo_num < 5:
+            text += f"\nمی‌تونی تا {5 - photo_num} عکس دیگه بفرستی یا دکمه زیر رو بزن برای ارسال نهایی."
+    
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("✅ تأیید و ارسال نهایی", callback_data="confirm_bio_photos")]
         ])
-
-        await update.message.reply_text("✅ فرم بیو شما کامل شد و ارسال شد برای بررسی ادمین.", reply_markup=restart_button())
-        context.user_data.pop(user_id, None)
+        await update.message.reply_text(text, reply_markup=keyboard)
+        context.user_data[user_id] = current
         return
+
     await update.message.reply_text("خطا در فرایند. لطفا /start بزنید و دوباره شروع کنید.")
+
+async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    current = context.user_data.get(user_id, {})
+
+    photos = current.get("photos", [])
+    if not photos:
+        await query.edit_message_text("❌ هنوز هیچ عکسی نفرستادی!")
+        return
+
+    # افزودن اطلاعات نهایی (مثل سطح، شغل و کشور)
+    country = current.get("country")
+    job = current.get("job")
+    job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job), None)
+    if not job_data:
+        await query.edit_message_text("❌ شغل انتخابی شما معتبر نیست.")
+        return
+
+    current["level"] = job_data.get("level")
+    caption = format_bio_text(current)
+    unique_id = str(user_id)
+    current["unique_id"] = unique_id
+    buttons = bio_approval_keyboard(unique_id)
+
+    # ارسال به ادمین‌ها
+    await query.edit_message_text("📤 در حال ارسال بیو به ادمین‌ها...")
+
+    tasks = []
+    for admin_id in BIO_ADMIN_ID:
+        for i, photo_id in enumerate(photos):
+            cap = caption if i == 0 else None
+            markup = buttons if i == 0 else None
+            tasks.append(
+                context.bot.send_photo(
+                    chat_id=admin_id,
+                    photo=photo_id,
+                    caption=cap,
+                    reply_markup=markup
+                )
+            )
+
+    await asyncio.gather(*tasks)
+
+    # ذخیره بیو در فایل‌ها
+    add_bio_to_storage(user_id, current)
+    add_used_hashtag(current["user_id_tag"])
+
+    # به‌روزرسانی وضعیت در فایل bios.json
+    bios = load_bios()
+    bios.setdefault("bios", {})
+    saved = bios["bios"].get(str(user_id), {})
+    saved.update(current)
+    saved["step"] = "pending"
+    saved["saved_at"] = datetime.utcnow().isoformat()
+    bios["bios"][str(user_id)] = saved
+    save_bios(bios)
+
+    # حذف رزرو شغل
+    reservations = load_job_reservations()
+    if str(user_id) in reservations:
+        del reservations[str(user_id)]
+        save_job_reservations(reservations)
+
+    await query.message.reply_text("✅ فرم بیوت کامل شد و ارسال شد برای بررسی ادمین.", reply_markup=restart_button())
+    context.user_data.pop(user_id, None)
+
