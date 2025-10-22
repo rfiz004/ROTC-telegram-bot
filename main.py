@@ -423,6 +423,7 @@ app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_don
 app.add_handler(CallbackQueryHandler(handle_skill_selection, pattern="^select_skill_"))
 app.add_handler(CallbackQueryHandler(handle_job_locks, pattern="^job_locked$|^job_taken$|^job_azure_locked$"))
 app.add_handler(CallbackQueryHandler(ask_bio_fields, pattern="^bio_job_"))
+app.add_handler(CallbackQueryHandler(confirm_bio_photos, pattern="^confirm_bio_photos$"))
 app.add_handler(CallbackQueryHandler(select_job, pattern="^select_bio_country_"))
 app.add_handler(CallbackQueryHandler(view_pending_transfers, pattern="^view_pending_transfers$"))
 app.add_handler(CallbackQueryHandler(handle_job_actions, pattern="^(add|remove|increase|decrease)_job_"))
