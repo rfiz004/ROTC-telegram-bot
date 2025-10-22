@@ -1011,16 +1011,33 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
     await query.edit_message_text("📤 در حال ارسال بیو به ادمین‌ها...")
 
     # ساخت گروه مدیا
+    # media_group = []
+    # for i, photo_id in enumerate(photos):
+    #     # فقط عکس اول کپشن دارد
+    #     media_group.append(
+    #         InputMediaPhoto(
+    #             media=photo_id,
+    #             caption=caption if i == 0 else "",
+    #             parse_mode="HTML"
+    #         )
+    #     )
+
+        # ساخت گروه مدیا (ایمن برای parse_mode)
+    # ساخت گروه مدیا برای ارسال به ادمین‌ها
     media_group = []
     for i, photo_id in enumerate(photos):
-        # فقط عکس اول کپشن دارد
-        media_group.append(
-            InputMediaPhoto(
-                media=photo_id,
-                caption=caption if i == 0 else "",
-                parse_mode="HTML"
+        if i == 0:
+            # فقط اولین عکس کپشن دارد (نمایش زیر آلبوم)
+            media_group.append(
+                InputMediaPhoto(
+                    media=photo_id,
+                    caption=caption,
+                    parse_mode="HTML"
+                )
             )
-        )
+        else:
+            # بقیه فقط عکس ساده بدون کپشن
+            media_group.append(InputMediaPhoto(media=photo_id))
 
     # ارسال به ادمین‌ها با کنترل خطا
     sent_success = False
