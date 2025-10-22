@@ -10908,6 +10908,22 @@
       "status": "pending",
       "requested_at": "2025-10-22T12:52:51.457460",
       "delay_until": "2025-10-23T12:52:51.457465"
+    },
+    {
+      "id": "transfer_5564554013_1761137982",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Silverain Coast",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-22T12:59:42.383557",
+      "delay_until": "2025-10-23T12:59:42.383562"
     }
   ]
 }
