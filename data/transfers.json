@@ -10997,6 +10997,22 @@
       "requested_at": "2025-10-22T16:46:03.511388",
       "delay_until": "2025-10-23T16:46:03.511409",
       "approved_at": "2025-10-22T16:47:15.900851"
+    },
+    {
+      "id": "transfer_1771323853_1761158911",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-22T18:48:31.985360",
+      "delay_until": "2025-10-23T18:48:31.985364"
     }
   ]
 }
