@@ -10740,6 +10740,23 @@
       "status": "pending",
       "requested_at": "2025-10-22T11:58:29.025423",
       "delay_until": "2025-10-23T11:58:29.025427"
+    },
+    {
+      "id": "transfer_1208514381_1761134551",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Meraven",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 800
+      },
+      "status": "approved",
+      "requested_at": "2025-10-22T12:02:31.368024",
+      "delay_until": "2025-10-23T12:02:31.368028",
+      "approved_at": "2025-10-22T12:02:57.175083"
     }
   ]
 }
