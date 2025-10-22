@@ -306,27 +306,26 @@
     "6213073537": {
       "country": "Santos",
       "job": "مشاغل آزاد",
-      "step": "asking_photo",
+      "step": "asking_id_tag",
       "flow_type": "bio",
-      "saved_at": "2025-10-22T14:12:31.505767",
-      "expires_at": "2025-10-22T14:41:48.103451",
-      "name": "عهاخم",
-      "nickname": "تخهعحع",
-      "age": "45",
+      "saved_at": "2025-10-22T16:54:17.938827",
+      "expires_at": "2025-10-22T17:23:30.686527",
+      "name": "مهنادت",
+      "nickname": ".کگنتهنم",
+      "age": "23",
       "skills": [
-        "مهارت کار با نیزه",
-        "ستاره شناسی",
-        "تیراندازی با کراسبو"
+        "تیراندازی با کمان",
+        "مهارت شمشیرزنی و تبرزنی",
+        "کشتیرانی"
       ],
       "skills_description_sent": true,
       "skill_page": 0,
-      "skill1": "مهارت کار با نیزه",
-      "skill2": "ستاره شناسی",
-      "skill3": "تیراندازی با کراسبو",
-      "appearance": "تمکمتمک",
-      "history": "کتکمتن",
-      "id_number": "@Valeria_Cas",
-      "user_id_tag": "#test3"
+      "skill1": "تیراندازی با کمان",
+      "skill2": "مهارت شمشیرزنی و تبرزنی",
+      "skill3": "کشتیرانی",
+      "appearance": "تالاتنمکحجگ",
+      "history": "گکمننمکگ",
+      "id_number": "@Valeria_Cas"
     }
   },
   "used_hashtags": [
@@ -471,7 +470,6 @@
     "#GojoMode",
     "#seraphine",
     "#Mosaken",
-    "#hhvhjjgj",
-    "#test3"
+    "#hhvhjjgj"
   ]
 }
