@@ -10876,6 +10876,38 @@
       "status": "pending",
       "requested_at": "2025-10-22T12:48:46.212700",
       "delay_until": "2025-10-23T12:48:46.212704"
+    },
+    {
+      "id": "transfer_5564554013_1761137544",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Arevanmyr",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 20000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-22T12:52:24.755086",
+      "delay_until": "2025-10-23T12:52:24.755091"
+    },
+    {
+      "id": "transfer_5564554013_1761137571",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Arevanmyr",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 480
+      },
+      "status": "pending",
+      "requested_at": "2025-10-22T12:52:51.457460",
+      "delay_until": "2025-10-23T12:52:51.457465"
     }
   ]
 }
