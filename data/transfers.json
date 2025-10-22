@@ -10825,6 +10825,41 @@
       "requested_at": "2025-10-22T12:10:01.891030",
       "delay_until": "2025-10-23T12:10:01.891035",
       "approved_at": "2025-10-22T12:10:40.374553"
+    },
+    {
+      "id": "transfer_1771323853_1761135343",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Haramtul",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1000,
+        "چوب": 400
+      },
+      "status": "approved",
+      "requested_at": "2025-10-22T12:15:43.386373",
+      "delay_until": "2025-10-23T12:15:43.386378",
+      "approved_at": "2025-10-22T12:15:44.820007"
+    },
+    {
+      "id": "transfer_1771323853_1761135364",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Haramtul",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 16000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-22T12:16:04.928688",
+      "delay_until": "2025-10-23T12:16:04.928693",
+      "approved_at": "2025-10-22T12:16:06.533077"
     }
   ]
 }
