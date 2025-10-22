@@ -2142,6 +2142,11 @@
                         "status": "Approved",
                         "product": "شراب",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه شراب_2",
+                        "status": "Pending",
+                        "product": "شراب"
                     }
                 ],
                 "چوب بری": [
@@ -2162,6 +2167,11 @@
                         "status": "Approved",
                         "product": "چوب",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "چوب بری_4",
+                        "status": "Pending",
+                        "product": "چوب"
                     }
                 ],
                 "کارخونه سنگ": [
