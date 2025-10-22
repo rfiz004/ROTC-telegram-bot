@@ -1151,35 +1151,32 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     #     except Exception as e:
     #         print(f"⚠️ Error sending to admin {admin_id}: {e}")
+
         # ارسال به ادمین‌ها
     sent_success = False
     for admin_id in BIO_ADMIN_ID:
         try:
-            messages = await context.bot.send_media_group(chat_id=admin_id, media=media_group)
+            # اول آلبوم عکس + کپشن ارسال می‌شود
+            await context.bot.send_media_group(chat_id=admin_id, media=media_group)
             sent_success = True
 
-            # اضافه کردن دکمه‌ها به آخرین عکس آلبوم (تا توی همون پیام دکمه بیاد)
-            if messages:
-                last_message = messages[-1]
-                await asyncio.sleep(0.5)
-                try:
-                    await context.bot.edit_message_reply_markup(
-                        chat_id=admin_id,
-                        message_id=last_message.message_id,
-                        reply_markup=buttons
-                    )
-                except Exception as e:
-                    if "Message is not modified" not in str(e):
-                        print(f"⚠️ Edit markup error for admin {admin_id}: {e}")
+            # بعد از ارسال آلبوم، دکمه‌های تأیید و رد را در یک پیام جداگانه می‌فرستیم
+            await context.bot.send_message(
+                chat_id=admin_id,
+                text=f"👤 بیو جدید از <code>{user_id}</code> آماده بررسی است:",
+                reply_markup=buttons,
+                parse_mode="HTML"
+            )
 
             # ذخیره عکس‌ها برای مرحله تایید
-            current["photos"] = photos  # ذخیره همه آیدی عکس‌ها برای تایید بعدی
+            current["photos"] = photos  # همه آیدی عکس‌ها برای تایید
             add_bio_to_storage(user_id, current)
 
             await asyncio.sleep(1.5)
 
         except Exception as e:
             print(f"⚠️ Error sending to admin {admin_id}: {e}")
+
 
 
     if not sent_success:
