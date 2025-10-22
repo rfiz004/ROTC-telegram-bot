@@ -274,9 +274,11 @@
     "8316016820": {
       "country": "Northwood",
       "job": "ملکه",
-      "step": "asking_name",
+      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-10-22T07:17:46.426835"
+      "saved_at": "2025-10-22T07:20:46.634607",
+      "expires_at": "2025-10-22T07:47:46.427734",
+      "name": "seraphine"
     }
   },
   "used_hashtags": [
