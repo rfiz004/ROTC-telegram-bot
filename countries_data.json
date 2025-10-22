@@ -4678,7 +4678,26 @@
             }
         },
         "Haramtul": {
-            "castle": {},
+            "castle": {
+                "دیوار صومعه": [
+                    {
+                        "id": "دیوار صومعه_1",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "دیوار صومعه_2",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "دیوار صومعه_3",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "دیوار صومعه_4",
+                        "status": "Pending"
+                    }
+                ]
+            },
             "structures": {
                 "منجنیق": [],
                 "برج محاصره": [
