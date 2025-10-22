@@ -10723,6 +10723,23 @@
       "requested_at": "2025-10-22T10:02:17.662047",
       "delay_until": "2025-10-23T10:02:17.662050",
       "approved_at": "2025-10-22T10:02:27.641533"
+    },
+    {
+      "id": "transfer_5566736269_1761134309",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 1584,
+        "چوب": 1600
+      },
+      "status": "pending",
+      "requested_at": "2025-10-22T11:58:29.025423",
+      "delay_until": "2025-10-23T11:58:29.025427"
     }
   ]
 }
