@@ -270,34 +270,6 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2025-10-21T14:25:53.864345"
-    },
-    "8316016820": {
-      "step": "pending",
-      "country": "Northwood",
-      "flow_type": "bio",
-      "job": "ملکه",
-      "expires_at": "2025-10-22T08:03:46.360858",
-      "name": "Seraphine",
-      "nickname": "dying lilium",
-      "age": "29",
-      "skills": [
-        "مهارت شمشیرزنی و تبرزنی",
-        "مهارت جراحی",
-        "سرعت بالا"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مهارت شمشیرزنی و تبرزنی",
-      "skill2": "مهارت جراحی",
-      "skill3": "سرعت بالا",
-      "appearance": "زنی با موهای سیاه بلند و چشم های خاکستری \nماسکی روی صورتش هست که تقریبا هیچوقت بدون اون دیده نمیشه.\nروی بدنش جای زخم های قدیمی ای هست که به طور عجیبی متقارن هستن و بنظر میاد روی یکی از دست هاش همیشه یک زره هست که به طور خودش عجیبه \nشاید..دستشو از دست داده؟.. شایدم فقط استایلشو دوست داره کسی نمیدونه.",
-      "history": "-",
-      "id_number": "@dyinglilium",
-      "user_id_tag": "#seraphine",
-      "photo": "AgACAgQAAxkBAALJ3Wj4ijIYUeWcTi6W-Y9gcIbtk6NkAAI3C2sblLTJU9igvLw-NmqoAQADAgADeQADNgQ",
-      "level": 1,
-      "unique_id": "8316016820",
-      "saved_at": "2025-10-22T07:39:30.911642"
     }
   },
   "used_hashtags": [
