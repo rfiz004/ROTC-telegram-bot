@@ -983,6 +983,112 @@ async def collect_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text("خطا در فرایند. لطفا /start بزنید و دوباره شروع کنید.")
 
+# async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+#     user_id = query.from_user.id
+#     current = context.user_data.get(user_id, {})
+
+#     photos = current.get("photos", [])
+#     if not photos:
+#         await query.edit_message_text("❌ هنوز هیچ عکسی نفرستادی!")
+#         return
+
+#     country = current.get("country")
+#     job = current.get("job")
+#     job_data = next((j for j in jobs_by_country.get(country, []) if j["name"] == job), None)
+#     if not job_data:
+#         await query.edit_message_text("❌ شغل انتخابی شما معتبر نیست.")
+#         return
+
+#     current["level"] = job_data.get("level")
+#     caption = format_bio_text(current)
+#     unique_id = str(user_id)
+#     current["unique_id"] = unique_id
+#     buttons = bio_approval_keyboard(unique_id)
+
+#     # پیام وضعیت
+#     await query.edit_message_text("📤 در حال ارسال بیو به ادمین‌ها...")
+
+#     # ساخت گروه مدیا
+#     # media_group = []
+#     # for i, photo_id in enumerate(photos):
+#     #     # فقط عکس اول کپشن دارد
+#     #     media_group.append(
+#     #         InputMediaPhoto(
+#     #             media=photo_id,
+#     #             caption=caption if i == 0 else "",
+#     #             parse_mode="HTML"
+#     #         )
+#     #     )
+
+#         # ساخت گروه مدیا (ایمن برای parse_mode)
+#     # ساخت گروه مدیا برای ارسال به ادمین‌ها
+#     media_group = []
+#     for i, photo_id in enumerate(photos):
+#         if i == 0:
+#             # فقط اولین عکس کپشن دارد (نمایش زیر آلبوم)
+#             media_group.append(
+#                 InputMediaPhoto(
+#                     media=photo_id,
+#                     caption=caption,
+#                     parse_mode="HTML"
+#                 )
+#             )
+#         else:
+#             # بقیه فقط عکس ساده بدون کپشن
+#             media_group.append(InputMediaPhoto(media=photo_id))
+
+#     # ارسال به ادمین‌ها با کنترل خطا
+#     sent_success = False
+#     for admin_id in BIO_ADMIN_ID:
+#         try:
+#             messages = await context.bot.send_media_group(
+#                 chat_id=admin_id,
+#                 media=media_group
+#             )
+#             # اضافه کردن دکمه زیر پیام اول
+#             if messages:
+#                 first_message = messages[0]
+#                 await context.bot.edit_message_reply_markup(
+#                     chat_id=admin_id,
+#                     message_id=first_message.message_id,
+#                     reply_markup=buttons
+#                 )
+#                 sent_success = True
+#             await asyncio.sleep(1.5)  # جلوگیری از Flood
+#         except Exception as e:
+#             print(f"⚠️ Error sending to admin {admin_id}: {e}")
+
+#     if not sent_success:
+#         await query.edit_message_text("❌ ارسال به ادمین‌ها انجام نشد. لطفاً بعداً دوباره تلاش کنید.")
+#         return
+
+#     # ذخیره بیو و اطلاعات
+#     add_bio_to_storage(user_id, current)
+#     add_used_hashtag(current["user_id_tag"])
+
+#     bios = load_bios()
+#     bios.setdefault("bios", {})
+#     saved = bios["bios"].get(str(user_id), {})
+#     saved.update(current)
+#     saved["step"] = "pending"
+#     saved["saved_at"] = datetime.utcnow().isoformat()
+#     bios["bios"][str(user_id)] = saved
+#     save_bios(bios)
+
+#     reservations = load_job_reservations()
+#     if str(user_id) in reservations:
+#         del reservations[str(user_id)]
+#         save_job_reservations(reservations)
+
+#     await query.message.reply_text(
+#         "✅ فرم بیوت کامل شد و برای بررسی ادمین ارسال شد.",
+#         reply_markup=restart_button()
+#     )
+#     context.user_data.pop(user_id, None)
+
+
 async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -1007,56 +1113,41 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
     current["unique_id"] = unique_id
     buttons = bio_approval_keyboard(unique_id)
 
-    # پیام وضعیت
+    # پیام وضعیت به کاربر
     await query.edit_message_text("📤 در حال ارسال بیو به ادمین‌ها...")
 
     # ساخت گروه مدیا
-    # media_group = []
-    # for i, photo_id in enumerate(photos):
-    #     # فقط عکس اول کپشن دارد
-    #     media_group.append(
-    #         InputMediaPhoto(
-    #             media=photo_id,
-    #             caption=caption if i == 0 else "",
-    #             parse_mode="HTML"
-    #         )
-    #     )
-
-        # ساخت گروه مدیا (ایمن برای parse_mode)
-    # ساخت گروه مدیا برای ارسال به ادمین‌ها
     media_group = []
     for i, photo_id in enumerate(photos):
         if i == 0:
-            # فقط اولین عکس کپشن دارد (نمایش زیر آلبوم)
             media_group.append(
-                InputMediaPhoto(
-                    media=photo_id,
-                    caption=caption,
-                    parse_mode="HTML"
-                )
+                InputMediaPhoto(media=photo_id, caption=caption, parse_mode="HTML")
             )
         else:
-            # بقیه فقط عکس ساده بدون کپشن
             media_group.append(InputMediaPhoto(media=photo_id))
 
-    # ارسال به ادمین‌ها با کنترل خطا
+    # ارسال به ادمین‌ها
     sent_success = False
     for admin_id in BIO_ADMIN_ID:
         try:
-            messages = await context.bot.send_media_group(
-                chat_id=admin_id,
-                media=media_group
-            )
-            # اضافه کردن دکمه زیر پیام اول
+            messages = await context.bot.send_media_group(chat_id=admin_id, media=media_group)
+            sent_success = True  # اگر ارسال موفق بود، ثبت می‌کنیم
+
+            # اضافه کردن دکمه‌ها به اولین پیام
             if messages:
                 first_message = messages[0]
-                await context.bot.edit_message_reply_markup(
-                    chat_id=admin_id,
-                    message_id=first_message.message_id,
-                    reply_markup=buttons
-                )
-                sent_success = True
-            await asyncio.sleep(1.5)  # جلوگیری از Flood
+                try:
+                    await context.bot.edit_message_reply_markup(
+                        chat_id=admin_id,
+                        message_id=first_message.message_id,
+                        reply_markup=buttons
+                    )
+                except Exception as e:
+                    # اگر پیام تغییر نکرده، نادیده بگیر
+                    if "Message is not modified" not in str(e):
+                        raise
+            await asyncio.sleep(1.5)
+
         except Exception as e:
             print(f"⚠️ Error sending to admin {admin_id}: {e}")
 
@@ -1064,7 +1155,7 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await query.edit_message_text("❌ ارسال به ادمین‌ها انجام نشد. لطفاً بعداً دوباره تلاش کنید.")
         return
 
-    # ذخیره بیو و اطلاعات
+    # ذخیره اطلاعات بیو
     add_bio_to_storage(user_id, current)
     add_used_hashtag(current["user_id_tag"])
 
@@ -1087,4 +1178,3 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
         reply_markup=restart_button()
     )
     context.user_data.pop(user_id, None)
-
