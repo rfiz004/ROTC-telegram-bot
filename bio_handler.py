@@ -1008,24 +1008,33 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
     current["unique_id"] = unique_id
     buttons = bio_approval_keyboard(unique_id)
 
-    # ارسال به ادمین‌ها
+    # ارسال به ادمین‌ها (همه عکس‌ها در یک پیام)
     await query.edit_message_text("📤 در حال ارسال بیو به ادمین‌ها...")
-
-    tasks = []
-    for admin_id in BIO_ADMIN_ID:
-        for i, photo_id in enumerate(photos):
-            cap = caption if i == 0 else None
-            markup = buttons if i == 0 else None
-            tasks.append(
-                context.bot.send_photo(
-                    chat_id=admin_id,
-                    photo=photo_id,
-                    caption=cap,
-                    reply_markup=markup
-                )
+    
+    media_group = []
+    for i, photo_id in enumerate(photos):
+        # فقط روی عکس اول کپشن گذاشته میشه
+        media_group.append(
+            InputMediaPhoto(
+                media=photo_id,
+                caption=caption if i == 0 else None
             )
-
-    await asyncio.gather(*tasks)
+        )
+    
+    # ارسال به همه ادمین‌ها
+    for admin_id in BIO_ADMIN_ID:
+        messages = await context.bot.send_media_group(
+            chat_id=admin_id,
+            media=media_group
+        )
+        # اضافه کردن دکمه فقط زیر پیام اول
+        first_message = messages[0]
+        await context.bot.edit_message_reply_markup(
+            chat_id=admin_id,
+            message_id=first_message.message_id,
+            reply_markup=bio_approval_keyboard(unique_id)
+        )
+    
 
     # ذخیره بیو در فایل‌ها
     add_bio_to_storage(user_id, current)
