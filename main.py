@@ -142,7 +142,7 @@ from run_git_push import run_git_push
 from bio_handler import (
     select_job, ask_bio_fields, handle_skill_navigation,
     handle_skill_reset, handle_skill_continue, handle_skill_selection,
-    collect_bio, handle_job_locks, start_bio_submission
+    collect_bio, handle_job_locks, start_bio_submission, confirm_bio_photos
 )
 
 from admin_handler import (
