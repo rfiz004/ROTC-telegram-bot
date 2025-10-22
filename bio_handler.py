@@ -1136,6 +1136,7 @@ async def confirm_bio_photos(update: Update, context: ContextTypes.DEFAULT_TYPE)
             # اضافه کردن دکمه‌ها به اولین پیام
             if messages:
                 first_message = messages[0]
+                await asyncio.sleep(0.5)
                 try:
                     await context.bot.edit_message_reply_markup(
                         chat_id=admin_id,
