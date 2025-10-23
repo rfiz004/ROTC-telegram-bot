@@ -1,4 +1,4 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.ext import ContextTypes
 from data_manager import jobs_by_country, skills_config, save_data_file, save_data_file, load_bios, remove_bio_from_storage, remove_used_hashtag, country_group_ids, save_bios, load_data_file, save_data, load_job_reservations, save_job_reservations
 from keyboards import bio_admin_menu, country_selection_keyboard, job_management_keyboard, skill_management_keyboard, bio_approval_keyboard, admin_back_buttons, skill_type_selection_keyboard
