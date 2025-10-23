@@ -12,8 +12,7 @@ async def show_country_list(update: Update, context: CallbackContext):
         if file_name.endswith(".json"):
             with open(os.path.join(base_path, file_name), "r", encoding="utf-8") as f:
                 data = json.load(f)
-            if "country" in data and data["country"] not in countries:
-                countries.append(data["country"])
+            countries.extend([c for c in data.keys() if c not in countries])
 
     keyboard = [
         [InlineKeyboardButton(country, callback_data=f"admin_select_country_{country}")]
@@ -23,7 +22,6 @@ async def show_country_list(update: Update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.callback_query.edit_message_text("🌍 یکی از کشورها را انتخاب کنید:", reply_markup=reply_markup)
-
 
 # ======= 🔹 2. نمایش استان‌ها =======
 async def show_provinces(update: Update, context: CallbackContext):
@@ -35,8 +33,8 @@ async def show_provinces(update: Update, context: CallbackContext):
         if file_name.endswith(".json"):
             with open(os.path.join(base_path, file_name), "r", encoding="utf-8") as f:
                 data = json.load(f)
-            if data.get("country") == country:
-                provinces.append(data["province"])
+            if country in data:
+                provinces.extend(list(data[country].keys()))
 
     keyboard = [
         [InlineKeyboardButton(prov, callback_data=f"admin_select_province_{prov}")]
@@ -46,7 +44,6 @@ async def show_provinces(update: Update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.callback_query.edit_message_text(f"🏰 استان‌های کشور {country}:", reply_markup=reply_markup)
-
 
 # ======= 🔹 3. نمایش آیتم‌های در انتظار =======
 async def show_pending_items(update: Update, context: CallbackContext):
@@ -66,7 +63,7 @@ async def show_pending_items(update: Update, context: CallbackContext):
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # پیدا کردن داده‌های استان داخل کشور
+    # پیدا کردن استان داخل کشور
     province_data = None
     for country_name, provinces in data.items():
         if province in provinces:
@@ -81,15 +78,13 @@ async def show_pending_items(update: Update, context: CallbackContext):
     for section, items in province_data.items():
         if isinstance(items, dict):
             for name, value in items.items():
-                # اگر value یه دیکشنری باشه
                 if isinstance(value, dict) and value.get("status", "").lower() == "pending":
                     pending_items.append((section, name))
-                # اگر value یه لیست باشه
                 elif isinstance(value, list):
                     for item in value:
                         if isinstance(item, dict) and item.get("status", "").lower() == "pending":
                             pending_items.append((section, name))
-                            break  # فقط یه بار برای هر نام نیاز داریم
+                            break
 
     if not pending_items:
         await update.callback_query.edit_message_text("✅ هیچ سازه‌ی در انتظار تأییدی وجود ندارد.")
@@ -103,8 +98,6 @@ async def show_pending_items(update: Update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.callback_query.edit_message_text(f"🔎 سازه‌های در انتظار تأیید ({province}):", reply_markup=reply_markup)
-
-
 
 # ======= 🔹 4. مرور آیتم =======
 async def review_item(update: Update, context: CallbackContext):
@@ -124,12 +117,10 @@ async def review_item(update: Update, context: CallbackContext):
         reply_markup=reply_markup
     )
 
-
-# ======= 🔹 5. تابع آپدیت وضعیت =======
+# ======= 🔹 5. آپدیت وضعیت =======
 def update_item_status(province_name: str, section: str, structure_name: str, new_status: str):
     base_path = os.path.join(os.getcwd(), "provinces")
     target_file = None
-
     for file_name in os.listdir(base_path):
         if province_name.lower() in file_name.lower():
             target_file = os.path.join(base_path, file_name)
@@ -142,25 +133,36 @@ def update_item_status(province_name: str, section: str, structure_name: str, ne
     with open(target_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    if section in data and structure_name in data[section]:
-        if isinstance(data[section][structure_name], dict):
-            data[section][structure_name]["status"] = new_status
-        else:
-            data[section][structure_name] = new_status
+    province_data = None
+    for country_name, provinces in data.items():
+        if province_name in provinces:
+            province_data = provinces[province_name]
+            break
 
-        with open(target_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        return True
+    if not province_data:
+        print(f"❌ اطلاعات استان '{province_name}' پیدا نشد.")
+        return False
 
-    return False
+    if section in province_data:
+        items = province_data[section]
+        if isinstance(items, dict):
+            if structure_name in items and isinstance(items[structure_name], dict):
+                items[structure_name]["status"] = new_status
+        elif isinstance(items, list):
+            for item in items:
+                if item.get("id") == structure_name or item.get("status") is not None:
+                    item["status"] = new_status
 
+    with open(target_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    return True
 
-# ======= 🔹 6. تابع کاهش سازه =======
+# ======= 🔹 6. کاهش شمارش سازه =======
 def decrement_structure_count(province_name: str, structure_name: str):
     base_path = os.path.join(os.getcwd(), "provinces")
     target_file = None
     for file_name in os.listdir(base_path):
-        if file_name.endswith(".json") and province_name.lower() in file_name.lower():
+        if province_name.lower() in file_name.lower():
             target_file = os.path.join(base_path, file_name)
             break
 
@@ -171,30 +173,40 @@ def decrement_structure_count(province_name: str, structure_name: str):
     with open(target_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    province_data = None
+    for country_name, provinces in data.items():
+        if province_name in provinces:
+            province_data = provinces[province_name]
+            break
+
+    if not province_data:
+        print(f"❌ اطلاعات استان '{province_name}' پیدا نشد.")
+        return
+
     sections = ["economic_structures", "structures", "castle", "mines", "weapons", "misc"]
     for section in sections:
-        if section in data:
-            if section == "economic_structures":
-                for key, value in data[section].items():
+        if section in province_data:
+            items = province_data[section]
+            if isinstance(items, dict):
+                for key, value in items.items():
                     if key == structure_name and isinstance(value, dict) and "count" in value:
                         value["count"] = max(0, value["count"] - 1)
                         break
-            else:
-                if structure_name in data[section]:
-                    data[section][structure_name] = max(0, data[section][structure_name] - 1)
-                    break
+            elif isinstance(items, list):
+                for item in items:
+                    if item.get("id") == structure_name and "count" in item:
+                        item["count"] = max(0, item["count"] - 1)
+                        break
 
     with open(target_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-
-# ======= 🔹 7. تأیید / رد =======
+# ======= 🔹 7. تأیید / رد آیتم =======
 async def approve_item(update: Update, context: CallbackContext):
     _, _, province, section, name = update.callback_query.data.split("_", 4)
     update_item_status(province, section, name, "Approved")
     await update.callback_query.answer("✅ آیتم تأیید شد.", show_alert=True)
     await show_pending_items(update, context)
-
 
 async def reject_item(update: Update, context: CallbackContext):
     _, _, province, section, name = update.callback_query.data.split("_", 4)
