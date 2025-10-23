@@ -697,6 +697,7 @@ async def handle_search_in_category(update: Update, context: ContextTypes.DEFAUL
     user_data["step"] = "awaiting_item_id"
     context.user_data[user_id]["search_mode"] = True
     context.user_data[user_id]["search_category"] = category
+    user_data["search_message_id"] = msg.message_id
     context.user_data[user_id] = user_data
 
 # async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -760,6 +761,15 @@ async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = update.message.from_user.id
     text = update.message.text.strip()
     user_data = context.user_data.get(user_id, {})
+
+        # حذف پیام لیست آیتم‌ها (در صورت وجود)
+    search_message_id = user_data.get("search_message_id")
+    if search_message_id:
+        try:
+            await context.bot.delete_message(chat_id=update.message.chat.id, message_id=search_message_id)
+        except:
+            pass
+        user_data.pop("search_message_id", None)
 
     # اگر در حالت جستجو نیست، خروج
     if not user_data.get("search_mode"):
