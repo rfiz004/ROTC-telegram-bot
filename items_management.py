@@ -195,7 +195,7 @@ def update_item_status(country: str, province: str, section: str, item_id: str, 
 
 # ===================== 6️⃣ کاهش شمارش در صورت رد =====================
 def decrement_structure_count(country: str, province: str, item_id: str):
-    """در صورت رد آیتم، شمارش سازه اقتصادی را کاهش می‌دهد."""
+    """در صورت رد آیتم، شمارش سازه را کاهش می‌دهد (چه اقتصادی، چه نظامی)."""
     file_path = os.path.join(PROVINCES_DIR, f"{country}_{province}.json")
     if not os.path.exists(file_path):
         return
@@ -203,12 +203,24 @@ def decrement_structure_count(country: str, province: str, item_id: str):
     with open(file_path, "r", encoding="utf-8") as f:
         province_data = json.load(f)
 
+    # بررسی economic_structures
     for structure, info in province_data.get("economic_structures", {}).items():
-        if info.get("count") and item_id.startswith(structure):
-            info["count"] = max(0, info["count"] - 1)
+        if item_id.startswith(structure):
+            info["count"] = max(0, info.get("count", 0) - 1)
+
+    # بررسی structures (مثل دژکوب، منجنیق، کشتی و...)
+    for structure, count in province_data.get("structures", {}).items():
+        if item_id.startswith(structure):
+            province_data["structures"][structure] = max(0, count - 1)
+
+    # بررسی castle هم در صورت لزوم (مثلاً برج یا دروازه)
+    for structure, count in province_data.get("castle", {}).items():
+        if item_id.startswith(structure):
+            province_data["castle"][structure] = max(0, count - 1)
 
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(province_data, f, ensure_ascii=False, indent=2)
+
 
 
 # ===================== 7️⃣ تأیید و رد آیتم =====================
