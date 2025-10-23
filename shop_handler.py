@@ -1440,56 +1440,70 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     save_province_data(country, province, province_data)
     print(f"✅ Updated province data for {province}")
 
-    # ─────────────────────────────────────────────
-    # 🔻 ثبت آیتم در فایل countries_data.json
-    allowed_types = ["castle", "structure", "structures", "weapon", "weapons", "econstructure", "economic_structure"]
-    print(f"🟢 Allowed types: {allowed_types}")
-    print(f"🟢 CWD: {os.getcwd()}")
+ # بخش ذخیره به countries_data.json (اصلاح شده)
+file_path = os.path.join(os.path.dirname(__file__), "countries_data.json")
+print(f"📁 Saving to countries_data.json: {file_path}")
 
-    if item_type in allowed_types:
-        file_path = os.path.join(os.path.dirname(__file__), "countries_data.json")
-        print(f"📁 Using countries_data file: {file_path}")
+try:
+    with open(file_path, "r", encoding="utf-8") as f:
+        countries_data = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    print("⚠️ countries_data.json missing or invalid — creating new one")
+    countries_data = {}
 
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                countries_data = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
-            print("⚠️ countries_data.json missing or invalid — creating new one")
-            countries_data = {}
+# اطمینان از ساختار کشور و استان
+country_info = countries_data.setdefault(country, {})
+province_info = country_info.setdefault(province, {
+    "castle": {},
+    "structures": {},
+    "weapons": {},
+    "economic_structures": {}
+})
 
-        # اطمینان از ساختار کشور و استان
-        country_info = countries_data.setdefault(country, {})
-        province_info = country_info.setdefault(province, {
-            "castle": {},
-            "structures": {},
-            "weapons": {},
-            "economic_structures": {}
-        })
+# تعیین بخش مورد نظر بر اساس نوع آیتم
+if item_type in ["econstructure", "economic_structure"]:
+    target_section = "economic_structures"
+elif item_type in ["structure", "structures"]:
+    target_section = "structures"
+elif item_type in ["castle"]:
+    target_section = "castle"
+elif item_type in ["weapon", "weapons"]:
+    target_section = "weapons"
+else:
+    target_section = "misc"  # fallback برای آیتم‌های دیگر
 
-        target_section = "economic_structures" if item_type in ["econstructure", "economic_structure"] else item_type
-        section = province_info.setdefault(target_section, {})
+section = province_info.setdefault(target_section, {})
 
-        # اطمینان از اینکه همیشه لیست است
-        if not isinstance(section.get(item_name), list):
-            section[item_name] = []
-        structure_list = section[item_name]
+# اطمینان از اینکه همیشه لیست باشه
+if item_name not in section:
+    section[item_name] = []
 
-        # افزودن آیتم جدید به حالت Pending
-        for i in range(quantity):
-            next_id = f"{item_name}_{len(structure_list) + 1}"
-            new_entry = {"id": next_id, "status": "Pending"}
-            if target_section == "economic_structures":
-                struct_info = all_econ_structs.get(item_name, {})
-                new_entry["product"] = struct_info.get("product", "")
-            structure_list.append(new_entry)
+structure_list = section[item_name]
 
-        # ذخیره نهایی
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(countries_data, f, ensure_ascii=False, indent=4)
-            f.flush()
-            os.fsync(f.fileno())
+# افزودن آیتم جدید به حالت Pending
+for i in range(quantity):
+    next_id = f"{item_name}_{len(structure_list) + 1}"
+    new_entry = {"id": next_id, "status": "Pending"}
 
-        print(f"✅ Added {quantity}× {item_name} to {country}/{province} in {file_path}")
+    # فقط برای economic_structure فیلد product و weekly_output اضافه کن
+    if target_section == "economic_structures":
+        country_econ = all_econ_structs.get(country, {})
+        province_econ = country_econ.get(province, {})
+        econ_structs_all = province_econ.get("economic_structures", {})
+        struct_info = econ_structs_all.get(item_name, [{}])[0]
+        new_entry["product"] = struct_info.get("product", "")
+        new_entry["weekly_output"] = struct_info.get("weekly_output", 0)
+
+    structure_list.append(new_entry)
+
+# ذخیره نهایی
+with open(file_path, "w", encoding="utf-8") as f:
+    json.dump(countries_data, f, ensure_ascii=False, indent=4)
+    f.flush()
+    os.fsync(f.fileno())
+
+print(f"✅ Added {quantity}× {item_name} to {country}/{province} in countries_data.json")
+
 
     # ─────────────────────────────────────────────
     # 🔻 گزارش برای ادمین‌ها
