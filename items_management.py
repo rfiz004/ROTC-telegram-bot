@@ -49,6 +49,43 @@ async def show_provinces(update: Update, context: CallbackContext):
 
 
 # ======= 🔹 3. نمایش آیتم‌های در انتظار =======
+# async def show_pending_items(update: Update, context: CallbackContext):
+#     province = update.callback_query.data.replace("admin_select_province_", "")
+#     base_path = os.path.join(os.getcwd(), "provinces")
+
+#     file_path = None
+#     for file_name in os.listdir(base_path):
+#         if province.lower() in file_name.lower():
+#             file_path = os.path.join(base_path, file_name)
+#             break
+
+#     if not file_path:
+#         await update.callback_query.edit_message_text("❌ فایل استان پیدا نشد.")
+#         return
+
+#     with open(file_path, "r", encoding="utf-8") as f:
+#         data = json.load(f)
+
+#     pending_items = []
+#     for section, items in data.items():
+#         if isinstance(items, dict):
+#             for name, value in items.items():
+#                 if isinstance(value, dict) and value.get("status", "").lower() == "pending":
+#                     pending_items.append((section, name))
+    
+#     if not pending_items:
+#         await update.callback_query.edit_message_text("✅ هیچ سازه‌ی در انتظار تأییدی وجود ندارد.")
+#         return
+
+#     keyboard = [
+#         [InlineKeyboardButton(f"{name} ({section})", callback_data=f"admin_review_item_{province}_{section}_{name}")]
+#         for section, name in pending_items
+#     ]
+#     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_structure_status")])
+
+#     reply_markup = InlineKeyboardMarkup(keyboard)
+#     await update.callback_query.edit_message_text(f"🔎 سازه‌های در انتظار تأیید ({province}):", reply_markup=reply_markup)
+
 async def show_pending_items(update: Update, context: CallbackContext):
     province = update.callback_query.data.replace("admin_select_province_", "")
     base_path = os.path.join(os.getcwd(), "provinces")
@@ -70,9 +107,16 @@ async def show_pending_items(update: Update, context: CallbackContext):
     for section, items in data.items():
         if isinstance(items, dict):
             for name, value in items.items():
+                # اگر value یه دیکشنری باشه
                 if isinstance(value, dict) and value.get("status", "").lower() == "pending":
                     pending_items.append((section, name))
-    
+                # اگر value یه لیست باشه
+                elif isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, dict) and item.get("status", "").lower() == "pending":
+                            pending_items.append((section, name))
+                            break  # فقط یه بار برای هر نام نیاز داریم
+
     if not pending_items:
         await update.callback_query.edit_message_text("✅ هیچ سازه‌ی در انتظار تأییدی وجود ندارد.")
         return
@@ -85,6 +129,7 @@ async def show_pending_items(update: Update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.callback_query.edit_message_text(f"🔎 سازه‌های در انتظار تأیید ({province}):", reply_markup=reply_markup)
+
 
 
 # ======= 🔹 4. مرور آیتم =======
