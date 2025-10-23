@@ -195,7 +195,7 @@ from items_management import (
     show_country_list,
     show_provinces,
     show_pending_items,
-    # review_item,
+    review_item_details,
     approve_item,
     reject_item
 )
@@ -468,7 +468,7 @@ app.add_handler(CallbackQueryHandler(handle_skill_reset, pattern="^reset_skills$
 app.add_handler(CallbackQueryHandler(show_country_list, pattern="^admin_structure_status$"))
 app.add_handler(CallbackQueryHandler(show_provinces, pattern="^admin_select_country_"))
 app.add_handler(CallbackQueryHandler(show_pending_items, pattern="^admin_select_province_"))
-# app.add_handler(CallbackQueryHandler(review_item, pattern="^admin_review_item_"))
+app.add_handler(CallbackQueryHandler(review_item_details, pattern=r"^admin_review_item_[^_]+_[^_]+_[^_]+_[^_]+$"))
 app.add_handler(CallbackQueryHandler(approve_item, pattern="^admin_approve_item_"))
 app.add_handler(CallbackQueryHandler(reject_item, pattern="^admin_reject_item_"))
 app.add_handler(CallbackQueryHandler(handle_skill_continue, pattern="^skills_done$"))
