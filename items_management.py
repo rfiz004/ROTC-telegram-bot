@@ -70,9 +70,9 @@ async def show_pending_items(update: Update, context: CallbackContext):
     for section, items in data.items():
         if isinstance(items, dict):
             for name, value in items.items():
-                if isinstance(value, dict) and value.get("status") == "pending":
+                if isinstance(value, dict) and value.get("status", "").lower() == "pending":
                     pending_items.append((section, name))
-
+    
     if not pending_items:
         await update.callback_query.edit_message_text("✅ هیچ سازه‌ی در انتظار تأییدی وجود ندارد.")
         return
