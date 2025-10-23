@@ -1439,5 +1439,24 @@
     "count": 1,
     "id": "67",
     "created_at": "2025-10-23T10:12:26.564304"
+  },
+  {
+    "name": "kjhgfd",
+    "type": "Weapons",
+    "countries": [
+      "Walden"
+    ],
+    "description": "lkds, تعداد: 23",
+    "price": 23000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Weapons",
+      "#Walden"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALOAAFo-gJNW3OXhq5qjKiBLYqhtm_58gACaw5rG23j0VO58kXfxOgqWQEAAwIAA3gAAzYE",
+    "count": 23,
+    "id": "68",
+    "created_at": "2025-10-23T10:24:49.143782"
   }
 ]
