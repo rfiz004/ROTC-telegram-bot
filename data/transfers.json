@@ -11336,6 +11336,22 @@
       "status": "pending",
       "requested_at": "2025-10-23T18:35:07.668935",
       "delay_until": "2025-10-24T18:35:07.668940"
+    },
+    {
+      "id": "transfer_1208514381_1761244672",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Meraven",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-23T18:37:52.030196",
+      "delay_until": "2025-10-24T18:37:52.030200"
     }
   ]
 }
