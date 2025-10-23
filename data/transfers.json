@@ -11390,6 +11390,39 @@
       "requested_at": "2025-10-23T18:40:45.523574",
       "delay_until": "2025-10-24T18:40:45.523578",
       "approved_at": "2025-10-23T18:41:08.804953"
+    },
+    {
+      "id": "transfer_1208514381_1761245038",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 700,
+        "پنبه": 600
+      },
+      "status": "pending",
+      "requested_at": "2025-10-23T18:43:58.285437",
+      "delay_until": "2025-10-24T18:43:58.285440"
+    },
+    {
+      "id": "transfer_1208514381_1761245056",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-23T18:44:16.974774",
+      "delay_until": "2025-10-24T18:44:16.974778"
     }
   ]
 }
