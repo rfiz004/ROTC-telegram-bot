@@ -175,7 +175,7 @@ from country_handler import (
 from shop_handler import (
     open_shop_menu, show_shop_category, show_shop_items_page,
     handle_item_purchase, confirm_purchase, handle_quantity_input,
-    handle_shop_buy
+    handle_shop_buy, handle_search_in_category
 )
 
 from transfer_handler import (
@@ -285,6 +285,12 @@ async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE)
                 from data_manager import handle_grain_percentage
                 if await handle_grain_percentage(update, context):
                     return
+
+                # Handle shop search input
+        elif flow_type == "shop_search" and step == "awaiting_item_id":
+            from shop_handler import handle_search_input
+            await handle_search_input(update, context)
+            return
 
 
         
@@ -446,6 +452,7 @@ app.add_handler(CallbackQueryHandler(show_all_provinces, pattern="^admin_view_al
 app.add_handler(CallbackQueryHandler(view_province_admin, pattern="^admin_view_province_"))
 app.add_handler(CallbackQueryHandler(handle_province_edit, pattern="^edit_province_"))
 app.add_handler(CallbackQueryHandler(approve_transfer, pattern="^approve_transfer_"))
+app.add_handler(CallbackQueryHandler(handle_search_in_category, pattern=r"^search_in_"))
 app.add_handler(CallbackQueryHandler(reject_transfer, pattern="^reject_transfer_"))
 app.add_handler(CallbackQueryHandler(admin_manage_shop, pattern="^admin_manage_shop$"))
 app.add_handler(CallbackQueryHandler(admin_add_shop_item_prompt, pattern="^admin_add_shop_item$"))
