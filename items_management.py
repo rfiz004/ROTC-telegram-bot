@@ -121,6 +121,66 @@ async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE)
     )
 
 
+# ===================== 7️⃣ نمایش جزئیات آیتم =====================
+async def review_item_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """نمایش جزئیات آیتم انتخاب‌شده برای تأیید یا رد."""
+    query_data = update.callback_query.data
+    prefix = "admin_review_item_"
+    payload = query_data[len(prefix):]
+
+    # بخش‌های داده را جدا می‌کنیم (country, province, section, item_id)
+    parts = payload.split("_", 3)
+    if len(parts) != 4:
+        await update.callback_query.edit_message_text("❌ داده انتخاب اشتباه است.")
+        return
+
+    country, province, section, item_id = parts
+
+    # داده‌ها را از فایل می‌خوانیم
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    item_info = None
+    province_data = data.get(country, {}).get(province, {})
+
+    for section_name, items_dict in province_data.items():
+        if isinstance(items_dict, dict):
+            for name, items_list in items_dict.items():
+                for item in items_list:
+                    if item.get("id") == item_id:
+                        item_info = item
+                        break
+
+    if not item_info:
+        await update.callback_query.edit_message_text("❌ آیتم مورد نظر پیدا نشد.")
+        return
+
+    # متن نمایش داده‌شده
+    text = (
+        f"🗂 <b>بررسی آیتم</b>\n\n"
+        f"🏴 کشور: {country}\n"
+        f"🏰 استان: {province}\n"
+        f"📦 بخش: {section}\n"
+        f"🆔 شناسه: <code>{item_id}</code>\n"
+        f"📋 جزئیات:\n"
+    )
+    for k, v in item_info.items():
+        if k not in ["id", "status"]:
+            text += f"   • {k}: {v}\n"
+
+    keyboard = [
+        [
+            InlineKeyboardButton("✅ تأیید", callback_data=f"admin_review_item_{country}_{province}_{section}_{item_id}_approve"),
+            InlineKeyboardButton("❌ رد", callback_data=f"admin_review_item_{country}_{province}_{section}_{item_id}_reject"),
+        ],
+        [InlineKeyboardButton("🔙 بازگشت", callback_data=f"admin_select_province_{country}_{province}")],
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode="HTML")
+
+
+
 # ===================== 4️⃣ بروزرسانی وضعیت آیتم =====================
 def update_item_status(country: str, province: str, section: str, item_id: str, new_status: str) -> bool:
     """بروزرسانی وضعیت آیتم به Approved یا Rejected."""
