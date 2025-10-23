@@ -771,6 +771,14 @@
                         "weekly_output": 50
                     }
                 ]
+            },
+            "structure": {
+                "دژکوب": [
+                    {
+                        "id": "دژکوب_1",
+                        "status": "Pending"
+                    }
+                ]
             }
         },
         "Guardian-of-Sharia": {
