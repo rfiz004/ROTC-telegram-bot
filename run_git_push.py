@@ -237,7 +237,8 @@ def run_git_push():
             "block_shop.json",
             "data.json",
             "job_reservations.json",
-            "countries_data.json"
+            "countries_data.json",
+            "users.json"
         ]
         for pattern in always_push_files:
             for filepath in glob.glob(pattern):
