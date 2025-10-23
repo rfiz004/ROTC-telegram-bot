@@ -663,6 +663,12 @@
                         "id": "منجنیق_2",
                         "status": "Approved"
                     }
+                ],
+                "دژکوب": [
+                    {
+                        "id": "دژکوب_1",
+                        "status": "Pending"
+                    }
                 ]
             },
             "weapons": {},
