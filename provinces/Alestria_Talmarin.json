@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Talmarin",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 55,
@@ -28,7 +28,7 @@
     "سنگ": 0,
     "چوب": 0,
     "جواهر": 0,
-    "پنبه": 600,
+    "پنبه": 0,
     "پارچه": 0,
     "چرم": 0,
     "شراب": 0
