@@ -9,6 +9,8 @@ import traceback
 import secrets
 import requests
 import ipaddress
+import json
+
 
 TELEGRAM_IPS = [
     "149.154.160.0/20",
@@ -346,14 +348,57 @@ logger = logging.getLogger(__name__)
 pv_filter = filters.ChatType.PRIVATE
 
 # ────────────── Bot Commands
+# async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     try:
+#         user_id = update.message.from_user.id
+#         await cleanup_incomplete_bio_for_user(update, context)
+
+#         if user_id in context.user_data:
+#             context.user_data[user_id].clear()
+        
+#         await update.message.reply_text(
+#             "درود! 👋\nبه راهنمای آرپی R.O.T.C خوش اومدی، چه کمکی می‌تونم بهت بکنم؟",
+#             reply_markup=main_menu()
+#         )
+
+#     except Exception as e:
+#         logger.error(f"Error in start command: {e}")
+#         try:
+#             await update.message.reply_text("خطایی رخ داد. دوباره تلاش کن.")
+#         except:
+#             pass
+
+USERS_FILE = "users.json"
+
+def load_users():
+    if os.path.exists(USERS_FILE):
+        with open(USERS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_users(users):
+    with open(USERS_FILE, "w", encoding="utf-8") as f:
+        json.dump(users, f, ensure_ascii=False, indent=2)
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         user_id = update.message.from_user.id
+        username = update.message.from_user.username or "بدون_یوزرنیم"
+
+        # 🔹 لود کاربران
+        users = load_users()
+
+        # 🔹 اگر کاربر جدید بود، ذخیره کن
+        if str(user_id) not in users:
+            users[str(user_id)] = {"username": username}
+            save_users(users)
+            print(f"[NEW USER] {username} ({user_id}) اضافه شد ✅")
+
         await cleanup_incomplete_bio_for_user(update, context)
 
         if user_id in context.user_data:
             context.user_data[user_id].clear()
-        
+
         await update.message.reply_text(
             "درود! 👋\nبه راهنمای آرپی R.O.T.C خوش اومدی، چه کمکی می‌تونم بهت بکنم؟",
             reply_markup=main_menu()
@@ -365,6 +410,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text("خطایی رخ داد. دوباره تلاش کن.")
         except:
             pass
+
 
 async def set_bot_commands(app):
     try:
