@@ -686,7 +686,7 @@ async def handle_search_in_category(update: Update, context: ContextTypes.DEFAUL
     except:
         pass
 
-    await query.message.reply_text(
+    msg = await query.message.reply_text(
         items_list,
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]])
@@ -699,61 +699,6 @@ async def handle_search_in_category(update: Update, context: ContextTypes.DEFAUL
     context.user_data[user_id]["search_category"] = category
     user_data["search_message_id"] = msg.message_id
     context.user_data[user_id] = user_data
-
-# async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """دریافت ID آیتم از کاربر و نمایش آن"""
-#     user_id = update.message.from_user.id
-#     text = update.message.text.strip()
-
-#     user_data = context.user_data.get(user_id, {})
-#     if not user_data.get("search_mode"):
-#         return  # اگر در حالت جستجو نیست، خروج
-
-#     category = user_data.get("search_category")
-#     category_items = user_data.get("category_items", [])
-#     item = next((i for i in category_items if str(i.get("id")) == text), None)
-
-#     if not item:
-#         await update.message.reply_text("❌ آیتمی با این ID یافت نشد. لطفاً دوباره تلاش کنید.")
-#         return
-
-#     # بازگشت به حالت عادی
-#     user_data["search_mode"] = False
-#     user_data.pop("search_category", None)
-
-#     # نمایش آیتم (مثل show_items_page اما فقط یک آیتم)
-#     caption = f"──────⊱◈Shop◈⊰──────\n"
-#     caption += f"✦ Item Name : {item.get('name', 'نامشخص')}\n"
-#     caption += f"✧ Item Type : {item.get('type', 'Misc')}\n"
-#     caption += f"✦ Country : {item.get('country', 'All')}\n"
-#     caption += "\n".join(item.get("hashtags", [])) + "\n"
-#     caption += f"✧ Description :\n• {item.get('description', 'توضیحات موجود نیست')}\n"
-#     caption += f"✦ Price : {item.get('price', 0):,}\n"
-#     caption += f"✧ Owner ID : {item.get('owner', '-')}\n"
-#     caption += f"──────⊹⊱✫⊰⊹──────"
-
-#     keyboard = [[InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]]
-#     photo_file_id = item.get("photo_file_id")
-
-#     try:
-#         await update.message.delete()
-#     except:
-#         pass
-
-#     if photo_file_id:
-#         await context.bot.send_photo(
-#             chat_id=update.message.chat.id,
-#             photo=photo_file_id,
-#             caption=caption,
-#             reply_markup=InlineKeyboardMarkup(keyboard)
-#         )
-#     else:
-#         await update.message.reply_text(caption, reply_markup=InlineKeyboardMarkup(keyboard))
-
-#     user_data["search_mode"] = False
-#     user_data.pop("search_category", None)
-#     user_data["flow_type"] = None
-#     user_data["step"] = None
 
 
 async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
