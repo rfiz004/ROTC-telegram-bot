@@ -1,13 +1,14 @@
 {
   "bios": {
     "1359031332": {
-      "step": "asking_nickname",
+      "step": "asking_age",
       "country": "Imperial",
       "flow_type": "bio",
       "job": "مشاور عالی جمهوری",
       "expires_at": "2025-10-23T18:10:52.461957",
       "name": "Elena",
-      "saved_at": "2025-10-23T17:41:04.855779"
+      "saved_at": "2025-10-23T17:42:23.787869",
+      "nickname": "Elena"
     }
   },
   "used_hashtags": [
