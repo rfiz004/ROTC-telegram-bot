@@ -812,40 +812,144 @@ async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYP
     user_id = query.from_user.id
     await show_items_page(query, context, user_id, page, category)
 
-async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
+# async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
+#     """Handle item purchase initiation"""
+#     query = update.callback_query
+#     await query.answer()
+
+#     # Parse callback data: buy_item_{category}_{page_index}
+#     purchase_data = query.data.replace("buy_item_", "")
+#     parts = purchase_data.split("_")
+
+#     if len(parts) < 2:
+#         await context.bot.send_message("❌ خطا در خرید.", reply_markup=back_and_home_buttons())
+#         return
+
+#     category = parts[0]
+#     page_index = int(parts[1])
+
+#     user_id = query.from_user.id
+#     user_data = context.user_data.setdefault(user_id, {})  # ✅ اگه نبود، ایجاد میشه
+#     # فرض: تابعی برای گرفتن استان کاربر داری مثل get_user_province(user_id)
+#     province = user_data.get("province")  # این تابع باید از دیتابیس یا فایل دیتا کاربر مقدار رو بگیره
+
+#     if is_shop_blocked_for_user(province):
+#         await context.bot.send_message(
+#             chat_id=query.message.chat_id,
+#             text="🚫 فروشگاه برای کشور شما قفل است و امکان خرید وجود ندارد.",
+#             reply_markup=back_and_home_buttons()
+#         )
+#         return
+
+
+#     category_items = user_data.get("category_items", [])
+
+#     if page_index >= len(category_items):
+#         await context.bot.send_message(
+#             chat_id=update.effective_chat.id,
+#             text="❌ کالا پیدا نشد.",
+#             reply_markup=back_and_home_buttons()
+#         )
+#         return
+
+#     item = category_items[page_index]
+
+#     # ✅ Set purchase info directly in context.user_data
+#     context.user_data[user_id].update({
+#         "purchase_item": item,
+#         "category": category,
+#         "step": "awaiting_quantity",
+#         "flow_type": "shop_purchase"
+#     })
+#     print(f"[DEBUG] handle_item_purchase triggered by user {user_id}")
+
+#     # text = f"🛒 **خرید {item['name']}**\n\n"
+#     # text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
+
+#     # if item.get('materials'):
+#     #     text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
+#     #     for material, amount in item['materials'].items():
+#     #         text += f"   • {material}: {amount}\n"
+
+#     # text += "\n🔢 تعداد مورد نظر را وارد کنید:"
+#     text = f"🛒 **خرید {item['name']}**\n\n"
+#     text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
+    
+#     if item.get('materials'):
+#         text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
+#         for material, amount in item['materials'].items():
+#             text += f"   • {material}: {amount}\n"
+    
+#     # اضافه کردن تعداد موجود
+#     item_type = item.get("type", "").lower()
+#     if item_type in ["army", "castle", "misc", "structure", "weapons"]:
+#         count = item.get("count", 1)
+#         text += f"\n✦ تعداد موجود: {count}\n"
+    
+#     text += "\n🔢 تعداد مورد نظر را وارد کنید:"
+
+
+#     keyboard = [
+#         [InlineKeyboardButton("🔙 برگشت", callback_data=f"shop_category_{category}")]
+#     ]
+
+#     await context.bot.send_message(
+#         chat_id=query.message.chat_id,
+#         text=text,
+#         reply_markup=InlineKeyboardMarkup(keyboard),
+#         parse_mode="Markdown"
+#     )
+
+async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle item purchase initiation"""
     query = update.callback_query
     await query.answer()
 
-    # Parse callback data: buy_item_{category}_{page_index}
+    # Parse callback data: buy_item_{category}_{id_or_index}
     purchase_data = query.data.replace("buy_item_", "")
     parts = purchase_data.split("_")
 
     if len(parts) < 2:
-        await context.bot.send_message("❌ خطا در خرید.", reply_markup=back_and_home_buttons())
+        await context.bot.send_message(
+            chat_id=query.message.chat.id,
+            text="❌ خطا در خرید.",
+            reply_markup=back_and_home_buttons()
+        )
         return
 
     category = parts[0]
-    page_index = int(parts[1])
+    id_or_index = parts[1]
 
     user_id = query.from_user.id
-    user_data = context.user_data.setdefault(user_id, {})  # ✅ اگه نبود، ایجاد میشه
-    # فرض: تابعی برای گرفتن استان کاربر داری مثل get_user_province(user_id)
-    province = user_data.get("province")  # این تابع باید از دیتابیس یا فایل دیتا کاربر مقدار رو بگیره
+    user_data = context.user_data.setdefault(user_id, {})
+    province = user_data.get("province")
 
+    # 🔒 بررسی کشور
     if is_shop_blocked_for_user(province):
         await context.bot.send_message(
-            chat_id=query.message.chat_id,
+            chat_id=query.message.chat.id,
             text="🚫 فروشگاه برای کشور شما قفل است و امکان خرید وجود ندارد.",
             reply_markup=back_and_home_buttons()
         )
         return
 
-
     category_items = user_data.get("category_items", [])
 
-    if page_index >= len(category_items):
+    # 🧩 تشخیص نوع شناسه: index یا id واقعی
+    item = None
+    if id_or_index.isdigit():
+        index = int(id_or_index)
+        if index < len(category_items):
+            # حالت عادی از صفحه‌بندی
+            item = category_items[index]
+        else:
+            # ممکنه id واقعی باشه → جست‌وجو در category_items
+            item = next((i for i in category_items if str(i.get("id")) == id_or_index), None)
+    else:
+        item = next((i for i in category_items if str(i.get("id")) == id_or_index), None)
+
+    if not item:
         await context.bot.send_message(
             chat_id=update.effective_chat.id,
             text="❌ کالا پیدا نشد.",
@@ -853,26 +957,15 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         return
 
-    item = category_items[page_index]
-
-    # ✅ Set purchase info directly in context.user_data
+    # ✅ ذخیره اطلاعات خرید در user_data
     context.user_data[user_id].update({
         "purchase_item": item,
         "category": category,
         "step": "awaiting_quantity",
         "flow_type": "shop_purchase"
     })
-    print(f"[DEBUG] handle_item_purchase triggered by user {user_id}")
 
-    # text = f"🛒 **خرید {item['name']}**\n\n"
-    # text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
-
-    # if item.get('materials'):
-    #     text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
-    #     for material, amount in item['materials'].items():
-    #         text += f"   • {material}: {amount}\n"
-
-    # text += "\n🔢 تعداد مورد نظر را وارد کنید:"
+    # 📝 متن توضیحات خرید
     text = f"🛒 **خرید {item['name']}**\n\n"
     text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
     
@@ -881,7 +974,6 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
         for material, amount in item['materials'].items():
             text += f"   • {material}: {amount}\n"
     
-    # اضافه کردن تعداد موجود
     item_type = item.get("type", "").lower()
     if item_type in ["army", "castle", "misc", "structure", "weapons"]:
         count = item.get("count", 1)
@@ -889,17 +981,17 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
     
     text += "\n🔢 تعداد مورد نظر را وارد کنید:"
 
-
     keyboard = [
         [InlineKeyboardButton("🔙 برگشت", callback_data=f"shop_category_{category}")]
     ]
 
     await context.bot.send_message(
-        chat_id=query.message.chat_id,
+        chat_id=query.message.chat.id,
         text=text,
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
+
 
 
 
