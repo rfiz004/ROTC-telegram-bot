@@ -11146,6 +11146,24 @@
       "status": "pending",
       "requested_at": "2025-10-22T21:43:55.376585",
       "delay_until": "2025-10-23T21:43:55.376589"
+    },
+    {
+      "id": "transfer_1771323853_1761225515",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Alvankesh",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 30,
+        "چوب": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-23T13:18:35.040713",
+      "delay_until": "2025-10-24T13:18:35.040718",
+      "approved_at": "2025-10-23T13:18:36.710958"
     }
   ]
 }
