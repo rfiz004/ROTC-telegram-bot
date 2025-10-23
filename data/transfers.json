@@ -11458,6 +11458,39 @@
       "status": "pending",
       "requested_at": "2025-10-23T18:53:38.832459",
       "delay_until": "2025-10-24T18:53:38.832462"
+    },
+    {
+      "id": "transfer_6723163985_1761245719",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Imperial",
+      "target_province": "Ruler-of-the-Republic",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 100,
+        "چوب": 250
+      },
+      "status": "pending",
+      "requested_at": "2025-10-23T18:55:19.268003",
+      "delay_until": "2025-10-24T18:55:19.268006"
+    },
+    {
+      "id": "transfer_6723163985_1761245740",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Imperial",
+      "target_province": "Ruler-of-the-Republic",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 700
+      },
+      "status": "pending",
+      "requested_at": "2025-10-23T18:55:40.214536",
+      "delay_until": "2025-10-24T18:55:40.214540"
     }
   ]
 }
