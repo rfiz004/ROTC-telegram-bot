@@ -631,6 +631,7 @@ async def show_items_page(query, context, user_id, page, category):
         nav_buttons.append([prev_btn, next_btn])
 
     keyboard = nav_buttons + [
+        [InlineKeyboardButton("🔍 جست‌وجو", callback_data=f"search_in_{category}")],
         [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{page}")],
         [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]
     ]
@@ -655,6 +656,105 @@ async def show_items_page(query, context, user_id, page, category):
             text=full_caption,
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
+
+async def handle_search_in_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """نمایش لیست آیتم‌های دسته انتخاب‌شده برای جستجو"""
+    query = update.callback_query
+    user_id = query.from_user.id
+
+    # استخراج نام دسته از callback_data
+    data = query.data
+    category = data.replace("search_in_", "")
+
+    user_data = context.user_data.get(user_id, {})
+    category_items = user_data.get("category_items", [])
+
+    if not category_items:
+        await query.answer("❌ هیچ آیتمی در این دسته وجود ندارد.", show_alert=True)
+        return
+
+    # ساخت لیست آیتم‌ها برای نمایش
+    items_list = "📜 لیست آیتم‌ها:\n\n"
+    for item in category_items:
+        items_list += f"🔹 {item.get('name', 'نامشخص')} — ID: `{item.get('id', '-')}`\n"
+    
+    items_list += "\n🆔 شناسه آیتم مورد نظر را ارسال کنید تا جزئیاتش نمایش داده شود."
+    
+    # حذف پیام قبلی و نمایش لیست
+    try:
+        await query.delete_message()
+    except:
+        pass
+
+    await query.message.reply_text(
+        items_list,
+        parse_mode="Markdown",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]])
+    )
+
+    # ذخیره مرحله فعلی در user_data
+    user_data["flow_type"] = "shop_search"
+    user_data["step"] = "awaiting_item_id"
+    context.user_data[user_id]["search_mode"] = True
+    context.user_data[user_id]["search_category"] = category
+    context.user_data[user_id] = user_data
+
+async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """دریافت ID آیتم از کاربر و نمایش آن"""
+    user_id = update.message.from_user.id
+    text = update.message.text.strip()
+
+    user_data = context.user_data.get(user_id, {})
+    if not user_data.get("search_mode"):
+        return  # اگر در حالت جستجو نیست، خروج
+
+    category = user_data.get("search_category")
+    category_items = user_data.get("category_items", [])
+    item = next((i for i in category_items if str(i.get("id")) == text), None)
+
+    if not item:
+        await update.message.reply_text("❌ آیتمی با این ID یافت نشد. لطفاً دوباره تلاش کنید.")
+        return
+
+    # بازگشت به حالت عادی
+    user_data["search_mode"] = False
+    user_data.pop("search_category", None)
+
+    # نمایش آیتم (مثل show_items_page اما فقط یک آیتم)
+    caption = f"──────⊱◈Shop◈⊰──────\n"
+    caption += f"✦ Item Name : {item.get('name', 'نامشخص')}\n"
+    caption += f"✧ Item Type : {item.get('type', 'Misc')}\n"
+    caption += f"✦ Country : {item.get('country', 'All')}\n"
+    caption += "\n".join(item.get("hashtags", [])) + "\n"
+    caption += f"✧ Description :\n• {item.get('description', 'توضیحات موجود نیست')}\n"
+    caption += f"✦ Price : {item.get('price', 0):,}\n"
+    caption += f"✧ Owner ID : {item.get('owner', '-')}\n"
+    caption += f"──────⊹⊱✫⊰⊹──────"
+
+    keyboard = [[InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]]
+    photo_file_id = item.get("photo_file_id")
+
+    try:
+        await update.message.delete()
+    except:
+        pass
+
+    if photo_file_id:
+        await context.bot.send_photo(
+            chat_id=update.message.chat.id,
+            photo=photo_file_id,
+            caption=caption,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+    else:
+        await update.message.reply_text(caption, reply_markup=InlineKeyboardMarkup(keyboard))
+
+    user_data["search_mode"] = False
+    user_data.pop("search_category", None)
+    user_data["flow_type"] = None
+    user_data["step"] = None
+
+
 
 
 async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYPE):
