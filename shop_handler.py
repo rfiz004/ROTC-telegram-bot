@@ -699,46 +699,124 @@ async def handle_search_in_category(update: Update, context: ContextTypes.DEFAUL
     context.user_data[user_id]["search_category"] = category
     context.user_data[user_id] = user_data
 
+# async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     """دریافت ID آیتم از کاربر و نمایش آن"""
+#     user_id = update.message.from_user.id
+#     text = update.message.text.strip()
+
+#     user_data = context.user_data.get(user_id, {})
+#     if not user_data.get("search_mode"):
+#         return  # اگر در حالت جستجو نیست، خروج
+
+#     category = user_data.get("search_category")
+#     category_items = user_data.get("category_items", [])
+#     item = next((i for i in category_items if str(i.get("id")) == text), None)
+
+#     if not item:
+#         await update.message.reply_text("❌ آیتمی با این ID یافت نشد. لطفاً دوباره تلاش کنید.")
+#         return
+
+#     # بازگشت به حالت عادی
+#     user_data["search_mode"] = False
+#     user_data.pop("search_category", None)
+
+#     # نمایش آیتم (مثل show_items_page اما فقط یک آیتم)
+#     caption = f"──────⊱◈Shop◈⊰──────\n"
+#     caption += f"✦ Item Name : {item.get('name', 'نامشخص')}\n"
+#     caption += f"✧ Item Type : {item.get('type', 'Misc')}\n"
+#     caption += f"✦ Country : {item.get('country', 'All')}\n"
+#     caption += "\n".join(item.get("hashtags", [])) + "\n"
+#     caption += f"✧ Description :\n• {item.get('description', 'توضیحات موجود نیست')}\n"
+#     caption += f"✦ Price : {item.get('price', 0):,}\n"
+#     caption += f"✧ Owner ID : {item.get('owner', '-')}\n"
+#     caption += f"──────⊹⊱✫⊰⊹──────"
+
+#     keyboard = [[InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]]
+#     photo_file_id = item.get("photo_file_id")
+
+#     try:
+#         await update.message.delete()
+#     except:
+#         pass
+
+#     if photo_file_id:
+#         await context.bot.send_photo(
+#             chat_id=update.message.chat.id,
+#             photo=photo_file_id,
+#             caption=caption,
+#             reply_markup=InlineKeyboardMarkup(keyboard)
+#         )
+#     else:
+#         await update.message.reply_text(caption, reply_markup=InlineKeyboardMarkup(keyboard))
+
+#     user_data["search_mode"] = False
+#     user_data.pop("search_category", None)
+#     user_data["flow_type"] = None
+#     user_data["step"] = None
+
+
 async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """دریافت ID آیتم از کاربر و نمایش آن"""
+    """دریافت ID آیتم از کاربر و نمایش جزئیات کامل آن"""
     user_id = update.message.from_user.id
     text = update.message.text.strip()
-
     user_data = context.user_data.get(user_id, {})
+
+    # اگر در حالت جستجو نیست، خروج
     if not user_data.get("search_mode"):
-        return  # اگر در حالت جستجو نیست، خروج
+        return
 
     category = user_data.get("search_category")
     category_items = user_data.get("category_items", [])
-    item = next((i for i in category_items if str(i.get("id")) == text), None)
 
+    # پیدا کردن آیتم بر اساس ID
+    item = next((i for i in category_items if str(i.get("id")) == text), None)
     if not item:
         await update.message.reply_text("❌ آیتمی با این ID یافت نشد. لطفاً دوباره تلاش کنید.")
         return
 
-    # بازگشت به حالت عادی
+    # ✅ بازگشت به حالت عادی
     user_data["search_mode"] = False
     user_data.pop("search_category", None)
+    user_data["flow_type"] = None
+    user_data["step"] = None
 
-    # نمایش آیتم (مثل show_items_page اما فقط یک آیتم)
+    # ✅ ساخت توضیحات کامل آیتم (همانند show_items_page)
     caption = f"──────⊱◈Shop◈⊰──────\n"
     caption += f"✦ Item Name : {item.get('name', 'نامشخص')}\n"
     caption += f"✧ Item Type : {item.get('type', 'Misc')}\n"
     caption += f"✦ Country : {item.get('country', 'All')}\n"
     caption += "\n".join(item.get("hashtags", [])) + "\n"
     caption += f"✧ Description :\n• {item.get('description', 'توضیحات موجود نیست')}\n"
-    caption += f"✦ Price : {item.get('price', 0):,}\n"
-    caption += f"✧ Owner ID : {item.get('owner', '-')}\n"
-    caption += f"──────⊹⊱✫⊰⊹──────"
 
-    keyboard = [[InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]]
-    photo_file_id = item.get("photo_file_id")
+    count = item.get("count", 1)
+    item_type = item.get("type", "").lower()
+    if item_type in ["army", "castle", "misc", "structure", "weapons"]:
+        caption += f"✦ تعداد موجود: {count}\n"
 
+    caption += f"✦ Price & Materials :\n• {item.get('price', 0):,}"
+    materials = item.get("materials", {})
+    if materials:
+        caption += ", " + ", ".join(f"{k}:{v}" for k, v in materials.items())
+
+    caption += f"\n✧ Owner ID : {item.get('owner', 'نامشخص')}\n"
+    caption += f"──────⊹⊱✫⊰⊹──────\n"
+    caption += f"https://t.me/R_O_T_C\nhttps://t.me/R_O_T_C_Shop"
+
+    # ✅ ساخت دکمه‌ها (مثل صفحه آیتم)
+    keyboard = [
+        [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{item.get('id')}")],
+        [InlineKeyboardButton("🔍 جست‌وجوی دوباره", callback_data=f"search_in_{category}")],
+        [InlineKeyboardButton("🔙 بازگشت", callback_data=f"shop_category_{category}")]
+    ]
+
+    # حذف پیام ارسالی کاربر
     try:
         await update.message.delete()
     except:
         pass
 
+    # ✅ ارسال پیام نهایی (با عکس در صورت وجود)
+    photo_file_id = item.get("photo_file_id")
     if photo_file_id:
         await context.bot.send_photo(
             chat_id=update.message.chat.id,
@@ -747,12 +825,11 @@ async def handle_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
     else:
-        await update.message.reply_text(caption, reply_markup=InlineKeyboardMarkup(keyboard))
-
-    user_data["search_mode"] = False
-    user_data.pop("search_category", None)
-    user_data["flow_type"] = None
-    user_data["step"] = None
+        await context.bot.send_message(
+            chat_id=update.message.chat.id,
+            text=caption,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
 
 
 
