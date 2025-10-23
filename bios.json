@@ -1,5 +1,13 @@
 {
-  "bios": {},
+  "bios": {
+    "1359031332": {
+      "country": "Imperial",
+      "job": "مشاور عالی جمهوری",
+      "step": "asking_name",
+      "flow_type": "bio",
+      "saved_at": "2025-10-23T17:40:52.460431"
+    }
+  },
   "used_hashtags": [
     "#elena"
   ]
