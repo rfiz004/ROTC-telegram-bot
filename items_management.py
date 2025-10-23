@@ -39,9 +39,10 @@ async def show_provinces(update: Update, context: ContextTypes.DEFAULT_TYPE):
     provinces = data.get("countries_areas", {}).get(country, [])
 
     keyboard = [
-        [InlineKeyboardButton(prov, callback_data=f"admin_select_province_{country}_{prov}")]
-        for prov in provinces
-    ]
+    [InlineKeyboardButton(prov, callback_data=f"admin_select_province_{country}_{prov}")]
+    for prov in provinces
+]
+
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_menu_back")])
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.callback_query.edit_message_text(f"🏰 استان‌های کشور {country}:", reply_markup=reply_markup)
@@ -49,7 +50,16 @@ async def show_provinces(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ===================== 3️⃣ نمایش آیتم‌های Pending =====================
 async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    _, country, province = update.callback_query.data.split("_", 2)
+    query_data = update.callback_query.data  # مثلاً: admin_select_province_Aldemar_Karnholm
+    parts = query_data.split("_")
+
+    # تشخیص کشور و استان از داده‌ی callback
+    if len(parts) >= 5:
+        country = parts[3]
+        province = parts[4]
+    else:
+        await update.callback_query.edit_message_text("❌ داده انتخاب ناقص است.")
+        return
 
     if not os.path.exists(DATA_FILE):
         await update.callback_query.edit_message_text("❌ فایل countries_data.json پیدا نشد.")
@@ -58,13 +68,14 @@ async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE)
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    # مسیر: کشور → استان
     province_data = data.get(country, {}).get(province, {})
     if not province_data:
         await update.callback_query.edit_message_text("❌ اطلاعات استان پیدا نشد.")
         return
 
     pending_items = []
-    # پیمایش تمام بخش‌ها
+    # پیمایش تمام بخش‌ها (castle, structures, weapons, economic_structures)
     for section, items_dict in province_data.items():
         if isinstance(items_dict, dict):
             for name, items_list in items_dict.items():
@@ -74,7 +85,7 @@ async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE)
                             pending_items.append((section, name, item["id"]))
 
     if not pending_items:
-        await update.callback_query.edit_message_text("✅ هیچ آیتمی در انتظار تأیید وجود ندارد.")
+        await update.callback_query.edit_message_text(f"✅ هیچ سازه‌ی در انتظار تأییدی در {province} وجود ندارد.")
         return
 
     keyboard = [
@@ -83,6 +94,7 @@ async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE)
     ]
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data=f"admin_select_country_{country}")])
     reply_markup = InlineKeyboardMarkup(keyboard)
+
     await update.callback_query.edit_message_text(
         f"🔎 آیتم‌های در انتظار تأیید ({province}):", reply_markup=reply_markup
     )
