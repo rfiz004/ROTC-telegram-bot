@@ -1,6 +1,7 @@
 {
   "bios": {
     "1359031332": {
+<<<<<<< Updated upstream
       "step": "asking_age",
       "country": "Imperial",
       "flow_type": "bio",
@@ -9,6 +10,13 @@
       "name": "Elena",
       "saved_at": "2025-10-23T17:42:23.787869",
       "nickname": "Elena"
+=======
+      "country": "Imperial",
+      "job": "مشاور عالی جمهوری",
+      "step": "asking_name",
+      "flow_type": "bio",
+      "saved_at": "2025-10-23T17:40:52.460431"
+>>>>>>> Stashed changes
     }
   },
   "used_hashtags": [
