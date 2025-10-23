@@ -559,7 +559,7 @@ async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE)
             "army": "⚔️ ارتش",
             "castle": "🏰 قلعه",
             "structure": "🏗 سازه",
-            "weapon": "🗡 سلاح",
+            "weapons": "🗡 سلاح",
             "misc": "📦 متفرقه",
             "econstructure": "🏭 سازه‌های اقتصادی"
         }
@@ -608,7 +608,7 @@ async def show_items_page(query, context, user_id, page, category):
     
     count = current_item.get("count", 1)
     item_type = current_item.get("type", "").lower()
-    if item_type in ["army", "castle", "misc", "structure", "weapon"]:
+    if item_type in ["army", "castle", "misc", "structure", "weapons"]:
         caption += f"✦ تعداد موجود: {count}\n"
 
     caption += f"✦ Price & Materials :\n• {current_item.get('price', 0):,}"
@@ -751,7 +751,7 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
     
     # اضافه کردن تعداد موجود
     item_type = item.get("type", "").lower()
-    if item_type in ["army", "castle", "misc", "structure", "weapon"]:
+    if item_type in ["army", "castle", "misc", "structure", "weapons"]:
         count = item.get("count", 1)
         text += f"\n✦ تعداد موجود: {count}\n"
     
