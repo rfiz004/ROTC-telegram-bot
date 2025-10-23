@@ -11254,6 +11254,22 @@
       "requested_at": "2025-10-23T16:26:46.313315",
       "delay_until": "2025-10-24T16:26:46.313318",
       "approved_at": "2025-10-23T16:49:25.539575"
+    },
+    {
+      "id": "transfer_6723163985_1761242641",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Imperial",
+      "target_province": "Ruler-of-the-Republic",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 2100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-23T18:04:01.716130",
+      "delay_until": "2025-10-24T18:04:01.716156"
     }
   ]
 }
