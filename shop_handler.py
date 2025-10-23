@@ -236,7 +236,7 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "army": "⚔️ ارتش",
         "castle": "🏰 قلعه", 
         "structure": "🏗 سازه",
-        "weapon": "🗡 سلاح",
+        "weapons": "🗡 سلاح",
         "misc": "📦 متفرقه",
         "econstructure": "🏭 اقتصادی"
     }
@@ -264,7 +264,7 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
             callback_data="shop_category_structure"
         ),
         InlineKeyboardButton(
-            f"{category_names['weapon']} ({categories.get('weapon', 0)})", 
+            f"{category_names['weapons']} ({categories.get('weapons', 0)})", 
             callback_data="shop_category_weapon"
         )
     ]
