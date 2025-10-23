@@ -1,6 +1,9 @@
 {
   "grain_priority": [
     "میوه",
+    "مرغ",
+    "ماهی",
+    "گندم",
     "گوشت"
   ],
   "grains": {
@@ -9,5 +12,5 @@
   },
   "unfed_population": 0,
   "grain_consumption": 500,
-  "last_updated": "2025-10-18T07:00:57.673140"
+  "last_updated": "2025-10-23T18:19:36.988304"
 }
