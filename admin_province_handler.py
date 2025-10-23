@@ -1269,7 +1269,7 @@ async def handle_shop_item_text_input(update: Update, context: ContextTypes.DEFA
     if step == "awaiting_shop_item_name":
         user_data["shop_item_data"]["name"] = text
         await update.message.reply_text(
-            "📝 نوع آیتم را وارد کنید:\n(مثال: Army, Castle, Structure, Weapon, Misc, EconStructure)",
+            "📝 نوع آیتم را وارد کنید:\n(مثال: Army, Castle, Structure, Weapons, Misc, EconStructure)",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("🔙 انصراف", callback_data="admin_manage_shop")
             ]])
