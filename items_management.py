@@ -21,12 +21,14 @@ async def show_country_list(update: Update, context: ContextTypes.DEFAULT_TYPE):
         data = json.load(f)
 
     countries = list(data.get("countries_areas", {}).keys())
+    if not countries:
+        await update.message.reply_text("❌ هیچ کشوری یافت نشد.")
+        return
 
     keyboard = [
         [InlineKeyboardButton(country, callback_data=f"admin_select_country_{country}")]
         for country in countries
     ]
-    keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_menu_back")])
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     text = "🌍 یکی از کشورها را انتخاب کنید:"
@@ -37,23 +39,18 @@ async def show_country_list(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(text, reply_markup=reply_markup)
 
 
-# ===================== 2️⃣ نمایش استان‌ها =====================
+# ===================== 2️⃣ نمایش استان‌های کشور =====================
 async def show_provinces(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """نمایش استان‌های کشور انتخاب‌شده."""
-    query_data = update.callback_query.data
-    country = query_data.replace("admin_select_country_", "", 1)
-
-    if not os.path.exists(COUNTRIES_FILE):
-        await update.callback_query.edit_message_text("❌ فایل countries.json پیدا نشد.")
-        return
+    query = update.callback_query
+    country = query.data.replace("admin_select_country_", "", 1)
 
     with open(COUNTRIES_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     provinces = data.get("countries_areas", {}).get(country, [])
-
     if not provinces:
-        await update.callback_query.edit_message_text(f"❌ استان‌های کشور '{country}' پیدا نشد.")
+        await query.edit_message_text(f"❌ هیچ استانی برای {country} پیدا نشد.")
         return
 
     keyboard = [
@@ -63,80 +60,70 @@ async def show_provinces(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_menu_back")])
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.callback_query.edit_message_text(f"🏰 استان‌های کشور {country}:", reply_markup=reply_markup)
+    await query.edit_message_text(f"🏰 استان‌های کشور {country}:", reply_markup=reply_markup)
 
 
 # ===================== 3️⃣ نمایش آیتم‌های Pending =====================
 async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """نمایش آیتم‌های در انتظار تأیید (Pending)."""
-    query_data = update.callback_query.data  # مثال: admin_select_province_Aldemar_Port_Zephalia
-
-    prefix = "admin_select_province_"
-    if not query_data.startswith(prefix):
-        await update.callback_query.edit_message_text("❌ فرمت داده انتخاب اشتباه است.")
+    """نمایش سازه‌های در انتظار تأیید."""
+    query = update.callback_query
+    data = query.data.replace("admin_select_province_", "", 1)
+    try:
+        country, province = data.split("_", 1)
+    except ValueError:
+        await query.edit_message_text("❌ داده انتخاب ناقص است.")
         return
-
-    payload = query_data[len(prefix):]
-    if "_" not in payload:
-        await update.callback_query.edit_message_text("❌ داده انتخاب ناقص است.")
-        return
-
-    country, province = payload.split("_", 1)
 
     if not os.path.exists(DATA_FILE):
-        await update.callback_query.edit_message_text("❌ فایل countries_data.json پیدا نشد.")
+        await query.edit_message_text("❌ فایل countries_data.json پیدا نشد.")
         return
 
     with open(DATA_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        all_data = json.load(f)
 
-    province_data = data.get(country, {}).get(province, {})
-    if not province_data:
-        await update.callback_query.edit_message_text(f"❌ اطلاعات استان '{province}' در '{country}' پیدا نشد.")
-        return
-
+    province_data = all_data.get(country, {}).get(province, {})
     pending_items = []
+
     for section, items_dict in province_data.items():
         if isinstance(items_dict, dict):
             for name, items_list in items_dict.items():
-                if isinstance(items_list, list):
-                    for item in items_list:
-                        if item.get("status", "").lower() == "pending":
-                            pending_items.append((section, name, item["id"]))
+                for item in items_list:
+                    if item.get("status", "").lower() == "pending":
+                        pending_items.append((section, name, item["id"]))
 
     if not pending_items:
-        await update.callback_query.edit_message_text(f"✅ هیچ آیتم در انتظار تأییدی در {province} وجود ندارد.")
+        await query.edit_message_text(f"✅ هیچ آیتم در انتظار تأییدی در {province} وجود ندارد.")
         return
 
     keyboard = [
-        [InlineKeyboardButton(f"{name} ({section})",
-                              callback_data=f"admin_review_item_{country}_{province}_{section}_{item_id}")]
+        [InlineKeyboardButton(
+            f"{name} ({section})",
+            callback_data=f"admin_review_item_{country}_{province}_{section}_{item_id}"
+        )]
         for section, name, item_id in pending_items
     ]
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data=f"admin_select_country_{country}")])
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.callback_query.edit_message_text(
-        f"🔎 آیتم‌های در انتظار تأیید ({province}):", reply_markup=reply_markup
+    await query.edit_message_text(
+        f"🔎 آیتم‌های در انتظار تأیید ({province}):",
+        reply_markup=reply_markup
     )
 
 
-# ===================== 7️⃣ نمایش جزئیات آیتم =====================
+# ===================== 4️⃣ نمایش جزئیات آیتم =====================
 async def review_item_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """نمایش جزئیات آیتم انتخاب‌شده برای تأیید یا رد."""
-    query_data = update.callback_query.data
-    prefix = "admin_review_item_"
-    payload = query_data[len(prefix):]
-
-    # بخش‌های داده را جدا می‌کنیم (country, province, section, item_id)
+    """نمایش جزئیات آیتم برای تأیید یا رد."""
+    query = update.callback_query
+    payload = query.data.replace("admin_review_item_", "", 1)
     parts = payload.split("_", 3)
+
     if len(parts) != 4:
-        await update.callback_query.edit_message_text("❌ داده انتخاب اشتباه است.")
+        await query.edit_message_text("❌ داده انتخاب اشتباه است.")
         return
 
     country, province, section, item_id = parts
 
-    # داده‌ها را از فایل می‌خوانیم
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -152,10 +139,9 @@ async def review_item_details(update: Update, context: ContextTypes.DEFAULT_TYPE
                         break
 
     if not item_info:
-        await update.callback_query.edit_message_text("❌ آیتم مورد نظر پیدا نشد.")
+        await query.edit_message_text("❌ آیتم پیدا نشد.")
         return
 
-    # متن نمایش داده‌شده
     text = (
         f"🗂 <b>بررسی آیتم</b>\n\n"
         f"🏴 کشور: {country}\n"
@@ -170,20 +156,19 @@ async def review_item_details(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     keyboard = [
         [
-            InlineKeyboardButton("✅ تأیید", callback_data=f"admin_review_item_{country}_{province}_{section}_{item_id}_approve"),
-            InlineKeyboardButton("❌ رد", callback_data=f"admin_review_item_{country}_{province}_{section}_{item_id}_reject"),
+            InlineKeyboardButton("✅ تأیید", callback_data=f"admin_approve_item_{country}_{province}_{section}_{item_id}"),
+            InlineKeyboardButton("❌ رد", callback_data=f"admin_reject_item_{country}_{province}_{section}_{item_id}")
         ],
-        [InlineKeyboardButton("🔙 بازگشت", callback_data=f"admin_select_province_{country}_{province}")],
+        [InlineKeyboardButton("🔙 بازگشت", callback_data=f"admin_select_province_{country}_{province}")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode="HTML")
+    await query.edit_message_text(text, reply_markup=reply_markup, parse_mode="HTML")
 
 
-
-# ===================== 4️⃣ بروزرسانی وضعیت آیتم =====================
+# ===================== 5️⃣ بروزرسانی وضعیت آیتم =====================
 def update_item_status(country: str, province: str, section: str, item_id: str, new_status: str) -> bool:
-    """بروزرسانی وضعیت آیتم به Approved یا Rejected."""
+    """بروزرسانی وضعیت آیتم."""
     if not os.path.exists(DATA_FILE):
         return False
 
@@ -208,9 +193,9 @@ def update_item_status(country: str, province: str, section: str, item_id: str, 
     return updated
 
 
-# ===================== 5️⃣ کاهش شمارش سازه (در صورت رد) =====================
+# ===================== 6️⃣ کاهش شمارش در صورت رد =====================
 def decrement_structure_count(country: str, province: str, item_id: str):
-    """در صورت رد آیتم، شمارش سازه اقتصادی مرتبط را کاهش می‌دهد."""
+    """در صورت رد آیتم، شمارش سازه اقتصادی را کاهش می‌دهد."""
     file_path = os.path.join(PROVINCES_DIR, f"{country}_{province}.json")
     if not os.path.exists(file_path):
         return
@@ -226,43 +211,25 @@ def decrement_structure_count(country: str, province: str, item_id: str):
         json.dump(province_data, f, ensure_ascii=False, indent=2)
 
 
-# ===================== 6️⃣ تأیید و رد آیتم =====================
+# ===================== 7️⃣ تأیید و رد آیتم =====================
 async def approve_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """تأیید آیتم انتخاب‌شده."""
-    query_data = update.callback_query.data
-    prefix = "admin_review_item_"
-    if not query_data.startswith(prefix):
-        await update.callback_query.answer("❌ فرمت داده اشتباه است.", show_alert=True)
-        return
+    query = update.callback_query
+    payload = query.data.replace("admin_approve_item_", "", 1)
+    country, province, section, item_id = payload.split("_", 3)
 
-    payload = query_data[len(prefix):]
-    parts = payload.split("_", 3)
-    if len(parts) != 4:
-        await update.callback_query.answer("❌ داده ناقص است.", show_alert=True)
-        return
-
-    country, province, section, item_id = parts
     update_item_status(country, province, section, item_id, "Approved")
-    await update.callback_query.answer("✅ آیتم تأیید شد.", show_alert=True)
-    await show_pending_items(update, context)
+    await query.answer("✅ آیتم تأیید شد.", show_alert=True)
+    await show_country_list(update, context)  # بازگشت به منوی اصلی
 
 
 async def reject_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """رد آیتم انتخاب‌شده."""
-    query_data = update.callback_query.data
-    prefix = "admin_review_item_"
-    if not query_data.startswith(prefix):
-        await update.callback_query.answer("❌ فرمت داده اشتباه است.", show_alert=True)
-        return
+    query = update.callback_query
+    payload = query.data.replace("admin_reject_item_", "", 1)
+    country, province, section, item_id = payload.split("_", 3)
 
-    payload = query_data[len(prefix):]
-    parts = payload.split("_", 3)
-    if len(parts) != 4:
-        await update.callback_query.answer("❌ داده ناقص است.", show_alert=True)
-        return
-
-    country, province, section, item_id = parts
     update_item_status(country, province, section, item_id, "Rejected")
     decrement_structure_count(country, province, item_id)
-    await update.callback_query.answer("❌ آیتم رد شد و از شمارش کم شد.", show_alert=True)
-    await show_pending_items(update, context)
+    await query.answer("❌ آیتم رد شد.", show_alert=True)
+    await show_country_list(update, context)  # بازگشت به منوی اصلی
+
+
