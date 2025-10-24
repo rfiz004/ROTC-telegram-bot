@@ -4679,6 +4679,12 @@
                         "id": "بالیستا_1",
                         "status": "Approved"
                     }
+                ],
+                "برج محاصره": [
+                    {
+                        "id": "برج محاصره_1",
+                        "status": "Pending"
+                    }
                 ]
             },
             "weapons": {},
@@ -5072,7 +5078,13 @@
         "Marashen": {
             "castle": {},
             "structures": {
-                "بالیستا": []
+                "بالیستا": [],
+                "برج محاصره": [
+                    {
+                        "id": "برج محاصره_1",
+                        "status": "Pending"
+                    }
+                ]
             },
             "weapons": {},
             "economic_structures": {
