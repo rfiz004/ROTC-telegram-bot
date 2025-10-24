@@ -103,14 +103,14 @@ async def show_country_list(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ===================== 2️⃣ نمایش استان‌های کشور =====================
 async def show_provinces(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """نمایش استان‌های کشور انتخاب‌شده."""
     query = update.callback_query
-    data = query.data  # e.g. "country_<uid>"
-    if not data.startswith("country_"):
+    data = query.data  # e.g. "country_select_<uid>"
+
+    if not data.startswith("country_select_"):
         await query.answer("❌ دادهٔ نا‌معتبر.", show_alert=True)
         return
 
-    uid = data.split("_", 1)[1]
+    uid = data[len("country_select_"):]
     payload = get_payload(context, uid)
     if not payload or payload.get("action") != "select_country":
         await query.answer("❌ دادهٔ انتخاب منقضی شده یا نامعتبر است.", show_alert=True)
