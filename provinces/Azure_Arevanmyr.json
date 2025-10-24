@@ -39,8 +39,8 @@
       "product": "ماهی",
       "weekly_output": 100
     },
-    "کارخونه شراب": {
-      "count": 1,
+    "شراب": {
+      "count": 2,
       "product": "شراب",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.613926"
+  "last_updated": "2025-10-24T12:44:27.050365"
 }
