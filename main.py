@@ -165,7 +165,7 @@ from admin_province_handler import (
     handle_new_shop_image, show_weekly_processing_menu,
     preview_weekly_processing, run_weekly_processing,
     admin_show_economy_overview, handle_province_edit, admin_view_shop_items,
-    run_food_processing, back_to_admin_menu, admin_lock_shop, toggle_block_country
+    run_food_processing, back_to_admin_menu, admin_lock_shop, toggle_block_country, handle_admin_search_shop
 )
 
 from country_handler import (
