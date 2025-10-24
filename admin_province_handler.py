@@ -3016,6 +3016,7 @@ async def show_admin_shop_page_internal(query, context, user_id, page):
         logger.info(f"🔘 دکمه ویرایش ساخته شد با callback_data: admin_edit_shop_item_{item_id}")
 
     # Fixed back button that returns to Store Management menu
+    keyboard.append([InlineKeyboardButton("🔍 جست‌وجو", callback_data="admin_search_shop")])
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data="admin_province_menu")])
 
     # Try to display with photo if available
@@ -3057,6 +3058,121 @@ async def show_admin_shop_page_internal(query, context, user_id, page):
                 reply_markup=InlineKeyboardMarkup(keyboard)
             )
     
+async def handle_admin_search_shop(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """نمایش لیست آیتم‌های فروشگاه برای جست‌وجو توسط ادمین"""
+    query = update.callback_query
+    user_id = query.from_user.id
+
+    user_data = context.user_data.get(user_id, {})
+    shop_items = user_data.get("admin_shop_items", [])
+
+    if not shop_items:
+        await query.answer("❌ هیچ آیتمی برای جست‌وجو وجود ندارد.", show_alert=True)
+        return
+
+    # ساخت متن لیست آیتم‌ها
+    items_text = "🧾 لیست آیتم‌های موجود:\n\n"
+    for item in shop_items:
+        items_text += f"🔹 {item.get('name', 'نامشخص')} — ID: `{item.get('id', '-')}`\n"
+
+    items_text += "\n🆔 شناسه آیتم مورد نظر را ارسال کنید تا جزئیاتش نمایش داده شود."
+
+    try:
+        await query.delete_message()
+    except:
+        pass
+
+    msg = await query.message.reply_text(
+        items_text,
+        parse_mode="Markdown",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")]])
+    )
+
+    # ذخیره حالت جست‌وجو
+    user_data["admin_search_mode"] = True
+    user_data["search_message_id"] = msg.message_id
+    user_data["flow_type"] = "admin_shop_search"
+    user_data["step"] = "awaiting_item_id"
+    context.user_data[user_id] = user_data
+
+async def handle_admin_search_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """دریافت ID آیتم از ادمین و نمایش جزئیات آن"""
+    user_id = update.message.from_user.id
+    text = update.message.text.strip()
+    user_data = context.user_data.get(user_id, {})
+
+    # اگر در حالت جست‌وجو نیست، خروج
+    if not user_data.get("admin_search_mode"):
+        return
+
+    shop_items = user_data.get("admin_shop_items", [])
+    item = next((i for i in shop_items if str(i.get("id")) == text), None)
+
+    if not item:
+        await update.message.reply_text("❌ آیتمی با این ID پیدا نشد. لطفاً دوباره امتحان کنید.")
+        return
+
+    # خروج از حالت جست‌وجو
+    user_data["admin_search_mode"] = False
+    context.user_data[user_id] = user_data
+
+    # حذف پیام جست‌وجو (در صورت وجود)
+    msg_id = user_data.get("search_message_id")
+    if msg_id:
+        try:
+            await context.bot.delete_message(chat_id=update.message.chat_id, message_id=msg_id)
+        except:
+            pass
+
+    # ساخت توضیحات کامل آیتم
+    caption = f"👑 آیتم فروشگاه (Admin)\n\n"
+    caption += f"📦 {item.get('name', 'نامشخص')}\n"
+    caption += f"🏷 نوع: {item.get('type', 'نامشخص')}\n"
+
+    countries = item.get('countries', item.get('country', 'نامشخص'))
+    if isinstance(countries, list):
+        countries = ", ".join(countries)
+    caption += f"🌍 کشورها: {countries}\n"
+    caption += f"💰 قیمت: {item.get('price', 0):,} طلا\n"
+
+    if item.get('materials'):
+        caption += "\n🔧 مواد لازم:\n"
+        for mat, amt in item['materials'].items():
+            caption += f"   • {mat}: {amt:,}\n"
+
+    if item.get('description'):
+        caption += f"\n📝 توضیحات:\n{item['description']}\n"
+
+    caption += f"\n👤 فروشنده: {item.get('owner', 'نامشخص')}\n"
+    caption += f"🆔 آیتم ID: {item.get('id', '-')}\n"
+
+    keyboard = [
+        [InlineKeyboardButton("✏️ ویرایش", callback_data=f"admin_edit_shop_item_{item.get('id')}"),
+         InlineKeyboardButton("🗑️ حذف", callback_data=f"admin_delete_shop_item_{item.get('id')}")],
+        [InlineKeyboardButton("🔙 بازگشت", callback_data="admin_manage_shop")]
+    ]
+
+    try:
+        await update.message.delete()
+    except:
+        pass
+
+    photo_file_id = item.get("photo_file_id")
+    if photo_file_id:
+        await context.bot.send_photo(
+            chat_id=update.message.chat.id,
+            photo=photo_file_id,
+            caption=caption,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+    else:
+        await context.bot.send_message(
+            chat_id=update.message.chat.id,
+            text=caption,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+
+
 
 async def show_admin_shop_page(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
