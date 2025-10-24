@@ -2804,6 +2804,50 @@
                         "weekly_output": 50
                     }
                 ]
+            },
+            "misc": {
+                "سواره نظام": [
+                    {
+                        "id": "سواره نظام_1",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_2",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_3",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_4",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_5",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_6",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_7",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_8",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_9",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "سواره نظام_10",
+                        "status": "Pending"
+                    }
+                ]
             }
         },
         "Sky-Dragon": {
