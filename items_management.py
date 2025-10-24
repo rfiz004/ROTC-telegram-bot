@@ -218,11 +218,15 @@ async def review_item_details(update: Update, context: ContextTypes.DEFAULT_TYPE
     rej_uid = store_payload(context, {"action": "reject_item", **payload})
     back_uid = store_payload(context, {"action": "back_to_pending", "country": country, "province": province})
 
+    appv_callback = f"approve|{country}|{province}|{section}|{item_id}"
+    rej_callback  = f"reject|{country}|{province}|{section}|{item_id}"
+    
     keyboard = [
-        [InlineKeyboardButton("✅ تأیید", callback_data=f"approve_{appv_uid}"),
-         InlineKeyboardButton("❌ رد", callback_data=f"reject_{rej_uid}")],
-        [InlineKeyboardButton("🔙 بازگشت", callback_data=f"back_{back_uid}")]
+        [InlineKeyboardButton("✅ تأیید", callback_data=appv_callback),
+         InlineKeyboardButton("❌ رد", callback_data=rej_callback)],
+        [InlineKeyboardButton("🔙 بازگشت", callback_data=f"back_{store_payload(context, {'action':'back_to_pending','country':country,'province':province})}")]
     ]
+
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="HTML")
 
 
@@ -294,27 +298,30 @@ def decrement_structure_count(country: str, province: str, item_id: str):
 # ===================== 7️⃣ تأیید / رد =====================
 async def approve_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    uid = query.data.split("_", 1)[1]
-    payload = get_payload(context, uid)
-    if not payload or payload.get("action") != "approve_item":
+    parts = query.data.split("|")
+    if len(parts) != 5 or parts[0] != "approve":
         await query.answer("❌ داده منقضی شده یا نامعتبر.", show_alert=True)
         return
-    update_item_status(payload["country"], payload["province"], payload["section"], payload["item_id"], "Approved")
+
+    _, country, province, section, item_id = parts
+    update_item_status(country, province, section, item_id, "Approved")
     await query.answer("✅ آیتم تأیید شد.", show_alert=True)
     await show_country_list(update, context)
 
 
 async def reject_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    uid = query.data.split("_", 1)[1]
-    payload = get_payload(context, uid)
-    if not payload or payload.get("action") != "reject_item":
+    parts = query.data.split("|")
+    if len(parts) != 5 or parts[0] != "reject":
         await query.answer("❌ داده منقضی شده یا نامعتبر.", show_alert=True)
         return
-    update_item_status(payload["country"], payload["province"], payload["section"], payload["item_id"], "Rejected")
-    decrement_structure_count(payload["country"], payload["province"], payload["item_id"])
+
+    _, country, province, section, item_id = parts
+    update_item_status(country, province, section, item_id, "Rejected")
+    decrement_structure_count(country, province, item_id)
     await query.answer("❌ آیتم رد شد.", show_alert=True)
     await show_country_list(update, context)
+
 
 
 # ===================== 8️⃣ دکمه‌های بازگشت =====================
