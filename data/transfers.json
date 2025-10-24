@@ -12465,6 +12465,22 @@
       "requested_at": "2025-10-24T20:29:17.000870",
       "delay_until": "2025-10-25T20:29:17.000875",
       "approved_at": "2025-10-24T20:29:47.473590"
+    },
+    {
+      "id": "transfer_5566736269_1761338045",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T20:34:05.322735",
+      "delay_until": "2025-10-25T20:34:05.322738"
     }
   ]
 }
