@@ -12482,6 +12482,40 @@
       "requested_at": "2025-10-24T20:34:05.322735",
       "delay_until": "2025-10-25T20:34:05.322738",
       "approved_at": "2025-10-24T20:36:15.418165"
+    },
+    {
+      "id": "transfer_5566736269_1761338840",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T20:47:20.103728",
+      "delay_until": "2025-10-25T20:47:20.103732",
+      "approved_at": "2025-10-24T20:47:25.937388"
+    },
+    {
+      "id": "transfer_5566736269_1761338887",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Kalteryn",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T20:48:07.993416",
+      "delay_until": "2025-10-25T20:48:07.993420",
+      "approved_at": "2025-10-24T20:48:13.467811"
     }
   ]
 }
