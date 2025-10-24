@@ -11862,6 +11862,42 @@
       "requested_at": "2025-10-24T10:14:17.792090",
       "delay_until": "2025-10-25T10:14:17.792095",
       "approved_at": "2025-10-24T10:14:43.148025"
+    },
+    {
+      "id": "transfer_1208514381_1761301995",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 150,
+        "گوشت": 1200,
+        "میوه": 850
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T10:33:15.797256",
+      "delay_until": "2025-10-25T10:33:15.797260",
+      "approved_at": "2025-10-24T10:33:32.903997"
+    },
+    {
+      "id": "transfer_1208514381_1761302021",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 22000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T10:33:41.259090",
+      "delay_until": "2025-10-25T10:33:41.259094",
+      "approved_at": "2025-10-24T10:34:54.079466"
     }
   ]
 }
