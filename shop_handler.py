@@ -1479,22 +1479,30 @@ async def confirm_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
         section[item_name] = []
     
     structure_list = section[item_name]
-    
-    # افزودن آیتم جدید به حالت Pending
-    for i in range(quantity):
-        next_id = f"{item_name}_{len(structure_list) + 1}"
-        new_entry = {"id": next_id, "status": "Pending"}
-    
-        # فقط برای economic_structure فیلد product و weekly_output اضافه کن
-        if target_section == "economic_structures":
-            country_econ = all_econ_structs.get(country, {})
-            province_econ = country_econ.get(province, {})
-            econ_structs_all = province_econ.get("economic_structures", {})
-            struct_info = econ_structs_all.get(item_name, [{}])[0]
-            new_entry["product"] = struct_info.get("product", "")
-            new_entry["weekly_output"] = struct_info.get("weekly_output", 0)
-    
-        structure_list.append(new_entry)
+
+        # فقط اگر نوع آیتم از انواع خاص بود، به حالت Pending اضافه کن
+    if target_section in ["economic_structures", "weapons", "structures", "castle"]:
+        # اطمینان از اینکه همیشه لیست باشه
+        if item_name not in section:
+            section[item_name] = []
+        
+        structure_list = section[item_name]
+        
+        # افزودن آیتم جدید به حالت Pending
+        for i in range(quantity):
+            next_id = f"{item_name}_{len(structure_list) + 1}"
+            new_entry = {"id": next_id, "status": "Pending"}
+        
+            # فقط برای economic_structure فیلد product و weekly_output اضافه کن
+            if target_section == "economic_structures":
+                country_econ = all_econ_structs.get(country, {})
+                province_econ = country_econ.get(province, {})
+                econ_structs_all = province_econ.get("economic_structures", {})
+                struct_info = econ_structs_all.get(item_name, [{}])[0]
+                new_entry["product"] = struct_info.get("product", "")
+                new_entry["weekly_output"] = struct_info.get("weekly_output", 0)
+        
+            structure_list.append(new_entry)
     
     # ذخیره نهایی
     with open(file_path, "w", encoding="utf-8") as f:
