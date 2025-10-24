@@ -65,16 +65,6 @@ def add_shop_item(item_data):
         logger.error(f"Error adding shop item: {e}")
         return None
 
-
-# def filter_items_by_country(items, user_country):
-#     """Filter items by user's country - include 'All' country items"""
-#     filtered = []
-#     for item in items:
-#         item_country = item.get("country", "All")
-#         if item_country == "All" or item_country.lower() == user_country.lower():
-#             filtered.append(item)
-#     return filtered
-
 def filter_items_by_country(items, user_country):
     """Filter items by user's country (supports multiple countries per item)"""
     filtered = []
@@ -297,244 +287,6 @@ async def open_shop_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup=InlineKeyboardMarkup(buttons)
 )
 
-    # await update.callback_query.edit_message_text(
-    #     f"🏪 به فروشگاه خوش آمدید!\n📦 {len(user_items)} آیتم موجود برای کشور {country}\n\nدسته مورد نظر را انتخاب کنید:",
-    #     reply_markup=InlineKeyboardMarkup(buttons)
-    # )
-
-# async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Show items in selected category with navigation"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     category = query.data.split("_")[-1]  # Extract category from callback data
-#     user_id = query.from_user.id
-#     user_data = context.user_data.get(user_id, {})
-#     country = user_data.get("country", "")
-
-#     # Get filtered items for this category
-#     all_items = user_data.get("shop_items", [])
-#     category_items = filter_items_by_category(all_items, category)
-
-#     if not category_items:
-#         category_names = {
-#             "army": "⚔️ ارتش",
-#             "castle": "🏰 قلعه",
-#             "structure": "🏗 سازه", 
-#             "weapon": "🗡 سلاح",
-#             "misc": "📦 متفرقه",
-#             "econstructure": "🏭 سازه‌های اقتصادی"
-#         }
-
-#         await query.edit_message_text(
-#             f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {country} یافت نشد.",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
-#             ]])
-#         )
-#         return
-
-#     # Store category items and initialize pagination
-#     context.user_data[user_id]["category_items"] = category_items
-#     context.user_data[user_id]["current_category"] = category
-#     context.user_data[user_id]["current_page"] = 0
-
-#     # Show first page
-#     await show_items_page(query, context, user_id, 0, category)
-
-# async def show_items_page(query, context, user_id, page, category):
-#     """Show single item per page with navigation buttons"""
-#     user_data = context.user_data.get(user_id, {})
-#     category_items = user_data.get("category_items", [])
-
-#     if not category_items:
-#         await query.edit_message_text(
-#             "📭 هیچ آیتمی یافت نشد.",
-#             reply_markup=InlineKeyboardMarkup([[
-#                 InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")
-#             ]])
-#         )
-#         return
-
-#     # Calculate pagination
-#     total_items = len(category_items)
-#     page = max(0, min(page, total_items - 1))
-#     current_item = category_items[page]
-
-#     # Update current page in user data
-#     context.user_data[user_id]["current_page"] = page
-
-#     # Build formatted item display
-#     page_info = f"🛍 آیتم {page + 1} از {total_items}\n\n"
-
-#     # Build the item caption
-#     caption = f"──────⊱◈Shop◈⊰──────\n"
-#     caption += f"✦ Item Name : {current_item.get('name', 'نامشخص')}\n"
-#     caption += f"✧ Item Type : {current_item.get('type', 'Misc')}\n"
-#     caption += f"✦ Country : {current_item.get('country', 'All')}\n"
-
-#     # Add hashtags
-#     hashtags = current_item.get('hashtags', [])
-#     for hashtag in hashtags:
-#         caption += f"{hashtag}\n"
-
-#     caption += f"✧ Description :\n"
-#     caption += f"• {current_item.get('description', 'توضیحات موجود نیست')}"
-    
-#     # اضافه کردن تعداد برای دسته‌های مشخص
-#     count = current_item.get("count", 1)
-#     item_type = current_item.get("type", "").lower()
-    
-#     if item_type in ["army", "castle", "misc", "structure", "weapon"]:
-#         caption += f"\n✦ تعداد موجود: {count}"
-
-
-#     caption += f"✦ Price & Materials :\n"
-#     caption += f"• {current_item.get('price', 0):,}"
-
-#     materials = current_item.get('materials', {})
-#     if materials:
-#         material_parts = []
-#         for material, amount in materials.items():
-#             material_parts.append(f"{material}:{amount}")
-#         caption += f", {', '.join(material_parts)}"
-
-#     caption += f"\n✧ Owner ID : {current_item.get('owner', 'نامشخص')}\n"
-#     caption += f"──────⊹⊱✫⊰⊹──────\n"
-#     caption += f"https://t.me/R_O_T_C\n"
-#     caption += f"https://t.me/R_O_T_C_Shop"
-
-#     full_caption = page_info + caption
-
-#     # Create navigation buttons
-#     nav_buttons = []
-#     if total_items > 1:
-#         # Previous button (disabled if first page)
-#         if page > 0:
-#             prev_btn = InlineKeyboardButton("⬅️ قبلی", callback_data=f"shop_page_{category}_{page-1}")
-#         else:
-#             prev_btn = InlineKeyboardButton("⬅️", callback_data="noop")
-
-#         # Next button (disabled if last page)  
-#         if page < total_items - 1:
-#             next_btn = InlineKeyboardButton("➡️ بعدی", callback_data=f"shop_page_{category}_{page+1}")
-#         else:
-#             next_btn = InlineKeyboardButton("➡️", callback_data="noop")
-
-#         nav_buttons = [prev_btn, next_btn]
-
-#     # Build keyboard
-#     keyboard = []
-#     if nav_buttons:
-#         keyboard.append(nav_buttons)
-
-#     keyboard.extend([
-#         [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{page}")],
-#         [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]
-#     ])
-
-#     # Get photo file_id
-#     photo_file_id = current_item.get('photo_file_id')
-
-#     try:
-#         # Try to send with photo first
-#         if photo_file_id:
-#             try:
-#                 await query.delete_message()
-#                 await context.bot.send_photo(
-#                     chat_id=query.message.chat_id,
-#                     photo=photo_file_id,
-#                     caption=full_caption,
-#                     reply_markup=InlineKeyboardMarkup(keyboard),
-#                     parse_mode=None  # No parsing to preserve original formatting
-#                 )
-#                 return
-#             except Exception as photo_error:
-#                 logger.error(f"Error sending photo {photo_file_id}: {photo_error}")
-
-#         # Fallback to text message
-#         try:
-#             # await query.edit_message_text(
-#             #     text=full_caption,
-#             #     reply_markup=InlineKeyboardMarkup(keyboard),
-#             #     parse_mode=None  # Preserve original formatting
-#             # )
-#             await context.bot.send_message(
-#                 chat_id=query.message.chat.id,
-#                 text=full_caption,
-#                 reply_markup=InlineKeyboardMarkup([...])
-#             )
-#         except Exception as edit_error:
-#             logger.error(f"Error editing message: {edit_error}")
-#             # Last resort - send new message
-#             try: 
-#                 await query.delete_message()
-#             except:
-#                 pass
-#             await context.bot.send_message(
-#                 chat_id=query.message.chat_id,
-#                 text=full_caption,
-#                 reply_markup=InlineKeyboardMarkup(keyboard),
-#                 parse_mode=None
-#             )
-
-#     except Exception as e:
-#         logger.error(f"Error displaying item: {e}")
-#         # Emergency fallback
-#         try:
-#             fallback_text = f"❌ خطا در نمایش آیتم\n🛍 آیتم {page + 1} از {total_items}\n📦 {current_item.get('name', 'نامشخص')}"
-#             await query.edit_message_text(
-#                 fallback_text,
-#                 reply_markup=InlineKeyboardMarkup(keyboard)
-#             )
-#         except:
-#             pass
-
-
-# async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Show items in selected category with navigation"""
-#     query = update.callback_query
-#     await query.answer()
-
-#     category = query.data.split("_")[-1]  # Extract category from callback data
-#     user_id = query.from_user.id
-#     user_data = context.user_data.get(user_id, {})
-#     user_country = user_data.get("country", "")
-
-#     # Get all shop items (آپدیت شده)
-#     all_items = user_data.get("shop_items", [])
-
-#     # Filter by category AND user country
-#     category_items = [
-#         item for item in all_items
-#         if filter_items_by_category([item], category) and
-#            ("countries" in item and user_country in item["countries"])
-#     ]
-
-#     if not category_items:
-#         category_names = {
-#             "army": "⚔️ ارتش",
-#             "castle": "🏰 قلعه",
-#             "structure": "🏗 سازه",
-#             "weapon": "🗡 سلاح",
-#             "misc": "📦 متفرقه",
-#             "econstructure": "🏭 سازه‌های اقتصادی"
-#         }
-#         await query.edit_message_text(
-#             f"📭 هیچ آیتمی در دسته {category_names.get(category, category)} برای کشور {user_country} یافت نشد.",
-#             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]])
-#         )
-#         return
-
-#     # Store filtered category items & init pagination
-#     context.user_data[user_id]["category_items"] = category_items
-#     context.user_data[user_id]["current_category"] = category
-#     context.user_data[user_id]["current_page"] = 0
-
-#     # Show first page
-#     await show_items_page(query, context, user_id, 0, category)
-
-
 async def show_shop_category(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show items in selected category with navigation"""
     query = update.callback_query
@@ -632,7 +384,7 @@ async def show_items_page(query, context, user_id, page, category):
 
     keyboard = nav_buttons + [
         [InlineKeyboardButton("🔍 جست‌وجو", callback_data=f"search_in_{category}")],
-        [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{page}")],
+        [InlineKeyboardButton("🛒 خرید", callback_data=f"buy_item_{category}_{current_item.get('id')}")],
         [InlineKeyboardButton("🔙 بازگشت", callback_data="open_shop_menu")]
     ]
 
@@ -813,39 +565,54 @@ async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYP
     await show_items_page(query, context, user_id, page, category)
 
 # async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    
 #     """Handle item purchase initiation"""
 #     query = update.callback_query
 #     await query.answer()
 
-#     # Parse callback data: buy_item_{category}_{page_index}
+#     # Parse callback data: buy_item_{category}_{id_or_index}
 #     purchase_data = query.data.replace("buy_item_", "")
 #     parts = purchase_data.split("_")
 
 #     if len(parts) < 2:
-#         await context.bot.send_message("❌ خطا در خرید.", reply_markup=back_and_home_buttons())
+#         await context.bot.send_message(
+#             chat_id=query.message.chat.id,
+#             text="❌ خطا در خرید.",
+#             reply_markup=back_and_home_buttons()
+#         )
 #         return
 
 #     category = parts[0]
-#     page_index = int(parts[1])
+#     id_or_index = parts[1]
 
 #     user_id = query.from_user.id
-#     user_data = context.user_data.setdefault(user_id, {})  # ✅ اگه نبود، ایجاد میشه
-#     # فرض: تابعی برای گرفتن استان کاربر داری مثل get_user_province(user_id)
-#     province = user_data.get("province")  # این تابع باید از دیتابیس یا فایل دیتا کاربر مقدار رو بگیره
+#     user_data = context.user_data.setdefault(user_id, {})
+#     province = user_data.get("province")
 
+#     # 🔒 بررسی کشور
 #     if is_shop_blocked_for_user(province):
 #         await context.bot.send_message(
-#             chat_id=query.message.chat_id,
+#             chat_id=query.message.chat.id,
 #             text="🚫 فروشگاه برای کشور شما قفل است و امکان خرید وجود ندارد.",
 #             reply_markup=back_and_home_buttons()
 #         )
 #         return
 
-
 #     category_items = user_data.get("category_items", [])
 
-#     if page_index >= len(category_items):
+#     # 🧩 تشخیص نوع شناسه: index یا id واقعی
+#     item = None
+#     if id_or_index.isdigit():
+#         index = int(id_or_index)
+#         if index < len(category_items):
+#             # حالت عادی از صفحه‌بندی
+#             item = category_items[index]
+#         else:
+#             # ممکنه id واقعی باشه → جست‌وجو در category_items
+#             item = next((i for i in category_items if str(i.get("id")) == id_or_index), None)
+#     else:
+#         item = next((i for i in category_items if str(i.get("id")) == id_or_index), None)
+
+#     if not item:
 #         await context.bot.send_message(
 #             chat_id=update.effective_chat.id,
 #             text="❌ کالا پیدا نشد.",
@@ -853,26 +620,15 @@ async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYP
 #         )
 #         return
 
-#     item = category_items[page_index]
-
-#     # ✅ Set purchase info directly in context.user_data
+#     # ✅ ذخیره اطلاعات خرید در user_data
 #     context.user_data[user_id].update({
 #         "purchase_item": item,
 #         "category": category,
 #         "step": "awaiting_quantity",
 #         "flow_type": "shop_purchase"
 #     })
-#     print(f"[DEBUG] handle_item_purchase triggered by user {user_id}")
 
-#     # text = f"🛒 **خرید {item['name']}**\n\n"
-#     # text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
-
-#     # if item.get('materials'):
-#     #     text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
-#     #     for material, amount in item['materials'].items():
-#     #         text += f"   • {material}: {amount}\n"
-
-#     # text += "\n🔢 تعداد مورد نظر را وارد کنید:"
+#     # 📝 متن توضیحات خرید
 #     text = f"🛒 **خرید {item['name']}**\n\n"
 #     text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
     
@@ -881,7 +637,6 @@ async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYP
 #         for material, amount in item['materials'].items():
 #             text += f"   • {material}: {amount}\n"
     
-#     # اضافه کردن تعداد موجود
 #     item_type = item.get("type", "").lower()
 #     if item_type in ["army", "castle", "misc", "structure", "weapons"]:
 #         count = item.get("count", 1)
@@ -889,43 +644,40 @@ async def show_shop_items_page(update: Update, context: ContextTypes.DEFAULT_TYP
     
 #     text += "\n🔢 تعداد مورد نظر را وارد کنید:"
 
-
 #     keyboard = [
 #         [InlineKeyboardButton("🔙 برگشت", callback_data=f"shop_category_{category}")]
 #     ]
 
 #     await context.bot.send_message(
-#         chat_id=query.message.chat_id,
+#         chat_id=query.message.chat.id,
 #         text=text,
 #         reply_markup=InlineKeyboardMarkup(keyboard),
 #         parse_mode="Markdown"
 #     )
 
+
 async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle item purchase initiation"""
+    """Handle item purchase initiation (final version: only use real item ID)"""
     query = update.callback_query
     await query.answer()
 
-    # Parse callback data: buy_item_{category}_{id_or_index}
-    purchase_data = query.data.replace("buy_item_", "")
-    parts = purchase_data.split("_")
+    # دریافت دادهٔ خرید بدون تغییر
+    purchase_data = query.data[len("buy_item_"):]  # format: {category}_{id}
+    category, sep, item_id = purchase_data.partition("_")
 
-    if len(parts) < 2:
+    if not sep:
         await context.bot.send_message(
             chat_id=query.message.chat.id,
-            text="❌ خطا در خرید.",
+            text="❌ خطا در خرید (فرمت callback نامعتبر).",
             reply_markup=back_and_home_buttons()
         )
         return
-
-    category = parts[0]
-    id_or_index = parts[1]
 
     user_id = query.from_user.id
     user_data = context.user_data.setdefault(user_id, {})
     province = user_data.get("province")
 
-    # 🔒 بررسی کشور
+    # 🔒 بررسی قفل بودن فروشگاه
     if is_shop_blocked_for_user(province):
         await context.bot.send_message(
             chat_id=query.message.chat.id,
@@ -934,24 +686,15 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         return
 
+    # لیست آیتم‌های دسته جاری
     category_items = user_data.get("category_items", [])
 
-    # 🧩 تشخیص نوع شناسه: index یا id واقعی
-    item = None
-    if id_or_index.isdigit():
-        index = int(id_or_index)
-        if index < len(category_items):
-            # حالت عادی از صفحه‌بندی
-            item = category_items[index]
-        else:
-            # ممکنه id واقعی باشه → جست‌وجو در category_items
-            item = next((i for i in category_items if str(i.get("id")) == id_or_index), None)
-    else:
-        item = next((i for i in category_items if str(i.get("id")) == id_or_index), None)
+    # 🧩 پیدا کردن آیتم بر اساس ID واقعی
+    item = next((i for i in category_items if str(i.get("id")) == item_id), None)
 
     if not item:
         await context.bot.send_message(
-            chat_id=update.effective_chat.id,
+            chat_id=query.message.chat.id,
             text="❌ کالا پیدا نشد.",
             reply_markup=back_and_home_buttons()
         )
@@ -966,19 +709,19 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
     })
 
     # 📝 متن توضیحات خرید
-    text = f"🛒 **خرید {item['name']}**\n\n"
-    text += f"💰 قیمت واحد: {item['price']:,} طلا\n"
-    
+    text = f"🛒 **خرید {item.get('name','نامشخص')}**\n\n"
+    text += f"💰 قیمت واحد: {item.get('price',0):,} طلا\n"
+
     if item.get('materials'):
         text += "🔧 مواد مورد نیاز (برای هر واحد):\n"
-        for material, amount in item['materials'].items():
+        for material, amount in item.get('materials', {}).items():
             text += f"   • {material}: {amount}\n"
-    
+
     item_type = item.get("type", "").lower()
     if item_type in ["army", "castle", "misc", "structure", "weapons"]:
         count = item.get("count", 1)
         text += f"\n✦ تعداد موجود: {count}\n"
-    
+
     text += "\n🔢 تعداد مورد نظر را وارد کنید:"
 
     keyboard = [
@@ -991,92 +734,6 @@ async def handle_item_purchase(update: Update, context: ContextTypes.DEFAULT_TYP
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
-
-
-
-
-
-# async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     """Handle quantity input from user"""
-#     user_id = update.message.from_user.id
-#     user_data = context.user_data.get(user_id, {})
-
-#     if user_data.get("step") != "awaiting_quantity" or user_data.get("flow_type") != "shop_purchase":
-#         return False
-
-#     try:
-#         quantity = int(update.message.text.strip())
-#         if quantity <= 0:
-#             await update.message.reply_text("❌ تعداد باید عدد مثبت باشد.")
-#             return True
-
-#         if quantity > 1000:
-#             await update.message.reply_text("❌ حداکثر تعداد مجاز 1000 است.")
-#             return True
-
-#     except ValueError:
-#         await update.message.reply_text("❌ لطفاً عدد معتبر وارد کنید.")
-#         return True
-
-#     item = user_data.get("purchase_item")
-#     if not item:
-#         await update.message.reply_text("❌ خطا در خرید.", reply_markup=back_and_home_buttons())
-#         return True
-
-#     # Validate resources
-#     country = user_data.get("country")
-#     province = user_data.get("province")
-
-#     if not country or not province:
-#         await update.message.reply_text("❌ اطلاعات استان یافت نشد.", reply_markup=back_and_home_buttons())
-#         return True
-
-#     province_data = load_province_data(country, province)
-#     if not province_data:
-#         await update.message.reply_text("❌ خطا در بارگذاری اطلاعات استان.", reply_markup=back_and_home_buttons())
-#         return True
-
-#     total_price = item["price"] * quantity
-#     total_materials = {}
-#     for material, amount in item.get("materials", {}).items():
-#         total_materials[material] = amount * quantity
-
-#     # Check gold
-#     if province_data.get("wealth", 0) < total_price:
-#         shortage = total_price - province_data.get("wealth", 0)
-#         await update.message.reply_text(
-#             f"❌ طلای کافی ندارید!\n\n"
-#             f"💰 مورد نیاز: {total_price:,} طلا\n"
-#             f"💰 موجودی: {province_data.get('wealth', 0):,} طلا\n"
-#             f"❌ کمبود: {shortage:,} طلا"
-#         )
-#         return True
-
-    
-#     # Store final data for confirmation
-#     context.user_data[user_id]["purchase_quantity"] = quantity
-#     context.user_data[user_id]["total_price"] = total_price
-#     context.user_data[user_id]["total_materials"] = total_materials
-
-#     text = f"🛒 **تأیید نهایی خرید**\n\n"
-#     text += f"📦 کالا: {item['name']}\n"
-#     text += f"🔢 تعداد: {quantity:,}\n"
-#     text += f"💰 قیمت کل: {total_price:,} طلا\n"
-
-#     if total_materials:
-#         text += "\n🔧 مواد مصرفی:\n"
-#         for material, amount in total_materials.items():
-#             text += f"   • {material}: {amount:,}\n"
-
-#     text += "\n✅ آیا مطمئن هستید؟"
-
-#     keyboard = [
-#         [InlineKeyboardButton("✅ تأیید خرید", callback_data="confirm_purchase")],
-#         [InlineKeyboardButton("❌ لغو", callback_data=f"shop_category_{user_data.get('category', '')}")]
-#     ]
-
-#     await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-#     return True
 
 
 async def handle_quantity_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
