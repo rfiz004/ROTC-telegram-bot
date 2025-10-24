@@ -11736,6 +11736,77 @@
       "status": "pending",
       "requested_at": "2025-10-24T08:43:13.200784",
       "delay_until": "2025-10-25T08:43:13.200787"
+    },
+    {
+      "id": "transfer_1771323853_1761295414",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "برج محاصره": 1,
+        "منجنیق غولپیکر": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:43:34.952135",
+      "delay_until": "2025-10-25T08:43:34.952140",
+      "approved_at": "2025-10-24T08:43:36.423499"
+    },
+    {
+      "id": "transfer_1771323853_1761295466",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "بالیستا": 1,
+        "منجنیق غولپیکر": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:44:26.241225",
+      "delay_until": "2025-10-25T08:44:26.241229",
+      "approved_at": "2025-10-24T08:44:27.786337"
+    },
+    {
+      "id": "transfer_1771323853_1761295513",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "برج محاصره": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:45:13.800886",
+      "delay_until": "2025-10-25T08:45:13.800890",
+      "approved_at": "2025-10-24T08:45:15.006803"
+    },
+    {
+      "id": "transfer_1771323853_1761295551",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Silzara",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "برج محاصره": 1,
+        "بالیستا": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:45:51.496466",
+      "delay_until": "2025-10-25T08:45:51.496471",
+      "approved_at": "2025-10-24T08:45:52.756265"
     }
   ]
 }
