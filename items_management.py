@@ -318,31 +318,55 @@ async def reject_item(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # ===================== 8️⃣ دکمه‌های بازگشت =====================
+# ===================== 8️⃣ دکمه‌های بازگشت =====================
 async def handle_back_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
+
     if not data.startswith("back_"):
         await query.answer("❌ دادهٔ بازگشت نامعتبر.", show_alert=True)
         return
+
     uid = data.split("_", 1)[1]
     payload = get_payload(context, uid)
+
+    # اگر payload از بین رفته باشه → برگرد به لیست کشورها
     if not payload:
         await show_country_list(update, context)
         return
 
     action = payload.get("action")
+    country = payload.get("country")
+    province = payload.get("province")
+
+    # 🔹 مرحله ۱: بازگشت از صفحه استان‌ها به کشورها
     if action == "back_to_countries":
         await show_country_list(update, context)
+        return
+
+    # 🔹 مرحله ۲: بازگشت از Pending‌ها به استان‌های کشور
     elif action == "back_to_provinces":
-        country = payload["country"]
-        # بازسازی مرحلهٔ استان‌ها
+        if not country:
+            await show_country_list(update, context)
+            return
+        fake_uid = store_payload(context, {"action": "select_country", "country": country})
         fake_query = update.callback_query
-        fake_query.data = f"country_select_{store_payload(context, {'action': 'select_country', 'country': country})}"
+        fake_query.data = f"country_select_{fake_uid}"
         await show_provinces(update, context)
+        return
+
+    # 🔹 مرحله ۳: بازگشت از صفحه بررسی آیتم‌ها به لیست Pending
     elif action == "back_to_pending":
-        country, province = payload["country"], payload["province"]
+        if not (country and province):
+            await show_country_list(update, context)
+            return
+        fake_uid = store_payload(context, {"action": "select_province", "country": country, "province": province})
         fake_query = update.callback_query
-        fake_query.data = f"province_{store_payload(context, {'action': 'select_province', 'country': country, 'province': province})}"
+        fake_query.data = f"province_{fake_uid}"
         await show_pending_items(update, context)
+        return
+
+    # 🔹 حالت پیش‌فرض: برگرد به صفحه کشورها
     else:
         await show_country_list(update, context)
+
