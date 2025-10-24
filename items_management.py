@@ -317,23 +317,81 @@ def update_item_status(country: str, province: str, section: str, item_id: str, 
 
 
 # ===================== 6️⃣ کاهش شمارش در صورت رد =====================
+# def decrement_structure_count(country: str, province: str, item_id: str):
+#     """در صورت رد آیتم، شمارش سازه را کاهش می‌دهد."""
+#     file_path = os.path.join(PROVINCES_DIR, f"{country}_{province}.json")
+#     if not os.path.exists(file_path):
+#         return
+
+#     with open(file_path, "r", encoding="utf-8") as f:
+#         province_data = json.load(f)
+
+#     for section_name in ["economic_structures", "structures", "castle"]:
+#         section_data = province_data.get(section_name, {})
+#         for structure, info in list(section_data.items()):
+#             if isinstance(info, dict) and item_id.startswith(structure):
+#                 info["count"] = max(0, info.get("count", 0) - 1)
+#             elif isinstance(info, int) and item_id.startswith(structure):
+#                 section_data[structure] = max(0, info - 1)
+
+#     with open(file_path, "w", encoding="utf-8") as f:
+#         json.dump(province_data, f, ensure_ascii=False, indent=2)
 def decrement_structure_count(country: str, province: str, item_id: str):
-    """در صورت رد آیتم، شمارش سازه را کاهش می‌دهد."""
+    """
+    در صورت رد آیتم، شمارش سازه را کاهش می‌دهد و منابع خرج‌شده را 
+    با توجه به ساختار فایل استان (wealth و economic_items) بازمی‌گرداند.
+    """
     file_path = os.path.join(PROVINCES_DIR, f"{country}_{province}.json")
     if not os.path.exists(file_path):
+        print(f"⚠️ فایل استان {file_path} پیدا نشد.")
         return
 
+    # 📖 خواندن داده‌ی استان
     with open(file_path, "r", encoding="utf-8") as f:
         province_data = json.load(f)
 
+    structure_name = None
+
+    # ۱️⃣ کم کردن شمارش سازه و پیدا کردن نامش
     for section_name in ["economic_structures", "structures", "castle"]:
         section_data = province_data.get(section_name, {})
         for structure, info in list(section_data.items()):
-            if isinstance(info, dict) and item_id.startswith(structure):
-                info["count"] = max(0, info.get("count", 0) - 1)
-            elif isinstance(info, int) and item_id.startswith(structure):
-                section_data[structure] = max(0, info - 1)
+            if str(item_id).startswith(structure):
+                structure_name = structure
+                if isinstance(info, dict):
+                    info["count"] = max(0, info.get("count", 0) - 1)
+                elif isinstance(info, int):
+                    section_data[structure] = max(0, info - 1)
 
+    # ۲️⃣ بازگردانی منابع با توجه به shop_items.json
+    shop_file = os.path.join(BASE_DIR, "shop_items.json")
+    if not os.path.exists(shop_file):
+        print("⚠️ فایل shop_items.json پیدا نشد، بازگردانی منابع انجام نشد.")
+    else:
+        with open(shop_file, "r", encoding="utf-8") as f:
+            shop_items = json.load(f)
+
+        # پیدا کردن آیتم با نام سازه
+        item = next((i for i in shop_items if i.get("name") == structure_name), None)
+        if item:
+            refund_gold = item.get("price", 0)
+            refund_materials = item.get("materials", {})
+
+            # 💰 اضافه کردن طلا به wealth
+            province_data["wealth"] = province_data.get("wealth", 0) + refund_gold
+
+            # ⚙️ اضافه کردن مواد به economic_items
+            if "economic_items" not in province_data:
+                province_data["economic_items"] = {}
+
+            for mat, val in refund_materials.items():
+                province_data["economic_items"][mat] = province_data["economic_items"].get(mat, 0) + val
+
+            print(f"💰 بازگردانی منابع انجام شد: {refund_gold} طلا و {len(refund_materials)} متریال برای '{structure_name}'")
+        else:
+            print(f"⚠️ آیتم '{structure_name}' در shop_items.json پیدا نشد.")
+
+    # ۳️⃣ ذخیره تغییرات در فایل استان
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(province_data, f, ensure_ascii=False, indent=2)
 
