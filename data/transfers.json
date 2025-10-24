@@ -12359,9 +12359,10 @@
       "items": {
         "طلا": 4200
       },
-      "status": "pending",
+      "status": "rejected",
       "requested_at": "2025-10-24T11:46:58.712305",
-      "delay_until": "2025-10-25T11:46:58.712308"
+      "delay_until": "2025-10-25T11:46:58.712308",
+      "rejected_at": "2025-10-24T15:17:14.165211"
     },
     {
       "id": "transfer_898145344_1761312567",
@@ -12391,9 +12392,10 @@
       "items": {
         "طلا": 4200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-24T14:54:20.095905",
-      "delay_until": "2025-10-25T14:54:20.095909"
+      "delay_until": "2025-10-25T14:54:20.095909",
+      "approved_at": "2025-10-24T15:17:12.049738"
     },
     {
       "id": "transfer_898145344_1761318511",
@@ -12410,6 +12412,22 @@
       "status": "pending",
       "requested_at": "2025-10-24T15:08:31.320387",
       "delay_until": "2025-10-25T15:08:31.320390"
+    },
+    {
+      "id": "transfer_7096919075_1761319112",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 2800
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T15:18:32.758118",
+      "delay_until": "2025-10-25T15:18:32.758122"
     }
   ]
 }
