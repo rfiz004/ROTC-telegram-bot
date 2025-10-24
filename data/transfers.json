@@ -12378,6 +12378,22 @@
       "status": "pending",
       "requested_at": "2025-10-24T13:29:27.890720",
       "delay_until": "2025-10-25T13:29:27.890726"
+    },
+    {
+      "id": "transfer_1329048693_1761317660",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 4200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T14:54:20.095905",
+      "delay_until": "2025-10-25T14:54:20.095909"
     }
   ]
 }
