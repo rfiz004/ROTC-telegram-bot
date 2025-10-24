@@ -785,6 +785,30 @@
                         "status": "Rejected"
                     }
                 ]
+            },
+            "misc": {
+                "جوخه قاتلان": [
+                    {
+                        "id": "جوخه قاتلان_1",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "جوخه قاتلان_2",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "جوخه قاتلان_3",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "جوخه قاتلان_4",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "جوخه قاتلان_5",
+                        "status": "Pending"
+                    }
+                ]
             }
         },
         "Guardian-of-Sharia": {
