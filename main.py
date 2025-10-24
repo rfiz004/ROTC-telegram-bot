@@ -165,7 +165,7 @@ from admin_province_handler import (
     handle_new_shop_image, show_weekly_processing_menu,
     preview_weekly_processing, run_weekly_processing,
     admin_show_economy_overview, handle_province_edit, admin_view_shop_items,
-    run_food_processing, back_to_admin_menu, admin_lock_shop, toggle_block_country, handle_admin_search_shop
+    run_food_processing, back_to_admin_menu, admin_lock_shop, toggle_block_country, handle_admin_search_shop, handle_admin_shop_search_input
 )
 
 from country_handler import (
@@ -297,7 +297,6 @@ async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
                 # Handle admin shop search input
         elif flow_type == "admin_shop_search" and step == "awaiting_item_id":
-            from admin_shop_handler import handle_admin_shop_search_input
             if await handle_admin_shop_search_input(update, context):
                 return
         
