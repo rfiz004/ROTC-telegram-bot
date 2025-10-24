@@ -1483,5 +1483,30 @@
     "count": 1,
     "id": "70",
     "created_at": "2025-10-24T21:14:46.584658"
+  },
+  {
+    "name": "پایگاه مرزی",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "ایستگاه هایی شبیه به اردوگاه های نظامی اما مجهز تر و کوچک تر از اردوگاه ها که بین مرزهای داخلی و خارجی هر منطقه ساخته میشن و عبور و مرور مردم رو کنترل می‌کنند, تعداد: 1",
+    "price": 5000,
+    "materials": {
+      "چرم": 100,
+      "چوب": 500,
+      "پنبه": 50,
+      "فولاد": 50,
+      "پارچه": 20
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALU3mj8ARei9v7hFfHlcT_MZkGePZz2AAKSDGsb_KHZU7jFl9BmX316AQADAgADeAADNgQ",
+    "count": 1,
+    "id": "71",
+    "created_at": "2025-10-24T22:46:11.020518"
   }
 ]
