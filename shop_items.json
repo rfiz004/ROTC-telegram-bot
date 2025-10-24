@@ -1448,7 +1448,9 @@
     ],
     "description": "ماشین جنگی ساخته شده از چوب و فولاد به همراه چرخ های بزرگ و خورد کننده با تیغه هایی بسیار تیز بر روی آنها که به راحتی بدن سربازهارو دو نیم میکنه\nهمچنین تیربار خودکاری بر روی آن قرار گرفته شده که می‌توان به شکل پشت سر هم با آن شلیک کرد, تعداد: 1",
     "price": 0,
-    "materials": {},
+    "materials": {
+      "جواهر": 50
+    },
     "owner": "-",
     "hashtags": [
       "#Structure",
@@ -1457,6 +1459,7 @@
     "photo_file_id": "AgACAgQAAxkBAALQNmj6gPTVRMqt7jNvg2INTSSFsGCrAAKQC2sbVrTJU60XY-giEi9NAQADAgADeAADNgQ",
     "count": 1,
     "id": "69",
-    "created_at": "2025-10-23T19:28:19.119883"
+    "created_at": "2025-10-23T19:28:19.119883",
+    "updated_at": "2025-10-24T19:45:39.113833"
   }
 ]
