@@ -12292,6 +12292,40 @@
       "status": "pending",
       "requested_at": "2025-10-24T11:06:28.293963",
       "delay_until": "2025-10-25T11:06:28.293967"
+    },
+    {
+      "id": "transfer_1208514381_1761304693",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Alestria",
+      "target_province": "Talmarin",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T11:18:13.504942",
+      "delay_until": "2025-10-25T11:18:13.504946",
+      "approved_at": "2025-10-24T11:19:04.481962"
+    },
+    {
+      "id": "transfer_1208514381_1761304724",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Alestria",
+      "target_province": "Lilura",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 750
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T11:18:44.500791",
+      "delay_until": "2025-10-25T11:18:44.500795",
+      "approved_at": "2025-10-24T11:19:05.552305"
     }
   ]
 }
