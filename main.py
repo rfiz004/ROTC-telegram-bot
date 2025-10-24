@@ -295,7 +295,11 @@ async def handle_text_router(update: Update, context: ContextTypes.DEFAULT_TYPE)
             await handle_search_input(update, context)
             return
 
-
+                # Handle admin shop search input
+        elif flow_type == "admin_shop_search" and step == "awaiting_item_id":
+            from admin_shop_handler import handle_admin_shop_search_input
+            if await handle_admin_shop_search_input(update, context):
+                return
         
         # Default case
         else:
@@ -486,6 +490,7 @@ app.add_handler(CallbackQueryHandler(show_country_jobs, pattern="^manage_jobs_")
 app.add_handler(CallbackQueryHandler(handle_bio_approval, pattern="^(approve|reject)_bio_"))
 app.add_handler(CallbackQueryHandler(handle_skill_actions, pattern="^(add|remove)_skill$"))
 app.add_handler(CallbackQueryHandler(back_to_admin_menu, pattern="^back_to_admin_menu$"))
+app.add_handler(CallbackQueryHandler(handle_admin_search_shop, pattern="^admin_search_shop$"))
 app.add_handler(CallbackQueryHandler(run_food_processing, pattern="^run_food_processing$"))
 app.add_handler(CallbackQueryHandler(food_handle_callback, pattern="^(set_grain_priority|set_grain_consumption|preview_grain_effect|manage_food_menu)$"))
 app.add_handler(CallbackQueryHandler(handle_skill_type_selection, pattern="^skill_type_"))
