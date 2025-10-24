@@ -4,10 +4,10 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 51400,
+  "wealth": 56400,
   "population": 60000,
   "tax": 100,
-  "popularity": 65,
+  "popularity": 68,
   "total_army": 9001,
   "army": {
     "کماندار": 3200,
@@ -76,5 +76,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.550915"
+  "last_updated": "2025-10-24T09:54:04.047894"
 }
