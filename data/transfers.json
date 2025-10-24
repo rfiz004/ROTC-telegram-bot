@@ -11558,9 +11558,27 @@
       "items": {
         "ماهی": 300
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-24T08:29:20.391727",
-      "delay_until": "2025-10-25T08:29:20.391731"
+      "delay_until": "2025-10-25T08:29:20.391731",
+      "approved_at": "2025-10-24T08:32:29.436401"
+    },
+    {
+      "id": "transfer_7096919075_1761294672",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Lusmyr",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:31:12.918732",
+      "delay_until": "2025-10-25T08:31:12.918737",
+      "approved_at": "2025-10-24T08:32:30.381938"
     }
   ]
 }
