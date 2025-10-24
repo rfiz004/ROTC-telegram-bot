@@ -88,7 +88,9 @@ async def show_country_list(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = []
     for country in countries:
         uid = store_payload(context, {"action": "select_country", "country": country})
-        keyboard.append([InlineKeyboardButton(country, callback_data=f"country_{uid}")])
+        # بجای "country_{uid}" از "country_select_{uid}" استفاده کن
+        keyboard.append([InlineKeyboardButton(country, callback_data=f"country_select_{uid}")])
+
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     text = "🌍 یکی از کشورها را انتخاب کنید:"
