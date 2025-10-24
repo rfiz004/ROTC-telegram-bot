@@ -1461,5 +1461,27 @@
     "id": "69",
     "created_at": "2025-10-23T19:28:19.119883",
     "updated_at": "2025-10-24T19:45:39.113833"
+  },
+  {
+    "name": "اردوگاه جنگی",
+    "type": "Structure",
+    "countries": [
+      "All"
+    ],
+    "description": "اردوگاه های نظامی با چادرهای بزرگ و جهز مناسب استراحت نیروها نگهداری ابزارآلات جنگی به همراه چادری برای نگهداری غلات ارتش, تعداد: 1",
+    "price": 15000,
+    "materials": {
+      "چرم": 300,
+      "چوب": 200
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Structure",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALUzmj77Ar3pT_6c-oijLKt0EAoHSK2AAKWDGsbKhLYU-_Kv99ldGLdAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "70",
+    "created_at": "2025-10-24T21:14:46.584658"
   }
 ]
