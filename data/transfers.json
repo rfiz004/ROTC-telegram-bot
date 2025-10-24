@@ -11579,6 +11579,58 @@
       "requested_at": "2025-10-24T08:31:12.918732",
       "delay_until": "2025-10-25T08:31:12.918737",
       "approved_at": "2025-10-24T08:32:30.381938"
+    },
+    {
+      "id": "transfer_1771323853_1761294916",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Karavesh",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 2500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:35:16.863352",
+      "delay_until": "2025-10-25T08:35:16.863355",
+      "approved_at": "2025-10-24T08:35:18.185972"
+    },
+    {
+      "id": "transfer_7096919075_1761294970",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Aldemar",
+      "target_province": "Veldanridge",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:36:10.263558",
+      "delay_until": "2025-10-25T08:36:10.263562",
+      "approved_at": "2025-10-24T08:36:12.806805"
+    },
+    {
+      "id": "transfer_1771323853_1761295000",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Santos",
+      "target_province": "Karavesh",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 40,
+        "چوب": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T08:36:40.450412",
+      "delay_until": "2025-10-25T08:36:40.450415",
+      "approved_at": "2025-10-24T08:36:41.688232"
     }
   ]
 }
