@@ -11826,6 +11826,22 @@
       "requested_at": "2025-10-24T08:46:30.518931",
       "delay_until": "2025-10-25T08:46:30.518934",
       "approved_at": "2025-10-24T08:46:31.755515"
+    },
+    {
+      "id": "transfer_810047031_1761300667",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Fujinara",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T10:11:07.812733",
+      "delay_until": "2025-10-25T10:11:07.812738"
     }
   ]
 }
