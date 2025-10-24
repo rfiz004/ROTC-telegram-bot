@@ -11839,9 +11839,29 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-24T10:11:07.812733",
-      "delay_until": "2025-10-25T10:11:07.812738"
+      "delay_until": "2025-10-25T10:11:07.812738",
+      "approved_at": "2025-10-24T10:13:40.708033"
+    },
+    {
+      "id": "transfer_810047031_1761300857",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Fujinara",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T10:14:17.792090",
+      "delay_until": "2025-10-25T10:14:17.792095",
+      "approved_at": "2025-10-24T10:14:43.148025"
     }
   ]
 }
