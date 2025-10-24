@@ -12362,6 +12362,22 @@
       "status": "pending",
       "requested_at": "2025-10-24T11:46:58.712305",
       "delay_until": "2025-10-25T11:46:58.712308"
+    },
+    {
+      "id": "transfer_898145344_1761312567",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "جواهر": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T13:29:27.890720",
+      "delay_until": "2025-10-25T13:29:27.890726"
     }
   ]
 }
