@@ -758,20 +758,28 @@ async def process_transfer_request(update: Update, context: ContextTypes.DEFAULT
     user_id = update.effective_user.id
     user_data = context.user_data.get(user_id, {})
 
-    country = user_data["country"]
-    province = user_data["province"]
+    # 🧠 بررسی اینکه اطلاعات ضروری وجود دارند
+    country = user_data.get("country")
+    province = user_data.get("province")
+    transfer_target_country = user_data.get("transfer_target_country")
+    transfer_target_province = user_data.get("transfer_target_province")
+    transfer_type = user_data.get("transfer_type")
     transfer_items = user_data.get("transfer_items", {})
     category = user_data.get("transfer_category")
 
-    # Create transfer request
+    if not all([country, province, transfer_target_country, transfer_target_province, transfer_type, category, transfer_items]):
+        await query.answer("⚠️ داده‌های انتقال ناقص است. لطفاً از ابتدا مراحل را طی کنید.", show_alert=True)
+        return
+
+    # 📦 ساخت درخواست انتقال
     transfer_request = {
         "id": f"transfer_{user_id}_{int(datetime.utcnow().timestamp())}",
         "requester_id": user_id,
         "source_country": country,
         "source_province": province,
-        "target_country": user_data["transfer_target_country"],
-        "target_province": user_data["transfer_target_province"],
-        "transfer_type": user_data["transfer_type"],
+        "target_country": transfer_target_country,
+        "target_province": transfer_target_province,
+        "transfer_type": transfer_type,
         "category": category,
         "items": transfer_items,
         "status": "pending",
@@ -779,32 +787,31 @@ async def process_transfer_request(update: Update, context: ContextTypes.DEFAULT
         "delay_until": (datetime.utcnow() + timedelta(hours=24)).isoformat()
     }
 
-    # Save transfer request
+    # 💾 ذخیره در فایل انتقال‌های در انتظار
     transfers_data = load_pending_transfers()
-    transfers_data["transfers"].append(transfer_request)
+    transfers_data.setdefault("transfers", []).append(transfer_request)
     save_pending_transfers(transfers_data)
 
-    # Send to admins for approval
-    admin_text = f"🔄 درخواست انتقال جدید\n\n"
-    admin_text += f"درخواست‌کننده: {user_id}\n"
-    admin_text += f"مبدأ: {country} - {province}\n"
-    admin_text += f"مقصد: {user_data['transfer_target_country']} - {user_data['transfer_target_province']}\n"
-    admin_text += f"نوع: {'داخلی' if user_data['transfer_type'] == 'domestic' else 'بین‌المللی'}\n"
-    admin_text += f"دسته‌بندی: {category}\n\n"
-    admin_text += "آیتم‌ها:\n"
-    for item, amount in transfer_items.items():
-        admin_text += f"• {item}: {amount:,}\n"
-
-    admin_keyboard = [
-        [InlineKeyboardButton("✅ تایید", callback_data=f"approve_transfer_{transfer_request['id']}"),
-         InlineKeyboardButton("❌ رد", callback_data=f"reject_transfer_{transfer_request['id']}")]
-    ]
-
-    # Send to admins
+    # 👑 ارسال به ادمین‌ها برای تایید
     from config import COUNTRY_ADMIN_ID
-    target_country = user_data['transfer_target_country']
-
+    target_country = transfer_target_country
     admins = COUNTRY_ADMIN_ID.get(target_country, [])
+
+    admin_text = (
+        f"🔄 درخواست انتقال جدید\n\n"
+        f"👤 درخواست‌کننده: {user_id}\n"
+        f"🌍 مبدأ: {country} - {province}\n"
+        f"🎯 مقصد: {transfer_target_country} - {transfer_target_province}\n"
+        f"🚚 نوع: {'داخلی' if transfer_type == 'domestic' else 'بین‌المللی'}\n"
+        f"🏷️ دسته‌بندی: {category}\n\n"
+        f"آیتم‌ها:\n" +
+        "".join([f"• {item}: {amount:,}\n" for item, amount in transfer_items.items()])
+    )
+
+    admin_keyboard = [[
+        InlineKeyboardButton("✅ تایید", callback_data=f"approve_transfer_{transfer_request['id']}"),
+        InlineKeyboardButton("❌ رد", callback_data=f"reject_transfer_{transfer_request['id']}")
+    ]]
 
     if not admins:
         logger.warning(f"No admins found for country {target_country}, transfer id: {transfer_request['id']}")
@@ -819,23 +826,27 @@ async def process_transfer_request(update: Update, context: ContextTypes.DEFAULT
             except Exception as e:
                 logger.error(f"Could not send message to admin {admin_id}: {e}")
 
-    # Confirm to user
-    text = f"✅ درخواست انتقال ثبت شد!\n\n"
-    text += f"مقصد: {user_data['transfer_target_country']} - {user_data['transfer_target_province']}\n"
-    text += f"دسته‌بندی: {category}\n\n"
-    text += "آیتم‌ها:\n"
-    for item, amount in transfer_items.items():
-        text += f"• {item}: {amount:,}\n"
-    text += f"\n⏳ انتقال پس از تایید ادمین اجرا خواهد شد."
+    # 📩 تأیید برای کاربر
+    text = (
+        f"✅ درخواست انتقال ثبت شد!\n\n"
+        f"🎯 مقصد: {transfer_target_country} - {transfer_target_province}\n"
+        f"🏷️ دسته‌بندی: {category}\n\n"
+        "آیتم‌ها:\n" +
+        "".join([f"• {item}: {amount:,}\n" for item, amount in transfer_items.items()]) +
+        "\n⏳ انتقال پس از تأیید ادمین اجرا خواهد شد."
+    )
 
     keyboard = [[InlineKeyboardButton("🏠 برگشت به منو", callback_data="country_overview")]]
-
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
 
-    # Clear transfer data
-    user_data.pop("transfer_target_country", None)
-    user_data.pop("transfer_target_province", None) 
-    user_data.pop("transfer_type", None)
-    user_data.pop("transfer_category", None)
-    user_data.pop("transfer_items", None)
-    user_data.pop("step", None)
+    # 🧹 پاکسازی داده‌های موقت کاربر
+    for key in [
+        "transfer_target_country",
+        "transfer_target_province",
+        "transfer_type",
+        "transfer_category",
+        "transfer_items",
+        "step",
+    ]:
+        user_data.pop(key, None)
+
