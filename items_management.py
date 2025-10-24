@@ -170,7 +170,7 @@ async def show_pending_items(update: Update, context: ContextTypes.DEFAULT_TYPE)
         keyboard.append([InlineKeyboardButton(f"{itm['name']} ({itm['section']})", callback_data=f"review_{rev_uid}")])
 
     # 🔙 دکمه بازگشت با payload استان
-    back_uid = store_payload(context, {"action": "back_to_provinces", "country": country})
+    back_uid = store_payload(context, {"action": "back_to_provinces", "country": country, "province": province})
     keyboard.append([InlineKeyboardButton("🔙 بازگشت", callback_data=f"back_{back_uid}")])
 
     await query.edit_message_text(f"🔎 آیتم‌های در انتظار تأیید ({province}):", reply_markup=InlineKeyboardMarkup(keyboard))
