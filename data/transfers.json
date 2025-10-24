@@ -12431,6 +12431,22 @@
       "requested_at": "2025-10-24T15:18:32.758118",
       "delay_until": "2025-10-25T15:18:32.758122",
       "approved_at": "2025-10-24T15:28:06.171758"
+    },
+    {
+      "id": "transfer_5815439174_1761331491",
+      "requester_id": 5815439174,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 2800
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T18:44:51.663221",
+      "delay_until": "2025-10-25T18:44:51.663225"
     }
   ]
 }
