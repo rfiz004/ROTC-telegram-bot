@@ -12516,6 +12516,39 @@
       "requested_at": "2025-10-24T20:48:07.993416",
       "delay_until": "2025-10-25T20:48:07.993420",
       "approved_at": "2025-10-24T20:48:13.467811"
+    },
+    {
+      "id": "transfer_5566736269_1761338961",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Narwendale",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T20:49:21.440070",
+      "delay_until": "2025-10-25T20:49:21.440074",
+      "approved_at": "2025-10-24T20:49:54.928623"
+    },
+    {
+      "id": "transfer_5566736269_1761339077",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 49000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T20:51:17.694604",
+      "delay_until": "2025-10-25T20:51:17.694609"
     }
   ]
 }
