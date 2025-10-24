@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 151800,
+  "wealth": 154600,
   "population": 60000,
   "tax": 100,
   "popularity": 70,
@@ -38,7 +38,7 @@
   "weapons": {},
   "misc": {},
   "economic_items": {
-    "جواهر": 200,
+    "جواهر": 150,
     "سنگ": 625,
     "شراب": 630,
     "شیشه": 910,
