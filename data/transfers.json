@@ -12135,6 +12135,57 @@
       "requested_at": "2025-10-24T10:52:26.567604",
       "delay_until": "2025-10-25T10:52:26.567608",
       "approved_at": "2025-10-24T10:52:37.648519"
+    },
+    {
+      "id": "transfer_1208514381_1761303269",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Orendal",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 1593,
+        "سنگ": 200,
+        "پنبه": 150
+      },
+      "status": "approved",
+      "requested_at": "2025-10-24T10:54:29.730953",
+      "delay_until": "2025-10-25T10:54:29.730957",
+      "approved_at": "2025-10-24T10:54:44.835858"
+    },
+    {
+      "id": "transfer_898145344_1761303287",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T10:54:47.256249",
+      "delay_until": "2025-10-25T10:54:47.256252"
+    },
+    {
+      "id": "transfer_1208514381_1761303296",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Orendal",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-24T10:54:56.259012",
+      "delay_until": "2025-10-25T10:54:56.259015"
     }
   ]
 }
