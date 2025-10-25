@@ -13245,6 +13245,22 @@
       "requested_at": "2025-10-25T17:48:00.707097",
       "delay_until": "2025-10-26T17:48:00.707103",
       "approved_at": "2025-10-25T18:01:26.584564"
+    },
+    {
+      "id": "transfer_6723163985_1761419588",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Imperial",
+      "target_province": "Altismar",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T19:13:08.875150",
+      "delay_until": "2025-10-26T19:13:08.875154"
     }
   ]
 }
