@@ -1508,5 +1508,26 @@
     "count": 1,
     "id": "71",
     "created_at": "2025-10-24T22:46:11.020518"
+  },
+  {
+    "name": "زره فولاد بالریون",
+    "type": "Weapons",
+    "countries": [
+      "All"
+    ],
+    "description": "زره های جنگی که در سرزمین های غربی ساخته می‌شوند\nاین زره ها از فولاد افسانه ای بالریون که از فولاد معمولی مقاوم تر و سبک تر هستن ساخته میشه\nاین نوع فولاد به قدری کمیابه که حتی در سرزمینی که این فولاد کشف و ساخته شده هم نوعی فلز کمیاب محسوب میشه, تعداد: 10",
+    "price": 0,
+    "materials": {
+      "جواهر": 50
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Weapons",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALXw2j9RCMPFceKv4JpI_r0Wzh42C1nAALbDGsbnfzoUyH-0mq34xvMAQADAgADeQADNgQ",
+    "count": 10,
+    "id": "72",
+    "created_at": "2025-10-25T21:43:46.158568"
   }
 ]
