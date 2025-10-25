@@ -12836,6 +12836,22 @@
       "status": "pending",
       "requested_at": "2025-10-25T11:11:51.053231",
       "delay_until": "2025-10-26T11:11:51.053236"
+    },
+    {
+      "id": "transfer_6723163985_1761392082",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Imperial",
+      "target_province": "Altismar",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 20000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T11:34:42.522985",
+      "delay_until": "2025-10-26T11:34:42.522990"
     }
   ]
 }
