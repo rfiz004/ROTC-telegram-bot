@@ -3238,7 +3238,32 @@
                         "weekly_output": 100
                     }
                 ],
-                "کارخونه فولاد": [],
+                "کارخونه فولاد": [
+                    {
+                        "id": "کارخونه فولاد_1",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_2",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    }
+                ],
                 "کارخونه شراب": [
                     {
                         "id": "کارخونه شراب_1",
