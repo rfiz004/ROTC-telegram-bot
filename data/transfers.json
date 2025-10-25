@@ -13020,9 +13020,10 @@
       "items": {
         "جمعیت": 23
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:12:40.378001",
-      "delay_until": "2025-10-26T12:12:40.378004"
+      "delay_until": "2025-10-26T12:12:40.378004",
+      "approved_at": "2025-10-25T12:23:13.844756"
     },
     {
       "id": "transfer_6723163985_1761394715",
@@ -13036,9 +13037,10 @@
       "items": {
         "طلا": 13000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:18:35.730828",
-      "delay_until": "2025-10-26T12:18:35.730831"
+      "delay_until": "2025-10-26T12:18:35.730831",
+      "approved_at": "2025-10-25T12:23:14.224246"
     },
     {
       "id": "transfer_6723163985_1761394748",
@@ -13052,9 +13054,10 @@
       "items": {
         "مرغ": 120
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:19:08.693526",
-      "delay_until": "2025-10-26T12:19:08.693531"
+      "delay_until": "2025-10-26T12:19:08.693531",
+      "approved_at": "2025-10-25T12:23:16.905740"
     },
     {
       "id": "transfer_6723163985_1761394816",
@@ -13068,9 +13071,10 @@
       "items": {
         "طلا": 6000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:20:16.329438",
-      "delay_until": "2025-10-26T12:20:16.329441"
+      "delay_until": "2025-10-26T12:20:16.329441",
+      "approved_at": "2025-10-25T12:23:17.670105"
     },
     {
       "id": "transfer_6723163985_1761394844",
@@ -13084,9 +13088,27 @@
       "items": {
         "مرغ": 150
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:20:44.810883",
-      "delay_until": "2025-10-26T12:20:44.810887"
+      "delay_until": "2025-10-26T12:20:44.810887",
+      "approved_at": "2025-10-25T12:23:20.379712"
+    },
+    {
+      "id": "transfer_6723163985_1761394943",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Altismar",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "مرغ": 150
+      },
+      "status": "approved",
+      "requested_at": "2025-10-25T12:22:23.197188",
+      "delay_until": "2025-10-26T12:22:23.197192",
+      "approved_at": "2025-10-25T12:23:22.756390"
     }
   ]
 }
