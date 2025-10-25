@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Sewandale",
   "mines": {},
-  "wealth": 6000,
+  "wealth": 0,
   "population": 5000,
   "tax": 30,
   "popularity": 75,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 2,
+      "count": 4,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.607333"
+  "last_updated": "2025-10-25T19:54:14.851998"
 }
