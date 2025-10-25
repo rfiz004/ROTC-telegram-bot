@@ -12969,9 +12969,10 @@
       "items": {
         "جمعیت": 14999
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:06:34.851911",
-      "delay_until": "2025-10-26T12:06:34.851914"
+      "delay_until": "2025-10-26T12:06:34.851914",
+      "approved_at": "2025-10-25T12:11:12.425789"
     },
     {
       "id": "transfer_6723163985_1761394097",
@@ -12985,9 +12986,27 @@
       "items": {
         "جمعیت": 4997
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:08:17.402286",
-      "delay_until": "2025-10-26T12:08:17.402290"
+      "delay_until": "2025-10-26T12:08:17.402290",
+      "approved_at": "2025-10-25T12:11:13.222303"
+    },
+    {
+      "id": "transfer_6723163985_1761394136",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Imperial",
+      "target_province": "Altismar",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 1980
+      },
+      "status": "approved",
+      "requested_at": "2025-10-25T12:08:56.802235",
+      "delay_until": "2025-10-26T12:08:56.802240",
+      "approved_at": "2025-10-25T12:11:14.800929"
     }
   ]
 }
