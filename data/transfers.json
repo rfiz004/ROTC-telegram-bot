@@ -12582,6 +12582,39 @@
       "status": "pending",
       "requested_at": "2025-10-25T01:15:35.400003",
       "delay_until": "2025-10-26T01:15:35.400007"
+    },
+    {
+      "id": "transfer_7096919075_1761364046",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 500,
+        "فولاد": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T03:47:26.894910",
+      "delay_until": "2025-10-26T03:47:26.894913"
+    },
+    {
+      "id": "transfer_7096919075_1761364085",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 16000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T03:48:05.189050",
+      "delay_until": "2025-10-26T03:48:05.189053"
     }
   ]
 }
