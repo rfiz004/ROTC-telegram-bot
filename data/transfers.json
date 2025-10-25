@@ -12668,9 +12668,10 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T07:11:49.142107",
-      "delay_until": "2025-10-26T07:11:49.142110"
+      "delay_until": "2025-10-26T07:11:49.142110",
+      "approved_at": "2025-10-25T07:15:54.471464"
     },
     {
       "id": "transfer_5566736269_1761376401",
@@ -12687,9 +12688,10 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T07:13:21.988935",
-      "delay_until": "2025-10-26T07:13:21.988940"
+      "delay_until": "2025-10-26T07:13:21.988940",
+      "approved_at": "2025-10-25T07:15:52.794519"
     },
     {
       "id": "transfer_5566736269_1761376446",
@@ -12706,9 +12708,30 @@
         "پنبه": 200,
         "پارچه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T07:14:06.361788",
-      "delay_until": "2025-10-26T07:14:06.361793"
+      "delay_until": "2025-10-26T07:14:06.361793",
+      "approved_at": "2025-10-25T07:15:50.189684"
+    },
+    {
+      "id": "transfer_5566736269_1761376493",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 400,
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-25T07:14:53.177375",
+      "delay_until": "2025-10-26T07:14:53.177379",
+      "approved_at": "2025-10-25T07:15:49.096209"
     }
   ]
 }
