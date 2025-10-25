@@ -12956,6 +12956,38 @@
       "requested_at": "2025-10-25T12:02:38.725524",
       "delay_until": "2025-10-26T12:02:38.725528",
       "approved_at": "2025-10-25T12:02:44.629368"
+    },
+    {
+      "id": "transfer_6723163985_1761393994",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Altismar",
+      "target_country": "Imperial",
+      "target_province": "Ruler-of-the-Republic",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 14999
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T12:06:34.851911",
+      "delay_until": "2025-10-26T12:06:34.851914"
+    },
+    {
+      "id": "transfer_6723163985_1761394097",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Imperial",
+      "target_province": "Sewandale",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 4997
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T12:08:17.402286",
+      "delay_until": "2025-10-26T12:08:17.402290"
     }
   ]
 }
