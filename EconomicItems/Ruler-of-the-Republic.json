@@ -1,7 +1,9 @@
 {
-  "grain_priority": [],
+  "grain_priority": [
+    "مرغ"
+  ],
   "grains": {},
   "unfed_population": 0,
-  "grain_consumption": 0,
-  "last_updated": "2025-10-25T08:12:27.693416"
+  "grain_consumption": 450,
+  "last_updated": "2025-10-25T12:54:57.863177"
 }
