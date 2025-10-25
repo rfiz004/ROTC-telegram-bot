@@ -3609,6 +3609,24 @@
                         "id": "عمارت_1",
                         "status": "Approved"
                     }
+                ],
+                "دیوار چوبی": [
+                    {
+                        "id": "دیوار چوبی_1",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "دیوار چوبی_2",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "دیوار چوبی_3",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "دیوار چوبی_4",
+                        "status": "Pending"
+                    }
                 ]
             },
             "structures": {
