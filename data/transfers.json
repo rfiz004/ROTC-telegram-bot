@@ -12918,9 +12918,10 @@
       "items": {
         "جمعیت": 6000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:00:30.840584",
-      "delay_until": "2025-10-26T12:00:30.840588"
+      "delay_until": "2025-10-26T12:00:30.840588",
+      "approved_at": "2025-10-25T12:02:43.000798"
     },
     {
       "id": "transfer_6723163985_1761393651",
@@ -12934,9 +12935,27 @@
       "items": {
         "جمعیت": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-25T12:00:51.245913",
-      "delay_until": "2025-10-26T12:00:51.245916"
+      "delay_until": "2025-10-26T12:00:51.245916",
+      "approved_at": "2025-10-25T12:02:43.981863"
+    },
+    {
+      "id": "transfer_6723163985_1761393758",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 4997
+      },
+      "status": "approved",
+      "requested_at": "2025-10-25T12:02:38.725524",
+      "delay_until": "2025-10-26T12:02:38.725528",
+      "approved_at": "2025-10-25T12:02:44.629368"
     }
   ]
 }
