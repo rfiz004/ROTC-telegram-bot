@@ -13007,6 +13007,22 @@
       "requested_at": "2025-10-25T12:08:56.802235",
       "delay_until": "2025-10-26T12:08:56.802240",
       "approved_at": "2025-10-25T12:11:14.800929"
+    },
+    {
+      "id": "transfer_6723163985_1761394360",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Imperial",
+      "target_province": "Altismar",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 23
+      },
+      "status": "pending",
+      "requested_at": "2025-10-25T12:12:40.378001",
+      "delay_until": "2025-10-26T12:12:40.378004"
     }
   ]
 }
