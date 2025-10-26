@@ -13309,9 +13309,27 @@
       "items": {
         "پارچه": 500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-26T19:16:29.864220",
-      "delay_until": "2025-10-27T19:16:29.864226"
+      "delay_until": "2025-10-27T19:16:29.864226",
+      "approved_at": "2025-10-26T19:19:08.531374"
+    },
+    {
+      "id": "transfer_1329048693_1761506375",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Garodhen",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 400
+      },
+      "status": "approved",
+      "requested_at": "2025-10-26T19:19:35.537147",
+      "delay_until": "2025-10-27T19:19:35.537151",
+      "approved_at": "2025-10-26T19:19:43.973154"
     }
   ]
 }
