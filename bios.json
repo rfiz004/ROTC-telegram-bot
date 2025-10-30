@@ -30,7 +30,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "step": "pending",
+=======
+      "step": "asking_photo",
+>>>>>>> Stashed changes
 =======
       "step": "asking_photo",
 >>>>>>> Stashed changes
@@ -104,8 +108,12 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "unique_id": "7087526350",
       "saved_at": "2025-10-30T21:56:14.222062"
+=======
+      "unique_id": "7087526350"
+>>>>>>> Stashed changes
 =======
       "unique_id": "7087526350"
 >>>>>>> Stashed changes
