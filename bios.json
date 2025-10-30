@@ -16,6 +16,16 @@
       "expires_at": "2025-10-25T01:47:35.552792",
       "name": "رایدون",
       "nickname": "رایدون"
+    },
+    "7087526350": {
+      "country": "Azure",
+      "job": "مشاغل آزاد",
+      "step": "asking_age",
+      "flow_type": "bio",
+      "saved_at": "2025-10-30T21:45:41.604866",
+      "expires_at": "2025-10-30T22:15:21.233290",
+      "name": "lunzo/لونزو",
+      "nickname": "لقب خاصی نداره"
     }
   },
   "used_hashtags": [
