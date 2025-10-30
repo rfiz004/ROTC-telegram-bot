@@ -18,7 +18,11 @@
       "nickname": "رایدون"
     },
     "7087526350": {
+<<<<<<< Updated upstream
       "step": "pending",
+=======
+      "step": "asking_photo",
+>>>>>>> Stashed changes
       "country": "Azure",
       "flow_type": "bio",
       "job": "مشاغل آزاد",
@@ -44,12 +48,17 @@
         "AgACAgQAAxkBAALY0WkD3rfT8dsXhs7H5rZc1i7BX7qsAAJLDGsblaghUOgqJiADVhQzAQADAgADeQADNgQ"
       ],
       "level": 1,
+<<<<<<< Updated upstream
       "unique_id": "7087526350",
       "saved_at": "2025-10-30T21:56:14.222062"
+=======
+      "unique_id": "7087526350"
+>>>>>>> Stashed changes
     }
   },
   "used_hashtags": [
     "#elena",
-    "#scott"
+    "#scott",
+    "#lulu"
   ]
 }
