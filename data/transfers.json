@@ -13365,6 +13365,22 @@
       "status": "pending",
       "requested_at": "2025-10-26T20:04:37.280437",
       "delay_until": "2025-10-27T20:04:37.280442"
+    },
+    {
+      "id": "transfer_1766859127_1761861824",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Ruler-of-the-Republic",
+      "target_country": "Imperial",
+      "target_province": "Altismar",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-30T22:03:44.704129",
+      "delay_until": "2025-10-31T22:03:44.704132"
     }
   ]
 }
