@@ -15577,9 +15577,92 @@
       "items": {
         "سنگ": 880
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T22:06:33.366582",
-      "delay_until": "2025-11-01T22:06:33.366586"
+      "delay_until": "2025-11-01T22:06:33.366586",
+      "approved_at": "2025-10-31T22:08:08.330333"
+    },
+    {
+      "id": "transfer_5564554013_1761948416",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Velithkara",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 7500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T22:06:56.199018",
+      "delay_until": "2025-11-01T22:06:56.199021",
+      "approved_at": "2025-10-31T22:08:09.238401"
+    },
+    {
+      "id": "transfer_5564554013_1761948458",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "DalNomara",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 3000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T22:07:38.664549",
+      "delay_until": "2025-11-01T22:07:38.664554",
+      "approved_at": "2025-10-31T22:08:11.344100"
+    },
+    {
+      "id": "transfer_5564554013_1761948497",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Silverain Coast",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 3000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T22:08:17.702832",
+      "delay_until": "2025-11-01T22:08:17.702835"
+    },
+    {
+      "id": "transfer_5564554013_1761948540",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 875
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T22:09:00.145509",
+      "delay_until": "2025-11-01T22:09:00.145513"
+    },
+    {
+      "id": "transfer_5564554013_1761948583",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Arevanmyr",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 4500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T22:09:43.012622",
+      "delay_until": "2025-11-01T22:09:43.012625"
     }
   ]
 }

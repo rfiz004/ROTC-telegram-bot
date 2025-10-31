@@ -2,7 +2,7 @@
   "country": "Azure",
   "province": "Velithkara",
   "mines": {},
-  "wealth": 7500,
+  "wealth": 0,
   "population": 18000,
   "tax": 100,
   "popularity": 63,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "جواهر": 0,
-    "سنگ": 880,
+    "سنگ": 0,
     "شراب": 550,
     "شیشه": 0,
     "فولاد": 0,
