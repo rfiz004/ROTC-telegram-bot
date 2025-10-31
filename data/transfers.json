@@ -13399,6 +13399,23 @@
       "requested_at": "2025-10-30T22:10:29.327667",
       "delay_until": "2025-10-31T22:10:29.327672",
       "approved_at": "2025-10-30T22:11:36.126583"
+    },
+    {
+      "id": "transfer_1329048693_1761897348",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Ironfell",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 20000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T07:55:48.317208",
+      "delay_until": "2025-11-01T07:55:48.317213",
+      "approved_at": "2025-10-31T07:55:56.292723"
     }
   ]
 }
