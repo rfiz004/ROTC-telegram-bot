@@ -39,18 +39,13 @@
       "product": "ماهی",
       "weekly_output": 100
     },
-    "کارخونه فولاد": {
-      "count": 0,
-      "product": "فولاد",
-      "weekly_output": 50
-    },
     "کارخونه پارچه": {
       "count": 1,
       "product": "پارچه",
-      "weekly_output": 50
+      "weekly_output": 20
     },
     "کارخونه شیشه": {
-      "count": 0,
+      "count": 8,
       "product": "شیشه",
       "weekly_output": 50
     }
@@ -74,5 +69,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.531596"
+  "last_updated": "2025-10-31T06:30:51.170417"
 }
