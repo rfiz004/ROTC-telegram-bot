@@ -13942,9 +13942,10 @@
         "پارچه": 100,
         "چوب": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:35:52.760250",
-      "delay_until": "2025-11-01T08:35:52.760253"
+      "delay_until": "2025-11-01T08:35:52.760253",
+      "approved_at": "2025-10-31T08:38:23.934854"
     },
     {
       "id": "transfer_898145344_1761899767",
@@ -13958,9 +13959,10 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:36:07.095645",
-      "delay_until": "2025-11-01T08:36:07.095650"
+      "delay_until": "2025-11-01T08:36:07.095650",
+      "approved_at": "2025-10-31T08:38:26.781839"
     },
     {
       "id": "transfer_898145344_1761899830",
@@ -13975,9 +13977,78 @@
         "فولاد": 200,
         "پارچه": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:37:10.955557",
-      "delay_until": "2025-11-01T08:37:10.955560"
+      "delay_until": "2025-11-01T08:37:10.955560",
+      "approved_at": "2025-10-31T08:39:06.435661"
+    },
+    {
+      "id": "transfer_1208514381_1761899877",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:37:57.120613",
+      "delay_until": "2025-11-01T08:37:57.120617",
+      "approved_at": "2025-10-31T08:38:48.453451"
+    },
+    {
+      "id": "transfer_898145344_1761899897",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "کاتافراکت مخصوص هیکادا": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:38:17.332157",
+      "delay_until": "2025-11-01T08:38:17.332162",
+      "approved_at": "2025-10-31T08:39:08.583726"
+    },
+    {
+      "id": "transfer_7096919075_1761899922",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Veldanridge",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 40000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:38:42.824752",
+      "delay_until": "2025-11-01T08:38:42.824755",
+      "approved_at": "2025-10-31T08:38:46.063368"
+    },
+    {
+      "id": "transfer_898145344_1761900003",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 388
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:40:03.499722",
+      "delay_until": "2025-11-01T08:40:03.499726",
+      "approved_at": "2025-10-31T08:40:11.030074"
     }
   ]
 }
