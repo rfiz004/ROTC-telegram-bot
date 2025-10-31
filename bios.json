@@ -3,12 +3,24 @@
     "8039043365": {
       "country": "Northwood",
       "job": "ملکه",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-10-31T22:25:08.095621",
+      "saved_at": "2025-10-31T22:31:39.125437",
       "expires_at": "2025-10-31T22:50:22.145066",
       "name": "لونا",
-      "nickname": "..."
+      "nickname": "...",
+      "age": "45",
+      "skills": [
+        "تیراندازی با کمان",
+        "مدیریت امور اقتصادی",
+        "سوارکاری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "تیراندازی با کمان",
+      "skill2": "مدیریت امور اقتصادی",
+      "skill3": "سوارکاری",
+      "appearance": "پوستی روشن،موهایی به رنگ برف،چشمان آبی"
     }
   },
   "used_hashtags": [
