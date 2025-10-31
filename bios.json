@@ -3,9 +3,12 @@
     "8039043365": {
       "country": "Northwood",
       "job": "ملکه",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-10-31T22:20:22.144750"
+      "saved_at": "2025-10-31T22:25:08.095621",
+      "expires_at": "2025-10-31T22:50:22.145066",
+      "name": "لونا",
+      "nickname": "..."
     }
   },
   "used_hashtags": [
