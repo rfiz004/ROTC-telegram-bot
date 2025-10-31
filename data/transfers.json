@@ -14925,6 +14925,24 @@
       "requested_at": "2025-10-31T11:10:59.576802",
       "delay_until": "2025-11-01T11:10:59.576805",
       "approved_at": "2025-10-31T11:15:46.455546"
+    },
+    {
+      "id": "transfer_1208514381_1761909744",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 4000,
+        "پنبه": 5070
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T11:22:24.961468",
+      "delay_until": "2025-11-01T11:22:24.961473",
+      "approved_at": "2025-10-31T11:22:47.571868"
     }
   ]
 }
