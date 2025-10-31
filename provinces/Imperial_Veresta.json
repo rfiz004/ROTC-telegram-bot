@@ -2,7 +2,7 @@
   "country": "Imperial",
   "province": "Veresta",
   "mines": {},
-  "wealth": 22000,
+  "wealth": 12000,
   "population": 24000,
   "tax": 10,
   "popularity": 74,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-31T07:32:59.012909"
+  "last_updated": "2025-10-31T08:34:15.447536"
 }

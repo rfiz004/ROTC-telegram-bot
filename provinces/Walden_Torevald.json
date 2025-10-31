@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Torevald",
   "mines": {},
-  "wealth": 10000,
+  "wealth": 8500,
   "population": 24000,
   "tax": 100,
   "popularity": 61,
@@ -55,5 +55,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-10-31T07:32:58.806389"
+  "last_updated": "2025-10-31T08:32:39.353304"
 }
