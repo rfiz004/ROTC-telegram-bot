@@ -13463,9 +13463,10 @@
       "items": {
         "طلا": 12000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:17:25.557944",
-      "delay_until": "2025-11-01T08:17:25.557949"
+      "delay_until": "2025-11-01T08:17:25.557949",
+      "approved_at": "2025-10-31T08:29:05.628461"
     },
     {
       "id": "transfer_1208514381_1761898686",
@@ -13480,9 +13481,10 @@
         "سنگ": 150,
         "گوشت": 500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:18:06.328783",
-      "delay_until": "2025-11-01T08:18:06.328788"
+      "delay_until": "2025-11-01T08:18:06.328788",
+      "approved_at": "2025-10-31T08:29:07.243537"
     },
     {
       "id": "transfer_1208514381_1761898816",
@@ -13496,9 +13498,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:20:16.431761",
-      "delay_until": "2025-11-01T08:20:16.431765"
+      "delay_until": "2025-11-01T08:20:16.431765",
+      "approved_at": "2025-10-31T08:29:07.703916"
     },
     {
       "id": "transfer_1208514381_1761898857",
@@ -13515,9 +13518,10 @@
         "گوشت": 400,
         "میوه": 265
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:20:57.781304",
-      "delay_until": "2025-11-01T08:20:57.781309"
+      "delay_until": "2025-11-01T08:20:57.781309",
+      "approved_at": "2025-10-31T08:29:09.050367"
     },
     {
       "id": "transfer_1208514381_1761899020",
@@ -13531,9 +13535,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:23:40.406433",
-      "delay_until": "2025-11-01T08:23:40.406437"
+      "delay_until": "2025-11-01T08:23:40.406437",
+      "approved_at": "2025-10-31T08:29:10.335158"
     },
     {
       "id": "transfer_1771323853_1761899125",
@@ -13583,9 +13588,10 @@
         "سنگ": 200,
         "پنبه": 20
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:26:07.905353",
-      "delay_until": "2025-11-01T08:26:07.905356"
+      "delay_until": "2025-11-01T08:26:07.905356",
+      "approved_at": "2025-10-31T08:29:11.386788"
     },
     {
       "id": "transfer_1771323853_1761899173",
@@ -13635,9 +13641,10 @@
         "پارچه": 100,
         "چوب": 250
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:27:41.082825",
-      "delay_until": "2025-11-01T08:27:41.082829"
+      "delay_until": "2025-11-01T08:27:41.082829",
+      "approved_at": "2025-10-31T08:29:13.112160"
     },
     {
       "id": "transfer_898145344_1761899278",
@@ -13651,9 +13658,10 @@
       "items": {
         "طلا": 3000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:27:58.835378",
-      "delay_until": "2025-11-01T08:27:58.835382"
+      "delay_until": "2025-11-01T08:27:58.835382",
+      "approved_at": "2025-10-31T08:29:15.262772"
     },
     {
       "id": "transfer_1208514381_1761899284",
@@ -13667,9 +13675,152 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:28:04.538876",
-      "delay_until": "2025-11-01T08:28:04.538880"
+      "delay_until": "2025-11-01T08:28:04.538880",
+      "approved_at": "2025-10-31T08:29:16.889216"
+    },
+    {
+      "id": "transfer_1771323853_1761899305",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 20000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:28:25.744221",
+      "delay_until": "2025-11-01T08:28:25.744225",
+      "approved_at": "2025-10-31T08:28:27.154803"
+    },
+    {
+      "id": "transfer_1208514381_1761899310",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Orendal",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 400,
+        "سنگ": 200,
+        "پنبه": 60
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:28:30.908076",
+      "delay_until": "2025-11-01T08:28:30.908080",
+      "approved_at": "2025-10-31T08:29:20.243897"
+    },
+    {
+      "id": "transfer_1771323853_1761899329",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Grand-Duke",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 24000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:28:49.236682",
+      "delay_until": "2025-11-01T08:28:49.236687",
+      "approved_at": "2025-10-31T08:28:50.424191"
+    },
+    {
+      "id": "transfer_810047031_1761899336",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Fujinara",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:28:56.619050",
+      "delay_until": "2025-11-01T08:28:56.619054",
+      "approved_at": "2025-10-31T08:29:21.279281"
+    },
+    {
+      "id": "transfer_810047031_1761899362",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Fujinara",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:29:22.970677",
+      "delay_until": "2025-11-01T08:29:22.970680",
+      "approved_at": "2025-10-31T08:29:27.803818"
+    },
+    {
+      "id": "transfer_898145344_1761899411",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:30:11.961447",
+      "delay_until": "2025-11-01T08:30:11.961450",
+      "approved_at": "2025-10-31T08:31:01.525637"
+    },
+    {
+      "id": "transfer_898145344_1761899428",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:30:28.066278",
+      "delay_until": "2025-11-01T08:30:28.066281",
+      "approved_at": "2025-10-31T08:31:03.729631"
+    },
+    {
+      "id": "transfer_1208514381_1761899442",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 3000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:30:42.910463",
+      "delay_until": "2025-11-01T08:30:42.910468",
+      "approved_at": "2025-10-31T08:31:10.404843"
     }
   ]
 }
