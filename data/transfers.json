@@ -13416,6 +13416,22 @@
       "requested_at": "2025-10-31T07:55:48.317208",
       "delay_until": "2025-11-01T07:55:48.317213",
       "approved_at": "2025-10-31T07:55:56.292723"
+    },
+    {
+      "id": "transfer_1329048693_1761897533",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Wynsearn",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T07:58:53.863117",
+      "delay_until": "2025-11-01T07:58:53.863120"
     }
   ]
 }
