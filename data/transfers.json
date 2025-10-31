@@ -14943,6 +14943,23 @@
       "requested_at": "2025-10-31T11:22:24.961468",
       "delay_until": "2025-11-01T11:22:24.961473",
       "approved_at": "2025-10-31T11:22:47.571868"
+    },
+    {
+      "id": "transfer_1208514381_1761909839",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "کشتی کوچک": 2
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T11:23:59.382194",
+      "delay_until": "2025-11-01T11:23:59.382197",
+      "approved_at": "2025-10-31T11:24:44.896041"
     }
   ]
 }
