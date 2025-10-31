@@ -14564,9 +14564,10 @@
         "سنگ": 200,
         "پنبه": 60
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T09:32:30.820040",
-      "delay_until": "2025-11-01T09:32:30.820045"
+      "delay_until": "2025-11-01T09:32:30.820045",
+      "approved_at": "2025-10-31T09:35:52.206147"
     },
     {
       "id": "transfer_1208514381_1761903173",
@@ -14580,9 +14581,27 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T09:32:53.231816",
-      "delay_until": "2025-11-01T09:32:53.231820"
+      "delay_until": "2025-11-01T09:32:53.231820",
+      "approved_at": "2025-10-31T09:35:54.729775"
+    },
+    {
+      "id": "transfer_1208514381_1761903190",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T09:33:10.219052",
+      "delay_until": "2025-11-01T09:33:10.219057",
+      "approved_at": "2025-10-31T09:35:55.693435"
     }
   ]
 }
