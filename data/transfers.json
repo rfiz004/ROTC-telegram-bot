@@ -15529,6 +15529,57 @@
       "requested_at": "2025-10-31T21:52:28.107486",
       "delay_until": "2025-11-01T21:52:28.107491",
       "approved_at": "2025-10-31T21:53:45.876772"
+    },
+    {
+      "id": "transfer_898145344_1761948295",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 900,
+        "چوب": 7500,
+        "پارچه": 200,
+        "پنبه": 1500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T22:04:55.517448",
+      "delay_until": "2025-11-01T22:04:55.517451"
+    },
+    {
+      "id": "transfer_898145344_1761948329",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 120000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T22:05:29.503728",
+      "delay_until": "2025-11-01T22:05:29.503732"
+    },
+    {
+      "id": "transfer_5564554013_1761948393",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Velithkara",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 880
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T22:06:33.366582",
+      "delay_until": "2025-11-01T22:06:33.366586"
     }
   ]
 }
