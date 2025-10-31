@@ -1,159 +1,63 @@
 {
   "bios": {
-    "1359031332": {
-      "country": "Imperial",
-      "job": "مشاور عالی جمهوری",
-      "step": "asking_name",
-      "flow_type": "bio",
-      "saved_at": "2025-10-23T17:40:52.460431"
-    },
-    "5212956519": {
-      "country": "Azure",
-      "job": "گرند دوک",
-      "step": "asking_age",
-      "flow_type": "bio",
-      "saved_at": "2025-10-25T01:17:45.229153",
-      "expires_at": "2025-10-25T01:47:35.552792",
-      "name": "رایدون",
-      "nickname": "رایدون"
-    },
-    "7087526350": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "step": "pending",
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-=======
-      "step": "asking_photo",
->>>>>>> Stashed changes
-      "country": "Azure",
-      "flow_type": "bio",
-      "job": "مشاغل آزاد",
-      "expires_at": "2025-10-30T22:15:21.233290",
-      "name": "lunzo/لونزو",
-      "nickname": "لقب خاصی نداره",
-      "age": "15",
-      "skills": [
-        "ستاره شناسی",
-        "کشتیرانی",
-        "تیراندازی با کمان"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "ستاره شناسی",
-      "skill2": "کشتیرانی",
-      "skill3": "تیراندازی با کمان",
-      "appearance": "موهای قهوه ای کوتاه-پوست برنزه-سمت راست چشمش قسمت سوختگی به رنگ روشن تری از پوستش داره-رنگ چشم عسلی داره(تو تاریکیبه رنگ قهوه ای و در روشنایی به رنگ طلایی دیده میشه) -بیشتر مواقع وسایل اهنگری(چکش، عینک، پیچ-..)  رو توی جبی هاش نگه میداره-ساعت جیبی کوچکی از بند کمرمندش اویزونه-لباسای سنتی میپوشه.",
-      "history": "والا.... سرگذشت خاصی نداره...",
-      "id_number": "@wjkwiwoqlakakkak",
-      "user_id_tag": "#lulu",
-      "photos": [
-        "AgACAgQAAxkBAALY0WkD3rfT8dsXhs7H5rZc1i7BX7qsAAJLDGsblaghUOgqJiADVhQzAQADAgADeQADNgQ"
-      ],
-      "level": 1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "unique_id": "7087526350",
-      "saved_at": "2025-10-30T21:56:14.222062"
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-=======
-      "unique_id": "7087526350"
->>>>>>> Stashed changes
-    }
+    
   },
   "used_hashtags": [
-    "#elena",
+    "#Artemis",
+    "#Ogami",
+    "#W_Z",
+    "#Akai",
+    "#kail",
+    "#EDWARD",
+    "#kenway",
+    "#TheFool",
+    "#Andrew",
+    "#LadyDAstre",
+    "#stavroula",
+    "#Oraya",
+    "#Thalia",
+    "#Volnir",
+    "#Zelikor",
+    "#Kaizar",
+    "#Shi",
+    "#Padre",
+    "#nezhan",
+    "#Dazai",
+    "#Valentina",
+    "#avisia",
+    "#Alek",
+    "#Amaryallis",
+    "#Ivar",
+    "#ELIZ",
+    "#Damian",
+    "#SUN",
+    "#Artor",
+    "#Richard",
+    "#DrT",
+    "#RyumaHattori",
+    "#Confusionn",
+    "#zard",
+    "#Maximus",
+    "#morning_star",
+    "#Dorian",
+    "#lucifer",
+    "#nn8",
+    "#Ervin",
+    "#Dean",
+    "#b_r",
+    "#namiko",
+    "#kryzev",
+    "#Adam",
+    "#Ivory",
+    "#Red_king",
+    "#Valerie",
+    "#Alisan",
+    "#Edwin",
+    "#Thorfinn",
+    "#Cole",
+    "#Virel",
+    "#Alastor",
+    "#Naoya",
     "#scott",
     "#lulu"
   ]
