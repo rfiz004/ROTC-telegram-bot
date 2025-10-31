@@ -13836,9 +13836,10 @@
         "پارچه": 100,
         "چوب": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:31:50.202438",
-      "delay_until": "2025-11-01T08:31:50.202442"
+      "delay_until": "2025-11-01T08:31:50.202442",
+      "approved_at": "2025-10-31T08:35:20.473738"
     },
     {
       "id": "transfer_898145344_1761899525",
@@ -13852,9 +13853,10 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:32:05.926128",
-      "delay_until": "2025-11-01T08:32:05.926131"
+      "delay_until": "2025-11-01T08:32:05.926131",
+      "approved_at": "2025-10-31T08:35:21.076339"
     },
     {
       "id": "transfer_1208514381_1761899555",
@@ -13868,9 +13870,10 @@
       "items": {
         "جمعیت": 7000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:32:35.834693",
-      "delay_until": "2025-11-01T08:32:35.834700"
+      "delay_until": "2025-11-01T08:32:35.834700",
+      "approved_at": "2025-10-31T08:35:24.177103"
     },
     {
       "id": "transfer_1208514381_1761899575",
@@ -13884,9 +13887,10 @@
       "items": {
         "میوه": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:32:55.434150",
-      "delay_until": "2025-11-01T08:32:55.434154"
+      "delay_until": "2025-11-01T08:32:55.434154",
+      "approved_at": "2025-10-31T08:35:25.536233"
     },
     {
       "id": "transfer_898145344_1761899633",
@@ -13902,9 +13906,10 @@
         "پارچه": 100,
         "چوب": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:33:53.435116",
-      "delay_until": "2025-11-01T08:33:53.435119"
+      "delay_until": "2025-11-01T08:33:53.435119",
+      "approved_at": "2025-10-31T08:35:28.604530"
     },
     {
       "id": "transfer_898145344_1761899649",
@@ -13918,9 +13923,61 @@
       "items": {
         "طلا": 1000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:34:09.192493",
-      "delay_until": "2025-11-01T08:34:09.192496"
+      "delay_until": "2025-11-01T08:34:09.192496",
+      "approved_at": "2025-10-31T08:35:29.389300"
+    },
+    {
+      "id": "transfer_898145344_1761899752",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Kaisuraga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:35:52.760250",
+      "delay_until": "2025-11-01T08:35:52.760253"
+    },
+    {
+      "id": "transfer_898145344_1761899767",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Kaisuraga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:36:07.095645",
+      "delay_until": "2025-11-01T08:36:07.095650"
+    },
+    {
+      "id": "transfer_898145344_1761899830",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "پارچه": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:37:10.955557",
+      "delay_until": "2025-11-01T08:37:10.955560"
     }
   ]
 }
