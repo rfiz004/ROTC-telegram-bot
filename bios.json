@@ -1,5 +1,13 @@
 {
-  "bios": {},
+  "bios": {
+    "5886180797": {
+      "country": "Alestria",
+      "job": "رهبر اعظم",
+      "step": "asking_name",
+      "flow_type": "bio",
+      "saved_at": "2025-10-31T18:38:27.319716"
+    }
+  },
   "used_hashtags": [
     "#Artemis",
     "#Ogami",
