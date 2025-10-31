@@ -14653,6 +14653,40 @@
       "requested_at": "2025-10-31T10:13:50.474598",
       "delay_until": "2025-11-01T10:13:50.474602",
       "approved_at": "2025-10-31T10:33:35.671374"
+    },
+    {
+      "id": "transfer_7096919075_1761907962",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Karnholm",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 40000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T10:52:42.787522",
+      "delay_until": "2025-11-01T10:52:42.787527",
+      "approved_at": "2025-10-31T10:52:52.374209"
+    },
+    {
+      "id": "transfer_7096919075_1761908053",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Port Zephalia",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 40000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T10:54:13.601612",
+      "delay_until": "2025-11-01T10:54:13.601616",
+      "approved_at": "2025-10-31T10:54:29.085057"
     }
   ]
 }
