@@ -15118,6 +15118,22 @@
       "requested_at": "2025-10-31T13:29:37.477142",
       "delay_until": "2025-11-01T13:29:37.477145",
       "approved_at": "2025-10-31T14:27:08.832463"
+    },
+    {
+      "id": "transfer_1766859127_1761924002",
+      "requester_id": 1766859127,
+      "source_country": "Imperial",
+      "source_province": "Ruler-of-the-Republic",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "مرغ": 600
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T15:20:02.744781",
+      "delay_until": "2025-11-01T15:20:02.744784"
     }
   ]
 }
