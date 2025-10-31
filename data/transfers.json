@@ -14425,9 +14425,10 @@
       "items": {
         "کماندار دوربرد ویژه آزور": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T09:13:14.945572",
-      "delay_until": "2025-11-01T09:13:14.945576"
+      "delay_until": "2025-11-01T09:13:14.945576",
+      "approved_at": "2025-10-31T09:24:14.960823"
     },
     {
       "id": "transfer_898145344_1761902167",
@@ -14441,9 +14442,10 @@
       "items": {
         "ارابه جنگی غربی": 4
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T09:16:07.122782",
-      "delay_until": "2025-11-01T09:16:07.122786"
+      "delay_until": "2025-11-01T09:16:07.122786",
+      "approved_at": "2025-10-31T09:24:18.411548"
     },
     {
       "id": "transfer_1329048693_1761902395",
@@ -14461,6 +14463,22 @@
       "requested_at": "2025-10-31T09:19:55.196298",
       "delay_until": "2025-11-01T09:19:55.196303",
       "approved_at": "2025-10-31T09:22:36.950597"
+    },
+    {
+      "id": "transfer_7869889327_1761902774",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Druvenmarsh",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 42000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T09:26:14.968980",
+      "delay_until": "2025-11-01T09:26:14.968984"
     }
   ]
 }
