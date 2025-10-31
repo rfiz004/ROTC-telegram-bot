@@ -14428,6 +14428,22 @@
       "status": "pending",
       "requested_at": "2025-10-31T09:13:14.945572",
       "delay_until": "2025-11-01T09:13:14.945576"
+    },
+    {
+      "id": "transfer_898145344_1761902167",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "structures",
+      "items": {
+        "ارابه جنگی غربی": 4
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T09:16:07.122782",
+      "delay_until": "2025-11-01T09:16:07.122786"
     }
   ]
 }
