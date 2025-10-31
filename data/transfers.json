@@ -14619,6 +14619,38 @@
       "requested_at": "2025-10-31T10:02:56.333399",
       "delay_until": "2025-11-01T10:02:56.333402",
       "approved_at": "2025-10-31T10:05:00.395514"
+    },
+    {
+      "id": "transfer_1329048693_1761905594",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T10:13:14.117511",
+      "delay_until": "2025-11-01T10:13:14.117515"
+    },
+    {
+      "id": "transfer_1329048693_1761905630",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T10:13:50.474598",
+      "delay_until": "2025-11-01T10:13:50.474602"
     }
   ]
 }
