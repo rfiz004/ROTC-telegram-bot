@@ -14476,9 +14476,78 @@
       "items": {
         "طلا": 42000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T09:26:14.968980",
-      "delay_until": "2025-11-01T09:26:14.968984"
+      "delay_until": "2025-11-01T09:26:14.968984",
+      "approved_at": "2025-10-31T09:27:02.657276"
+    },
+    {
+      "id": "transfer_7869889327_1761902814",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Druvenmarsh",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T09:26:54.426776",
+      "delay_until": "2025-11-01T09:26:54.426781",
+      "approved_at": "2025-10-31T09:27:01.868875"
+    },
+    {
+      "id": "transfer_7869889327_1761902852",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Lusweld",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T09:27:32.577130",
+      "delay_until": "2025-11-01T09:27:32.577134",
+      "approved_at": "2025-10-31T09:27:47.579845"
+    },
+    {
+      "id": "transfer_7096919075_1761902854",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Lusmyr",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T09:27:34.415689",
+      "delay_until": "2025-11-01T09:27:34.415693",
+      "approved_at": "2025-10-31T09:27:47.101832"
+    },
+    {
+      "id": "transfer_7869889327_1761902882",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Lusweld",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T09:28:02.567690",
+      "delay_until": "2025-11-01T09:28:02.567707",
+      "approved_at": "2025-10-31T09:28:12.539093"
     }
   ]
 }

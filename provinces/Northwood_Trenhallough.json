@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 4666,
+  "wealth": 58666,
   "population": 40000,
   "tax": 40,
   "popularity": 68,
@@ -45,7 +45,7 @@
     "چرم": 120,
     "چوب": 1020,
     "گندم": 0,
-    "گوشت": 509
+    "گوشت": 709
   },
   "economic_structures": {
     "دامداری": {

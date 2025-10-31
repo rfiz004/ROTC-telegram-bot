@@ -2,7 +2,7 @@
   "country": "Northwood",
   "province": "Lusweld",
   "mines": {},
-  "wealth": 70000,
+  "wealth": 58000,
   "population": 20000,
   "tax": 100,
   "popularity": 52,
@@ -31,7 +31,7 @@
     "چرم": 680,
     "چوب": 580,
     "گندم": 0,
-    "گوشت": 1035.9999999999998
+    "گوشت": 935.9999999999998
   },
   "economic_structures": {
     "دامداری": {
