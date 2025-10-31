@@ -42,17 +42,17 @@
     "کارخونه چرم": {
       "count": 4,
       "product": "چرم",
-      "weekly_output": 50
-    },
-    "کارخونه چوب بری": {
-      "count": 4,
-      "product": "چوب",
-      "weekly_output": 50
+      "weekly_output": 20
     },
     "کارخونه شراب": {
       "count": 4,
       "product": "شراب",
       "weekly_output": 50
+    },
+    "چوب بری": {
+      "count": 4,
+      "product": "چوب",
+      "weekly_output": 20
     }
   },
   "mine_productions": {},
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.545185"
+  "last_updated": "2025-10-31T06:34:09.269087"
 }
