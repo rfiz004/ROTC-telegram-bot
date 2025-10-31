@@ -14394,6 +14394,40 @@
       "requested_at": "2025-10-31T09:05:33.024238",
       "delay_until": "2025-11-01T09:05:33.024242",
       "approved_at": "2025-10-31T09:05:54.834766"
+    },
+    {
+      "id": "transfer_6213073537_1761901993",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 1000,
+        "شیشه": 750
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T09:13:13.245820",
+      "delay_until": "2025-11-01T09:13:13.245824",
+      "approved_at": "2025-10-31T09:13:17.964229"
+    },
+    {
+      "id": "transfer_898145344_1761901994",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "کماندار دوربرد ویژه آزور": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T09:13:14.945572",
+      "delay_until": "2025-11-01T09:13:14.945576"
     }
   ]
 }
