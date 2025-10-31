@@ -14049,6 +14049,58 @@
       "requested_at": "2025-10-31T08:40:03.499722",
       "delay_until": "2025-11-01T08:40:03.499726",
       "approved_at": "2025-10-31T08:40:11.030074"
+    },
+    {
+      "id": "transfer_898145344_1761900252",
+      "requester_id": 898145344,
+      "source_country": "Azure",
+      "source_province": "Sea-Dragon",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 200,
+        "شراب": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:44:12.571083",
+      "delay_until": "2025-11-01T08:44:12.571087",
+      "approved_at": "2025-10-31T08:46:29.573145"
+    },
+    {
+      "id": "transfer_1208514381_1761900347",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Orendal",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:45:47.333139",
+      "delay_until": "2025-11-01T08:45:47.333142",
+      "approved_at": "2025-10-31T08:46:31.471269"
+    },
+    {
+      "id": "transfer_1208514381_1761900367",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Orendal",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:46:07.981729",
+      "delay_until": "2025-11-01T08:46:07.981734",
+      "approved_at": "2025-10-31T08:46:33.976915"
     }
   ]
 }
