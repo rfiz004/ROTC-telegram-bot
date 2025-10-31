@@ -14767,6 +14767,38 @@
       "status": "pending",
       "requested_at": "2025-10-31T11:01:35.692757",
       "delay_until": "2025-11-01T11:01:35.692762"
+    },
+    {
+      "id": "transfer_5564554013_1761908518",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "DalNomara",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "چوب": 800
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T11:01:58.432768",
+      "delay_until": "2025-11-01T11:01:58.432772"
+    },
+    {
+      "id": "transfer_7096919075_1761908637",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 50000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T11:03:57.930753",
+      "delay_until": "2025-11-01T11:03:57.930756"
     }
   ]
 }
