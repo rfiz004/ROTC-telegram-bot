@@ -14796,9 +14796,60 @@
       "items": {
         "طلا": 50000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T11:03:57.930753",
-      "delay_until": "2025-11-01T11:03:57.930756"
+      "delay_until": "2025-11-01T11:03:57.930756",
+      "approved_at": "2025-10-31T11:05:38.626371"
+    },
+    {
+      "id": "transfer_7096919075_1761908695",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T11:04:55.312713",
+      "delay_until": "2025-11-01T11:04:55.312716",
+      "approved_at": "2025-10-31T11:05:40.152139"
+    },
+    {
+      "id": "transfer_6213073537_1761908703",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1500
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T11:05:03.760259",
+      "delay_until": "2025-11-01T11:05:03.760263",
+      "approved_at": "2025-10-31T11:05:42.132290"
+    },
+    {
+      "id": "transfer_5564554013_1761908745",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Silverain Coast",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T11:05:45.058500",
+      "delay_until": "2025-11-01T11:05:45.058504"
     }
   ]
 }
