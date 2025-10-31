@@ -15298,6 +15298,22 @@
       "status": "pending",
       "requested_at": "2025-10-31T16:16:20.376005",
       "delay_until": "2025-11-01T16:16:20.376008"
+    },
+    {
+      "id": "transfer_1329048693_1761932904",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 250
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T17:48:24.899846",
+      "delay_until": "2025-11-01T17:48:24.899850"
     }
   ]
 }
