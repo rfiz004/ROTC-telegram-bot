@@ -15488,9 +15488,10 @@
       "items": {
         "طلا": 120000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T21:49:28.386057",
-      "delay_until": "2025-11-01T21:49:28.386061"
+      "delay_until": "2025-11-01T21:49:28.386061",
+      "approved_at": "2025-10-31T21:53:42.234796"
     },
     {
       "id": "transfer_5564554013_1761947440",
@@ -15504,9 +15505,30 @@
       "items": {
         "طلا": 45500
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T21:50:40.828627",
-      "delay_until": "2025-11-01T21:50:40.828630"
+      "delay_until": "2025-11-01T21:50:40.828630",
+      "approved_at": "2025-10-31T21:53:42.986217"
+    },
+    {
+      "id": "transfer_5564554013_1761947548",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 5200,
+        "پنبه": 1500,
+        "پارچه": 200,
+        "فولاد": 900
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T21:52:28.107486",
+      "delay_until": "2025-11-01T21:52:28.107491",
+      "approved_at": "2025-10-31T21:53:45.876772"
     }
   ]
 }
