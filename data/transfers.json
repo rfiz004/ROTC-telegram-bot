@@ -13429,9 +13429,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T07:58:53.863117",
-      "delay_until": "2025-11-01T07:58:53.863120"
+      "delay_until": "2025-11-01T07:58:53.863120",
+      "approved_at": "2025-10-31T08:21:06.562930"
     },
     {
       "id": "transfer_1329048693_1761897640",
@@ -13445,9 +13446,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:00:40.006734",
-      "delay_until": "2025-11-01T08:00:40.006739"
+      "delay_until": "2025-11-01T08:00:40.006739",
+      "approved_at": "2025-10-31T08:21:06.815133"
     },
     {
       "id": "transfer_1208514381_1761898645",
@@ -13481,6 +13483,41 @@
       "status": "pending",
       "requested_at": "2025-10-31T08:18:06.328783",
       "delay_until": "2025-11-01T08:18:06.328788"
+    },
+    {
+      "id": "transfer_1208514381_1761898816",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:20:16.431761",
+      "delay_until": "2025-11-01T08:20:16.431765"
+    },
+    {
+      "id": "transfer_1208514381_1761898857",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 200,
+        "پنبه": 40,
+        "گوشت": 400,
+        "میوه": 265
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:20:57.781304",
+      "delay_until": "2025-11-01T08:20:57.781309"
     }
   ]
 }
