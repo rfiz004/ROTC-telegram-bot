@@ -14602,6 +14602,22 @@
       "requested_at": "2025-10-31T09:33:10.219052",
       "delay_until": "2025-11-01T09:33:10.219057",
       "approved_at": "2025-10-31T09:35:55.693435"
+    },
+    {
+      "id": "transfer_6213073537_1761904976",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T10:02:56.333399",
+      "delay_until": "2025-11-01T10:02:56.333402"
     }
   ]
 }
