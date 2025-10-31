@@ -47,7 +47,7 @@
     "کارخونه پنبه": {
       "count": 2,
       "product": "پنبه",
-      "weekly_output": 50
+      "weekly_output": 20
     },
     "کارخونه سنگ": {
       "count": 4,
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.700514"
+  "last_updated": "2025-10-31T06:42:40.158036"
 }
