@@ -13432,6 +13432,22 @@
       "status": "pending",
       "requested_at": "2025-10-31T07:58:53.863117",
       "delay_until": "2025-11-01T07:58:53.863120"
+    },
+    {
+      "id": "transfer_1329048693_1761897640",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Garodhen",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:00:40.006734",
+      "delay_until": "2025-11-01T08:00:40.006739"
     }
   ]
 }
