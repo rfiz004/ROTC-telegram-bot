@@ -15135,6 +15135,40 @@
       "requested_at": "2025-10-31T15:20:02.744781",
       "delay_until": "2025-11-01T15:20:02.744784",
       "approved_at": "2025-10-31T15:27:14.099487"
+    },
+    {
+      "id": "transfer_898145344_1761926157",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 30
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T15:55:57.567611",
+      "delay_until": "2025-11-01T15:55:57.567615",
+      "approved_at": "2025-10-31T15:56:00.125840"
+    },
+    {
+      "id": "transfer_1771323853_1761926179",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 25
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T15:56:19.127390",
+      "delay_until": "2025-11-01T15:56:19.127393",
+      "approved_at": "2025-10-31T15:57:24.835976"
     }
   ]
 }
