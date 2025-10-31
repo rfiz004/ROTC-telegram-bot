@@ -4,7 +4,7 @@
   "mines": {},
   "wealth": 0,
   "population": 24000,
-  "tax": 100,
+  "tax": 10,
   "popularity": 78,
   "total_army": 5000,
   "army": {
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-24T09:36:03.623301"
+  "last_updated": "2025-10-31T06:44:30.311224"
 }

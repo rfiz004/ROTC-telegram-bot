@@ -6,7 +6,7 @@
   },
   "wealth": 175600,
   "population": 60000,
-  "tax": 100,
+  "tax": 10,
   "popularity": 77,
   "total_army": 13200,
   "army": {
@@ -104,5 +104,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-25T18:33:32.317276"
+  "last_updated": "2025-10-31T06:44:01.714302"
 }
