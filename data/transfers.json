@@ -14114,9 +14114,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:48:18.411477",
-      "delay_until": "2025-11-01T08:48:18.411481"
+      "delay_until": "2025-11-01T08:48:18.411481",
+      "approved_at": "2025-10-31T08:49:50.712755"
     },
     {
       "id": "transfer_1208514381_1761900551",
@@ -14133,9 +14134,91 @@
         "سنگ": 200,
         "پنبه": 60
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-10-31T08:49:11.350798",
-      "delay_until": "2025-11-01T08:49:11.350803"
+      "delay_until": "2025-11-01T08:49:11.350803",
+      "approved_at": "2025-10-31T08:49:51.609951"
+    },
+    {
+      "id": "transfer_1208514381_1761900632",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Talmarin",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 50
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:50:32.706117",
+      "delay_until": "2025-11-01T08:50:32.706121"
+    },
+    {
+      "id": "transfer_898145344_1761900674",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 16000
+      },
+      "status": "approved",
+      "requested_at": "2025-10-31T08:51:14.276533",
+      "delay_until": "2025-11-01T08:51:14.276538",
+      "approved_at": "2025-10-31T08:51:20.248766"
+    },
+    {
+      "id": "transfer_1208514381_1761900729",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:52:09.286573",
+      "delay_until": "2025-11-01T08:52:09.286577"
+    },
+    {
+      "id": "transfer_6213073537_1761900744",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:52:24.260845",
+      "delay_until": "2025-11-01T08:52:24.260848"
+    },
+    {
+      "id": "transfer_1208514381_1761900745",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7000
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:52:25.236961",
+      "delay_until": "2025-11-01T08:52:25.236964"
     }
   ]
 }
