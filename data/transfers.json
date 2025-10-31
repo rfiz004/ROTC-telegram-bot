@@ -14219,6 +14219,24 @@
       "status": "pending",
       "requested_at": "2025-10-31T08:52:25.236961",
       "delay_until": "2025-11-01T08:52:25.236964"
+    },
+    {
+      "id": "transfer_1771323853_1761900958",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 400,
+        "شیشه": 400,
+        "چرم": 400
+      },
+      "status": "pending",
+      "requested_at": "2025-10-31T08:55:58.902320",
+      "delay_until": "2025-11-01T08:55:58.902325"
     }
   ]
 }
