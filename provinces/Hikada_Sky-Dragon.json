@@ -7,7 +7,7 @@
   "wealth": 0,
   "population": 5000,
   "tax": 10,
-  "popularity": 93,
+  "popularity": 100,
   "total_army": 6100,
   "army": {
     "کماندار": 1300,
@@ -57,7 +57,7 @@
     "چوب": 0,
     "گندم": 3720,
     "گوشت": 0,
-    "میوه": 287.5
+    "میوه": 175.0
   },
   "economic_structures": {
     "مزرعه": {
