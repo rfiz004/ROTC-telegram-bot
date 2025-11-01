@@ -16218,6 +16218,38 @@
       "requested_at": "2025-11-01T13:05:42.679313",
       "delay_until": "2025-11-02T13:05:42.679317",
       "approved_at": "2025-11-01T13:05:44.145864"
+    },
+    {
+      "id": "transfer_1771323853_1762012547",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "برج محاصره": 4
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T15:55:47.233810",
+      "delay_until": "2025-11-02T15:55:47.233813"
+    },
+    {
+      "id": "transfer_1771323853_1762012572",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T15:56:12.670894",
+      "delay_until": "2025-11-02T15:56:12.670898"
     }
   ]
 }
