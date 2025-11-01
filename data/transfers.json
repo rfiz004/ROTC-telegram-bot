@@ -15773,6 +15773,46 @@
       "status": "pending",
       "requested_at": "2025-11-01T06:58:32.027420",
       "delay_until": "2025-11-02T06:58:32.027425"
+    },
+    {
+      "id": "transfer_5566736269_1761981717",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 250,
+        "شراب": 700,
+        "شیشه": 750,
+        "فولاد": 388,
+        "پارچه": 200,
+        "پنبه": 100,
+        "چرم": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T07:21:57.500630",
+      "delay_until": "2025-11-02T07:21:57.500635",
+      "approved_at": "2025-11-01T07:22:05.865029"
+    },
+    {
+      "id": "transfer_5566736269_1761981756",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 19000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T07:22:36.018474",
+      "delay_until": "2025-11-02T07:22:36.018479",
+      "approved_at": "2025-11-01T07:22:44.034752"
     }
   ]
 }
