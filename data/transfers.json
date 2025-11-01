@@ -15686,6 +15686,23 @@
       "requested_at": "2025-11-01T01:54:11.986991",
       "delay_until": "2025-11-02T01:54:11.986994",
       "approved_at": "2025-11-01T02:25:35.114868"
+    },
+    {
+      "id": "transfer_898145344_1761976029",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T05:47:09.095633",
+      "delay_until": "2025-11-02T05:47:09.095637",
+      "approved_at": "2025-11-01T05:47:32.695614"
     }
   ]
 }
