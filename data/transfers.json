@@ -16791,6 +16791,58 @@
       "status": "pending",
       "requested_at": "2025-11-01T21:34:40.373614",
       "delay_until": "2025-11-02T21:34:40.373617"
+    },
+    {
+      "id": "transfer_1208514381_1762032921",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "سواره نظام": 50,
+        "نیزه دار سپردار": 2000,
+        "کمانداره خبره": 600,
+        "شمشیرزن زره پوش": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T21:35:21.943065",
+      "delay_until": "2025-11-02T21:35:21.943069",
+      "approved_at": "2025-11-01T21:35:30.372212"
+    },
+    {
+      "id": "transfer_5564554013_1762032927",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "DalNomara",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1380
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:35:27.738486",
+      "delay_until": "2025-11-02T21:35:27.738490"
+    },
+    {
+      "id": "transfer_5564554013_1762032968",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Iselvern",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1280
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:36:08.703379",
+      "delay_until": "2025-11-02T21:36:08.703384"
     }
   ]
 }
