@@ -16601,6 +16601,24 @@
       "status": "pending",
       "requested_at": "2025-11-01T20:54:59.161356",
       "delay_until": "2025-11-02T20:54:59.161360"
+    },
+    {
+      "id": "transfer_1208514381_1762030509",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "کماندار": 2200,
+        "شمشیرزن": 1250,
+        "نیزه دار": 800
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:55:09.408494",
+      "delay_until": "2025-11-02T20:55:09.408497"
     }
   ]
 }
