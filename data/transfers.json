@@ -16253,6 +16253,23 @@
       "requested_at": "2025-11-01T15:56:12.670894",
       "delay_until": "2025-11-02T15:56:12.670898",
       "approved_at": "2025-11-01T16:21:54.752633"
+    },
+    {
+      "id": "transfer_1329048693_1762018390",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Ironfell",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چرم": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T17:33:10.658454",
+      "delay_until": "2025-11-02T17:33:10.658457",
+      "approved_at": "2025-11-01T17:33:41.341526"
     }
   ]
 }
