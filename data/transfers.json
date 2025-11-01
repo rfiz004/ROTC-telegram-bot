@@ -16621,6 +16621,22 @@
       "requested_at": "2025-11-01T20:55:09.408494",
       "delay_until": "2025-11-02T20:55:09.408497",
       "approved_at": "2025-11-01T20:59:51.399349"
+    },
+    {
+      "id": "transfer_7096919075_1762030925",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 120000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:02:05.993911",
+      "delay_until": "2025-11-02T21:02:05.993915"
     }
   ]
 }
