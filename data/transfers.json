@@ -16724,6 +16724,22 @@
       "requested_at": "2025-11-01T21:09:57.365907",
       "delay_until": "2025-11-02T21:09:57.365909",
       "approved_at": "2025-11-01T21:13:39.030749"
+    },
+    {
+      "id": "transfer_6723163985_1762031898",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "زوبین زرهی امپریال": 400
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:18:18.756262",
+      "delay_until": "2025-11-02T21:18:18.756267"
     }
   ]
 }
