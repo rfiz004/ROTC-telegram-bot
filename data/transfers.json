@@ -16286,6 +16286,25 @@
       "status": "pending",
       "requested_at": "2025-11-01T20:38:21.660032",
       "delay_until": "2025-11-02T20:38:21.660036"
+    },
+    {
+      "id": "transfer_7096919075_1762029590",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Port Zephalia",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 860,
+        "فولاد": 250,
+        "پارچه": 540,
+        "شیشه": 300
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:39:50.597939",
+      "delay_until": "2025-11-02T20:39:50.597942"
     }
   ]
 }
