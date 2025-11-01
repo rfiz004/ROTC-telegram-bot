@@ -15890,6 +15890,43 @@
       "status": "pending",
       "requested_at": "2025-11-01T07:27:22.893117",
       "delay_until": "2025-11-02T07:27:22.893121"
+    },
+    {
+      "id": "transfer_898145344_1761983170",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 120000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T07:46:10.069557",
+      "delay_until": "2025-11-02T07:46:10.069561",
+      "approved_at": "2025-11-01T07:47:33.196681"
+    },
+    {
+      "id": "transfer_898145344_1761983222",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 900,
+        "چوب": 7500,
+        "پارچه": 200,
+        "پنبه": 1500
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T07:47:02.212180",
+      "delay_until": "2025-11-02T07:47:02.212184",
+      "approved_at": "2025-11-01T07:47:21.281158"
     }
   ]
 }
