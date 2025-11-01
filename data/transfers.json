@@ -16052,6 +16052,22 @@
       "requested_at": "2025-11-01T10:27:45.885707",
       "delay_until": "2025-11-02T10:27:45.885711",
       "approved_at": "2025-11-01T10:28:09.710255"
+    },
+    {
+      "id": "transfer_5566736269_1761993503",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 2000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T10:38:23.596558",
+      "delay_until": "2025-11-02T10:38:23.596562"
     }
   ]
 }
