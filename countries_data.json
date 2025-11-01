@@ -1867,6 +1867,16 @@
                         "id": "منجنیق_2",
                         "status": "Approved"
                     }
+                ],
+                "بالیستا": [
+                    {
+                        "id": "بالیستا_1",
+                        "status": "Pending"
+                    },
+                    {
+                        "id": "بالیستا_2",
+                        "status": "Pending"
+                    }
                 ]
             },
             "weapons": {},
