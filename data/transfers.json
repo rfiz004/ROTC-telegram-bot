@@ -16897,9 +16897,27 @@
         "کشتی متوسط": 2,
         "کشتی بزرگ": 1
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T21:49:49.749312",
-      "delay_until": "2025-11-02T21:49:49.749318"
+      "delay_until": "2025-11-02T21:49:49.749318",
+      "approved_at": "2025-11-01T21:50:32.068643"
+    },
+    {
+      "id": "transfer_1208514381_1762033842",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "کشتی متوسط": 1
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T21:50:42.752568",
+      "delay_until": "2025-11-02T21:50:42.752574",
+      "approved_at": "2025-11-01T21:50:54.534797"
     }
   ]
 }
