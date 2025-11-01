@@ -15870,6 +15870,25 @@
       "status": "pending",
       "requested_at": "2025-11-01T07:26:29.288146",
       "delay_until": "2025-11-02T07:26:29.288150"
+    },
+    {
+      "id": "transfer_5566736269_1761982042",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 360,
+        "میوه": 400,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T07:27:22.893117",
+      "delay_until": "2025-11-02T07:27:22.893121"
     }
   ]
 }
