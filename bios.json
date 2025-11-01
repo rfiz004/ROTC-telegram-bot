@@ -3,12 +3,24 @@
     "7864007177": {
       "country": "Hikada",
       "job": "امپراطریس",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-11-01T12:31:32.806216",
+      "saved_at": "2025-11-01T12:38:59.022394",
       "expires_at": "2025-11-01T13:01:02.859488",
       "name": "Melorin",
-      "nickname": "Melo"
+      "nickname": "Melo",
+      "age": "30",
+      "skills": [
+        "مدیریت امور نظامی",
+        "حواس پنجگانه قوی",
+        "مهارت شمشیرزنی و تبرزنی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مدیریت امور نظامی",
+      "skill2": "حواس پنجگانه قوی",
+      "skill3": "مهارت شمشیرزنی و تبرزنی",
+      "appearance": "موهای بلوند چشماهای قرمز کشیده قد ۱۷۵ و ی خال کنار لبش"
     }
   },
   "used_hashtags": [
