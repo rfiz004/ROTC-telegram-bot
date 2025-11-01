@@ -16634,9 +16634,26 @@
       "items": {
         "طلا": 120000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T21:02:05.993911",
-      "delay_until": "2025-11-02T21:02:05.993915"
+      "delay_until": "2025-11-02T21:02:05.993915",
+      "approved_at": "2025-11-01T21:06:02.329476"
+    },
+    {
+      "id": "transfer_1208514381_1762031145",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "منجنیق": 2
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:05:45.678020",
+      "delay_until": "2025-11-02T21:05:45.678025"
     }
   ]
 }
