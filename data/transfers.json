@@ -16848,6 +16848,40 @@
       "requested_at": "2025-11-01T21:36:08.703379",
       "delay_until": "2025-11-02T21:36:08.703384",
       "approved_at": "2025-11-01T21:39:27.540981"
+    },
+    {
+      "id": "transfer_5564554013_1762033289",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1500
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T21:41:29.839043",
+      "delay_until": "2025-11-02T21:41:29.839046",
+      "approved_at": "2025-11-01T21:41:33.088861"
+    },
+    {
+      "id": "transfer_5564554013_1762033329",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 715
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T21:42:09.412826",
+      "delay_until": "2025-11-02T21:42:09.412831",
+      "approved_at": "2025-11-01T21:42:16.863262"
     }
   ]
 }
