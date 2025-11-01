@@ -31,11 +31,10 @@
       "saved_at": "2025-11-01T12:49:40.117992"
     },
     "7378077721": {
+      "step": "pending",
       "country": "Azure",
-      "job": "گرند دوشس",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-01T13:52:33.678529",
+      "job": "گرند دوشس",
       "expires_at": "2025-11-01T13:58:49.900791",
       "name": "Marceline",
       "nickname": "Mother of Dragons",
@@ -53,7 +52,13 @@
       "appearance": "موهای قرمز موج دار ، چشمان آبی ، قد بلند و کشیده و کک مک های ریز روی بینی و گونه",
       "history": "_",
       "id_number": "@Mar3elin",
-      "user_id_tag": "#Marcy"
+      "user_id_tag": "#Marcy",
+      "photos": [
+        "AgACAgQAAxkBAALiamkGEMBzM6N8ie16Qd3usTij6dskAAJJC2sbMR8xUNRTrvinb9ObAQADAgADeAADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "7378077721",
+      "saved_at": "2025-11-01T13:53:13.853241"
     }
   },
   "used_hashtags": [
