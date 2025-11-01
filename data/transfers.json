@@ -16882,6 +16882,24 @@
       "requested_at": "2025-11-01T21:42:09.412826",
       "delay_until": "2025-11-02T21:42:09.412831",
       "approved_at": "2025-11-01T21:42:16.863262"
+    },
+    {
+      "id": "transfer_1208514381_1762033789",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "کشتی کوچک": 2,
+        "کشتی متوسط": 2,
+        "کشتی بزرگ": 1
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:49:49.749312",
+      "delay_until": "2025-11-02T21:49:49.749318"
     }
   ]
 }
