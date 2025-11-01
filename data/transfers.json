@@ -16449,9 +16449,10 @@
       "items": {
         "طلا": 22000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T20:50:08.261607",
-      "delay_until": "2025-11-02T20:50:08.261612"
+      "delay_until": "2025-11-02T20:50:08.261612",
+      "approved_at": "2025-11-01T20:52:53.403888"
     },
     {
       "id": "transfer_1208514381_1762030228",
@@ -16467,9 +16468,10 @@
         "شمشیرزن": 250,
         "نیزه دار": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T20:50:28.667573",
-      "delay_until": "2025-11-02T20:50:28.667577"
+      "delay_until": "2025-11-02T20:50:28.667577",
+      "approved_at": "2025-11-01T20:52:54.423733"
     },
     {
       "id": "transfer_7096919075_1762030264",
@@ -16485,9 +16487,10 @@
         "پارچه": 270,
         "شیشه": 400
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T20:51:04.526253",
-      "delay_until": "2025-11-02T20:51:04.526257"
+      "delay_until": "2025-11-02T20:51:04.526257",
+      "approved_at": "2025-11-01T20:52:56.262505"
     },
     {
       "id": "transfer_1208514381_1762030294",
@@ -16503,9 +16506,101 @@
         "شمشیرزن": 250,
         "نیزه دار": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T20:51:34.514810",
-      "delay_until": "2025-11-02T20:51:34.514813"
+      "delay_until": "2025-11-02T20:51:34.514813",
+      "approved_at": "2025-11-01T20:52:57.528621"
+    },
+    {
+      "id": "transfer_7096919075_1762030317",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Skavenreach",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 21000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T20:51:57.158459",
+      "delay_until": "2025-11-02T20:51:57.158462",
+      "approved_at": "2025-11-01T20:52:59.530921"
+    },
+    {
+      "id": "transfer_7096919075_1762030357",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Skavenreach",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 560,
+        "فولاد": 250,
+        "پارچه": 270
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T20:52:37.002469",
+      "delay_until": "2025-11-02T20:52:37.002483",
+      "approved_at": "2025-11-01T20:53:00.382856"
+    },
+    {
+      "id": "transfer_1208514381_1762030359",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "کماندار": 1500,
+        "شمشیرزن": 1000,
+        "نیزه دار": 600
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T20:52:39.963858",
+      "delay_until": "2025-11-02T20:52:39.963861",
+      "approved_at": "2025-11-01T20:53:01.049579"
+    },
+    {
+      "id": "transfer_7096919075_1762030447",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 11000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T20:54:07.779473",
+      "delay_until": "2025-11-02T20:54:07.779476",
+      "approved_at": "2025-11-01T20:54:11.923681"
+    },
+    {
+      "id": "transfer_7096919075_1762030499",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 1100,
+        "فولاد": 1000,
+        "پارچه": 1080,
+        "شیشه": 1200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:54:59.161356",
+      "delay_until": "2025-11-02T20:54:59.161360"
     }
   ]
 }
