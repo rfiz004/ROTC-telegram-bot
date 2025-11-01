@@ -1,11 +1,10 @@
 {
   "bios": {
     "7864007177": {
+      "step": "pending",
       "country": "Hikada",
-      "job": "امپراطریس",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-01T12:44:08.504103",
+      "job": "امپراطریس",
       "expires_at": "2025-11-01T13:01:02.859488",
       "name": "Melorin",
       "nickname": "Melo",
@@ -23,7 +22,13 @@
       "appearance": "موهای بلوند چشماهای قرمز کشیده قد ۱۷۵ و ی خال کنار لبش",
       "history": "او از تبار فرمانروایانی بود که نامشان در سنگ‌نوشته‌های کهن و رویاهای مردم باقی مانده بود؛ آخرین شعله از خون آتشین خاندان باستانی. از لحظه‌ای که چشم به جهان گشود، نشانه‌های تقدیر بزرگش آشکار بود: طوفانی که هنگام تولدش برخاست، زمزمه‌ی پیران درباره‌ی ستاره‌ای که آن شب سوخت و روی آسمان لغزید و سایه‌ی جنگی بزرگ که از همان روز او را دنبال می‌کرد.",
       "id_number": "@Melorin_w",
-      "user_id_tag": "#Melorin"
+      "user_id_tag": "#Melorin",
+      "photos": [
+        "AgACAgQAAxkBAALh8mkGAWcrU8kxiP2dxR2ijZ_TsLQeAAIMDGsbVxEwUE8uCzmjTX3PAQADAgADeQADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "7864007177",
+      "saved_at": "2025-11-01T12:49:40.117992"
     }
   },
   "used_hashtags": [
