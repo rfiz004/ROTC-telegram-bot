@@ -15945,6 +15945,55 @@
       "requested_at": "2025-11-01T08:39:19.152695",
       "delay_until": "2025-11-02T08:39:19.152698",
       "approved_at": "2025-11-01T08:45:10.304697"
+    },
+    {
+      "id": "transfer_5564554013_1761989813",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "weapons",
+      "items": {
+        "زره فولادی بالریون": 1
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T09:36:53.546951",
+      "delay_until": "2025-11-02T09:36:53.546954"
+    },
+    {
+      "id": "transfer_5564554013_1761989841",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 50000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T09:37:21.382924",
+      "delay_until": "2025-11-02T09:37:21.382927"
+    },
+    {
+      "id": "transfer_5566736269_1761989861",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "بالیستا": 2
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T09:37:41.648812",
+      "delay_until": "2025-11-02T09:37:41.648815",
+      "approved_at": "2025-11-01T09:38:56.763295"
     }
   ]
 }
