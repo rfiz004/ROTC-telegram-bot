@@ -16270,6 +16270,22 @@
       "requested_at": "2025-11-01T17:33:10.658454",
       "delay_until": "2025-11-02T17:33:10.658457",
       "approved_at": "2025-11-01T17:33:41.341526"
+    },
+    {
+      "id": "transfer_7096919075_1762029501",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Port Zephalia",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 22000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:38:21.660032",
+      "delay_until": "2025-11-02T20:38:21.660036"
     }
   ]
 }
