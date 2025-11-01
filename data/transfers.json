@@ -15733,9 +15733,30 @@
       "items": {
         "طلا": 120000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T06:13:24.534850",
-      "delay_until": "2025-11-02T06:13:24.534854"
+      "delay_until": "2025-11-02T06:13:24.534854",
+      "approved_at": "2025-11-01T06:14:31.338474"
+    },
+    {
+      "id": "transfer_898145344_1761977645",
+      "requester_id": 898145344,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 900,
+        "چوب": 7500,
+        "پارچه": 200,
+        "پنبه": 1500
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T06:14:05.784289",
+      "delay_until": "2025-11-02T06:14:05.784293",
+      "approved_at": "2025-11-01T06:14:42.099930"
     }
   ]
 }
