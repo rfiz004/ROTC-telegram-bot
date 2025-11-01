@@ -7,7 +7,7 @@
   "wealth": 110183,
   "population": 30000,
   "tax": 100,
-  "popularity": 89,
+  "popularity": 84,
   "total_army": 6350,
   "army": {
     "کماندار": 1500,
@@ -88,5 +88,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-10-31T16:55:37.921906"
+  "last_updated": "2025-11-01T06:34:40.639473"
 }
