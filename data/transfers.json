@@ -16377,9 +16377,10 @@
         "شمشیرزن": 250,
         "نیزه دار": 100
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T20:48:19.978315",
-      "delay_until": "2025-11-02T20:48:19.978319"
+      "delay_until": "2025-11-02T20:48:19.978319",
+      "approved_at": "2025-11-01T20:48:54.258331"
     },
     {
       "id": "transfer_7096919075_1762030106",
@@ -16393,9 +16394,118 @@
       "items": {
         "طلا": 22000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-01T20:48:26.887690",
-      "delay_until": "2025-11-02T20:48:26.887693"
+      "delay_until": "2025-11-02T20:48:26.887693",
+      "approved_at": "2025-11-01T20:48:57.438532"
+    },
+    {
+      "id": "transfer_7096919075_1762030154",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Karnholm",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 860,
+        "فولاد": 250,
+        "پارچه": 270
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T20:49:14.025688",
+      "delay_until": "2025-11-02T20:49:14.025693",
+      "approved_at": "2025-11-01T20:49:15.987940"
+    },
+    {
+      "id": "transfer_1208514381_1762030182",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Orendal",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "کماندار": 400,
+        "شمشیرزن": 250,
+        "نیزه دار": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-11-01T20:49:42.838357",
+      "delay_until": "2025-11-02T20:49:42.838360",
+      "approved_at": "2025-11-01T20:49:59.409178"
+    },
+    {
+      "id": "transfer_7096919075_1762030208",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Lusmyr",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 22000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:50:08.261607",
+      "delay_until": "2025-11-02T20:50:08.261612"
+    },
+    {
+      "id": "transfer_1208514381_1762030228",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Talmarin",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "کماندار": 400,
+        "شمشیرزن": 250,
+        "نیزه دار": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:50:28.667573",
+      "delay_until": "2025-11-02T20:50:28.667577"
+    },
+    {
+      "id": "transfer_7096919075_1762030264",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Lusmyr",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 560,
+        "پارچه": 270,
+        "شیشه": 400
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:51:04.526253",
+      "delay_until": "2025-11-02T20:51:04.526257"
+    },
+    {
+      "id": "transfer_1208514381_1762030294",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "کماندار": 400,
+        "شمشیرزن": 250,
+        "نیزه دار": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T20:51:34.514810",
+      "delay_until": "2025-11-02T20:51:34.514813"
     }
   ]
 }
