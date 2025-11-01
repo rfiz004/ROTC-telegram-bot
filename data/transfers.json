@@ -16654,6 +16654,74 @@
       "status": "pending",
       "requested_at": "2025-11-01T21:05:45.678020",
       "delay_until": "2025-11-02T21:05:45.678025"
+    },
+    {
+      "id": "transfer_7096919075_1762031267",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "ماهی": 4800,
+        "فولاد": 4200,
+        "پارچه": 4300,
+        "شراب": 1180,
+        "سنگ": 400
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:07:47.994507",
+      "delay_until": "2025-11-02T21:07:47.994510"
+    },
+    {
+      "id": "transfer_1208514381_1762031306",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 7200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:08:26.613244",
+      "delay_until": "2025-11-02T21:08:26.613248"
+    },
+    {
+      "id": "transfer_1208514381_1762031342",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "منجنیق": 1
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:09:02.273652",
+      "delay_until": "2025-11-02T21:09:02.273687"
+    },
+    {
+      "id": "transfer_7096919075_1762031397",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 110000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-01T21:09:57.365907",
+      "delay_until": "2025-11-02T21:09:57.365909"
     }
   ]
 }
