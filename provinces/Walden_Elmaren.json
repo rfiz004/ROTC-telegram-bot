@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Elmaren",
   "mines": {},
-  "wealth": 30950,
+  "wealth": 37950,
   "population": 35000,
   "tax": 100,
   "popularity": 76,
@@ -73,5 +73,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-11-02T08:25:59.795448"
+  "last_updated": "2025-11-02T13:25:24.738808"
 }
