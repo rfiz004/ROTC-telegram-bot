@@ -32,12 +32,27 @@
     "7422330107": {
       "country": "Azure",
       "job": "دوک",
-      "step": "asking_age",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-02T11:22:50.104129",
+      "saved_at": "2025-11-02T11:35:52.702582",
       "expires_at": "2025-11-02T11:51:37.703115",
       "name": "Lyanna",
-      "nickname": "Seris"
+      "nickname": "Seris",
+      "age": "20",
+      "skills": [
+        "تیراندازی با کمان",
+        "مدیریت امور نظامی",
+        "رام کردن حیوان"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "تیراندازی با کمان",
+      "skill2": "مدیریت امور نظامی",
+      "skill3": "رام کردن حیوان",
+      "appearance": "موهای قهوه‌ای بلند، صورت گرد، لب‌ها و بینی کوچیک و چشم های بنفش",
+      "history": "Uncertain",
+      "id_number": "@icehle",
+      "user_id_tag": "#anna"
     }
   },
   "used_hashtags": [
@@ -101,6 +116,7 @@
     "#Luna",
     "#Melorin",
     "#Marcy",
-    "#Leviathan"
+    "#Leviathan",
+    "#anna"
   ]
 }
