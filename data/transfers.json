@@ -17009,6 +17009,22 @@
       "requested_at": "2025-11-02T17:06:14.027741",
       "delay_until": "2025-11-03T17:06:14.027744",
       "approved_at": "2025-11-02T17:06:32.209552"
+    },
+    {
+      "id": "transfer_5566736269_1762105011",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "ارابه جنگی غربی": 6
+      },
+      "status": "pending",
+      "requested_at": "2025-11-02T17:36:51.844584",
+      "delay_until": "2025-11-03T17:36:51.844591"
     }
   ]
 }
