@@ -127,7 +127,7 @@
       },
       {
         "name": "اشراف بنیان گذار",
-        "count": 5,
+        "count": 4,
         "level": 1
       },
       {
@@ -179,7 +179,7 @@
       },
       {
         "name": "امپراطریس",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
@@ -283,17 +283,17 @@
     "Northwood": [
       {
         "name": "پادشاه",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
         "name": "ملکه",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
         "name": "ولیعهد",
-        "count": 1,
+        "count": 0,
         "level": 1
       },
       {
@@ -479,12 +479,12 @@
     "Azure": [
       {
         "name": "گرند دوک",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
         "name": "گرند دوشس",
-        "count": 0,
+        "count": 1,
         "level": 1
       },
       {
@@ -509,7 +509,7 @@
       },
       {
         "name": "مشاور اعظم",
-        "count": 1,
+        "count": 0,
         "level": 1
       },
       {
