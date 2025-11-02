@@ -32,11 +32,12 @@
     "7422330107": {
       "country": "Azure",
       "job": "دوک",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-02T10:46:35.943120",
-      "expires_at": "2025-11-02T11:11:54.633141",
-      "name": "Lyanna"
+      "saved_at": "2025-11-02T11:22:50.104129",
+      "expires_at": "2025-11-02T11:51:37.703115",
+      "name": "Lyanna",
+      "nickname": "Seris"
     }
   },
   "used_hashtags": [
