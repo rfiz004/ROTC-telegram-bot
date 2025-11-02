@@ -16974,6 +16974,23 @@
       "requested_at": "2025-11-02T06:36:20.780665",
       "delay_until": "2025-11-03T06:36:20.780668",
       "approved_at": "2025-11-02T07:45:51.922167"
+    },
+    {
+      "id": "transfer_5566736269_1762096583",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Azure",
+      "target_province": "Kalindora",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "گندم": 1115
+      },
+      "status": "approved",
+      "requested_at": "2025-11-02T15:16:23.703925",
+      "delay_until": "2025-11-03T15:16:23.703931",
+      "approved_at": "2025-11-02T15:17:29.719429"
     }
   ]
 }
