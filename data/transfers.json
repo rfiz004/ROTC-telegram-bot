@@ -17042,6 +17042,22 @@
       "status": "pending",
       "requested_at": "2025-11-02T20:19:17.255033",
       "delay_until": "2025-11-03T20:19:17.255036"
+    },
+    {
+      "id": "transfer_7869889327_1762114798",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Lusweld",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 40000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-02T20:19:58.137460",
+      "delay_until": "2025-11-03T20:19:58.137464"
     }
   ]
 }
