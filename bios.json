@@ -32,12 +32,24 @@
     "8194297716": {
       "country": "Imperial",
       "job": "اعضای سنا",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-11-02T19:29:21.326168",
+      "saved_at": "2025-11-02T19:39:02.073602",
       "expires_at": "2025-11-02T19:58:28.245523",
       "name": "دراسول",
-      "nickname": "دِراس"
+      "nickname": "دِراس",
+      "age": "۳۶",
+      "skills": [
+        "کشتی سازی",
+        "هیپنوتیزم",
+        "مترجمی و زبان شناسی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "کشتی سازی",
+      "skill2": "هیپنوتیزم",
+      "skill3": "مترجمی و زبان شناسی",
+      "appearance": "چشم ابرو مشکی؟"
     }
   },
   "used_hashtags": [
