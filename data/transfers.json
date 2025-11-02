@@ -16991,6 +16991,24 @@
       "requested_at": "2025-11-02T15:16:23.703925",
       "delay_until": "2025-11-03T15:16:23.703931",
       "approved_at": "2025-11-02T15:17:29.719429"
+    },
+    {
+      "id": "transfer_5564554013_1762103174",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1000,
+        "جواهر": 300
+      },
+      "status": "approved",
+      "requested_at": "2025-11-02T17:06:14.027741",
+      "delay_until": "2025-11-03T17:06:14.027744",
+      "approved_at": "2025-11-02T17:06:32.209552"
     }
   ]
 }
