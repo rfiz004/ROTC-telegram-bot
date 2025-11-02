@@ -16937,6 +16937,25 @@
       "requested_at": "2025-11-02T03:17:01.573162",
       "delay_until": "2025-11-03T03:17:01.573166",
       "approved_at": "2025-11-02T05:49:34.251756"
+    },
+    {
+      "id": "transfer_1329048693_1762065294",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Northwood",
+      "target_province": "Ironfell",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 100,
+        "سنگ": 800,
+        "پنبه": 600,
+        "پارچه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-02T06:34:54.310595",
+      "delay_until": "2025-11-03T06:34:54.310599"
     }
   ]
 }
