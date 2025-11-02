@@ -16918,6 +16918,24 @@
       "requested_at": "2025-11-01T21:50:42.752568",
       "delay_until": "2025-11-02T21:50:42.752574",
       "approved_at": "2025-11-01T21:50:54.534797"
+    },
+    {
+      "id": "transfer_5566736269_1762053421",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "میوه": 1000,
+        "چرم": 500,
+        "شیشه": 250
+      },
+      "status": "pending",
+      "requested_at": "2025-11-02T03:17:01.573162",
+      "delay_until": "2025-11-03T03:17:01.573166"
     }
   ]
 }
