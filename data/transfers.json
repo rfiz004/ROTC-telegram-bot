@@ -17026,6 +17026,22 @@
       "requested_at": "2025-11-02T17:36:51.844584",
       "delay_until": "2025-11-03T17:36:51.844591",
       "approved_at": "2025-11-02T17:38:39.314178"
+    },
+    {
+      "id": "transfer_7869889327_1762114757",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Druvenmarsh",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 40000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-02T20:19:17.255033",
+      "delay_until": "2025-11-03T20:19:17.255036"
     }
   ]
 }
