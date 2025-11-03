@@ -17092,6 +17092,22 @@
       "status": "pending",
       "requested_at": "2025-11-03T13:17:10.579794",
       "delay_until": "2025-11-04T13:17:10.579798"
+    },
+    {
+      "id": "transfer_1329048693_1762177600",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "منجنیق ساده": 3
+      },
+      "status": "pending",
+      "requested_at": "2025-11-03T13:46:40.430750",
+      "delay_until": "2025-11-04T13:46:40.430754"
     }
   ]
 }
