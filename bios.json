@@ -32,11 +32,12 @@
     "8039043365": {
       "country": "Northwood",
       "job": "روح گرگ",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-03T16:52:24.172450",
+      "saved_at": "2025-11-03T16:54:33.688995",
       "expires_at": "2025-11-03T17:22:11.638201",
-      "name": "لونا"
+      "name": "لونا",
+      "nickname": "..."
     }
   },
   "used_hashtags": [
