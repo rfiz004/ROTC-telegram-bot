@@ -32,12 +32,24 @@
     "8039043365": {
       "country": "Northwood",
       "job": "روح گرگ",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-11-03T16:54:33.688995",
+      "saved_at": "2025-11-03T17:00:24.541302",
       "expires_at": "2025-11-03T17:22:11.638201",
       "name": "لونا",
-      "nickname": "..."
+      "nickname": "...",
+      "age": "22",
+      "skills": [
+        "مدیریت امور نظامی",
+        "مدیریت امور اقتصادی",
+        "سوارکاری"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مدیریت امور نظامی",
+      "skill2": "مدیریت امور اقتصادی",
+      "skill3": "سوارکاری",
+      "appearance": "چشمان بنفش،گیسمان سیاه،پوست سفید و..."
     }
   },
   "used_hashtags": [
