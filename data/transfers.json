@@ -17060,6 +17060,22 @@
       "requested_at": "2025-11-02T20:19:58.137460",
       "delay_until": "2025-11-03T20:19:58.137464",
       "approved_at": "2025-11-02T20:45:44.654674"
+    },
+    {
+      "id": "transfer_5566736269_1762159895",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-03T08:51:35.104896",
+      "delay_until": "2025-11-04T08:51:35.104899"
     }
   ]
 }
