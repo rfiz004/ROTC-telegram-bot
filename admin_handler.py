@@ -873,20 +873,31 @@ async def handle_admin_text_message(update: Update, context: ContextTypes.DEFAUL
                     if len(parts) != 2:
                         await update.message.reply_text("❌ فرمت اشتباه! فرمت صحیح: نام شغل - تعداد")
                         return
-
+            
                     job_name, amount_str = parts
                     amount = int(amount_str)
-
+            
+                    country = user_data.get("country")
+                    if not country:
+                        await update.message.reply_text("❌ کشور مشخص نیست.")
+                        return
+            
+                    # دسترسی امن و مستقیم به لیست واقعی کشور
+                    if country not in jobs_by_country:
+                        jobs_by_country[country] = []
+                    jobs = jobs_by_country[country]  # ← حالا ارجاع واقعی گرفتیم
+            
                     job_found = False
                     for job in jobs:
                         if job.get("name") == job_name:
+                            old_count = job.get("count", 0)
                             if step == "increase_job":
-                                job["count"] = job.get("count", 0) + amount
+                                job["count"] = old_count + amount
                             else:
-                                job["count"] = max(0, job.get("count", 0) - amount)
+                                job["count"] = max(0, old_count - amount)
                             job_found = True
                             break
-
+            
                     if job_found:
                         save_data_file({
                             "jobs_by_country": jobs_by_country,
@@ -899,9 +910,45 @@ async def handle_admin_text_message(update: Update, context: ContextTypes.DEFAUL
                         )
                     else:
                         await update.message.reply_text(f"❌ شغل '{job_name}' پیدا نشد.")
-
+            
                 except ValueError:
                     await update.message.reply_text("❌ تعداد باید عدد باشد.")
+
+            # elif step in ["increase_job", "decrease_job"]:
+            #     try:
+            #         parts = [part.strip() for part in text.split("-")]
+            #         if len(parts) != 2:
+            #             await update.message.reply_text("❌ فرمت اشتباه! فرمت صحیح: نام شغل - تعداد")
+            #             return
+
+            #         job_name, amount_str = parts
+            #         amount = int(amount_str)
+
+            #         job_found = False
+            #         for job in jobs:
+            #             if job.get("name") == job_name:
+            #                 if step == "increase_job":
+            #                     job["count"] = job.get("count", 0) + amount
+            #                 else:
+            #                     job["count"] = max(0, job.get("count", 0) - amount)
+            #                 job_found = True
+            #                 break
+
+            #         if job_found:
+            #             save_data_file({
+            #                 "jobs_by_country": jobs_by_country,
+            #                 "skills_config": skills_config
+            #             })
+            #             action_text = "افزایش" if step == "increase_job" else "کاهش"
+            #             await update.message.reply_text(
+            #                 f"✅ ظرفیت شغل '{job_name}' {action_text} یافت.",
+            #                 reply_markup=admin_back_buttons()
+            #             )
+            #         else:
+            #             await update.message.reply_text(f"❌ شغل '{job_name}' پیدا نشد.")
+
+            #     except ValueError:
+            #         await update.message.reply_text("❌ تعداد باید عدد باشد.")
 
         # Clear state at the end
         context.user_data.pop(user_id, None)
