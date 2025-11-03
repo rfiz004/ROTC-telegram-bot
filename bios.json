@@ -30,11 +30,10 @@
       "user_id_tag": "#Leviathan"
     },
     "1803891367": {
+      "step": "pending",
       "country": "Northwood",
-      "job": "ملکه",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-03T09:55:19.959187",
+      "job": "ملکه",
       "expires_at": "2025-11-03T10:09:52.402819",
       "name": "Flora",
       "nickname": "مادر کشور",
@@ -56,7 +55,15 @@
       "appearance": "موهای بلند سیاه، با پوستی سفید و چشمان‌ زرد و کهربایی رنگ\nنگاهی نافذ و تیز و چهره‌ای به نظر جدی و گاهی خشک",
       "history": "از ابتدای زندگیش برای ملکه‌ی مناسبی شدن آموزش دیده بود، مدیریت های مختلف و مهارت‌های مناسبی که یک ملکه باید می دونست\nمسیر زندگیش از اول مشخص بود و همه‌چیز طبق اون پیش رفت. زنی سرسخت که در اعماق قلعه، کشور را در دست گرفته بود.\nطالعی روشن برایش پیشگویی کرده بودند و ستارگان هنگام به دنیا آمدنش برای سرنوشت مبرکش درخشیده بودند و دست در دست هم زنجیر شده بودند.",
       "id_number": "@Ranpo_glasses",
-      "user_id_tag": "#Flora"
+      "user_id_tag": "#Flora",
+      "photos": [
+        "AgACAgQAAxkBAALnXmkIfMkJ5C3aFuUP3cgXqDzVkbn4AAKmC2sbla1BUP_DpgdQWO0FAQADAgADeQADNgQ",
+        "AgACAgQAAxkBAALnYmkIfRQ_mRZQW-OD__FoSo02VRLHAAKnC2sbla1BUJiK11IvRJI3AQADAgADeQADNgQ",
+        "AgACAgQAAxkBAALnY2kIfRQRSwHkex-JBRIu_pIZFs3HAAKoC2sbla1BUOoK5jmcBFoBAQADAgADeQADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "1803891367",
+      "saved_at": "2025-11-03T10:00:00.942720"
     }
   },
   "used_hashtags": [
