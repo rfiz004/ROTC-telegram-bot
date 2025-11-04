@@ -17263,6 +17263,22 @@
       "requested_at": "2025-11-04T12:21:38.133393",
       "delay_until": "2025-11-05T12:21:38.133399",
       "approved_at": "2025-11-04T12:22:36.389549"
+    },
+    {
+      "id": "transfer_1329048693_1762278825",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Garodhen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-04T17:53:45.039442",
+      "delay_until": "2025-11-05T17:53:45.039447"
     }
   ]
 }
