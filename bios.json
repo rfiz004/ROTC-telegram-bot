@@ -30,11 +30,10 @@
       "user_id_tag": "#Leviathan"
     },
     "5615504768": {
+      "step": "pending",
       "country": "Alestria",
-      "job": "قدیسه",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-04T22:34:01.544015",
+      "job": "قدیسه",
       "expires_at": "2025-11-04T22:54:01.959431",
       "name": "Mahan butcher",
       "nickname": "Butcher",
@@ -52,7 +51,13 @@
       "appearance": "موهای تیره و کمی آشفته، ریش پرپشت با چند تار سفید، نگاه تیز و خشمگین، کت بلند چرمی سیاه با جزئیات باستانی روی لبه‌ها، اندامی تنومند و حالت چهره‌ای جدی و خونسرد",
       "history": "بیلی بوچر در جوانی فرمانده‌ای بی‌رحم و نابغه بود. در نبردهای شمال، ده‌ها ارتش را شکست داد و به نماد ترس بدل شد.\nاما در سه نبرد آخر، غرورش کورش کرد — ارتش خودش را به نابودی کشاند، نزدیک‌ترین یارانش کشته شدند، و خودش ناپدید شد.",
       "id_number": "@niomah",
-      "user_id_tag": "#Saint_Butcher"
+      "user_id_tag": "#Saint_Butcher",
+      "photos": [
+        "AgACAgQAAxkBAALqJmkKgMk2EJJXmZ7WGLgNFPcs3fv4AAK5DWsbw8xRUI3mC9rggwrzAQADAgADeQADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "5615504768",
+      "saved_at": "2025-11-04T22:40:31.035325"
     }
   },
   "used_hashtags": [
