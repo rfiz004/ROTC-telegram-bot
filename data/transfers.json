@@ -17280,6 +17280,22 @@
       "requested_at": "2025-11-04T17:53:45.039442",
       "delay_until": "2025-11-05T17:53:45.039447",
       "approved_at": "2025-11-04T18:33:18.632492"
+    },
+    {
+      "id": "transfer_1329048693_1762286214",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 7500
+      },
+      "status": "pending",
+      "requested_at": "2025-11-04T19:56:54.882439",
+      "delay_until": "2025-11-05T19:56:54.882442"
     }
   ]
 }
