@@ -30,11 +30,10 @@
       "user_id_tag": "#Leviathan"
     },
     "5615504768": {
+      "step": "pending",
       "country": "Azure",
-      "job": "گرند دوک",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-04T18:03:06.654535",
+      "job": "گرند دوک",
       "expires_at": "2025-11-04T18:24:28.489955",
       "name": "Mahan butcher",
       "nickname": "Butcher (قصاب)",
@@ -52,7 +51,13 @@
       "appearance": "موهای تیره و کمی آشفته، ریش پرپشت با چند تار سفید، نگاه تیز و خشمگین، کت بلند چرمی سیاه با جزئیات باستانی روی لبه‌ها، اندامی تنومند و حالت چهره‌ای جدی و خونسرد",
       "history": "بیلی بوچر در جوانی فرمانده‌ای بی‌رحم و نابغه بود. در نبردهای شمال، ده‌ها ارتش را شکست داد و به نماد ترس بدل شد.\nاما در سه نبرد آخر، غرورش کورش کرد — ارتش خودش را به نابودی کشاند، نزدیک‌ترین یارانش کشته شدند، و خودش ناپدید شد.",
       "id_number": "@Niomah",
-      "user_id_tag": "#Butcher"
+      "user_id_tag": "#Butcher",
+      "photos": [
+        "AgACAgQAAxkBAALp7WkKQM96hNPQoiU9BGrXMupB3jZxAAK4DGsbw8xRUJuIsWM40bFqAQADAgADeQADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "5615504768",
+      "saved_at": "2025-11-04T18:07:23.160426"
     }
   },
   "used_hashtags": [
