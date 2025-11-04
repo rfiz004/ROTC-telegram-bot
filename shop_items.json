@@ -1511,7 +1511,7 @@
   },
   {
     "name": "زره فولادی بالریون",
-    "type": "#Army",
+    "type": "Army",
     "countries": [
       "All"
     ],
