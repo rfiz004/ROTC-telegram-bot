@@ -1580,5 +1580,26 @@
     "count": 100,
     "id": "74",
     "created_at": "2025-11-04T17:01:15.004232"
+  },
+  {
+    "name": "کمان نیمه‌خودکار",
+    "type": "Weapons",
+    "countries": [
+      "All"
+    ],
+    "description": "کمان نیمه خودکار که در گردان زوبین مورد استفاده قرار میگیره, تعداد: 100",
+    "price": 0,
+    "materials": {
+      "فولاد": 5
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Weapons",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALpvWkKNp1iVa3aBcSDXtW8n5eW9THBAAJGC2sbX55ZUO7nSkNbR3McAQADAgADeAADNgQ",
+    "count": 100,
+    "id": "75",
+    "created_at": "2025-11-04T17:25:14.094009"
   }
 ]
