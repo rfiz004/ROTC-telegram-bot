@@ -17177,6 +17177,22 @@
       "status": "pending",
       "requested_at": "2025-11-04T09:38:46.680637",
       "delay_until": "2025-11-05T09:38:46.680641"
+    },
+    {
+      "id": "transfer_6723163985_1762250213",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "منجنیق": 1
+      },
+      "status": "pending",
+      "requested_at": "2025-11-04T09:56:53.883564",
+      "delay_until": "2025-11-05T09:56:53.883568"
     }
   ]
 }
