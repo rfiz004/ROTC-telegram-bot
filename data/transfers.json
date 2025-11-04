@@ -17144,6 +17144,23 @@
       "requested_at": "2025-11-04T07:22:24.455648",
       "delay_until": "2025-11-05T07:22:24.455652",
       "approved_at": "2025-11-04T07:23:29.032325"
+    },
+    {
+      "id": "transfer_5566736269_1762241149",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پارچه": 2000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-04T07:25:49.489869",
+      "delay_until": "2025-11-05T07:25:49.489874",
+      "approved_at": "2025-11-04T07:26:23.903078"
     }
   ]
 }
