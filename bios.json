@@ -32,9 +32,12 @@
     "5615504768": {
       "country": "Azure",
       "job": "گرند دوک",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-04T17:54:28.489576"
+      "saved_at": "2025-11-04T17:59:27.832425",
+      "expires_at": "2025-11-04T18:24:28.489955",
+      "name": "Mahan butcher",
+      "nickname": "Butcher (قصاب)"
     }
   },
   "used_hashtags": [
