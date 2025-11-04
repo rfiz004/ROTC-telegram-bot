@@ -17161,6 +17161,22 @@
       "requested_at": "2025-11-04T07:25:49.489869",
       "delay_until": "2025-11-05T07:25:49.489874",
       "approved_at": "2025-11-04T07:26:23.903078"
+    },
+    {
+      "id": "transfer_7869889327_1762249126",
+      "requester_id": 7869889327,
+      "source_country": "Northwood",
+      "source_province": "Lusweld",
+      "target_country": "Northwood",
+      "target_province": "Druvenmarsh",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 11000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-04T09:38:46.680637",
+      "delay_until": "2025-11-05T09:38:46.680641"
     }
   ]
 }
