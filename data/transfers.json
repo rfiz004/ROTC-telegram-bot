@@ -17195,6 +17195,23 @@
       "requested_at": "2025-11-04T09:56:53.883564",
       "delay_until": "2025-11-05T09:56:53.883568",
       "approved_at": "2025-11-04T10:13:20.355176"
+    },
+    {
+      "id": "transfer_7096919075_1762252011",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "structures",
+      "items": {
+        "منجنیق ساده": 3
+      },
+      "status": "approved",
+      "requested_at": "2025-11-04T10:26:51.080710",
+      "delay_until": "2025-11-05T10:26:51.080715",
+      "approved_at": "2025-11-04T10:27:58.735619"
     }
   ]
 }
