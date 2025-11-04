@@ -17246,6 +17246,23 @@
       "requested_at": "2025-11-04T11:10:36.309370",
       "delay_until": "2025-11-05T11:10:36.309374",
       "approved_at": "2025-11-04T12:16:43.823547"
+    },
+    {
+      "id": "transfer_1208514381_1762258898",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "army",
+      "items": {
+        "جوخه قاتلان": 50
+      },
+      "status": "approved",
+      "requested_at": "2025-11-04T12:21:38.133393",
+      "delay_until": "2025-11-05T12:21:38.133399",
+      "approved_at": "2025-11-04T12:22:36.389549"
     }
   ]
 }
