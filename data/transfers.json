@@ -17089,9 +17089,10 @@
       "items": {
         "منجنیق": 1
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-03T13:17:10.579794",
-      "delay_until": "2025-11-04T13:17:10.579798"
+      "delay_until": "2025-11-04T13:17:10.579798",
+      "approved_at": "2025-11-04T07:20:52.219479"
     },
     {
       "id": "transfer_1329048693_1762177600",
@@ -17105,9 +17106,27 @@
       "items": {
         "منجنیق ساده": 3
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-03T13:46:40.430750",
-      "delay_until": "2025-11-04T13:46:40.430754"
+      "delay_until": "2025-11-04T13:46:40.430754",
+      "approved_at": "2025-11-04T07:20:45.529240"
+    },
+    {
+      "id": "transfer_5566736269_1762240748",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Verindel",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 1000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-04T07:19:08.062380",
+      "delay_until": "2025-11-05T07:19:08.062384",
+      "approved_at": "2025-11-04T07:20:42.834452"
     }
   ]
 }
