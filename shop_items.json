@@ -1623,5 +1623,26 @@
     "id": "76",
     "created_at": "2025-11-05T21:09:37.015325",
     "updated_at": "2025-11-05T21:24:21.213971"
+  },
+  {
+    "name": "حفاظ فولادی دروازه",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "روکش فلزی محافظ فولادی که روی دروازه های قلعه برای استحکام بیشتر در مقابل ضربه کشیده میشه, تعداد: 1",
+    "price": 5000,
+    "materials": {
+      "فولاد": 60
+    },
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALrKGkLwLLUt-K5XN65e5yLPWyWFLf2AAKnC2sbHyH4U-LK7T4XhQjVAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "77",
+    "created_at": "2025-11-05T21:26:34.590594"
   }
 ]
