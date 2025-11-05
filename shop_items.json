@@ -1601,5 +1601,24 @@
     "count": 100,
     "id": "75",
     "created_at": "2025-11-04T17:25:14.094009"
+  },
+  {
+    "name": "روکش فولادی دیوار",
+    "type": "Castle",
+    "countries": [
+      "All"
+    ],
+    "description": "روکش فلزی محافظ فولادی که روی دیوار های قلعه برای استحکام بیشتر در مقابل ضربه کشیده میشه, تعداد: 1",
+    "price": 9000,
+    "materials": {},
+    "owner": "-",
+    "hashtags": [
+      "#Castle",
+      "#All"
+    ],
+    "photo_file_id": "AgACAgQAAxkBAALrB2kLvKdCpazadiKPogJR2X-HN6a2AAJjDGsbLYJgUAwrVe2D0ASzAQADAgADeAADNgQ",
+    "count": 1,
+    "id": "76",
+    "created_at": "2025-11-05T21:09:37.015325"
   }
 ]
