@@ -17314,6 +17314,22 @@
       "requested_at": "2025-11-04T20:09:03.545145",
       "delay_until": "2025-11-05T20:09:03.545150",
       "approved_at": "2025-11-05T06:20:58.065985"
+    },
+    {
+      "id": "transfer_5566736269_1762328369",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "میوه": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-11-05T07:39:29.527266",
+      "delay_until": "2025-11-06T07:39:29.527270"
     }
   ]
 }
