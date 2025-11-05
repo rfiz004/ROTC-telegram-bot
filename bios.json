@@ -32,12 +32,25 @@
     "7515591991": {
       "country": "Walden",
       "job": "فرمانده ارتش",
-      "step": "asking_age",
+      "step": "asking_id_number",
       "flow_type": "bio",
-      "saved_at": "2025-11-05T12:18:53.890701",
+      "saved_at": "2025-11-05T12:24:02.073940",
       "expires_at": "2025-11-05T12:48:20.772434",
       "name": "Shade",
-      "nickname": "Shadow"
+      "nickname": "Shadow",
+      "age": "21",
+      "skills": [
+        "مدیریت امور نظامی",
+        "جعل مدارک",
+        "مهارت شمشیرزنی و تبرزنی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 0,
+      "skill1": "مدیریت امور نظامی",
+      "skill2": "جعل مدارک",
+      "skill3": "مهارت شمشیرزنی و تبرزنی",
+      "appearance": "موهایی سیاه تا کمر با پوستی سفید و چشم های همرنگ قرمز یاقوتی قدی حدود 177",
+      "history": "با شمشیری که به دست می‌گیرد در راه حاکمیت چه تخت های از کله که نمیتوان ساخت"
     }
   },
   "used_hashtags": [
