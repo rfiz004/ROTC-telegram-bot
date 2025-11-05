@@ -17348,6 +17348,22 @@
       "requested_at": "2025-11-05T08:44:14.590072",
       "delay_until": "2025-11-06T08:44:14.590075",
       "approved_at": "2025-11-05T08:45:33.140469"
+    },
+    {
+      "id": "transfer_7199097732_1762356020",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "guardian-of-the-pact",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 38800
+      },
+      "status": "pending",
+      "requested_at": "2025-11-05T15:20:20.109970",
+      "delay_until": "2025-11-06T15:20:20.109974"
     }
   ]
 }
