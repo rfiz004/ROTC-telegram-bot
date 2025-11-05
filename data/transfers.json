@@ -17331,6 +17331,23 @@
       "requested_at": "2025-11-05T07:39:29.527266",
       "delay_until": "2025-11-06T07:39:29.527270",
       "approved_at": "2025-11-05T07:53:02.337324"
+    },
+    {
+      "id": "transfer_5566736269_1762332254",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Walden",
+      "target_province": "guardian-of-the-pact",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-05T08:44:14.590072",
+      "delay_until": "2025-11-06T08:44:14.590075",
+      "approved_at": "2025-11-05T08:45:33.140469"
     }
   ]
 }
