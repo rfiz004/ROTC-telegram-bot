@@ -30,14 +30,34 @@
       "user_id_tag": "#Leviathan"
     },
     "5615504768": {
+      "step": "pending",
       "country": "Alestria",
-      "job": "صدراعظم",
-      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-05T10:02:13.253603",
+      "job": "صدراعظم",
       "expires_at": "2025-11-05T10:31:55.023387",
       "name": "Mahan butcher",
-      "nickname": "Butcher"
+      "nickname": "Butcher",
+      "age": "38",
+      "skills": [
+        "مدیریت امور نظامی",
+        "مقاومت در برابر سم",
+        "قدرت بدنی بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مدیریت امور نظامی",
+      "skill2": "مقاومت در برابر سم",
+      "skill3": "قدرت بدنی بالا",
+      "appearance": "موهای تیره و کمی آشفته، ریش پرپشت با چند تار سفید، نگاه تیز و خشمگین، کت بلند چرمی سیاه با جزئیات باستانی روی لبه‌ها، اندامی تنومند و حالت چهره‌ای جدی و خونسرد",
+      "history": "بیلی بوچر در جوانی فرمانده‌ای بی‌رحم و نابغه بود. در نبردهای شمال، ده‌ها ارتش را شکست داد و به نماد ترس بدل شد.\nاما در سه نبرد آخر، غرورش کورش کرد — ارتش خودش را به نابودی کشاند، نزدیک‌ترین یارانش کشته شدند، و خودش ناپدید شد.",
+      "id_number": "@niomah",
+      "user_id_tag": "#Chancellor_Butcher",
+      "photos": [
+        "AgACAgQAAxkBAALqJmkKgMk2EJJXmZ7WGLgNFPcs3fv4AAK5DWsbw8xRUI3mC9rggwrzAQADAgADeQADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "5615504768",
+      "saved_at": "2025-11-05T10:05:32.347964"
     }
   },
   "used_hashtags": [
@@ -107,6 +127,7 @@
     "#Luna_the_raven",
     "#Leviathan",
     "#Butcher",
-    "#Saint_Butcher"
+    "#Saint_Butcher",
+    "#Chancellor_Butcher"
   ]
 }
