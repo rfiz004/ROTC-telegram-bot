@@ -1610,7 +1610,9 @@
     ],
     "description": "روکش فلزی محافظ فولادی که روی دیوار های قلعه برای استحکام بیشتر در مقابل ضربه کشیده میشه, تعداد: 1",
     "price": 9000,
-    "materials": {},
+    "materials": {
+      "فولاد": 100
+    },
     "owner": "-",
     "hashtags": [
       "#Castle",
@@ -1619,6 +1621,7 @@
     "photo_file_id": "AgACAgQAAxkBAALrB2kLvKdCpazadiKPogJR2X-HN6a2AAJjDGsbLYJgUAwrVe2D0ASzAQADAgADeAADNgQ",
     "count": 1,
     "id": "76",
-    "created_at": "2025-11-05T21:09:37.015325"
+    "created_at": "2025-11-05T21:09:37.015325",
+    "updated_at": "2025-11-05T21:24:21.213971"
   }
 ]
