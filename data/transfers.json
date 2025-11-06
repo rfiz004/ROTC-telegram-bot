@@ -17399,6 +17399,22 @@
       "requested_at": "2025-11-05T16:12:29.568512",
       "delay_until": "2025-11-06T16:12:29.568516",
       "approved_at": "2025-11-05T16:21:53.102556"
+    },
+    {
+      "id": "transfer_1329048693_1762422459",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Northwood",
+      "target_province": "Ironfell",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-06T09:47:39.127950",
+      "delay_until": "2025-11-07T09:47:39.127954"
     }
   ]
 }
