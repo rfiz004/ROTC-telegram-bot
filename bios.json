@@ -32,11 +32,24 @@
     "8515726155": {
       "country": "Northwood",
       "job": "خاندان سلطنتی",
-      "step": "asking_nickname",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-11-06T08:22:49.285115",
+      "saved_at": "2025-11-06T08:24:42.532078",
       "expires_at": "2025-11-06T08:52:38.121845",
-      "name": "Tsuki"
+      "name": "Tsuki",
+      "nickname": "پادشاه خونین",
+      "age": "34",
+      "skills": [
+        "مهارت کار با نیزه",
+        "مدیریت امور اقتصادی",
+        "مدیریت امور نظامی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 1,
+      "skill1": "مهارت کار با نیزه",
+      "skill2": "مدیریت امور اقتصادی",
+      "skill3": "مدیریت امور نظامی",
+      "appearance": "موه های نسبتا سفید و بلند ، قد نسبتا بلند با زره هایی تیره و نقابی تیره"
     }
   },
   "used_hashtags": [
