@@ -30,11 +30,10 @@
       "user_id_tag": "#Leviathan"
     },
     "8515726155": {
+      "step": "pending",
       "country": "Northwood",
-      "job": "خاندان سلطنتی",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-06T08:28:08.669401",
+      "job": "خاندان سلطنتی",
       "expires_at": "2025-11-06T08:52:38.121845",
       "name": "Tsuki",
       "nickname": "پادشاه خونین",
@@ -52,7 +51,13 @@
       "appearance": "موه های نسبتا سفید و بلند ، قد نسبتا بلند با زره هایی تیره و نقابی تیره",
       "history": "تسوکی پادشاه نورث وود ، شخصی که بعد از مدتی به همراه لشکریانش به مسافرت رفت و الان به نورث وود برگشته ، دلیل اینکه آن راه پادشاه خونین می نامند این است که کل خاندان سلطنتی رو قتل عام کرده است جز چند نفر ، حالا او برگشته که دوباره تاج رو بگیره",
       "id_number": "@Mr_Tsuki_0",
-      "user_id_tag": "#Tsuki"
+      "user_id_tag": "#Tsuki",
+      "photos": [
+        "AgACAgQAAxkBAALrcWkMXGjgdE6905uVJP5K46V3eikmAAIoDGsbpWpgUHUoOytXf7ZHAQADAgADeQADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "8515726155",
+      "saved_at": "2025-11-06T08:29:42.748120"
     }
   },
   "used_hashtags": [
