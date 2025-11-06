@@ -17433,6 +17433,22 @@
       "requested_at": "2025-11-06T09:53:44.120985",
       "delay_until": "2025-11-07T09:53:44.120990",
       "approved_at": "2025-11-06T09:59:09.682032"
+    },
+    {
+      "id": "transfer_898145344_1762435006",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Shinrinky",
+      "target_country": "Hikada",
+      "target_province": "Sky-Dragon",
+      "transfer_type": "domestic",
+      "category": "army",
+      "items": {
+        "کاتافراکت مخصوص هیکادا": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-11-06T13:16:46.270462",
+      "delay_until": "2025-11-07T13:16:46.270466"
     }
   ]
 }
