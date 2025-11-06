@@ -32,11 +32,12 @@
     "8016979493": {
       "country": "Northwood",
       "job": "روح گرگ",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-06T17:53:47.298977",
+      "saved_at": "2025-11-06T17:57:31.313905",
       "expires_at": "2025-11-06T18:23:35.241319",
-      "name": "Jon Snow"
+      "name": "Jon Snow",
+      "nickname": "Bastard of Winterfell"
     }
   },
   "used_hashtags": [
