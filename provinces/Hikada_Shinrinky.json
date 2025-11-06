@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 5100,
+  "wealth": 100,
   "population": 60000,
   "tax": 10,
   "popularity": 92,
@@ -69,7 +69,7 @@
       "weekly_output": 50
     },
     "کارخونه فولاد": {
-      "count": 3,
+      "count": 4,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -107,5 +107,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-04T07:27:06.144377"
+  "last_updated": "2025-11-06T15:43:32.592824"
 }
