@@ -6052,6 +6052,12 @@
                         "status": "Approved",
                         "product": "پارچه",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه پارچه_5",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ]
             }

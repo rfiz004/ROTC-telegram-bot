@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Elmaren",
   "mines": {},
-  "wealth": 7950,
+  "wealth": 5950,
   "population": 35000,
   "tax": 100,
   "popularity": 76,
@@ -68,10 +68,10 @@
       "weekly_output": 50
     },
     "کارخونه پارچه": {
-      "count": 4,
+      "count": 5,
       "product": "پارچه",
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-11-02T13:25:24.738808"
+  "last_updated": "2025-11-06T07:54:48.348223"
 }
