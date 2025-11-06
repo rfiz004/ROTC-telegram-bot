@@ -48,7 +48,7 @@
     "کارخونه پارچه": {
       "count": 1,
       "product": "پارچه",
-      "weekly_output": 20
+      "weekly_output": 50
     },
     "کارخونه شیشه": {
       "count": 0,
@@ -75,5 +75,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-04T07:30:53.955932"
+  "last_updated": "2025-11-06T16:05:57.078497"
 }
