@@ -62,6 +62,16 @@
       "count": 4,
       "product": "میوه",
       "weekly_output": 100
+    },
+    "کارخونه پنبه": {
+      "count": 4,
+      "product": "پنبه",
+      "weekly_output": 50
+    },
+    "کارخونه سنگ": {
+      "count": 4,
+      "product": "سنگ",
+      "weekly_output": 50
     }
   },
   "structure_productions": {
@@ -87,5 +97,5 @@
       "weekly_per_unit": 8000
     }
   },
-  "last_updated": "2025-11-06T15:47:44.693920"
+  "last_updated": "2025-11-06T15:51:59.585894"
 }
