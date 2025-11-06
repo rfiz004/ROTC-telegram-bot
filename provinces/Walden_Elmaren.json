@@ -2,7 +2,7 @@
   "country": "Walden",
   "province": "Elmaren",
   "mines": {},
-  "wealth": 5950,
+  "wealth": 1950,
   "population": 35000,
   "tax": 100,
   "popularity": 76,
@@ -53,12 +53,12 @@
   },
   "economic_structures": {
     "مزرعه": {
-      "count": 4,
+      "count": 5,
       "product": "گندم",
       "weekly_output": 100
     },
     "باغ": {
-      "count": 4,
+      "count": 5,
       "product": "میوه",
       "weekly_output": 100
     },
@@ -73,5 +73,5 @@
       "weekly_output": 50
     }
   },
-  "last_updated": "2025-11-06T07:54:48.348223"
+  "last_updated": "2025-11-06T20:24:58.118469"
 }
