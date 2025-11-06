@@ -17415,6 +17415,22 @@
       "status": "pending",
       "requested_at": "2025-11-06T09:47:39.127950",
       "delay_until": "2025-11-07T09:47:39.127954"
+    },
+    {
+      "id": "transfer_1329048693_1762422824",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Trenhallough",
+      "target_country": "Aldemar",
+      "target_province": "Marevenport",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 30000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-06T09:53:44.120985",
+      "delay_until": "2025-11-07T09:53:44.120990"
     }
   ]
 }
