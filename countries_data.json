@@ -6045,6 +6045,12 @@
                         "status": "Approved",
                         "product": "پنبه",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه پنبه_5",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه پارچه": [
