@@ -4,7 +4,7 @@
   "mines": {},
   "wealth": 0,
   "population": 24000,
-  "tax": 10,
+  "tax": 100,
   "popularity": 93,
   "total_army": 5000,
   "army": {
@@ -45,7 +45,7 @@
       "weekly_output": 50
     },
     "کارخونه فولاد": {
-      "count": 3,
+      "count": 4,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-04T07:27:29.853488"
+  "last_updated": "2025-11-06T15:45:56.581701"
 }

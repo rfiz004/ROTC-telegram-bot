@@ -72,7 +72,7 @@
       "weekly_output": 50
     },
     "کارخونه فولاد": {
-      "count": 4,
+      "count": 5,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -105,5 +105,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-06T10:28:15.044449"
+  "last_updated": "2025-11-06T15:45:05.109316"
 }
