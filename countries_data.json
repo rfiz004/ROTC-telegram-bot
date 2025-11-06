@@ -4177,7 +4177,14 @@
             }
         },
         "Ironfell": {
-            "castle": {},
+            "castle": {
+                "قصر": [
+                    {
+                        "id": "قصر_1",
+                        "status": "Pending"
+                    }
+                ]
+            },
             "structures": {},
             "weapons": {},
             "economic_structures": {
