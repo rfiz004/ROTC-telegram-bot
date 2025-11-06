@@ -30,11 +30,10 @@
       "user_id_tag": "#Leviathan"
     },
     "8016979493": {
+      "step": "pending",
       "country": "Northwood",
-      "job": "روح گرگ",
-      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-06T18:08:49.519959",
+      "job": "روح گرگ",
       "expires_at": "2025-11-06T18:34:19.817838",
       "name": "Robb Stark",
       "nickname": "The Young Wolf",
@@ -52,7 +51,15 @@
       "appearance": "Look at the photo, okay?",
       "history": "Robb was a young wolf-man from the North who loved and nourished wolves. When danger approached his land, the people, without a crown or official command, called him their leader. He defended the North with courage and calm. They said: \"A young wolf does not fight for power; he fights for his home.\"",
       "id_number": "@Uncrowned_heir",
-      "user_id_tag": "#Robb"
+      "user_id_tag": "#Robb",
+      "photos": [
+        "AgACAgQAAxkBAALscmkM5HfK4RBtG8aa7fiEOt7Sn26zAAKKC2sbmQZoUBD68JZTxZYSAQADAgADeAADNgQ",
+        "AgACAgQAAxkBAALsdGkM5MLdIQoqdwfTXskgjnlrGgrJAAJKC2sb1GQJUK_5njTWkvpIAQADAgADeAADNgQ",
+        "AgACAgQAAxkBAALsdWkM5MK-VNVLYpQFlOiLdhuZm-ovAAKLC2sbmQZoULAm-8xeRXSUAQADAgADeAADNgQ"
+      ],
+      "level": 1,
+      "unique_id": "8016979493",
+      "saved_at": "2025-11-06T18:11:28.465098"
     }
   },
   "used_hashtags": [
