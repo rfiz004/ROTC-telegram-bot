@@ -32,9 +32,9 @@
     "8016979493": {
       "country": "Northwood",
       "job": "روح گرگ",
-      "step": "asking_history",
+      "step": "asking_photo",
       "flow_type": "bio",
-      "saved_at": "2025-11-06T18:06:49.432784",
+      "saved_at": "2025-11-06T18:08:49.519959",
       "expires_at": "2025-11-06T18:34:19.817838",
       "name": "Robb Stark",
       "nickname": "The Young Wolf",
@@ -49,7 +49,10 @@
       "skill1": "مهارت شمشیرزنی و تبرزنی",
       "skill2": "مدیریت امور نظامی",
       "skill3": "حواس پنجگانه قوی",
-      "appearance": "Look at the photo, okay?"
+      "appearance": "Look at the photo, okay?",
+      "history": "Robb was a young wolf-man from the North who loved and nourished wolves. When danger approached his land, the people, without a crown or official command, called him their leader. He defended the North with courage and calm. They said: \"A young wolf does not fight for power; he fights for his home.\"",
+      "id_number": "@Uncrowned_heir",
+      "user_id_tag": "#Robb"
     }
   },
   "used_hashtags": [
@@ -122,6 +125,7 @@
     "#Saint_Butcher",
     "#Chancellor_Butcher",
     "#Ronva",
-    "#Tsuki"
+    "#Tsuki",
+    "#Robb"
   ]
 }
