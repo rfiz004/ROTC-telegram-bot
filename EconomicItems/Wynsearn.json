@@ -1,7 +1,6 @@
 {
   "grain_priority": [
-    "گوشت",
-    "گندم"
+    "گوشت"
   ],
   "grains": {
     "گوشت": 0,
@@ -9,5 +8,5 @@
   },
   "unfed_population": 0,
   "grain_consumption": 500,
-  "last_updated": "2025-11-01T06:50:09.624543"
+  "last_updated": "2025-11-07T09:13:37.016506"
 }
