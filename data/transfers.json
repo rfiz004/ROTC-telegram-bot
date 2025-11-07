@@ -18819,6 +18819,38 @@
       "requested_at": "2025-11-07T20:18:36.619577",
       "delay_until": "2025-11-08T20:18:36.619597",
       "approved_at": "2025-11-07T20:27:33.722040"
+    },
+    {
+      "id": "transfer_5564554013_1762552352",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "weapons",
+      "items": {
+        "زره فولادی بالریون": 2
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T21:52:32.401492",
+      "delay_until": "2025-11-08T21:52:32.401495"
+    },
+    {
+      "id": "transfer_5564554013_1762552374",
+      "requester_id": 5564554013,
+      "source_country": "Azure",
+      "source_province": "Kalindora",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 7500
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T21:52:54.672784",
+      "delay_until": "2025-11-08T21:52:54.672788"
     }
   ]
 }
