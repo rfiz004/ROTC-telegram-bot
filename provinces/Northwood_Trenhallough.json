@@ -4,7 +4,7 @@
   "mines": {
     "Copper mine": 1
   },
-  "wealth": 34566,
+  "wealth": 27066,
   "population": 40000,
   "tax": 0,
   "popularity": 59,
@@ -55,7 +55,7 @@
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 1,
+      "count": 4,
       "product": "چرم",
       "weekly_output": 50
     },
@@ -93,5 +93,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-06T15:58:56.490308"
+  "last_updated": "2025-11-07T08:49:19.022829"
 }

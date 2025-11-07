@@ -4694,6 +4694,24 @@
                         "status": "Approved",
                         "product": "چرم",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه چرم_2",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه چرم_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه چرم_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه شراب": [
