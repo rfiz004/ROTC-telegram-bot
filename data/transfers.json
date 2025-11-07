@@ -18536,6 +18536,40 @@
       "status": "pending",
       "requested_at": "2025-11-07T16:56:09.915711",
       "delay_until": "2025-11-08T16:56:09.915715"
+    },
+    {
+      "id": "transfer_898145344_1762537942",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Tsurukaga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T17:52:22.681725",
+      "delay_until": "2025-11-08T17:52:22.681729"
+    },
+    {
+      "id": "transfer_898145344_1762537971",
+      "requester_id": 898145344,
+      "source_country": "Hikada",
+      "source_province": "Tsurukaga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "پارچه": 100,
+        "چوب": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T17:52:51.207418",
+      "delay_until": "2025-11-08T17:52:51.207421"
     }
   ]
 }
