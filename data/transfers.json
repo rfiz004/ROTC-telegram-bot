@@ -18363,6 +18363,38 @@
       "status": "pending",
       "requested_at": "2025-11-07T10:58:02.773107",
       "delay_until": "2025-11-08T10:58:02.773111"
+    },
+    {
+      "id": "transfer_6213073537_1762513441",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 34000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T11:04:01.321746",
+      "delay_until": "2025-11-08T11:04:01.321749"
+    },
+    {
+      "id": "transfer_6213073537_1762513470",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Walden",
+      "target_province": "Verindel",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T11:04:30.973302",
+      "delay_until": "2025-11-08T11:04:30.973305"
     }
   ]
 }
