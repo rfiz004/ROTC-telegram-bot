@@ -369,6 +369,24 @@
                         "status": "Approved",
                         "product": "فولاد",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه فولاد_2",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه پارچه": [
@@ -1340,6 +1358,12 @@
                         "status": "Approved",
                         "product": "پنبه",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه پنبه_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه سنگ": [
@@ -1445,6 +1469,12 @@
                         "status": "Approved",
                         "product": "پنبه",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه پنبه_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه سنگ": [
