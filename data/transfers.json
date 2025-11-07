@@ -18256,6 +18256,23 @@
       "requested_at": "2025-11-07T10:23:20.186665",
       "delay_until": "2025-11-08T10:23:20.186669",
       "approved_at": "2025-11-07T10:26:09.447127"
+    },
+    {
+      "id": "transfer_1208514381_1762512394",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Talmarin",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:46:34.190980",
+      "delay_until": "2025-11-08T10:46:34.190985",
+      "approved_at": "2025-11-07T10:46:40.671072"
     }
   ]
 }
