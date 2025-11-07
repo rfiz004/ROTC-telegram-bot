@@ -18502,6 +18502,24 @@
       "requested_at": "2025-11-07T11:52:10.317131",
       "delay_until": "2025-11-08T11:52:10.317135",
       "approved_at": "2025-11-07T13:39:58.615741"
+    },
+    {
+      "id": "transfer_5566736269_1762531596",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 100,
+        "میوه": 1550
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T16:06:36.753948",
+      "delay_until": "2025-11-08T16:06:36.753953",
+      "approved_at": "2025-11-07T16:06:51.358354"
     }
   ]
 }
