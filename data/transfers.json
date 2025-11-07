@@ -17688,6 +17688,26 @@
       "requested_at": "2025-11-07T09:47:49.392553",
       "delay_until": "2025-11-08T09:47:49.392558",
       "approved_at": "2025-11-07T09:49:08.371997"
+    },
+    {
+      "id": "transfer_1771323853_1762509296",
+      "requester_id": 1771323853,
+      "source_country": "Alestria",
+      "source_province": "Lilura",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 200,
+        "میوه": 447,
+        "پنبه": 200,
+        "گوشت": 350
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T09:54:56.073179",
+      "delay_until": "2025-11-08T09:54:56.073184",
+      "approved_at": "2025-11-07T09:55:50.202274"
     }
   ]
 }
