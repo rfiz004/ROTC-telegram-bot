@@ -18445,6 +18445,22 @@
       "status": "pending",
       "requested_at": "2025-11-07T11:09:39.571950",
       "delay_until": "2025-11-08T11:09:39.571953"
+    },
+    {
+      "id": "transfer_6723163985_1762515697",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 2000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T11:41:37.113334",
+      "delay_until": "2025-11-08T11:41:37.113337"
     }
   ]
 }
