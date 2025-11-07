@@ -18273,6 +18273,63 @@
       "requested_at": "2025-11-07T10:46:34.190980",
       "delay_until": "2025-11-08T10:46:34.190985",
       "approved_at": "2025-11-07T10:46:40.671072"
+    },
+    {
+      "id": "transfer_1208514381_1762512428",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Talmarin",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 400,
+        "میوه": 200,
+        "سنگ": 200,
+        "پنبه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:47:08.275716",
+      "delay_until": "2025-11-08T10:47:08.275720",
+      "approved_at": "2025-11-07T10:47:25.106135"
+    },
+    {
+      "id": "transfer_1208514381_1762512464",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:47:44.893080",
+      "delay_until": "2025-11-08T10:47:44.893084",
+      "approved_at": "2025-11-07T10:48:40.366684"
+    },
+    {
+      "id": "transfer_1208514381_1762512509",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Serenavis",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 400,
+        "میوه": 200,
+        "سنگ": 200,
+        "پنبه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:48:29.108155",
+      "delay_until": "2025-11-08T10:48:29.108160",
+      "approved_at": "2025-11-07T10:48:42.033713"
     }
   ]
 }
