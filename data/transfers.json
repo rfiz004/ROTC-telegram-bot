@@ -18461,6 +18461,38 @@
       "status": "pending",
       "requested_at": "2025-11-07T11:41:37.113334",
       "delay_until": "2025-11-08T11:41:37.113337"
+    },
+    {
+      "id": "transfer_6723163985_1762516271",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Lusauren",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 6000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T11:51:11.791315",
+      "delay_until": "2025-11-08T11:51:11.791318"
+    },
+    {
+      "id": "transfer_6213073537_1762516330",
+      "requester_id": 6213073537,
+      "source_country": "Santos",
+      "source_province": "Zahramun",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 2000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T11:52:10.317131",
+      "delay_until": "2025-11-08T11:52:10.317135"
     }
   ]
 }
