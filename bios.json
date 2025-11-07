@@ -32,16 +32,21 @@
     "7926402657": {
       "country": "Walden",
       "job": "فرمانده ارتش",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-07T09:08:53.267706"
+      "saved_at": "2025-11-07T09:19:51.069680",
+      "expires_at": "2025-11-07T09:38:53.268117",
+      "name": "آکیو کنستانتین",
+      "nickname": "تک چشم"
     },
     "8347477495": {
       "country": "Azure",
       "job": "ارشد جزیره",
-      "step": "asking_name",
+      "step": "asking_nickname",
       "flow_type": "bio",
-      "saved_at": "2025-11-07T09:17:26.100633"
+      "saved_at": "2025-11-07T09:19:05.671968",
+      "expires_at": "2025-11-07T09:47:26.100938",
+      "name": ""
     }
   },
   "used_hashtags": [
