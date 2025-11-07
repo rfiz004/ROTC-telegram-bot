@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Skavenreach",
   "mines": {},
-  "wealth": 12000,
+  "wealth": 3000,
   "population": 14000,
   "tax": 100,
   "popularity": 87,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 1,
+      "count": 4,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-06T16:09:34.470743"
+  "last_updated": "2025-11-07T06:15:39.038310"
 }
