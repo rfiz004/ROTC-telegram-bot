@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Orendal",
   "mines": {},
-  "wealth": 1500,
+  "wealth": 0,
   "population": 7000,
   "tax": 100,
   "popularity": 83,
@@ -45,7 +45,7 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 3,
+      "count": 4,
       "product": "پنبه",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-06T15:51:07.864562"
+  "last_updated": "2025-11-07T06:02:28.226693"
 }
