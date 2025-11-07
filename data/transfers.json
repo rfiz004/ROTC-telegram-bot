@@ -18799,6 +18799,22 @@
       "status": "pending",
       "requested_at": "2025-11-07T20:17:01.535204",
       "delay_until": "2025-11-08T20:17:01.535208"
+    },
+    {
+      "id": "transfer_1329048693_1762546716",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Wynsearn",
+      "target_country": "Northwood",
+      "target_province": "Lusweld",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T20:18:36.619577",
+      "delay_until": "2025-11-08T20:18:36.619597"
     }
   ]
 }
