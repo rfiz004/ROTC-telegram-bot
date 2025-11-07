@@ -18347,6 +18347,22 @@
       "requested_at": "2025-11-07T10:51:20.417619",
       "delay_until": "2025-11-08T10:51:20.417623",
       "approved_at": "2025-11-07T10:53:51.792300"
+    },
+    {
+      "id": "transfer_1208514381_1762513082",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "پنبه": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:58:02.773107",
+      "delay_until": "2025-11-08T10:58:02.773111"
     }
   ]
 }
