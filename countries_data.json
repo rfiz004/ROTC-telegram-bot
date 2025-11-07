@@ -569,6 +569,18 @@
                         "status": "Approved",
                         "product": "فولاد",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه فولاد_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه پارچه": [
@@ -586,6 +598,33 @@
                     }
                 ],
                 "کارخونه شیشه": []
+            }
+        },
+        "Port Zephalia": {
+            "castle": {},
+            "structures": {},
+            "weapons": {},
+            "economic_structures": {
+                "کارخونه فولاد": [
+                    {
+                        "id": "کارخونه فولاد_1",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_2",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه فولاد_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    }
+                ]
             }
         }
     },
