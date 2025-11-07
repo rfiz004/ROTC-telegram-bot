@@ -2,10 +2,10 @@
   "country": "Azure",
   "province": "Silverain Coast",
   "mines": {},
-  "wealth": 0,
+  "wealth": 10000,
   "population": 18000,
   "tax": 100,
-  "popularity": 82,
+  "popularity": 73,
   "total_army": 5000,
   "army": {
     "کماندار": 400,
@@ -19,11 +19,11 @@
   "misc": {},
   "economic_items": {
     "جواهر": 0,
-    "سنگ": 0,
+    "سنگ": 200,
     "شراب": 0,
     "شیشه": 0,
     "فولاد": 0,
-    "ماهی": 208.0,
+    "ماهی": 608.0,
     "مرغ": 0,
     "میوه": 0,
     "پارچه": 0,
@@ -74,5 +74,5 @@
     }
   },
   "mine_productions": {},
-  "last_updated": "2025-11-04T07:29:15.641981"
+  "last_updated": "2025-11-07T09:28:14.351051"
 }

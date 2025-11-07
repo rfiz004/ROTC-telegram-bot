@@ -2,10 +2,10 @@
   "country": "Imperial",
   "province": "Veresta",
   "mines": {},
-  "wealth": 12000,
+  "wealth": 19000,
   "population": 5000,
   "tax": 100,
-  "popularity": 98,
+  "popularity": 89,
   "total_army": 5000,
   "army": {
     "کماندار": 500,
@@ -20,11 +20,11 @@
   "economic_items": {
     "جواهر": 0,
     "سنگ": 0,
-    "شراب": 0,
+    "شراب": 200,
     "شیشه": 0,
-    "فولاد": 0,
+    "فولاد": 50,
     "ماهی": 0,
-    "مرغ": 88.0,
+    "مرغ": 488.0,
     "میوه": 0,
     "پارچه": 0,
     "پنبه": 0,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 0,
+      "count": 1,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-06T15:56:04.965110"
+  "last_updated": "2025-11-07T09:28:14.339533"
 }
