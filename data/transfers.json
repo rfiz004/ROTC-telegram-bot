@@ -17637,6 +17637,22 @@
       "requested_at": "2025-11-07T06:06:39.516830",
       "delay_until": "2025-11-08T06:06:39.516835",
       "approved_at": "2025-11-07T06:08:06.505507"
+    },
+    {
+      "id": "transfer_7199097732_1762508372",
+      "requester_id": 7199097732,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "guardian-of-the-pact",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 1000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T09:39:32.627723",
+      "delay_until": "2025-11-08T09:39:32.627728"
     }
   ]
 }
