@@ -6,7 +6,7 @@
   },
   "wealth": 0,
   "population": 0,
-  "tax": 0,
+  "tax": 100,
   "popularity": 98,
   "total_army": 0,
   "army": {

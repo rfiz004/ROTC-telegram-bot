@@ -17450,6 +17450,22 @@
       "requested_at": "2025-11-06T13:16:46.270462",
       "delay_until": "2025-11-07T13:16:46.270466",
       "approved_at": "2025-11-06T13:43:13.349790"
+    },
+    {
+      "id": "transfer_7096919075_1762489443",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Veldanridge",
+      "target_country": "Aldemar",
+      "target_province": "King-of-wealth",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T04:24:03.281801",
+      "delay_until": "2025-11-08T04:24:03.281805"
     }
   ]
 }
