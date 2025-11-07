@@ -4,7 +4,7 @@
   "mines": {
     "Coal mine": 1
   },
-  "wealth": 57300,
+  "wealth": 64800,
   "population": 60000,
   "tax": 100,
   "popularity": 68,
@@ -37,7 +37,9 @@
     "دژکوب": 2,
     "برج محاصره": 2
   },
-  "weapons": {},
+  "weapons": {
+    "زره فولادی بالریون": 2
+  },
   "misc": {},
   "economic_items": {
     "جواهر": 0,
