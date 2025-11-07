@@ -17723,9 +17723,26 @@
         "سنگ": 200,
         "چرم": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-07T09:59:55.339280",
-      "delay_until": "2025-11-08T09:59:55.339285"
+      "delay_until": "2025-11-08T09:59:55.339285",
+      "approved_at": "2025-11-07T10:01:58.727158"
+    },
+    {
+      "id": "transfer_1771323853_1762509797",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Alvankesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:03:17.373421",
+      "delay_until": "2025-11-08T10:03:17.373426"
     }
   ]
 }
