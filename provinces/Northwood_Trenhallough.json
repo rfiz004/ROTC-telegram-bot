@@ -55,7 +55,7 @@
       "weekly_output": 100
     },
     "کارخونه چرم": {
-      "count": 4,
+      "count": 1,
       "product": "چرم",
       "weekly_output": 50
     },
@@ -93,5 +93,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-07T08:49:19.022829"
+  "last_updated": "2025-11-07T08:58:47.603330"
 }
