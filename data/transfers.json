@@ -18216,6 +18216,38 @@
       "status": "pending",
       "requested_at": "2025-11-07T10:17:51.807940",
       "delay_until": "2025-11-08T10:17:51.807945"
+    },
+    {
+      "id": "transfer_6723163985_1762510962",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Veresta",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:22:42.151229",
+      "delay_until": "2025-11-08T10:22:42.151232"
+    },
+    {
+      "id": "transfer_6723163985_1762511000",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Veresta",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "مرغ": 100
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:23:20.186665",
+      "delay_until": "2025-11-08T10:23:20.186669"
     }
   ]
 }
