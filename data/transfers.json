@@ -18039,9 +18039,10 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-07T10:12:43.435565",
-      "delay_until": "2025-11-08T10:12:43.435568"
+      "delay_until": "2025-11-08T10:12:43.435568",
+      "approved_at": "2025-11-07T10:13:31.755645"
     },
     {
       "id": "transfer_6723163985_1762510369",
@@ -18056,9 +18057,63 @@
         "مرغ": 200,
         "فولاد": 200
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-07T10:12:49.396806",
-      "delay_until": "2025-11-08T10:12:49.396809"
+      "delay_until": "2025-11-08T10:12:49.396809",
+      "approved_at": "2025-11-07T10:13:33.152820"
+    },
+    {
+      "id": "transfer_1771323853_1762510392",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Grand-Duke",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 250,
+        "سنگ": 250,
+        "چرم": 250
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:13:12.648443",
+      "delay_until": "2025-11-08T10:13:12.648448",
+      "approved_at": "2025-11-07T10:13:36.395490"
+    },
+    {
+      "id": "transfer_1208514381_1762510393",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Meraven",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "میوه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:13:13.790206",
+      "delay_until": "2025-11-08T10:13:13.790211",
+      "approved_at": "2025-11-07T10:13:37.586177"
+    },
+    {
+      "id": "transfer_1771323853_1762510412",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Grand-Duke",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:13:32.699096",
+      "delay_until": "2025-11-08T10:13:32.699100",
+      "approved_at": "2025-11-07T10:13:40.135967"
     }
   ]
 }
