@@ -18715,6 +18715,42 @@
       "requested_at": "2025-11-07T19:19:50.367945",
       "delay_until": "2025-11-08T19:19:50.367948",
       "approved_at": "2025-11-07T19:22:04.859076"
+    },
+    {
+      "id": "transfer_810047031_1762543745",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200,
+        "چوب": 200,
+        "پارچه": 100
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T19:29:05.015669",
+      "delay_until": "2025-11-08T19:29:05.015673",
+      "approved_at": "2025-11-07T19:30:17.859680"
+    },
+    {
+      "id": "transfer_810047031_1762543759",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Ryukansai",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T19:29:19.556819",
+      "delay_until": "2025-11-08T19:29:19.556824",
+      "approved_at": "2025-11-07T19:30:18.540552"
     }
   ]
 }
