@@ -2,7 +2,7 @@
   "country": "Aldemar",
   "province": "Lusmyr",
   "mines": {},
-  "wealth": 12000,
+  "wealth": 0,
   "population": 14000,
   "tax": 100,
   "popularity": 89,
@@ -40,7 +40,7 @@
       "weekly_output": 100
     },
     "کارخونه فولاد": {
-      "count": 0,
+      "count": 4,
       "product": "فولاد",
       "weekly_output": 50
     },
@@ -74,5 +74,5 @@
       "weekly_per_unit": 50
     }
   },
-  "last_updated": "2025-11-07T05:19:53.330934"
+  "last_updated": "2025-11-07T06:24:32.808648"
 }
