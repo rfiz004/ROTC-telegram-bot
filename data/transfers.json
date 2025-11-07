@@ -17865,6 +17865,200 @@
       "requested_at": "2025-11-07T10:08:50.128313",
       "delay_until": "2025-11-08T10:08:50.128317",
       "approved_at": "2025-11-07T10:08:53.027554"
+    },
+    {
+      "id": "transfer_7096919075_1762510216",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 20000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:10:16.962490",
+      "delay_until": "2025-11-08T10:10:16.962493",
+      "approved_at": "2025-11-07T10:10:25.237812"
+    },
+    {
+      "id": "transfer_1771323853_1762510248",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:10:48.620215",
+      "delay_until": "2025-11-08T10:10:48.620218",
+      "approved_at": "2025-11-07T10:10:51.491476"
+    },
+    {
+      "id": "transfer_1771323853_1762510268",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Haramtul",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 200,
+        "سنگ": 200,
+        "چرم": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:11:08.346057",
+      "delay_until": "2025-11-08T10:11:08.346062",
+      "approved_at": "2025-11-07T10:12:03.939479"
+    },
+    {
+      "id": "transfer_1208514381_1762510299",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Meraven",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:11:39.572627",
+      "delay_until": "2025-11-08T10:11:39.572631",
+      "approved_at": "2025-11-07T10:12:05.415082"
+    },
+    {
+      "id": "transfer_1771323853_1762510302",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 200,
+        "سنگ": 200,
+        "چرم": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:11:42.840596",
+      "delay_until": "2025-11-08T10:11:42.840600",
+      "approved_at": "2025-11-07T10:12:07.016510"
+    },
+    {
+      "id": "transfer_7096919075_1762510308",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "King-of-wealth",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:11:48.333484",
+      "delay_until": "2025-11-08T10:11:48.333487",
+      "approved_at": "2025-11-07T10:12:08.505879"
+    },
+    {
+      "id": "transfer_1771323853_1762510321",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Karavesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:12:01.193847",
+      "delay_until": "2025-11-08T10:12:01.193851",
+      "approved_at": "2025-11-07T10:12:10.082945"
+    },
+    {
+      "id": "transfer_1208514381_1762510333",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Meraven",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 400,
+        "سنگ": 200,
+        "پنبه": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:12:13.432542",
+      "delay_until": "2025-11-08T10:12:13.432545",
+      "approved_at": "2025-11-07T10:12:15.527815"
+    },
+    {
+      "id": "transfer_1771323853_1762510347",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 200,
+        "سنگ": 200,
+        "چرم": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:12:27.958312",
+      "delay_until": "2025-11-08T10:12:27.958315",
+      "approved_at": "2025-11-07T10:12:30.333174"
+    },
+    {
+      "id": "transfer_1771323853_1762510363",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Marashen",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:12:43.435565",
+      "delay_until": "2025-11-08T10:12:43.435568"
+    },
+    {
+      "id": "transfer_6723163985_1762510369",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "مرغ": 200,
+        "فولاد": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:12:49.396806",
+      "delay_until": "2025-11-08T10:12:49.396809"
     }
   ]
 }
