@@ -2,7 +2,7 @@
   "country": "Alestria",
   "province": "Meraven",
   "mines": {},
-  "wealth": 4500,
+  "wealth": 0,
   "population": 7000,
   "tax": 100,
   "popularity": 83,
@@ -45,7 +45,7 @@
       "weekly_output": 100
     },
     "کارخونه پنبه": {
-      "count": 1,
+      "count": 4,
       "product": "پنبه",
       "weekly_output": 50
     },
@@ -99,5 +99,5 @@
       "weekly_per_unit": 100000
     }
   },
-  "last_updated": "2025-11-06T15:50:29.021425"
+  "last_updated": "2025-11-07T06:05:40.885878"
 }

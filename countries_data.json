@@ -1055,6 +1055,18 @@
                         "status": "Approved",
                         "product": "پنبه",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه پنبه_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه پنبه_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه سنگ": [
@@ -1148,6 +1160,24 @@
                         "status": "Approved",
                         "product": "پنبه",
                         "weekly_output": 50
+                    },
+                    {
+                        "id": "کارخونه پنبه_2",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه پنبه_3",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
+                    },
+                    {
+                        "id": "کارخونه پنبه_4",
+                        "status": "Pending",
+                        "product": "",
+                        "weekly_output": 0
                     }
                 ],
                 "کارخونه سنگ": [

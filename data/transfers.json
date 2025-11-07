@@ -17603,6 +17603,38 @@
       "requested_at": "2025-11-07T06:04:04.205644",
       "delay_until": "2025-11-08T06:04:04.205648",
       "approved_at": "2025-11-07T06:04:34.671044"
+    },
+    {
+      "id": "transfer_7096919075_1762495501",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Aldemar",
+      "target_province": "Veldanridge",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 9000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T06:05:01.165157",
+      "delay_until": "2025-11-08T06:05:01.165160"
+    },
+    {
+      "id": "transfer_7096919075_1762495599",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Aldemar",
+      "target_province": "Skavenreach",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 12000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T06:06:39.516830",
+      "delay_until": "2025-11-08T06:06:39.516835"
     }
   ]
 }
