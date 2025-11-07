@@ -17778,6 +17778,93 @@
       "requested_at": "2025-11-07T10:06:29.631342",
       "delay_until": "2025-11-08T10:06:29.631346",
       "approved_at": "2025-11-07T10:06:39.144221"
+    },
+    {
+      "id": "transfer_6723163985_1762510004",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:06:44.846731",
+      "delay_until": "2025-11-08T10:06:44.846734",
+      "approved_at": "2025-11-07T10:06:49.445249"
+    },
+    {
+      "id": "transfer_7096919075_1762510099",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Lusmyr",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 150
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:08:19.654389",
+      "delay_until": "2025-11-08T10:08:19.654392",
+      "approved_at": "2025-11-07T10:08:25.838087"
+    },
+    {
+      "id": "transfer_1771323853_1762510105",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Silzara",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:08:25.717299",
+      "delay_until": "2025-11-08T10:08:25.717303",
+      "approved_at": "2025-11-07T10:08:28.388301"
+    },
+    {
+      "id": "transfer_6723163985_1762510127",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Sewandale",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:08:47.353157",
+      "delay_until": "2025-11-08T10:08:47.353160",
+      "approved_at": "2025-11-07T10:08:51.187982"
+    },
+    {
+      "id": "transfer_1771323853_1762510130",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Silzara",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 200,
+        "سنگ": 200,
+        "چرم": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:08:50.128313",
+      "delay_until": "2025-11-08T10:08:50.128317",
+      "approved_at": "2025-11-07T10:08:53.027554"
     }
   ]
 }
