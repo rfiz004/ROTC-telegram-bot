@@ -29,36 +29,6 @@
       "id_number": "@yes_maker",
       "user_id_tag": "#Leviathan"
     },
-    "7926402657": {
-      "step": "pending",
-      "country": "Walden",
-      "flow_type": "bio",
-      "job": "فرمانده ارتش",
-      "expires_at": "2025-11-07T09:38:53.268117",
-      "name": "آکیو کنستانتین",
-      "nickname": "تک چشم",
-      "age": "19",
-      "skills": [
-        "مدیریت امور نظامی",
-        "حواس پنجگانه قوی",
-        "مهارت شمشیرزنی و تبرزنی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 0,
-      "skill1": "مدیریت امور نظامی",
-      "skill2": "حواس پنجگانه قوی",
-      "skill3": "مهارت شمشیرزنی و تبرزنی",
-      "appearance": "موهای بلند و پریشون و چشم زخمی که موهاش رو روش ریخته و بدنی نسبتن عضلانی",
-      "history": "هیچی از گذشتش یادش نیست جز دود آتیش و داد و فریاد و بخاطر نشون دادن استعداد ذاتیش به مقام فرماندهی رسید",
-      "id_number": "@aki_amm",
-      "user_id_tag": "#Akio",
-      "photos": [
-        "AgACAgQAAxkBAALuLWkNuoGdicKj7aV0Ih2FgY_ymbPBAAIqC2sbBtFoUCLBkqTagrgvAQADAgADeQADNgQ"
-      ],
-      "level": 1,
-      "unique_id": "7926402657",
-      "saved_at": "2025-11-07T09:23:26.554975"
-    },
     "8347477495": {
       "country": "Azure",
       "job": "ارشد جزیره",
