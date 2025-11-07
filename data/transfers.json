@@ -18697,6 +18697,22 @@
       "status": "pending",
       "requested_at": "2025-11-07T19:16:09.179054",
       "delay_until": "2025-11-08T19:16:09.179059"
+    },
+    {
+      "id": "transfer_810047031_1762543190",
+      "requester_id": 810047031,
+      "source_country": "Hikada",
+      "source_province": "Kaisuraga",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T19:19:50.367945",
+      "delay_until": "2025-11-08T19:19:50.367948"
     }
   ]
 }
