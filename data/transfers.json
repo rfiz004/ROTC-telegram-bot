@@ -18330,6 +18330,22 @@
       "requested_at": "2025-11-07T10:48:29.108155",
       "delay_until": "2025-11-08T10:48:29.108160",
       "approved_at": "2025-11-07T10:48:42.033713"
+    },
+    {
+      "id": "transfer_1208514381_1762512680",
+      "requester_id": 1208514381,
+      "source_country": "Alestria",
+      "source_province": "Guardian-of-Sharia",
+      "target_country": "Alestria",
+      "target_province": "Alkyanos",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 500
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T10:51:20.417619",
+      "delay_until": "2025-11-08T10:51:20.417623"
     }
   ]
 }
