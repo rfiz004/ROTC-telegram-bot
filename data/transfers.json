@@ -17740,9 +17740,44 @@
       "items": {
         "طلا": 10000
       },
-      "status": "pending",
+      "status": "approved",
       "requested_at": "2025-11-07T10:03:17.373421",
-      "delay_until": "2025-11-08T10:03:17.373426"
+      "delay_until": "2025-11-08T10:03:17.373426",
+      "approved_at": "2025-11-07T10:05:50.270477"
+    },
+    {
+      "id": "transfer_6723163985_1762509849",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Altismar",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:04:09.357291",
+      "delay_until": "2025-11-08T10:04:09.357295",
+      "approved_at": "2025-11-07T10:05:52.720090"
+    },
+    {
+      "id": "transfer_6723163985_1762509989",
+      "requester_id": 6723163985,
+      "source_country": "Imperial",
+      "source_province": "Clarion",
+      "target_country": "Imperial",
+      "target_province": "Lusauren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "فولاد": 200
+      },
+      "status": "approved",
+      "requested_at": "2025-11-07T10:06:29.631342",
+      "delay_until": "2025-11-08T10:06:29.631346",
+      "approved_at": "2025-11-07T10:06:39.144221"
     }
   ]
 }
