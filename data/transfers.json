@@ -18751,6 +18751,22 @@
       "requested_at": "2025-11-07T19:29:19.556819",
       "delay_until": "2025-11-08T19:29:19.556824",
       "approved_at": "2025-11-07T19:30:18.540552"
+    },
+    {
+      "id": "transfer_1329048693_1762546015",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Wynsearn",
+      "target_country": "Northwood",
+      "target_province": "Trenhallough",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 170
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T20:06:55.968947",
+      "delay_until": "2025-11-08T20:06:55.968951"
     }
   ]
 }
