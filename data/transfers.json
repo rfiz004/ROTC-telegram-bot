@@ -18783,6 +18783,22 @@
       "status": "pending",
       "requested_at": "2025-11-07T20:09:46.338799",
       "delay_until": "2025-11-08T20:09:46.338804"
+    },
+    {
+      "id": "transfer_1329048693_1762546621",
+      "requester_id": 1329048693,
+      "source_country": "Northwood",
+      "source_province": "Garodhen",
+      "target_country": "Northwood",
+      "target_province": "Lusweld",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 150
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T20:17:01.535204",
+      "delay_until": "2025-11-08T20:17:01.535208"
     }
   ]
 }
