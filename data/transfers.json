@@ -17708,6 +17708,24 @@
       "requested_at": "2025-11-07T09:54:56.073179",
       "delay_until": "2025-11-08T09:54:56.073184",
       "approved_at": "2025-11-07T09:55:50.202274"
+    },
+    {
+      "id": "transfer_1771323853_1762509595",
+      "requester_id": 1771323853,
+      "source_country": "Santos",
+      "source_province": "Alvankesh",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "شیشه": 200,
+        "سنگ": 200,
+        "چرم": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-07T09:59:55.339280",
+      "delay_until": "2025-11-08T09:59:55.339285"
     }
   ]
 }
