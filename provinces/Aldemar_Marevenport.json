@@ -5,7 +5,7 @@
     "Coal mine": 1
   },
   "wealth": 6983,
-  "population": 30000,
+  "population": 15000,
   "tax": 100,
   "popularity": 80,
   "total_army": 6350,
@@ -50,7 +50,7 @@
     "چرم": 0,
     "چوب": 0,
     "گندم": 0,
-    "گوشت": 5840
+    "گوشت": 1840
   },
   "economic_structures": {
     "ماهیگیری": {

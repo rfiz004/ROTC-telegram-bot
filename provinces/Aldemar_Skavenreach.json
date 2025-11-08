@@ -3,7 +3,7 @@
   "province": "Skavenreach",
   "mines": {},
   "wealth": 13000,
-  "population": 14000,
+  "population": 53500,
   "tax": 100,
   "popularity": 81,
   "total_army": 5000,
@@ -19,7 +19,7 @@
   "misc": {},
   "economic_items": {
     "گندم": 0,
-    "گوشت": 0,
+    "گوشت": 4000,
     "ماهی": 400.0,
     "مرغ": 0,
     "میوه": 0,
