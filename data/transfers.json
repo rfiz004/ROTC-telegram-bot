@@ -18901,6 +18901,22 @@
       "status": "pending",
       "requested_at": "2025-11-08T04:32:45.042269",
       "delay_until": "2025-11-09T04:32:45.042274"
+    },
+    {
+      "id": "transfer_7096919075_1762576527",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Port Zephalia",
+      "target_country": "Aldemar",
+      "target_province": "Skavenreach",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T04:35:27.109974",
+      "delay_until": "2025-11-09T04:35:27.109977"
     }
   ]
 }
