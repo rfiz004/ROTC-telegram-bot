@@ -19024,6 +19024,40 @@
       "status": "pending",
       "requested_at": "2025-11-08T10:09:05.990364",
       "delay_until": "2025-11-09T10:09:05.990368"
+    },
+    {
+      "id": "transfer_5566736269_1762596686",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 398,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T10:11:26.868298",
+      "delay_until": "2025-11-09T10:11:26.868304"
+    },
+    {
+      "id": "transfer_5566736269_1762596705",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Brishallow",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T10:11:45.327879",
+      "delay_until": "2025-11-09T10:11:45.327884"
     }
   ]
 }
