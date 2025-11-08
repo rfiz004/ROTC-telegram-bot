@@ -18853,6 +18853,38 @@
       "requested_at": "2025-11-07T21:52:54.672784",
       "delay_until": "2025-11-08T21:52:54.672788",
       "approved_at": "2025-11-07T21:55:33.764719"
+    },
+    {
+      "id": "transfer_7096919075_1762576107",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Aldemar",
+      "target_province": "Skavenreach",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 15000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T04:28:27.605310",
+      "delay_until": "2025-11-09T04:28:27.605313"
+    },
+    {
+      "id": "transfer_7096919075_1762576150",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Marevenport",
+      "target_country": "Aldemar",
+      "target_province": "Skavenreach",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گوشت": 4000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T04:29:10.503812",
+      "delay_until": "2025-11-09T04:29:10.503815"
     }
   ]
 }
