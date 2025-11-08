@@ -18955,6 +18955,24 @@
       "requested_at": "2025-11-08T04:45:18.847364",
       "delay_until": "2025-11-09T04:45:18.847369",
       "approved_at": "2025-11-08T05:30:35.285708"
+    },
+    {
+      "id": "transfer_5566736269_1762592673",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Narwendale",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 386,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T09:04:33.595843",
+      "delay_until": "2025-11-09T09:04:33.595847"
     }
   ]
 }
