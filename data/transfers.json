@@ -18917,6 +18917,22 @@
       "status": "pending",
       "requested_at": "2025-11-08T04:35:27.109974",
       "delay_until": "2025-11-09T04:35:27.109977"
+    },
+    {
+      "id": "transfer_7096919075_1762576928",
+      "requester_id": 7096919075,
+      "source_country": "Aldemar",
+      "source_province": "Karnholm",
+      "target_country": "Aldemar",
+      "target_province": "Skavenreach",
+      "transfer_type": "domestic",
+      "category": "population",
+      "items": {
+        "جمعیت": 7000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T04:42:08.985309",
+      "delay_until": "2025-11-09T04:42:08.985313"
     }
   ]
 }
