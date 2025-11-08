@@ -1,11 +1,13 @@
 {
   "grain_priority": [
-    "گندم"
+    "گندم",
+    "ماهی",
+    "میوه"
   ],
   "grains": {
     "گندم": 350
   },
   "unfed_population": 0,
   "grain_consumption": 350,
-  "last_updated": "2025-11-08T08:04:38.805459"
+  "last_updated": "2025-11-08T09:47:31.241423"
 }
