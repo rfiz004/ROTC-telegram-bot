@@ -19058,6 +19058,40 @@
       "status": "pending",
       "requested_at": "2025-11-08T10:11:45.327879",
       "delay_until": "2025-11-09T10:11:45.327884"
+    },
+    {
+      "id": "transfer_5566736269_1762596806",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "wealth",
+      "items": {
+        "طلا": 10000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T10:13:26.805797",
+      "delay_until": "2025-11-09T10:13:26.805802"
+    },
+    {
+      "id": "transfer_5566736269_1762596852",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Torevald",
+      "target_country": "Walden",
+      "target_province": "Elmaren",
+      "transfer_type": "domestic",
+      "category": "economic_items",
+      "items": {
+        "گندم": 386,
+        "پنبه": 200,
+        "پارچه": 200
+      },
+      "status": "pending",
+      "requested_at": "2025-11-08T10:14:12.778069",
+      "delay_until": "2025-11-09T10:14:12.778074"
     }
   ]
 }
