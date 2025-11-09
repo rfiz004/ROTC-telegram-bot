@@ -19,12 +19,24 @@
     "8581354955": {
       "country": "Santos",
       "job": "ولیعهد",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2025-11-09T20:53:32.289757",
+      "saved_at": "2025-11-09T21:07:02.002917",
       "expires_at": "2025-11-09T21:14:33.028894",
       "name": "Scarlett",
-      "nickname": "Madam Red"
+      "nickname": "Madam Red",
+      "age": "20",
+      "skills": [
+        "مهارت کار با خنجر",
+        "مقاومت در برابر سم",
+        "حواس پنجگانه قوی"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 3,
+      "skill1": "مهارت کار با خنجر",
+      "skill2": "مقاومت در برابر سم",
+      "skill3": "حواس پنجگانه قوی",
+      "appearance": "چشمای متمایل به قرمز با مژهای بلند همراه با موهای بلوند که تا نزدیکی زانو میرسه و قد ۱۷۰"
     }
   },
   "used_hashtags": [
