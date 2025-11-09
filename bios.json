@@ -19,9 +19,12 @@
     "8581354955": {
       "country": "Santos",
       "job": "ولیعهد",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2025-11-09T20:44:33.028344"
+      "saved_at": "2025-11-09T20:53:32.289757",
+      "expires_at": "2025-11-09T21:14:33.028894",
+      "name": "Scarlett",
+      "nickname": "Madam Red"
     }
   },
   "used_hashtags": [
