@@ -19172,6 +19172,22 @@
       "requested_at": "2025-11-09T16:16:25.751763",
       "delay_until": "2025-11-10T16:16:25.751766",
       "approved_at": "2025-11-09T18:18:39.719976"
+    },
+    {
+      "id": "transfer_5566736269_1762712896",
+      "requester_id": 5566736269,
+      "source_country": "Walden",
+      "source_province": "Elmaren",
+      "target_country": "Hikada",
+      "target_province": "Shinrinky",
+      "transfer_type": "international",
+      "category": "wealth",
+      "items": {
+        "طلا": 49000
+      },
+      "status": "pending",
+      "requested_at": "2025-11-09T18:28:16.831563",
+      "delay_until": "2025-11-10T18:28:16.831568"
     }
   ]
 }
