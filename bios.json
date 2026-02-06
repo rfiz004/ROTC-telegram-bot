@@ -29,12 +29,24 @@
     "8016979493": {
       "country": "Santos",
       "job": "خاندان امپراطوری",
-      "step": "asking_age",
+      "step": "asking_history",
       "flow_type": "bio",
-      "saved_at": "2026-02-06T21:02:53.858876",
+      "saved_at": "2026-02-06T21:06:37.093257",
       "expires_at": "2026-02-06T21:15:55.385091",
       "name": "Yohan",
-      "nickname": "Garent"
+      "nickname": "Garent",
+      "age": "18",
+      "skills": [
+        "مهارت شمشیرزنی و تبرزنی",
+        "تیراندازی با کمان",
+        "سرعت بالا"
+      ],
+      "skills_description_sent": true,
+      "skill_page": 2,
+      "skill1": "مهارت شمشیرزنی و تبرزنی",
+      "skill2": "تیراندازی با کمان",
+      "skill3": "سرعت بالا",
+      "appearance": "Look at the photo."
     }
   },
   "used_hashtags": [
