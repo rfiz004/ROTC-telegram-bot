@@ -13,19 +13,19 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKENN")  # یا GITHUB_TOKEN
 GITHUB_BRANCH = "main"
 GITHUB_REPO_URL = f"https://{GITHUB_TOKEN}@github.com/rfiz004/ROTC-telegram-bot.git"
 # ────────────── Admin
-BIO_ADMIN_ID = [5890943003, 898145344, 7217974527] #me-ali-mary
+BIO_ADMIN_ID = [5890943003, 1771323853] #me-ali-mary
 COUNTRY_ADMIN_ID = {
-    "Alpyr": [2121665497],
-    "Aldemar": [2121665497],
-    "Walden": [2121665497],
+    "Alpyr": [1771323853],
+    "Aldemar": [1771323853],
+    "Walden": [1771323853],
 
-    "Azure": [2121665497],
-    "Hikada": [2121665497],
-    "Alestria": [2121665497],
+    "Azure": [1771323853],
+    "Hikada": [1771323853],
+    "Alestria": [1771323853],
 
-    "Santos": [2121665497],
-    "Imperial": [2121665497],
-    "Northwood": [2121665497],
+    "Santos": [1771323853],
+    "Imperial": [1771323853],
+    "Northwood": [1771323853],
 }
 
 BIO_CHANNEL = "@R_O_T_C_Bio"
