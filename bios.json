@@ -29,11 +29,12 @@
     "8016979493": {
       "country": "Santos",
       "job": "خاندان امپراطوری",
-      "step": "asking_nickname",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2026-02-06T20:46:13.643342",
+      "saved_at": "2026-02-06T21:02:53.858876",
       "expires_at": "2026-02-06T21:15:55.385091",
-      "name": "Yohan"
+      "name": "Yohan",
+      "nickname": "Garent"
     }
   },
   "used_hashtags": [
