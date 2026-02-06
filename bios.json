@@ -32,28 +32,6 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2026-02-06T19:47:46.014637"
-    },
-    "7410614316": {
-      "country": "Imperial",
-      "job": "مشاغل آزاد",
-      "step": "asking_history",
-      "flow_type": "bio",
-      "saved_at": "2026-02-06T20:10:15.353713",
-      "expires_at": "2026-02-06T20:39:21.886083",
-      "name": "Greta",
-      "nickname": "Emerald",
-      "age": "28",
-      "skills": [
-        "مترجمی و زبان شناسی",
-        "حواس پنجگانه قوی",
-        "نقشه خوانی"
-      ],
-      "skills_description_sent": true,
-      "skill_page": 2,
-      "skill1": "مترجمی و زبان شناسی",
-      "skill2": "حواس پنجگانه قوی",
-      "skill3": "نقشه خوانی",
-      "appearance": ".."
     }
   },
   "used_hashtags": [
@@ -131,6 +109,7 @@
     "#scor",
     "#Scarlett",
     "#mirabelle",
-    "#d_akhe"
+    "#d_akhe",
+    "#Greta"
   ]
 }
