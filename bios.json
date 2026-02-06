@@ -19,9 +19,12 @@
     "6219999826": {
       "country": "Northwood",
       "job": "مشاغل آزاد",
-      "step": "asking_name",
+      "step": "asking_age",
       "flow_type": "bio",
-      "saved_at": "2026-02-06T16:17:26.074876"
+      "saved_at": "2026-02-06T16:20:16.088766",
+      "expires_at": "2026-02-06T16:47:26.076012",
+      "name": "ذ",
+      "nickname": "تت"
     }
   },
   "used_hashtags": [
