@@ -19189,6 +19189,32 @@
       "requested_at": "2025-11-09T18:28:16.831563",
       "delay_until": "2025-11-10T18:28:16.831568",
       "approved_at": "2025-11-09T18:31:30.733122"
+    },
+    {
+      "id": "transfer_1771323853_1770394993",
+      "requester_id": 1771323853,
+      "source_country": "Alestria",
+      "source_province": "Alkyanos",
+      "target_country": "Santos",
+      "target_province": "Zahramun",
+      "transfer_type": "international",
+      "category": "economic_items",
+      "items": {
+        "سنگ": 3050,
+        "شراب": 1180,
+        "شیشه": 250,
+        "فولاد": 7034,
+        "ماهی": 4300,
+        "میوه": 10,
+        "پارچه": 4300,
+        "چرم": 500,
+        "چوب": 2700,
+        "گوشت": 16136
+      },
+      "status": "approved",
+      "requested_at": "2026-02-06T16:23:13.950722",
+      "delay_until": "2026-02-07T16:23:13.950725",
+      "approved_at": "2026-02-06T16:23:16.698499"
     }
   ]
 }
