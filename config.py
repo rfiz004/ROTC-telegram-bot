@@ -28,9 +28,9 @@ COUNTRY_ADMIN_ID = {
     "Northwood": [1771323853],
 }
 
-BIO_CHANNEL = "@R_O_T_C_Bio"
-CHANNEL_ID = "@R_O_T_C_News"
-SHOP_CHANNEL = "@R_O_T_C_Shop"
+BIO_CHANNEL = "@ThearcanacircleRole"
+CHANNEL_ID = "@ThearcanacircleNews"
+SHOP_CHANNEL = "@Thearcanacircleshop"
 
 RP_PASSWORDS = {
     "master_admin": "MASTER_2025",
@@ -55,7 +55,7 @@ for key, val in RP_PASSWORDS.items():
 BIOS_FILE = "bios.json"
 DATA_FILE = "data.json"
 RESERVATION_FILE = "job_reservations.json"
-SHOP_CHANNEL = "@R_O_T_C_Shop"  # Make sure bot is added as admin to this channel
+SHOP_CHANNEL = "@Thearcanacircleshop"  # Make sure bot is added as admin to this channel
 
 SKILLS_PER_PAGE = 12
 COUNTRIES = ["Aldemar", "Walden", "Northwood", "Santos", "Imperial", "Azure", "Hikada", "Alestria"]
