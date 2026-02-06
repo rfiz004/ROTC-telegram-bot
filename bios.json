@@ -15,16 +15,6 @@
       "step": "asking_name",
       "flow_type": "bio",
       "saved_at": "2025-11-08T11:19:37.248299"
-    },
-    "1771323853": {
-      "country": "Santos",
-      "job": "مشاغل آزاد",
-      "step": "asking_age",
-      "flow_type": "bio",
-      "saved_at": "2026-02-06T19:24:56.283813",
-      "expires_at": "2026-02-06T19:54:50.216315",
-      "name": "..",
-      "nickname": ".."
     }
   },
   "used_hashtags": [
